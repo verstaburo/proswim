@@ -18,7 +18,7 @@ block content
       +ui-section-head
         h2 Сетка
         p Отступы слева и справа от экрана: 20px ($container-padding)
-        p Ширина контейнера: 960px ($container-width)
+        p Ширина контейнера: 1180px ($container-width)
         p Ширина контейнера сетки: 100% ($grid-container-width)
         p Колонок: 12 ($grid-cols)
         p Горизонтальное расстояние между колонками: 20px ($grid-gap)
@@ -52,11 +52,28 @@ block content
         p Переменные находятся в файле styles/helpers/_variables.scss
       +ui-section-content()
         +ui-elements-list()
-          +ui-color('black', '$color-basic', true)
-          +ui-color('#2252d8', '$color-main', true)
-          +ui-color('#777', '$color-placeholder', true)
-          +ui-color('black', '$color-input', true)
-          +ui-color('#ccc', '$color-border')
+          +ui-color('#0096cc', '$dark-main-color', true)
+          +ui-color('#dde8f0', '$color-border')
+          +ui-color('#9da4ab', '$middlegrey-color', true)
+          +ui-color('#97d2e8', '$lightblue-color')
+          +ui-color('#ff3123', '$orange-color', true)
+          +ui-color('#ced7e0', '$indark-lightgrey-color')
+          +ui-color('#212224', '$darkestgrey-color', true)
+          +ui-color('#91989e', '$indark-grey-color', true)
+          +ui-color('#f0f3f5', '$lightgrey-color')
+          +ui-color('#494c4f', '$color-basic-hover', true)
+          +ui-color('#6e7378', '$darkgrey-color', true)
+          +ui-color('#595d61', '$darkengrey-color', true)
+          +ui-color('#a7afb5', '$semigrey-color')
+          +ui-color('#48c594', '$lightgreen-color')
+          +ui-color('#0098d6', '$darkblue-color', true)
+          +ui-color('#abb4ba', '$color-placeholder')
+          +ui-color('#2f3133', '$color-basic', true)
+          +ui-color('#00abe7', '$color-main', true)
+          +ui-color('#dfe7ed', '$greyblue2-color')
+          +ui-color('#ccd7de', '$greyblue-color')
+          +ui-color('#b9c0c4', '$dark-border-color')
+          +ui-color('#fac917', '$yellow-color')
 
     //- Цвета
     +ui-section
@@ -72,7 +89,7 @@ block content
     +ui-section
       +ui-section-head
         h2 Шрифты и контентная зона
-        p Основной шрифт: Arial ($font-main), font-weight: 400, 600
+        p Основной шрифт: Roboto ($font-main)
         p Дополнительный шрифт: Times New Roman ($font-second), font-weight: 400, 600
         p Переменные находятся в файле styles/helpers/_variables.scss
         p Шрифты подключены в styles/helpers/_fonts.scss

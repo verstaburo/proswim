@@ -5,6 +5,10 @@
     @include link;
   }
 
+  &_underline &__text {
+    @include link-underline;
+  }
+
   &_dashed &__text {
     @include link-dashed;
   }
@@ -29,7 +33,7 @@
     fill: $color-main;
   }
 
-  &.disabled {
+  &.is-disabled {
     pointer-events: none;
 
     .link__icon { fill: $color-border; }
