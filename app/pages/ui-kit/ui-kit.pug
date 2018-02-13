@@ -291,12 +291,14 @@ block content
       +ui-section-content()
         +ui-description .link
         +link()(href="#") Обычная ссылка
+        +ui-description .link._underline
+        +link()(href="#")._underline Подчеркнутая ссылка
         +ui-description .link._dashed
         +link()(href="#")._dashed Пунктирная ссылка
         +ui-description .link._icon
         +link-icon('refresh')(href="#") Ссылка с иконкой
         +ui-description .link.disabled
-        +link()(href="#").disabled Отключенная ссылка
+        +link()(href="#").is-disabled Отключенная ссылка
 
     //- Скроллбар
     +ui-section

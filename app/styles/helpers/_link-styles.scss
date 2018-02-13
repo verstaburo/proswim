@@ -1,12 +1,13 @@
 @mixin link {
   color: $color-main;
   transition: opacity $ease-main;
+  border-color: $color-main;
 
   &:hover { opacity: .5; }
 }
 
 @mixin link-underline {
-  border-bottom: 1px solid $color-main;
+  border-bottom: 1px solid;
 }
 
 @mixin link-disabled {
