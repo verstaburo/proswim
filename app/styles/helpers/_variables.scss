@@ -1,0 +1,50 @@
+// Здесь используем комментарии только через "//", т.к. они нам не нужны в итоговом css-файле
+
+// ##########
+// Базовые настройки сетки сайта
+// ##########
+$container-width: 960px; // Максимальная ширина контейнера контента
+$container-padding: 20px; // Отступы слева и справа у контейнера
+$grid-container-width: 100%; // Ширина контейнера сетки
+$grid-cols: 12; // Количество колонок в сетке
+$grid-gap: 20px; // Расстояние между колонками
+$grid-gap-vertical: 20px; // Расстояние между строками в сетке
+$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
+
+// ##########
+// Цвета
+// ##########
+$dark-main-color: #0096cc;
+$color-border: #dde8f0;
+$middlegrey-color: #9da4ab;
+$lightblue-color: #97d2e8;
+$orange-color: #ff3123;
+$indark-lightgrey-color: #ced7e0;
+$darkestgrey-color: #212224;
+$indark-grey-color: #91989e;
+$lightgrey-color: #f0f3f5;
+$color-basic-hover: #494c4f;
+$darkgrey-color: #6e7378;
+$darkengrey-color: #595d61;
+$semigrey-color: #a7afb5;
+$lightgreen-color: #48c594;
+$darkblue-color: #0098d6;
+$color-placeholder: #abb4ba;
+$color-basic: #2f3133;
+$color-main: #00abe7;
+$greyblue2-color: #dfe7ed;
+$greyblue-color: #ccd7de;
+$dark-border-color: #b9c0c4;
+$yellow-color: #fac917;
+$color-input: $color-basic;
+
+// ##########
+// Transitions
+// ##########
+$ease-main: .3s ease;
+
+// ##########
+// Шрифты
+// ##########
+$font-main: Roboto, sans-serif; // Основной шрифт сайта
+$font-second: RobotoSlab, Roboto, sans-serif; // Дополнительный шрифт

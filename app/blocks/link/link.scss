@@ -1,0 +1,39 @@
+.link {
+  display: inline-block;
+
+  &__text {
+    @include link;
+  }
+
+  &_dashed &__text {
+    @include link-dashed;
+  }
+
+  &_icon {
+    position: relative;
+    padding-left: 25px;
+
+    .link__icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    fill: $color-main;
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    .link__icon { fill: $color-border; }
+
+    .link__text { @include link-disabled; }
+  }
+}

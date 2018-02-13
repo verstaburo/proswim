@@ -1,0 +1,17 @@
+@mixin link {
+  color: $color-main;
+  border: 0;
+  border-bottom: 1px solid;
+  transition: opacity $ease-main;
+
+  &:hover { opacity: .5; }
+}
+
+@mixin link-disabled {
+  color: $color-border;
+  border-color: transparent;
+}
+
+@mixin link-dashed {
+  border-style: dashed;
+}
