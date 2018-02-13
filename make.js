@@ -1,13 +1,11 @@
 const program = require('commander');
 const fs = require('fs');
 const path = require('path');
-const { promisify } = require('util');
-// TODO promiify fs and rewrite on async/await
 
 /* eslint-disable global-require */
 const sources = {
   block: require('./templates/block'),
-  component: 'mixin {name}()\n  +b.{name}&attributes(attributes)\n    block\n',
+  component: require('./templates/component'),
   page: require('./templates/page'),
   scss: require('./templates/scss'),
   js: require('./templates/js'),

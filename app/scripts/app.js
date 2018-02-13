@@ -8,7 +8,7 @@ import {
   sliders,
   datepicker,
   inputmask,
-  numberinput
+  numberinput,
 } from '../blocks/form-elements/form-elements';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
@@ -22,7 +22,7 @@ import '../blocks/dropdown/dropdown';
 
 const $ = window.$;
 
-window['globalOptions'] = {
+window.globalOptions = {
   animationDuration: 300,
   sizes: {
     mobile: 480,
@@ -30,8 +30,8 @@ window['globalOptions'] = {
     tabletLg: 1024,
     desktop: 1280,
     desktopLg: 1600,
-    desktopXl: 1920
-  }
+    desktopXl: 1920,
+  },
 };
 
 $(() => {
