@@ -97,15 +97,14 @@ div {
   }
 }
 */
+
 $breakpoints: (
-  'phone': 400px,
-  'phone-wide': 480px,
-  'phablet': 560px,
-  'tablet-small': 640px,
+  'mobile': 480px,
   'tablet': 768px,
-  'tablet-wide': 1024px,
-  'desktop': 1248px,
-  'desktop-wide': 1440px
+  'tablet-lg': 1024px,
+  'desktop': 1280px,
+  'desktop-lg': 1600px,
+  'desktop-xl': 1920px
 );
 
 @mixin screen($width, $type: min) {
