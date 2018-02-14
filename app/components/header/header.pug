@@ -1,3 +1,20 @@
 mixin header()
-  +b.header&attributes(attributes)
-    block
+  +b.HEADER.header&attributes(attributes)
+    +e.main.container
+      +e.row.container
+        +e.col.__burger
+          +burger
+        +e.col.__logo
+          +logo
+        +e.col.__shops
+          +shopmenus
+            +shopmenu('Москва', 5)
+            +shopmenu('Санкт-Петербург', 1)
+      +e.row.container
+        +e.col.__getintouch
+          +getintouch
+        +e.col.__usermenu
+          +usermenus
+            +usermenu('Login Register button') Войти
+            +usermenu('Cart button', 3) Корзина
+    +navbar.__navbar

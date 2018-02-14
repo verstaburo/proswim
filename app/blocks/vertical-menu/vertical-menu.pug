@@ -1,0 +1,11 @@
+mixin vertical-menu(heading)
+  +b.vertical-menu&attributes(attributes)
+    if heading
+      +e.H6.heading=heading
+    +e.UL.items
+      block
+
+mixin vertical-menu-link(href)
+  +e.LI.item&attributes(attributes)
+    +e.A.link(href=href)
+      block
