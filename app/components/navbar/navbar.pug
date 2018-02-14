@@ -4,76 +4,171 @@ mixin navbar()
       +e.UL.col
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Очки
-        +e.LI.item
-          +e.A(href="javacsript:void(0);").link Шапочки
-        +e.LI.item
-          +e.A(href="javacsript:void(0);").link Аксессуары
           +navbar-dropdown
         +e.LI.item
+          +e.A(href="javacsript:void(0);").link Шапочки
+          +navbar-dropdown
+        +e.LI.item
+          +e.A(href="javacsript:void(0);").link Аксессуары
+          +navbar-dropdown2
+        +e.LI.item
           +e.A(href="javacsript:void(0);").link Купальники
+          +navbar-dropdown
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Плавки
+          +navbar-dropdown
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Гидрокостюмы
+          +navbar-dropdown
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Прочее
+          +navbar-dropdown
       +e.UL.col
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Скидки
+          +navbar-dropdown
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Бренды
-      +e.col
-        +searchbar(placeholder="Введите название товара...")
+          +navbar-dropdown3
+      +e.col._searchbar
+        +searchbar("Введите название товара...").__searchbar
 
 mixin navbar-dropdown
   +e.dropdown
     .container.navbar__container
       +e.dropdowncol
         +vertical-menu('Очки').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Очки для старта
-          +vertical-menu-link('javascript:void(0);') Премиум-очки
-          +vertical-menu-link('javascript:void(0);') Повседневные очки
-          +vertical-menu-link('javascript:void(0);') Маски и трубки
-        +vertical-menu('Очки').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Очки для старта
-          +vertical-menu-link('javascript:void(0);') Премиум-очки
-          +vertical-menu-link('javascript:void(0);') Повседневные очки
-          +vertical-menu-link('javascript:void(0);') Маски и трубки
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
       +e.dropdowncol
         +vertical-menu('Аксессуары').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Антифог-спреи
-          +vertical-menu-link('javascript:void(0);') Тряпочки для протирания
-          +vertical-menu-link('javascript:void(0);') Сменные ремни
-        +vertical-menu('Аксессуары').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Антифог-спреи
-          +vertical-menu-link('javascript:void(0);') Тряпочки для протирания
-          +vertical-menu-link('javascript:void(0);') Сменные ремни
-      +e.dropdowncol
-        +vertical-menu('Очки').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Очки для старта
-          +vertical-menu-link('javascript:void(0);') Премиум-очки
-          +vertical-menu-link('javascript:void(0);') Повседневные очки
-          +vertical-menu-link('javascript:void(0);') Маски и трубки
-        +vertical-menu('Очки').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Очки для старта
-          +vertical-menu-link('javascript:void(0);') Премиум-очки
-          +vertical-menu-link('javascript:void(0);') Повседневные очки
-          +vertical-menu-link('javascript:void(0);') Маски и трубки
-      +e.dropdowncol
-        +vertical-menu('Аксессуары').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Антифог-спреи
-          +vertical-menu-link('javascript:void(0);') Тряпочки для протирания
-          +vertical-menu-link('javascript:void(0);') Сменные ремни
-        +vertical-menu('Аксессуары').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Антифог-спреи
-          +vertical-menu-link('javascript:void(0);') Тряпочки для протирания
-          +vertical-menu-link('javascript:void(0);') Сменные ремни
+          +vertical-menu-link(href='javascript:void(0);') Антифог-спреи
+          +vertical-menu-link(href='javascript:void(0);') Тряпочки для протирания
+          +vertical-menu-link(href='javascript:void(0);') Сменные ремни
       +e.dropdowncol
         +vertical-menu('Бренды').__vertical-menu
-          +vertical-menu-link('javascript:void(0);') Arena
-          +vertical-menu-link('javascript:void(0);') Speedo
-          +vertical-menu-link('javascript:void(0);') TYR
-          +vertical-menu-link('javascript:void(0);') Finis
-          +vertical-menu-link('javascript:void(0);') Mosconi
-          +vertical-menu-link('javascript:void(0);') Mad Wave
-          +vertical-menu-link('javascript:void(0);') Aqua Sphere
+          +vertical-menu-link(href='javascript:void(0);') Arena
+          +vertical-menu-link(href='javascript:void(0);') Speedo
+          +vertical-menu-link(href='javascript:void(0);') TYR
+          +vertical-menu-link(href='javascript:void(0);') Finis
+          +vertical-menu-link(href='javascript:void(0);') Mosconi
+          +vertical-menu-link(href='javascript:void(0);') Mad Wave
+          +vertical-menu-link(href='javascript:void(0);') Aqua Sphere
+      +e.dropdowncol
+        +vertical-menu('Смотрите также').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Новинки
+          +vertical-menu-link(href='javascript:void(0);') Распродажа
+          +vertical-menu-link(href='javascript:void(0);') Бестселлеры
+          +vertical-menu-link(href='javascript:void(0);') Летняя коллекция
+      +e.dropdowncol
+        +e.A(href="javascript:void(0);").banner
+          img(src="content-img/navbar-dropdown-banner.jpg" alt="Banner")
+
+mixin navbar-dropdown2
+  +e.dropdown
+    .container.navbar__container
+      +e.dropdowncol
+        +vertical-menu('Очки').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+        +vertical-menu('Очки').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+      +e.dropdowncol
+        +vertical-menu('Аксессуары').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Антифог-спреи
+          +vertical-menu-link(href='javascript:void(0);') Тряпочки для протирания
+          +vertical-menu-link(href='javascript:void(0);') Сменные ремни
+        +vertical-menu('Аксессуары').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Антифог-спреи
+          +vertical-menu-link(href='javascript:void(0);') Тряпочки для протирания
+          +vertical-menu-link(href='javascript:void(0);') Сменные ремни
+      +e.dropdowncol
+        +vertical-menu('Очки').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+        +vertical-menu('Очки').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+      +e.dropdowncol
+        +vertical-menu('Аксессуары').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Антифог-спреи
+          +vertical-menu-link(href='javascript:void(0);') Тряпочки для протирания
+          +vertical-menu-link(href='javascript:void(0);') Сменные ремни
+        +vertical-menu('Аксессуары').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Антифог-спреи
+          +vertical-menu-link(href='javascript:void(0);') Тряпочки для протирания
+          +vertical-menu-link(href='javascript:void(0);') Сменные ремни
+      +e.dropdowncol
+        +vertical-menu('Бренды').__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Arena
+          +vertical-menu-link(href='javascript:void(0);') Speedo
+          +vertical-menu-link(href='javascript:void(0);') TYR
+          +vertical-menu-link(href='javascript:void(0);') Finis
+          +vertical-menu-link(href='javascript:void(0);') Mosconi
+          +vertical-menu-link(href='javascript:void(0);') Mad Wave
+          +vertical-menu-link(href='javascript:void(0);') Aqua Sphere
+
+mixin navbar-dropdown3
+  +e.dropdown
+    .container.navbar__container
+      +e.dropdowncol
+        +vertical-menu.__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Adidas
+          +vertical-menu-link(href='javascript:void(0);') Adl
+          +vertical-menu-link(href='javascript:void(0);') Banana Republic
+          +vertical-menu-link(href='javascript:void(0);') Befree
+          +vertical-menu-link(href='javascript:void(0);') Betsy
+          +vertical-menu-link(href='javascript:void(0);') Caprice
+          +vertical-menu-link(href='javascript:void(0);') Concept Club
+      +e.dropdowncol
+        +vertical-menu.__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Dorothy Perkins
+          +vertical-menu-link(href='javascript:void(0);') Gap
+          +vertical-menu-link(href='javascript:void(0);') Incity
+          +vertical-menu-link(href='javascript:void(0);') Jennyfer
+          +vertical-menu-link(href='javascript:void(0);') Kawaii Factory
+          +vertical-menu-link(href='javascript:void(0);') Keddo
+          +vertical-menu-link(href='javascript:void(0);') Lost Ink
+          +vertical-menu-link(href='javascript:void(0);') Love & Light
+      +e.dropdowncol
+        +vertical-menu.__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Love Republic
+          +vertical-menu-link(href='javascript:void(0);') Mango
+          +vertical-menu-link(href='javascript:void(0);') Modis
+          +vertical-menu-link(href='javascript:void(0);') Motivi
+          +vertical-menu-link(href='javascript:void(0);') Nike
+          +vertical-menu-link(href='javascript:void(0);') Oodji
+          +vertical-menu-link(href='javascript:void(0);') Piazza Italia
+          +vertical-menu-link(href='javascript:void(0);') Puma
+      +e.dropdowncol
+        +vertical-menu.__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') River Island
+          +vertical-menu-link(href='javascript:void(0);') Roxy
+          +vertical-menu-link(href='javascript:void(0);') S.Oliver
+          +vertical-menu-link(href='javascript:void(0);') Sela
+          +vertical-menu-link(href='javascript:void(0);') Springfield
+          +vertical-menu-link(href='javascript:void(0);') Очки
+          +vertical-menu-link(href='javascript:void(0);') Tamaris
+          +vertical-menu-link(href='javascript:void(0);') Tommy Hilfiger
+          +vertical-menu-link(href='javascript:void(0);') Top Secret
+      +e.dropdowncol
+        +vertical-menu.__vertical-menu
+          +vertical-menu-link(href='javascript:void(0);') Topshop
+          +vertical-menu-link(href='javascript:void(0);') United Colors Of Benneton
+          +vertical-menu-link(href='javascript:void(0);') Vis-a-Vis
+          +vertical-menu-link(href='javascript:void(0);') Vitacci
+          +vertical-menu-link(href='javascript:void(0);') Women’s Secret
+          +vertical-menu-link(href='javascript:void(0);') Zarina
+          +vertical-menu-link(href='javascript:void(0);') Tvoe
+          +vertical-menu-link(href='javascript:void(0);')._blue Все бренды

@@ -1,3 +1,115 @@
 .navbar {
-  display: none;
+  display: block;
+  background-color: $color-basic;
+  position: relative;
+
+  &__container {
+    position: static;
+    display: flex;
+  }
+
+  &__col {
+    display: flex;
+
+    &:first-child {
+      margin-left: -13px;
+    }
+
+    & + &:not(.navbar__col_searchbar)::before {
+      content: '';
+      display: block;
+      width: 1px;
+      margin: 13px 15px;
+      background-color: rgba($dark-border-color, .5);
+    }
+
+    &_searchbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1 1 auto;
+      text-align: right;
+      padding-left: 27px;
+    }
+  }
+
+  &__searchbar {
+    display: inline-block;
+    max-width: 280px;
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    display: block;
+    padding: 0 14px;
+    @include heading-6;
+    line-height: 52px;
+    color: white;
+    transition: background-color $ease-main;
+    cursor: pointer;
+
+    .navbar__item:hover & {
+      background-color: $color-basic-hover;
+    }
+  }
+
+  &__searchbar {
+
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 32px 0;
+    background-color: white;
+    box-shadow: 0 16px 20px rgba(91, 95, 99, .46);
+    border: 1px solid $color-border;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ease-main;
+
+    .navbar__item:hover &,
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &col {
+      & + & {
+        padding-left: 79px;
+      }
+    }
+  }
+
+  &__vertical-menu {
+    & + & {
+      padding-top: 41px;
+    }
+  }
+
+  &__banner {
+    display: inline-block;
+    position: relative;
+    width: 308px;
+    height: 212px;
+    margin-top: 7px;
+    margin-left: 4px;
+    overflow: hidden;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .75;
+    }
+
+    img {
+      @include fill-img;
+      z-index: 0;
+    }
+  }
 }

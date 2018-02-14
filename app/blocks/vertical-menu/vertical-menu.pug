@@ -5,7 +5,7 @@ mixin vertical-menu(heading)
     +e.UL.items
       block
 
-mixin vertical-menu-link(href)
-  +e.LI.item&attributes(attributes)
-    +e.A.link(href=href)
+mixin vertical-menu-link
+  +e.LI.item
+    +e.A.link&attributes(attributes)
       block

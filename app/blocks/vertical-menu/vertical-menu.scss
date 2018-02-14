@@ -1,3 +1,31 @@
 .vertical-menu {
   display: block;
+
+  &__heading {
+    @include heading-6;
+  }
+
+  &__items {
+    margin-top: 1px;
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 5px 0;
+    @include text-small;
+    color: $darkengrey-color;
+    transition: color $ease-main;
+
+    &_blue {
+      color: $darkblue-color;
+    }
+
+    &:hover {
+      color: $color-main;
+    }
+  }
 }
