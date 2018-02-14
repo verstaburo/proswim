@@ -22,10 +22,14 @@
 
     &_blue {
       color: $darkblue-color;
+
+      &:hover {
+        color: $color-main;
+      }
     }
 
     &:hover {
-      color: $color-main;
+      color: $darkblue-color;
     }
   }
 }

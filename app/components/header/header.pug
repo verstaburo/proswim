@@ -1,4 +1,4 @@
-mixin header()
+mixin header(loggedIn)
   +b.HEADER.header&attributes(attributes)
     .container.header__container
       +e.col._burger
@@ -15,5 +15,8 @@ mixin header()
         +getintouch
       +e.col
         +usermenu
-          +userlink('Login Register button')._user Войти
-          +userlink('Cart button', 3)._cart Корзина
+          if loggedIn
+            +userlink('Login Register button')._user Мой кабинет
+          else
+            +userlink('Login Register button')._user Войти
+          +userlink('Cart button', loggedIn ? 12 : 3)._cart Корзина

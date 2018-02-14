@@ -1,6 +1,18 @@
 .link {
   display: inline-block;
 
+  &_dark {
+    color: $color-basic;
+
+    &:hover {
+      color: $darkblue-color;
+    }
+  }
+
+  &:hover {
+    color: $darkblue-color;
+  }
+
   &__text {
     @include link;
   }

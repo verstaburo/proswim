@@ -17,7 +17,7 @@
 
     .shoplink:hover &,
     &.is-active {
-      color: $color-main;
+      color: $darkblue-color;
     }
   }
 
@@ -33,11 +33,11 @@
                 transform $ease-main;
 
     .shoplink:hover & {
-      fill: $color-main;
+      fill: $darkblue-color;
     }
 
     .shoplink__heading.is-active & {
-      fill: $color-main;
+      fill: $darkblue-color;
       transform: rotate(180deg);
     }
   }
