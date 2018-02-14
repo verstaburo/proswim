@@ -1,17 +1,17 @@
 mixin header()
   +b.HEADER.header&attributes(attributes)
     .container.header__container
-        +e.col
-          +burger-button
-        +e.col
-          +logo
-        +e.col
-          +shopmenu('Наши магазины:')
-            +shoplink('Москва', 5)
-            +shoplink('Санкт-Петербург', 1)
-        +e.col
-          +getintouch
-        +e.col
-          +usermenu
-            +userlink('Login Register button') Войти
-            +userlink('Cart button', 3) Корзина
+      +e.col._burger
+        +burger-button
+      +e.col
+        +logo
+      +e.col._shopmenu
+        +shopmenu('Наши магазины:')
+          +shoplink('Москва', 5)
+          +shoplink('Санкт-Петербург', 1)
+      +e.col
+        +getintouch
+      +e.col
+        +usermenu
+          +userlink('Login Register button')._user Войти
+          +userlink('Cart button', 3)._cart Корзина

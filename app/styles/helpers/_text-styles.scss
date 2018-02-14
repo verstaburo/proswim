@@ -48,6 +48,13 @@
   letter-spacing: .01em;
 }
 
+@mixin text-medium {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: (26/14);
+  letter-spacing: .01em;
+}
+
 @mixin text-small {
   font-size: 13px;
   font-weight: 400;

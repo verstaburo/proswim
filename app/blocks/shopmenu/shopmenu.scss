@@ -9,27 +9,28 @@
   }
 
   .shopmenu & {
-    padding-left: 20px;
+    padding: 0 8px;
   }
 
   &__heading {
     position: relative;
     display: inline-block;
+    padding-right: 12px;
     @include text-small;
+    white-space: nowrap;
   }
 
   &__caret {
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%);
     width: 8px;
     height: 6px;
     fill: $color-basic;
-    margin-left: 4px;
     transition: fill $ease-main;
+    margin-top: -1px;
 
-    .shopmenu:hover & {
+    .shoplink:hover & {
       fill: $color-main;
     }
   }
@@ -37,25 +38,27 @@
 
 .shopmenu {
   display: block;
+  position: relative;
+  padding-left: 19px;
+  padding-top: 3px;
 
   &__heading {
-    position: relative;
-    display: inline-block;
+    display: block;
+    @include text-medium;
+    line-height: 1;
   }
 
   &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 12px;
     height: 18px;
     fill: $color-basic;
-    margin-right: 8px;
-  }
-
-  &__text {
-    @include heading-6;
   }
 
   &__links {
     display: flex;
-    margin-top: 12px;
+    margin: 8px -8px 0;
   }
 }

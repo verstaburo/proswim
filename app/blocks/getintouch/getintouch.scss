@@ -1,3 +1,32 @@
 .getintouch {
   display: block;
+  position: relative;
+  padding-left: 28px;
+
+  &__phone {
+    color: $color-basic;
+    transition: color $ease-main;
+    @include heading-3;
+    line-height: 1;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__time {
+    margin-top: 7px;
+    color: $darkgrey-color;
+    @include text-small;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    fill: $color-basic;
+    transition: fill $ease-main;
+  }
 }

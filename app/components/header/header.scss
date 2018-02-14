@@ -1,29 +1,25 @@
 .header {
   display: block;
+  background-color: white;
 
-  &__main {
+  &__container {
     display: flex;
-    height: 80px;
-    background-color: white;
-
-    &.container {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  &__row {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 50%;
-    padding: 16px 0;
+    height: 80px;
+    padding-top: 17px;
+    padding-bottom: 17px;
   }
 
-  &__burger {
-    display: none;
-  }
+  &__col {
+    &_burger {
+      display: none;
+    }
 
-  &__navbar {
-    display: none;
+    &_shopmenu {
+      margin-left: -2px;
+      margin-top: 3px;
+      align-self: baseline;
+    }
   }
 }

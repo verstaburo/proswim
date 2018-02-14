@@ -8,7 +8,7 @@ mixin shopmenu(heading)
 mixin shoplink(heading, count)
   +b.shoplink&attributes(attributes).js-dropdown-toggle
     +e.DIV.heading
-      span Санкт-Петербург (#{count})
+      span #{heading} (#{count})
       +icon('Arrow location').__caret
     +dropdown.shoplink__dropdown
       block
