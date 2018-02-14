@@ -1,4 +1,4 @@
-.shopmenu {
+.shoplink {
   display: block;
   position: relative;
   cursor: pointer;
@@ -8,11 +8,21 @@
     color: $color-main;
   }
 
-  .shopmenus & {
+  .shopmenu & {
     padding-left: 20px;
   }
 
+  &__heading {
+    position: relative;
+    display: inline-block;
+    @include text-small;
+  }
+
   &__caret {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     width: 8px;
     height: 6px;
     fill: $color-basic;
@@ -23,23 +33,14 @@
       fill: $color-main;
     }
   }
-
-  &__heading {
-    font-size: 0;
-
-    &text {
-      display: inline-block;
-      @include text-small;
-    }
-  }
 }
 
-.shopmenus {
+.shopmenu {
   display: block;
 
   &__heading {
-    display: inline-flex;
-    align-items: center;
+    position: relative;
+    display: inline-block;
   }
 
   &__icon {

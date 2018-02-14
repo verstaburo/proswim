@@ -1,3 +1,44 @@
+.userlink{
+  display: inline-block;
+  text-align: center;
+
+  &__icon {
+    width: auto;
+    height: 26px;
+    fill: $color-basic;
+    transition: fill $ease-main;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__text {
+    display: block;
+    @include text-tiny;
+    margin-top: 8px;
+    transition: color $ease-main;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: $orange-color;
+    color: white;
+    @extend text-xs;
+  }
+}
+
 .usermenu {
   display: block;
+  font-size: 0;
 }

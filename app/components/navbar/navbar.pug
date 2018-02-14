@@ -1,6 +1,6 @@
 mixin navbar()
   +b.NAV.navbar&attributes(attributes)
-    +e.container.container
+    .container.navbar__container
       +e.UL.col
         +e.LI.item
           +e.A(href="javacsript:void(0);").link Очки
@@ -27,7 +27,7 @@ mixin navbar()
 
 mixin navbar-dropdown
   +e.dropdown
-    +e.container.container
+    .container.navbar__container
       +e.dropdowncol
         +vertical-menu('Очки').__vertical-menu
           +vertical-menu-link('javascript:void(0);') Очки для старта

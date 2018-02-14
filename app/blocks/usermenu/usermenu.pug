@@ -1,9 +1,9 @@
-mixin usermenus()
+mixin usermenu()
   +b.usermenu&attributes(attributes)
     block
 
-mixin usermenu(icon, badge)
-  +b.A(href="javascript:void(0);").usermenu&attributes(attributes)
+mixin userlink(icon, badge)
+  +b.A(href="javascript:void(0);").userlink&attributes(attributes)
     if badge
       +e.SPAN.badge=badge
     +icon(icon).__icon

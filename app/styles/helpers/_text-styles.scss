@@ -61,3 +61,10 @@
   line-height: (18/12);
   letter-spacing: .01em;
 }
+
+@mixin text-xs {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: (26/10);
+  letter-spacing: 0.025em;
+}
