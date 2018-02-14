@@ -14,6 +14,10 @@ const $ = window.$;
 
 export function selects() {
   /* eslint-disable no-unused-vars */
+  if (!$('.js-select').length) {
+    return;
+  }
+
   const choices = new Choices('.js-select', {
     searchEnabled: false,
     itemSelectText: '',

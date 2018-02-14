@@ -4664,6 +4664,10 @@ jpegtran-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
+jquery.mmenu@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/jquery.mmenu/-/jquery.mmenu-7.0.2.tgz#bdc308ff5a8535ecca04992f34c06293cd678f99"
+
 jquery.scrollbar@^0.2.11:
   version "0.2.11"
   resolved "https://registry.yarnpkg.com/jquery.scrollbar/-/jquery.scrollbar-0.2.11.tgz#e91bd4a97d83859463024d26e730dc36676ab59d"
