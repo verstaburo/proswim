@@ -2,11 +2,6 @@
   display: block;
   position: relative;
   cursor: pointer;
-  transition: color $ease-main;
-
-  &:hover {
-    color: $color-main;
-  }
 
   .shopmenu & {
     padding: 0 8px;
@@ -18,6 +13,12 @@
     padding-right: 12px;
     @include text-small;
     white-space: nowrap;
+    transition: color $ease-main;
+
+    .shoplink:hover &,
+    &.is-active {
+      color: $color-main;
+    }
   }
 
   &__caret {
@@ -27,12 +28,95 @@
     width: 8px;
     height: 6px;
     fill: $color-basic;
-    transition: fill $ease-main;
     margin-top: -1px;
+    transition: fill $ease-main,
+                transform $ease-main;
 
     .shoplink:hover & {
       fill: $color-main;
     }
+
+    .shoplink__heading.is-active & {
+      fill: $color-main;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    min-width: 288px;
+    box-shadow: 0 16px 20px rgba(91, 95, 99, .46);
+    border-radius: 0 0 2px 2px;
+    border: 1px solid $color-border;
+    padding: 0;
+    margin-left: -7px;
+    margin-top: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 19px;
+      width: 22px;
+      height: 22px;
+      background-color: inherit;
+      border: inherit;
+      transform: rotate(45deg) translateY(-50%);
+      z-index: 1;
+    }
+  }
+
+  &__list {
+    position: relative;
+    z-index: 1;
+    padding: 11px 0;
+    background-color: white;
+  }
+
+  &__item {
+    @include text-small;
+    line-height: (21/13);
+
+    &heading {
+
+      .shoplink__body & {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__head {
+    line-height: 29px;
+    padding: 0 17px;
+    transition: background-color $ease-main;
+    cursor: pointer;
+
+    .shoplink__item:hover & {
+      background-color: $greyblue2-color;
+    }
+  }
+
+  &__body {
+    display: none;
+    padding: 10px 15px;
+
+    .shoplink__item:not(:last-child) & {
+      border-bottom: 1px solid $color-border;
+    }
+
+    .shoplink__item:hover & {
+      display: block;
+    }
+  }
+
+  &__linkicon {
+    width: 14px;
+    height: 11px;
+    fill: red;
+    margin-right: 2px;
+  }
+
+  &__description {
+    color: $darkengrey-color;
   }
 }
 

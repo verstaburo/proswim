@@ -6,8 +6,8 @@ mixin shopmenu(heading)
       block
 
 mixin shoplink(heading, count)
-  +b.shoplink&attributes(attributes).js-dropdown-toggle
-    +e.DIV.heading
+  +b.shoplink&attributes(attributes)
+    +e.DIV.heading.js-dropdown-toggle
       span #{heading} (#{count})
       +icon('Arrow location').__caret
     +dropdown.shoplink__dropdown
@@ -17,71 +17,57 @@ mixin shopmenu-msk-dropdown
   +e.UL.list
     +e.LI.item
       +e.head
-        +icon('m').linkicon
+        +icon('Metro icon').linkicon
         +e.SPAN.itemheading Пр-т Мира
       +e.body
-        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ “Гагаринский”
+        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ&nbsp;&laquo;Гагаринский&raquo;
         +e.P.description
-          | Ул. Вавилова, д.3, ТЦ “Гагаринский”
-          | 1 минута пешком от метро, 2-й этаж,
-          br
-          | с 9.00 до 20.00
-          br
+          | 1&nbsp;минута пешком от&nbsp;метро, 2-й этаж,<br />
+          | с&nbsp;9.00 до&nbsp;20.00<br />
           | Телефон магазина: 8 (495) 730-30-62
 
     +e.LI.item
       +e.head
-        +icon('m').linkicon
+        +icon('Metro icon').linkicon
         +e.SPAN.itemheading Каширская
       +e.body
-        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ “Гагаринский”
+        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ&nbsp;&laquo;Гагаринский&raquo;
         +e.P.description
-          | Ул. Вавилова, д.3, ТЦ “Гагаринский”
-          | 1 минута пешком от метро, 2-й этаж,
-          br
-          | с 9.00 до 20.00
-          br
+          | 1&nbsp;минута пешком от&nbsp;метро, 2-й этаж,<br />
+          | с&nbsp;9.00 до&nbsp;20.00<br />
           | Телефон магазина: 8 (495) 730-30-62
 
     +e.LI.item
       +e.head
-        +icon('m').linkicon
+        +icon('Metro icon').linkicon
         +e.SPAN.itemheading Ленинский пр-т
       +e.body
-        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ “Гагаринский”
+        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ&nbsp;&laquo;Гагаринский&raquo;
         +e.P.description
-          | Ул. Вавилова, д.3, ТЦ “Гагаринский”
-          | 1 минута пешком от метро, 2-й этаж,
-          br
-          | с 9.00 до 20.00
-          br
+          | 1&nbsp;минута пешком от&nbsp;метро, 2-й этаж,<br />
+          | с&nbsp;9.00 до&nbsp;20.00<br />
           | Телефон магазина: 8 (495) 730-30-62
 
     +e.LI.item
       +e.head
-        +icon('m').linkicon
+        +icon('Metro icon').linkicon
         +e.SPAN.itemheading Парк Культуры
       +e.body
-        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ “Гагаринский”
+        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ&nbsp;&laquo;Гагаринский&raquo;
         +e.P.description
-          | Ул. Вавилова, д.3, ТЦ “Гагаринский”
-          | 1 минута пешком от метро, 2-й этаж,
-          br
-          | с 9.00 до 20.00
-          br
+          | 1&nbsp;минута пешком от&nbsp;метро, 2-й этаж,<br />
+          | с&nbsp;9.00 до&nbsp;20.00<br />
           | Телефон магазина: 8 (495) 730-30-62
 
 mixin shopmenu-spb-dropdown
   +e.UL.list
     +e.LI.item
       +e.head
-        +icon('m').linkicon
-        +e.SPAN.itemheading Ул. Ефимова, д.2, ТЦ “ПИК”
+        +icon('Metro icon').linkicon
+        +e.SPAN.itemheading Сенная пл./Садовая
       +e.body
-        +e.SPAN.itemheading Ул. Вавилова, д.3, ТЦ “Гагаринский”
+        +e.SPAN.itemheading Ул. Ефимова, д.2, ТЦ&nbsp;&laquo;ПИК&raquo;
         +e.P.description
-          | 1 минута пешком от метро, 3-й этаж,
-          br
-          | с 10.00 до 20.00
-          br
+          | 1&nbsp;минута пешком от&nbsp;метро, 3-й этаж,<br />
+          | с&nbsp;10.00 до&nbsp;20.00<br />
           | Телефон магазина: 8 (812) 449-24-71

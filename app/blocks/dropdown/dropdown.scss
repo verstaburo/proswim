@@ -13,6 +13,7 @@
   pointer-events: none;
   transition: opacity $ease-main;
   @include text;
+  z-index: 20;
 
   &.is-active {
     opacity: 1;

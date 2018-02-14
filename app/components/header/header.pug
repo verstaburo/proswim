@@ -8,7 +8,9 @@ mixin header()
       +e.col._shopmenu
         +shopmenu('Наши магазины:')
           +shoplink('Москва', 5)
+            +shopmenu-msk-dropdown
           +shoplink('Санкт-Петербург', 1)
+            +shopmenu-spb-dropdown
       +e.col
         +getintouch
       +e.col
