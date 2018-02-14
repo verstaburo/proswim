@@ -1,8 +1,0 @@
-mixin icon(iconName, isBlock)
-  - var normalizedIconName = (' ' + iconName).trim().toLowerCase().replace(/\s+/g, '-')
-  if isBlock
-    svg&attributes(attributes)
-      use(xlink:href=`assets/images/icon.svg#icon_${normalizedIconName}`)
-  else
-    +e('svg')&attributes(attributes)
-      use(xlink:href=`assets/images/icon.svg#icon_${normalizedIconName}`)
