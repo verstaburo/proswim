@@ -3,7 +3,13 @@
   display: inline-block;
   text-align: center;
 
-  & + & {
+  &_user {
+    @include screen(desktop) {
+      .header & { display: none; }
+    }
+  }
+
+  .usermenu & {
     margin-left: 35px;
   }
 
@@ -24,6 +30,12 @@
     .userlink:hover & {
       fill: $darkblue-color;
     }
+
+    @include screen(desktop) {
+      .userlink__badge + & {
+        margin-right: 10px;
+      }
+    }
   }
 
   &__text {
@@ -35,6 +47,10 @@
 
     .userlink:hover & {
       color: $darkblue-color;
+    }
+
+    @include screen(desktop) {
+      display: none;
     }
   }
 
@@ -54,4 +70,5 @@
 .usermenu {
   display: block;
   font-size: 0;
+  margin-left: -35px;
 }

@@ -3,17 +3,17 @@ mixin header(loggedIn)
     .container.header__container
       +e.col._burger
         +burger-button
-      +e.col
+      +e.col._logo
         +logo.__logo
       +e.col._shopmenu
-        +shopmenu('Наши магазины:')
+        +shopmenu('Наши магазины:').__shopmenu
           +shoplink('Москва', 5)
             +shopmenu-msk-dropdown
           +shoplink('Санкт-Петербург', 1)
             +shopmenu-spb-dropdown
-      +e.col
+      +e.col._getintouch
         +getintouch
-      +e.col
+      +e.col._usermenu
         +usermenu
           if loggedIn
             +userlink('Login Register button')._user Мой кабинет

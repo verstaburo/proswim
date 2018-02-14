@@ -1,3 +1,11 @@
 .burger-button {
-  display: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+
+  &__icon {
+    width: 24px;
+    height: 18px;
+    fill: $color-basic;
+  }
 }

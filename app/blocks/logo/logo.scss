@@ -1,5 +1,5 @@
 .logo {
-  display: block;
+  display: inline-block;
   transition: opacity $ease-main;
 
   &:hover { opacity: .75; }

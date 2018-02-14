@@ -3,6 +3,10 @@
   background-color: $color-basic;
   position: relative;
 
+  @include screen(desktop) {
+    display: none;
+  }
+
   &__container {
     position: static;
     display: flex;

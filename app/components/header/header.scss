@@ -9,22 +9,83 @@
     height: 80px;
     padding-top: 17px;
     padding-bottom: 17px;
+
+    @include screen(desktop) {
+      height: auto;
+      flex-wrap: wrap;
+      padding-top: 14px;
+    }
   }
 
   &__col {
+    @include screen(desktop) {
+
+    }
+
     &_burger {
       display: none;
+
+      @include screen(desktop) {
+        display: block;
+      }
     }
 
     &_shopmenu {
       margin-left: -2px;
       margin-top: 3px;
       align-self: baseline;
+
+      @include screen(desktop) {
+        position: relative;
+        order: 5;
+        text-align: center;
+        border-top: 1px solid $color-border;
+        margin: 12px -20px 0;
+        padding: 13px 20px;
+        flex: 1 1 100%;
+      }
+    }
+
+    &_getintouch {
+      @include screen(desktop) {
+        display: none;
+      }
+    }
+
+    &_logo {
+      @include screen(desktop) {
+        flex: 1 1 auto;
+        text-align: center;
+        margin-top: -5px;
+        margin-left: -11px;
+      }
+    }
+
+    &_usermenu {
+      @include screen(desktop) {
+
+      }
     }
   }
 
   &__logo {
     margin-top: -2px;
     margin-left: -1px;
+
+    @include screen(desktop) {
+      margin-top: 0;
+      margin-left: 0;
+
+      img {
+        width: 152px;
+        height: 37px;
+      }
+    }
+  }
+
+  &__shopmenu {
+    @include screen(desktop) {
+      position: static;
+    }
   }
 }
