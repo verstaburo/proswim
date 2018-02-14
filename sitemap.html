@@ -15,272 +15,1212 @@
 
 <body>
     <header class="header">
-        <div class="header__main container">
-            <div class="header__row container">
-                <div class="header__col header__burger">
-                    <div class="burger"></div>
-                </div>
-                <div class="header__col header__logo">
-                    <a class="logo" href="index.html">
-                        <img src="assets/images/logo.svg" alt="proswim" />
-                    </a>
-                </div>
-                <div class="header__col header__shops">
-                    <div class="shopmenus">
-                        <div class="shopmenu js-dropdown-toggle">
-                            <div class="shopmenu__heading">
-                                <span class="shopmenu__headingtext">Санкт-Петербург
-                                    <span>(5)</span>
-                                </span>
-                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+        <div class="container header__container">
+            <div class="header__col">
+                <button class="burger-button">
+                    <svg class="burger-button__icon"><use xlink:href="assets/images/icon.svg#icon_burger-menu"></use></svg>
+                </button>
+            </div>
+            <div class="header__col">
+                <a class="logo" href="index.html">
+                    <img src="assets/images/logo.svg" alt="proswim" />
+                </a>
+            </div>
+            <div class="header__col">
+                <div class="shopmenu">
+                    <svg class="shopmenu__icon"><use xlink:href="assets/images/icon.svg#icon_location-icon"></use></svg>
+                    <p class="shopmenu__heading">Наши магазины:</p>
+                    <div class="shopmenu__links">
+                        <div class="shoplink js-dropdown-toggle">
+                            <div class="shoplink__heading">
+                                <span>Санкт-Петербург (5)</span>
+                                <svg class="shoplink__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                             </div>
-                            <div class="dropdown js-dropdown shopmenu__dropdown"></div>
+                            <div class="dropdown js-dropdown shoplink__dropdown"></div>
                         </div>
-                        <div class="shopmenu js-dropdown-toggle">
-                            <div class="shopmenu__heading">
-                                <span class="shopmenu__headingtext">Санкт-Петербург
-                                    <span>(1)</span>
-                                </span>
-                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                        <div class="shoplink js-dropdown-toggle">
+                            <div class="shoplink__heading">
+                                <span>Санкт-Петербург (1)</span>
+                                <svg class="shoplink__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                             </div>
-                            <div class="dropdown js-dropdown shopmenu__dropdown"></div>
+                            <div class="dropdown js-dropdown shoplink__dropdown"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="header__row container">
-                <div class="header__col header__getintouch">
-                    <div class="getintouch">
-                        <a class="link link_icon getintouch__phone">
-                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
-                            <span class="link__text">8 (800) 100-24-59</span>
-                        </a>
-                        <p class="getintouch__time">С 9 до 21. Бесплатно по РФ</p>
-                    </div>
+            <div class="header__col">
+                <div class="getintouch">
+                    <a class="getintouch__phone" href="tel://88001002459">8 (800) 100-24-59</a>
+                    <p class="getintouch__time">С 9 до 21. Бесплатно по РФ</p>
+                    <svg class="getintouch__icon"><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                 </div>
-                <div class="header__col header__usermenu">
-                    <div class="usermenu">
-                        <a class="usermenu" href="javascript:void(0);">
-                            <svg class="usermenu__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
-                            <span class="usermenu__text">Войти</span>
-                        </a>
-                        <a class="usermenu" href="javascript:void(0);">
-                            <span class="usermenu__badge">3</span>
-                            <svg class="usermenu__icon"><use xlink:href="assets/images/icon.svg#icon_cart-button"></use></svg>
-                            <span class="usermenu__text">Корзина</span>
-                        </a>
-                    </div>
+            </div>
+            <div class="header__col">
+                <div class="usermenu">
+                    <a class="userlink" href="javascript:void(0);">
+                        <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
+                        <span class="userlink__text">Войти</span>
+                    </a>
+                    <a class="userlink" href="javascript:void(0);">
+                        <span class="userlink__badge">3</span>
+                        <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_cart-button"></use></svg>
+                        <span class="userlink__text">Корзина</span>
+                    </a>
                 </div>
             </div>
         </div>
-        <nav class="navbar header__navbar">
-            <div class="navbar__container container">
-                <ul class="navbar__col">
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Очки</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Шапочки</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Аксессуары</a>
-                        <div class="navbar__dropdown">
-                            <div class="navbar__container container">
-                                <div class="navbar__dropdowncol">
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Очки</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Очки</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+    </header>
+    <nav class="navbar">
+        <div class="container navbar__container">
+            <ul class="navbar__col">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Очки</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Шапочки</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Аксессуары</a>
+                    <div class="navbar__dropdown">
+                        <div class="container navbar__container">
+                            <div class="navbar__dropdowncol">
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Очки</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="navbar__dropdowncol">
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Аксессуары</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Аксессуары</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Очки</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="navbar__dropdowncol">
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Очки</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Очки</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="navbar__dropdowncol">
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Аксессуары</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="navbar__dropdowncol">
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Аксессуары</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Аксессуары</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Аксессуары</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="navbar__dropdowncol">
-                                    <div class="vertical-menu navbar__vertical-menu">
-                                        <h6 class="vertical-menu__heading">Бренды</h6>
-                                        <ul class="vertical-menu__items">
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Arena</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Speedo</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">TYR</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Finis</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Mosconi</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Mad Wave</a>
-                                            </li>
-                                            <li class="vertical-menu__item">
-                                                <a class="vertical-menu__link" href="javascript:void(0);">Aqua Sphere</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="navbar__dropdowncol">
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Очки</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Очки</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для старта</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Премиум-очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Повседневные очки</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Маски и трубки</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="navbar__dropdowncol">
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Аксессуары</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Аксессуары</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Антифог-спреи</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Тряпочки для протирания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Сменные ремни</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="navbar__dropdowncol">
+                                <div class="vertical-menu navbar__vertical-menu">
+                                    <h6 class="vertical-menu__heading">Бренды</h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Arena</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Speedo</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">TYR</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Finis</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Mosconi</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Mad Wave</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Aqua Sphere</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Купальники</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Плавки</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Гидрокостюмы</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Прочее</a>
-                    </li>
-                </ul>
-                <ul class="navbar__col">
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Скидки</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a class="navbar__link" href="javacsript:void(0);">Бренды</a>
-                    </li>
-                </ul>
-                <div class="navbar__col">
-                    <form class="searchbar" method="POST" action="/" placeholder="Введите название товара...">
-                        <input class="searchbar__control" type="text" />
-                        <button class="searchbar__button" type="submit">
-                            <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
-                        </button>
-                    </form>
+                    </div>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Купальники</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Плавки</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Гидрокостюмы</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Прочее</a>
+                </li>
+            </ul>
+            <ul class="navbar__col">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Скидки</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="javacsript:void(0);">Бренды</a>
+                </li>
+            </ul>
+            <div class="navbar__col">
+                <form class="searchbar" method="POST" action="/" placeholder="Введите название товара...">
+                    <input class="searchbar__control" type="text" />
+                    <button class="searchbar__button" type="submit">
+                        <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section class="burger" id="burger-menu">
+        <header class="burger__section header">
+            <div class="container">
+                <div class="burger__headerlinks">
+                    <a class="link link_icon link_dark burger__login">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
+                        <span class="link__text">Войти</span>
+                    </a>
+                    <a class="link link_icon link_dark burger__back">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow_back_menu"></use></svg>
+                        <span class="link__text">Назад</span>
+                    </a>
+                </div>
+                <button class="burger__close">
+                    <svg><use xlink:href="assets/images/icon.svg#icon_close-menu"></use></svg>
+                </button>
+            </div>
+        </header>
+        <div class="burger__section burger__section_search">
+            <div class="container">
+                <form class="searchbar searchbar_grey" method="POST" action="/">
+                    <input class="searchbar__control" placeholder="Введите название товара..." type="text" />
+                    <button class="searchbar__button" type="submit">
+                        <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="burger__section title mm-navbar">Очки</div>
+        <div class="container burger__menu">
+            <ul class="burger__list">
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Очки</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Шапочки</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Аксессуары</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Купальники</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Плавки</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Гидрокостюмы</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Прочее</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Скидки</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="burger__item">
+                    <a class="link link_icon link_dark burger__link">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                        <span class="link__text">Бренды</span>
+                    </a>
+                    <ul class="burger__list">
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Очки</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Аксессуары</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Бренды</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger__item">
+                            <a class="link link_icon link_dark burger__link">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                <span class="link__text">Смотрите также</span>
+                            </a>
+                            <ul class="burger__list">
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Антифог-спреи</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Тряпочки для протирания</span>
+                                    </a>
+                                </li>
+                                <li class="burger__item">
+                                    <a class="link link_grey burger__link">
+                                        <span class="link__text">Сменные ремни</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer class="burger__section footer">
+            <div class="container">
+                <div class="getintouch">
+                    <a class="getintouch__phone" href="tel://88001002459">8 (800) 100-24-59</a>
+                    <p class="getintouch__time">С 9 до 21. Бесплатно по РФ</p>
+                    <svg class="getintouch__icon"><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                 </div>
             </div>
-        </nav>
-    </header>
+        </footer>
+    </section>
+    <div class="popups"></div>
     <div class="sitemap">
         <div class="container">
             <div class="sitemap__list">
