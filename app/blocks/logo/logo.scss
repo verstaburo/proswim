@@ -1,3 +1,11 @@
 .logo {
   display: block;
+  transition: opacity $ease-main;
+
+  &:hover { opacity: .75; }
+
+  img {
+    width: 182px;
+    height: 44px;
+  }
 }

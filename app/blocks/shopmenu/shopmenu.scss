@@ -1,0 +1,60 @@
+.shopmenu {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  transition: color $ease-main;
+
+  &:hover {
+    color: $color-main;
+  }
+
+  .shopmenus & {
+    padding-left: 20px;
+  }
+
+  &__caret {
+    width: 8px;
+    height: 6px;
+    fill: $color-basic;
+    margin-left: 4px;
+    transition: fill $ease-main;
+
+    .shopmenu:hover & {
+      fill: $color-main;
+    }
+  }
+
+  &__heading {
+    font-size: 0;
+
+    &text {
+      display: inline-block;
+      @include text-small;
+    }
+  }
+}
+
+.shopmenus {
+  display: block;
+
+  &__heading {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 12px;
+    height: 18px;
+    fill: $color-basic;
+    margin-right: 8px;
+  }
+
+  &__text {
+    @include heading-6;
+  }
+
+  &__links {
+    display: flex;
+    margin-top: 12px;
+  }
+}

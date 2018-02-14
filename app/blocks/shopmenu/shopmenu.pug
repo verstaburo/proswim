@@ -1,12 +1,17 @@
-mixin shopmenus
+mixin shopmenus(heading)
   +b.shopmenus&attributes(attributes)
-    block
+    if heading
+      +e.P.heading
+        +icon('Location icon').icon
+        +e.SPAN.text=heading
+    +e.links
+      block
 
 mixin shopmenu(heading, count)
   +b.shopmenu&attributes(attributes).js-dropdown-toggle
     +e.DIV.heading
       +e.SPAN.headingtext Санкт-Петербург #[span (#{count})]
-      +icon('Arrow location')
+      +icon('Arrow location').__caret
     +dropdown.shopmenu__dropdown
       block
 
