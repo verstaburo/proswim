@@ -2,10 +2,40 @@
   display: flex;
 
   &__input {
-    width: 342px;
+    width: 100%;
   }
 
   &__button {
+    position: relative;
     flex-shrink: 0;
+
+    @include screen(desktop) {
+      width: 38px;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 9px;
+      height: 15px;
+      transition: opacity $ease-main;
+      fill: white;
+      opacity: 0;
+
+      @include screen(desktop) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__text {
+
+    @include screen(desktop) {
+      display: none;
+    }
   }
 }

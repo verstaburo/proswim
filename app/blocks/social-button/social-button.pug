@@ -4,5 +4,5 @@ mixin social-buttons()
 
 mixin social-button(kind)
   - var icons = { fb: 'Facebook icon', vk: 'Vk icon', instagram: 'Instagram icon' }
-  +b.A.social-button(href='javascript:void(0);')&attributes(attributes)(class=`_${kind}`)
+  +b.A.social-button&attributes(attributes)(href='javascript:void(0);' class=`_${kind}`)
     +icon(icons[kind]).icon

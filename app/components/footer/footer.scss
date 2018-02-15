@@ -3,20 +3,36 @@
   padding: 60px 0;
   background-color: $darkestgrey-color;
 
+  @include screen(desktop) {
+    padding: 40px 0;
+  }
+
   &__logo {
     img {
       width: 152px;
       height: 33px;
     }
+
+    @include screen(desktop) {
+      display: none;
+    }
   }
 
   &__social {
     margin-top: 18px;
+
+    @include screen(desktop) {
+      margin-top: -10px;
+    }
   }
 
   &__copyright {
     display: block;
     margin-top: 18px;
+
+    @include screen(desktop) {
+      margin-top: 9px;
+    }
   }
 
   &__link {
@@ -54,12 +70,26 @@
   &__grid {
     display: flex;
     justify-content: space-between;
-    margin: -20px 0 0 -40px;
+    margin: -40px 0 0 -40px;
+
+    @include screen(desktop) {
+      flex-wrap: wrap;
+    }
   }
 
   &__col {
-    padding: 20px 0 0 40px;
+    padding: 40px 0 0 40px;
     box-sizing: border-box;
+
+    @include screen(desktop) {
+      width: (100%/3);
+    }
+
+    &_info {
+      @include screen(desktop) {
+        order: 6;
+      }
+    }
   }
 
   &__section {

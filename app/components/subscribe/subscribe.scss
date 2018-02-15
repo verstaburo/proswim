@@ -16,9 +16,25 @@
     color: white;
     margin-right: 20px;
     margin-left: -3px;
+
+    @include screen(desktop) {
+      margin-left: 0;
+    }
   }
 
   &__form {
     margin-left: 20px;
+
+    @include screen(desktop) {
+      margin-left: 18px;
+    }
+
+    .subscribe-form__input {
+      width: 342px;
+
+      @include screen(desktop) {
+        width: 243px;
+      }
+    }
   }
 }
