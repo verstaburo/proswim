@@ -1,6 +1,11 @@
 .link {
   display: inline-block;
 
+  &:hover {
+    .link__text { color: $color-basic; }
+    .link__icon { fill: $color-basic; }
+  }
+
   &_dark {
     .link__text { color: $color-basic; }
     .link__icon { fill: $color-basic; }
@@ -9,11 +14,6 @@
       .link__text { color: $darkblue-color; }
       .link__icon { fill: $darkblue-color; }
     }
-  }
-
-  &:hover {
-    .link__text { color: $darkblue-color; }
-    .link__icon { fill: $darkblue-color; }
   }
 
   &_grey {

@@ -6,7 +6,8 @@
   font-size: 0;
   border: 1px solid $indark-grey-color;
   border-radius: 50%;
-  transition: opacity $ease-main;
+  transition: background-color $ease-main,
+              border-color $ease-main;
   cursor: pointer;
   box-sizing: border-box;
 
@@ -20,7 +21,8 @@
   }
 
   &:hover {
-    opacity: .5;
+    background-color: $indark-lightgrey-color;
+    border-color: $indark-lightgrey-color;
   }
 
   &__icon {
@@ -34,6 +36,8 @@
     transition: fill $ease-main;
     max-width: 70%;
     max-width: 70%;
+
+    .social-button:hover & { fill: $darkestgrey-color; }
 
     .social-button_vk & {
       width: 16px;
