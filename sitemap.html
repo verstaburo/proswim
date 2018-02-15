@@ -2114,153 +2114,166 @@
             <div class="container subscribe__container">
                 <h4 class="subscribe__heading">Подпишитесь! Новинки, скидки, предложения!</h4>
                 <div class="subscribe-form subscribe__form" method="POST" action="/">
-                    <input class="input subscribe__input" />
-                    <a class="button subscribe-form__button" type="submit"></a>
+                    <input class="input subscribe-form__input" type="email" placeholder="Введите ваш  Email" />
+                    <button class="button button_size_md subscribe-form__button" type="submit">
+                        <span class="subscribe-form__text">Подписаться</span>
+                        <svg><use xlink:href="assets/images/icon.svg#icon_arrow-subscribe-button"></use></svg>
+                    </button>
                 </div>
             </div>
         </div>
         <footer class="footer">
-            <div class="container footer__container">
-                <div class="footer__col">
-                    <a class="logo footer__logo" href="index.html">
-                        <img src="assets/images/logo_white.png" alt="proswim" />
-                    </a>
-                    <div class="social-buttons footer__social">
-                        <a class="social-button" href="javascript:void(0);">
-                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_fb"></use></svg>
+            <div class="container">
+                <div class="footer__grid">
+                    <div class="footer__col footer__col_info">
+                        <a class="logo footer__logo" href="index.html">
+                            <img src="assets/images/logo_white.png" alt="proswim" />
                         </a>
-                        <a class="social-button" href="javascript:void(0);">
-                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk"></use></svg>
-                        </a>
-                        <a class="social-button" href="javascript:void(0);">
-                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg>
-                        </a>
+                        <div class="social-buttons footer__social">
+                            <a class="social-button social-button_fb" href="javascript:void(0);">
+                                <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
+                            </a>
+                            <a class="social-button social-button_vk" href="javascript:void(0);">
+                                <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
+                            </a>
+                            <a class="social-button social-button_instagram" href="javascript:void(0);">
+                                <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_instagram-icon"></use></svg>
+                            </a>
+                        </div>
+                        <div class="footer__copyright">
+                            <a class="footer__link" href="index.html">© Proswim.ru 2009-2017</a>
+                        </div>
                     </div>
-                    <div class="footer__copyright">
-                        <a class="footer__link" href="index.html">© Proswim.ru 2009-2017</a>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h6 class="footer__heading">Контакты</h6>
+                            <ul class="footer__body">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel://84955808295">
+                                        <span class="footer__linkicon">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
+                                        </span>
+                                        <span>Мск: 8 (495) 580-82-95</span>
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel://88124492471">
+                                        <span class="footer__linkicon">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
+                                        </span>
+                                        <span>СПб: 8 (812) 449-24-71</span>
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel://88001002459">
+                                        <span class="footer__linkicon">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
+                                        </span>
+                                        <span>8 (800) 100-24-59</span>
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="mailto://info@proswim.ru">
+                                        <span class="footer__linkicon footer__linkicon_email">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_email-icon"></use></svg>
+                                        </span>
+                                        <span>info@proswim.ru</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="footer__col">
-                    <div class="footer__section">
-                        <h6 class="footer__heading">Контакты</h6>
-                        <ul class="footer__body">
-                            <li class="footer__item">
-                                <a class="footer__link" href="tel://84955808295">
-                                    <span class="footer__linkicon">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
-                                    </span>
-                                    <span>Мск: 8 (495) 580-82-95</span>
-                                </a>
-                            </li>
-                            <li class="footer__item">
-                                <a class="footer__link" href="tel://88124492471">
-                                    <span class="footer__linkicon">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
-                                    </span>
-                                    <span>СПб: 8 (812) 449-24-71</span>
-                                </a>
-                            </li>
-                            <li class="footer__item">
-                                <a class="footer__link" href="tel://88001002459">
-                                    <span class="footer__linkicon">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
-                                    </span>
-                                    <span>8 (800) 100-24-59</span>
-                                </a>
-                            </li>
-                            <li class="footer__item">
-                                <a class="footer__link" href="mailto://info@proswim.ru">
-                                    <span class="footer__linkicon">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
-                                    </span>
-                                    <span>info@proswim.ru</span>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Сервис</h6>
+                            <ul class="footer__body">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Доставка</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Оплата</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Возврат</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Мои заказы</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Как сделать заказ</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Юридическая информация</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="footer__col">
-                    <h6 class="footer__heading">Сервис</h6>
-                    <ul class="footer__body">
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Доставка</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Оплата</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Возврат</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Мои заказы</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Как сделать заказ</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Юридическая информация</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h6 class="footer__heading">Компания</h6>
-                    <ul class="footer__body">
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Контакты</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">О нас</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Розничные магазины</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Пункт самовывоза</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Отзывы покупателей</a>
-                        </li>
-                        <li class="footer__item">
-                            <a class="footer__link" href="javascript:void(0);">Оптовым покупателям</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h6 class="footer__heading">Способы оплаты</h6>
-                    <ul class="footer__body footer__body_wrap">
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Sberbank.png" alt="Sberbank" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Yandex.png" alt="Yandex" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Mastercard.png" alt="Mastercard" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Visa.png" alt="Visa" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Webmoney.png" alt="Webmoney" />
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h6 class="footer__heading">Способы доставки</h6>
-                    <ul class="footer__body footer__body_wrap">
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Pochta rossii.png" alt="Pochta rossii" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Grastin.png" alt="Grastin" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Boxberry.png" alt="Boxberry" />
-                        </li>
-                        <li class="footer__item">
-                            <img class="img" src="assets/images/footer/Dpd.png" alt="Dpd" />
-                        </li>
-                    </ul>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Компания</h6>
+                            <ul class="footer__body">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Контакты</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">О нас</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Розничные магазины</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Пункт самовывоза</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Отзывы покупателей</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="javascript:void(0);">Оптовым покупателям</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Способы оплаты</h6>
+                            <ul class="footer__body footer__body_wrap">
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Sberbank.png" alt="Sberbank" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Yandex.png" alt="Yandex" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Mastercard.png" alt="Mastercard" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Visa.png" alt="Visa" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Webmoney.png" alt="Webmoney" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Способы доставки</h6>
+                            <ul class="footer__body footer__body_wrap">
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/pochta-rossii.png" alt="Pochta rossii" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Grastin.png" alt="Grastin" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Boxberry.png" alt="Boxberry" />
+                                </li>
+                                <li class="footer__item">
+                                    <img class="img" src="assets/images/footer/Dpd.png" alt="Dpd" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
