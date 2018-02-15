@@ -3,6 +3,6 @@ mixin social-buttons()
     block
 
 mixin social-button(kind)
-  +b.A.social-button(href='javascript:void(0);')&attributes(attributes)
-    - var icons = { fb: 'Facebook icon', vk: 'Vk icon', instagram: 'Instagram icon' }
-    +icon(kind).icon
+  - var icons = { fb: 'Facebook icon', vk: 'Vk icon', instagram: 'Instagram icon' }
+  +b.A.social-button(href='javascript:void(0);')&attributes(attributes)(class=`_${kind}`)
+    +icon(icons[kind]).icon

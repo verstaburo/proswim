@@ -1,3 +1,53 @@
 .social-button {
-  display: block;
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  border: 1px solid $indark-grey-color;
+  border-radius: 50%;
+  transition: opacity $ease-main;
+  cursor: pointer;
+
+  .social-buttons & {
+    margin: 8px 0 0 8px;
+  }
+
+  &s {
+    font-size: 0;
+    margin: -8px 0 0 -8px;
+  }
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    fill: $indark-grey-color;
+    transition: fill $ease-main;
+    max-width: 70%;
+    max-width: 70%;
+
+    .social-button_vk & {
+      width: 16px;
+      height: 10px;
+    }
+
+    .social-button_fb & {
+      width: 9px;
+      height: 15px;
+    }
+
+    .social-button_instagram & {
+      width: 15px;
+      height: 15px;
+    }
+  }
 }
+
