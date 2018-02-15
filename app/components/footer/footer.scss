@@ -7,6 +7,10 @@
     padding: 40px 0;
   }
 
+  @include screen(tablet) {
+    padding: 27px 0;
+  }
+
   &__logo {
     img {
       width: 152px;
@@ -23,6 +27,10 @@
 
     @include screen(desktop) {
       margin-top: -10px;
+    }
+
+    @include screen(tablet) {
+      margin-top: 22px;
     }
   }
 
@@ -75,6 +83,10 @@
     @include screen(desktop) {
       flex-wrap: wrap;
     }
+
+    @include screen(tablet) {
+      margin: 0 -15px;
+    }
   }
 
   &__col {
@@ -90,6 +102,15 @@
         order: 6;
       }
     }
+
+    @include screen(tablet) {
+      padding: 0 15px;
+      width: 100%;
+
+      & + & {
+        border-bottom: 1px solid $color-basic;
+      }
+    }
   }
 
   &__section {
@@ -97,20 +118,70 @@
   }
 
   &__heading {
+    position: relative;
     display: block;
     color: white;
     @include heading-6;
     margin-top: -.5em;
     margin-bottom: 8px;
+
+    @include screen(tablet) {
+      margin: 0;
+      padding: 6px 25px 6px 0;
+    }
+
+    &_accordion {
+      @include screen(tablet) {
+        cursor: pointer;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 12px;
+          height: 2px;
+          background-color: white;
+          transition: transform $ease-main;
+        }
+
+        &::after {
+          transform: translateY(-50%) rotate(90deg);
+        }
+
+        &.is-active::after {
+          transform: translateY(-50%);
+        }
+      }
+    }
   }
 
   &__body {
     font-size: 0;
 
+    @include screen(tablet) {
+      padding-top: 2px;
+      padding-bottom: 18px;
+
+      .footer__heading_accordion + & {
+        display: none;
+      }
+
+      .footer__heading_accordion.is-active + & {
+        display: block;
+      }
+    }
+
     &_wrap {
       margin: -20px 0 0 -20px;
       max-width: 165px;
       padding-top: 13px;
+
+      @include screen(tablet) {
+        padding-top: 15px;
+      }
     }
   }
 

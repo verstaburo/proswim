@@ -20,6 +20,7 @@ import burger from '../components/burger/burger';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
+import '../components/footer/footer';
 
 const $ = window.$;
 
