@@ -1,92 +1,97 @@
 mixin footer()
   +b.FOOTER.footer&attributes(attributes)
-    .container.footer__container
-      +e.col
-        +logo(true).__logo
-        +social-buttons.__social
-          +social-button('fb')
-          +social-button('vk')
-          +social-button('instagram')
-        +e.copyright
-          +e.A(href='index.html').link © Proswim.ru 2009-2017
-      +e.col
-        +e.section
-          +e.H6.heading Контакты
-          +e.UL.body
-            +e.LI.item
-              +e.A.link(href='tel://84955808295')
-                +e.linkicon
-                  +icon('Phone icon')
-                span Мск:  8 (495) 580-82-95
-            +e.LI.item
-              +e.A.link(href='tel://88124492471')
-                +e.linkicon
-                  +icon('Phone icon')
-                span СПб:  8 (812) 449-24-71
-            +e.LI.item
-              +e.A.link(href='tel://88001002459')
-                +e.linkicon
-                  +icon('Phone icon')
-                span 8 (800) 100-24-59
-            +e.LI.item
-              +e.A.link(href='mailto://info@proswim.ru')
-                +e.linkicon
-                  +icon('Phone icon')
-                span info@proswim.ru
-      +e.col
-        +e.H6.heading Сервис
-        +e.UL.body
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Доставка
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Оплата
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Возврат
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Мои заказы
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Как сделать заказ
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Юридическая информация
+    .container
+      +e.grid
+        +e.col
+          +logo(true).__logo
+          +social-buttons.__social
+            +social-button('fb')
+            +social-button('vk')
+            +social-button('instagram')
+          +e.copyright
+            +e.A(href='index.html').link © Proswim.ru 2009-2017
+        +e.col
+          +e.section
+            +e.H6.heading Контакты
+            +e.UL.body
+              +e.LI.item
+                +e.A.link(href='tel://84955808295')
+                  +e.linkicon
+                    +icon('Phone icon')
+                  span Мск:  8 (495) 580-82-95
+              +e.LI.item
+                +e.A.link(href='tel://88124492471')
+                  +e.linkicon
+                    +icon('Phone icon')
+                  span СПб:  8 (812) 449-24-71
+              +e.LI.item
+                +e.A.link(href='tel://88001002459')
+                  +e.linkicon
+                    +icon('Phone icon')
+                  span 8 (800) 100-24-59
+              +e.LI.item
+                +e.A.link(href='mailto://info@proswim.ru')
+                  +e.linkicon._email
+                    +icon('Email icon')
+                  span info@proswim.ru
+        +e.col
+          +e.section
+            +e.H6.heading Сервис
+            +e.UL.body
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Доставка
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Оплата
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Возврат
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Мои заказы
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Как сделать заказ
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Юридическая информация
 
-      +e.col
-        +e.H6.heading Компания
-        +e.UL.body
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Контакты
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') О нас
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Розничные магазины
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Пункт самовывоза
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Отзывы покупателей
-          +e.LI.item
-            +e.A.link(href='javascript:void(0);') Оптовым покупателям
+        +e.col
+          +e.section
+            +e.H6.heading Компания
+            +e.UL.body
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Контакты
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') О нас
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Розничные магазины
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Пункт самовывоза
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Отзывы покупателей
+              +e.LI.item
+                +e.A.link(href='javascript:void(0);') Оптовым покупателям
 
-      +e.col
-        +e.H6.heading Способы оплаты
-        +e.UL.body._wrap
-          +e.LI.item
-            img(src="assets/images/footer/Sberbank.png" alt="Sberbank").img
-          +e.LI.item
-            img(src="assets/images/footer/Yandex.png" alt="Yandex").img
-          +e.LI.item
-            img(src="assets/images/footer/Mastercard.png" alt="Mastercard").img
-          +e.LI.item
-            img(src="assets/images/footer/Visa.png" alt="Visa").img
-          +e.LI.item
-            img(src="assets/images/footer/Webmoney.png" alt="Webmoney").img
+        +e.col
+          +e.section
+            +e.H6.heading Способы оплаты
+            +e.UL.body._wrap
+              +e.LI.item
+                img(src="assets/images/footer/Sberbank.png" alt="Sberbank").img
+              +e.LI.item
+                img(src="assets/images/footer/Yandex.png" alt="Yandex").img
+              +e.LI.item
+                img(src="assets/images/footer/Mastercard.png" alt="Mastercard").img
+              +e.LI.item
+                img(src="assets/images/footer/Visa.png" alt="Visa").img
+              +e.LI.item
+                img(src="assets/images/footer/Webmoney.png" alt="Webmoney").img
 
-      +e.col
-        +e.H6.heading Способы доставки
-        +e.UL.body._wrap
-          +e.LI.item
-            img(src="assets/images/footer/Pochta rossii.png" alt="Pochta rossii").img
-          +e.LI.item
-            img(src="assets/images/footer/Grastin.png" alt="Grastin").img
-          +e.LI.item
-            img(src="assets/images/footer/Boxberry.png" alt="Boxberry").img
-          +e.LI.item
-            img(src="assets/images/footer/Dpd.png" alt="Dpd").img
+        +e.col
+          +e.section
+            +e.H6.heading Способы доставки
+            +e.UL.body._wrap
+              +e.LI.item
+                img(src="assets/images/footer/pochta-rossii.png" alt="Pochta rossii").img
+              +e.LI.item
+                img(src="assets/images/footer/Grastin.png" alt="Grastin").img
+              +e.LI.item
+                img(src="assets/images/footer/Boxberry.png" alt="Boxberry").img
+              +e.LI.item
+                img(src="assets/images/footer/Dpd.png" alt="Dpd").img

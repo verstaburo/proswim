@@ -8,14 +8,15 @@
   border-radius: 50%;
   transition: opacity $ease-main;
   cursor: pointer;
+  box-sizing: border-box;
 
   .social-buttons & {
-    margin: 8px 0 0 8px;
+    margin: 9px 0 0 9px;
   }
 
   &s {
     font-size: 0;
-    margin: -8px 0 0 -8px;
+    margin: -9px 0 0 -9px;
   }
 
   &:hover {
