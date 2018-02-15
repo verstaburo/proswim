@@ -11,6 +11,9 @@
 
     @include screen(desktop) {
       width: 38px;
+      box-sizing: border-box;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     svg {

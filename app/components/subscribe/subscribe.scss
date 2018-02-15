@@ -9,6 +9,13 @@
     padding-top: 21px;
     padding-bottom: 21px;
     height: 80px;
+
+    @include screen(tablet) {
+      padding-top: 26px;
+      padding-bottom: 30px;
+      height: auto;
+      display: block;
+    }
   }
 
   &__heading {
@@ -20,6 +27,11 @@
     @include screen(desktop) {
       margin-left: 0;
     }
+
+    @include screen(tablet) {
+      text-align: center;
+      margin: 0;
+    }
   }
 
   &__form {
@@ -29,11 +41,20 @@
       margin-left: 18px;
     }
 
+    @include screen(tablet) {
+      margin-top: 14px;
+      margin-left: 0;
+    }
+
     .subscribe-form__input {
       width: 342px;
 
       @include screen(desktop) {
         width: 243px;
+      }
+
+      @include screen(tablet) {
+        width: 100%;
       }
     }
   }
