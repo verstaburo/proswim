@@ -1,3 +1,11 @@
 .subscribe-form {
-  display: block;
+  display: flex;
+
+  &__input {
+    width: 340px;
+  }
+
+  &__button {
+    flex-shrink: 0;
+  }
 }

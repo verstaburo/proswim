@@ -1,15 +1,18 @@
 .button {
   display: inline-block;
-  padding: 5px 10px;
-  border: 1px solid $color-border;
+  line-height: 40px;
+  height: 42px;
+  padding: 5px 30px;
+  border: 1px solid transparent;
   vertical-align: middle;
   box-sizing: border-box;
-  color: $color-basic;
-  background-color: transparent;
   transition: opacity $ease-main;
   cursor: pointer;
-
-  @include text;
+  box-shadow: 0 12px 20px rgba(9, 166, 231, .2);
+  border-radius: 2px;
+  background-color: $color-main;
+  @include heading-6;
+  color: white;
 
   &:disabled,
   &.is-disabled {
@@ -18,5 +21,16 @@
   }
 
   &:hover,
-  &.is-active { opacity: .5; }
+  &.is-active {
+    background-color: $darkblue-color;
+  }
+
+  &_size_md {
+    line-height: 36px;
+    height: 38px;
+    padding: 5px 17px;
+    font-size: 13px;
+    line-height: (23/13);
+    font-weight: 500;
+  }
 }

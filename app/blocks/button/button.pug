@@ -1,6 +1,3 @@
 mixin button(newtag)
-  - var tag = 'a';
-  if newtag
-    - var tag = newtag;
-  +b(tag).button&attributes(attributes)
+  +b.A.button&attributes(attributes)
     block

@@ -1,3 +1,23 @@
 .subscribe {
   display: block;
+  background-color: $color-basic;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    height: 80px;
+  }
+
+  &__heading {
+    @include heading-4;
+    color: white;
+    margin-right: 10px;
+  }
+
+  &__form {
+    margin-left: 10px;
+  }
 }
