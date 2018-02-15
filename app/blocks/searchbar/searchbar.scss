@@ -10,6 +10,10 @@
     border-radius: 2px;
     border-color: transparent;
     padding-right: 38px;
+
+    .searchbar_grey & {
+      background-color: $lightgrey-color;
+    }
   }
 
   &__button {

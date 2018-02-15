@@ -2,8 +2,6 @@
   color: $color-main;
   transition: opacity $ease-main;
   border-color: $color-main;
-
-  &:hover { opacity: .5; }
 }
 
 @mixin link-underline {
@@ -17,4 +15,10 @@
 
 @mixin link-dashed {
   border-bottom: 1px dashed;
+}
+
+@mixin link-medium {
+  @include heading-6;
+  line-height: (22/15);
+  color: $color-basic;
 }

@@ -2,19 +2,27 @@
   display: inline-block;
 
   &_dark {
-    color: $color-basic;
+    .link__text { color: $color-basic; }
+    .link__icon { fill: $color-basic; }
 
     &:hover {
-      color: $darkblue-color;
+      .link__text { color: $darkblue-color; }
+      .link__icon { fill: $darkblue-color; }
     }
   }
 
   &:hover {
-    color: $darkblue-color;
+    .link__text { color: $darkblue-color; }
+    .link__icon { fill: $darkblue-color; }
+  }
+
+  &_medium &__text {
+    @include link-medium;
   }
 
   &__text {
     @include link;
+    transition: color $ease-main;
   }
 
   &_underline &__text {
@@ -43,6 +51,7 @@
     vertical-align: middle;
     margin-right: 5px;
     fill: $color-main;
+    transition: fill $ease-main;
   }
 
   &.is-disabled {

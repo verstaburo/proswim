@@ -5,13 +5,14 @@ doctype html
 html(lang='ru')
   include head
   body
-    +header
-    +navbar
-    +burger
-    .popups
-      block popups
-    block content
-    +footer
-    +page-overlay
+    .wrapper.js-wrapper
+      +header
+      +navbar
+      +burger
+      .popups
+        block popups
+      block content
+      +footer
+      +page-overlay
     script(src='assets/scripts/app.min.js')
     script(src='assets/scripts/main.js')

@@ -1,5 +1,4 @@
-import 'jquery.mmenu/dist/jquery.mmenu';
-import $ from 'jquery'; // TODO пофиксить
+const $ = window.$;
 
 export default () => {
   const block = $('#burger-menu');
@@ -8,15 +7,5 @@ export default () => {
     return;
   }
 
-  block.mmenu(
-    {},
-    {
-      offCanvas: {
-        pageSelector: '.page',
-      },
-      classNames: {
-        selected: 'is-active',
-      },
-    },
-  );
+  console.log('TODO');
 };
