@@ -3,375 +3,378 @@ mixin burger()
     +e.overlay.js-burger-overlay
     +e.content.js-burger-content
       +e.HEADER.section.__header
-        +e.headerlinks
-          +link-icon('Login Register button')._dark._medium.__headerlink_user.is-active.js-burger-login Войти
-          +link-icon('arrow_back_menu')._dark._medium.__headerlink_back.js-burger-back Назад
-
-        +e.BUTTON.close.js-burger-close
-          +icon('close-menu')
-
-      +e.section.__search.js-burger-searchbar
         .container
-          +searchbar('Введите название товара...')._grey
+          +e.headerlinks
+            +link-icon('Login Register button')._dark.__headerlink_user.is-active.js-burger-login Войти
+            +link-icon('arrow_back_menu')._dark.__headerlink_back.js-burger-back Назад
 
-      +e.title.js-burger-title
+          +e.BUTTON.close.js-burger-close
+            +icon('close-menu')
+
+      +e.subheader
+        +e.search.js-burger-searchbar
+          .container
+            +searchbar('Введите название товара...')._grey
+
+        +e.title.js-burger-title
+          .container
+            span Очки
+
+      +e.innercontent
         .container
-          span Очки
+          +e.list.js-burger-menu
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Очки
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Шапочки
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Купальники
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Плавки
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Гидрокостюмы
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Прочее
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Скидки
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+            +e.LI.item
+              +link-icon('Arrow-menu-button')._dark.__link Бренды
+              +e.UL.list
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Очки
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Аксессуары
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Бренды
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
+                +e.LI.item
+                  +link-icon('Arrow-menu-button')._dark.__link Смотрите также
+                  +e.UL.list
+                    +e.LI.item
+                      +link._grey.__link Антифог-спреи
+                    +e.LI.item
+                      +link._grey.__link Тряпочки для протирания
+                    +e.LI.item
+                      +link._grey.__link Сменные ремни
 
-      .container
-        +e.UL.list.js-burger-menu
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Шапочки
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Купальники
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Плавки
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Гидрокостюмы
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Прочее
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Скидки
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-          +e.LI.item
-            +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-            +e.UL.list
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Очки
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Аксессуары
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Бренды
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-              +e.LI.item
-                +link-icon('Arrow-menu-button')._dark._medium.__link Смотрите также
-                +e.UL.list
-                  +e.LI.item
-                    +link._grey.__link Антифог-спреи
-                  +e.LI.item
-                    +link._grey.__link Тряпочки для протирания
-                  +e.LI.item
-                    +link._grey.__link Сменные ремни
-
-      +e.FOOTER.section.__footer.js-burger-footer
-        .container
-          +getintouch
+        +e.FOOTER.section.__footer.js-burger-footer
+          .container
+            +getintouch

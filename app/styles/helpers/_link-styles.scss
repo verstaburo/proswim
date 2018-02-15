@@ -20,5 +20,4 @@
 @mixin link-medium {
   @include heading-6;
   line-height: (22/15);
-  color: $color-basic;
 }

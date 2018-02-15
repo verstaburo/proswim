@@ -16,6 +16,16 @@
     .link__icon { fill: $darkblue-color; }
   }
 
+  &_grey {
+    .link__text { color: $darkengrey-color; }
+    .link__icon { fill: $darkengrey-color; }
+
+    &:hover {
+      .link__text { color: $darkblue-color; }
+      .link__icon { fill: $darkblue-color; }
+    }
+  }
+
   &_medium &__text {
     @include link-medium;
   }
