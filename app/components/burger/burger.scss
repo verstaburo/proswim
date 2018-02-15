@@ -6,10 +6,12 @@
   bottom: 0;
   z-index: 100;
   box-sizing: border-box;
-  // pointer-events: none;
+  pointer-events: none;
+  opacity: 0;
 
   &.is-active {
     pointer-events: all;
+    opacity: 1;
   }
 
   &__overlay {
@@ -21,11 +23,6 @@
     background-color: rgba($darkestgrey2-color, .82);
     transform: translateZ(0);
     transition: opacity $ease-main;
-    // opacity: 0;
-
-    .burger.is-active & {
-      opacity: 1;
-    }
   }
 
   &__content {
@@ -37,7 +34,7 @@
     max-width: 668px;
     min-width: 290px;
     width: 90%;
-    // transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
     transition: transform $ease-main;
     background-color: white;
     overflow-y: auto;
