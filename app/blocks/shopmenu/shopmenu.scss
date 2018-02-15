@@ -62,7 +62,7 @@
       box-shadow: none;
       left: 0;
       right: 0;
-      padding-top: 20px;
+      padding-top: 3px;
       width: 100%;
     }
 
@@ -82,10 +82,11 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 20px;
+        height: 14px;
         width: 100%;
         transform: none;
         box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
+        z-index: 2;
       }
     }
   }
@@ -95,6 +96,10 @@
     z-index: 1;
     padding: 11px 0;
     background-color: white;
+
+    @include screen(desktop) {
+      padding: 27px 0;
+    }
   }
 
   &__item {
@@ -102,10 +107,19 @@
     line-height: (21/13);
 
     &heading {
+      transition: color $ease-main;
+
       .shoplink__head & {
         @include screen(desktop) {
           @include heading-6;
-          line-height: (22/16); 
+          line-height: (22/16);
+        }
+      }
+
+      @include screen(desktop) {
+        .shoplink__item:hover .shoplink__head &,
+        .shoplink__item.is-active .shoplink__head & {
+          color: $darkblue-color;
         }
       }
 
@@ -121,14 +135,28 @@
     transition: background-color $ease-main;
     cursor: pointer;
 
+    @include screen(desktop) {
+      padding: 0 20px;
+      line-height: 40px;
+    }
+
     .shoplink__item:hover & {
       background-color: $greyblue2-color;
+
+      @include screen(desktop) {
+        background-color: transparent;
+      }
     }
   }
 
   &__body {
     display: none;
     padding: 10px 15px;
+
+    @include screen(desktop) {
+      padding: 0px 20px 27px;
+      margin-bottom: 6px;
+    }
 
     .shoplink__item:not(:last-child) & {
       border-bottom: 1px solid $color-border;
@@ -144,6 +172,30 @@
     height: 11px;
     fill: red;
     margin-right: 2px;
+
+    @include screen(desktop) {
+      margin-right: 4px;
+    }
+  }
+
+  &__linkcaret {
+    display: none;
+    position: static;
+    width: 11px;
+    height: 6px;
+    margin-bottom: 1px;
+    transition: fill $ease-main,
+                transform $ease-main;
+
+    .shoplink__item:hover .shoplink__head &,
+    .shoplink__item.is-active .shoplink__head & {
+      fill: $darkblue-color;
+      transform: rotate(180deg);
+    }
+
+    @include screen(desktop) {
+      display: inline-block;
+    }
   }
 
   &__description {
