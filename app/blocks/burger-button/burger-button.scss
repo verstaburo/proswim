@@ -1,7 +1,13 @@
 .burger-button {
   display: inline-block;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px 10px;
+  font-size: 0;
+
+  @include screen(tablet) {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
 
   &__icon {
     width: 24px;
