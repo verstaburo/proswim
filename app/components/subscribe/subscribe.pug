@@ -1,7 +1,5 @@
 mixin subscribe()
   +b.subscribe&attributes(attributes)
-    .subscribe__container.container
+    .container.subscribe__container
       +e.H4.heading Подпишитесь! Новинки, скидки, предложения!
-      +e.FORM.form(method="POST" action="/")
-        +input.subscribe__input
-        +button(type="submit").__button
+      +subscribe-form.__form
