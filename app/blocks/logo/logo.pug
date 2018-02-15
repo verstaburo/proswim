@@ -1,3 +1,4 @@
-mixin logo()
+mixin logo(isWhite)
   +b.A.logo(href='index.html')&attributes(attributes)
-    img(src="assets/images/logo.png" alt="proswim")
+    - var src = isWhite ? 'logo_white.png' : 'logo.png'
+    img(src=`assets/images/${src}.png` alt="proswim")
