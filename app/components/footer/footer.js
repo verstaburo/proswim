@@ -10,9 +10,8 @@ function handleAccordionClick(e) {
     return;
   }
 
-  self.next()[isActive ? 'slideUp' : 'slideDown'](animationDuration, () => {
-    self.toggleClass('is-active');
-  });
+  self.next()[isActive ? 'slideUp' : 'slideDown'](animationDuration);
+  self.toggleClass('is-active');
 }
 
 $(document).on('click', '.js-footer-accordion', handleAccordionClick);
