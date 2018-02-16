@@ -1,0 +1,8 @@
+mixin circle-button(icon)
+  +b.circle-button&attributes(attributes)
+    +e.button
+      if icon
+        +icon(icon).icon
+    if block
+      +e.SPAN.text
+        block

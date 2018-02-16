@@ -434,6 +434,69 @@ block content
           +button.js-dropdown-toggle bottom
           +dropdown content
 
+    //- Searchbar
+    +ui-section
+      +ui-section-head
+        h2 Searchbar
+        p Блок: blocks/searchbar/searchbar
+      +ui-section-content
+        +searchbar
+
+    //- Usermenu
+    +ui-section
+      +ui-section-head
+        h2 Usermenu
+        p Блок: blocks/usermenu/usermenu
+      +ui-section-content
+        +usermenu
+          +userlink('Login Register button')._user Войти
+          +userlink('Cart button', 3)._cart Корзина
+
+    //- Subscribe form
+    +ui-section
+      +ui-section-head
+        h2 Subscribe form
+        p Блок: blocks/subscribe-form/subscribe-form
+      +ui-section-content
+        +subscribe-form
+
+    //- Social buttons
+    +ui-section
+      +ui-section-head
+        h2 Social buttons
+        p Блок: blocks/social-button/social-button
+      +ui-section-content
+        +social-buttons
+          +social-button('fb')
+          +social-button('vk')
+          +social-button('instagram')
+
+    //- Shop menu
+    +ui-section
+      +ui-section-head
+        h2 Shop menu
+        p Блок: blocks/social-button/social-button
+      +ui-section-content
+        +shopmenu('Наши магазины:').__shopmenu
+          +shoplink('Москва', 5)
+            +shopmenu-msk-dropdown
+          +shoplink('Санкт-Петербург', 1)
+            +shopmenu-spb-dropdown
+
+    //- Category cards
+    +ui-section
+      +ui-section-head
+        h2 Category cards
+        p Блок: blocks/social-button/social-button
+      +ui-section-content
+        +grid
+          +col(4)
+            +category-card('content-img/category-cards/Category-tyr-training-gear.jpg', 'Для тренировок')
+          +col(4)
+            +category-card('content-img/category-cards/1462581269320282.jpg', 'Для соревнований')
+          +col(4)
+            +category-card('content-img/category-cards/img1232.jpg', 'Для открытой воды')
+
   script
     |
     | $('.ui-kit__section').each(function (i) {

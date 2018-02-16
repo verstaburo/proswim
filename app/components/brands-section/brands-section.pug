@@ -1,0 +1,8 @@
+mixin brands-section(data)
+  +b.brands-section&attributes(attributes)
+    +e.items
+      each item in data
+        +e.item
+          +e.A(href=item.href || 'javascript:void(0)').image
+            img(src=item.image alt=item.title)
+    +circle-button(null)._plus.__button.js-brands-section-toggle Все бренды
