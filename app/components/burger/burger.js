@@ -1,3 +1,4 @@
+import { freeze, unfreeze } from '../../blocks/js-functions/freeze';
 const $ = window.$;
 
 export default class Burger {
@@ -21,6 +22,8 @@ export default class Burger {
 
     this.isActive = !this.isActive;
     this.element.toggleClass('is-active');
+
+    [unfreeze, freeze][Number(this.isActive)]();
   }
 
   selectItem(link) {
