@@ -11,17 +11,15 @@ function handleCityItemClick(e) {
   const isActive = item.hasClass('is-active');
   const body = item.find('.shoplink__body');
 
-  body[isActive ? 'slideUp' : 'slideDown'](animationDuration, () => {
-    item
-      .toggleClass('is-active')
-      .siblings('.shoplink__item')
-      .find('.shoplink__body')
-      .slideUp(animationDuration, function () { // eslint-disable-line func-names
-        $(this)
-          .parent()
-          .removeClass('is-active');
-      });
-  });
+  body[isActive ? 'slideUp' : 'slideDown'](animationDuration);
+
+  item
+    .toggleClass('is-active')
+    .siblings('.shoplink__item')
+    .find('.shoplink__body')
+    .slideUp(animationDuration)
+    .parent()
+    .removeClass('is-active');
 }
 
 $(document)
