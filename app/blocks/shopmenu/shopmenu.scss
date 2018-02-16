@@ -232,6 +232,7 @@
 
   &__links {
     display: flex;
+    flex-wrap: wrap;
     margin: 8px -9px 0;
 
     @include screen(desktop) {

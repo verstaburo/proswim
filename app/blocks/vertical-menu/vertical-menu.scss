@@ -20,16 +20,16 @@
     color: $darkengrey-color;
     transition: color $ease-main;
 
+    &:hover {
+      color: $darkblue-color;
+    }
+
     &_blue {
       color: $darkblue-color;
 
       &:hover {
         color: $color-basic;
       }
-    }
-
-    &:hover {
-      color: $darkblue-color;
     }
   }
 }
