@@ -58,12 +58,17 @@
       fill: $indark-lightgrey-color;
     }
 
+    .footer__section_high & {
+      padding-top: 4px;
+      padding-bottom: 5px;
+    }
+
     &icon {
       position: relative;
       display: inline-block;
       width: 17px;
       height: 17px;
-      margin-right: 11px;
+      margin-right: 10px;
       flex-shrink: 0;
 
       svg {
@@ -85,7 +90,7 @@
   &__grid {
     display: flex;
     justify-content: space-between;
-    margin: -40px 0 0 -40px;
+    margin: -36px 0 0 -33px;
 
     @include screen(desktop) {
       flex-wrap: wrap;
@@ -97,7 +102,7 @@
   }
 
   &__col {
-    padding: 40px 0 0 40px;
+    padding: 36px 0 0 33px;
     box-sizing: border-box;
 
     @include screen(desktop) {
@@ -105,8 +110,42 @@
     }
 
     &_info {
+      padding-right: 4px;
+
       @include screen(desktop) {
         order: 6;
+        padding-right: 0;
+        padding-left: 25px;
+      }
+    }
+
+    &_contacts {
+      padding-right: 5px;
+
+      @include screen(desktop) {
+        padding-right: 0;
+      }
+    }
+
+    &_service {
+      @include screen(desktop) {
+        padding-left: 28px;
+      }
+    }
+
+    &_company {
+      @include screen(desktop) {
+        padding-left: 25px;
+      }
+    }
+
+    &_payment {
+
+    }
+
+    &_delivery {
+      @include screen(desktop) {
+        padding-left: 28px;
       }
     }
 
@@ -137,6 +176,24 @@
       padding: 6px 25px 6px 0;
     }
 
+    .footer__col_contacts & {
+      @include screen(desktop) {
+        margin-bottom: 9px;
+      }
+
+      @include screen(tablet) {
+        margin-bottom: 0;
+      }
+    }
+
+    .footer__section_high & {
+      margin-bottom: 12px;
+
+      @include screen(tablet) {
+        margin-bottom: 0;
+      }
+    }
+
     &_accordion {
       @include screen(tablet) {
         cursor: pointer;
@@ -148,7 +205,7 @@
           top: 50%;
           right: 0;
           transform: translateY(-50%);
-          width: 12px;
+          width: 13px;
           height: 2px;
           background-color: white;
           transition: transform $ease-main;
@@ -170,10 +227,12 @@
 
     @include screen(tablet) {
       padding-top: 2px;
-      padding-bottom: 18px;
+      padding-bottom: 19px;
 
       .footer__heading_accordion + & {
         display: none;
+        padding-top: 6px;
+        padding-bottom: 26px;
       }
 
       .footer__heading_accordion.is-active + & {
@@ -182,12 +241,18 @@
     }
 
     &_wrap {
-      margin: -20px 0 0 -20px;
-      max-width: 165px;
+      margin: -20px 0 0 -18px;
+      max-width: 158px;
       padding-top: 13px;
 
       @include screen(tablet) {
         padding-top: 15px;
+        padding-bottom: 35px;
+
+        .footer__heading_accordion + & {
+          padding-top: 15px;
+          padding-bottom: 35px;
+        }
       }
     }
   }
@@ -195,7 +260,7 @@
   &__item {
     .footer__body_wrap & {
       display: inline-block;
-      padding: 20px 0 0 20px;
+      padding: 20px 0 0 18px;
     }
   }
 }

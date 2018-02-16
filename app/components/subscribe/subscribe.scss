@@ -24,8 +24,15 @@
     margin-right: 20px;
     margin-left: -3px;
 
+    .footer__col_contacts & {
+      @include screen(desktop) {
+        margin-bottom: 9px;
+      }
+    }
+
     @include screen(desktop) {
       margin-left: 0;
+      margin-right: 18px;
     }
 
     @include screen(tablet) {
@@ -50,7 +57,7 @@
       width: 342px;
 
       @include screen(desktop) {
-        width: 243px;
+        width: 247px;
       }
 
       @include screen(tablet) {

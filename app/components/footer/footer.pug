@@ -10,7 +10,7 @@ mixin footer()
             +social-button('instagram')
           +e.copyright
             +e.A(href='index.html').link © Proswim.ru 2009-2017
-        +e.col
+        +e.col._contacts
           +e.section
             +e.H6.heading Контакты
             +e.UL.body
@@ -18,12 +18,12 @@ mixin footer()
                 +e.A.link(href='tel:84955808295')
                   +e.linkicon
                     +icon('Phone icon')
-                  span Мск:  8 (495) 580-82-95
+                  span Мск:&nbsp;&nbsp;8 (495) 580-82-95
               +e.LI.item
                 +e.A.link(href='tel:88124492471')
                   +e.linkicon
                     +icon('Phone icon')
-                  span СПб:  8 (812) 449-24-71
+                  span СПб:&nbsp;&nbsp;8 (812) 449-24-71
               +e.LI.item
                 +e.A.link(href='tel:88001002459')
                   +e.linkicon
@@ -34,8 +34,8 @@ mixin footer()
                   +e.linkicon._email
                     +icon('Email icon')
                   span info@proswim.ru
-        +e.col
-          +e.section
+        +e.col._service
+          +e.section._high
             +e.H6.heading._accordion.js-footer-accordion Сервис
             +e.UL.body
               +e.LI.item
@@ -51,8 +51,8 @@ mixin footer()
               +e.LI.item
                 +e.A.link(href='javascript:void(0);') Юридическая информация
 
-        +e.col
-          +e.section
+        +e.col._company
+          +e.section._high
             +e.H6.heading._accordion.js-footer-accordion Компания
             +e.UL.body
               +e.LI.item
@@ -68,7 +68,7 @@ mixin footer()
               +e.LI.item
                 +e.A.link(href='javascript:void(0);') Оптовым покупателям
 
-        +e.col
+        +e.col._payment
           +e.section
             +e.H6.heading._accordion.js-footer-accordion Способы оплаты
             +e.UL.body._wrap
@@ -83,7 +83,7 @@ mixin footer()
               +e.LI.item
                 img(src="assets/images/footer/webmoney.png" alt="Webmoney")
 
-        +e.col
+        +e.col._delivery
           +e.section
             +e.H6.heading._accordion.js-footer-accordion Способы доставки
             +e.UL.body._wrap
