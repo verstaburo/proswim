@@ -7,6 +7,7 @@
   z-index: 100;
   box-sizing: border-box;
   pointer-events: none;
+  transition: opacity $ease-main;
   opacity: 0;
 
   &.is-active {
@@ -179,9 +180,23 @@
   &__list {
     padding-top: 0;
     padding-bottom: 15px;
+    background-color: white;
 
-    .burger__item & {
-      display: none;
+    &_child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $ease-main;
+      z-index: 1;
+
+      &.is-active {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
 
@@ -208,8 +223,11 @@
   }
 
   &__footer {
+    display: block;
     border-top: 1px solid $color-border;
     transition: opacity $ease-main;
+    margin: 0 -20px;
+    width: auto;
 
     .burger.is-selected & {
       opacity: 0;

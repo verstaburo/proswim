@@ -16,12 +16,12 @@ import slider from '../blocks/slider/slider';
 import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
 import maps from '../blocks/map/map';
-import burger from '../components/burger/burger';
 import './globalOptions';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/shopmenu/shopmenu';
+import '../components/header/header';
 import '../components/footer/footer';
 
 const $ = window.$;
@@ -43,5 +43,4 @@ $(() => {
   numberinput();
   maps();
   scrollanimation();
-  burger();
 });
