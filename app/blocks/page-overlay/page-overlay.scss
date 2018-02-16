@@ -9,9 +9,18 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity $ease-main;
+  z-index: 110;
 
   &.is-active {
     opacity: 1;
     pointer-events: all;
+  }
+
+  &[data-for="shopmenu"] {
+    z-index: 90;
+
+    @include screen(desktop, min) {
+      display: none !important;
+    }
   }
 }

@@ -140,7 +140,8 @@
       line-height: 40px;
     }
 
-    .shoplink__item:hover & {
+    .shoplink__item:hover &,
+    .shoplink__item.is-active & {
       background-color: $greyblue2-color;
 
       @include screen(desktop) {
@@ -162,7 +163,7 @@
       border-bottom: 1px solid $color-border;
     }
 
-    .shoplink__item:hover & {
+    .shoplink__item.is-active & {
       display: block;
     }
   }
@@ -187,7 +188,10 @@
     transition: fill $ease-main,
                 transform $ease-main;
 
-    .shoplink__item:hover .shoplink__head &,
+    .shoplink__item:hover .shoplink__head & {
+      fill: $darkblue-color;
+    }
+
     .shoplink__item.is-active .shoplink__head & {
       fill: $darkblue-color;
       transform: rotate(180deg);
