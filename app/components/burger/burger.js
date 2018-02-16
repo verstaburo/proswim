@@ -1,4 +1,5 @@
 import { freeze, unfreeze } from '../../blocks/js-functions/freeze';
+
 const $ = window.$;
 
 export default class Burger {
