@@ -39,10 +39,10 @@
                                     <span>Москва (5)</span>
                                     <svg class="shoplink__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                 </div>
-                                <div class="dropdown js-dropdown shoplink__dropdown">
+                                <div class="dropdown js-dropdown shoplink__dropdown js-shopmenu-dropdown">
                                     <ul class="shoplink__list">
                                         <li class="shoplink__item">
-                                            <div class="shoplink__head">
+                                            <div class="shoplink__head js-shopmenu-accordion">
                                                 <svg class="shoplink__linkicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
                                                 <span class="shoplink__itemheading">Пр-т Мира</span>
                                                 <svg class="shoplink__linkcaret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
@@ -55,7 +55,7 @@
                                             </div>
                                         </li>
                                         <li class="shoplink__item">
-                                            <div class="shoplink__head">
+                                            <div class="shoplink__head js-shopmenu-accordion">
                                                 <svg class="shoplink__linkicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
                                                 <span class="shoplink__itemheading">Каширская</span>
                                                 <svg class="shoplink__linkcaret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
@@ -68,7 +68,7 @@
                                             </div>
                                         </li>
                                         <li class="shoplink__item">
-                                            <div class="shoplink__head">
+                                            <div class="shoplink__head js-shopmenu-accordion">
                                                 <svg class="shoplink__linkicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
                                                 <span class="shoplink__itemheading">Ленинский пр-т</span>
                                                 <svg class="shoplink__linkcaret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
@@ -81,7 +81,7 @@
                                             </div>
                                         </li>
                                         <li class="shoplink__item">
-                                            <div class="shoplink__head">
+                                            <div class="shoplink__head js-shopmenu-accordion">
                                                 <svg class="shoplink__linkicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
                                                 <span class="shoplink__itemheading">Парк Культуры</span>
                                                 <svg class="shoplink__linkcaret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
@@ -101,10 +101,10 @@
                                     <span>Санкт-Петербург (1)</span>
                                     <svg class="shoplink__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                 </div>
-                                <div class="dropdown js-dropdown shoplink__dropdown">
+                                <div class="dropdown js-dropdown shoplink__dropdown js-shopmenu-dropdown">
                                     <ul class="shoplink__list">
                                         <li class="shoplink__item">
-                                            <div class="shoplink__head">
+                                            <div class="shoplink__head js-shopmenu-accordion">
                                                 <svg class="shoplink__linkicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
                                                 <span class="shoplink__itemheading">Сенная пл./Садовая</span>
                                                 <svg class="shoplink__linkcaret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="header__col header__col_getintouch">
                     <div class="getintouch">
-                        <a class="getintouch__phone" href="tel://88001002459">8 (800) 100-24-59</a>
+                        <a class="getintouch__phone" href="tel:88001002459">8 (800) 100-24-59</a>
                         <svg class="getintouch__icon"><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                         <p class="getintouch__time">С 9 до 21. Бесплатно по РФ</p>
                     </div>
@@ -2088,7 +2088,7 @@
                     <footer class="burger__section burger__footer js-burger-footer">
                         <div class="container">
                             <div class="getintouch">
-                                <a class="getintouch__phone" href="tel://88001002459">8 (800) 100-24-59</a>
+                                <a class="getintouch__phone" href="tel:88001002459">8 (800) 100-24-59</a>
                                 <svg class="getintouch__icon"><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                                 <p class="getintouch__time">С 9 до 21. Бесплатно по РФ</p>
                             </div>
@@ -2102,13 +2102,13 @@
         <div class="subscribe">
             <div class="container subscribe__container">
                 <h4 class="subscribe__heading">Подпишитесь! Новинки, скидки, предложения!</h4>
-                <div class="subscribe-form subscribe__form" method="POST" action="/">
+                <form class="subscribe-form subscribe__form" method="POST" action="/">
                     <input class="input subscribe-form__input" type="email" placeholder="Введите ваш  Email" />
                     <button class="button button_size_md subscribe-form__button" type="submit">
                         <span class="subscribe-form__text">Подписаться</span>
                         <svg><use xlink:href="assets/images/icon.svg#icon_arrow-subscribe-button"></use></svg>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
         <footer class="footer">
@@ -2133,28 +2133,28 @@
                             <a class="footer__link" href="index.html">© Proswim.ru 2009-2017</a>
                         </div>
                     </div>
-                    <div class="footer__col">
+                    <div class="footer__col footer__col_contacts">
                         <div class="footer__section">
                             <h6 class="footer__heading">Контакты</h6>
                             <ul class="footer__body">
                                 <li class="footer__item">
-                                    <a class="footer__link" href="tel://84955808295">
+                                    <a class="footer__link" href="tel:84955808295">
                                         <span class="footer__linkicon">
                                             <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                                         </span>
-                                        <span>Мск: 8 (495) 580-82-95</span>
+                                        <span>Мск:&nbsp;&nbsp;8 (495) 580-82-95</span>
                                     </a>
                                 </li>
                                 <li class="footer__item">
-                                    <a class="footer__link" href="tel://88124492471">
+                                    <a class="footer__link" href="tel:88124492471">
                                         <span class="footer__linkicon">
                                             <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                                         </span>
-                                        <span>СПб: 8 (812) 449-24-71</span>
+                                        <span>СПб:&nbsp;&nbsp;8 (812) 449-24-71</span>
                                     </a>
                                 </li>
                                 <li class="footer__item">
-                                    <a class="footer__link" href="tel://88001002459">
+                                    <a class="footer__link" href="tel:88001002459">
                                         <span class="footer__linkicon">
                                             <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon"></use></svg>
                                         </span>
@@ -2162,7 +2162,7 @@
                                     </a>
                                 </li>
                                 <li class="footer__item">
-                                    <a class="footer__link" href="mailto://info@proswim.ru">
+                                    <a class="footer__link" href="mailto:info@proswim.ru">
                                         <span class="footer__linkicon footer__linkicon_email">
                                             <svg><use xlink:href="assets/images/icon.svg#icon_email-icon"></use></svg>
                                         </span>
@@ -2172,8 +2172,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer__col">
-                        <div class="footer__section">
+                    <div class="footer__col footer__col_service">
+                        <div class="footer__section footer__section_high">
                             <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Сервис</h6>
                             <ul class="footer__body">
                                 <li class="footer__item">
@@ -2197,8 +2197,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer__col">
-                        <div class="footer__section">
+                    <div class="footer__col footer__col_company">
+                        <div class="footer__section footer__section_high">
                             <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Компания</h6>
                             <ul class="footer__body">
                                 <li class="footer__item">
@@ -2222,7 +2222,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer__col">
+                    <div class="footer__col footer__col_payment">
                         <div class="footer__section">
                             <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Способы оплаты</h6>
                             <ul class="footer__body footer__body_wrap">
@@ -2244,7 +2244,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer__col">
+                    <div class="footer__col footer__col_delivery">
                         <div class="footer__section">
                             <h6 class="footer__heading footer__heading_accordion js-footer-accordion">Способы доставки</h6>
                             <ul class="footer__body footer__body_wrap">
