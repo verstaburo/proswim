@@ -24,12 +24,6 @@
     margin-right: 20px;
     margin-left: -3px;
 
-    .footer__col_contacts & {
-      @include screen(desktop) {
-        margin-bottom: 9px;
-      }
-    }
-
     @include screen(desktop) {
       margin-left: 0;
       margin-right: 18px;
