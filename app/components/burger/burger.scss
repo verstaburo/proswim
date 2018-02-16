@@ -38,6 +38,7 @@
     transform: translate3d(-100%, 0, 0);
     transition: transform $ease-main;
     background-color: white;
+    overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 

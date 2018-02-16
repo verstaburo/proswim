@@ -83,10 +83,28 @@ export default class Burger {
     this.selectItem(prev);
   }
 
+  handleResize() {
+    if (!this.isActive) {
+      return;
+    }
+
+    clearTimeout(this.resizeTimeout);
+
+    this.resizeTimeout = setTimeout(() => {
+      if ($(window).width() >= window.globalOptions.sizes.desktop) {
+        unfreeze();
+      } else {
+        freeze();
+      }
+    }, 100);
+  }
+
   listeners() {
     $(document)
       .on('click', '.js-burger-button, .js-burger-close, .js-burger-overlay', this.toggle.bind(this))
       .on('click', '.js-burger-link', this.handleLinkClick.bind(this))
       .on('click', '.js-burger-back', this.handleBackClick.bind(this));
+
+    $(window).on('resize', this.handleResize.bind(this));
   }
 }
