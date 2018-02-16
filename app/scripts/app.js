@@ -22,6 +22,7 @@ import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/shopmenu/shopmenu';
 import '../components/header/header';
+import '../components/hero-slider/hero-slider';
 import '../components/footer/footer';
 
 const $ = window.$;

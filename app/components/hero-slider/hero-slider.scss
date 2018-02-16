@@ -1,0 +1,249 @@
+.hero-slider {
+  display: block;
+  overflow: hidden;
+  color: white;
+
+  &__slide {
+    position: relative;
+  }
+
+  &__bg {
+    @include fill-img;
+    pointer-events: none;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 524px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__image {
+    position: relative;
+    width: 50%;
+    margin-left: 18px;
+
+    img {
+      @include center-image;
+      margin-bottom: 0;
+    }
+
+    &_center img {
+      margin-bottom: auto;
+    }
+  }
+
+  &__content {
+    align-self: center;
+    margin-left: 71px;
+    padding-right: 71px;
+    padding-bottom: 96px;
+    flex: 1 1 auto;
+    padding-top: 40px;
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    font-family: $font-second;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: (56/42);
+
+    letter-spacing: .01em;
+  }
+
+  &__price {
+    display: block;
+    margin-left: -2px;
+    margin-top: 18px;
+    font-size: 0;
+    line-height: 1;
+    letter-spacing: .01em;
+    
+    svg {
+      position: absolute;
+      top: 3px;
+      right: 0;
+      fill: #fff;
+      height: 22px;
+    }
+
+    &current {
+      position: relative;
+      display: inline-block;
+      font-size: 30px;
+      white-space: nowrap;
+      font-weight: 700;
+      padding-right: 30px;
+
+      span {
+        display: inline-block;
+      }
+
+      svg {
+        width: 20px;
+      }
+    }
+
+    &old {
+      position: relative;
+      display: inline-block;
+      font-size: 30px;
+      white-space: nowrap;
+      text-decoration: none;
+      margin-left: 38px;
+      padding-left: 5px;
+      padding-right: 28px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: .35em;
+        display: block;
+        height: 2px;
+        background-color: white;
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      svg {
+        width: 19px;
+        top: 4px;
+        right: 3px;
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-top: 19px;
+    font-size: 18px;
+    line-height: (26/18);
+    letter-spacing: .01em;
+  }
+
+  &__dots {
+    position: absolute;
+    width: auto;
+    text-align: center;
+    font-size: 0;
+    z-index: 3;
+
+    &.swiper-pagination-bullets {
+      left: 0;
+      bottom: 21px;
+    }
+  }
+
+  &__dot {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .22);
+    transition: background-color $ease-main;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 6px;
+
+    &.is-active {
+      background-color: $color-basic;
+
+      &::before {
+        display: none;
+      }
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: white;
+      opacity: 0;
+      transition: opacity $ease-main;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    &:hover::before {
+      opacity: .5;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 3;
+    pointer-events: none;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, .3);
+    cursor: pointer;
+    border-radius: 50%;
+    pointer-events: all;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, .22);
+      background-color: rgba(255, 255, 255, .5);
+      border-radius: 50%;
+      transition: background-color $ease-main;
+    }
+    
+    &:hover::before {
+      background-color: rgba(255, 255, 255, .9);
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-left: 2px;
+      width: 10px;
+      height: 19px;
+      fill: $anotherdarkgrey-color;
+    }
+
+    &_prev svg {
+      transform: translate(-50%, -50%) rotate(180deg);
+      margin-left: -2px;
+    }
+  }
+}

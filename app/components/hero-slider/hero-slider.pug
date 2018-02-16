@@ -1,0 +1,40 @@
+mixin hero-slider()
+  +b.hero-slider&attributes(attributes).swiper-container.js-hero-slider
+    .swiper-wrapper
+      +hero-slide
+      +hero-slide
+      +hero-slide
+      +hero-slide
+      +hero-slide
+      +hero-slide
+    +e.dots
+      +e.dot
+
+    .hero-slider__buttons
+      .container
+        +e.button._prev
+          +icon('Arrow 1')
+        +e.button._next
+          +icon('Arrow 1')
+
+mixin hero-slide
+  +e.slide.swiper-slide
+    +e.IMG(src="content-img/hero-slider/bg.jpg" alt="Hero slider").bg
+    .container.hero-slider__container
+      +e.image
+        img(src="content-img/hero-slider/slide1.png" alt="Arena Dynamo")
+      +e.content
+        +e.icon
+          img(src="content-img/hero-slider/arena-logo.png" alt="Arena logo")
+        +e.P.heading Arena Dynamo
+        +e.P.price
+          +e.SPAN.pricecurrent
+            span 1750
+            +icon('rouble-bold')
+          +e.SPAN.priceold
+            span 2330
+            +icon('rouble')
+
+        +e.P.text
+          | Акция проходит с&nbsp;23&nbsp;по&nbsp;28&nbsp;марта 2017 года<br />
+          | Количество товаров ограничено
