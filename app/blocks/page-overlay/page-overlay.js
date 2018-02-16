@@ -17,8 +17,8 @@ export const show = (forElement) => {
   freeze();
   block
     .trigger(BEFORE_SHOW)
-    .addClass('is-active')
-    .attr('data-for', forElement);
+    .attr('data-for', forElement)
+    .addClass('is-active');
 };
 
 export const hide = () => {
@@ -31,14 +31,17 @@ export const hide = () => {
   unfreeze();
   block
     .trigger(BEFORE_SHOW)
-    .removeClass('is-active')
-    .removeAttr('data-for', null);
+    .removeClass('is-active');
 };
 
 
 $(document).on('transitionend', '.js-page-overlay', function () { // eslint-disable-line func-names
   const self = $(this);
-  const event = [BEFORE_HIDE, BEFORE_SHOW][Number(self.hasClass('is-active'))];
+  const event = [HIDDEN, SHOWN][Number(self.hasClass('is-active'))];
 
   self.trigger(event);
+
+  if (event === HIDDEN) {
+    self.removeAttr('data-for');
+  }
 });

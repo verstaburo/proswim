@@ -9,7 +9,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity $ease-main;
-  z-index: 110;
+  z-index: 100;
 
   &.is-active {
     opacity: 1;
@@ -20,7 +20,7 @@
     z-index: 90;
 
     @include screen(desktop, min) {
-      display: none !important;
+      display: none;
     }
   }
 }
