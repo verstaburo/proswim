@@ -5,6 +5,7 @@
 
   &__slide {
     position: relative;
+    overflow: hidden;
   }
 
   &__bg {
@@ -19,6 +20,14 @@
     min-height: 524px;
     position: relative;
     z-index: 1;
+
+    @include screen(desktop) {
+      min-height: 452px;
+    }
+
+    @include screen(tablet) {
+      min-height: 212px;
+    }
   }
 
   &__image {
@@ -26,9 +35,24 @@
     width: 50%;
     margin-left: 18px;
 
+    @include screen(desktop) {
+      margin-left: -20px;
+      min-width: 375px;
+    }
+
+    @include screen(desktop) {
+      margin-left: -15px;
+      min-width: 161px;
+    }
+
     img {
       @include center-image;
       margin-bottom: 0;
+      max-height: 100%;
+
+      @include screen(desktop) {
+        left: auto;
+      }
     }
 
     &_center img {
@@ -37,16 +61,43 @@
   }
 
   &__content {
+    position: relative;
     align-self: center;
     margin-left: 71px;
     padding-right: 71px;
     padding-bottom: 96px;
     flex: 1 1 auto;
     padding-top: 40px;
+
+    @include screen(desktop) {
+      margin-left: 19px;
+      padding-right: 56px;
+      padding-bottom: 80px;
+    }
+
+    @include screen(tablet) {
+      padding-top: 19px;
+      margin-left: 4px;
+      padding-right: 0;
+      padding-bottom: 40px;
+    }
   }
 
   &__icon {
     margin-bottom: 20px;
+
+    @include screen(tablet) {
+      margin-bottom: 2px;
+    }
+
+    img, svg {
+      width: auto;
+      max-height: 49px;
+
+      @include screen(tablet) {
+        max-height: 24px;
+      }
+    }
   }
 
   &__heading {
@@ -54,8 +105,15 @@
     font-size: 42px;
     font-weight: 700;
     line-height: (56/42);
-
     letter-spacing: .01em;
+
+    @include screen(desktop) {
+      font-size: 40px;
+    }
+
+    @include screen(tablet) {
+      font-size: 18px;
+    }
   }
 
   &__price {
@@ -65,13 +123,22 @@
     font-size: 0;
     line-height: 1;
     letter-spacing: .01em;
-    
+
+    @include screen(tablet) {
+      margin-left: -1px;
+      margin-top: 6px;
+    }
+
     svg {
       position: absolute;
       top: 3px;
       right: 0;
       fill: #fff;
       height: 22px;
+
+      @include screen(tablet) {
+        height: 13px;
+      }
     }
 
     &current {
@@ -82,12 +149,22 @@
       font-weight: 700;
       padding-right: 30px;
 
+      @include screen(tablet) {
+        font-size: 18px;
+        padding-right: 18px;
+      }
+
       span {
         display: inline-block;
       }
 
       svg {
         width: 20px;
+
+        @include screen(tablet) {
+          width: 12px;
+          top: 2px;
+        }
       }
     }
 
@@ -101,6 +178,13 @@
       padding-left: 5px;
       padding-right: 28px;
 
+      @include screen(tablet) {
+        font-size: 18px;
+        padding-right: 18px;
+        margin-left: 11px;
+        padding-left: 2px;
+      }
+
       &::after {
         content: '';
         position: absolute;
@@ -110,6 +194,10 @@
         display: block;
         height: 2px;
         background-color: white;
+
+        @include screen(tablet) {
+          height: 1px;
+        }
       }
 
       span {
@@ -120,6 +208,12 @@
         width: 19px;
         top: 4px;
         right: 3px;
+
+        @include screen(tablet) {
+          width: 11px;
+          top: 2px;
+          right: 2px;
+        }
       }
     }
   }
@@ -130,6 +224,17 @@
     font-size: 18px;
     line-height: (26/18);
     letter-spacing: .01em;
+
+    @include screen(desktop) {
+      font-size: 16px;
+      line-height: (26/16);
+    }
+
+    @include screen(tablet) {
+      font-size: 12px;
+      line-height: (17/12);
+      margin-top: 7px;
+    }
   }
 
   &__dots {
@@ -142,6 +247,10 @@
     &.swiper-pagination-bullets {
       left: 0;
       bottom: 21px;
+
+      @include screen(tablet) {
+        bottom: 11px;
+      }
     }
   }
 
@@ -158,6 +267,12 @@
     border-radius: 50%;
     margin: 0 6px;
 
+    @include screen(tablet) {
+      width: 8px;
+      height: 8px;
+      margin: 0 5px;
+    }
+
     &.is-active {
       background-color: $color-basic;
 
@@ -165,7 +280,7 @@
         display: none;
       }
     }
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -179,6 +294,11 @@
       transition: opacity $ease-main;
       border-radius: 50%;
       z-index: -1;
+
+      @include screen(tablet) {
+        width: 14px;
+        height: 14px;
+      }
     }
 
     &:hover::before {
@@ -194,6 +314,10 @@
     transform: translateY(-50%);
     z-index: 3;
     pointer-events: none;
+
+    @include screen(tablet) {
+      display: none;
+    }
 
     .container {
       display: flex;
@@ -225,7 +349,7 @@
       border-radius: 50%;
       transition: background-color $ease-main;
     }
-    
+
     &:hover::before {
       background-color: rgba(255, 255, 255, .9);
     }
