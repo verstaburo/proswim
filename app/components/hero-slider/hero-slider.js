@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import * as Swiper from 'swiper/dist/js/swiper';
 
 // eslint-disable-next-line no-unused-vars
 const slider = new Swiper('.js-hero-slider', {
