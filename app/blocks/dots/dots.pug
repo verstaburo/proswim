@@ -1,0 +1,8 @@
+mixin dots()
+  +b.dots&attributes(attributes)
+    unless block
+      +e.dot
+    block
+
+mixin dot
+  +e.dot&attributes(attributes)

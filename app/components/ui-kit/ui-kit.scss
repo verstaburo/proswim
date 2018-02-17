@@ -119,6 +119,11 @@ $ui-kit-color-darkbg: #111;
       color: white;
     }
 
+    &_blue {
+      background-color: $darkblue-color;
+      color: white;
+    }
+
     &:not(:last-child) {
       border-bottom: 1px solid $ui-kit-color-gray;
     }

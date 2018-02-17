@@ -13,8 +13,8 @@ const slider = new Swiper('.js-hero-slider', {
   pagination: {
     el: '.hero-slider__dots',
     clickable: true,
-    paginationClickableClass: 'hero-slider__dots_clickable',
-    bulletClass: 'hero-slider__dot',
+    paginationClickableClass: 'dots_clickable',
+    bulletClass: 'dots__dot',
     bulletActiveClass: 'is-active',
   },
   roundLengths: true,
