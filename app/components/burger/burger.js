@@ -5,6 +5,7 @@ const $ = window.$;
 export default class Burger {
   constructor() {
     this.element = $('.js-burger');
+    this.contentElement = this.element.find('.burger__content');
 
     if (!this.element.length) {
       return;
@@ -25,6 +26,10 @@ export default class Burger {
     this.element.toggleClass('is-active');
 
     [unfreeze, freeze][Number(this.isActive)]();
+  }
+
+  scrollTop() {
+    this.contentElement.animate({ scrollTop: 0 }, window.globalOptions.animationDuration);
   }
 
   selectItem(link) {
@@ -61,6 +66,7 @@ export default class Burger {
 
     e.preventDefault();
     this.selectItem(link);
+    this.scrollTop();
   }
 
   handleBackClick(e) {
@@ -83,6 +89,14 @@ export default class Burger {
     this.selectItem(prev);
   }
 
+  setEqualHeights() {
+    const elements = this.element.find('.burger__list');
+    const heights = elements.map((index, el) => $(el).height());
+    const maxHeight = Math.max(...heights);
+
+    elements.each((index, el) => $(el).height(maxHeight));
+  }
+
   handleResize() {
     if (!this.isActive) {
       return;
@@ -96,6 +110,8 @@ export default class Burger {
       } else {
         freeze();
       }
+
+      this.setEqualHeights();
     }, 100);
   }
 
@@ -105,6 +121,8 @@ export default class Burger {
       .on('click', '.js-burger-link', this.handleLinkClick.bind(this))
       .on('click', '.js-burger-back', this.handleBackClick.bind(this));
 
-    $(window).on('resize', this.handleResize.bind(this));
+    $(window)
+      .on('resize', this.handleResize.bind(this))
+      .on('load', this.setEqualHeights.bind(this));
   }
 }

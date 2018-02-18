@@ -1,6 +1,7 @@
 .shoplink {
   display: block;
   cursor: pointer;
+  position: relative;
 
   .shopmenu & {
     padding: 0 9px;
@@ -33,8 +34,7 @@
     height: 6px;
     fill: $color-basic;
     margin-top: -1px;
-    transition: fill $ease-main,
-                transform $ease-main;
+    transition: fill $ease-main, transform $ease-main;
 
     .shoplink:hover & {
       fill: $darkblue-color;
@@ -48,7 +48,7 @@
 
   &__dropdown {
     min-width: 288px;
-    box-shadow: 0 16px 20px rgba(91, 95, 99, .46);
+    box-shadow: 0 16px 20px rgba(91, 95, 99, 0.46);
     border-radius: 0 0 2px 2px;
     border: 1px solid $color-border;
     padding: 0;
@@ -64,10 +64,11 @@
       right: 0;
       padding-top: 3px;
       width: 100%;
+      z-index: -1;
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 3px;
       left: 19px;
@@ -79,14 +80,7 @@
       z-index: 1;
 
       @include screen(desktop) {
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 14px;
-        width: 100%;
-        transform: none;
-        box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
-        z-index: 2;
+        display: none;
       }
     }
   }
@@ -98,7 +92,7 @@
     background-color: white;
 
     @include screen(desktop) {
-      padding: 27px 0;
+      padding: 15px 0;
     }
   }
 
@@ -155,7 +149,7 @@
     padding: 10px 15px;
 
     @include screen(desktop) {
-      padding: 0px 20px 27px;
+      padding: 0px 20px 6px;
       margin-bottom: 6px;
     }
 
@@ -185,8 +179,7 @@
     width: 11px;
     height: 6px;
     margin-bottom: 1px;
-    transition: fill $ease-main,
-                transform $ease-main;
+    transition: fill $ease-main, transform $ease-main;
 
     .shoplink__item:hover .shoplink__head & {
       fill: $darkblue-color;

@@ -23,6 +23,12 @@ function handleCityItemClick(e) {
 }
 
 $(document)
-  .on(BEFORE_SHOW, '.js-shopmenu-dropdown', () => pageOverlay.show('shopmenu'))
-  .on(BEFORE_HIDE, '.js-shopmenu-dropdown', () => pageOverlay.hide())
+  .on(BEFORE_SHOW, '.js-shopmenu-dropdown', function () { // eslint-disable-line func-names
+    pageOverlay.show('shopmenu');
+    $(this).parents('.header__col_shopmenu').addClass('has-shadow');
+  })
+  .on(BEFORE_HIDE, '.js-shopmenu-dropdown', function () { // eslint-disable-line func-names
+    pageOverlay.hide();
+    $(this).parents('.header__col_shopmenu').removeClass('has-shadow');
+  })
   .on('click', '.js-shopmenu-accordion', handleCityItemClick);
