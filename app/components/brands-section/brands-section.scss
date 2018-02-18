@@ -1,3 +1,41 @@
 .brands-section {
   display: block;
+  padding: 40px 0;
+
+  &__container {
+    display: flex;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 -22px -63px;
+    flex: 1 1 auto;
+    // max-height: 54px;
+    // overflow: hidden;
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+    padding:0 0 22px 63px;
+    width: (100%/6);
+    box-sizing: border-box;
+  }
+
+  &__image {
+    display: inline-block;
+    max-height: 54px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+    padding-right: 5px;
+    margin-top: -4px;
+  }
 }

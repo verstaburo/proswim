@@ -1,3 +1,52 @@
 .circle-button {
   display: block;
+  text-align: center;
+  cursor: pointer;
+
+  &__button {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $lightblue-color;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transition: border-color $ease-main;
+
+    .circle-button_plus & {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 2px;
+        background-color: $darkblue-color;
+        transition: background-color $ease-main;
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+
+  &__icon {
+    @include center-image;
+    max-width: 80%;
+    max-width: 80%;
+    fill: $darkblue-color;
+    transition: fill $ease-main;
+  }
+
+  &__text {
+    display: block;
+    margin-top: 5px;
+    @include heading-6;
+    line-height: (23/15);
+    color: $darkblue-color;
+    transition: color $ease-main;
+  }
 }
