@@ -38,11 +38,11 @@
     flex-shrink: 0;
 
     @include screen(desktop) {
-      margin-left: -20px;
+      margin-left: -23px;
       min-width: 375px;
     }
 
-    @include screen(desktop) {
+    @include screen(tablet) {
       margin-left: -15px;
       min-width: 161px;
     }
@@ -72,7 +72,7 @@
     padding-top: 40px;
 
     @include screen(desktop) {
-      margin-left: 19px;
+      margin-left: 22px;
       padding-right: 56px;
       padding-bottom: 80px;
     }
