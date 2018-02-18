@@ -1,0 +1,7 @@
+mixin categories-section(data, col)
+  +b.categories-section&attributes(attributes)
+    .container
+      +grid
+        each item in data
+          +col(col || 4)
+            +category-card(item.image, item.title, item.href)
