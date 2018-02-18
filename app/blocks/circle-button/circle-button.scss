@@ -44,8 +44,8 @@
 
   &__icon {
     @include center-image;
-    max-width: 80%;
-    max-width: 80%;
+    max-width: 60%;
+    max-height: 60%;
     fill: $darkblue-color;
     transition: fill $ease-main;
 

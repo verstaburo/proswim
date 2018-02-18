@@ -1,0 +1,21 @@
+.section {
+  display: block;
+  padding: 54px 0 60px;
+
+  &_grey { background-color: $lightgrey-color; }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  &__heading {
+    @include heading-2;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

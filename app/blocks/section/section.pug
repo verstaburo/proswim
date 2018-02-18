@@ -1,0 +1,14 @@
+mixin section
+  +b.SECTION.section&attributes(attributes)
+    block
+
+mixin section-head(heading)
+  +e.HEADER.head&attributes(attributes)
+    if heading
+      +e.H2.heading=heading
+    if block
+      block
+
+mixin section-content
+  +e.content&attributes(attributes)
+    block
