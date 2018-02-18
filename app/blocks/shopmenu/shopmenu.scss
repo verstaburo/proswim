@@ -3,6 +3,10 @@
   cursor: pointer;
   position: relative;
 
+  @include screen(desktop) {
+    position: static;
+  }
+
   .shopmenu & {
     padding: 0 9px;
 
