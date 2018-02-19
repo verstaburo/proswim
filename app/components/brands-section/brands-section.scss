@@ -1,9 +1,14 @@
 .brands-section {
+  position: relative;
   display: flex;
   margin-top: -14px;
 
   @include screen(desktop) {
     margin-top: -5px;
+  }
+
+  @include screen(tablet) {
+    margin-top: -12px;
   }
 
   &.is-active {
@@ -23,6 +28,10 @@
     .brands-section.is-active & {
       height: auto;
     }
+
+    @include screen(tablet) {
+      margin: 0 0 -16px -20px;
+    }
   }
 
   &__col {
@@ -35,6 +44,11 @@
     @include screen(desktop) {
       width: 25%;
     }
+
+    @include screen(tablet) {
+      width: auto;
+      padding: 0 0 16px 20px;
+    }
   }
 
   &__image {
@@ -44,6 +58,10 @@
       max-width: 100%;
       max-height: 54px;
       transition: filter $ease-main;
+
+      @include screen(tablet) {
+        max-height: 41px;
+      }
     }
 
     &:hover {
@@ -64,6 +82,11 @@
     @include screen(desktop) {
       padding-left: 39px;
       padding-right: 0;
+    }
+
+    @include screen(tablet) {
+      padding-left: 0;
+      margin-top: 6px;
     }
   }
 }

@@ -69,5 +69,9 @@
     .circle-button:hover & {
       color: $color-basic;
     }
+
+    @include screen(tablet) {
+      display: none;
+    }
   }
 }
