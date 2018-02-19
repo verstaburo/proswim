@@ -5,6 +5,10 @@
   padding-bottom: 20px;
   overflow: hidden;
 
+  @include screen(tablet) {
+    padding-bottom: 21px;
+  }
+
   &__image {
     position: relative;
     width: 100%;
@@ -17,6 +21,10 @@
 
     @include screen(desktop) {
       height: 157px;
+    }
+
+    @include screen(tablet) {
+      height: 198px;
     }
 
     &::after {
@@ -68,6 +76,12 @@
       margin-left: 20px;
       padding-left: 20px;
       padding-right: 30px;
+    }
+
+    @include screen(tablet) {
+      @include heading-4;
+      letter-spacing: .025em;
+      padding-right: 40px;
     }
   }
 }

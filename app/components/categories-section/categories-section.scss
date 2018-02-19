@@ -8,4 +8,10 @@
       margin-top: 28px;
     }
   }
+
+  @include screen(tablet) {
+    .grid__col {
+      width: 100%;
+    }
+  }
 }
