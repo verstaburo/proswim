@@ -11,9 +11,20 @@
     }
   }
 
+  &__grid {
+    @include screen(tablet) {
+      &:first-of-type { margin-top: -10px; }
+    }
+  }
+
   &__col {
     @include screen(desktop) {
       &:nth-child(2) ~ & { display: none; }
+    }
+
+    @include screen(tablet) {
+      width: 100%;
+      padding-top: 10px;
     }
   }
 }
