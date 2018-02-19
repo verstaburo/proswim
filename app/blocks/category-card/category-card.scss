@@ -32,25 +32,26 @@
     bottom: 0;
     right: 0;
     display: block;
-    padding: 8px 60px 8px 20px;
-    margin-left: 40px;
-    background-color: $color-main;
+    padding: 8px 50px 8px 20px;
+    margin-left: 30px;
     text-align: center;
     @include heading-4;
     color: white;
     letter-spacing: .025em;
+    z-index: 1;
 
     &::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      width: 0;
-      height: 0;
-      transform: translateX(-100%);
-      border-style: solid;
-      border-width: 0 0 41px 20px;
-      border-color: transparent transparent $color-main transparent;
+      bottom: 0;
+      right: 0;
+      background-color: $color-main;
+      z-index: -1;
+      transform: skew(-28deg);
+      transform-origin: center;
+      margin-right: -50%;
     }
   }
 }
