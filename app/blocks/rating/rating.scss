@@ -39,6 +39,11 @@
     margin-left: 10px;
     color: $color-basic;
 
+    &wrap {
+      flex-wrap: wrap;
+      display: flex;
+    }
+
     &_grey { color: $semigrey-color; }
   }
 }

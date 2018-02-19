@@ -6,7 +6,9 @@ mixin rating(active, count)
       - for (var i = 0; i < initialCount; i++)
         +e.box(class=i+1 === active ? 'is-active' : '')
           +icon('star').__icon
-    block
+    if block
+      +e.textwrap
+        block
 
 mixin rating-interactive(count, name)
   - var initialCount = Number(count) || 5
@@ -18,8 +20,9 @@ mixin rating-interactive(count, name)
         +e.LABEL.box
           +e.INPUT(type='radio' name='name' value=i-1).control.js-rating-control
           +icon('star').__icon
-    block
-
+    if block
+      +e.textwrap
+        block
 
 mixin rating-text
   +e.SPAN.text&attributes(attributes)

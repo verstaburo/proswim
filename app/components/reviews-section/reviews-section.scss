@@ -4,4 +4,16 @@
   @include screen(desktop) {
     padding-top: 33px;
   }
+
+  &__head {
+    @include screen(desktop) {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__col {
+    @include screen(desktop) {
+      &:nth-child(2) ~ & { display: none; }
+    }
+  }
 }

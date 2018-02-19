@@ -11,6 +11,11 @@
   @include text;
   box-sizing: border-box;
 
+  @include screen(desktop) {
+    height: 255px;
+    padding: 13px;
+  }
+
   &:hover {
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
   }
@@ -21,17 +26,35 @@
     height: 100%;
     flex-shrink: 0;
 
-    img { @include center-image; }
+    img {
+      @include center-image;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    @include screen(desktop) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &__body {
     flex: 1 1 auto;
     margin-left: 20px;
+
+    @include screen(desktop) {
+      margin-left: 10px;
+    }
   }
 
   &__heading {
     @include heading-5;
     transition: color $ease-main;
+
+    @include screen(desktop) {
+      @include text-medium;
+      line-height: (19/14);
+    }
 
     .review-card:hover & {
       color: $darkblue-color;
@@ -41,11 +64,34 @@
   &__rating {
     margin-top: 8px;
 
-    .rating__text { margin-left: 14px; }
+    @include screen(desktop) {
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .rating {
+      &__text {
+        margin-left: 14px;
+
+        &wrap {
+          @include screen(desktop) {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: -14px;
+          }
+        }
+      }
+    }
   }
 
   &__text {
     margin-top: 5px;
+    max-height: 58px;
+    overflow: hidden;
+
+    @include screen(desktop) {
+      max-height: 100px;
+    }
   }
 
   &__link {

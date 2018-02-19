@@ -27,5 +27,11 @@
     display: block;
     text-align: center;
     margin-top: 41px;
+
+    @include screen(desktop) {
+      margin-top: 30px;
+
+      .button { min-width: 290px; }
+    }
   }
 }
