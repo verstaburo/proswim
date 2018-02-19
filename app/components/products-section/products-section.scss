@@ -3,6 +3,7 @@
 
   &__head {
     margin-bottom: 20px;
+    pointer-events: all;
   }
 
   &__slider {
@@ -10,7 +11,10 @@
     padding: 0 12px;
     padding-bottom: 200px;
     margin-bottom: -200px;
+    pointer-events: none;
   }
+
+  &__content { pointer-events: all; }
 
   &__buttons {
     display: flex;

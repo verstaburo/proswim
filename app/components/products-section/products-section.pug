@@ -6,7 +6,7 @@ mixin products-section(items)
             +section-head-col.products-section__buttons
               +circle-button('Arrow').products-section__button.products-section__button_prev
               +circle-button('Arrow').products-section__button.products-section__button_next
-          +section-content.swiper-wrapper
+          +section-content.products-section__content.swiper-wrapper
             each item in items
               .products-section__slide.swiper-slide
                 +product-card(item)
