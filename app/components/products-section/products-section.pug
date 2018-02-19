@@ -2,7 +2,7 @@ mixin products-section(items)
   +section._grey.products-section
     .container
         .products-section__slider.swiper-container.js-products-section-slider
-          +section-head('Новинки')
+          +section-head('Новинки').products-section__head
             +section-head-col.products-section__buttons
               +circle-button('Arrow').products-section__button.products-section__button_prev
               +circle-button('Arrow').products-section__button.products-section__button_next

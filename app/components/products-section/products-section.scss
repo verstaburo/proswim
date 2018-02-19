@@ -1,6 +1,10 @@
 .products-section {
   display: block;
 
+  &__head {
+    margin-bottom: 20px;
+  }
+
   &__slider {
     margin: 0 -12px;
     padding: 0 12px;
@@ -21,9 +25,16 @@
       height: 31px;
     }
 
+    .circle-button__icon {
+      width: 7px;
+      height: 13px;
+      margin-left: 1px;
+    }
+
     &_prev {
       .circle-button__icon {
-        transform: rotate(180deg);
+        transform: translate(-50%, -50%) rotate(180deg);
+        margin-left: -1px;
       }
     }
   }
