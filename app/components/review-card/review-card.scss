@@ -44,6 +44,8 @@
 
     @include screen(desktop) {
       margin-left: 10px;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -91,6 +93,7 @@
 
     @include screen(desktop) {
       max-height: 100px;
+      flex: 1 1 auto;
     }
   }
 
