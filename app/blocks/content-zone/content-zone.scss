@@ -55,12 +55,9 @@
   }
 
   p {
-
     &:not(:last-child) {
       margin-bottom: 22px;
     }
-
-    + ul, ol { margin-top: -14px; }
 
     small {
       display: block;
@@ -69,6 +66,12 @@
     }
 
     @include text;
+  }
+
+  &_small {
+    p:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 
   blockquote {
@@ -102,6 +105,12 @@
 
     &:not(:last-child) {
       margin-bottom: 10px;
+    }
+  }
+
+  &_small {
+    > ul, > ol {
+      margin: 8px 0;
     }
   }
 
