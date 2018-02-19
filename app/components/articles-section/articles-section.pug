@@ -1,3 +1,10 @@
-mixin articles-section()
-  +b.articles-section&attributes(attributes)
-    block
+mixin articles-section(items)
+  +section._green.articles-section
+    .container
+      +section-head('Статьи')
+      +section-content
+        .grid
+          each item in items
+            +col(3)
+              +article-card(item)
+      +section-button

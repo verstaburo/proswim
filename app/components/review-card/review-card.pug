@@ -1,5 +1,5 @@
 mixin review-card(data)
-  +b.ARTICLE.review-card&attributes(attributes)
+  +b.A.review-card(href='javascript:void(0)')&attributes(attributes)
     +e.image
       img(src=`content-img/review-cards/${data.image}.jpg` alt=data.heading)
     +e.body

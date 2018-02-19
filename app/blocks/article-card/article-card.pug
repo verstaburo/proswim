@@ -1,3 +1,8 @@
-mixin article-card()
-  +b.article-card&attributes(attributes)
-    block
+mixin article-card(data)
+  +b.A.article-card(href='javascript:void(0)')&attributes(attributes)
+    +e.image
+      img(src=`content-img/article-cards/${data.image}.jpg` alt=data.heading)
+    +e.body
+      +e.H6.heading=data.heading
+      +e.P.date=data.date
+      +e.P.text!=data.text
