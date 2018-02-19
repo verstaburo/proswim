@@ -56,13 +56,10 @@
     @include screen(tablet) {
       width: 188px;
       transition: opacity $ease-main;
-      opacity: 0;
-      pointer-events: none;
 
-      &.swiper-slide-active,
-      &.swiper-slide-next {
-        opacity: 1;
-        pointer-events: all;
+      &.swiper-slide-prev {
+        opacity: 0;
+        pointer-events: none;
       }
     }
   }
