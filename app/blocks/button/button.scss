@@ -1,8 +1,7 @@
 .button {
   display: inline-block;
-  line-height: 40px;
   height: 42px;
-  padding: 5px 30px;
+  padding: 0 30px;
   border: 1px solid transparent;
   vertical-align: middle;
   box-sizing: border-box;
@@ -13,6 +12,7 @@
   background-color: $color-main;
   @include heading-6;
   color: white;
+  line-height: 40px;
 
   &:disabled,
   &.is-disabled {
@@ -28,9 +28,8 @@
   &_size_md {
     line-height: 36px;
     height: 38px;
-    padding: 5px 19px;
+    padding: 0 19px;
     font-size: 13px;
-    line-height: (23/13);
     font-weight: 500;
   }
 }

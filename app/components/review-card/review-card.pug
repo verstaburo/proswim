@@ -1,0 +1,11 @@
+mixin review-card(data)
+  +b.ARTICLE.review-card&attributes(attributes)
+    +e.image
+      img(src=`content-img/review-cards/${data.image}.jpg` alt=data.heading)
+    +e.body
+      +e.H6.heading=data.heading
+      +rating(data.rating.activeStar)
+        +rating-text=data.rating.name
+        +rating-text._grey=data.rating.date
+      +e.P.text!=data.text
+      +e.P.link Читать далее

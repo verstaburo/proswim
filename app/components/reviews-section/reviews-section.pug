@@ -1,0 +1,10 @@
+mixin reviews-section(items)
+  +section.reviews-section
+    .container
+      +section-head('Отзывы о товарах')
+      +section-content
+        .grid
+          each item in items
+            +col(6)
+              +review-card(item)
+      +section-button

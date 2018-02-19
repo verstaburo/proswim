@@ -12,3 +12,7 @@ mixin section-head(heading)
 mixin section-content
   +e.content&attributes(attributes)
     block
+
+mixin section-button(text)
+  +e.button&attributes(attributes)
+    +button=`${text || 'Смотреть все'}`
