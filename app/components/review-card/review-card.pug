@@ -4,8 +4,8 @@ mixin review-card(data)
       img(src=`content-img/review-cards/${data.image}.jpg` alt=data.heading)
     +e.body
       +e.H6.heading=data.heading
-      +rating(data.rating.activeStar)
+      +rating(data.rating.activeStar).__rating
         +rating-text=data.rating.name
         +rating-text._grey=data.rating.date
-      +e.P.text!=data.text
+      +e.DIV.text!=data.text
       +e.P.link Читать далее
