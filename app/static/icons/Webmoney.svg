@@ -1,0 +1,18 @@
+<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20.1 20" style="enable-background:new 0 0 20.1 20;" xml:space="preserve">
+<g>
+	<rect x="13" y="6.6" transform="matrix(0.7423 -0.67 0.67 0.7423 -1.5931 11.5194)" width="2.4" height="2.4"/>
+	<rect x="8.8" y="7.9" transform="matrix(0.7432 -0.669 0.669 0.7432 -3.6651 9.4192)" width="3.2" height="3.2"/>
+	<rect x="7.1" y="3.8" transform="matrix(0.7432 -0.669 0.669 0.7432 -1.3867 7.2373)" width="3.2" height="3.2"/>
+	<polygon points="17.4,8 18.6,7 17.5,5.8 16.3,6.9 	"/>
+	<rect x="11.3" y="3" transform="matrix(0.7432 -0.669 0.669 0.7432 0.3794 9.4773)" width="2.4" height="2.4"/>
+	<rect x="18.1" y="9.6" transform="matrix(0.7428 -0.6695 0.6695 0.7428 -2.1207 15.3734)" width="1.6" height="1.6"/>
+	<path d="M11.9,17.7L8,13.3l1.1-1L6.3,9.3l1.1-1L4.6,5.2L9,1.3l1.4,1.5l2.3-2.1l1.4,1.4L15,1.3
+		c-0.2-0.1-0.4-0.2-0.6-0.3c-1.3-0.6-2.8-1-4.4-1C4.5,0,0,4.5,0,10c0,5.5,4.5,10,10,10c1.8,0,3.5-0.5,4.9-1.3
+		c0.5-0.3,0.9-0.6,1.3-0.9l-2-2.3L11.9,17.7z"/>
+	<rect x="10.5" y="12" transform="matrix(0.7432 -0.669 0.669 0.7432 -5.9821 11.6075)" width="3.2" height="3.2"/>
+	<rect x="16.1" y="14" transform="matrix(0.7429 -0.6694 0.6694 0.7429 -5.7359 15.4706)" width="2.4" height="2.4"/>
+	<rect x="15.1" y="2.6" transform="matrix(0.7428 -0.6695 0.6695 0.7428 1.8274 11.5205)" width="1.6" height="1.6"/>
+	<polygon points="17.4,11.7 15.8,9.9 14,11.5 15.6,13.3 	"/>
+</g>
+</svg>

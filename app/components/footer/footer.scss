@@ -263,4 +263,58 @@
       padding: 20px 0 0 18px;
     }
   }
+
+  &__icon {
+    fill: $indark-grey-color;
+    transition: fill $ease-main;
+
+    &link { display: inline-block; }
+
+    &_sberbank {
+      width: 104px;
+      height: 20px;
+    }
+
+    &_yandex {
+      width: 15px;
+      height: 20px;
+    }
+
+    &_mastercard {
+      width: 34px;
+      height: 20px;
+    }
+
+    &_visa {
+      width: 48px;
+      height: 15px;
+    }
+
+    &_webmoney {
+      width: 20px;
+      height: 20px;
+    }
+
+    &_pochtarf {
+      width: 41px;
+      height: 20px;
+    }
+
+    &_grastin {
+      width: 58px;
+      height: 20px;
+    }
+
+    &_boxberry {
+      width: 70px;
+      height: 20px;
+    }
+
+    &_dpd {
+      width: 46px;
+      height: 20px;
+    }
+
+    .footer__iconlink:hover & { fill: $indark-lightgrey-color; }
+  }
 }
