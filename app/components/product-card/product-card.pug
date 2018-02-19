@@ -1,3 +1,18 @@
-mixin product-card()
-  +b.product-card&attributes(attributes)
-    block
+mixin product-card(data)
+  +b.A.product-card(href='javascript:void(0)')&attributes(attributes)
+    if data.badge
+      +badge(class=data.badge.mod).__badge=data.badge.title
+
+    if data.image
+      +e.image
+        img(src=`content-img/product-cards/${data.image}.jpg` alt=data.heading)
+
+    +e.DIV.body
+      +e.H6.heading=data.heading
+      +e.price
+        +e.SPAN.pricecurrent #{data.price} руб.
+        if data.oldPrice
+          +e.S.priceold #{data.oldPrice} руб.
+      +rating(data.rating.activeStar)
+        if data.rating.text
+          +rating-text._grey #{data.rating.text}

@@ -1,3 +1,27 @@
 .products-section {
   display: block;
+  padding-bottom: 0;
+
+  &__slider {
+    padding-bottom: 60px;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-left: -10px;
+  }
+
+  &__button {
+    margin-left: 10px;
+
+    &_prev {
+      .circle-button__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__slide {
+
+  }
 }

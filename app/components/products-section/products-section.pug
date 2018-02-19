@@ -1,23 +1,12 @@
-mixin products-section()
+mixin products-section(items)
   +section._grey.products-section
     .container
         .products-section__slider.swiper-container.js-products-section-slider
           +section-head('Новинки')
-            .product-section__buttons
+            .products-section__buttons
               +circle-button('Arrow').products-section__button.products-section__button_prev
               +circle-button('Arrow').products-section__button.products-section__button_next
           +section-content.swiper-wrapper
-            .products-section__slide.swiper-slide
-              +product-card
-            .products-section__slide.swiper-slide
-              +product-card
-            .products-section__slide.swiper-slide
-              +product-card
-            .products-section__slide.swiper-slide
-              +product-card
-            .products-section__slide.swiper-slide
-              +product-card
-            .products-section__slide.swiper-slide
-              +product-card
-            .products-section__slide.swiper-slide
-              +product-card
+            each item in items
+              .products-section__slide.swiper-slide
+                +product-card(item)
