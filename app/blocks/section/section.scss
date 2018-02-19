@@ -1,22 +1,22 @@
 .section {
   display: block;
-  padding: 54px 0 60px;
+  padding: 53px 0 60px;
 
   &_grey { background-color: $lightgrey-color; }
 
   &__head {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 22px;
+    margin-bottom: 21px;
+
+    &col {
+      padding-left: 20px;
+    }
   }
 
   &__heading {
     @include heading-2;
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
+    flex: 1 1 auto;
   }
 
   &__button {

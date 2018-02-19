@@ -23,6 +23,7 @@
   &:hover,
   &.is-active {
     background-color: $darkblue-color;
+    box-shadow: 0 16px 22px rgba(67, 183, 232, .4);
   }
 
   &_size_md {

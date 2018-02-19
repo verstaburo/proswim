@@ -1,8 +1,9 @@
 .product-card {
   display: block;
-  padding: 20px;
+  padding: 19px 20px;
   box-sizing: border-box;
   min-height: 408px;
+  height: 100%;
   box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
   border: 1px solid $color-border;
   background-color: white;
@@ -10,7 +11,6 @@
   transition: box-shadow $ease-main;
   color: $color-basic;
   text-decoration: none;
-  cursor: pointer;
 
   &:hover {
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
@@ -34,27 +34,57 @@
     }
   }
 
+  &__button {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    @include text-small;
+    line-height: 40px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    .product-card:hover & {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
   &__body {
-    margin-top: 20px;
+    display: block;
+    margin-top: 14px;
   }
 
   &__heading {
-    margin-top: 20px;
+    display: block;
     font-weight: 400;
     transition: color $ease-main;
     font-size: 15px;
     font-weight: 400;
     line-height: (22/15);
     letter-spacing: 0.01em;
+    color: $color-basic;
+
+    &:hover {
+      color: $darkblue-color;
+    }
+  }
+
+  &__sizes {
+    display: none;
+    margin-top: 18px;
+    @include text-small;
+    color: $darkgrey-color;
 
     .product-card:hover & {
-      color: $darkblue-color;
+      display: block;
     }
   }
 
   &__price {
     display: block;
-    margin-top: 14px;
+    margin-top: 16px;
 
     &current {
       color: $darkblue-color;
@@ -66,11 +96,20 @@
 
     &old {
       color: $darkgrey-color;
-      margin-left: 16px;
+      margin-left: 10px;
+      @include text;
     }
   }
 
   &__rating {
-    margin-top: 14px;
+    margin-top: 9px;
+  }
+
+  &__buy {
+    display: none;
+
+    .product-card:hover & {
+      display: block;
+    }
   }
 }

@@ -2,11 +2,14 @@
   $b: &;
   font-size: 0;
   display: inline-flex;
+  align-items: center;
 
   &__stars {
     display: inline-flex;
     flex-flow: row-reverse;
     margin-left: -4px;
+    margin-top: -2px;
+    font-size: 0;
   }
 
   &__box {
@@ -33,7 +36,7 @@
 
   &__text {
     @include text-small;
-    margin-left: 15px;
+    margin-left: 10px;
     color: $color-basic;
 
     &_grey { color: $semigrey-color; }

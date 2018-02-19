@@ -1,9 +1,11 @@
 .products-section {
   display: block;
-  padding-bottom: 0;
 
   &__slider {
-    padding-bottom: 60px;
+    margin: 0 -12px;
+    padding: 0 12px;
+    padding-bottom: 200px;
+    margin-bottom: -200px;
   }
 
   &__buttons {
@@ -14,6 +16,11 @@
   &__button {
     margin-left: 10px;
 
+    .circle-button__button {
+      width: 31px;
+      height: 31px;
+    }
+
     &_prev {
       .circle-button__icon {
         transform: rotate(180deg);
@@ -22,6 +29,6 @@
   }
 
   &__slide {
-
+    height: auto;
   }
 }

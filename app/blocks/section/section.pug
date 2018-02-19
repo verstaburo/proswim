@@ -9,6 +9,10 @@ mixin section-head(heading)
     if block
       block
 
+mixin section-head-col
+  +e.DIV.headcol&attributes(attributes)
+    block
+
 mixin section-content
   +e.content&attributes(attributes)
     block

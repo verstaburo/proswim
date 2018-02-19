@@ -1,18 +1,28 @@
 mixin product-card(data)
-  +b.A.product-card(href='javascript:void(0)')&attributes(attributes)
+  +b.product-card&attributes(attributes)
     if data.badge
       +badge(class=data.badge.mod).__badge=data.badge.title
 
     if data.image
-      +e.image
+      +e.A(href="javascript:void(0)").image
         img(src=`content-img/product-cards/${data.image}.jpg` alt=data.heading)
 
+        if data.button
+          +button.__button= `${data.button || 'Быстрый просмотр'}`
+
+    //- mainslider
+    //- navslider
+
     +e.DIV.body
-      +e.H6.heading=data.heading
+      +e.A(href="javascript:void(0)").heading=data.heading
+      if data.sizes
+        +e.P.sizes Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)
       +e.price
         +e.SPAN.pricecurrent #{data.price} руб.
         if data.oldPrice
           +e.S.priceold #{data.oldPrice} руб.
-      +rating(data.rating.activeStar)
+      +rating(data.rating.activeStar).__rating
         if data.rating.text
           +rating-text._grey #{data.rating.text}
+      if data.buyInOneClick
+        +link-icon('Cart button').__buy Купить в 1 клик
