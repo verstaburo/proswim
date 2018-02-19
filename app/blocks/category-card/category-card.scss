@@ -11,6 +11,14 @@
     display: block;
     height: 260px;
 
+    img {
+      @include fill-img;
+    }
+
+    @include screen(desktop) {
+      height: 157px;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -52,6 +60,14 @@
       transform: skew(-28deg);
       transform-origin: center;
       margin-right: -50%;
+    }
+
+    @include screen(desktop) {
+      @include heading-5;
+      letter-spacing: .025em;
+      margin-left: 20px;
+      padding-left: 20px;
+      padding-right: 30px;
     }
   }
 }

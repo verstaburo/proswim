@@ -2,6 +2,10 @@
   display: flex;
   margin-top: -14px;
 
+  @include screen(desktop) {
+    margin-top: -5px;
+  }
+
   &.is-active {
     .circle-button__button::after {
       transform: translate(-50%, -50%);
@@ -27,6 +31,10 @@
     padding: 0 0 16px 63px;
     width: (100%/6);
     box-sizing: border-box;
+
+    @include screen(desktop) {
+      width: 25%;
+    }
   }
 
   &__image {
@@ -52,5 +60,10 @@
     padding-left: 70px;
     padding-right: 5px;
     margin-top: -4px;
+
+    @include screen(desktop) {
+      padding-left: 39px;
+      padding-right: 0;
+    }
   }
 }

@@ -3,5 +3,9 @@
 
   .brands-section + & {
     margin-top: 37px;
+
+    @include screen(desktop) {
+      margin-top: 28px;
+    }
   }
 }

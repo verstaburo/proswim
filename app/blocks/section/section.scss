@@ -2,6 +2,10 @@
   display: block;
   padding: 53px 0 60px;
 
+  @include screen(desktop) {
+    padding: 38px 0 40px;
+  }
+
   &_grey { background-color: $lightgrey-color; }
 
   &__head {
