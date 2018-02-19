@@ -1,4 +1,7 @@
 .categories-section {
   display: block;
-  padding-bottom: 60px;
+
+  .brands-section + & {
+    margin-top: 36px;
+  }
 }

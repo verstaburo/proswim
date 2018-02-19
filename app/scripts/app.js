@@ -23,6 +23,7 @@ import '../blocks/dropdown/dropdown';
 import '../blocks/shopmenu/shopmenu';
 import '../components/header/header';
 import '../components/hero-slider/hero-slider';
+import '../components/brands-section/brands-section';
 import '../components/products-section/products-section';
 import '../components/footer/footer';
 

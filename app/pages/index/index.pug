@@ -6,8 +6,13 @@ block head
 block content
   +b.page
     +hero-slider
-    +brands-section(getData('brands-section'))
-    +categories-section(getData('categories-section'))
+
+    +section
+      +section-content
+        .container
+          +brands-section(getData('brands-section'))
+          +categories-section(getData('categories-section'))
+
     +products-section(getData('new-cards-section'))
     +reviews-section(getData('reviews-section'))
     +articles-section(getData('articles-section'))

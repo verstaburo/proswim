@@ -1,11 +1,10 @@
 mixin brands-section(data)
   +b.brands-section&attributes(attributes)
-    .container.brands-section__container
-      +e.grid
-        each item in data
-          +e.col
-            +e.A(href=item.href || 'javascript:void(0)').image
-              img(src=item.image alt=item.title)
+    +e.grid
+      each item in data
+        +e.col
+          +e.A(href=item.href || 'javascript:void(0)').image
+            img(src=item.image alt=item.title)
 
-      +e.button
-        +circle-button(null)._plus.js-brands-section-toggle Все бренды
+    +e.button
+      +circle-button(null)._plus.js-brands-section-toggle Все бренды

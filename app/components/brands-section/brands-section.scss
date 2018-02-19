@@ -1,40 +1,46 @@
 .brands-section {
-  display: block;
-  padding: 40px 0;
+  display: flex;
+  margin-top: -14px;
 
-  &__container {
-    display: flex;
+  &.is-active {
+    .circle-button__button::after {
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 -22px -63px;
+    margin: 0 0 -16px -63px;
     flex: 1 1 auto;
-    // max-height: 54px;
-    // overflow: hidden;
+    height: 54px;
+    overflow: hidden;
+
+    .brands-section.is-active & {
+      height: auto;
+    }
   }
 
   &__col {
     display: flex;
     align-items: center;
-    padding:0 0 22px 63px;
+    padding: 0 0 16px 63px;
     width: (100%/6);
     box-sizing: border-box;
   }
 
   &__image {
     display: inline-block;
-    max-height: 54px;
 
     img {
       max-width: 100%;
-      max-height: 100%;
+      max-height: 54px;
       transition: filter $ease-main;
     }
 
     &:hover {
       img {
+        filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
         filter: gray;
         filter: grayscale(100%);
       }
@@ -43,6 +49,7 @@
 
   &__button {
     flex-shrink: 0;
+    padding-left: 70px;
     padding-right: 5px;
     margin-top: -4px;
   }
