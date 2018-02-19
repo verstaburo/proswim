@@ -8,6 +8,10 @@
     padding-bottom: 55px;
   }
 
+  @include screen(tablet) {
+    padding-bottom: 38px;
+  }
+
   .content-zone {
     padding-right: 5px;
 
@@ -18,6 +22,10 @@
 
   &__head {
     margin-bottom: 29px;
+
+    @include screen(tablet) {
+      margin-bottom: 19px;
+    }
   }
 
   &__grid {
@@ -27,6 +35,21 @@
     @include screen(desktop) {
       margin-top: -2px;
       margin-bottom: 19px;
+    }
+  }
+
+  &__cutoff {
+    @include screen(tablet) {
+      display: none;
+    }
+  }
+
+  &__readmore {
+    margin-top: 10px;
+    .link { font-size: 15px; }
+
+    @include screen(tablet, min) {
+      display: none;
     }
   }
 }
