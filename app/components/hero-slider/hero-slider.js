@@ -6,6 +6,7 @@ const slider = new Swiper('.js-hero-slider', {
   speed: 700,
   autoplay: false,
   slidesPerView: 1,
+  touchRatio: 0,
   navigation: {
     nextEl: '.hero-slider__button_next',
     prevEl: '.hero-slider__button_prev',
@@ -19,8 +20,8 @@ const slider = new Swiper('.js-hero-slider', {
   },
   roundLengths: true,
   breakpoints: {
-    320: {
-      slidesPerView: 1,
+    768: {
+      touchRatio: 1,
     },
   },
 });

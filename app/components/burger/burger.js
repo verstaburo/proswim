@@ -90,7 +90,11 @@ export default class Burger {
   }
 
   setEqualHeights() {
-    const elements = this.element.find('.burger__list');
+    if ($(window).width() >= window.globalOptions.sizes.desktop) {
+      return;
+    }
+
+    const elements = this.element.find('.burger__list_child');
     const heights = elements.map((index, el) => $(el).height());
     const maxHeight = Math.max(...heights);
 
@@ -98,20 +102,20 @@ export default class Burger {
   }
 
   handleResize() {
-    if (!this.isActive) {
-      return;
-    }
-
     clearTimeout(this.resizeTimeout);
 
     this.resizeTimeout = setTimeout(() => {
+      this.setEqualHeights();
+
+      if (!this.isActive) {
+        return;
+      }
+
       if ($(window).width() >= window.globalOptions.sizes.desktop) {
         unfreeze();
       } else {
         freeze();
       }
-
-      this.setEqualHeights();
     }, 100);
   }
 
