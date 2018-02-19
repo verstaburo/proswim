@@ -9,6 +9,10 @@
   li {
     padding-left: 20px;
     position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
   }
 }
 
@@ -16,9 +20,14 @@
 
   li::before {
     position: absolute;
-    left: 0;
-    top: 0;
-    content: '•';
+    left: 6px;
+    top: 8px;
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: $color-main;
+    border-radius: 50%;
   }
 }
 

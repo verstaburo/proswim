@@ -1,3 +1,20 @@
 .home-seo-section {
   display: block;
+  padding-top: 55px;
+  padding-bottom: 75px;
+
+  .content-zone {
+    padding-right: 5px;
+  }
+
+  &__head {
+    margin-bottom: 29px;
+  }
+
+  &__grid {
+    margin-top: 9px;
+    margin-bottom: 28px;
+
+    .grid__col ul ~ p { margin-bottom: 0; }
+  }
 }

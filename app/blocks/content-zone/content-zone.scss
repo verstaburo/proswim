@@ -57,8 +57,10 @@
   p {
 
     &:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: 22px;
     }
+
+    + ul, ol { margin-top: -14px; }
 
     small {
       display: block;
