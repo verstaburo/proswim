@@ -1,3 +1,9 @@
 .articles-section {
   display: block;
+
+  &__head {
+    @include screen(desktop) {
+      margin-bottom: 23px;
+    }
+  }
 }

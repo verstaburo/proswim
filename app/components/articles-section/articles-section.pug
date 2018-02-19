@@ -1,7 +1,7 @@
 mixin articles-section(items)
   +section._grey.articles-section
     .container
-      +section-head('Статьи')
+      +section-head('Статьи').articles-section__head
       +section-content
         .grid
           each item in items

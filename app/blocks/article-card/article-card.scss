@@ -15,11 +15,20 @@
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
   }
 
+  @include screen(desktop) {
+    padding: 14px 13px;
+    height: 389px;
+  }
+
   &__image {
     display: block;
     position: relative;
     width: 100%;
     height: 160px;
+
+    @include screen(desktop) {
+      height: 93px;
+    }
 
     img {
       @include fill-img;
@@ -30,6 +39,10 @@
   &__body {
     display: block;
     margin-top: 16px;
+
+    @include screen(desktop) {
+      margin-top: 13px;
+    }
   }
 
   &__heading {
@@ -41,6 +54,11 @@
     .article-card:hover & {
       color: $darkblue-color;
     }
+
+    @include screen(desktop) {
+      @include text-medium;
+      line-height: (19/14);
+    }
   }
 
   &__date {
@@ -48,11 +66,21 @@
     margin-top: 6px;
     @include text-small;
     color: $semigrey-color;
+
+    @include screen(desktop) {
+      margin-top: 10px;
+    }
   }
 
   &__text {
     display: block;
     margin-top: 7px;
     color: $darkengrey-color;
+    overflow: hidden;
+
+    @include screen(desktop) {
+      margin-top: 5px;
+      max-height: 173px;
+    }
   }
 }
