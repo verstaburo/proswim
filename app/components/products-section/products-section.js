@@ -12,7 +12,7 @@ const slider = new Swiper('.js-products-section-slider', {
   },
   roundLengths: true,
   breakpoints: {
-    768: {
+    767: {
       slidesPerView: 'auto',
     },
   },

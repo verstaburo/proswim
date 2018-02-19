@@ -18,9 +18,9 @@ mixin product-card(data)
       if data.sizes
         +e.P.sizes Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)
       +e.price
-        +e.SPAN.pricecurrent #{data.price} руб.
+        +e.SPAN.pricecurrent #{data.price} #[+e.SPAN.pricecurrency руб.]
         if data.oldPrice
-          +e.S.priceold #{data.oldPrice} руб.
+          +e.S.priceold #{data.oldPrice} #[+e.SPAN.pricecurrency руб.]
       +rating(data.rating.activeStar).__rating
         if data.rating.text
           +rating-text._grey #{data.rating.text}
