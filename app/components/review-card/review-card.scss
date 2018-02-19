@@ -92,7 +92,7 @@
     overflow: hidden;
 
     @include screen(desktop) {
-      max-height: 100px;
+      max-height: none;
       flex: 1 1 auto;
     }
   }
