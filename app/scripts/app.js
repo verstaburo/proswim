@@ -25,6 +25,7 @@ import '../components/header/header';
 import '../components/hero-slider/hero-slider';
 import '../components/brands-section/brands-section';
 import '../components/products-section/products-section';
+import '../components/articles-section/articles-section';
 import '../components/footer/footer';
 
 const $ = window.$;

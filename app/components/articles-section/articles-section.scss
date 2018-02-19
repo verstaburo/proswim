@@ -6,4 +6,36 @@
       margin-bottom: 23px;
     }
   }
+
+  &__content {
+    @include screen(tablet) {
+      margin: 0 -15px -100px;
+      padding: 0 15px 100px;
+      pointer-events: none;
+    }
+  }
+
+  &__grid {
+    @include screen(tablet) {
+      flex-wrap: nowrap;
+      margin: 0;
+      pointer-events: all;
+
+      &:first-of-type { margin-top: 0; }
+    }
+  }
+
+  &__col {
+    @include screen(tablet) {
+      width: 188px;
+      padding: 0;
+      width: 188px;
+      transition: opacity $ease-main;
+
+      &.swiper-slide-prev {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
 }

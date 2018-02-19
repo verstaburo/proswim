@@ -2,9 +2,9 @@ mixin articles-section(items)
   +section._grey.articles-section
     .container
       +section-head('Статьи').articles-section__head
-      +section-content
-        .grid
+      +section-content.articles-section__content.js-articles-section-slider
+        +grid.articles-section__grid
           each item in items
-            +col(3)
+            +col(3).articles-section__col
               +article-card(item)
       +section-button

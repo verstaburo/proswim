@@ -1,5 +1,6 @@
 .article-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 446px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
@@ -20,14 +21,24 @@
     height: 389px;
   }
 
+  @include screen(tablet) {
+    height: 381px;
+  }
+
   &__image {
     display: block;
     position: relative;
     width: 100%;
     height: 160px;
+    overflow: hidden;
+    flex-shrink: 0;
 
     @include screen(desktop) {
       height: 93px;
+    }
+
+    @include screen(tablet) {
+      height: 107px;
     }
 
     img {
@@ -37,8 +48,10 @@
   }
 
   &__body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-top: 16px;
+    flex: 1 1 auto;
 
     @include screen(desktop) {
       margin-top: 13px;
@@ -47,7 +60,7 @@
 
   &__heading {
     display: block;
-    max-height: 48px;
+    max-height: 50px;
     @include heading-5;
     transition: color $ease-main;
 
@@ -70,6 +83,10 @@
     @include screen(desktop) {
       margin-top: 10px;
     }
+
+    @include screen(tablet) {
+      margin-top: 8px;
+    }
   }
 
   &__text {
@@ -77,6 +94,7 @@
     margin-top: 7px;
     color: $darkengrey-color;
     overflow: hidden;
+    flex: 1 1 auto;
 
     @include screen(desktop) {
       margin-top: 5px;
