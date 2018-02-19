@@ -1,4 +1,5 @@
 .product-card {
+  position: relative;
   display: block;
   padding: 19px 20px;
   box-sizing: border-box;
@@ -31,6 +32,10 @@
     @include screen(desktop) {
       top: 15px;
     }
+
+    @include screen(tablet) {
+      top: 13px;
+    }
   }
 
   &__image {
@@ -41,6 +46,10 @@
 
     @include screen(desktop) {
       height: 139px;
+    }
+
+    @include screen(tablet) {
+      height: 160px;
     }
 
     img {
@@ -57,8 +66,8 @@
     bottom: 20px;
     @include text-small;
     line-height: 40px;
-    opacity: 0;
-    pointer-events: none;
+    // opacity: 0;
+    // pointer-events: none;
     z-index: 1;
 
     .product-card:hover & {
@@ -114,6 +123,12 @@
       margin-top: 5px;
     }
 
+    @include screen(tablet) {
+      text-align: left;
+      margin-left: 3px;
+      margin-top: 4px;
+    }
+
     &current {
       color: $darkblue-color;
       font-size: 18px;
@@ -135,11 +150,19 @@
         @include text-tiny;
         margin-left: 8px;
       }
+
+      @include screen(desktop) {
+          margin-left: 6px;
+      }
     }
 
     &currency {
       @include screen(desktop) {
         .product-card__priceold & { display: none; }
+      }
+
+      @include screen(tablet) {
+        .product-card__priceold & { display: inline; }
       }
     }
   }

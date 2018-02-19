@@ -14,6 +14,7 @@ const slider = new Swiper('.js-products-section-slider', {
   breakpoints: {
     767: {
       slidesPerView: 'auto',
+      spaceBetween: 10,
     },
   },
 });
