@@ -22,11 +22,13 @@
     flex-wrap: wrap;
     margin: 0 0 -16px -63px;
     flex: 1 1 auto;
-    height: 54px;
+    max-height: 54px;
     overflow: hidden;
+    will-change: max-height;
+    transition: max-height $ease-main;
 
     .brands-section.is-active & {
-      height: auto;
+      max-height: 1000px;
     }
 
     @include screen(tablet) {
