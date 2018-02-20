@@ -1,0 +1,24 @@
+mixin registration-popup
+  +popup.registration-popup#registration-popup
+    +popup-header('Регистрация')
+    +popup-content
+      +e.FORM.form.__grid(method='post' action='/' data-parsley-validate)
+        +col(12)
+          +input(type='text' placeholder='Имя' required)._size_md
+        +col(12)
+          +input(type='email' placeholder='Email адрес' required)._size_md
+        +col(12)
+          +input(type='password' placeholder='Пароль' required)._size_md
+        +col(12)
+          +button.BUTTON(type='submit')._size_big._block Зарегистрироваться
+        +col(12)
+          +checkbox('terms', true, true, true)
+            | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]
+
+    +popup-footer('Войти через соцсети')
+      +social-buttons._big
+        +social-button('vk')._big._colorized
+        +social-button('fb')._big._colorized
+        +social-button('ok')._big._colorized
+        +social-button('tw')._big._colorized
+      +e.text Есть аккаунт? #[+link(href='#login-popup').js-fancybox Выполнить вход!]

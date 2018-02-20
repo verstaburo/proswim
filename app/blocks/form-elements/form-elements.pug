@@ -19,10 +19,10 @@ mixin select()
   select.select&attributes(attributes).js-select
     block
 
-mixin checkbox(name, value, checked)
+mixin checkbox(name, value, checked, required)
   +b.LABEL.checkradio&attributes(attributes)
     - var check = checked || '';
-    +e.INPUT.input(name=name, value=value, check, type="checkbox")
+    +e.INPUT.input(name=name, value=value, check, type="checkbox", required=required)
     +e.SPAN.box
     +e.SPAN.content
       block
