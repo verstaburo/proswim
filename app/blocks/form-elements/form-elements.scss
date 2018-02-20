@@ -11,6 +11,11 @@
   @include text-small;
   line-height: 1;
   border-radius: 2px;
+
+  &_size_md {
+    height: 48px;
+    font-size: 15px;
+  }
 }
 
 .inputbox {

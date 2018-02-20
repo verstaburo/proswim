@@ -1,4 +1,5 @@
 @mixin link {
+  @include text;
   color: $color-main;
   transition: opacity $ease-main;
   border-color: $color-main;

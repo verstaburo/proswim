@@ -21,9 +21,10 @@
   width: 360px;
   border-radius: 2px;
   background-color: white;
+  @include text;
 
   &__header {
-    padding: 20px 40px;
+    padding: 23px 40px 23px 36px;
     border: 1px solid $color-border;
     background-color: $lightgrey-color;
   }
@@ -38,6 +39,7 @@
     top: 0;
     right: 0;
     transform: translate(100%, -100%);
+    font-size: 0;
   }
 
   &__content {
@@ -46,6 +48,48 @@
 
   &__footer {
     margin-top: -40px;
-    padding: 30px 40px 40px;
+    padding: 23px 40px 43px;
+    text-align: center;
+
+    &heading {
+      display: flex;
+      align-items: center;
+      @include heading-6;
+      margin-bottom: 11px;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: $color-border-dark;
+        flex: 1 1 auto;
+        min-width: 20px;
+      }
+
+      &::before { margin-right: 15px; }
+      &::after { margin-left: 15px; }
+    }
+  }
+
+  &__form {
+    margin: -18px -9px 0;
+
+    .grid__col {
+      padding: 18px 9px 0;
+    }
+
+    .link {
+      margin-top: -2px;
+    }
+
+    .button {
+      margin-top: -6px;
+    }
+  }
+
+  &__text {
+    margin-top: 16px;
+    text-align: left;
   }
 }
