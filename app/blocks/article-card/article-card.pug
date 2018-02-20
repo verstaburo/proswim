@@ -3,6 +3,6 @@ mixin article-card(data)
     +e.image
       img(src=`content-img/article-cards/${data.image}.jpg` alt=data.heading)
     +e.body
-      +e.H6.heading(data-lines={"desktop":"2", "tablet":"3", "mobile": "3"})=data.heading
+      +e.H6.heading.js-truncate=data.heading
       +e.P.date=data.date
-      +e.P.text(data-lines={"desktop":"7", "tablet":"8", "mobile": "7"})!=data.text
+      +e.P.text.js-truncate!=data.text

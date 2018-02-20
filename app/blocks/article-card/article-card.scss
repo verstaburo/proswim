@@ -59,9 +59,9 @@
 
   &__heading {
     display: block;
-    max-height: 50px;
     @include heading-5;
     transition: color $ease-main;
+    max-height: (24/16*2em);
 
     .article-card:hover & {
       color: $darkblue-color;
@@ -70,6 +70,7 @@
     @include screen(desktop) {
       @include text-medium;
       line-height: (19/14);
+      max-height: (19/14*3em);
     }
   }
 
@@ -92,9 +93,15 @@
     display: block;
     margin-top: 7px;
     color: $darkengrey-color;
+    max-height: (22/14*7em);
 
     @include screen(desktop) {
       margin-top: 5px;
+      max-height: (22/14*8em);
+    }
+
+    @include screen(tablet) {
+      max-height: (22/14*78em);
     }
   }
 }
