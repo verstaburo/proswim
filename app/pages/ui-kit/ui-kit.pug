@@ -507,6 +507,49 @@ block content
           +col(4)
             +category-card('content-img/category-cards/img1232.jpg', 'Для открытой воды')
 
+    //- Product cards
+    +ui-section
+      +ui-section-head
+        h2 Product cards
+        p Блок: component/product-card/product-card
+      +ui-section-content
+        - var productCardsData = getData('new-cards-section')
+        +grid
+          +col(4)
+            +product-card(productCardsData[0])
+          +col(4)
+            +product-card(productCardsData[1])
+          +col(4)
+            +product-card(productCardsData[2])
+
+    //- Review cards
+    +ui-section
+      +ui-section-head
+        h2 Review cards
+        p Блок: components/review-card/review-card
+      +ui-section-content
+        - var reviewCardsData = getData('reviews-section')
+        +grid
+          +col(6)
+            +review-card(reviewCardsData[0])
+          +col(6)
+            +review-card(reviewCardsData[1])
+
+    //- Article cards
+    +ui-section
+      +ui-section-head
+        h2 Article cards
+        p Блок: block/article-card/article-card
+      +ui-section-content
+        - var articlesCardsData = getData('articles-section')
+        +grid
+          +col(4)
+            +article-card(articlesCardsData[0])
+          +col(4)
+            +article-card(articlesCardsData[1])
+          +col(4)
+            +article-card(articlesCardsData[2])
+
   script
     |
     | $('.ui-kit__section').each(function (i) {
