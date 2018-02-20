@@ -14,6 +14,7 @@
     width: 100%;
     display: block;
     height: 260px;
+    overflow: hidden;
 
     img {
       @include fill-img;
