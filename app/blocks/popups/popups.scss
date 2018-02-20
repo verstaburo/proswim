@@ -4,6 +4,48 @@
   display: none;
 }
 
+.fancybox-close-small { display: none }
 .fancybox-close-small:focus::after { outline: none; }
 
 .fancybox-enabled { overflow: initial; }
+
+.fancybox-slide>div {
+  padding: 0;
+}
+
+.fancybox-slide>div.popup {
+  overflow: visible;
+}
+
+.popup {
+  width: 360px;
+  border-radius: 2px;
+  background-color: white;
+
+  &__header {
+    padding: 20px 40px;
+    border: 1px solid $color-border;
+    background-color: $lightgrey-color;
+  }
+
+  &__heading {
+    @include heading-2;
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, -100%);
+  }
+
+  &__content {
+    padding: 30px 40px 40px;
+  }
+
+  &__footer {
+    margin-top: -40px;
+    padding: 30px 40px 40px;
+  }
+}

@@ -10,4 +10,10 @@ export default function popups() {
     afterLoad: freeze,
     afterClose: unfreeze,
   });
+
+  $(document).on('click', '.js-popup-close', (e) => {
+    e.preventDefault();
+
+    $.fancybox.close(true);
+  });
 }

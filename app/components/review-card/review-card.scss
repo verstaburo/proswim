@@ -58,6 +58,7 @@
     @include heading-5;
     transition: color $ease-main;
     max-height: (24/16*2em);
+    overflow: hidden;
     cursor: pointer;
 
     @include screen(desktop) {
@@ -106,6 +107,7 @@
   &__text {
     margin-top: 5px;
     max-height: (22/14*3em);
+    overflow: hidden;
 
     @include screen(desktop) {
       max-height: (22/14*5em);

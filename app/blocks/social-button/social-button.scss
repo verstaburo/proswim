@@ -1,3 +1,8 @@
+$sb-vk-color: #45668e;
+$sb-tw-color: #f6861f;
+$sb-ok-color: #00aced;
+$sb-fb-color: #3b5998;
+
 .social-button {
   position: relative;
   display: inline-block;
@@ -11,18 +16,53 @@
   cursor: pointer;
   box-sizing: border-box;
 
+  &_big {
+    width: 48px;
+    height: 48px;
+  }
+
+  &_colorized {
+    border-color: $greyblue4-color;
+  }
+
   .social-buttons & {
     margin: 9px 0 0 9px;
+  }
+
+  .social-buttons_big & {
+    margin: 20px 0 0 20px;
   }
 
   &s {
     font-size: 0;
     margin: -9px 0 0 -9px;
+
+    &_big { margin: -20px 0 0 -20px; }
   }
 
   &:hover {
     background-color: $indark-lightgrey-color;
     border-color: $indark-lightgrey-color;
+  }
+
+  &_vk.social-button_colorized:hover {
+    background-color: $sb-vk-color;
+    border-color: transparent;
+  }
+
+  &_fb.social-button_colorized:hover {
+    background-color: $sb-fb-color;
+    border-color: transparent;
+  }
+
+  &_ok.social-button_colorized:hover {
+    background-color: $sb-ok-color;
+    border-color: transparent;
+  }
+
+  &_tw.social-button_colorized:hover {
+    background-color: $sb-tw-color;
+    border-color: transparent;
   }
 
   &__icon {
@@ -39,19 +79,64 @@
 
     .social-button:hover & { fill: $darkestgrey-color; }
 
+    /* vkontakte */
     .social-button_vk & {
       width: 16px;
       height: 10px;
     }
 
+    .social-button_vk.social-button_big & {
+      width: 24px;
+      height: 14px;
+    }
+
+    .social-button_vk.social-button_colorized & {
+      fill: $sb-vk-color
+    }
+
+    /* facebook */
     .social-button_fb & {
       width: 9px;
       height: 15px;
     }
 
+    .social-button_fb.social-button_big & {
+      width: 12px;
+      height: 22px;
+    }
+
+    .social-button_fb.social-button_colorized & {
+      fill: $sb-fb-color
+    }
+
+    /* instagram */
     .social-button_instagram & {
       width: 15px;
       height: 15px;
+    }
+
+    /* twitter */
+    .social-button_tw & {
+      width: 22px;
+      height: 18px;
+    }
+
+    .social-button_tw.social-button_colorized  & {
+      fill: $sb-tw-color
+    }
+
+    /* odnoklassniki */
+    .social-button_ok & {
+      width: 14px;
+      height: 22px;
+    }
+
+    .social-button_ok.social-button_colorized & {
+      fill: $sb-ok-color
+    }
+
+    .social-button_colorized:hover & {
+      fill: white;
     }
   }
 }

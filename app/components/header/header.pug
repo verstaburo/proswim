@@ -18,5 +18,5 @@ mixin header(loggedIn)
           if loggedIn
             +userlink('Login Register button')._user Мой кабинет
           else
-            +userlink('Login Register button')._user Войти
+            +userlink('Login Register button')(href='#login-popup')._user.js-fancybox Войти
           +userlink('Cart button', loggedIn ? 12 : 3)._cart Корзина

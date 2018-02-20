@@ -1,0 +1,21 @@
+mixin login-popup
+  +popup.login-popup#login-popup
+    +popup-header('Войти в аккаунт')
+    +popup-content
+      +e.FORM.form.__grid(method='post' action='/')
+        +col(12)
+          +input(type='email' placeholder='Email адрес' required)._size_md
+        +col(12)
+          +input(type='password' placeholder='Пароль' required)._size_md
+        +col(12)
+          +link(href='#password-recovery-popup')._dark Забыли пароль?
+        +col(12)
+          +button.BUTTON(type='submit')._block Войти
+
+    +popup-footer('Войти через соцсети')
+      +social-buttons._big
+        +social-button('vk')._big._colorized
+        +social-button('fb')._big._colorized
+        +social-button('ok')._big._colorized
+        +social-button('tw')._big._colorized
+      +e.text Нет аккаунта? #[+link(href='#signup-popup') Зарегистрируйтесь!]

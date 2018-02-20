@@ -4,4 +4,20 @@ mixin popups()
 
 mixin popup()
   +b.popup&attributes(attributes)
+    +circle-button('close')._white._close.__close._circle.js-popup-close
+    block
+
+mixin popup-header(heading)
+  +e.header&attributes(attributes)
+    +e.heading=heading
+    block
+
+mixin popup-content
+  +e.content&attributes(attributes)
+    block
+
+
+mixin popup-footer(heading)
+  +e.footer&attributes(attributes)
+    +e.footerheading=heading
     block

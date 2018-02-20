@@ -22,6 +22,16 @@
       }
     }
 
+    .circle-button_white & {
+      background-color: white;
+      border-color: transparent;
+    }
+
+    .circle-button_white:hover & {
+      background-color: $color-main;
+      border-color: transparent;
+    }
+
     .circle-button_plus & {
       &::before,
       &::after {
@@ -53,8 +63,21 @@
     fill: $darkblue-color;
     transition: fill $ease-main;
 
+    .circle-button_close & {
+      width: 10px;
+      height: 10px;
+    }
+
     .circle-button:hover & {
       fill: $color-basic;
+    }
+
+    .circle-button_white & {
+      fill: $darkgrey-color;
+    }
+
+    .circle-button_white:hover & {
+      fill: white;
     }
   }
 
