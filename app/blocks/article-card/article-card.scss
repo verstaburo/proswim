@@ -48,8 +48,7 @@
   }
 
   &__body {
-    display: flex;
-    flex-direction: column;
+    display: block;
     margin-top: 16px;
     flex: 1 1 auto;
 
@@ -93,12 +92,9 @@
     display: block;
     margin-top: 7px;
     color: $darkengrey-color;
-    overflow: hidden;
-    flex: 1 1 auto;
 
     @include screen(desktop) {
       margin-top: 5px;
-      max-height: 173px;
     }
   }
 }

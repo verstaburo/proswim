@@ -44,11 +44,10 @@
 
   &__body {
     margin-left: 20px;
+    display: block;
 
     @include screen(desktop) {
       margin-left: 10px;
-      display: flex;
-      flex-direction: column;
     }
   }
 
@@ -96,12 +95,6 @@
 
   &__text {
     margin-top: 5px;
-    max-height: 58px;
-    overflow: hidden;
-
-    @include screen(desktop) {
-      max-height: none;
-    }
   }
 
   &__link {

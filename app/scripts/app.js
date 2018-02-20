@@ -1,5 +1,7 @@
 import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
+import './globalOptions';
+import '../blocks/js-functions/truncate';
 import anchor from '../blocks/js-functions/anchor';
 import { freezebuttons } from '../blocks/js-functions/freeze';
 import scrollanimation from '../blocks/js-functions/scrollanimation';
@@ -16,7 +18,6 @@ import slider from '../blocks/slider/slider';
 import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
 import maps from '../blocks/map/map';
-import './globalOptions';
 import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';

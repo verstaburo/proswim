@@ -3,9 +3,9 @@ mixin review-card(data)
     +e.image
       img(src=`content-img/review-cards/${data.image}.jpg` alt=data.heading)
     +e.body
-      +e.H6.heading=data.heading
+      +e.H6.heading(data-lines={"desktop":"2", "tablet":"2", "mobile": "3"})=data.heading
       +rating(data.rating.activeStar).__rating
         +rating-text=data.rating.name
         +rating-text._grey=data.rating.date
-      +e.DIV.text!=data.text
+      +e.DIV.text(data-lines={"desktop":"3", "tablet": "5", "mobile": "6"})=data.text
       +e.P.link Читать далее
