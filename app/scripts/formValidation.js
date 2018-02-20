@@ -7,6 +7,15 @@ const locale = lang === 'ru-RU' ? 'ru' : 'en';
 
 Parsley.setLocale(locale);
 
+Parsley.on('field:validated', function () {
+  const form = this.$element.closest('form');
+
+  form
+      .find("[type='submit'], [data-submit='true']")
+      .prop('disabled', !form.parsley().isValid());
+});
+
+
 /* Телефонный номер */
 Parsley.addValidator('phone', {
   validateStringfunction(value) {
