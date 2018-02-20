@@ -317,7 +317,7 @@
                         <div class="grid__col grid__col_six">
                             <p class="ui-kit__description">.input</p>
                             <div class="inputbox">
-                                <input class="input" placeholder="Плейсхолдер" />
+                                <input class="input" placeholder="Плейсхолдер" type="text" />
                             </div>
                         </div>
                         <div class="grid__col grid__col_six">
@@ -334,21 +334,21 @@
                             <p class="ui-kit__description">.js-datepicker
                                 <br> Параметры задаются через дата-атрибуты</p>
                             <div class="inputbox">
-                                <input class="input js-datepicker" placeholder="Выберите дату" readonly="readonly" />
+                                <input class="input js-datepicker" placeholder="Выберите дату" readonly="readonly" type="text" />
                             </div>
                         </div>
                         <div class="grid__col grid__col_six">
                             <p class="ui-kit__description">Поле ввода номера телефона.
                                 <br> Маска определяется через атрибут data-type="tel"</p>
                             <div class="inputbox">
-                                <input class="input" placeholder="+7 (___) ___-__-__" data-type="tel" />
+                                <input class="input" placeholder="+7 (___) ___-__-__" data-type="tel" type="text" />
                             </div>
                         </div>
                         <div class="grid__col grid__col_six">
                             <p class="ui-kit__description">Поле ввода e-mail.
                                 <br> Маска определяется через атрибут data-type="email"</p>
                             <div class="inputbox">
-                                <input class="input" placeholder="E-mail" data-type="email" />
+                                <input class="input" placeholder="E-mail" data-type="email" type="text" />
                             </div>
                         </div>
                         <div class="grid__col grid__col_six">
@@ -450,6 +450,11 @@
                     </a>
                     <div class="popups ui-kit__ui-popups">
                         <div class="popup" id="testpopup">
+                            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                                <span class="circle-button__button">
+                                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                                </span>
+                            </a>
                             <div class="content-zone">
                                 <h2>Тестовый попап</h2>
                                 <p>С тестовым контентом</p>
@@ -752,7 +757,7 @@
             <div class="ui-kit__section-content">
                 <div class="container">
                     <form class="searchbar" method="POST" action="/">
-                        <input class="input searchbar__input" />
+                        <input class="input searchbar__input" type="text" />
                         <button class="searchbar__button" type="submit">
                             <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
                         </button>
@@ -1194,6 +1199,7 @@
             $(this).attr('id', id);
         });
     </script>
+    <div class="popups"></div>
     <script src="assets/scripts/libs/jquery.dotdotdot.js"></script>
     <script src="assets/scripts/app.min.js"></script>
     <script src="assets/scripts/main.js"></script>
