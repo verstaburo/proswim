@@ -7,7 +7,7 @@ mixin home-seo-section()
           p Интернет-магазин товаров для плавания Proswim предлагает одежду и&nbsp;аксессуары для начинающих и&nbsp;профессиональных пловцов любого возраста. У&nbsp;нас&nbsp;Вы найдете все необходимое для плавания с&nbsp;доставкой в&nbsp;Москве, Санкт-Петербурге и&nbsp;в&nbsp;регионы.
           p В&nbsp;нашем каталоге представлены товары от #[a(href='/') Speedo], #[a(href='/') Arena], #[a(href='/') Maru], #[a(href='/') ZOGGS], #[a(href='/') Finis], #[a(href='/') Mosconi], #[a(href='/') TYR] и&nbsp;других ведущих мировых брендов. Все товары являются подлинными и&nbsp;отличаются высоким качеством. Все снаряжение фирменное и&nbsp;сопровождается гарантией производителя.
 
-        .home-seo-section__cutoff
+        .home-seo-section__cutoff.js-home-seo-section-cutoff
           +grid.home-seo-section__grid
             +col(4).home-seo-section__col
               +content-zone.content-zone_small
@@ -71,4 +71,4 @@ mixin home-seo-section()
           +content-zone
             p Все товары, в&nbsp;том числе плавки и&nbsp;купальники Speedo, Arena и&nbsp;других брендов вы&nbsp;можете заказать с&nbsp;услугой примерки на&nbsp;выбор. Желаем приятных покупок!
         .home-seo-section__readmore
-          +link(href="javascript:void(0)") Читать далее
+          +link(href="javascript:void(0)").js-home-seo-section-more Читать далее

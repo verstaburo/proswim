@@ -27,6 +27,7 @@ import '../components/hero-slider/hero-slider';
 import '../components/brands-section/brands-section';
 import '../components/products-section/products-section';
 import '../components/articles-section/articles-section';
+import '../components/home-seo-section/home-seo-section';
 import '../components/footer/footer';
 
 const $ = window.$;
