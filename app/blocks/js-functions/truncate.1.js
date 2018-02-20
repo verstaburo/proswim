@@ -5,6 +5,7 @@ function truncate() {
     const self = $(this);
     const lines = self.data('lines');
     let linesCount = Number(lines);
+    let text = self.data('initial-text');
     const ww = $(window).width();
 
     if (!self.is(':visible')) {
@@ -21,6 +22,12 @@ function truncate() {
       }
     }
 
+    if (!text) {
+      text = self.text().replace(/\s+/g, ' ');
+      self.data('initial-text', text);
+    }
+
+    // set height
     const lh = parseInt(self.css('line-height'), 10);
     const height = lh * linesCount;
 
@@ -29,7 +36,12 @@ function truncate() {
       overflow: 'hidden',
     });
 
-    self.dotdotdot();
+    // // truncate
+    // self.text(text);
+
+    // while (self[0].scrollHeight > self.height()) {
+    //   self.text((index, str) => str.replace(/\W*\s(\S)*$/, '...'));
+    // }
   });
 }
 
