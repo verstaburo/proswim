@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Versta Project Template</title>
+    <title>Proswim - Для открытой воды</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -2102,27 +2102,68 @@
         </div>
     </div>
     <div class="popups"></div>
-    <div class="sitemap">
+    <div class="page">
         <div class="container">
-            <div class="sitemap__list">
-                <a class="link" href="ui-kit.html">
-                    <span class="link__text">UI-kit (ui-kit.html)</span>
-                </a>
-                <a class="link" href="index.html">
-                    <span class="link__text">Главная (index.html)</span>
-                </a>
-                <a class="link" href="news.html">
-                    <span class="link__text">Новости (news.html)</span>
-                </a>
-                <a class="link" href="categories.html">
-                    <span class="link__text">Категории - Для тренировок (categories.html)</span>
-                </a>
-                <a class="link" href="categories2.html">
-                    <span class="link__text">Категории - Для соревнований (categories2.html)</span>
-                </a>
-                <a class="link" href="categories3.html">
-                    <span class="link__text">Категории - Для открытой воды (categories3.html)</span>
-                </a>
+            <div class="page__head">
+                <div class="page__headcol page__headcol_flexible">
+                    <div class="breadcrumbs js-test">
+                        <ul>
+                            <li class="breadcrumbs__item">
+                                <a class="link" href="#">
+                                    <span class="link__text">Главная</span>
+                                </a>
+                                <svg class="breadcrumbs__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-bread-crumbs"></use></svg>
+                            </li>
+                            <li class="breadcrumbs__item">
+                                <a class="link" href="#">
+                                    <span class="link__text">Для открытой воды</span>
+                                </a>
+                            </li>
+                    </div>
+                </div>
+            </div>
+            <h1 class="page__heading">Для открытой воды</h1>
+            <div class="categories-section">
+                <form class="searchbar searchbar_big" method="POST" action="/">
+                    <input class="input searchbar__input" placeholder="Введите название товара или бренда для поиска..." type="text" />
+                    <button class="searchbar__button" type="submit">
+                        <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
+                    </button>
+                </form>
+                <div class="grid">
+                    <div class="grid__col grid__col_six">
+                        <a class="category-card category-card_center_image" href="javascript:void(0)">
+                            <span class="category-card__image">
+                                <img src="content-img/category-cards/layer25.png" alt="Гидрокостюмы" />
+                            </span>
+                            <h4 class="category-card__heading">Гидрокостюмы</h4>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col_six">
+                        <a class="category-card category-card_center_image" href="javascript:void(0)">
+                            <span class="category-card__image">
+                                <img src="content-img/category-cards/layer31.png" alt="Очки" />
+                            </span>
+                            <h4 class="category-card__heading">Очки</h4>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col_six">
+                        <a class="category-card category-card_center_image" href="javascript:void(0)">
+                            <span class="category-card__image">
+                                <img src="content-img/category-cards/layer22.png" alt="Шапочки" />
+                            </span>
+                            <h4 class="category-card__heading">Шапочки</h4>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col_six">
+                        <a class="category-card category-card_center_image" href="javascript:void(0)">
+                            <span class="category-card__image">
+                                <img src="content-img/category-cards/layer28.png" alt="Аксессуары" />
+                            </span>
+                            <h4 class="category-card__heading">Аксессуары</h4>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
