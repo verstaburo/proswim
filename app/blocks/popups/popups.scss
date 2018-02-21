@@ -84,6 +84,14 @@
     }
   }
 
+  &__subheading {
+    display: block;
+    margin-bottom: 23px;
+    margin-top: -5px;
+    @include heading-6;
+    line-height: (21/15);
+  }
+
   &__text {
     margin-top: 16px;
     text-align: left;
