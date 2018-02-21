@@ -2,12 +2,20 @@
   display: block;
   padding-bottom: 77px;
 
+  @include screen(desktop) {
+    padding-bottom: 55px;
+  }
+
   &__footer {
     position: relative;
     margin-top: 36px;
     display: block;
     text-align: center;
     padding: 4px 150px;
+
+    @include screen(desktop) {
+      margin-top: 30px;
+    }
   }
 
   &__button {

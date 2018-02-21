@@ -24,5 +24,9 @@
     display: block;
     @include heading-1;
     margin: 14px 0 22px;
+
+    @include screen(desktop) {
+      margin-bottom: 19px;
+    }
   }
 }
