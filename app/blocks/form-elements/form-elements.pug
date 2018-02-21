@@ -24,6 +24,7 @@ mixin checkbox(name, value, checked, required)
     - var check = checked || '';
     +e.INPUT.input(name=name, value=value, check, type="checkbox", required=required)
     +e.SPAN.box
+      +icon('checked').icon
     +e.SPAN.content
       block
 
@@ -31,6 +32,7 @@ mixin radio(name, value, checked)
   +b.LABEL.checkradio&attributes(attributes)
     +e.INPUT.input(name=name, value=value, checked=checked, type="radio")
     +e.SPAN.box
+      +icon('checked').icon
     +e.SPAN.content
       block
 

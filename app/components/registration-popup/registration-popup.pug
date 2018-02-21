@@ -15,7 +15,7 @@ mixin registration-popup
           +checkbox('terms', true, true, true)
             | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]
 
-    +popup-footer('Войти через соцсети')
+    +popup-footer('Войти через соцсети').registration-popup__footer
       +social-buttons._big
         +social-button('vk')._big._colorized
         +social-button('fb')._big._colorized

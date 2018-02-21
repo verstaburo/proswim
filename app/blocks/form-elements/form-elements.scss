@@ -1,10 +1,10 @@
-.parsley-type {
+.parsley-type,
+.filled {
   margin-top: 6px;
   @include text-tiny;
   font-weight: 500;
   color: $color-red;
 }
-
 
 .input {
   padding: 0 13px;
@@ -46,9 +46,10 @@
 
 .checkradio {
   position: relative;
-  padding-left: 25px;
+  padding-left: 26px;
   display: inline-block;
   cursor: pointer;
+  font-size: 0;
 
   &__input {
     position: absolute;
@@ -63,7 +64,12 @@
     &:checked {
 
       & + .checkradio__box {
-        &::before { opacity: 1; }
+        background-color: $color-main;
+        border-color: $color-main;
+
+        .checkradio__icon {
+          opacity: 1;
+        }
       }
     }
   }
@@ -73,24 +79,43 @@
     width: 15px;
     height: 15px;
     border: 1px solid $color-border;
+    border-radius: 2px;
+    user-select: none;
     left: 0;
     top: 2px;
+    transition: border-color $ease-main,
+                background-color $ease-main;
 
-    &::before {
-      content: '';
-      width: 9px;
-      height: 9px;
-      background-color: $color-main;
-      display: block;
-      opacity: 0;
-      transition: opacity $ease-main;
-
-      @include center-image;
+    .checkradio.parsley-error & {
+      border-color: $lightred-color;
     }
   }
 
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 7px;
+    fill: white;
+    opacity: 0;
+    transition: opacity $ease-main;
+  }
+
   &__content {
-    @include text;
+    display: inline-block;
+    @include text-small;
+    line-height: (21/13);
+
+    .link {
+      display: inline;
+
+      &__text {
+        @include text-small;
+        line-height: (21/13);
+      }
+    }
   }
 }
 

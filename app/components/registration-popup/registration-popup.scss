@@ -1,3 +1,11 @@
 .registration-popup {
   display: block;
+
+  .button {
+    margin-top: 2px;
+  }
+
+  &__footer {
+    padding-top: 14px;
+  }
 }
