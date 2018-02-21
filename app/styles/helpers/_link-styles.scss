@@ -3,6 +3,11 @@
   color: $color-main;
   transition: opacity $ease-main;
   border-color: $color-main;
+  transition: all $ease-main;
+
+  &:hover {
+    color: $color-basic;
+  }
 }
 
 @mixin link-underline {

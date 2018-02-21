@@ -14,6 +14,6 @@ export default function popups() {
   $(document).on('click', '.js-popup-close', (e) => {
     e.preventDefault();
 
-    $.fancybox.close(true);
+    $.fancybox.close();
   });
 }

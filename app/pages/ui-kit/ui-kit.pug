@@ -281,6 +281,20 @@ block content
             +content-zone
               h2 Тестовый попап
               p С тестовым контентом
+        +ui-description Список попапов:
+          ul
+            li(style="margin-top: 8px;")
+              p(style='font-size: 14px; color: #999;') components/login-popup
+              +link(href="#login-popup").js-fancybox Авторизация
+            li(style="margin-top: 8px;")
+              p(style='font-size: 14px; color: #999;') components/password-recovery-popup
+              +link(href="#password-recovery-popup").js-fancybox Восстановление пароля
+            li(style="margin-top: 8px;")
+              p(style='font-size: 14px; color: #999;') components/registration-popup
+              +link(href="#registration-popup").js-fancybox Регистрация
+            li(style="margin-top: 8px;")
+              p(style='font-size: 14px; color: #999;') components/registration-complete-popup
+              +link(href="#registration-complete-popup").js-fancybox Регистрация прошла успешно
 
     //- Ссылки
     +ui-section
@@ -564,3 +578,9 @@ block content
     |   $('.ui-kit__navigation__list').append(li);
     |   $(this).attr('id', id);
     | });
+
+block popups
+  +login-popup
+  +registration-popup
+  +password-recovery-popup
+  +registration-complete-popup

@@ -1,0 +1,12 @@
+mixin registration-complete-popup
+  +popup.registration-complete-popup#registration-complete-popup
+    +popup-header('Поздравляем!')
+    +popup-content.registration-complete-popup__content
+      +icon('note', true).registration-complete-popup__icon
+      .registration-complete-popup__body
+        H5.registration-complete-popup__bodyheading Регистрация прошла успешно
+        .content-zone.registration-complete-popup__bodytext
+          p Благодарим за&nbsp;регистрацию в&nbsp;proswimru!
+          p Ваши логин и&nbsp;пароль отправлены на&nbsp;указанный при регистрации e-mail.
+          p Добро пожаловать, Alex!
+          p В "#[a(href='#') Моем кабинете]" Вы&nbsp;можете получить информацию о&nbsp;сделанных вами заказах или #[a(href='#') изменить свои персональные данные].

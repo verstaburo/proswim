@@ -2,7 +2,7 @@ mixin registration-popup
   +popup.registration-popup#registration-popup
     +popup-header('Регистрация')
     +popup-content
-      +e.FORM.form.__grid(method='post' action='/' data-parsley-validate)
+      +e.FORM.form.__grid(method='post' action='/' data-parsley-validate).js-registration-popup-form
         +col(12)
           +input(type='text' placeholder='Имя' required)._size_md
         +col(12)

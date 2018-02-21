@@ -1,0 +1,36 @@
+.registration-complete-popup {
+  display: block;
+
+  &__content {
+    padding-top: 30px;
+    padding-bottom: 44px;
+    text-align: center;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 74px;
+    height: 62px;
+    fill: $color-main;
+  }
+
+  &__body {
+    text-align: left;
+    margin-top: 8px;
+
+    &heading {
+      display: block;
+      @include heading-5;
+      line-height: (21/16);
+      margin-bottom: 11px;
+    }
+
+    &text {
+      color: $darkengrey-color;
+
+      p:not(:last-child) {
+        margin: 0;
+      }
+    }
+  }
+}

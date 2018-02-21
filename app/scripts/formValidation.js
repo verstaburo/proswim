@@ -1,4 +1,4 @@
-import Parsley from 'parsleyjs';
+import Parsley from 'parsleyjs/dist/parsley';
 
 const $ = window.$;
 
