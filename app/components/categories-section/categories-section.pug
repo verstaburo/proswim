@@ -1,7 +1,7 @@
 mixin categories-section(data, col, searchbar, centerImage)
   +b.categories-section&attributes(attributes)
     if searchbar
-      +searchbar('Введите название товара или бренда для поиска...')._big
+      +searchbar('Введите название товара или бренда для поиска...')._big.__searchbar
 
     +grid
       each item in data
