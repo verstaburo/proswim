@@ -2101,7 +2101,168 @@
             </div>
         </div>
     </div>
-    <div class="popups"></div>
+    <div class="popups">
+        <div class="popup login-popup" id="login-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Войти в аккаунт</div>
+            </div>
+            <div class="popup__content">
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate">
+                    <div class="grid__col grid__col_twelve">
+                        <input class="input input_size_md" type="email" placeholder="Email адрес" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <input class="input input_size_md" type="password" placeholder="Пароль" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <a class="link link_dark js-fancybox" href="#password-recovery-popup">
+                            <span class="link__text">Забыли пароль?</span>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <button class="button button_size_big button_block" type="submit">Войти</button>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__footer">
+                <div class="popup__footerheading">Войти через соцсети</div>
+                <div class="social-buttons social-buttons_big">
+                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
+                    </a>
+                </div>
+                <div class="popup__text">Нет аккаунта?
+                    <a class="link js-fancybox" href="#registration-popup">
+                        <span class="link__text">Зарегистрируйтесь!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="popup registration-popup" id="registration-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Регистрация</div>
+            </div>
+            <div class="popup__content">
+                <form class="popup__form popup__grid js-registration-popup-form" method="post" action="/" data-parsley-validate="data-parsley-validate">
+                    <div class="grid__col grid__col_twelve">
+                        <input class="input input_size_md" type="text" placeholder="Имя" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <input class="input input_size_md" type="email" placeholder="Email адрес" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <input class="input input_size_md" type="password" placeholder="Пароль" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <button class="button button_size_big button_block" type="submit">Зарегистрироваться</button>
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <label class="checkradio">
+                            <input class="checkradio__input" name="terms" value="value" check="check" type="checkbox" required="required" />
+                            <span class="checkradio__box">
+                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            </span>
+                            <span class="checkradio__content">Я ознакомлен с
+                                <a class="link" href="#">
+                                    <span class="link__text">публичной офертой</span>
+                                </a> и соглашаюсь с
+                                <a class="link" href="#">
+                                    <span class="link__text">условиями обработки персональных данных</span>
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__footer registration-popup__footer">
+                <div class="popup__footerheading">Войти через соцсети</div>
+                <div class="social-buttons social-buttons_big">
+                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
+                    </a>
+                </div>
+                <div class="popup__text">Есть аккаунт?
+                    <a class="link js-fancybox" href="#login-popup">
+                        <span class="link__text">Выполнить вход!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="popup password-recovery-popup" id="password-recovery-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Восстановить пароль</div>
+            </div>
+            <div class="popup__content password-recovery-popup__content">
+                <div class="popup__subheading">Введите E-mail на который
+                    <br/>был зарегистрирован аккаунт ProSwim.ru</div>
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate">
+                    <div class="grid__col grid__col_twelve">
+                        <input class="input input_size_md" type="email" placeholder="Email адрес" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_twelve">
+                        <button class="button button_size_big button_block" type="submit">Выслать инструкцию</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup registration-complete-popup" id="registration-complete-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Поздравляем!</div>
+            </div>
+            <div class="popup__content registration-complete-popup__content">
+                <svg class="registration-complete-popup__icon"><use xlink:href="assets/images/icon.svg#icon_note"></use></svg>
+                <div class="registration-complete-popup__body">
+                    <H5 class="registration-complete-popup__bodyheading">Регистрация прошла успешно</H5>
+                    <div class="content-zone registration-complete-popup__bodytext">
+                        <p>Благодарим за&nbsp;регистрацию в&nbsp;proswimru!</p>
+                        <p>Ваши логин и&nbsp;пароль отправлены на&nbsp;указанный при регистрации e-mail.</p>
+                        <p>Добро пожаловать, Alex!</p>
+                        <p>В "
+                            <a href="#">Моем кабинете</a>" Вы&nbsp;можете получить информацию о&nbsp;сделанных вами заказах или
+                            <a href="#">изменить свои персональные данные</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="page">
         <div class="container">
             <div class="page__head">
@@ -2124,7 +2285,7 @@
             </div>
             <h1 class="page__heading">Для открытой воды</h1>
             <div class="categories-section">
-                <form class="searchbar searchbar_big" method="POST" action="/">
+                <form class="searchbar searchbar_big categories-section__searchbar" method="POST" action="/">
                     <input class="input searchbar__input" placeholder="Введите название товара или бренда для поиска..." type="text" />
                     <button class="searchbar__button" type="submit">
                         <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
