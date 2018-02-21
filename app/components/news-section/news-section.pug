@@ -3,8 +3,8 @@ mixin news-section(items)
     .container
       +grid
         each item in items
-          +col(3)
-            +article-card(item)
+          +col(3).news-section__col
+            +article-card(item)._default_mob
 
       +e.footer
         +pagination

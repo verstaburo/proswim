@@ -23,6 +23,11 @@
 
   @include screen(tablet) {
     height: 381px;
+
+    &_default_mob {
+      padding: 20px;
+      height: 456px;
+    }
   }
 
   &__image {
@@ -39,6 +44,10 @@
 
     @include screen(tablet) {
       height: 107px;
+
+      .article-card_default_mob & {
+        height: 170px;
+      }
     }
 
     img {
@@ -72,6 +81,13 @@
       @include text-medium;
       line-height: (19/14);
       max-height: (19/14*3em);
+    }
+
+    @include screen(tablet) {
+      .article-card_default_mob & {
+        @include heading-5;
+        max-height: (24/16*2em);
+      }
     }
   }
 

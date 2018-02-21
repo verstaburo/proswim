@@ -28,5 +28,11 @@
     @include screen(desktop) {
       margin-bottom: 19px;
     }
+
+    @include screen(tablet) {
+      font-size: 26px;
+      line-height: (30/26);
+      margin: 16px 0 24px;
+    }
   }
 }

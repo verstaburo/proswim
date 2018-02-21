@@ -6,6 +6,10 @@
     padding-bottom: 55px;
   }
 
+  @include screen(tablet) {
+    padding-bottom: 40px;
+  }
+
   &__footer {
     position: relative;
     margin-top: 36px;
@@ -16,11 +20,27 @@
     @include screen(desktop) {
       margin-top: 30px;
     }
+
+    @include screen(tablet) {
+      padding: 0;
+    }
   }
 
   &__button {
     position: absolute;
     top: 0;
     right: 0;
+
+    @include screen(tablet) {
+      position: static;
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+
+  &__col {
+    @include screen(tablet) {
+      width: 100%;
+    }
   }
 }
