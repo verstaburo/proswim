@@ -1,6 +1,8 @@
 mixin breadcrumbs(json)
   +b.breadcrumbs.js-test&attributes(attributes)
-    each crumb in json
+    each crumb, index in json
       +e.LI.item
         +link(href='#')
           =crumb
+        if index + 1 < json.length
+          +icon('Arrow icon (bread crumbs)').icon

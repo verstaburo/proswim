@@ -1,0 +1,18 @@
+.news-section {
+  display: block;
+  padding-bottom: 77px;
+
+  &__footer {
+    position: relative;
+    margin-top: 36px;
+    display: block;
+    text-align: center;
+    padding: 4px 150px;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,28 @@
+@import 'helpers/mixins'; // Миксины
+@import 'helpers/fonts'; // Шрифты
+@import 'helpers/variables'; // Переменные
+@import 'helpers/gradients'; // Градиенты
+@import 'helpers/basics'; // Основные общие стили
+@import 'helpers/text-styles'; // Стили текстов
+@import 'helpers/link-styles'; // Стили ссылок
+@import 'helpers/list-styles'; // Стили списков
+
+.page {
+  &__head {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $color-border;
+
+    &col:not(:first-child) {
+      padding-left: 20px;
+    }
+  }
+
+  &__heading {
+    display: block;
+    @include heading-1;
+    margin: 14px 0 22px;
+  }
+}

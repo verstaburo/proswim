@@ -42,4 +42,24 @@
   &_block {
     width: 100%;
   }
+
+  &_transparent {
+    border: 1px solid $anotherlightblue-color;
+    background-color: transparent;
+    color: $darkblue-color;
+    box-shadow: none;
+
+    &:hover,
+    &.is-active {
+      color: white;
+      border-color: $darkgreyblue-color;
+      background-color: $darkgreyblue-color;
+      box-shadow: none;
+    }
+
+    &.is-disabled {
+      border: 1px solid $verylightblue-color;
+      color: $midblue-color;
+    }
+  }
 }

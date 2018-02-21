@@ -162,8 +162,12 @@ block content
         p Блок: blocks/button
       +ui-section-content()
         +ui-elements-list()
-          +button()(href="#") .button
-          +button('button')(href="#" disabled) .button:disabled
+          +button()(href="#") button
+          +button('button')(href="#" disabled) button:disabled
+          +button()(href="#")._transparent button
+          +button()(href="#")._block .button._block
+          +button()(href="#")._size_md .button._size_md
+          +button()(href="#")._size_big .button._size_big
         +ui-description При клике на .js-anchor происходит скролл к элементу из атрибута href. Блок: blocks/js-functions/anchor.js
         +button()(href="#section0").js-anchor .js-anchor
         +ui-description При клике на .js-freeze скролл страницы блокируется, на .js-unfreeze разблокируется. Блок: blocks/js-functions/freeze.js. Функции freeze() и unfreeze() можно импортировать и использовать в модалках, бургере или где-то еще
@@ -374,6 +378,20 @@ block content
       +ui-section-content()
         +breadcrumbs(['Главная', 'Раздел', 'Страница'])
 
+    //- Пагинация
+    +ui-section
+      +ui-section-head
+        h2 Пагинация
+        p Блок: blocks/pagination/pagination
+      +ui-section-content()
+          +pagination
+            +pagination-item('prev').is-disabled
+            +pagination-item.is-active 1
+            +pagination-item 2
+            +pagination-item 3
+            +pagination-item 4
+            +pagination-item('next')
+
     //- Рейтинг
     +ui-section
       +ui-section-head
@@ -484,6 +502,14 @@ block content
           +social-button('fb')
           +social-button('vk')
           +social-button('instagram')
+
+        div(style="padding: 8px 0")
+
+        +social-buttons._big
+          +social-button('vk')._big._colorized
+          +social-button('fb')._big._colorized
+          +social-button('ok')._big._colorized
+          +social-button('tw')._big._colorized
 
     //- Category cards
     +ui-section._blue

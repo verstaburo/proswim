@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Наши новости и обзоры'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Наши новости и обзоры'])
+      +e.H1.heading Наши новости и обзоры
+
+    +news-section(getData('news'))
+
+block popups
+    .container

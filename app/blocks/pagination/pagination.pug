@@ -1,0 +1,15 @@
+mixin pagination()
+  +b.UL.pagination&attributes(attributes)
+    block
+
+mixin pagination-item(kind)
+  +e.LI.item&attributes(attributes)
+    +e.A.link
+      if kind === 'prev'
+        +icon('Arrow').icon._rotate
+
+      else if kind === 'next'
+        +icon('Arrow').icon
+
+      else
+        block

@@ -1,0 +1,18 @@
+mixin news-section(items)
+  +b.news-section&attributes(attributes)
+    .container
+      +grid
+        each item in items
+          +col(3)
+            +article-card(item)
+
+      +e.footer
+        +pagination
+          +pagination-item('prev').is-disabled
+          +pagination-item.is-active 1
+          +pagination-item 2
+          +pagination-item 3
+          +pagination-item 4
+          +pagination-item('next')
+
+        +button._size_md._transparent.__button Показать все
