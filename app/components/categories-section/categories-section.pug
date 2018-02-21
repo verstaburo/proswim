@@ -1,5 +1,8 @@
-mixin categories-section(data, col)
+mixin categories-section(data, col, searchbar)
   +b.categories-section&attributes(attributes)
+    if searchbar
+      +searchbar('Введите название товара или бренда для поиска...')._big
+
     +grid
       each item in data
         +col(col || 4)

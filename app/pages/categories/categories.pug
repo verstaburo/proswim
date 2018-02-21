@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Для тренировок'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Для тренировок'])
+
+      +e.H1.heading Для тренировок
+
+      +categories-section(getData('categories1'))
+
+block popups

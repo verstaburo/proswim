@@ -4,6 +4,7 @@
   cursor: pointer;
   padding-bottom: 20px;
   overflow: hidden;
+  background-color: $lightgrey-color;
 
   @include screen(tablet) {
     padding-bottom: 21px;

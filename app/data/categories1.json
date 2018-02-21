@@ -1,0 +1,47 @@
+[
+  {
+    "image": "content-img/category-cards/img1.png",
+    "title": "Очки",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img2.png",
+    "title": "Шапочки",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img3.png",
+    "title": "Аксессуары",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img4.png",
+    "title": "Купальники",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img5.png",
+    "title": "Плавки",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img6.png",
+    "title": "Тренажеры",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img7.png",
+    "title": "Сланцы",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img8.png",
+    "title": "Полотенца",
+    "href": "javascript:void(0)"
+  },
+  {
+    "image": "content-img/category-cards/img9.png",
+    "title": "Электроника",
+    "href": "javascript:void(0)"
+  }
+]

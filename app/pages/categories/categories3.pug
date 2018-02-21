@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Для открытой воды'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Для открытой воды'])
+
+      +e.H1.heading Для открытой воды
+
+      +categories-section(getData('categories3'))
+
+block popups
