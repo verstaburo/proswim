@@ -4,7 +4,6 @@
   cursor: pointer;
   padding-bottom: 20px;
   overflow: hidden;
-  background-color: $lightgrey-color;
 
   @include screen(tablet) {
     padding-bottom: 21px;
@@ -16,9 +15,21 @@
     display: block;
     height: 260px;
     overflow: hidden;
+    background-color: $lightgrey-color;
 
     img {
       @include fill-img;
+    }
+
+    .category-card_center_image & img {
+      margin: auto;
+      object-fit: none;
+      width: auto;
+      height: auto;
+      min-width: auto;
+      min-height: auto;
+      max-width: 100%;
+      max-height: 100%;
     }
 
     @include screen(desktop) {

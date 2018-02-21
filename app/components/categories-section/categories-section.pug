@@ -1,4 +1,4 @@
-mixin categories-section(data, col, searchbar)
+mixin categories-section(data, col, searchbar, centerImage)
   +b.categories-section&attributes(attributes)
     if searchbar
       +searchbar('Введите название товара или бренда для поиска...')._big
@@ -6,4 +6,4 @@ mixin categories-section(data, col, searchbar)
     +grid
       each item in data
         +col(col || 4)
-          +category-card(item.image, item.title, item.href)
+          +category-card(item.image, item.title, item.href)(class=centerImage ? '_center_image' : '')
