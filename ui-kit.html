@@ -254,8 +254,12 @@
             <div class="ui-kit__section-content">
                 <div class="container">
                     <div class="ui-kit__elements-list">
-                        <a class="button" href="#">.button</a>
-                        <a class="button" href="#" disabled="disabled">.button:disabled</a>
+                        <a class="button" href="#">button</a>
+                        <a class="button" href="#" disabled="disabled">button:disabled</a>
+                        <a class="button button_transparent" href="#">button</a>
+                        <a class="button button_block" href="#">.button._block</a>
+                        <a class="button button_size_md" href="#">.button._size_md</a>
+                        <a class="button button_size_big" href="#">.button._size_big</a>
                     </div>
                     <p class="ui-kit__description">При клике на .js-anchor происходит скролл к элементу из атрибута href. Блок: blocks/js-functions/anchor.js</p>
                     <a class="button js-anchor" href="#section0">.js-anchor</a>
@@ -642,11 +646,13 @@
                                 <a class="link" href="#">
                                     <span class="link__text">Главная</span>
                                 </a>
+                                <svg class="breadcrumbs__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-bread-crumbs"></use></svg>
                             </li>
                             <li class="breadcrumbs__item">
                                 <a class="link" href="#">
                                     <span class="link__text">Раздел</span>
                                 </a>
+                                <svg class="breadcrumbs__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-bread-crumbs"></use></svg>
                             </li>
                             <li class="breadcrumbs__item">
                                 <a class="link" href="#">
@@ -654,6 +660,42 @@
                                 </a>
                             </li>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Пагинация</h2>
+                    <p>Блок: blocks/pagination/pagination</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <ul class="pagination">
+                        <li class="pagination__item is-disabled">
+                            <a class="pagination__link">
+                                <svg class="pagination__icon pagination__icon_rotate"><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                            </a>
+                        </li>
+                        <li class="pagination__item is-active">
+                            <a class="pagination__link">1</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link">2</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link">3</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link">4</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link">
+                                <svg class="pagination__icon"><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -859,6 +901,21 @@
                         </a>
                         <a class="social-button social-button_instagram" href="javascript:void(0);">
                             <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_instagram-icon"></use></svg>
+                        </a>
+                    </div>
+                    <div style="padding: 8px 0;"></div>
+                    <div class="social-buttons social-buttons_big">
+                        <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
+                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
+                        </a>
+                        <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
+                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
+                        </a>
+                        <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
+                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
+                        </a>
+                        <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
+                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
                         </a>
                     </div>
                 </div>
