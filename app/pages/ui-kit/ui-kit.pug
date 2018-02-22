@@ -490,7 +490,11 @@ block content
         h2 Searchbar
         p Блок: blocks/searchbar/searchbar
       +ui-section-content
-        +searchbar
+        +ui-description +searchbar('Placeholder...') на темном фоне
+          div(style="padding: 50px; background-color: #2f3133;")
+            +searchbar('Placeholder...')
+        +ui-description .searchbar('Placeholder...')._big
+        +searchbar('Placeholder...')._big
 
     //- Usermenu
     +ui-section
