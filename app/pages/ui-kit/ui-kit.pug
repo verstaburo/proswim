@@ -392,6 +392,24 @@ block content
             +pagination-item 4
             +pagination-item('next')
 
+    //- Вертикальное меню
+    +ui-section
+      +ui-section-head
+        h2 Вертикальное меню
+        p Блок: blocks/vertical-menu/vertical-menu
+      +ui-section-content()
+        +vertical-menu('Очки')
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+        div(style="padding: 8px 0")
+        +vertical-menu('Очки', null, true)._accordion.is-active
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+
     //- Рейтинг
     +ui-section
       +ui-section-head

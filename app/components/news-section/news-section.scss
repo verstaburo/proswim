@@ -1,18 +1,6 @@
 .news-section {
   display: block;
 
-  &__button {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    @include screen(sm) {
-      position: static;
-      margin-top: 16px;
-      width: 100%;
-    }
-  }
-
   &__col {
     @include screen(sm) {
       width: 100%;

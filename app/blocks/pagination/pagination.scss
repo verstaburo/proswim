@@ -9,7 +9,8 @@
       padding-right: 10px;
     }
 
-    &.is-disabled { pointer-events: none; }
+    &.is-disabled,
+    &.is-active { pointer-events: none; }
   }
 
   &__link {
@@ -33,11 +34,15 @@
       border: 1px solid $verylightblue-color;
     }
 
-    &:hover,
     .pagination__item.is-active & {
       background-color: $darkgreyblue-color;
       border-color: $darkgreyblue-color;
       color: white;
+    }
+
+    .pagination__item:hover & {
+      border-color: $dark-border-color;
+      color: $color-basic;
     }
   }
 
@@ -55,9 +60,12 @@
       fill: $verylightblue-color;
     }
 
-    .pagination__link:hover &,
     .pagination__item.is-active & {
       fill: white;
+    }
+
+    .pagination__item:hover & {
+      fill: $color-basic;
     }
 
     &_rotate {

@@ -8,10 +8,15 @@
   &__heading {
     position: relative;
     @include heading-6;
+    transition: color $ease-main;
 
     .vertical-menu_accordion & {
       padding-left: 26px;
       cursor: pointer;
+
+      &:hover {
+        color: $darkblue-color;
+      }
     }
   }
 

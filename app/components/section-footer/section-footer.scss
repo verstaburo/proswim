@@ -5,6 +5,18 @@
   padding: 4px 150px;
   margin-top: 36px;
 
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include screen(sm) {
+      position: static;
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+
   @include screen(lg) {
     margin-top: 30px;
   }
