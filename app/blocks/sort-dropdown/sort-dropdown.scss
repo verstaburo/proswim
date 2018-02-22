@@ -14,13 +14,32 @@
     border: 1px solid $semigreyblue-color;
     cursor: pointer;
     box-sizing: border-box;
+    transition: color $ease-main;
+
+    &:hover,
+    &.is-active {
+      color: $darkblue-color;
+    }
   }
 
   &__value {
+    position: relative;
     display: inline-block;
     @include text-small;
-    @include ellipsis(100%);
-    transition: color $ease-main;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      display: block;
+      width: 22px;
+      background-image: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+    }
   }
 
   &__caret {
@@ -35,7 +54,12 @@
     transition: fill $ease-main,
                 transform $ease-main;
 
-    #{$b}.is-active & {
+    #{$b}__button:hover &,
+    #{$b}__button.is-active & {
+      fill: $darkblue-color;
+    }
+
+    #{$b}__button.is-active & {
       transform: translateY(-50%) rotate(180deg);
     }
   }

@@ -1,0 +1,33 @@
+.filter-section {
+  display: block;
+  padding: 15px 0;
+  box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
+  border: 1px solid $color-border;
+
+  &__container {
+    display: flex;
+  }
+
+  &__heading {
+    display: inline-block;
+    @include heading-5;
+    font-weight: 700;
+    line-height: (22/16);
+    padding-top: 4px;
+    margin-right: -6px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px 0 0 -16px;
+    font-size: 0;
+
+    &_flexible { flex: 1 1 auto; }
+  }
+
+  &__col {
+    display: inline-block;
+    padding: 10px 0 0 16px;
+  }
+}
