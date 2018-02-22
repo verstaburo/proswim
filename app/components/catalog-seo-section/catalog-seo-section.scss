@@ -1,0 +1,19 @@
+.catalog-seo-section {
+  display: block;
+  @include clearfix;
+  padding: 45px 0 0 0;
+
+  &__image {
+    position: relative;
+    width: 180px;
+    height: 187px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 4px;
+
+    img {
+      @include fill-img;
+      border-radius: 50%;
+    }
+  }
+}
