@@ -1,22 +1,6 @@
 .news-section {
   display: block;
 
-  &__footer {
-    position: relative;
-    margin-top: 36px;
-    display: block;
-    text-align: center;
-    padding: 4px 150px;
-
-    @include screen(desktop) {
-      margin-top: 30px;
-    }
-
-    @include screen(tablet) {
-      padding: 0;
-    }
-  }
-
   &__button {
     position: absolute;
     top: 0;

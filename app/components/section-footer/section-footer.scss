@@ -1,0 +1,15 @@
+.section-footer {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 4px 150px;
+  margin-top: 36px;
+
+  @include screen(desktop) {
+    margin-top: 30px;
+  }
+
+  @include screen(tablet) {
+    padding: 0;
+  }
+}

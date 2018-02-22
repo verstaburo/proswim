@@ -1,0 +1,11 @@
+mixin section-footer()
+  +b.section-footer&attributes(attributes)
+    +pagination
+      +pagination-item('prev').is-disabled
+      +pagination-item.is-active 1
+      +pagination-item 2
+      +pagination-item 3
+      +pagination-item 4
+      +pagination-item('next')
+
+    +button._size_md._transparent.__button Показать все
