@@ -1,8 +1,15 @@
-mixin vertical-menu(heading)
+mixin vertical-menu(heading, links, isAccordion)
   +b.vertical-menu&attributes(attributes)
     if heading
-      +e.H6.heading=heading
+      +e.H6.heading(class=isAccordion ? 'js-vertical-menu-button' : '')
+        span=heading
+        if isAccordion
+          +e.SPAN.button
+
     +e.UL.items
+      if links
+        each link in links
+          +vertical-menu-link(href=link.href)= link.title
       block
 
 mixin vertical-menu-link

@@ -1,16 +1,72 @@
 .vertical-menu {
   display: block;
 
+  &_accordion + &_accordion {
+    margin-top: 10px;
+  }
+
   &__heading {
+    position: relative;
     @include heading-6;
+
+    .vertical-menu_accordion & {
+      padding-left: 26px;
+      cursor: pointer;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: $color-main;
+    margin-top: -1px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 9px;
+      height: 1px;
+      background-color: white;
+      transition: transform $ease-main;
+    }
+
+    &::after,
+    .vertical-menu_accordion.is-closing &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .vertical-menu_accordion.is-active &::after,
+    .vertical-menu_accordion.is-opening &::after {
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__items {
     margin-top: 1px;
+
+    .vertical-menu_accordion & {
+      display: none;
+    }
+
+    .vertical-menu_accordion.is-active & {
+      display: block;
+    }
   }
 
   &__item {
-
+    .vertical-menu_accordion & {
+      padding-left: 26px;
+    }
   }
 
   &__link {

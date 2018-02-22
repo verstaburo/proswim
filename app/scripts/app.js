@@ -23,6 +23,7 @@ import '../blocks/rating/rating';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/shopmenu/shopmenu';
+import '../blocks/vertical-menu/vertical-menu';
 import '../components/header/header';
 import '../components/hero-slider/hero-slider';
 import '../components/brands-section/brands-section';
