@@ -1,0 +1,7 @@
+mixin card-widget(heading, link)
+  +b.card-widget&attributes(attributes)
+    +e.head
+      +e.H5.heading=heading
+      +link(href='javascript:void(0);').__link=link
+    +e.body
+      block

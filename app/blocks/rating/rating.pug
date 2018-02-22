@@ -2,10 +2,12 @@ mixin rating(active, count)
   - var initialCount = Number(count) || 5
 
   +b.rating&attributes(attributes)
-    +e.stars
-      - for (var i = 0; i < initialCount; i++)
-        +e.box(class=i+1 === active ? 'is-active' : '')
-          +icon('star').__icon
+    if count !== -1
+      +e.stars
+        - for (var i = 0; i < initialCount; i++)
+          +e.box(class=i+1 === active ? 'is-active' : '')
+            +icon('star').__icon
+
     if block
       +e.textwrap
         block

@@ -13,10 +13,20 @@ block content
       +grid
         +col(3)
           +sidebar
+            - var categoriesAcccordionData = getData('catalog-categories-menu')
+            - var reviewsData = getData('catalog-sidebar-reviews')
+
             +sidebar-item
-              - var categoriesAcccordionData = getData('catalog-categories-menu')
-                each categoriesAccordion, index in categoriesAcccordionData
-                  +vertical-menu(categoriesAccordion.title, categoriesAccordion.links, true)._accordion(class=index === 0 ? 'is-active' : '')
+              each categoriesAccordion, index in categoriesAcccordionData
+                +vertical-menu(categoriesAccordion.title, categoriesAccordion.links, true)._accordion(class=index === 0 ? 'is-active' : '')
+
+            +sidebar-item
+              +card-widget('Случайный отзыв:', 'Все отзывы')
+                +review-card(reviewsData[0])._simple
+
+            +sidebar-item
+              +card-widget('Отзыв о магазине:', 'Все отзывы')
+                +review-card(reviewsData[1])._simple
 
         +col(9)
           +sort-ui('Очки для плавания', '174 товара')

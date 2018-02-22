@@ -23,6 +23,15 @@
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
   }
 
+  &_simple {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    height: auto;
+
+    &:hover { box-shadow: none; }
+  }
+
   &__image {
     position: relative;
     display: block;
@@ -44,11 +53,16 @@
   }
 
   &__body {
-    margin-left: 20px;
+    .review-card__image + & {
+      margin-left: 20px;
+    }
+
     display: block;
 
     @include screen(lg) {
-      margin-left: 10px;
+      .review-card__image + & {
+        margin-left: 10px;
+      }
     }
   }
 
@@ -90,14 +104,48 @@
         margin-left: 14px;
 
         &wrap {
+
+          &:first-child {
+            margin-top: -2px;
+          }
+
           @include screen(lg) {
             width: 100%;
             margin-top: 10px;
             margin-left: -14px;
+
+            &:first-child {
+              margin-top: -2px;
+            }
           }
 
           @include screen(sm) {
             margin-top: 12px;
+
+            &:first-child {
+              margin-top: -2px;
+            }
+          }
+        }
+      }
+    }
+
+    .review-card_simple & {
+      display: block;
+
+      .rating {
+
+        &__text {
+          margin-left: 14px;
+
+          &wrap {
+            width: 100%;
+            margin-left: -14px;
+            margin-top: 12px;
+
+            &:first-child {
+              margin-top: -2px;
+            }
           }
         }
       }

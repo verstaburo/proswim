@@ -10,9 +10,7 @@
 
   &__heading {
     display: inline-block;
-    @include heading-5;
-    font-weight: 700;
-    line-height: (22/16);
+    @include heading-5-bold;
     padding-top: 4px;
     margin-right: -6px;
   }

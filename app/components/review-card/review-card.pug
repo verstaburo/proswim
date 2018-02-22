@@ -1,10 +1,11 @@
 mixin review-card(data)
   +b.ARTICLE.review-card(href='javascript:void(0)')&attributes(attributes)
-    +e.A(href='javascript:void(0)').image
-      img(src=`content-img/review-cards/${data.image}.jpg` alt=data.heading)
+    if data.image
+      +e.A(href='javascript:void(0)').image
+        img(src=`content-img/review-cards/${data.image}.jpg` alt=data.heading)
     +e.body
       +e.A(href='javascript:void(0)').heading.js-truncate=data.heading
-      +rating(data.rating.activeStar).__rating
+      +rating(data.rating.activeStar, data.rating.starsCount || 5).__rating
         +rating-text=data.rating.name
         +rating-text._grey=data.rating.date
       +e.DIV.text.js-truncate!=data.text
