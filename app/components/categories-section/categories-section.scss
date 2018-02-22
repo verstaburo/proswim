@@ -4,12 +4,12 @@
   .brands-section + & {
     margin-top: 37px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 28px;
     }
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     .grid__col {
       width: 100%;
     }

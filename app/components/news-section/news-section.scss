@@ -6,7 +6,7 @@
     top: 0;
     right: 0;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       position: static;
       margin-top: 16px;
       width: 100%;
@@ -14,7 +14,7 @@
   }
 
   &__col {
-    @include screen(tablet) {
+    @include screen(sm) {
       width: 100%;
     }
   }

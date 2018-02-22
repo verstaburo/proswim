@@ -10,12 +10,12 @@
   @include text;
   box-sizing: border-box;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     height: 255px;
     padding: 13px;
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     height: 296px;
   }
 
@@ -37,7 +37,7 @@
       max-height: 100%;
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       width: 80px;
       height: 80px;
     }
@@ -47,7 +47,7 @@
     margin-left: 20px;
     display: block;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-left: 10px;
     }
   }
@@ -61,7 +61,7 @@
     overflow: hidden;
     cursor: pointer;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       @include text-medium;
       line-height: (19/14);
       max-height: (19/14*2em);
@@ -79,7 +79,7 @@
   &__rating {
     margin-top: 8px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       flex-wrap: wrap;
       margin-top: 12px;
       flex-shrink: 0;
@@ -90,13 +90,13 @@
         margin-left: 14px;
 
         &wrap {
-          @include screen(desktop) {
+          @include screen(lg) {
             width: 100%;
             margin-top: 10px;
             margin-left: -14px;
           }
 
-          @include screen(tablet) {
+          @include screen(sm) {
             margin-top: 12px;
           }
         }
@@ -109,11 +109,11 @@
     max-height: (22/14*3em);
     overflow: hidden;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       max-height: (22/14*5em);
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       max-height: (22/14*6em);
     }
   }

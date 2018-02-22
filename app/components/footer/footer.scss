@@ -3,11 +3,11 @@
   padding: 60px 0;
   background-color: $darkestgrey-color;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     padding: 40px 0;
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     padding: 27px 0;
   }
 
@@ -17,7 +17,7 @@
       height: 33px;
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       display: none;
     }
   }
@@ -25,11 +25,11 @@
   &__social {
     margin-top: 18px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: -10px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin-top: 22px;
     }
   }
@@ -38,7 +38,7 @@
     display: block;
     margin-top: 18px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 9px;
     }
   }
@@ -92,11 +92,11 @@
     justify-content: space-between;
     margin: -36px 0 0 -33px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       flex-wrap: wrap;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin: 0 -15px;
     }
   }
@@ -105,14 +105,14 @@
     padding: 36px 0 0 33px;
     box-sizing: border-box;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       width: (100%/3);
     }
 
     &_info {
       padding-right: 4px;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         order: 6;
         padding-right: 0;
         padding-left: 25px;
@@ -122,19 +122,19 @@
     &_contacts {
       padding-right: 5px;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         padding-right: 0;
       }
     }
 
     &_service {
-      @include screen(desktop) {
+      @include screen(lg) {
         padding-left: 28px;
       }
     }
 
     &_company {
-      @include screen(desktop) {
+      @include screen(lg) {
         padding-left: 25px;
       }
     }
@@ -144,12 +144,12 @@
     }
 
     &_delivery {
-      @include screen(desktop) {
+      @include screen(lg) {
         padding-left: 28px;
       }
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       padding: 0 15px;
       width: 100%;
 
@@ -171,17 +171,17 @@
     margin-top: -.5em;
     margin-bottom: 8px;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin: 0;
       padding: 6px 25px 6px 0;
     }
 
     .footer__col_contacts & {
-      @include screen(desktop) {
+      @include screen(lg) {
         margin-bottom: 9px;
       }
 
-      @include screen(tablet) {
+      @include screen(sm) {
         margin-bottom: 0;
       }
     }
@@ -189,13 +189,13 @@
     .footer__section_high & {
       margin-bottom: 12px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         margin-bottom: 0;
       }
     }
 
     &_accordion {
-      @include screen(tablet) {
+      @include screen(sm) {
         cursor: pointer;
 
         &::before,
@@ -225,7 +225,7 @@
   &__body {
     font-size: 0;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       padding-top: 2px;
       padding-bottom: 19px;
 
@@ -245,7 +245,7 @@
       max-width: 158px;
       padding-top: 13px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         padding-top: 15px;
         padding-bottom: 35px;
 

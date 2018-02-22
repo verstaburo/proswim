@@ -93,7 +93,7 @@
       color: $color-basic;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       display: none;
     }
   }

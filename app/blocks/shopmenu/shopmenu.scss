@@ -3,14 +3,14 @@
   cursor: pointer;
   position: relative;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     position: static;
   }
 
   .shopmenu & {
     padding: 0 9px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       padding-left: 17px;
       padding-right: 17px;
     }
@@ -59,7 +59,7 @@
     margin-left: -7px;
     margin-top: 16px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 0;
       margin-left: 0;
       border: 0;
@@ -83,7 +83,7 @@
       transform: rotate(45deg) translateY(-50%);
       z-index: 1;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         display: none;
       }
     }
@@ -95,7 +95,7 @@
     padding: 11px 0;
     background-color: white;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       padding: 15px 0;
     }
   }
@@ -108,13 +108,13 @@
       transition: color $ease-main;
 
       .shoplink__head & {
-        @include screen(desktop) {
+        @include screen(lg) {
           @include heading-6;
           line-height: (22/16);
         }
       }
 
-      @include screen(desktop) {
+      @include screen(lg) {
         .shoplink__item:hover .shoplink__head &,
         .shoplink__item.is-active .shoplink__head & {
           color: $darkblue-color;
@@ -133,7 +133,7 @@
     transition: background-color $ease-main;
     cursor: pointer;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       padding: 0 20px;
       line-height: 40px;
     }
@@ -142,7 +142,7 @@
     .shoplink__item.is-active & {
       background-color: $greyblue2-color;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         background-color: transparent;
       }
     }
@@ -152,7 +152,7 @@
     display: none;
     padding: 10px 15px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       padding: 0px 20px 6px;
       margin-bottom: 6px;
     }
@@ -172,7 +172,7 @@
     fill: red;
     margin-right: 2px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-right: 4px;
     }
   }
@@ -194,7 +194,7 @@
       transform: rotate(180deg);
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       display: inline-block;
     }
   }
@@ -232,7 +232,7 @@
     flex-wrap: wrap;
     margin: 8px -9px 0;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-left: -17px;
       margin-right: -17px;
     }

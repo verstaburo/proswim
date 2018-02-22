@@ -22,11 +22,11 @@
     position: relative;
     z-index: 1;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       min-height: 452px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       min-height: 212px;
     }
   }
@@ -37,12 +37,12 @@
     margin-left: 18px;
     flex-shrink: 0;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-left: -23px;
       min-width: 375px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin-left: -15px;
       min-width: 161px;
     }
@@ -52,7 +52,7 @@
       margin-bottom: 0;
       max-height: 100%;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         left: auto;
       }
     }
@@ -71,13 +71,13 @@
     flex: 1 1 auto;
     padding-top: 40px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-left: 22px;
       padding-right: 56px;
       padding-bottom: 80px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       padding-top: 19px;
       margin-left: 4px;
       padding-right: 0;
@@ -88,7 +88,7 @@
   &__icon {
     margin-bottom: 20px;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin-bottom: 2px;
     }
 
@@ -96,7 +96,7 @@
       width: auto;
       max-height: 49px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         max-height: 24px;
       }
     }
@@ -109,11 +109,11 @@
     line-height: (56/42);
     letter-spacing: .01em;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       font-size: 40px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       font-size: 18px;
     }
   }
@@ -126,7 +126,7 @@
     line-height: 1;
     letter-spacing: .01em;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin-left: -1px;
       margin-top: 6px;
     }
@@ -138,7 +138,7 @@
       fill: #fff;
       height: 22px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         height: 13px;
       }
     }
@@ -151,7 +151,7 @@
       font-weight: 700;
       padding-right: 30px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         font-size: 18px;
         padding-right: 18px;
       }
@@ -163,7 +163,7 @@
       svg {
         width: 20px;
 
-        @include screen(tablet) {
+        @include screen(sm) {
           width: 12px;
           top: 2px;
         }
@@ -180,7 +180,7 @@
       padding-left: 5px;
       padding-right: 28px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         font-size: 18px;
         padding-right: 18px;
         margin-left: 11px;
@@ -197,7 +197,7 @@
         height: 2px;
         background-color: white;
 
-        @include screen(tablet) {
+        @include screen(sm) {
           height: 1px;
         }
       }
@@ -211,7 +211,7 @@
         top: 4px;
         right: 3px;
 
-        @include screen(tablet) {
+        @include screen(sm) {
           width: 11px;
           top: 2px;
           right: 2px;
@@ -227,12 +227,12 @@
     line-height: (26/18);
     letter-spacing: .01em;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       font-size: 16px;
       line-height: (26/16);
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       font-size: 12px;
       line-height: (17/12);
       margin-top: 7px;
@@ -247,7 +247,7 @@
       left: 0;
       bottom: 21px;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         bottom: 11px;
       }
     }
@@ -262,7 +262,7 @@
     z-index: 3;
     pointer-events: none;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       display: none;
     }
 

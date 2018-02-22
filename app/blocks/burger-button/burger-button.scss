@@ -4,7 +4,7 @@
   padding: 12px 10px;
   font-size: 0;
 
-  @include screen(tablet) {
+  @include screen(sm) {
     padding-left: 11px;
     padding-right: 11px;
   }

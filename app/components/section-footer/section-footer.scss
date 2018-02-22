@@ -5,11 +5,11 @@
   padding: 4px 150px;
   margin-top: 36px;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     margin-top: 30px;
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     padding: 0;
   }
 }

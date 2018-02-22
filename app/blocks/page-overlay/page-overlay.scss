@@ -19,7 +19,7 @@
   &[data-for="shopmenu"] {
     z-index: 90;
 
-    @include screen(desktop, min) {
+    @include screen(lg, min) {
       display: none;
     }
   }

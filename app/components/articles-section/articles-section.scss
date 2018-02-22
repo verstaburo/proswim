@@ -2,13 +2,13 @@
   display: block;
 
   &__head {
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-bottom: 23px;
     }
   }
 
   &__content {
-    @include screen(tablet) {
+    @include screen(sm) {
       margin: 0 -15px -100px;
       padding: 0 15px 100px;
       pointer-events: none;
@@ -16,7 +16,7 @@
   }
 
   &__grid {
-    @include screen(tablet) {
+    @include screen(sm) {
       flex-wrap: nowrap;
       margin: 0;
       pointer-events: all;
@@ -26,7 +26,7 @@
   }
 
   &__col {
-    @include screen(tablet) {
+    @include screen(sm) {
       width: 188px;
       padding: 0;
       width: 188px;

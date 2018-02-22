@@ -1,28 +1,28 @@
 .reviews-section {
   display: block;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     padding-top: 33px;
   }
 
   &__head {
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-bottom: 23px;
     }
   }
 
   &__grid {
-    @include screen(tablet) {
+    @include screen(sm) {
       &:first-of-type { margin-top: -10px; }
     }
   }
 
   &__col {
-    @include screen(desktop) {
+    @include screen(lg) {
       &:nth-child(2) ~ & { display: none; }
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       width: 100%;
       padding-top: 10px;
     }

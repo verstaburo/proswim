@@ -90,7 +90,7 @@ export default class Burger {
   }
 
   setEqualHeights() {
-    if ($(window).width() >= window.globalOptions.sizes.desktop) {
+    if ($(window).width() >= window.globalOptions.sizes.lg) {
       return;
     }
 
@@ -111,7 +111,7 @@ export default class Burger {
         return;
       }
 
-      if ($(window).width() >= window.globalOptions.sizes.desktop) {
+      if ($(window).width() >= window.globalOptions.sizes.lg) {
         unfreeze();
       } else {
         freeze();

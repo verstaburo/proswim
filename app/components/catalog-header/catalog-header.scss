@@ -1,0 +1,23 @@
+.catalog-header {
+  display: flex;
+
+
+  &__col {
+    &_flexible { flex: 1 1 auto; }
+
+    &:not(:first-child) {
+      padding-left: 20px;
+    }
+  }
+
+  &__heading {
+    display: inline-block;
+    @include heading-2;
+  }
+
+  &__count {
+    color: $darkgrey-color;
+    @include heading-5;
+    margin-left: 10px;
+  }
+}

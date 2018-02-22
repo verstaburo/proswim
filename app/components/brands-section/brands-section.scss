@@ -3,11 +3,11 @@
   display: flex;
   margin-top: -14px;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     margin-top: -5px;
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     margin-top: -12px;
   }
 
@@ -31,7 +31,7 @@
       max-height: 1000px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin: 0 0 -16px -20px;
     }
   }
@@ -43,11 +43,11 @@
     width: (100%/6);
     box-sizing: border-box;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       width: 25%;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       width: auto;
       padding: 0 0 16px 20px;
     }
@@ -61,7 +61,7 @@
       max-height: 54px;
       transition: filter $ease-main;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         max-height: 41px;
       }
     }
@@ -81,12 +81,12 @@
     padding-right: 5px;
     margin-top: -4px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       padding-left: 39px;
       padding-right: 0;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       padding-left: 0;
       margin-top: 6px;
     }

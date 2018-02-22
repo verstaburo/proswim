@@ -5,7 +5,7 @@
   padding-bottom: 20px;
   overflow: hidden;
 
-  @include screen(tablet) {
+  @include screen(sm) {
     padding-bottom: 21px;
   }
 
@@ -32,11 +32,11 @@
       max-height: 100%;
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       height: 157px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       height: 198px;
     }
 
@@ -83,7 +83,7 @@
       margin-right: -50%;
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       @include heading-5;
       letter-spacing: .025em;
       margin-left: 20px;
@@ -91,7 +91,7 @@
       padding-right: 30px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       @include heading-4;
       letter-spacing: .025em;
       padding-right: 40px;

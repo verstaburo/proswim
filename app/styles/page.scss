@@ -10,11 +10,11 @@
 .page {
   padding-bottom: 77px;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     padding-bottom: 55px;
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     padding-bottom: 40px;
   }
 
@@ -40,11 +40,11 @@
     @include heading-1;
     margin: 14px 0 22px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-bottom: 19px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       font-size: 26px;
       line-height: (30/26);
       margin: 16px 0 24px;

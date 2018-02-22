@@ -20,7 +20,7 @@
   max-width: 100%;
   box-sizing: border-box;
 
-  @include screen(tablet) {
+  @include screen(sm) {
     padding-left: 15px;
     padding-right: 15px;
   }

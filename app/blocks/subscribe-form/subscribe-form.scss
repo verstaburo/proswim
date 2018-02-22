@@ -13,7 +13,7 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       width: 38px;
       box-sizing: border-box;
       padding-left: 0;
@@ -33,7 +33,7 @@
       fill: white;
       opacity: 0;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         opacity: 1;
       }
     }
@@ -41,7 +41,7 @@
 
   &__text {
 
-    @include screen(desktop) {
+    @include screen(lg) {
       display: none;
     }
   }

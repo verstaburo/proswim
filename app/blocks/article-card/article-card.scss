@@ -16,12 +16,12 @@
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
   }
 
-  @include screen(desktop) {
+  @include screen(lg) {
     padding: 14px 13px;
     height: 389px;
   }
 
-  @include screen(tablet) {
+  @include screen(sm) {
     height: 381px;
 
     &_default_mob {
@@ -38,11 +38,11 @@
     overflow: hidden;
     flex-shrink: 0;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       height: 93px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       height: 107px;
 
       .article-card_default_mob & {
@@ -61,7 +61,7 @@
     margin-top: 16px;
     flex: 1 1 auto;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 13px;
     }
   }
@@ -77,13 +77,13 @@
       color: $darkblue-color;
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       @include text-medium;
       line-height: (19/14);
       max-height: (19/14*3em);
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       .article-card_default_mob & {
         @include heading-5;
         max-height: (24/16*2em);
@@ -97,11 +97,11 @@
     @include text-small;
     color: $semigrey-color;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 4px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin-top: 8px;
     }
   }
@@ -113,12 +113,12 @@
     max-height: (22/14*7em);
     overflow: hidden;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 5px;
       max-height: (22/14*8em);
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       max-height: (22/14*7em);
     }
   }

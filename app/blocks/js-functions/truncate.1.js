@@ -13,9 +13,9 @@ function truncate() {
     }
 
     if (typeof lines === 'object') {
-      if (ww < window.globalOptions.sizes.tablet && 'mobile' in lines) {
+      if (ww < window.globalOptions.sizes.sm && 'mobile' in lines) {
         linesCount = Number(lines.mobile);
-      } else if (ww < window.globalOptions.sizes.desktop && 'tablet' in lines) {
+      } else if (ww < window.globalOptions.sizes.lg && 'tablet' in lines) {
         linesCount = Number(lines.tablet);
       } else {
         linesCount = Number(lines.desktop);

@@ -1,26 +1,18 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Proswim - catalog'
+  - var pageTitle = 'Proswim - Очки для плавания'
 
 block content
   +b.page
     .container
       +e.head
         +e.headcol._flexible
-          +breadcrumbs(['Главная', 'catalog'])
-      +e.head._subhead
-        +e.headcol._flexible
-          +e.H1.heading catalog
+          +breadcrumbs(['Главная', 'Очки', 'Очки для плавания'])
 
-    +grid
-      +col(12)
-        | +col(12)
-
-      +col({ test: 123, md: 4 })
-        | +col({ test: 123, md: 4 })
-
-      +col({ xl: 12, lg: 6, md: 3, sm: 2, xl: 1 })
-        | +col({ test: 123, md: 4 })
+      +grid
+        +col(3)
+        +col(9)
+          +catalog-header('Очки для плавания', '174 товара')
 
 block popups

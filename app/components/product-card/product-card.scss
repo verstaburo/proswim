@@ -13,7 +13,7 @@
   color: $color-basic;
   text-decoration: none;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     padding: 13px;
     padding-bottom: 10px;
     min-height: 277px;
@@ -29,11 +29,11 @@
     right: 0;
     z-index: 1;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       top: 15px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       top: 13px;
     }
   }
@@ -44,11 +44,11 @@
     width: 100%;
     height: 240px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       height: 139px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       height: 160px;
     }
 
@@ -80,7 +80,7 @@
     display: block;
     margin-top: 14px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 12px;
     }
   }
@@ -99,7 +99,7 @@
       color: $darkblue-color;
     }
 
-    @include screen(desktop) {
+    @include screen(lg) {
       @include text-small;
     }
   }
@@ -119,11 +119,11 @@
     display: block;
     margin-top: 16px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 5px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       text-align: left;
       margin-left: 3px;
       margin-top: 4px;
@@ -136,7 +136,7 @@
       line-height: (24/18);
       letter-spacing: 0.01em;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         font-size: 15px;
       }
     }
@@ -146,22 +146,22 @@
       margin-left: 10px;
       @include text;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         @include text-tiny;
         margin-left: 8px;
       }
 
-      @include screen(desktop) {
+      @include screen(lg) {
           margin-left: 6px;
       }
     }
 
     &currency {
-      @include screen(desktop) {
+      @include screen(lg) {
         .product-card__priceold & { display: none; }
       }
 
-      @include screen(tablet) {
+      @include screen(sm) {
         .product-card__priceold & { display: inline; }
       }
     }
@@ -170,7 +170,7 @@
   &__rating {
     margin-top: 9px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-top: 7px;
 
       .rating__text {

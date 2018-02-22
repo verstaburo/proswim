@@ -12,7 +12,7 @@ function articlesSection() {
   }
 
   // destroy slider
-  if ($(window).width() >= window.globalOptions.sizes.tablet) {
+  if ($(window).width() >= window.globalOptions.sizes.sm) {
     sliderElement.removeClass('swiper-container');
     sliderGrid.removeClass('swiper-wrapper');
     sliderSlide.removeClass('swiper-slide');

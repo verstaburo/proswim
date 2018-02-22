@@ -17,7 +17,7 @@
     border-radius: 50%;
     margin: 0 6px;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       width: 8px;
       height: 8px;
       margin: 0 5px;
@@ -45,7 +45,7 @@
       border-radius: 50%;
       z-index: -1;
 
-      @include screen(tablet) {
+      @include screen(sm) {
         width: 14px;
         height: 14px;
       }

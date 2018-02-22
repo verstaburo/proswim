@@ -3,7 +3,7 @@
   background-color: $color-basic;
   position: relative;
 
-  @include screen(desktop) {
+  @include screen(lg) {
     display: none;
   }
 

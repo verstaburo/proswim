@@ -10,7 +10,7 @@
     padding-bottom: 21px;
     height: 80px;
 
-    @include screen(tablet) {
+    @include screen(sm) {
       padding-top: 26px;
       padding-bottom: 30px;
       height: auto;
@@ -24,12 +24,12 @@
     margin-right: 20px;
     margin-left: -3px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-left: 0;
       margin-right: 18px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       text-align: center;
       margin: 0;
     }
@@ -38,11 +38,11 @@
   &__form {
     margin-left: 20px;
 
-    @include screen(desktop) {
+    @include screen(lg) {
       margin-left: 18px;
     }
 
-    @include screen(tablet) {
+    @include screen(sm) {
       margin-top: 14px;
       margin-left: 0;
     }
@@ -50,11 +50,11 @@
     .subscribe-form__input {
       width: 342px;
 
-      @include screen(desktop) {
+      @include screen(lg) {
         width: 247px;
       }
 
-      @include screen(tablet) {
+      @include screen(sm) {
         width: 100%;
       }
     }

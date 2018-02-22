@@ -6,7 +6,7 @@ function handleAccordionClick(e) {
   const isActive = self.hasClass('is-active');
   const { animationDuration, sizes } = window.globalOptions;
 
-  if ($(window).width() >= sizes.tablet) {
+  if ($(window).width() >= sizes.sm) {
     return;
   }
 
