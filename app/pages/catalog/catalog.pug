@@ -1,0 +1,26 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - catalog'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'catalog'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading catalog
+
+    +grid
+      +col(12)
+        | +col(12)
+
+      +col({ test: 123, md: 4 })
+        | +col({ test: 123, md: 4 })
+
+      +col({ xl: 12, lg: 6, md: 3, sm: 2, xl: 1 })
+        | +col({ test: 123, md: 4 })
+
+block popups

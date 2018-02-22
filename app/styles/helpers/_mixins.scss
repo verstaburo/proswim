@@ -99,12 +99,11 @@ div {
 */
 
 $breakpoints: (
-  'mobile': 480px,
-  'tablet': 768px,
-  'tablet-lg': 1024px,
-  'desktop': 1280px,
-  'desktop-lg': 1600px,
-  'desktop-xl': 1920px
+  'xl': 1920px,
+  'lg': 1280px,
+  'md': 1024px,
+  'sm': 768px,
+  'xs': 480px
 );
 
 @mixin screen($width, $type: max) {
