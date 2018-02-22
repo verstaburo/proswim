@@ -1,0 +1,27 @@
+.sort-ui {
+  display: flex;
+  margin-left: -16px;
+  padding: 17px 0;
+
+  .grid__col > &:first-child {
+    margin-top: -20px;
+  }
+
+  &__col {
+    padding-left: 16px;
+
+    &_flexible { flex: 1 1 auto; }
+  }
+
+  &__heading {
+    display: inline-block;
+    @include heading-2;
+    margin-top: -4px;
+  }
+
+  &__count {
+    color: $darkgrey-color;
+    @include heading-5;
+    margin-left: 12px;
+  }
+}

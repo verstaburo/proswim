@@ -1,0 +1,42 @@
+.sort-dropdown {
+  $b: &;
+  display: block;
+  position: relative;
+
+  &__button {
+    position: relative;
+    display: inline-block;
+    padding: 6px 27px 6px 16px;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 2px;
+    font-size: 0;
+    border: 1px solid $semigreyblue-color;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  &__value {
+    display: inline-block;
+    @include text-small;
+    @include ellipsis(100%);
+    transition: color $ease-main;
+  }
+
+  &__caret {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    fill: $color-basic;
+    transition: fill $ease-main,
+                transform $ease-main;
+
+    #{$b}.is-active & {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}
