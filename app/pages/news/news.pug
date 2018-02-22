@@ -9,7 +9,9 @@ block content
       +e.head
         +e.headcol._flexible
           +breadcrumbs(['Главная', 'Наши новости и обзоры'])
-      +e.H1.heading Наши новости и обзоры
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Наши новости и обзоры
 
     +news-section(getData('news'))
 

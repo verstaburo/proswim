@@ -10,8 +10,9 @@ block content
       +e.head
         +e.headcol._flexible
           +breadcrumbs(['Главная', '${pageName}'])
-
-      +e.H1.heading ${pageName}
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading ${pageName}
 
 block popups
 `;

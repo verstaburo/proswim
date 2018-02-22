@@ -9,8 +9,9 @@ block content
       +e.head
         +e.headcol._flexible
           +breadcrumbs(['Главная', 'Для тренировок'])
-
-      +e.H1.heading Для тренировок
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Для тренировок
 
       +categories-section(getData('categories1'), 4, true, true)
 

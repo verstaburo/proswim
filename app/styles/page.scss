@@ -8,12 +8,27 @@
 @import 'helpers/list-styles'; // Стили списков
 
 .page {
+  padding-bottom: 77px;
+
+  @include screen(desktop) {
+    padding-bottom: 55px;
+  }
+
+  @include screen(tablet) {
+    padding-bottom: 40px;
+  }
+
   &__head {
     display: flex;
     align-items: center;
     height: 50px;
     box-sizing: border-box;
     border-bottom: 1px solid $color-border;
+
+    &_subhead {
+      height: auto;
+      border: 0;
+    }
 
     &col:not(:first-child) {
       padding-left: 20px;

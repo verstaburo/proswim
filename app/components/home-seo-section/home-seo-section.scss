@@ -1,16 +1,7 @@
 .home-seo-section {
   display: block;
   padding-top: 55px;
-  padding-bottom: 74px;
-
-  @include screen(desktop) {
-    padding-top: 35px;
-    padding-bottom: 55px;
-  }
-
-  @include screen(tablet) {
-    padding-bottom: 38px;
-  }
+  padding-bottom: 0;
 
   .content-zone {
     padding-right: 5px;
