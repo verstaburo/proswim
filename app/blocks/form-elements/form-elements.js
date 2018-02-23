@@ -14,14 +14,23 @@ const $ = window.$;
 
 export function selects() {
   /* eslint-disable no-unused-vars */
-  if (!$('.js-select').length) {
+  const selectElements = $('.js-select');
+
+  if (!selectElements.length) {
     return;
   }
 
-  const choices = new Choices('.js-select', {
-    searchEnabled: false,
-    itemSelectText: '',
+  selectElements.each(function () {
+    const self = $(this);
+
+    const searchEnabled = !!self.data('search-enabled');
+
+    const choices = new Choices(self[0], {
+      searchEnabled,
+      itemSelectText: '',
+    });
   });
+
   /* eslint-enable no-unused-vars */
 }
 

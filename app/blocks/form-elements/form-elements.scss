@@ -172,6 +172,13 @@
     @extend .select;
 
     transition: border-color $ease-main;
+
+    .choises_small & {
+      padding: 6px 27px 6px 16px;
+      height: 32px;
+      line-height: 30px;
+      border-radius: 2px;
+    }
   }
 
   &[data-type*='select-one'] {

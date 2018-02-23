@@ -220,6 +220,19 @@ block content
                 option(value="Опция 2") Опция 2
                 option(value="Опция 3") Опция 3
           +col(6)
+            +ui-description .input._size_md
+            +inputbox
+              +input(placeholder="Плейсхолдер")._size_md
+          +col(6)
+            +ui-description .select.select_small.js-select
+            +inputbox
+              +select.select_small
+                option(value="price-ask") По цене (убывание)
+                option(value="price-desk") По цене (возрастание)
+                option(value="discount") По скидкам
+                option(value="new") По новизне
+
+          +col(6)
             +ui-description .js-datepicker<br> Параметры задаются через дата-атрибуты
             +inputbox()
               +input()(placeholder="Выберите дату" readonly).js-datepicker
