@@ -7,8 +7,12 @@ mixin product-card(data)
       +e.A(href="javascript:void(0)").image
         img(src=`content-img/product-cards/${data.image}.jpg` alt=data.heading)
 
+    if data.images
+      +e.image
+        img(src=`content-img/product-cards/${data.images[0]}.jpg` alt=data.heading)
+
         if data.button
-          +button.__button= `${data.button || 'Быстрый просмотр'}`
+          +button.__button Быстрый просмотр
 
     //- mainslider
     //- navslider
@@ -16,7 +20,7 @@ mixin product-card(data)
     +e.DIV.body
       +e.A(href="javascript:void(0)").heading=data.heading
       if data.sizes
-        +e.P.sizes Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)
+        +e.P.sizes=data.sizes
       +e.price
         +e.SPAN.pricecurrent #{data.price} #[+e.SPAN.pricecurrency руб.]
         if data.oldPrice
@@ -25,4 +29,5 @@ mixin product-card(data)
         if data.rating.text
           +rating-text._grey #{data.rating.text}
       if data.buyInOneClick
-        +link-icon('Cart button').__buy Купить в 1 клик
+        +e.P.buywrap
+          +link-icon('Cart button').__buy Купить в 1 клик

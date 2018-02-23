@@ -4,8 +4,8 @@ mixin rating(active, count)
   +b.rating&attributes(attributes)
     if count !== -1
       +e.stars
-        - for (var i = 0; i < initialCount; i++)
-          +e.box(class=i+1 === active ? 'is-active' : '')
+        - for (var i = initialCount; i > 0; i--)
+          +e.box(class=i === active ? 'is-active' : '')
             +icon('star').__icon
 
     if block

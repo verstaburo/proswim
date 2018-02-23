@@ -29,4 +29,13 @@
       border-color: transparent transparent $lightgreen-color transparent;
     }
   }
+
+  &_red {
+    background-color: $red-color;
+    color: white;
+
+    &::before {
+      border-color: transparent transparent $red-color transparent;
+    }
+  }
 }

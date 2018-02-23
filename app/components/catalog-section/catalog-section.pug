@@ -1,5 +1,5 @@
 mixin catalog-section(items)
   +b.catalog-section&attributes(attributes)
-    - for (var i = 0; i < 12; i++)
+      each card in items
         +e.col
-          .card-placeholder
+          +product-card(card)._catalog
