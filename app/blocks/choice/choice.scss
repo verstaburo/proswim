@@ -1,0 +1,45 @@
+.choice {
+  position: relative;
+  display: inline-block;
+  padding: 6px 27px 6px 16px;
+  height: 32px;
+  line-height: 30px;
+  border-radius: 2px;
+  font-size: 0;
+  color: $semigrey-color;
+  border: 1px solid $color-border;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: color $ease-main,
+              border-color $ease-main;
+
+  &:hover {
+    color: $color-basic;
+    border-color: $dark-border-color;
+  }
+
+  &__text {
+    display: inline-block;
+    @include text-small;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    fill: $semigrey2-color;
+    transition: fill $ease-main;
+
+    &_close {
+      width: 9px;
+      height: 9px;
+    }
+
+    &_rub {
+      width: 9px;
+      height: 10px;
+    }
+
+    .choice:hover & { fill: $color-basic; }
+  }
+}

@@ -33,7 +33,23 @@ block content
             +sort-dropdown
               +sort-dropdown-button По популярности
               +sort-dropdown-body
-          +filter-section('Фильтры:')
+          +filter-section._simple
+            +filter-section-grid._flexible
+              +filter-section-col
+                +filter-section-heading Ваш выбор:
+              +filter-section-col
+                +choice Очки-маски
+              +filter-section-col
+                +choice Мужские
+              +filter-section-col
+                +choice Arena
+              +filter-section-col
+                +choice 1699 - 2000
+            +filter-section-grid
+              +filter-section-col
+                +button._size_sm._transparent Сбросить все
+
+          +filter-section
             +filter-section-grid
               +filter-section-col
                 +filter-section-heading Фильтры:

@@ -28,6 +28,13 @@
     color: white;
   }
 
+  &_size_sm {
+    padding: 0 15px;
+    @include text-small;
+    height: 32px;
+    line-height: 30px;
+  }
+
   &_size_md {
     line-height: 36px;
     height: 38px;
