@@ -79,11 +79,9 @@
 
   &__button {
     position: absolute;
-    left: 20px;
-    right: 20px;
+    left: 25px;
+    right: 25px;
     bottom: 20px;
-    @include text-small;
-    line-height: 40px;
     opacity: 0;
     pointer-events: none;
     z-index: 1;
@@ -128,8 +126,10 @@
 
   &__sizes {
     display: none;
-    margin-top: 18px;
+    margin-top: 12px;
+    margin-bottom: 15px;
     @include text-small;
+    line-height: (21/13);
     color: $darkgrey-color;
 
     .product-card:hover & {
@@ -206,10 +206,24 @@
     display: inline-block;
 
     &wrap {
+      margin-top: 5px;
       display: none;
 
       .product-card:hover & {
         display: block;
+      }
+    }
+
+    .link {
+      &__icon {
+        width: 16px;
+        height: 17px;
+      }
+
+      &__text {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: calc(23/13);
       }
     }
   }
