@@ -7,15 +7,18 @@ mixin product-card(data)
       +e.A(href="javascript:void(0)").image
         img(src=`content-img/product-cards/${data.image}.jpg` alt=data.heading)
 
+        if data.button
+          +button.__button Быстрый просмотр
+
     if data.images
       +e.image
-        img(src=`content-img/product-cards/${data.images[0]}.jpg` alt=data.heading)
+        +product-main-slider(data.images, data.heading, false)
 
         if data.button
           +button.__button Быстрый просмотр
 
-    //- mainslider
-    //- navslider
+      +e.nav
+        +product-nav-slider(data.images, data.heading)
 
     +e.DIV.body
       +e.A(href="javascript:void(0)").heading=data.heading

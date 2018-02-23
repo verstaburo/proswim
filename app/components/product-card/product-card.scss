@@ -33,11 +33,15 @@
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
   }
 
+  &__nav {
+    margin-top: 11px;
+  }
+
   &__badge {
     position: absolute;
     top: 20px;
     right: 0;
-    z-index: 1;
+    z-index: 2;
 
     .product-card_catalog & {
       right: 10px;
@@ -109,8 +113,12 @@
     letter-spacing: 0.01em;
     color: $color-basic;
 
-    &:hover {
+    .product-card:hover & {
       color: $darkblue-color;
+
+      &:hover {
+        color: $color-basic;
+      }
     }
 
     @include screen(lg) {

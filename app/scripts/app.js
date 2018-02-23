@@ -24,6 +24,8 @@ import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/shopmenu/shopmenu';
 import '../blocks/vertical-menu/vertical-menu';
+import '../blocks/product-main-slider/product-main-slider';
+import '../blocks/product-nav-slider/product-nav-slider';
 import '../components/header/header';
 import '../components/hero-slider/hero-slider';
 import '../components/brands-section/brands-section';

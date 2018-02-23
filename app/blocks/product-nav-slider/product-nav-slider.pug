@@ -1,0 +1,14 @@
+mixin product-nav-slider(images, alt)
+  +b.product-nav-slider&attributes(attributes).js-product-nav-slider
+    +e.buttons
+      +e.button._prev
+        +icon('Arrow')
+      +e.button._next
+        +icon('Arrow'
+)
+    +e.slider.swiper-container
+      .swiper-wrapper.product-nav-slider__slides
+        each image in images
+          .swiper-slide.product-nav-slider__slide
+            +e.image
+              img(src=src=`content-img/product-cards/${image}.jpg` alt=alt || '@@')
