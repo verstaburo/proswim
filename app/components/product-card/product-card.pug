@@ -30,7 +30,7 @@ mixin product-card(data)
           +e.S.priceold #{data.oldPrice} #[+e.SPAN.pricecurrency руб.]
       +rating(data.rating.activeStar).__rating
         if data.rating.text
-          +rating-text._grey #{data.rating.text}
+          +rating-text._grey!= data.rating.text
       if data.buyInOneClick
         +e.P.buywrap
           +link-icon('Cart button').__buy Купить в 1 клик
