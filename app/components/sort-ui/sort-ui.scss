@@ -7,6 +7,14 @@
     margin-top: -20px;
   }
 
+  &__filters {
+    display: flex;
+
+    @include screen(lg) {
+      display: none;
+    }
+  }
+
   &__col {
     padding-left: 16px;
 

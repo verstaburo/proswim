@@ -10,8 +10,8 @@ block content
         +e.headcol._flexible
           +breadcrumbs(['Главная', 'Очки', 'Очки для плавания'])
 
-      +grid
-        +col(3)
+      +grid.page__grid
+        +col(3).page__sidebar
           +sidebar
             - var categoriesAcccordionData = getData('catalog-categories-menu')
             - var reviewsData = getData('catalog-sidebar-reviews')
@@ -28,11 +28,13 @@ block content
               +card-widget('Отзыв о магазине:', 'Все отзывы')
                 +review-card(reviewsData[1])._simple
 
-        +col(9)
+        +col({ xl: 9, lg: 12 }).page__content
           +sort-ui('Очки для плавания', '174 товара')
-            +sort-dropdown
-              +sort-dropdown-button По популярности
-              +sort-dropdown-body
+            +sort-ui-col
+              +sort-dropdown
+                +sort-dropdown-button По популярности
+                +sort-dropdown-body
+
           +filter-section._simple
             +filter-section-grid._flexible
               +filter-section-col
@@ -46,7 +48,7 @@ block content
               +filter-section-col
                 +choice 1699 - 2000 руб.
             +filter-section-grid
-              +filter-section-col
+              +filter-section-col._not_shrinkable
                 +button.BUTTON._size_sm._transparent
                   +icon('cancel copy').icon._cancel
                   | Сбросить все

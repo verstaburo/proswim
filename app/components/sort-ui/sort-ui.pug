@@ -3,7 +3,10 @@ mixin sort-ui(heading, count)
     +e.col._flexible
       +e.H1.heading=heading
       +e.SPAN.count=count
-    block
+
+    if block
+      +e.filters
+        block
 
 mixin sort-ui-col
   +e.col&attributes(attributes)

@@ -50,4 +50,16 @@
       margin: 16px 0 24px;
     }
   }
+
+  &__grid {}
+
+  &__sidebar {
+    @include screen(lg) {
+      display: none;
+    }
+  }
+
+  &__content {
+
+  }
 }

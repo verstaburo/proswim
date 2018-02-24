@@ -1,0 +1,13 @@
+mixin filter-buttons(filters, sort)
+  +b.filter-buttons&attributes(attributes)
+    +grid
+      if filters
+        +col(2)
+          +button._size_md._transparent
+            | Фильтры
+            +icon('checked').icon
+      if sort
+        +col(2)
+          +button._size_md._transparent
+            | Сортировать
+            +icon('checked').icon
