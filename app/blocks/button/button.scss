@@ -12,6 +12,7 @@
   background-color: $color-main;
   @include heading-6;
   color: white;
+  fill: white;
   line-height: 40px;
   text-align: center;
 
@@ -26,10 +27,11 @@
     background-color: $darkblue-color;
     box-shadow: 0 16px 22px rgba(67, 183, 232, .4);
     color: white;
+    fill: white;
   }
 
   &_size_sm {
-    padding: 0 15px;
+    padding: 0 13px;
     @include text-small;
     height: 32px;
     line-height: 30px;
@@ -57,6 +59,7 @@
     background-color: transparent;
     color: $darkblue-color;
     box-shadow: none;
+    fill: $darkblue-color;
 
     &:hover,
     &.is-active {
@@ -66,7 +69,22 @@
     &.is-disabled {
       border: 1px solid $verylightblue-color;
       color: $midblue-color;
+      fill: $midblue-color;
       opacity: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: -2px;
+    margin-right: 5px;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    fill: inherit;
+
+    &_cancel {
+      width: 14px;
+      height: 14px;
     }
   }
 }

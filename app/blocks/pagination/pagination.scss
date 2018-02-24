@@ -54,7 +54,8 @@
     width: 5px;
     height: 10px;
     fill: $darkblue-color;
-    transition: opacity $ease-main;
+    transition: opacity $ease-main,
+                fill $ease-main;
 
     .pagination__item.is-disabled & {
       fill: $verylightblue-color;

@@ -1,16 +1,13 @@
 .filter-section {
-  display: block;
-  padding: 15px 0;
+  display: flex;
+  padding: 15px 20px;
   border: 1px solid $color-border;
   box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
 
   &_simple {
+    padding: 14px 0;
     border-width: 1px 0 0 0;
     box-shadow: none;
-  }
-
-  &__container {
-    display: flex;
   }
 
   &__heading {

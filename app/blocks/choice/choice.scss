@@ -1,7 +1,7 @@
 .choice {
   position: relative;
   display: inline-block;
-  padding: 6px 27px 6px 16px;
+  padding: 6px 29px 6px 14px;
   height: 32px;
   line-height: 30px;
   border-radius: 2px;
@@ -31,6 +31,10 @@
     transition: fill $ease-main;
 
     &_close {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
       width: 9px;
       height: 9px;
     }
