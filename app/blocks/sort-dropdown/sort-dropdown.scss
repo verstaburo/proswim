@@ -18,7 +18,8 @@
     transition: color $ease-main,
                 border-color $ease-main;
 
-    &:hover {
+    &:hover,
+    &.is-active {
       color: $darkblue-color;
     }
   }

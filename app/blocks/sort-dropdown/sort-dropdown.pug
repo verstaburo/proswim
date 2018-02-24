@@ -13,3 +13,14 @@ mixin sort-dropdown-body
     unless block
       p content goes here
     block
+
+mixin sort-dropdown-list
+  +e.UL.list&attributes(attributes)
+    block
+
+mixin sort-dropdown-item
+  +e.LI.item&attributes(attributes)
+    block
+
+mixin sort-dropdown-submit
+  +button.BUTTON._size_sm._block.js-sort-dropdown-submit Применить
