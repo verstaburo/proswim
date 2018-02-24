@@ -1,13 +1,13 @@
 mixin filter-buttons(filters, sort)
   +b.filter-buttons&attributes(attributes)
-    +grid
+    +grid.filter-buttons__grid
       if filters
-        +col(2)
-          +button._size_md._transparent
+        +col(6).filter-buttons__col
+          +button._size_md._transparent._block
             | Фильтры
-            +icon('checked').icon
+            +icon('checked').icon._check
       if sort
-        +col(2)
-          +button._size_md._transparent
+        +col(6).filter-buttons__col
+          +button._size_md._transparent._block
             | Сортировать
-            +icon('checked').icon
+            +icon('checked').icon._check

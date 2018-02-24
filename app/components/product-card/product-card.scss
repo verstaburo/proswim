@@ -27,6 +27,10 @@
     padding: 13px;
     padding-bottom: 10px;
     min-height: 277px;
+
+    .product-card_catalog & {
+      padding: 20px 16px;
+    }
   }
 
   &:hover {
@@ -43,16 +47,20 @@
     right: 0;
     z-index: 2;
 
-    .product-card_catalog & {
-      right: 10px;
-    }
-
     @include screen(lg) {
       top: 15px;
     }
 
     @include screen(sm) {
       top: 13px;
+    }
+
+    .product-card_catalog & {
+      right: 10px;
+
+      @include screen(lg) {
+        top: 19px;
+      }
     }
   }
 
@@ -64,6 +72,10 @@
 
     @include screen(lg) {
       height: 139px;
+
+      .product-card_catalog & {
+        height: 220px;
+      }
     }
 
     @include screen(sm) {
@@ -98,6 +110,10 @@
 
     @include screen(lg) {
       margin-top: 12px;
+
+      .product-card_catalog & {
+        margin-top: 15px;
+      }
     }
   }
 
@@ -121,6 +137,12 @@
 
     @include screen(lg) {
       @include text-small;
+
+      .product-card_catalog & {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: (22/15);
+      }
     }
   }
 
@@ -143,6 +165,10 @@
 
     @include screen(lg) {
       margin-top: 5px;
+
+      .product-card_catalog & {
+        margin-top: 16px;
+      }
     }
 
     @include screen(sm) {
@@ -160,6 +186,8 @@
 
       @include screen(lg) {
         font-size: 15px;
+
+        .product-card_catalog & { font-size: 18px; }
       }
     }
 
@@ -171,9 +199,14 @@
       @include screen(lg) {
         @include text-tiny;
         margin-left: 8px;
+
+        .product-card_catalog & {
+          @include text;
+          margin-left: 10px;
+        }
       }
 
-      @include screen(lg) {
+      @include screen(sm) {
           margin-left: 6px;
       }
     }
@@ -181,6 +214,8 @@
     &currency {
       @include screen(lg) {
         .product-card__priceold & { display: none; }
+
+        .product-card_catalog .product-card__priceold & { display: inline; }
       }
 
       @include screen(sm) {
@@ -198,6 +233,15 @@
       .rating__text {
         font-size: 11px;
         margin-left: 5px;
+      }
+
+      .product-card_catalog & {
+        margin-top: 9px;
+
+        .rating__text {
+          @include text-small;
+          margin-left: 10px;
+        }
       }
     }
   }

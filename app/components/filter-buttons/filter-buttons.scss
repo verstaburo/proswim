@@ -1,3 +1,20 @@
 .filter-buttons {
-  display: block;
+  display: none;
+  padding-top: 7px;
+
+  @include screen(lg) {
+    display: block;
+  }
+
+  &__grid:first-of-type {
+    margin-top: -20px;
+  }
+
+  &__col {
+    .button__icon { display: none; }
+
+    &.is-applied .button__icon {
+      display: inline-block;
+    }
+  }
 }

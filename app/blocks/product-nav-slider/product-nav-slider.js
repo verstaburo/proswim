@@ -20,6 +20,11 @@ export default (el, mainSlider, settings = {}) => {
       prevEl,
     },
     ...settings,
+    breakpoints: {
+      [window.globalOptions.sizes.lg - 1]: {
+        slidesPerView: 4,
+      },
+    },
   };
 
   // eslint-disable-next-line no-unused-vars
