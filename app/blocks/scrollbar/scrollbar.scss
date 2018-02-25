@@ -95,16 +95,16 @@
 }
 
 .scroll-element.scroll-x {
-  right: 10px;
-  left: 10px;
-  bottom: 10px;
+  right: 4px;
+  left: 4px;
+  bottom: 0;
   height: 4px;
 }
 
 .scroll-element.scroll-y {
-  right: 10px;
-  top: 10px;
-  bottom: 10px;
+  right: 0;
+  top: 4px;
+  bottom: 4px;
   width: 4px;
 }
 
@@ -113,15 +113,15 @@
 }
 
 .scroll-element .scroll-element_outer, .scroll-element .scroll-element_track, .scroll-element .scroll-bar {
-  border-radius: 0;
+  border-radius: 2px;
 }
 
 .scroll-element .scroll-element_track {
-  background-color: rgba($color-basic, .05);
+  background-color: $color-border;
 }
 
 .scroll-element .scroll-bar {
-  background-color: $color-border;
+  background-color: #a5b0b8;
   transition: background-color $ease-main;
 }
 
@@ -137,9 +137,9 @@
 // Стили для случая, когда видны оба скроллбара
 
 .scroll-element.scroll-x.scroll-scrolly_visible {
-  right: 20px;
+  right: 10px;
 }
 
 .scroll-element.scroll-y.scroll-scrollx_visible {
-  bottom: 20px;
+  bottom: 10px;
 }

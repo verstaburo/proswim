@@ -8,6 +8,10 @@
     height: 48px;
   }
 
+  &_small {
+    height: 30px;
+  }
+
   &__input {
     width: 100%;
     height: 100%;
@@ -22,6 +26,12 @@
     .searchbar_big & {
       border-color: $color-border;
       font-size: 15px;
+    }
+
+    .searchbar_small & {
+      font-size: 12px;
+      padding-left: 10px;
+      border-color: $color-border;
     }
   }
 
@@ -47,6 +57,12 @@
 
     .searchbar__button:hover & {
       fill: $color-basic;
+    }
+
+    .searchbar_small & {
+      width: 14px;
+      height: 15px;
+      margin-top: 2px;
     }
   }
 }

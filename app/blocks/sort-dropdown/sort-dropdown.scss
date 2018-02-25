@@ -65,4 +65,52 @@
       transform: translateY(-50%) rotate(180deg);
     }
   }
+
+  &__body {
+    padding: 14px 16px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 16px 20px rgba(91, 95, 99, 0.46);
+
+    .sort-dropdown_brands & {
+      width: 234px;
+    }
+
+    .sort-dropdown_products & {
+      width: 303px;
+    }
+  }
+
+  &__list {
+
+    &wrap {
+      max-height: 221px;
+    }
+  }
+
+  &__item {
+
+  }
+
+  &__submit {
+    margin-top: 11px;
+  }
+
+  .searchbar {
+    margin-top: 6px;
+    margin-bottom: 15px;
+  }
+
+  .checkradio {
+    padding-left: 24px;
+
+    &__box {
+      width: 14px;
+      height: 14px;
+      top: 5px;
+    }
+
+    &__content {
+      line-height: 28px;
+    }
+  }
 }

@@ -60,7 +60,7 @@ block content
               +filter-section-col
                 +filter-section-heading Фильтры:
               +filter-section-col
-                +sort-dropdown
+                +sort-dropdown._products
                   +sort-dropdown-button Любой товар
                   +sort-dropdown-body
                     +sort-dropdown-list
@@ -81,12 +81,11 @@ block content
                   +sort-dropdown-button Любой пол
                   +sort-dropdown-body
 
-
               +filter-section-col
-                +sort-dropdown
+                +sort-dropdown._brands
                   +sort-dropdown-button Любой бренд
                   +sort-dropdown-body
-                    +searchbar._small
+                    +searchbar('Поиск бренда...')._small
                     +sort-dropdown-list
                       +sort-dropdown-item
                         +checkbox('brand', 'product-1') Adidas
