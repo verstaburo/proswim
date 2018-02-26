@@ -15,6 +15,7 @@
     color: $semigrey-color;
     cursor: pointer;
     box-sizing: border-box;
+    user-select: none;
     transition: color $ease-main,
                 border-color $ease-main;
 

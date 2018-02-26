@@ -192,6 +192,7 @@ $ui-kit-color-darkbg: #111;
 
     &_gradient {
       &_main { @include gradient-main; }
+      &_white { @include gradient-white; }
     }
   }
 
