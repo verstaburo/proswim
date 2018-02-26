@@ -6,6 +6,7 @@
   &__button {
     position: relative;
     display: inline-block;
+    width: 100%;
     padding: 6px 29px 6px 14px;
     height: 32px;
     line-height: 30px;
@@ -19,9 +20,43 @@
     transition: color $ease-main,
                 border-color $ease-main;
 
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 5px;
+      background-color: white;
+      z-index: 25;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $ease-main;
+    }
+
     &:hover,
     &.is-active {
       color: $darkblue-color;
+    }
+
+    &.is-active {
+      height: 47px;
+      margin-bottom: -17px;
+      border-bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    .sort-dropdown_sort & {
+      &.is-active {
+        height: 32px;
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -47,9 +82,8 @@
 
   &__caret {
     position: absolute;
-    top: 50%;
+    top: 13px;
     right: 15px;
-    transform: translateY(-50%);
     display: inline-block;
     width: 8px;
     height: 6px;
@@ -63,7 +97,7 @@
     }
 
     #{$b}__button.is-active & {
-      transform: translateY(-50%) rotate(180deg);
+      transform: rotate(180deg);
     }
   }
 
@@ -72,6 +106,8 @@
     box-sizing: border-box;
     box-shadow: 0 16px 20px rgba(91, 95, 99, 0.46);
     border-radius: 0 0 2px 2px;
+    border: 1px solid $color-border;
+    margin-top: 17px;
 
     .sort-dropdown_brands & {
       width: 234px;
@@ -90,6 +126,7 @@
       min-width: 150px;
       padding-left: 0;
       padding-right: 0;
+      margin-top: 0;
     }
   }
 
