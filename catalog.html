@@ -136,7 +136,7 @@
             </div>
             <div class="header__col header__col_usermenu">
                 <div class="usermenu">
-                    <a class="userlink userlink_user js-fancybox" href="#login-popup">
+                    <a class="userlink userlink_user js-fancybox" href="login.html" data-popup="#login-popup">
                         <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
                         <span class="userlink__text">Войти</span>
                     </a>
@@ -1212,7 +1212,7 @@
                 </li>
             </ul>
             <div class="navbar__col navbar__col_searchbar">
-                <form class="searchbar navbar__searchbar" method="POST" action="/">
+                <form class="searchbar navbar__searchbar">
                     <input class="input searchbar__input" placeholder="Введите название товара..." type="text" />
                     <button class="searchbar__button" type="submit">
                         <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
@@ -1244,7 +1244,7 @@
             <div class="burger__subheader">
                 <div class="burger__search js-burger-searchbar">
                     <div class="container">
-                        <form class="searchbar searchbar_grey" method="POST" action="/">
+                        <form class="searchbar searchbar_grey">
                             <input class="input searchbar__input" placeholder="Введите название товара..." type="text" />
                             <button class="searchbar__button" type="submit">
                                 <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
@@ -2202,8 +2202,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grid">
-                <div class="grid__col grid__col_xl_3">
+            <div class="grid page__grid">
+                <div class="grid__col grid__col_xl_3 page__sidebar">
                     <div class="sidebar">
                         <div class="sidebar__item">
                             <div class="vertical-menu vertical-menu_accordion is-active">
@@ -2490,70 +2490,381 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__col grid__col_xl_9">
+                <div class="grid__col grid__col_xl_9 grid__col_lg_12 page__content">
                     <div class="sort-ui">
                         <div class="sort-ui__col sort-ui__col_flexible">
                             <h1 class="sort-ui__heading">Очки для плавания</h1>
-                            <span class="sort-ui__count">174 товара</span>
+                            <span class="sort-ui__count">174
+                                <span class="sort-ui__countdescription">товара</span>
+                            </span>
                         </div>
-                        <div class="sort-dropdown">
-                            <div class="sort-dropdown__button js-dropdown-toggle">
-                                <span class="sort-dropdown__value">По популярности</span>
-                                <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                        <div class="sort-ui__filters">
+                            <div class="sort-ui__col">
+                                <div class="sort-dropdown sort-dropdown_sort">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">По популярности</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    </div>
+                                    <div class="dropdown js-dropdown sort-dropdown__body">
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list">
+                                                <li class="sort-dropdown__item">
+                                                    <a class="sort-dropdown__link">
+                                                        <span>По цене</span>
+                                                        <svg class="sort-dropdown__icon"><use xlink:href="assets/images/icon.svg#icon_sort-price-ask"></use></svg>
+                                                    </a>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <a class="sort-dropdown__link">
+                                                        <span>По цене</span>
+                                                        <svg class="sort-dropdown__icon"><use xlink:href="assets/images/icon.svg#icon_sort-price-desk"></use></svg>
+                                                    </a>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <a class="sort-dropdown__link">
+                                                        <span>По скидкам</span>
+                                                    </a>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <a class="sort-dropdown__link">
+                                                        <span>По новизне</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="dropdown js-dropdown sort-dropdown__body">
-                                <p>content goes here</p>
+                        </div>
+                    </div>
+                    <div class="filter-section filter-section_simple">
+                        <div class="filter-section__grid filter-section__grid_flexible">
+                            <div class="filter-section__col">
+                                <div class="filter-section__heading">Ваш выбор:</div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="choice">
+                                    <div class="choice__text">Очки-маски</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="choice">
+                                    <div class="choice__text">Мужские</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="choice">
+                                    <div class="choice__text">Arena</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="choice">
+                                    <div class="choice__text">1699 - 2000 руб.</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-section__grid">
+                            <div class="filter-section__col filter-section__col_not_shrinkable">
+                                <button class="button button_size_sm button_transparent">
+                                    <svg class="button__icon button__icon_cancel"><use xlink:href="assets/images/icon.svg#icon_cancel-copy"></use></svg>Сбросить все</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-buttons">
+                        <div class="grid filter-buttons__grid">
+                            <div class="grid__col grid__col_xl_6 filter-buttons__col">
+                                <a class="button button_size_md button_transparent button_block">Фильтры
+                                    <svg class="button__icon button__icon_check"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                </a>
+                            </div>
+                            <div class="grid__col grid__col_xl_6 filter-buttons__col">
+                                <a class="button button_size_md button_transparent button_block">Сортировать
+                                    <svg class="button__icon button__icon_check"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="filter-section">
-                        <div class="container filter-section__container">
-                            <div class="filter-section__grid">
-                                <div class="filter-section__col">
-                                    <div class="filter-section__heading">Фильтры:</div>
-                                </div>
-                                <div class="filter-section__col">
-                                    <div class="sort-dropdown">
-                                        <div class="sort-dropdown__button js-dropdown-toggle">
-                                            <span class="sort-dropdown__value">Любой товар</span>
-                                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                        <div class="filter-section__grid">
+                            <div class="filter-section__col">
+                                <div class="filter-section__heading">Фильтры:</div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="sort-dropdown sort-dropdown_products">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">Любой товар</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    </div>
+                                    <div class="dropdown js-dropdown sort-dropdown__body">
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list">
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="product" value="product-1" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Очки для тренировок</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="product" value="product-2" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Профессиональные очки для плавания</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="product" value="product-3" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Очки-маски</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="product" value="product-4" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Очки с диоприями</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="product" value="product-5" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Наборы “Очки+Шапочка”</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="dropdown js-dropdown sort-dropdown__body">
-                                            <p>content goes here</p>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="sort-dropdown">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">Любой пол</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    </div>
+                                    <div class="dropdown js-dropdown sort-dropdown__body">
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list">
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="sex" value="male" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Мужской</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="sex" value="female" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Женский</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="filter-section__col">
-                                    <div class="sort-dropdown">
-                                        <div class="sort-dropdown__button js-dropdown-toggle">
-                                            <span class="sort-dropdown__value">Любой пол</span>
-                                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="sort-dropdown sort-dropdown_brands">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">Любой бренд</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    </div>
+                                    <div class="dropdown js-dropdown sort-dropdown__body">
+                                        <form class="searchbar searchbar_small">
+                                            <input class="input searchbar__input" placeholder="Поиск бренда..." type="text" />
+                                            <button class="searchbar__button" type="submit">
+                                                <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
+                                            </button>
+                                        </form>
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list">
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-1" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Adidas</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-2" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Adl</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-3" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Banana Republic</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-4" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Baon</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-5" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Befree</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-6" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Betsy</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-7" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Caprice</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-8" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">United Colors Of Benneton</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-1" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Adidas</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-2" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Adl</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-3" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Banana Republic</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-4" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Baon</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-5" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Befree</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-6" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Betsy</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-7" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">Caprice</span>
+                                                    </label>
+                                                </li>
+                                                <li class="sort-dropdown__item">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" name="brand" value="product-8" check="check" type="checkbox" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">United Colors Of Benneton</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="dropdown js-dropdown sort-dropdown__body">
-                                            <p>content goes here</p>
-                                        </div>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
                                     </div>
                                 </div>
-                                <div class="filter-section__col">
-                                    <div class="sort-dropdown">
-                                        <div class="sort-dropdown__button js-dropdown-toggle">
-                                            <span class="sort-dropdown__value">Любой бренд</span>
-                                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
-                                        </div>
-                                        <div class="dropdown js-dropdown sort-dropdown__body">
-                                            <p>content goes here</p>
-                                        </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="sort-dropdown sort-dropdown_price">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">Любая цена</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
-                                </div>
-                                <div class="filter-section__col">
-                                    <div class="sort-dropdown">
-                                        <div class="sort-dropdown__button js-dropdown-toggle">
-                                            <span class="sort-dropdown__value">Любая цена</span>
-                                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    <div class="dropdown js-dropdown sort-dropdown__body">
+                                        <div class="inputbox sort-dropdown__range">
+                                            <div class="range js-range" data-start="[930, 4393]" data-connect="true" data-min="930" data-max="6000"></div>
                                         </div>
-                                        <div class="dropdown js-dropdown sort-dropdown__body">
-                                            <p>content goes here</p>
+                                        <div class="inputbox sort-dropdown__inputs">
+                                            <input class="input input_size_sm" value="930" type="text" />
+                                            <input class="input input_size_sm" value="4 393" type="text" />
                                         </div>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -2632,7 +2943,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -2748,7 +3061,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -2840,7 +3155,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -2940,7 +3257,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3024,7 +3343,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3116,7 +3437,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3248,7 +3571,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3340,7 +3665,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3432,7 +3759,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3516,7 +3845,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3608,7 +3939,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
@@ -3700,7 +4033,9 @@
                                             </div>
                                         </div>
                                         <div class="rating__textwrap">
-                                            <span class="rating__text rating__text_grey">121 отзыв</span>
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <p class="product-card__buywrap">
