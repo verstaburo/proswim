@@ -1,5 +1,5 @@
-mixin registration-complete-popup
-  +popup.registration-complete-popup#registration-complete-popup
+mixin registration-complete-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'registration-complete-popup' : '').registration-complete-popup
     +popup-header('Поздравляем!')
     +popup-content.registration-complete-popup__content
       +icon('note', true).registration-complete-popup__icon

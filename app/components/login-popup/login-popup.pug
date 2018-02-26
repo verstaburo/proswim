@@ -1,5 +1,5 @@
-mixin login-popup
-  +popup.login-popup#login-popup
+mixin login-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'login-popup' : '').login-popup
     +popup-header('Войти в аккаунт')
     +popup-content
       +e.FORM.form.__grid(method='post' action='/' data-parsley-validate)

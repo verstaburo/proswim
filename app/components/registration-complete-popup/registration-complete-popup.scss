@@ -6,7 +6,7 @@
     padding-bottom: 44px;
     text-align: center;
 
-    @include screen(lg) {
+    .popup_page & {
       padding-bottom: 0;
     }
   }

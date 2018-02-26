@@ -1,5 +1,5 @@
-mixin registration-popup
-  +popup.registration-popup#registration-popup
+mixin registration-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'registration-popup' : '').registration-popup
     +popup-header('Регистрация')
     +popup-content
       +e.FORM.form.__grid(method='post' action='/' data-parsley-validate).js-registration-popup-form

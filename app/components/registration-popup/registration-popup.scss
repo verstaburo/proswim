@@ -8,7 +8,7 @@
   &__footer {
     padding-top: 16px;
 
-    @include screen(lg) {
+    .popup_page & {
       padding-top: 19px;
     }
   }
