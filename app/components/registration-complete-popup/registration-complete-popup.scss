@@ -5,6 +5,10 @@
     padding-top: 30px;
     padding-bottom: 44px;
     text-align: center;
+
+    @include screen(lg) {
+      padding-bottom: 0;
+    }
   }
 
   &__icon {
