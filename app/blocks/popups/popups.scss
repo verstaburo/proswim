@@ -19,14 +19,29 @@
 
 .popup {
   width: 360px;
+  max-width: 100%;
   border-radius: 2px;
   background-color: white;
   @include text;
+
+  @include screen(lg) {
+    width: 100%;
+  }
 
   &__header {
     padding: 23px 40px 23px 36px;
     border: 1px solid $color-border;
     background-color: $lightgrey-color;
+
+    @include screen(lg) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    @include screen(sm) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
   }
 
   &__heading {
@@ -44,12 +59,28 @@
 
   &__content {
     padding: 30px 40px 40px;
+
+    @include screen(lg) {
+      width: 290px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
   }
 
   &__footer {
     margin-top: -40px;
     padding: 23px 40px 43px;
     text-align: center;
+
+    @include screen(lg) {
+      width: 290px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
 
     &heading {
       display: flex;

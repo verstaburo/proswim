@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - registration'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'registration'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading registration
+
+block popups
