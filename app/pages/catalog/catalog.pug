@@ -31,9 +31,24 @@ block content
         +col({ xl: 9, lg: 12 }).page__content
           +sort-ui('Очки для плавания', '174', 'товара')
             +sort-ui-col
-              +sort-dropdown
+              +sort-dropdown._sort
                 +sort-dropdown-button По популярности
                 +sort-dropdown-body
+                  +sort-dropdown-list
+                    +sort-dropdown-item
+                      +sort-dropdown-link
+                        span По цене
+                        +icon('sort-price-ask').icon
+                    +sort-dropdown-item
+                      +sort-dropdown-link
+                        span По цене
+                        +icon('sort-price-desk').icon
+                    +sort-dropdown-item
+                      +sort-dropdown-link
+                        span По скидкам
+                    +sort-dropdown-item
+                      +sort-dropdown-link
+                        span По новизне
 
           +filter-section._simple
             +filter-section-grid._flexible
@@ -80,6 +95,11 @@ block content
                 +sort-dropdown
                   +sort-dropdown-button Любой пол
                   +sort-dropdown-body
+                    +sort-dropdown-list
+                      +sort-dropdown-item
+                        +checkbox('sex', 'male') Мужской
+                      +sort-dropdown-item
+                        +checkbox('sex', 'female') Женский
 
               +filter-section-col
                 +sort-dropdown._brands
@@ -104,27 +124,35 @@ block content
                       +sort-dropdown-item
                         +checkbox('brand', 'product-8') United Colors Of Benneton
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-9') Adidas
+                        +checkbox('brand', 'product-1') Adidas
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-10') Adl
+                        +checkbox('brand', 'product-2') Adl
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-11') Banana Republic
+                        +checkbox('brand', 'product-3') Banana Republic
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-12') Baon
+                        +checkbox('brand', 'product-4') Baon
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-13') Befree
+                        +checkbox('brand', 'product-5') Befree
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-14') Betsy
+                        +checkbox('brand', 'product-6') Betsy
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-15') Caprice
+                        +checkbox('brand', 'product-7') Caprice
                       +sort-dropdown-item
-                        +checkbox('brand', 'product-16') United Colors Of Benneton
+                        +checkbox('brand', 'product-8') United Colors Of Benneton
                     +sort-dropdown-submit
 
               +filter-section-col
-                +sort-dropdown
+                +sort-dropdown._price
                   +sort-dropdown-button Любая цена
                   +sort-dropdown-body
+                    +inputbox.sort-dropdown__range
+                      +range()(data-start='[930, 4393]', data-connect='true', data-min='930', data-max='6000')
+
+                    +inputbox.sort-dropdown__inputs
+                      +input(value="930")._size_sm
+                      +input(value="4 393")._size_sm
+
+                    +sort-dropdown-submit
 
           +catalog-section(getData('catalog-cards'))
 

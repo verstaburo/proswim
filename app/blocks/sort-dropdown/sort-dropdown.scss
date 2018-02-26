@@ -70,6 +70,7 @@
     padding: 14px 16px 20px;
     box-sizing: border-box;
     box-shadow: 0 16px 20px rgba(91, 95, 99, 0.46);
+    border-radius: 0 0 2px 2px;
 
     .sort-dropdown_brands & {
       width: 234px;
@@ -77,6 +78,17 @@
 
     .sort-dropdown_products & {
       width: 303px;
+    }
+
+    .sort-dropdown_price & {
+      width: 180px;
+    }
+
+    .sort-dropdown_sort & {
+      width: 100%;
+      min-width: 150px;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -91,8 +103,47 @@
 
   }
 
+  &__link {
+    display: block;
+    @include text-small;
+    color: $color-basic;
+    padding: 5px 16px;
+    cursor: pointer;
+    transition: background-color $ease-main;
+
+    &:hover {
+      background-color: $greyblue2-color;
+    }
+  }
+
+  &__icon {
+    width: 10px;
+    height: 9px;
+    fill: $color-basic;
+    margin-left: 6px;
+  }
+
   &__submit {
     margin-top: 11px;
+  }
+
+  &__slider {
+
+  }
+
+  &__range {
+    margin-top: 5px;
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 3px;
+
+    .input {
+      width: 62px;
+    }
   }
 
   .searchbar {

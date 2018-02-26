@@ -29,6 +29,11 @@
     height: 48px;
     font-size: 15px;
   }
+
+  &_size_sm {
+    height: 30px;
+    @include text-tiny;
+  }
 }
 
 .inputbox {
@@ -259,7 +264,8 @@
 .range .noUi {
 
   &-base {
-    height: 2px;
+    height: 6px;
+    border-radius: 3px;
     background-color: $color-border;
     position: relative;
     margin: 8px 0; // margin нужен, чтобы handler не налезал на другие элементы
@@ -268,7 +274,7 @@
   &-connect {
     height: 100%;
     position: absolute;
-    background-color: $color-main;
+    background-color: $semigrey2-color;
   }
 
   &-handle {
@@ -276,14 +282,25 @@
     width: 16px;
     height: 16px;
     top: 50%;
-    border: 1px solid $color-border;
+    border: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: white;
+    background-color: $color-main;
     transition: border-color $ease-main;
     cursor: pointer;
 
-    &:hover { border-color: $color-main; }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: white;
+    }
   }
 
   &-origin {

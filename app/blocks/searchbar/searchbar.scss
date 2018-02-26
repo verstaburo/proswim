@@ -54,6 +54,7 @@
     fill: $middlegrey2-color;
     margin-top: 4px;
     transition: fill $ease-main;
+    font-size: 0;
 
     .searchbar__button:hover & {
       fill: $color-basic;
