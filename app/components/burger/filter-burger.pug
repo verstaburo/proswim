@@ -1,5 +1,5 @@
 mixin filter-burger()
-  +b.burger._filter.js-filter-burger&attributes(attributes).is-active
+  +b.burger._filter.js-filter-burger&attributes(attributes)
     +e.overlay.js-burger-overlay
     +e.content.js-burger-content
       +e.HEADER.section.__header
@@ -9,10 +9,6 @@ mixin filter-burger()
 
           +e.BUTTON.close.js-burger-close
             +icon('close-menu')
-
-        +e.title
-          .container
-            span.js-burger-title Очки
 
       +e.subheader
         +filter-section._mobile

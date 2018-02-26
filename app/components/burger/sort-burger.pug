@@ -1,0 +1,13 @@
+mixin sort-burger()
+  +b.burger._filter.js-sort-burger&attributes(attributes).is-active
+    +e.overlay.js-burger-overlay
+    +e.content.js-burger-content
+      +e.HEADER.section.__header
+        .container
+          +e.headerlinks
+            +link-icon('sorting_icon_mobile')._dark.__headerlink.is-active Сортировать
+
+          +e.BUTTON.close.js-burger-close
+            +icon('close-menu')
+
+        +e.innercontent

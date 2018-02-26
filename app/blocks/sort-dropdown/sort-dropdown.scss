@@ -2,7 +2,10 @@
   $b: &;
   display: block;
   position: relative;
-  border-bottom: 1px solid $color-border;
+
+  @include screen(lg) {
+    border-bottom: 1px solid $color-border;
+  }
 
   &__button {
     position: relative;
