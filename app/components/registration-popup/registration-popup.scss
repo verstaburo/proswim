@@ -7,5 +7,9 @@
 
   &__footer {
     padding-top: 16px;
+
+    @include screen(lg) {
+      padding-top: 19px;
+    }
   }
 }
