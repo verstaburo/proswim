@@ -9,13 +9,13 @@ mixin sort-dropdown-button
     +icon('Arrow location').__caret
 
 mixin sort-dropdown-body
-  +dropdown.sort-dropdown__body&attributes(attributes)
+  +dropdown(data-slide-mobile="true").sort-dropdown__body&attributes(attributes)
     unless block
       p content goes here
     block
 
-mixin sort-dropdown-list
-  +e.listwrap.js-scrollbar
+mixin sort-dropdown-list(isMobile)
+  +e.listwrap(class=!isMobile ? 'js-scrollbar' : '')
     +e.UL.list&attributes(attributes)
       block
 

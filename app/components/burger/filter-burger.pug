@@ -41,3 +41,81 @@ mixin filter-burger()
               - var categoriesAcccordionData = getData('catalog-categories-menu')
               each categoriesAccordion, index in categoriesAcccordionData
                 +vertical-menu(categoriesAccordion.title, categoriesAccordion.links, true)._accordion(class=index === 0 ? 'is-active' : '')
+
+          +sort-dropdown._products
+            +sort-dropdown-button Любой товар
+            +sort-dropdown-body
+              +sort-dropdown-list(true)
+                +sort-dropdown-item
+                  +checkbox('product', 'product-1') Очки для тренировок
+                +sort-dropdown-item
+                  +checkbox('product', 'product-2') Профессиональные очки для плавания
+                +sort-dropdown-item
+                  +checkbox('product', 'product-3') Очки-маски
+                +sort-dropdown-item
+                  +checkbox('product', 'product-4') Очки с диоприями
+                +sort-dropdown-item
+                  +checkbox('product', 'product-5') Наборы “Очки+Шапочка”
+              +sort-dropdown-submit
+
+          +sort-dropdown
+            +sort-dropdown-button Любой пол
+            +sort-dropdown-body
+              +sort-dropdown-list(true)
+                +sort-dropdown-item
+                  +checkbox('sex', 'male') Мужской
+                +sort-dropdown-item
+                  +checkbox('sex', 'female') Женский
+
+          +sort-dropdown._brands
+            +sort-dropdown-button Любой бренд
+            +sort-dropdown-body
+              +searchbar('Поиск бренда...')._small
+              +sort-dropdown-list(true)
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-1') Adidas
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-2') Adl
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-3') Banana Republic
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-4') Baon
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-5') Befree
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-6') Betsy
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-7') Caprice
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-8') United Colors Of Benneton
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-1') Adidas
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-2') Adl
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-3') Banana Republic
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-4') Baon
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-5') Befree
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-6') Betsy
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-7') Caprice
+                +sort-dropdown-item
+                  +checkbox('brand', 'product-8') United Colors Of Benneton
+
+              +link.__readmore Показать еще
+              +sort-dropdown-submit
+
+          +sort-dropdown._price
+            +sort-dropdown-button Любая цена
+            +sort-dropdown-body
+              +inputbox.sort-dropdown__range
+                +range()(data-start='[930, 4393]', data-connect='true', data-min='930', data-max='6000')
+
+              +inputbox.sort-dropdown__inputs
+                +input(value="930")._size_sm
+                +input(value="4 393")._size_sm
+
+              +sort-dropdown-submit

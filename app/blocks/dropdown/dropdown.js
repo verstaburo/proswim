@@ -25,6 +25,10 @@ const toggle = (dropdown, show = true) => {
   dropdown
     .trigger(event)
     .toggleClass('is-active', show);
+
+  if ($(window).width() < window.globalOptions.sizes.lg && dropdown.data('slide-mobile')) {
+    dropdown[show ? 'slideDown' : 'slideUp'](window.globalOptions.animationDuration);
+  }
 };
 
 
