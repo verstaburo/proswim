@@ -87,6 +87,19 @@
         transform: translateY(-50%);
       }
 
+      .burger_filter & {
+        margin-top: 3px;
+
+        .link {
+          &__text { @include heading-5-bold; }
+          &__icon {
+            width: 15px;
+            height: 14px;
+            margin-top: -1px;
+          }
+        }
+      }
+
       &_user {
         .burger.is-selected & {
           pointer-events: none;
@@ -176,6 +189,8 @@
     display: block;
     position: relative;
     margin-top: 16px;
+
+    .burger_filter & { margin-top: 0; }
   }
 
   &__list {

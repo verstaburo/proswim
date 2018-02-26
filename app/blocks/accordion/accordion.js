@@ -23,21 +23,21 @@ $(document).on('click', '.js-accordion-button', function (e) {
   const afterEvent = [SHOWN, HIDDEN][isActive];
 
   body.trigger(beforeEvent).slideToggle(DURATION, () => {
-    block
-      .toggleClass('is-active')
-      .trigger(afterEvent);
+    block.trigger(afterEvent);
   });
+
+  block.toggleClass('is-active');
 
   if (!isMultiple) {
     const siblings = block.siblings('.accordion.is-active');
+
+    siblings.removeClass('is-active');
 
     siblings
       .trigger(BEFORE_HIDE)
       .find('.accordion__body')
       .slideUp(DURATION, () => {
-        siblings
-          .removeClass('is-active')
-          .trigger(HIDDEN);
+        siblings.trigger(HIDDEN);
       });
   }
 });

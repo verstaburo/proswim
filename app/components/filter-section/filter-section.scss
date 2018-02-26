@@ -6,6 +6,17 @@
 
   @include screen(lg) {
     display: none;
+
+    &_mobile {
+      display: flex;
+    }
+  }
+
+  &_mobile {
+    box-shadow: none;
+    display: block;
+    border-top: 0;
+    padding-bottom: 29px;
   }
 
   &_simple {
@@ -19,22 +30,36 @@
     @include heading-5-bold;
     padding-top: 4px;
     margin-right: -6px;
+
+    @include screen(lg) {
+      @include heading-6;
+      color: $darkgrey-color;
+      line-height: (22/15);
+      padding-top: 0;
+    }
   }
 
   &__grid {
     display: flex;
     flex-wrap: wrap;
-    margin: -10px 0 0 -16px;
+    margin: -10px 0 0 -14px;
     font-size: 0;
 
     &_flexible { flex: 1 1 auto; }
+
+    &:not(:first-child) {
+      @include screen(lg) {
+        margin-top: 0;
+      }
+    }
   }
 
   &__col {
     display: inline-block;
-    padding: 10px 0 0 16px;
+    padding: 10px 0 0 14px;
 
     &_flexible { flex: 1 1 auto; }
+    &_full { width: 100%; margin-bottom: 4px; }
     &_not_shrinkable { flex-shrink: 0; }
   }
 }

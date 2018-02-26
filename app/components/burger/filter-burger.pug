@@ -1,0 +1,43 @@
+mixin filter-burger()
+  +b.burger._filter.js-filter-burger&attributes(attributes).is-active
+    +e.overlay.js-burger-overlay
+    +e.content.js-burger-content
+      +e.HEADER.section.__header
+        .container
+          +e.headerlinks
+            +link-icon('filter_icon_mobile')._dark.__headerlink.is-active Фильтры
+
+          +e.BUTTON.close.js-burger-close
+            +icon('close-menu')
+
+        +e.title
+          .container
+            span.js-burger-title Очки
+
+      +e.subheader
+        +filter-section._mobile
+          +filter-section-grid
+            +filter-section-col._full
+              +filter-section-heading Ваш выбор: #[span (4)]
+            +filter-section-col
+              +choice Очки-маски
+            +filter-section-col
+              +choice Мужские
+            +filter-section-col
+              +choice Arena
+            +filter-section-col
+              +choice 1699 - 2000 руб.
+          +filter-section-grid
+            +filter-section-col._not_shrinkable
+              +button.BUTTON._size_sm._transparent
+                +icon('cancel copy').icon._cancel
+                | Сбросить все
+
+        +e.innercontent
+          +accordion._big_divider
+            +accordion-header
+              +accordion-button Категории
+            +accordion-body
+              - var categoriesAcccordionData = getData('catalog-categories-menu')
+              each categoriesAccordion, index in categoriesAcccordionData
+                +vertical-menu(categoriesAccordion.title, categoriesAccordion.links, true)._accordion(class=index === 0 ? 'is-active' : '')
