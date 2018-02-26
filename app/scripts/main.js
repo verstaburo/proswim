@@ -9,8 +9,6 @@
  * Так же доступа к блокам, которые собираются с помощью вебпака не будет.
  */
 
-@@include('../components/registration-popup/registration-popup.main.js')
-
 // new Vue({
 //   data: {
 //     el: '.page',

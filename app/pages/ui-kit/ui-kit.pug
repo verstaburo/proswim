@@ -303,16 +303,16 @@ block content
           ul
             li(style="margin-top: 8px;")
               p(style='font-size: 14px; color: #999;') components/login-popup
-              +link(href="#login-popup").js-fancybox Авторизация
+              +link(href="login.html" data-popup="#login-popup").js-fancybox Авторизация
             li(style="margin-top: 8px;")
               p(style='font-size: 14px; color: #999;') components/password-recovery-popup
-              +link(href="#password-recovery-popup").js-fancybox Восстановление пароля
+              +link(href="password-recovery.html" data-popup="#password-recovery-popup").js-fancybox Восстановление пароля
             li(style="margin-top: 8px;")
               p(style='font-size: 14px; color: #999;') components/registration-popup
-              +link(href="#registration-popup").js-fancybox Регистрация
+              +link(href="registration.html" data-popup="#registration-popup").js-fancybox Регистрация
             li(style="margin-top: 8px;")
               p(style='font-size: 14px; color: #999;') components/registration-complete-popup
-              +link(href="#registration-complete-popup").js-fancybox Регистрация прошла успешно
+              +link(href="registration-complete.html" data-popup="#registration-complete-popup").js-fancybox Регистрация прошла успешно
 
     //- Ссылки
     +ui-section
