@@ -9,16 +9,16 @@ export default function tabs() {
   $(document).on('click', '[data-tab-target]', function (e) {
     e.preventDefault();
 
-    $(this).addClass('active').siblings().removeClass('active');
+    $(this).addClass('is-active').siblings().removeClass('is-active');
 
     var targetTab = $(this).data('tab-target'),
         tab = $(document).find('[data-tab="' + targetTab + '"]'),
         tabGroup = tab.data('tab-group');
 
-    $(document).find('[data-tab-group="' + tabGroup + '"]').hide().removeClass('active');
+    $(document).find('[data-tab-group="' + tabGroup + '"]').hide().removeClass('is-active');
 
     tab.show(0, function () {
-      $(this).addClass('active');
+      $(this).addClass('is-active');
     });
   });
 }

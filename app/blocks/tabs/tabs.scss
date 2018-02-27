@@ -17,7 +17,7 @@
 
     @include text;
 
-    &.active {
+    &.is-active {
       border-color: $color-basic;
       opacity: 1;
     }
@@ -33,7 +33,7 @@
       transition: opacity $ease-main, transform $ease-main;
       transform: translate3d(0, 10px, 0);
 
-      &.active {
+      &.is-active {
         display: block;
         opacity: 1;
         transform: translate3d(0, 0, 0);

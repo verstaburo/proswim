@@ -1,0 +1,17 @@
+mixin big-review-section
+  +section.big-review-section&attributes(attributes)
+    .container
+      +section-content
+        +tabs
+          +tab()(data-tab-target="tab1").is-active Отзывы (5)
+          +tab()(data-tab-target="tab2") Вопросы (0)
+
+        //- form
+
+        +tabs-content
+          +tab-wrapper()(data-tab="tab1" data-tab-group="testtabs").is-active
+            p Это таб 1
+          +tab-wrapper()(data-tab="tab2" data-tab-group="testtabs")
+            p Это таб 2
+          +tab-wrapper()(data-tab="tab3" data-tab-group="testtabs")
+            p Это таб 3
