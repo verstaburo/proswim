@@ -21,7 +21,7 @@ mixin product-card(data, isSmall)
         +product-nav-slider(data.images, data.heading)
 
     +e.DIV.body
-      +e.A(href="javascript:void(0)" class=isSmall ? 'js-truncate' : '').heading=data.heading
+      +e.A.heading(href="javascript:void(0)" class=isSmall ? 'js-truncate' : '')=data.heading
       if data.sizes
         +e.P.sizes=data.sizes
       +e.price
