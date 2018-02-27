@@ -1,12 +1,12 @@
-mixin products-section(items)
-  +section._grey.products-section
+mixin products-section(items, heading, smallCards)
+  +section._grey.js-products-section.products-section&attributes(attributes)
     .container
         .products-section__slider.swiper-container.js-products-section-slider
-          +section-head('Новинки').products-section__head
+          +section-head(heading || 'Новинки').products-section__head
             +section-head-col.products-section__buttons
               +circle-button('Arrow').products-section__button.products-section__button_prev
               +circle-button('Arrow').products-section__button.products-section__button_next
           +section-content.products-section__content.swiper-wrapper
             each item in items
               .products-section__slide.swiper-slide
-                +product-card(item)
+                +product-card(item, smallCards)(class=smallCards ? '_small' : '')

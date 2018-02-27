@@ -1,4 +1,4 @@
-mixin product-card(data)
+mixin product-card(data, isSmall)
   +b.product-card&attributes(attributes)
     if data.badge
       +badge(class=data.badge.mod).__badge=data.badge.title
@@ -21,16 +21,17 @@ mixin product-card(data)
         +product-nav-slider(data.images, data.heading)
 
     +e.DIV.body
-      +e.A(href="javascript:void(0)").heading=data.heading
+      +e.A(href="javascript:void(0)" class=isSmall ? 'js-truncate' : '').heading=data.heading
       if data.sizes
         +e.P.sizes=data.sizes
       +e.price
         +e.SPAN.pricecurrent #{data.price} #[+e.SPAN.pricecurrency руб.]
         if data.oldPrice
           +e.S.priceold #{data.oldPrice} #[+e.SPAN.pricecurrency руб.]
-      +rating(data.rating.activeStar).__rating
-        if data.rating.text
-          +rating-text._grey!= data.rating.text
+      if data.rating
+        +rating(data.rating.activeStar).__rating
+          if data.rating.text
+            +rating-text._grey!= data.rating.text
       if data.buyInOneClick
         +e.P.buywrap
           +link-icon('Cart button').__buy Купить в 1 клик

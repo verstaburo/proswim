@@ -23,6 +23,10 @@
     }
   }
 
+  &_small {
+    min-height: 255px;
+  }
+
   @include screen(lg) {
     padding: 13px;
     padding-bottom: 10px;
@@ -80,6 +84,10 @@
     display: block;
     width: 100%;
     height: 240px;
+
+    .product-card_small & {
+      height: 140px;
+    }
 
     @include screen(lg) {
       height: 139px;
@@ -160,6 +168,12 @@
       }
     }
 
+    .product-card_small & {
+      @include text-tiny;
+      max-height: (18/12*2em);
+      overflow: hidden;
+    }
+
     @include screen(lg) {
       @include text-small;
 
@@ -223,6 +237,11 @@
       line-height: (24/18);
       letter-spacing: 0.01em;
 
+      .product-card_small & {
+        font-size: 15px;
+        line-height: (24/15);
+      }
+
       @include screen(lg) {
         font-size: 15px;
 
@@ -247,6 +266,11 @@
       margin-left: 10px;
       @include text;
 
+      .product-card_small & {
+        font-size: 12px;
+        line-height: (24/15);
+      }
+
       @include screen(lg) {
         @include text-tiny;
         margin-left: 8px;
@@ -270,6 +294,11 @@
     }
 
     &currency {
+
+      .product-card_small .product-card__priceold & {
+        display: none;
+      }
+
       @include screen(lg) {
         .product-card__priceold & { display: none; }
 
