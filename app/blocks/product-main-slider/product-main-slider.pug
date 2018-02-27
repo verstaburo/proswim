@@ -1,12 +1,15 @@
-mixin product-main-slider(images, alt, hasButtons)
+mixin product-main-slider(images, alt, hasButtons, zoom)
   +b.product-main-slider&attributes(attributes).swiper-container.js-product-main-slider
     .swiper-wrapper
       each image in images
-        .swiper-slide.product-main-slider__slide(class=image.isVideo ? 'product-main-slider__slide_video' : '')
+        - var classes = [image.isVideo ? 'product-main-slider__slide_video' : '', zoom ? 'js-product-main-slider-zoom' : '']
+        .swiper-slide.product-main-slider__slide(class=classes.join(' '))
           if image.isVideo
             video(src=image.src)
           else
             img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
+            if zoom
+              +icon('Zoom icon').__zoom
 
     if hasButtons
       +e.buttons

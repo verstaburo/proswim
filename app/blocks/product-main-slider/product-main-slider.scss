@@ -64,4 +64,17 @@
       margin-left: -2px;
     }
   }
+
+  &__zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 19px;
+    fill: $dirtyblue-color;
+    transition: opacity $ease-main;
+    z-index: 5;
+
+    .product-main-slider__slide.is-hovered & { opacity: 0; }
+  }
 }
