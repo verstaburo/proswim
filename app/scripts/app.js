@@ -2,6 +2,7 @@ import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
 import './globalOptions';
 import './formValidation';
+import './libs/helpers';
 import '../blocks/js-functions/truncate';
 import anchor from '../blocks/js-functions/anchor';
 import { freezebuttons } from '../blocks/js-functions/freeze';
@@ -33,6 +34,7 @@ import '../components/brands-section/brands-section';
 import '../components/products-section/products-section';
 import '../components/articles-section/articles-section';
 import '../blocks/section/section';
+import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 
 const $ = window.$;

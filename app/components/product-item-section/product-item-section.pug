@@ -1,0 +1,23 @@
+mixin product-item-section()
+  +b.product-item-section&attributes(attributes).js-product-item-section
+    .container
+      +grid
+        +col(7)
+          +e.mainslider
+            +icon('Zoom icon').__zoom
+            +badge._red.__badge -40%
+
+            +product-main-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: 'content-img/Sea-362.mp4', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror', false)
+          +e.navslider
+            +product-nav-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror')._big.js-product-nav-slider
+
+        +col(5)
+          //- product-info
+
+      +grid
+        +col(3)
+          //- characteristics
+        +col(3)
+          //- features
+        +col(3)
+          //- description

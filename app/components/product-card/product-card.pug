@@ -18,7 +18,7 @@ mixin product-card(data, isSmall)
           +button._size_md.__button Быстрый просмотр
 
       +e.nav
-        +product-nav-slider(data.images, data.heading)
+        +product-nav-slider(data.images, data.heading)._filter.js-product-nav-slider
 
     +e.DIV.body
       +e.A.heading(href="javascript:void(0)" class=isSmall ? 'js-truncate' : '')=data.heading

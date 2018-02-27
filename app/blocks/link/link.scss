@@ -33,6 +33,12 @@
   &__text {
     @include link;
     transition: color $ease-main;
+
+    .link_print & {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: (20/12);
+    }
   }
 
   &_underline &__text {
@@ -46,6 +52,8 @@
   &_icon {
     position: relative;
     padding-left: 25px;
+
+    &.link_print { padding-left: 20px; }
 
     .link__icon {
       position: absolute;
@@ -62,6 +70,12 @@
     margin-right: 5px;
     fill: $color-main;
     transition: fill $ease-main;
+
+    .link_print & {
+      margin-top: 2px;
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &.is-disabled {

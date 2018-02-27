@@ -2,10 +2,15 @@ mixin product-main-slider(images, alt, hasButtons)
   +b.product-main-slider&attributes(attributes).swiper-container.js-product-main-slider
     .swiper-wrapper
       each image in images
-        .swiper-slide.product-main-slider__slide
-          img(src=src=`content-img/product-cards/${image}.jpg` alt=alt || '@@')
+        .swiper-slide.product-main-slider__slide(class=image.isVideo ? 'product-main-slider__slide_video' : '')
+          if image.isVideo
+            video(src=image.src)
+          else
+            img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
 
     if hasButtons
       +e.buttons
         +e.button._prev
+          +icon('Arrow 1')
         +e.button._next
+          +icon('Arrow 1')

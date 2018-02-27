@@ -1,0 +1,34 @@
+.product-item-section {
+  display: block;
+
+  &__mainslider {
+    position: relative;
+    height: 528px;
+
+    .product-main-slider__slide_video { z-index: 6; }
+  }
+
+  &__navslider {
+    margin-top: 19px;
+  }
+
+  &__zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 19px;
+    fill: $dirtyblue-color;
+    transition: opacity $ease-main;
+    z-index: 5;
+
+    &.is-hidden { opacity: 0; }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+  }
+}

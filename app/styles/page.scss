@@ -30,8 +30,12 @@
       border: 0;
     }
 
-    &col:not(:first-child) {
-      padding-left: 20px;
+    &col {
+      &_flexible { flex: 1 1 auto; }
+
+      &:not(:first-child) {
+        padding-left: 20px;
+      }
     }
   }
 
