@@ -28,6 +28,7 @@ import '../blocks/product-main-slider/product-main-slider';
 import '../components/header/header';
 import '../components/product-card/product-card';
 import '../components/hero-slider/hero-slider';
+import '../components/burger/filterBurger';
 import '../components/brands-section/brands-section';
 import '../components/products-section/products-section';
 import '../components/articles-section/articles-section';

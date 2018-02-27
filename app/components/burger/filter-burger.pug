@@ -1,13 +1,13 @@
 mixin filter-burger()
-  +b.burger._filter.js-filter-burger&attributes(attributes)
-    +e.overlay.js-burger-overlay
-    +e.content.js-burger-content
+  +b.burger._filter.js-filter-burger#filter-burger&attributes(attributes)
+    +e.overlay.js-filter-burger-close
+    +e.content
       +e.HEADER.section.__header
         .container
           +e.headerlinks
             +link-icon('filter_icon_mobile')._dark.__headerlink.is-active Фильтры
 
-          +e.BUTTON.close.js-burger-close
+          +e.BUTTON.close.js-filter-burger-close
             +icon('close-menu')
 
       +e.subheader

@@ -1,13 +1,24 @@
 mixin sort-burger()
-  +b.burger._filter.js-sort-burger&attributes(attributes)
-    +e.overlay.js-burger-overlay
-    +e.content.js-burger-content
+  +b.burger._filter.js-filter-burger#sort-burger&attributes(attributes)
+    +e.overlay.js-filter-burger-close
+    +e.content
       +e.HEADER.section.__header
         .container
           +e.headerlinks
             +link-icon('sorting_icon_mobile')._dark.__headerlink.is-active Сортировать
 
-          +e.BUTTON.close.js-burger-close
+          +e.BUTTON.close.js-filter-burger-close
             +icon('close-menu')
 
-        +e.innercontent
+      +e.innercontent
+        +e.UL.list
+          +e.LI.item
+            +link._dark.__link._big По популярности
+          +e.LI.item
+            +link-icon('sort-price-ask')._dark.__link._big По цене
+          +e.LI.item
+            +link-icon('sort-price-desk')._dark.__link._big По цене
+          +e.LI.item
+            +link._dark.__link._big По скидкам
+          +e.LI.item
+            +link._dark.__link._big По новизне

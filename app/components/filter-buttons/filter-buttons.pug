@@ -3,11 +3,11 @@ mixin filter-buttons(filters, sort)
     +grid.filter-buttons__grid
       if filters
         +col(6).filter-buttons__col
-          +button._size_md._transparent._block
+          +button._size_md._transparent._block.js-filter-burger-button(data-burger="#filter-burger")
             | Фильтры
             +icon('checked').icon._check
       if sort
         +col(6).filter-buttons__col
-          +button._size_md._transparent._block
+          +button._size_md._transparent._block.js-filter-burger-button(data-burger="#sort-burger")
             | Сортировать
             +icon('checked').icon._check
