@@ -11,9 +11,36 @@
     margin-right: 20px;
     margin-top: 4px;
 
+    @include screen(lg) {
+      width: 124px;
+      height: 129px;
+    }
+
+    @include screen(sm) {
+      width: 80px;
+      height: 83px;
+      margin-right: 10px;
+    }
+
     img {
       @include fill-img;
       border-radius: 50%;
+    }
+  }
+
+  &__cutoff {
+    @include screen(sm) {
+      padding-top: 20px;
+      display: none;
+    }
+  }
+
+  &__readmore {
+    margin-top: 10px;
+    .link { font-size: 15px; }
+
+    @include screen(sm, min) {
+      display: none;
     }
   }
 }
