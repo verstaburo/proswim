@@ -74,6 +74,23 @@
     }
   }
 
+  &_greyblue {
+    box-shadow: 0 12px 20px rgba(106, 142, 156, 0.2);
+    background-color: $dirtyblue-color;
+    color: white;
+
+    &:hover,
+    &.is-active {
+      box-shadow: 0 16px 22px rgba(109, 147, 161, 0.4);
+      border-color: $dirtyblue2-color;
+      background-color: $dirtyblue2-color;
+    }
+
+    &.is-disabled {
+      opacity: .75;
+    }
+  }
+
   &__icon {
     margin-bottom: -2px;
     margin-right: 5px;

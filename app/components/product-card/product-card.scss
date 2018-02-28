@@ -25,6 +25,8 @@
 
   &_small {
     min-height: 255px;
+    padding-top: 17px;
+    padding-bottom: 14px;
   }
 
   @include screen(lg) {
@@ -135,6 +137,10 @@
     display: block;
     margin-top: 14px;
 
+    .product-card_small & {
+      margin-top: 17px;
+    }
+
     @include screen(lg) {
       margin-top: 12px;
 
@@ -207,6 +213,10 @@
   &__price {
     display: block;
     margin-top: 16px;
+
+    .product-card_small & {
+      margin-top: 4px;
+    }
 
     @include screen(lg) {
       margin-top: 5px;
