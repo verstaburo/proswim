@@ -1,0 +1,52 @@
+mixin review-form()
+  +b.FORM(method='post' action='/').review-form&attributes(attributes)
+    +grid
+      +col(12)
+        +inputbox('Оцените товар *')
+          +rating-interactive._big
+
+      +col(12)
+        +inputbox('Рекомендуете товар? *')
+          +radio('recommend', true, true) Да
+          +radio('recommend', false, false) Нет
+
+      +col(6)
+        +inputbox('Достоинства *')
+          +input(name="name" type="text" placeholder="Имя" required)
+        +inputbox('Недостатки *')
+          +input(name="email" type="text" placeholder="Email" required)
+
+      +col(12)
+        +inputbox('Опишите достоинства товара *')
+          +input(name="advantages" type="text" placeholder="Опишите достоинства товара" required)
+
+      +col(12)
+        +inputbox('Недостатки *')
+          +input(name="advantages" type="text" placeholder="Опишите недостатки твара" required)
+
+      +col(12)
+        +inputbox('Отзыв')
+          +textarea('Отзыв')
+
+      +col(12)
+        +captcha.__captcha
+
+      +col(12)
+        +button.BUTTON(type="submit") Оставить отзыв
+
+      +col(12)
+        +checkbox('personal-data', true, false, true)
+
+mixin review-form-section
+  +section.review-form-section
+    +section-content
+
+      .review-form-section__short
+        p.review-form-section__text Ваш отзыв поможет кому-то сделать выбор
+        +button(type="button").js-review-form-section-button Оставить отзыв
+
+      .review-form-section__full
+        h3.review-form-section__heading Оставить отзыв
+        p.review-form-section__text Ваш отзыв поможет кому-то сделать выбор
+
+        +review-form.__form

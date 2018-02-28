@@ -6,7 +6,7 @@ mixin big-review-section
           +tab()(data-tab-target="reviews").is-active Отзывы (5)
           +tab()(data-tab-target="questions") Вопросы (0)
 
-        //- form
+        +review-form-section
 
         +tabs-content
           +tab-wrapper()(data-tab="reviews" data-tab-group="product-review-tabs").is-active

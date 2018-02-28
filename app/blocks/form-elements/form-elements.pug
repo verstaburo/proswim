@@ -1,5 +1,8 @@
-mixin inputbox()
+mixin inputbox(label)
   .inputbox&attributes(attributes)
+    if label
+      P.inputbox__label=label
+
     block
 
 mixin input()
