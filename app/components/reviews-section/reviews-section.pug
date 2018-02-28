@@ -8,3 +8,12 @@ mixin reviews-section(items)
             +col(6).reviews-section__col
               +review-card(item)
       +section-button
+
+mixin reviews-section-full(items, hasBtn)
+  +section
+    +section-content
+      +grid
+        +col(12)
+          +review-item
+    if hasBtn
+      +section-button Читать все отзывы

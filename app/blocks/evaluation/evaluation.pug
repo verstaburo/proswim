@@ -1,0 +1,23 @@
+mixin evaluations()
+  +b.UL.evaluation&attributes(attributes)
+    block
+
+mixin evaluation(kind)
+  - var mod = ''
+  - var action = ''
+  - var icon = ''
+
+  if kind === 'like'
+    - mod = 'like'
+    - action = 'like'
+    - icon = 'Good'
+
+  if kind === 'dislike'
+    - mod = 'dislike'
+    - action = 'dislike'
+    - icon = 'Bad'
+
+  +b.LI.evaluation.js-evaluation(data-evaluate-action=mod class=`evaluation_${mod}`)
+    +icon(icon.icon)
+    +e.SPAN.text
+      block

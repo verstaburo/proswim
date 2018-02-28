@@ -1,5 +1,5 @@
 mixin review-form()
-  +b.FORM(method='post' action='/').review-form&attributes(attributes)
+  +b.FORM(method='post' action='/' data-parsley-validate).review-form&attributes(attributes)
     +grid
       +col(12)
         +inputbox('Оцените товар *')
@@ -35,7 +35,7 @@ mixin review-form()
         +button.BUTTON(type="submit") Оставить отзыв
 
       +col(12)
-        +checkbox('personal-data', true, false, true)
+        +checkbox('personal-data', true, false, true) Отправляя отзыв, вы даете согласие на обработку персональных данных
 
 mixin review-form-section
   +section.review-form-section

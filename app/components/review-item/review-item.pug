@@ -1,0 +1,55 @@
+mixin review-item()
+  +b.review-item&attributes(attributes)
+    +e.image._avatar
+      img(src="", alt="")
+
+    +e.content
+      +e.head
+        +e.col
+          +e.P.date 17 декабря 2017
+          +e.P.userinfo
+            +e.SPAN.username Руслан
+            +e.SPAN.city Москва
+
+        +e.col._flexible
+          +review-badge('Good')._green Я рекомендую этот товар
+
+        +e.col
+          +evaluations
+            +evaluation('like') 15
+            +evaluation('dislike') 0
+
+      +e.body
+        +e.block
+          +e.P.blockheading Плюсы:
+          +content-zone
+            p Хорошая защита, не протекают
+
+        +e.block
+          +e.P.blockheading Плюсы:
+          +content-zone
+            p Не нашел
+
+        +e.block
+          +e.P.blockheading Плюсы:
+          +content-zone
+            p Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен: ткань тянется заметно меньше, чем с&nbsp;эластаном. Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер больше), но&nbsp;движениям с&nbsp;самого начала не&nbsp;мешал, нигде не&nbsp;тянул и&nbsp;не&nbsp;натирал, а&nbsp;после пары тренировок и&nbsp;вовсе принял форму моего тела. Довольна.
+
+      //- inner
+      +b.review-item._answer
+        +e.image
+          img(src="", alt="")
+
+        +e.content
+          +e.head
+            +e.col
+              +e.P.date 17 декабря 2017
+              +e.P.userinfo
+                +e.SPAN.username Консультант Proswim
+
+          +e.body
+            +e.block
+              +content-zone
+                p Здравствуйте, Руслан!
+                p По&nbsp;хорошему резина после каждодневных тренировок не&nbsp;должна пожелтеть. Она становится чуть более жесткой. А&nbsp;вот тряпочкой протирать такую модель не&nbsp;желательно, так как можно таким образом стереть зеркальное покрытие. Просим по&nbsp;всем вопросам о&nbsp;качестве товара писать на&nbsp;наш электронный адрес info@proswim.&nbsp;ru.
+
