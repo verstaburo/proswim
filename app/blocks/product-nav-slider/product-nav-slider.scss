@@ -92,16 +92,12 @@
 
     #{$b}_big & {
       width: 14px;
+
+      svg { margin-right: 0; }
     }
 
     &_prev {
       transform: rotate(180deg);
-
-      #{$b}_big & svg { margin-right: 0; }
-    }
-
-    &_next {
-      #{$b}_big & svg { margin-left: 0; }
     }
 
     svg {

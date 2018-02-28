@@ -33,6 +33,15 @@
     &col {
       &_flexible { flex: 1 1 auto; }
 
+      .page__head_subhead & {
+        padding-top: 20px;
+        padding-bottom: 22px;
+
+        @include screen(lg) {
+          padding-bottom: 19px;
+        }
+      }
+
       &:not(:first-child) {
         padding-left: 20px;
       }
@@ -42,16 +51,15 @@
   &__heading {
     display: block;
     @include heading-1;
-    margin: 14px 0 22px;
+    margin-top: -6px;
 
     @include screen(lg) {
-      margin-bottom: 19px;
+
     }
 
     @include screen(sm) {
       font-size: 26px;
       line-height: (30/26);
-      margin: 16px 0 24px;
     }
   }
 
@@ -65,5 +73,23 @@
 
   &__content {
 
+  }
+
+  &__logo {
+    display: block;
+    height: 54px;
+    margin-bottom: -26px;
+
+    &:hover {
+      img, svg {
+        filter: gray;
+        filter: grayscale(100%);
+      }
+    }
+
+    img, svg {
+      max-height: 100%;
+      transition: filter $ease-main;
+    }
   }
 }
