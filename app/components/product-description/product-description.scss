@@ -1,3 +1,31 @@
 .product-description {
   display: block;
+
+  &__heading {
+    @include heading-5;
+    margin-bottom: 10px;
+  }
+
+  &__grid {
+    justify-content: space-between;
+  }
+
+  &__block {
+    .grid__col:nth-child(1) & {
+      padding-right: 3px;
+    }
+
+    .grid__col:nth-child(2) & {
+      padding-left: 100px;
+    }
+  }
+
+  &__cutoff {
+    display: none;
+  }
+
+  &__readmore {
+    margin-top: -15px;
+    .link { font-size: 15px; }
+  }
 }

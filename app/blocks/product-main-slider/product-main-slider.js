@@ -10,6 +10,22 @@ const slider = new Swiper('.js-product-main-slider', {
     prevEl: '.product-main-slider__button_prev',
   },
   roundLengths: true,
+  on: {
+    slideNextTransitionEnd() {
+      const sliderElement = $(this.$el);
+      const activeSlide = sliderElement.find('.swiper-slide-active');
+
+      sliderElement.find('video').each(function () {
+        $(this)[0].pause();
+      });
+
+      const activeVideo = activeSlide.find('video');
+
+      if (activeVideo.length) {
+        activeVideo[0].play();
+      }
+    },
+  },
 });
 
 /**

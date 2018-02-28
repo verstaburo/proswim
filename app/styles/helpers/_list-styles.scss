@@ -45,3 +45,29 @@
     }
   }
 }
+
+@mixin dllist {
+  margin-top: 0;
+  @include text;
+  display: flex;
+  margin-bottom: 4px;
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 .25em .5em;
+    border-bottom: 1px dashed $darkgrey-color;
+    flex: 1 1 auto;
+    order: 2;
+  }
+
+  dt {
+    color: $darkengrey-color;
+    order: 1;
+  }
+
+  dd {
+    margin-left: 0;
+    order: 3;
+  }
+}

@@ -9,3 +9,7 @@ ul.list {
 ol.list {
   @include ollist;
 }
+
+dl.list {
+  @include dllist;
+}
