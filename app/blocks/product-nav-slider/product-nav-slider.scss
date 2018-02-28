@@ -8,7 +8,8 @@
     padding: 0 22px;
   }
 
-  &_big.has-navigation {
+  &_big.has-navigation,
+  &_md.has-navigation {
     padding: 0 14px;
   }
 
@@ -19,6 +20,10 @@
 
     #{$b}_big & {
       height: 58px;
+    }
+
+    #{$b}_md & {
+      height: 42px;
     }
   }
 
@@ -64,6 +69,10 @@
     #{$b}_big & {
       width: 74px;
     }
+
+    #{$b}_md & {
+      width: 52px;
+    }
   }
 
   &__buttons {
@@ -90,7 +99,8 @@
     height: 100%;
     cursor: pointer;
 
-    #{$b}_big & {
+    #{$b}_big &,
+    #{$b}_md & {
       width: 14px;
 
       svg { margin-right: 0; }

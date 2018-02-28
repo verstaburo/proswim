@@ -7,17 +7,29 @@
   }
 
   &_dark {
-    .link__text { color: $color-basic; }
+    .link__text {
+      color: $color-basic;
+      border-color: $greyblue4-color;
+    }
+
     .link__icon { fill: $color-basic; }
 
     &:hover {
-      .link__text { color: $darkblue-color; }
+      .link__text {
+        color: $darkblue-color;
+        border-color: $color-main;
+      }
+
       .link__icon { fill: $darkblue-color; }
     }
   }
 
   &_grey {
-    .link__text { color: $darkengrey-color; }
+    .link__text {
+      color: $darkengrey-color;
+      border-color: $greyblue4-color;
+    }
+
     .link__icon { fill: $darkengrey-color; }
 
     &:hover {
@@ -32,7 +44,8 @@
 
   &__text {
     @include link;
-    transition: color $ease-main;
+    transition: color $ease-main,
+                border-color $ease-main;
 
     .link_print & {
       font-size: 12px;

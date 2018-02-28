@@ -1,0 +1,17 @@
+.payment-logo {
+  .payment-logos & {
+    padding: 13px 0 0 13px;
+  }
+
+  img {
+    max-width: 100px;
+    max-height: 80px;
+  }
+}
+
+.payment-logos {
+  margin: -13px 0 0 -12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}

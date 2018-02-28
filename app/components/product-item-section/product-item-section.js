@@ -10,7 +10,7 @@ function productItemSection() {
   }
 
   /**
-   * Инициализация слайдеров
+   * Инициализация главного слайдера
    */
 
   const mainSlider = block.find('.js-product-main-slider');
@@ -25,6 +25,14 @@ function productItemSection() {
   };
 
   slider(navSlider, mainSlider, settings);
+
+  /**
+   * инициализация слайдера выбора цвета
+   */
+
+  const colorSlider = block.find('.js-product-item-color-slider');
+
+  slider(colorSlider, null, settings);
 }
 
 productItemSection();

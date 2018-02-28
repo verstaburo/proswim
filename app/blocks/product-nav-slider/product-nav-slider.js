@@ -43,7 +43,7 @@ export default (el, mainSlider, settings = {}) => {
           .eq(self.activeIndex)
           .addClass('is-active');
 
-        if (!mainSlider.length || !mainSlider[0].swiper) {
+        if (!mainSlider || !mainSlider.length || !mainSlider[0].swiper) {
           return;
         }
 

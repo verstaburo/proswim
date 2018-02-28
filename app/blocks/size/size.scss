@@ -1,0 +1,41 @@
+.size {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+
+  .sizes & {
+    margin: 9px 0 0 9px;
+  }
+
+  &__control {
+    display: none;
+  }
+
+  &__box {
+    display: inline-block;
+    @include text-small;
+    padding: 0 9px;
+    min-width: 32px;
+    text-align: center;
+    line-height: 32px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid $semigreyblue-color;
+    box-sizing: border-box;
+    transition: color $ease-main,
+                border-color $ease-main,
+                background-color $ease-main;
+
+    .size__control:checked + & {
+      background-color: $dirtyblue-color;
+      border-color: $dirtyblue-color;
+      color: white;
+    }
+  }
+}
+
+.sizes {
+  display: block;
+  font-size: 0;
+  margin: -9px 0 0 -9px;
+}

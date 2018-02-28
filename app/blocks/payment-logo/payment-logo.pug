@@ -1,0 +1,7 @@
+mixin payment-logos
+  +b.payment-logos&attributes(attributes)
+    block
+
+mixin payment-logo(src, alt)
+  +b.payment-logo&attributes(attributes)
+    img(src=src, alt=alt)

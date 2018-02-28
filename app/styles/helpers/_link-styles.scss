@@ -11,7 +11,9 @@
 }
 
 @mixin link-underline {
-  border-bottom: 1px solid;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  padding-bottom: 2px;
 }
 
 @mixin link-disabled {
@@ -20,7 +22,9 @@
 }
 
 @mixin link-dashed {
-  border-bottom: 1px dashed;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  padding-bottom: 2px;
 }
 
 @mixin link-medium {

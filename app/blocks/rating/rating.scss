@@ -10,11 +10,15 @@
     margin-left: -4px;
     margin-top: -2px;
     font-size: 0;
+
+    #{$b}_md & { margin-left: -6px; }
   }
 
   &__box {
     margin-left: 4px;
     #{$b}_interactive & { cursor: pointer; }
+
+    #{$b}_md & { margin-left: 6px; }
   }
 
   &__control { display: none; }
@@ -31,6 +35,11 @@
     #{$b}__box.is-active &,
     #{$b}__box.is-active ~ #{$b}__box & {
       fill: $yellow-color;
+    }
+
+    #{$b}_md & {
+      width: 14px;
+      height: 14px;
     }
   }
 
