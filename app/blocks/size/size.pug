@@ -2,8 +2,8 @@ mixin sizes()
   +b.sizes&attributes(attributes)
     block
 
-mixin size(name, value, isChecked, type)
-  +b.LABEL.size&attributes(attributes)
-    +e.INPUT(type=type||"radio" name=name value=value checked=isChecked).control
+mixin size(params)
+  +b.LABEL.size
+    +e.INPUT.control&attributes(attributes)
     +e.box
       block

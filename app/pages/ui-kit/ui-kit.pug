@@ -463,11 +463,12 @@ block content
         p Блок: blocks/size/size
       +ui-section-content()
         +sizes
-          +size('size', '08-09Y', true) 08-09Y
-          +size('size', '35/37') 35/37
-          +size('size', '32/34') 32/34
-          +size('size', 'S') S
-          +size('size', 'M') M
+          +size(name="size" value="08-09Y" type="radio") 08-09Y
+          +size(name="size" value="35/37" type="radio") 35/37
+          +size(name="size" value="32/34" type="radio") 32/34
+          +size(name="size" value="S" type="radio") S
+          +size(name="size" value="M" type="radio") M
+
 
     //- Способы оплаты
     +ui-section
