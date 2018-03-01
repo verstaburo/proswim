@@ -2504,7 +2504,7 @@
                         </div>
                     </div>
                     <div class="grid__col grid__col_xl_5">
-                        <div class="product-item-section__section">
+                        <form method="POST" data-parsley-validate="data-parsley-validate">
                             <div class="product-item-section__price">
                                 <span class="product-item-section__pricecurrent">13 792 руб.</span>
                                 <span class="product-item-section__priceold">14 792,40 руб.</span>
@@ -2551,23 +2551,26 @@
                             <div class="product-item-section__sizes">
                                 <div class="sizes">
                                     <label class="size">
-                                        <input class="size__control" type="radio" name="size" value="08-09Y" checked="checked" />
+                                        <input class="size__control" name="size" value="08-09Y" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                        />
                                         <span class="size__box">08-09Y</span>
                                     </label>
                                     <label class="size">
-                                        <input class="size__control" type="radio" name="size" value="35/37" />
+                                        <input class="size__control" name="size" value="35/37" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                        />
                                         <span class="size__box">35/37</span>
                                     </label>
                                     <label class="size">
-                                        <input class="size__control" type="radio" name="size" value="32/34" />
+                                        <input class="size__control" name="size" value="32/34" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                        />
                                         <span class="size__box">32/34</span>
                                     </label>
                                     <label class="size">
-                                        <input class="size__control" type="radio" name="size" value="S" />
+                                        <input class="size__control" name="size" value="S" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер" />
                                         <span class="size__box">S</span>
                                     </label>
                                     <label class="size">
-                                        <input class="size__control" type="radio" name="size" value="M" />
+                                        <input class="size__control" name="size" value="M" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер" />
                                         <span class="size__box">M</span>
                                     </label>
                                 </div>
@@ -2637,10 +2640,11 @@
                                 </div>
                             </div>
                             <div class="product-item-section__buttons">
-                                <a class="button">Добавить в корзину</a>
-                                <a class="button button_greyblue">Купить в 1 клик</a>
+                                <button class="button" type="submit">Добавить в корзину</button>
+                                <button class="button button_greyblue" type="button">Купить в 1 клик</button>
                             </div>
-                        </div>
+                            <div class="product-item-section__size-errors"></div>
+                        </form>
                         <div class="product-item-section__section">
                             <div class="product-item-section__block">
                                 <p class="product-item-section__heading">Доставка:</p>
