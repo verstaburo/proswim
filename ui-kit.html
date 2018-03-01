@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#ffffff">
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -307,6 +308,25 @@
                         </li>
                         <li>Элемент списка</li>
                     </ol>
+                    <p class="ui-kit__description">dl.list</p>
+                    <div style="max-width: 400px;">
+                        <dl class="list">
+                            <dt>Элемент списка</dt>
+                            <dd>Элемент списка</dd>
+                        </dl>
+                        <dl class="list">
+                            <dt>Элемент списка</dt>
+                            <dd>Элемент списка</dd>
+                        </dl>
+                        <dl class="list">
+                            <dt>Элемент списка</dt>
+                            <dd>Элемент списка</dd>
+                        </dl>
+                        <dl class="list">
+                            <dt>Элемент списка</dt>
+                            <dd>Элемент списка</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </section>
@@ -404,18 +424,14 @@
                             <p class="ui-kit__description">.checkradio</p>
                             <div class="inputbox">
                                 <div class="ui-kit__elements-list">
-                                    <label class="checkradio">
+                                    <label class="checkradio checkradio_radio">
                                         <input class="checkradio__input" name="ui-radio" value="test" checked="true" type="radio" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
+                                        <span class="checkradio__box"></span>
                                         <span class="checkradio__content">Радиокнопка</span>
                                     </label>
-                                    <label class="checkradio">
+                                    <label class="checkradio checkradio_radio">
                                         <input class="checkradio__input" name="ui-radio" value="test-2" type="radio" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
+                                        <span class="checkradio__box"></span>
                                         <span class="checkradio__content">Радиокнопка</span>
                                     </label>
                                 </div>
@@ -824,6 +840,152 @@
                             </div>
                         </div>
                     </div>
+                    <p class="ui-kit__description">._md с текстом</p>
+                    <div class="rating rating_md">
+                        <div class="rating__stars">
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box is-active">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                        </div>
+                        <div class="rating__textwrap">
+                            <span class="rating__text rating__text_grey js-anchor">Отзывы (2)</span>
+                            <span class="rating__text rating__text_dark js-anchor">dark text</span>
+                        </div>
+                    </div>
+                    <p class="ui-kit__description">._big</p>
+                    <div class="rating rating_big">
+                        <div class="rating__stars">
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box is-active">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                            <div class="rating__box">
+                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Размеры</h2>
+                    <p>Блок: blocks/size/size</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="sizes">
+                        <label class="size">
+                            <input class="size__control" type="radio" name="size" value="08-09Y" checked="checked" />
+                            <span class="size__box">08-09Y</span>
+                        </label>
+                        <label class="size">
+                            <input class="size__control" type="radio" name="size" value="35/37" />
+                            <span class="size__box">35/37</span>
+                        </label>
+                        <label class="size">
+                            <input class="size__control" type="radio" name="size" value="32/34" />
+                            <span class="size__box">32/34</span>
+                        </label>
+                        <label class="size">
+                            <input class="size__control" type="radio" name="size" value="S" />
+                            <span class="size__box">S</span>
+                        </label>
+                        <label class="size">
+                            <input class="size__control" type="radio" name="size" value="M" />
+                            <span class="size__box">M</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Способы оплаты</h2>
+                    <p>Блок: blocks/payment-logo/payment-logo</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="payment-logos">
+                        <div class="payment-logo">
+                            <img src="content-img/payment/mastercard.jpg" alt="Mastercard" />
+                        </div>
+                        <div class="payment-logo">
+                            <img src="content-img/payment/visa-copy.jpg" alt="Visa" />
+                        </div>
+                        <div class="payment-logo">
+                            <img src="content-img/payment/bank-tranfer.jpg" alt="Bank tranfer" />
+                        </div>
+                        <div class="payment-logo">
+                            <img src="content-img/payment/cash.jpg" alt="Cash" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Оценка (like/dislike)</h2>
+                    <p>Блок: blocks/evaluation/evaluation</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <ul class="evaluations">
+                        <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                            <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                            <span class="evaluation__text">15</span>
+                        </li>
+                        <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                            <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                            <span class="evaluation__text">6</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Баджи отзыва</h2>
+                    <p>Блок: blocks/review-badge/review-badge</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="review-badge review-badge review-badge_like">
+                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                    </div>
+                    <div class="review-badge review-badge review-badge_dislike">
+                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1095,6 +1257,7 @@
             </div>
             <div class="ui-kit__section-content">
                 <div class="container">
+                    <p class="ui-kit__description">Обычные карточки</p>
                     <div class="grid">
                         <div class="grid__col grid__col_xl_4">
                             <div class="product-card">
@@ -1220,6 +1383,382 @@
                             </div>
                         </div>
                     </div>
+                    <p class="ui-kit__description">Карточки в каталоге ._catalog.js-product-card</p>
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_4">
+                            <div class="product-card product-card_catalog js-product-card">
+                                <div class="badge badge_green product-card__badge">Хит</div>
+                                <div class="product-card__image">
+                                    <div class="product-main-slider swiper-container js-product-main-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/2428-970.jpg" alt="Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/2428-970.jpg" alt="Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="button button_size_md product-card__button">Быстрый просмотр</a>
+                                </div>
+                                <div class="product-card__nav">
+                                    <div class="product-nav-slider product-nav-slider_filter js-product-nav-slider">
+                                        <div class="product-nav-slider__buttons">
+                                            <div class="product-nav-slider__button product-nav-slider__button_prev">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                            <div class="product-nav-slider__button product-nav-slider__button_next">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="product-nav-slider__slider swiper-container">
+                                            <div class="swiper-wrapper product-nav-slider__slides">
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2428-970.jpg" alt="Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2428-970.jpg" alt="Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition</a>
+                                    <p class="product-card__sizes">Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)</p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                    <div class="rating product-card__rating">
+                                        <div class="rating__stars">
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box is-active">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="rating__textwrap">
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="product-card__buywrap">
+                                        <a class="link link_icon product-card__buy">
+                                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_cart-button"></use></svg>
+                                            <span class="link__text">Купить в 1 клик</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_4">
+                            <div class="product-card product-card_catalog js-product-card">
+                                <div class="badge badge_red product-card__badge">-40 %</div>
+                                <div class="product-card__image">
+                                    <div class="product-main-slider swiper-container js-product-main-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="button button_size_md product-card__button">Быстрый просмотр</a>
+                                </div>
+                                <div class="product-card__nav">
+                                    <div class="product-nav-slider product-nav-slider_filter js-product-nav-slider">
+                                        <div class="product-nav-slider__buttons">
+                                            <div class="product-nav-slider__button product-nav-slider__button_prev">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                            <div class="product-nav-slider__button product-nav-slider__button_next">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="product-nav-slider__slider swiper-container">
+                                            <div class="swiper-wrapper product-nav-slider__slides">
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Очки для плавания Cobra Mirror</a>
+                                    <p class="product-card__sizes">Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)</p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                    <div class="rating product-card__rating">
+                                        <div class="rating__stars">
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box is-active">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="rating__textwrap">
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="product-card__buywrap">
+                                        <a class="link link_icon product-card__buy">
+                                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_cart-button"></use></svg>
+                                            <span class="link__text">Купить в 1 клик</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_4">
+                            <div class="product-card product-card_catalog js-product-card">
+                                <div class="badge badge_green product-card__badge">Новинка</div>
+                                <div class="product-card__image">
+                                    <div class="product-main-slider swiper-container js-product-main-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                            </div>
+                                            <div class="swiper-slide product-main-slider__slide">
+                                                <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="button button_size_md product-card__button">Быстрый просмотр</a>
+                                </div>
+                                <div class="product-card__nav">
+                                    <div class="product-nav-slider product-nav-slider_filter js-product-nav-slider">
+                                        <div class="product-nav-slider__buttons">
+                                            <div class="product-nav-slider__button product-nav-slider__button_prev">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                            <div class="product-nav-slider__button product-nav-slider__button_next">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="product-nav-slider__slider swiper-container">
+                                            <div class="swiper-wrapper product-nav-slider__slides">
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Гидрошорты Fusion 2 Jammer</a>
+                                    <p class="product-card__sizes">Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)</p>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                    <div class="rating product-card__rating">
+                                        <div class="rating__stars">
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box is-active">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="rating__textwrap">
+                                            <span class="rating__text rating__text_grey">121
+                                                <span>отзыв</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="product-card__buywrap">
+                                        <a class="link link_icon product-card__buy">
+                                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_cart-button"></use></svg>
+                                            <span class="link__text">Купить в 1 клик</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="ui-kit__description">Маленькие карточки ._small</p>
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_3">
+                            <div class="product-card">
+                                <a class="product-card__image" href="javascript:void(0)">
+                                    <img src="content-img/product-cards/2428-970.jpg" alt="Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition" />
+                                </a>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition</a>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <div class="product-card">
+                                <a class="product-card__image" href="javascript:void(0)">
+                                    <img src="content-img/product-cards/ochki-dlya-plavaniya-arena-cobra-mirror-sinie-linzi-sinie-oprava-139513-1.jpg" alt="Очки для плавания Cobra Mirror" />
+                                </a>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Очки для плавания Cobra Mirror</a>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <div class="product-card">
+                                <a class="product-card__image" href="javascript:void(0)">
+                                    <img src="content-img/product-cards/2428-970.jpg" alt="Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition" />
+                                </a>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition</a>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3">
+                            <div class="product-card">
+                                <a class="product-card__image" href="javascript:void(0)">
+                                    <img src="content-img/product-cards/81s8k7zfqsl--sl1500-.jpg" alt="Гидрошорты Fusion 2 Jammer" />
+                                </a>
+                                <div class="product-card__body">
+                                    <a class="product-card__heading" href="javascript:void(0)">Гидрошорты Fusion 2 Jammer</a>
+                                    <div class="product-card__price">
+                                        <span class="product-card__pricecurrent">13 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </span>
+                                        <s class="product-card__priceold">14 792
+                                            <span class="product-card__pricecurrency">руб.</span>
+                                        </s>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1310,6 +1849,198 @@
                                     <a class="review-card__link" href="javascript:void(0)">Читать далее</a>
                                 </div>
                             </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Review item</h2>
+                    <p>Блок: components/review-item/review-item</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_12">
+                            <div class="review-item">
+                                <div class="review-item__image review-item__image_avatar">
+                                    <img src="content-img/review-cards/aaeaaqaaaaaaaaelaaaajda1ywuzmzljlwu1ndktnda1yi1iyzu5ltrhytlizmy3ytmwnq.png" alt="Руслан" />
+                                </div>
+                                <div class="review-item__content">
+                                    <div class="review-item__head">
+                                        <div class="review-item__col">
+                                            <p class="review-item__date">17 декабря 2017</p>
+                                            <p class="review-item__userinfo">
+                                                <span class="review-item__username">Руслан</span>
+                                                <span class="review-item__city">Москва</span>
+                                            </p>
+                                            <div class="rating review-item__rating">
+                                                <div class="rating__stars">
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box is-active">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__col review-item__col_flexible">
+                                            <div class="review-badge review-badge review-badge_like">
+                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                <span class="review-badge__text">Я рекомендую этот товар</span>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__col review-item__col_evaluations">
+                                            <ul class="evaluations">
+                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                    <span class="evaluation__text">15</span>
+                                                </li>
+                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                    <span class="evaluation__text">0</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="review-item__body">
+                                        <div class="review-item__block">
+                                            <p class="review-item__blockheading">Плюсы:</p>
+                                            <div class="content-zone">
+                                                <p>Хорошая защита, не&nbsp;протекают</p>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__block">
+                                            <p class="review-item__blockheading">Минусы:</p>
+                                            <div class="content-zone">
+                                                <p>Не&nbsp;нашел</p>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__block">
+                                            <p class="review-item__blockheading">Отзыв:</p>
+                                            <div class="content-zone">
+                                                <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен: ткань тянется
+                                                    заметно меньше, чем с&nbsp;эластаном. Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер больше), но&nbsp;движениям
+                                                    с&nbsp;самого начала не&nbsp;мешал, нигде не&nbsp;тянул и&nbsp;не&nbsp;натирал, а&nbsp;после пары тренировок и&nbsp;вовсе принял форму моего тела. Довольна.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-item">
+                                        <div class="review-item__image review-item__image_avatar">
+                                            <img src="content-img/review-cards/swimming-classes.png" alt="Консультант Proswim" />
+                                        </div>
+                                        <div class="review-item__content">
+                                            <div class="review-item__head">
+                                                <div class="review-item__col">
+                                                    <p class="review-item__date">17 декабря 2017</p>
+                                                    <p class="review-item__userinfo">
+                                                        <span class="review-item__username">Консультант Proswim</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="review-item__body">
+                                                <div class="review-item__block">
+                                                    <div class="content-zone">
+                                                        <p>По&nbsp;хорошему резина после каждодневных тренировок не&nbsp;должна пожелтеть. Она становится чуть более жесткой. А&nbsp;вот тряпочкой протирать такую модель не&nbsp;желательно, так как можно таким
+                                                            образом стереть зеркальное покрытие. Просим по&nbsp;всем вопросам о&nbsp;качестве товара писать на&nbsp;наш электронный адрес
+                                                            <a href='mailto:' info@proswim.ru>info@proswim.ru</a>.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_12">
+                            <div class="review-item">
+                                <div class="review-item__image review-item__image_avatar">
+                                    <img src="content-img/review-cards/user.png" alt="Руслан" />
+                                </div>
+                                <div class="review-item__content">
+                                    <div class="review-item__head">
+                                        <div class="review-item__col">
+                                            <p class="review-item__date">21 декабря 2017</p>
+                                            <p class="review-item__userinfo">
+                                                <span class="review-item__username">Руслан</span>
+                                                <span class="review-item__city">Новосибирск</span>
+                                            </p>
+                                            <div class="rating review-item__rating">
+                                                <div class="rating__stars">
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                    <div class="rating__box is-active">
+                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__col review-item__col_flexible">
+                                            <div class="review-badge review-badge review-badge_dislike">
+                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                <span class="review-badge__text">Я рекомендую этот товар</span>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__col review-item__col_evaluations">
+                                            <ul class="evaluations">
+                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                    <span class="evaluation__text">20</span>
+                                                </li>
+                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                    <span class="evaluation__text">0</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="review-item__body">
+                                        <div class="review-item__block">
+                                            <p class="review-item__blockheading">Плюсы:</p>
+                                            <div class="content-zone">
+                                                <p>Хорошая защита, не&nbsp;протекают</p>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__block">
+                                            <p class="review-item__blockheading">Минусы:</p>
+                                            <div class="content-zone">
+                                                <p>Не&nbsp;нашел</p>
+                                            </div>
+                                        </div>
+                                        <div class="review-item__block">
+                                            <p class="review-item__blockheading">Отзыв:</p>
+                                            <div class="content-zone">
+                                                <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен: ткань тянется
+                                                    заметно меньше, чем с&nbsp;эластаном. Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер больше), но&nbsp;движениям
+                                                    с&nbsp;самого начала не&nbsp;мешал, нигде не&nbsp;тянул и&nbsp;не&nbsp;натирал, а&nbsp;после пары тренировок и&nbsp;вовсе принял форму моего тела. Довольна.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

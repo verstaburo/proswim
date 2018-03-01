@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#ffffff">
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -2337,7 +2338,7 @@
             </div>
         </div>
     </div>
-    <div class="page">
+    <div class="page page_pb0">
         <div class="container">
             <div class="page__head">
                 <div class="page__headcol page__headcol_flexible">
@@ -2722,7 +2723,7 @@
                                     <ul class="list">
                                         <li>
                                             <span>слитный силует</span>
-                                            <span class="tooltip-icon js-tooltip" data-tooltipster="{ &quot;side&quot;: &quot;righ&quot; }" title="&lt;p&gt;Начисление Бонусных рублей произойдёт после доставки заказа.&lt;/p&gt; &lt;p&gt;Сумма Бонусных рублей определяется в соответствии с правилами&lt;/p&gt;">?</span>
+                                            <span class="tooltip-icon js-tooltip" data-tooltipster="{ &quot;side&quot;: &quot;right&quot; }" title="&lt;p&gt;Начисление Бонусных рублей произойдёт после доставки заказа.&lt;/p&gt; &lt;p&gt;Сумма Бонусных рублей определяется в соответствии с правилами&lt;/p&gt;">?</span>
                                         </li>
                                         <li>
                                             <span>высокая хлороустойчивость</span>
@@ -2947,13 +2948,13 @@
                     <section class="section review-form-section">
                         <div class="section__content">
                             <div class="review-form-section__short">
-                                <p class="review-form-section__text">Ваш отзыв поможет кому-то сделать выбор</p>
-                                <a class="button js-review-form-section-button" type="button">Оставить отзыв</a>
+                                <p class="review-form-section__text">Поделитесь своим отзывом об этом товаре, и многие будут вам благодарны.</p>
+                                <a class="button review-form-section__button js-review-form-section-button" type="button">Оставить отзыв</a>
                             </div>
                             <div class="review-form-section__full">
                                 <h3 class="review-form-section__heading">Оставить отзыв</h3>
                                 <p class="review-form-section__text">Ваш отзыв поможет кому-то сделать выбор</p>
-                                <form class="review-form section__form" method="post" action="/" data-parsley-validate="data-parsley-validate">
+                                <form class="review-form review-form-section__form" method="post" action="/" data-parsley-validate="data-parsley-validate">
                                     <div class="grid">
                                         <div class="grid__col grid__col_xl_12">
                                             <div class="inputbox">
@@ -2961,23 +2962,23 @@
                                                 <div class="rating rating_interactive rating_big">
                                                     <div class="rating__stars">
                                                         <label class="rating__box">
-                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="4" />
+                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="4" required="required" />
                                                             <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                         </label>
                                                         <label class="rating__box">
-                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="3" />
+                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="3" required="required" />
                                                             <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                         </label>
                                                         <label class="rating__box">
-                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="2" />
+                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="2" required="required" />
                                                             <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                         </label>
                                                         <label class="rating__box">
-                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="1" />
+                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="1" required="required" />
                                                             <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                         </label>
                                                         <label class="rating__box">
-                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="0" />
+                                                            <input class="rating__control js-rating-control" type="radio" name="name" value="0" required="required" />
                                                             <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                         </label>
                                                     </div>
@@ -2987,64 +2988,68 @@
                                         <div class="grid__col grid__col_xl_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Рекомендуете товар? *</P>
-                                                <label class="checkradio">
+                                                <label class="checkradio checkradio_radio">
                                                     <input class="checkradio__input" name="recommend" value="value" checked="checked" type="radio" />
-                                                    <span class="checkradio__box">
-                                                        <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                    </span>
+                                                    <span class="checkradio__box"></span>
                                                     <span class="checkradio__content">Да</span>
                                                 </label>
-                                                <label class="checkradio">
+                                                <label class="checkradio checkradio_radio">
                                                     <input class="checkradio__input" name="recommend" type="radio" />
-                                                    <span class="checkradio__box">
-                                                        <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                    </span>
+                                                    <span class="checkradio__box"></span>
                                                     <span class="checkradio__content">Нет</span>
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_6">
                                             <div class="inputbox">
+                                                <P class="inputbox__label">Имя *</P>
+                                                <input class="input input_size_md" name="name" type="text" placeholder="Имя" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_6">
+                                            <div class="inputbox">
+                                                <P class="inputbox__label">Email *</P>
+                                                <input class="input input_size_md" name="email" type="email" placeholder="Email" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_12">
+                                            <div class="inputbox">
                                                 <P class="inputbox__label">Достоинства *</P>
-                                                <input class="input" name="name" type="text" placeholder="Имя" required="required" />
-                                            </div>
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Недостатки *</P>
-                                                <input class="input" name="email" type="text" placeholder="Email" required="required" />
-                                            </div>
-                                        </div>
-                                        <div class="grid__col grid__col_xl_12">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Опишите достоинства товара *</P>
-                                                <input class="input" name="advantages" type="text" placeholder="Опишите достоинства товара" required="required" />
+                                                <input class="input input_size_md" name="advantages" type="text" placeholder="Опишите достоинства товара" required="required" />
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Недостатки *</P>
-                                                <input class="input" name="advantages" type="text" placeholder="Опишите недостатки твара" required="required" />
+                                                <input class="input input_size_md" name="advantages" type="text" placeholder="Опишите недостатки товара" required="required" />
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Отзыв</P>
-                                                <textarea class="textarea"></textarea>
+                                                <textarea class="textarea" placeholder="Напишите ваш отзыв"></textarea>
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12">
-                                            <div class="captcha review-form__captcha"></div>
+                                            <div class="review-form__captcha">
+                                                <div class="g-recaptcha" data-sitekey="6Lcmz0kUAAAAAMmDaMA15aSvAZgrmYNE1lqMq7iR"></div>
+                                            </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12">
-                                            <button class="button" type="submit">Оставить отзыв</button>
+                                            <div class="review-form__inner">
+                                                <button class="button button_size_big button_block" type="submit">Оставить отзыв</button>
+                                            </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12">
-                                            <label class="checkradio">
-                                                <input class="checkradio__input" name="personal-data" value="value" check="check" type="checkbox" required="required" />
-                                                <span class="checkradio__box">
-                                                    <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                </span>
-                                                <span class="checkradio__content">Отправляя отзыв, вы даете согласие на обработку персональных данных</span>
-                                            </label>
+                                            <div class="review-form__inner">
+                                                <label class="checkradio">
+                                                    <input class="checkradio__input" name="personal-data" value="value" check="check" type="checkbox" required="required" />
+                                                    <span class="checkradio__box">
+                                                        <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                    </span>
+                                                    <span class="checkradio__content">Отправляя отзыв, вы даете согласие на обработку персональных данных</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
@@ -3053,13 +3058,13 @@
                     </section>
                     <div class="tabs-content">
                         <div class="tabs-content__wrapper is-active" data-tab="reviews" data-tab-group="product-review-tabs">
-                            <section class="section">
+                            <section class="section reviews-section reviews-section reviews-section_full">
                                 <div class="section__content">
                                     <div class="grid">
                                         <div class="grid__col grid__col_xl_12">
                                             <div class="review-item">
                                                 <div class="review-item__image review-item__image_avatar">
-                                                    <img src="" alt="" />
+                                                    <img src="content-img/review-cards/aaeaaqaaaaaaaaelaaaajda1ywuzmzljlwu1ndktnda1yi1iyzu5ltrhytlizmy3ytmwnq.png" alt="Руслан" />
                                                 </div>
                                                 <div class="review-item__content">
                                                     <div class="review-item__head">
@@ -3069,21 +3074,40 @@
                                                                 <span class="review-item__username">Руслан</span>
                                                                 <span class="review-item__city">Москва</span>
                                                             </p>
+                                                            <div class="rating review-item__rating">
+                                                                <div class="rating__stars">
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box is-active">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="review-item__col review-item__col_flexible">
-                                                            <div class="review-badge review-badge_green">
+                                                            <div class="review-badge review-badge review-badge_like">
                                                                 <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                 <span class="review-badge__text">Я рекомендую этот товар</span>
                                                             </div>
                                                         </div>
-                                                        <div class="review-item__col">
-                                                            <ul class="evaluation">
+                                                        <div class="review-item__col review-item__col_evaluations">
+                                                            <ul class="evaluations">
                                                                 <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
-                                                                    <svg><use xlink:href="assets/images/icon.svg#icon_undefined"></use></svg>
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">15</span>
                                                                 </li>
                                                                 <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
-                                                                    <svg><use xlink:href="assets/images/icon.svg#icon_undefined"></use></svg>
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">0</span>
                                                                 </li>
                                                             </ul>
@@ -3093,17 +3117,17 @@
                                                         <div class="review-item__block">
                                                             <p class="review-item__blockheading">Плюсы:</p>
                                                             <div class="content-zone">
-                                                                <p>Хорошая защита, не протекают</p>
+                                                                <p>Хорошая защита, не&nbsp;протекают</p>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__block">
-                                                            <p class="review-item__blockheading">Плюсы:</p>
+                                                            <p class="review-item__blockheading">Минусы:</p>
                                                             <div class="content-zone">
-                                                                <p>Не нашел</p>
+                                                                <p>Не&nbsp;нашел</p>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__block">
-                                                            <p class="review-item__blockheading">Плюсы:</p>
+                                                            <p class="review-item__blockheading">Отзыв:</p>
                                                             <div class="content-zone">
                                                                 <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен:
                                                                     ткань тянется заметно меньше, чем с&nbsp;эластаном. Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер
@@ -3111,9 +3135,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="review-item review-item_answer">
-                                                        <div class="review-item__image">
-                                                            <img src="" alt="" />
+                                                    <div class="review-item">
+                                                        <div class="review-item__image review-item__image_avatar">
+                                                            <img src="content-img/review-cards/swimming-classes.png" alt="Консультант Proswim" />
                                                         </div>
                                                         <div class="review-item__content">
                                                             <div class="review-item__head">
@@ -3127,11 +3151,315 @@
                                                             <div class="review-item__body">
                                                                 <div class="review-item__block">
                                                                     <div class="content-zone">
-                                                                        <p>Здравствуйте, Руслан!</p>
                                                                         <p>По&nbsp;хорошему резина после каждодневных тренировок не&nbsp;должна пожелтеть. Она становится чуть более жесткой. А&nbsp;вот тряпочкой протирать такую модель не&nbsp;желательно,
-                                                                            так как можно таким образом стереть зеркальное покрытие. Просим по&nbsp;всем вопросам о&nbsp;качестве товара писать на&nbsp;наш электронный адрес info@proswim.&nbsp;ru.</p>
+                                                                            так как можно таким образом стереть зеркальное покрытие. Просим по&nbsp;всем вопросам о&nbsp;качестве товара писать на&nbsp;наш электронный адрес
+                                                                            <a href='mailto:' info@proswim.ru>info@proswim.ru</a>.</p>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_12">
+                                            <div class="review-item">
+                                                <div class="review-item__image review-item__image_avatar">
+                                                    <img src="content-img/review-cards/user.png" alt="Руслан" />
+                                                </div>
+                                                <div class="review-item__content">
+                                                    <div class="review-item__head">
+                                                        <div class="review-item__col">
+                                                            <p class="review-item__date">21 декабря 2017</p>
+                                                            <p class="review-item__userinfo">
+                                                                <span class="review-item__username">Руслан</span>
+                                                                <span class="review-item__city">Новосибирск</span>
+                                                            </p>
+                                                            <div class="rating review-item__rating">
+                                                                <div class="rating__stars">
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box is-active">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-badge review-badge review-badge_like">
+                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_evaluations">
+                                                            <ul class="evaluations">
+                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">20</span>
+                                                                </li>
+                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">0</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-item__body">
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Плюсы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Хорошая защита, не&nbsp;протекают</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Минусы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Не&nbsp;нашел</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Отзыв:</p>
+                                                            <div class="content-zone">
+                                                                <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен:
+                                                                    ткань тянется заметно меньше, чем с&nbsp;эластаном.</p> Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер
+                                                                больше), но&nbsp;движениям с&nbsp;самого начала не&nbsp;мешал, нигде не&nbsp;тянул и&nbsp;не&nbsp;натирал, а&nbsp;после пары тренировок и&nbsp;вовсе принял форму моего тела. Довольна.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_12">
+                                            <div class="review-item">
+                                                <div class="review-item__image review-item__image_avatar">
+                                                    <img src="content-img/review-cards/user.png" alt="Artkeynonone" />
+                                                </div>
+                                                <div class="review-item__content">
+                                                    <div class="review-item__head">
+                                                        <div class="review-item__col">
+                                                            <p class="review-item__date">30 декабря 2017</p>
+                                                            <p class="review-item__userinfo">
+                                                                <span class="review-item__username">Artkeynonone</span>
+                                                                <span class="review-item__city">Норильск</span>
+                                                            </p>
+                                                            <div class="rating review-item__rating">
+                                                                <div class="rating__stars">
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box is-active">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-badge review-badge review-badge_like">
+                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_evaluations">
+                                                            <ul class="evaluations">
+                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">15</span>
+                                                                </li>
+                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">0</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-item__body">
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Плюсы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Отличное цветовое сочетание</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Минусы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Не&nbsp;нашел</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Отзыв:</p>
+                                                            <div class="content-zone">
+                                                                <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен:
+                                                                    ткань тянется заметно меньше, чем с&nbsp;эластаном.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_12">
+                                            <div class="review-item">
+                                                <div class="review-item__image review-item__image_avatar">
+                                                    <img src="content-img/review-cards/user.png" alt="Alex777" />
+                                                </div>
+                                                <div class="review-item__content">
+                                                    <div class="review-item__head">
+                                                        <div class="review-item__col">
+                                                            <p class="review-item__date">30 декабря 2017</p>
+                                                            <p class="review-item__userinfo">
+                                                                <span class="review-item__username">Alex777</span>
+                                                                <span class="review-item__city">Самара</span>
+                                                            </p>
+                                                            <div class="rating review-item__rating">
+                                                                <div class="rating__stars">
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box is-active">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-badge review-badge review-badge_like">
+                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_evaluations">
+                                                            <ul class="evaluations">
+                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">13</span>
+                                                                </li>
+                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">0</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-item__body">
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Плюсы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Отличное цветовое сочетание</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Минусы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Не&nbsp;нашел</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Отзыв:</p>
+                                                            <div class="content-zone">
+                                                                <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_12">
+                                            <div class="review-item">
+                                                <div class="review-item__image review-item__image_avatar">
+                                                    <img src="content-img/review-cards/user.png" alt="Руслан" />
+                                                </div>
+                                                <div class="review-item__content">
+                                                    <div class="review-item__head">
+                                                        <div class="review-item__col">
+                                                            <p class="review-item__date">21 декабря 2017</p>
+                                                            <p class="review-item__userinfo">
+                                                                <span class="review-item__username">Руслан</span>
+                                                                <span class="review-item__city">Новосибирск</span>
+                                                            </p>
+                                                            <div class="rating review-item__rating">
+                                                                <div class="rating__stars">
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                    <div class="rating__box is-active">
+                                                                        <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-badge review-badge review-badge_dislike">
+                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__col review-item__col_evaluations">
+                                                            <ul class="evaluations">
+                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">20</span>
+                                                                </li>
+                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                    <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                    <span class="evaluation__text">0</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-item__body">
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Плюсы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Хорошая защита, не&nbsp;протекают</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Минусы:</p>
+                                                            <div class="content-zone">
+                                                                <p>Не&nbsp;нашел</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-item__block">
+                                                            <p class="review-item__blockheading">Отзыв:</p>
+                                                            <div class="content-zone">
+                                                                <p>Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен:
+                                                                    ткань тянется заметно меньше, чем с&nbsp;эластаном. Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер
+                                                                    больше), но&nbsp;движениям с&nbsp;самого начала не&nbsp;мешал, нигде не&nbsp;тянул и&nbsp;не&nbsp;натирал, а&nbsp;после пары тренировок и&nbsp;вовсе принял форму моего тела. Довольна.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3141,7 +3469,7 @@
                                     </div>
                                 </div>
                                 <div class="section__button">
-                                    <a class="button">Смотреть все</a>
+                                    <a class="button">Читать все отзывы</a>
                                 </div>
                             </section>
                         </div>
