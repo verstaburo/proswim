@@ -202,6 +202,20 @@ block content
               li Элемент списка
               li Элемент списка
           li Элемент списка
+        +ui-description dl.list
+        div(style="max-width: 400px;")
+          +dl-list
+            dt Элемент списка
+            dd Элемент списка
+          +dl-list
+            dt Элемент списка
+            dd Элемент списка
+          +dl-list
+            dt Элемент списка
+            dd Элемент списка
+          +dl-list
+            dt Элемент списка
+            dd Элемент списка
 
     //- Табы
     +ui-section
@@ -435,6 +449,56 @@ block content
         +rating-interactive
         +ui-description Статичный
         +rating(3)
+        +ui-description ._md с текстом
+        +rating(4)._md
+          +rating-text._grey.js-anchor Отзывы (2)
+          +rating-text._dark.js-anchor dark text
+        +ui-description ._big
+        +rating(4)._big
+
+    //- Размеры
+    +ui-section
+      +ui-section-head
+        h2 Размеры
+        p Блок: blocks/size/size
+      +ui-section-content()
+        +sizes
+          +size('size', '08-09Y', true) 08-09Y
+          +size('size', '35/37') 35/37
+          +size('size', '32/34') 32/34
+          +size('size', 'S') S
+          +size('size', 'M') M
+
+    //- Способы оплаты
+    +ui-section
+      +ui-section-head
+        h2 Способы оплаты
+        p Блок: blocks/payment-logo/payment-logo
+      +ui-section-content()
+        +payment-logos
+          +payment-logo("content-img/payment/mastercard.jpg", "Mastercard")
+          +payment-logo("content-img/payment/visa-copy.jpg", "Visa")
+          +payment-logo("content-img/payment/bank-tranfer.jpg", "Bank tranfer")
+          +payment-logo("content-img/payment/cash.jpg", "Cash")
+
+    //- Оценка (like/dislike)
+    +ui-section
+      +ui-section-head
+        h2 Оценка (like/dislike)
+        p Блок: blocks/evaluation/evaluation
+      +ui-section-content()
+        +evaluations
+          +evaluation('like') 15
+          +evaluation('dislike') 6
+
+    //- Баджи отзыва
+    +ui-section
+      +ui-section-head
+        h2 Баджи отзыва
+        p Блок: blocks/review-badge/review-badge
+      +ui-section-content()
+        +review-badge('like')
+        +review-badge('dislike')
 
     //- Аккордион
     +ui-section
@@ -591,6 +655,11 @@ block content
         p Блок: component/product-card/product-card
       +ui-section-content
         - var productCardsData = getData('new-cards-section')
+        - var productCardsCatalog = getData('catalog-cards')
+        - var productCardsSmall = getData('small-product-cards')
+
+        +ui-description Обычные карточки
+
         +grid
           +col(4)
             +product-card(productCardsData[0])
@@ -598,6 +667,29 @@ block content
             +product-card(productCardsData[1])
           +col(4)
             +product-card(productCardsData[2])
+
+        +ui-description Карточки в каталоге ._catalog.js-product-card
+
+        +grid
+          +col(4)
+            +product-card(productCardsCatalog[0])._catalog.js-product-card
+          +col(4)
+            +product-card(productCardsCatalog[1])._catalog.js-product-card
+          +col(4)
+            +product-card(productCardsCatalog[2])._catalog.js-product-card
+
+        +ui-description Маленькие карточки ._small
+
+        +grid
+          +col(3)
+            +product-card(productCardsSmall[0])
+          +col(3)
+            +product-card(productCardsSmall[1])
+          +col(3)
+            +product-card(productCardsSmall[2])
+          +col(3)
+            +product-card(productCardsSmall[3])
+
 
     //- Review cards
     +ui-section
@@ -611,6 +703,19 @@ block content
             +review-card(reviewCardsData[0])
           +col(6)
             +review-card(reviewCardsData[1])
+
+    //- Review item
+    +ui-section
+      +ui-section-head
+        h2 Review item
+        p Блок: components/review-item/review-item
+      +ui-section-content
+        - var reviewItemCard = getData('review-item-card')
+        +grid
+          +col(12)
+            +review-item(reviewItemCard[0])
+          +col(12)
+            +review-item(reviewItemCard[reviewItemCard.length - 1])
 
     //- Article cards
     +ui-section
