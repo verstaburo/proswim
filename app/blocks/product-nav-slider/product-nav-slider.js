@@ -44,25 +44,30 @@ export default (el, mainSlider, settings = {}) => {
           .addClass('is-active');
 
         if (!mainSlider || !mainSlider.length || !mainSlider[0].swiper) {
-          return;
+          el.on('click', '.product-nav-slider__slide', function () {
+            $(this)
+              .addClass('is-active')
+              .siblings('.product-nav-slider__slide')
+              .removeClass('is-active');
+          });
+        } else {
+          const mainSwiper = mainSlider[0].swiper;
+
+          mainSwiper.on('slideChange', function () {
+            slides
+              .removeClass('is-active')
+              .eq(this.activeIndex)
+              .addClass('is-active');
+
+            self.slideTo(this.activeIndex);
+          });
+
+          el.on('click', '.product-nav-slider__slide', function () {
+            const slide = $(this);
+
+            mainSlider[0].swiper.slideTo(slide.index());
+          });
         }
-
-        const mainSwiper = mainSlider[0].swiper;
-
-        mainSwiper.on('slideChange', function () {
-          slides
-            .removeClass('is-active')
-            .eq(this.activeIndex)
-            .addClass('is-active');
-
-          self.slideTo(this.activeIndex);
-        });
-
-        el.on('click', '.product-nav-slider__slide', function () {
-          const slide = $(this);
-
-          mainSlider[0].swiper.slideTo(slide.index());
-        });
       },
     },
   });
