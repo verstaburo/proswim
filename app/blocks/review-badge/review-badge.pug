@@ -1,5 +1,16 @@
-mixin review-badge(icon)
-  +b.review-badge&attributes(attributes)
-    +icon(icon).icon
-    +e.SPAN.text
-      block
+mixin review-badge(kind)
+  - var mod = ''
+  - var text = ''
+
+  if kind === 'like'
+    - mod = 'like'
+    - text = 'Я рекомендую этот товар'
+
+  if kind === 'dislike'
+    - mod = 'dislike'
+    - text = 'Я рекомендую этот товар'
+
+  +b.review-badge(class=`review-badge_${mod}`)&attributes(attributes)
+    +icon('Good').icon
+    +e.SPAN.text=text
+

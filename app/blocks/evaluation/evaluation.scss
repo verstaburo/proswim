@@ -1,3 +1,40 @@
 .evaluation {
-  display: block;
+  $b: &;
+  display: inline-flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  .evaluations & { margin-left: 11px; }
+
+  &__icon {
+    fill: $middlegrey2-color;
+    width: 13px;
+    height: 16px;
+    font-size: 0;
+    line-height: 1;
+
+    #{$b}_dislike & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    @include text-small;
+    margin-left: 5px;
+
+    #{$b}_like & {
+      color: $green-color;
+    }
+
+    #{$b}_dislike & {
+      color: $midred-color;
+    }
+  }
+}
+
+.evaluations {
+  display: inline-block;
+  margin-left: -11px;
+  font-size: 0;
 }

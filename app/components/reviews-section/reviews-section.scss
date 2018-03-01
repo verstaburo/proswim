@@ -1,6 +1,10 @@
 .reviews-section {
   display: block;
 
+  &_full {
+    padding: 0;
+  }
+
   @include screen(lg) {
     padding-top: 33px;
   }

@@ -1,3 +1,84 @@
 .review-badge {
-  display: block;
+  $b: &;
+  position: relative;
+  display: inline-block;
+  padding: 7px 11px 7px 29px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  margin-left: 12px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  &::before {
+    top: 0;
+    left: -11px;
+    border-width: 0 12px 12px 0;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -13px;
+    border-width: 0 13px 13px 0;
+  }
+
+  &_like {
+    border-color: $lightgreenborder-color;
+    background-color: $lightengreen-color;
+    color: $green-color;
+
+    &::before {
+      border-color: transparent $lightengreen-color transparent transparent;
+    }
+
+    &::after {
+      border-color: transparent $lightgreenborder-color transparent transparent;
+    }
+  }
+
+  &_dislike {
+    border-color: $color-border;
+    background-color: $ihavenoideahowtocallthat-color;
+    color: $middlegrey2-color;
+
+    &::before {
+      border-color: transparent $ihavenoideahowtocallthat-color transparent transparent;
+    }
+
+    &::after {
+      border-color: transparent $color-border transparent transparent;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    width: 13px;
+    height: 16px;
+
+    #{$b}_like & {
+      fill: $green-color;
+    }
+
+    #{$b}_dislike & {
+      fill: $middlegrey2-color;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    @include text-small;
+    line-height: (21/13);
+  }
 }
