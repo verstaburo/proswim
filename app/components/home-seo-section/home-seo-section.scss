@@ -23,6 +23,10 @@
     margin-top: 9px;
     margin-bottom: 28px;
 
+    &:first-of-type {
+      margin-top: 9px;
+    }
+
     @include screen(lg) {
       margin-bottom: 19px;
     }
