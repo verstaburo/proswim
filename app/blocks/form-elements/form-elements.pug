@@ -32,10 +32,9 @@ mixin checkbox(name, value, checked, required)
       block
 
 mixin radio(name, value, checked)
-  +b.LABEL.checkradio&attributes(attributes)
+  +b.LABEL.checkradio._radio&attributes(attributes)
     +e.INPUT.input(name=name, value=value, checked=checked, type="radio")
     +e.SPAN.box
-      +icon('checked').icon
     +e.SPAN.content
       block
 

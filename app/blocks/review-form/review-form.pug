@@ -3,7 +3,7 @@ mixin review-form()
     +grid
       +col(12)
         +inputbox('Оцените товар *')
-          +rating-interactive._big
+          +rating-interactive(5, null, true)._big
 
       +col(12)
         +inputbox('Рекомендуете товар? *')
@@ -11,42 +11,46 @@ mixin review-form()
           +radio('recommend', false, false) Нет
 
       +col(6)
+        +inputbox('Имя *')
+          +input(name="name" type="text" placeholder="Имя" required)._size_md
+      +col(6)
+        +inputbox('Email *')
+          +input(name="email" type="email" placeholder="Email" required)._size_md
+
+      +col(12)
         +inputbox('Достоинства *')
-          +input(name="name" type="text" placeholder="Имя" required)
-        +inputbox('Недостатки *')
-          +input(name="email" type="text" placeholder="Email" required)
-
-      +col(12)
-        +inputbox('Опишите достоинства товара *')
-          +input(name="advantages" type="text" placeholder="Опишите достоинства товара" required)
+          +input(name="advantages" type="text" placeholder="Опишите достоинства товара" required)._size_md
 
       +col(12)
         +inputbox('Недостатки *')
-          +input(name="advantages" type="text" placeholder="Опишите недостатки твара" required)
+          +input(name="advantages" type="text" placeholder="Опишите недостатки товара" required)._size_md
 
       +col(12)
         +inputbox('Отзыв')
-          +textarea('Отзыв')
+          +textarea(placeholder='Напишите ваш отзыв')
 
       +col(12)
-        +captcha.__captcha
+        +e.captcha
+          +captcha
 
       +col(12)
-        +button.BUTTON(type="submit") Оставить отзыв
+        +e.inner
+          +button.BUTTON(type="submit")._size_big._block Оставить отзыв
 
       +col(12)
-        +checkbox('personal-data', true, false, true) Отправляя отзыв, вы даете согласие на обработку персональных данных
+        +e.inner
+          +checkbox('personal-data', true, false, true) Отправляя отзыв, вы даете согласие на обработку персональных данных
 
 mixin review-form-section
   +section.review-form-section
     +section-content
 
       .review-form-section__short
-        p.review-form-section__text Ваш отзыв поможет кому-то сделать выбор
-        +button(type="button").js-review-form-section-button Оставить отзыв
+        p.review-form-section__text Поделитесь своим отзывом об этом товаре, и многие будут вам благодарны.
+        +button(type="button").review-form-section__button.js-review-form-section-button Оставить отзыв
 
       .review-form-section__full
         h3.review-form-section__heading Оставить отзыв
         p.review-form-section__text Ваш отзыв поможет кому-то сделать выбор
 
-        +review-form.__form
+        +review-form.review-form-section__form

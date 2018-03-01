@@ -39,14 +39,23 @@
 
 .inputbox {
   display: block;
+
+  &__label {
+    display: block;
+    @include heading-5;
+    margin-bottom: 8px;
+  }
 }
 
 .textarea {
   @extend .input;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
 
   padding-top: 13px;
   padding-bottom: 13px;
-  min-height: 150px;
+  min-height: 88px;
   resize: vertical;
 }
 
@@ -56,6 +65,12 @@
   display: inline-block;
   cursor: pointer;
   font-size: 0;
+
+  &_radio {
+    padding-left: 31px;
+
+    + .checkradio_radio { margin-left: 24px; }
+  }
 
   &__input {
     position: absolute;
@@ -72,6 +87,10 @@
       & + .checkradio__box {
         background-color: $color-main;
         border-color: $color-main;
+
+        &::after {
+          opacity: 1;
+        }
 
         .checkradio__icon {
           opacity: 1;
@@ -91,6 +110,32 @@
     top: 2px;
     transition: border-color $ease-main,
                 background-color $ease-main;
+
+    .checkradio_radio & {
+      border-color: transparent;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      box-shadow: inset 0 1px 0 rgba(23, 24, 25, 0.2);
+      background-color: $anotherlightgreycolor;
+      top: 0;
+      box-sizing: border-box;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 1px 0 rgba(23, 24, 25, 0.2);
+        background-color: white;
+        opacity: 0;
+        transition: opacity $ease-main;
+        border-radius: 50%;
+      }
+    }
 
     .checkradio.parsley-error & {
       border-color: $lightred-color;
@@ -113,6 +158,11 @@
     display: inline-block;
     @include text-small;
     line-height: (21/13);
+
+    .checkradio_radio & {
+      @include text;
+      padding-top: 2px;
+    }
 
     .link {
       display: inline;
@@ -167,7 +217,7 @@
 @import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
 
 .select {
-  appearance: none;
+  -webkit-appearance: none;
 
   @extend .input;
 }

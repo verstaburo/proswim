@@ -1,6 +1,6 @@
 .tabs {
   position: relative;
-  $tab-gap: 25px;
+  $tab-gap: 42px;
   display: block;
   font-size: 0;
   margin-top: -$tab-gap;
@@ -12,7 +12,7 @@
     margin-right: $tab-gap;
     margin-top: $tab-gap;
     transition: border-color $ease-main, color $ease-main;
-    padding-bottom: 10px;
+    padding-bottom: 19px;
     cursor: pointer;
     color: $semigrey-color;
 

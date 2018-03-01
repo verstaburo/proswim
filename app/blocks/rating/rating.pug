@@ -12,7 +12,7 @@ mixin rating(active, count)
       +e.textwrap
         block
 
-mixin rating-interactive(count, name)
+mixin rating-interactive(count, name, isRequired)
   - var initialCount = Number(count) || 5
   - var initialName = name || 'rating-'+ Math.random().toString(36).slice(2).split('').sort(() => Math.random() - .5).join('')
 
@@ -20,7 +20,7 @@ mixin rating-interactive(count, name)
     +e.stars
       - for (var i = initialCount; i > 0; i--)
         +e.LABEL.box
-          +e.INPUT(type='radio' name='name' value=i-1).control.js-rating-control
+          +e.INPUT(type='radio' name='name' value=i-1 required=isRequired).control.js-rating-control
           +icon('star').__icon
     if block
       +e.textwrap

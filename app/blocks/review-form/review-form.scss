@@ -1,3 +1,65 @@
 .review-form {
   display: block;
+
+  .grid:first-of-type { margin-top: 0; }
+
+  .rating {
+    margin-top: 3px;
+  }
+
+  .inputbox__label { margin-top: -.3em; }
+
+
+  &__captcha {
+    margin-top: -7px;
+    margin-bottom: 7px;
+  }
+
+  &__inner {
+    width: 302px;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+.review-form-section {
+
+  &.section {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+
+  &__short {
+
+  }
+
+  &__full {
+    display: none;
+  }
+
+  &__button {
+    margin-top: 24px;
+    min-width: 182px;
+  }
+
+  &__heading {
+    @include heading-3-bold;
+    display: block;
+    margin-top: -4px;
+    margin-bottom: 6px;
+  }
+
+  &__text {
+    color: $darkengrey-color;
+    font-size: 15px;
+    line-height: (22/15);
+    letter-spacing: 0.01em;
+  }
+
+  &__form {
+    margin-top: 10px;
+    width: 580px;
+  }
 }
