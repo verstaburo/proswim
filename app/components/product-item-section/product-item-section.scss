@@ -22,12 +22,9 @@
 
   &__section {
     display: block;
-
-    &:not(:first-child) {
-      margin-top: 30px;
-      padding-top: 25px;
-      border-top: 1px solid $color-border;
-    }
+    padding-top: 25px;
+    margin-top: 30px;
+    border-top: 1px solid $color-border;
   }
 
   &__price {
