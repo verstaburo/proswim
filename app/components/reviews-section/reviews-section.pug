@@ -13,7 +13,8 @@ mixin reviews-section-full(items, hasBtn)
   +section.reviews-section.reviews-section_full
     +section-content
       +grid
-        +col(12)
-          +review-item
+        each item in items
+          +col(12)
+            +review-item(item)
     if hasBtn
-      +section-button Читать все отзывы
+      +section-button('Читать все отзывы')

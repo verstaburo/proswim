@@ -10,6 +10,10 @@
 .page {
   padding-bottom: 77px;
 
+  &_pb0 {
+    padding-bottom: 0;
+  }
+
   @include screen(lg) {
     padding-bottom: 55px;
   }

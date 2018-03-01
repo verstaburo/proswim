@@ -10,6 +10,6 @@ mixin big-review-section
 
         +tabs-content
           +tab-wrapper()(data-tab="reviews" data-tab-group="product-review-tabs").is-active
-            +reviews-section-full([], true)
+            +reviews-section-full(getData('review-item-card'), true)
           +tab-wrapper()(data-tab="questions" data-tab-group="product-review-tabs")
             p Это таб 2

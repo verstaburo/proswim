@@ -1,55 +1,41 @@
-mixin review-item()
+mixin review-item(data)
   +b.review-item&attributes(attributes)
-    +e.image._avatar
-      img(src="content-img/review-cards/aaeaaqaaaaaaaaelaaaajda1ywuzmzljlwu1ndktnda1yi1iyzu5ltrhytlizmy3ytmwnq.png" alt="")
+    if data.avatar
+      +e.image._avatar
+        img(src=`content-img/review-cards/${data.avatar}.png` alt=data.username)
+    if data.image
+      +e.image
+        img(src=`content-img/review-cards/${data.avatar}.png` alt=data.username)
 
     +e.content
       +e.head
         +e.col
-          +e.P.date 17 декабря 2017
+          if data.date
+            +e.P.date=data.date
           +e.P.userinfo
-            +e.SPAN.username Руслан
-            +e.SPAN.city Москва
-          +rating(4).__rating
+            if data.username
+              +e.SPAN.username=data.username
+            if data.city
+              +e.SPAN.city=data.city
+          if data.rating
+           +rating(data.rating).__rating
 
-        +e.col._flexible
-          +review-badge('like')
+        if data.badge
+          +e.col._flexible
+            +review-badge(data.badge)
 
-        +e.col._evaluations
-          +evaluations
-            +evaluation('like') 15
-            +evaluation('dislike') 0
+        if data.evaluation
+          +e.col._evaluations
+            +evaluations
+              +evaluation('like')= data.evaluation.likes
+              +evaluation('dislike')= data.evaluation.dislikes
 
       +e.body
-        +e.block
-          +e.P.blockheading Плюсы:
-          +content-zone
-            p Хорошая защита, не протекают
+        each block in data.blocks
+          +e.block
+            if block.heading
+              +e.P.blockheading=block.heading
+            +content-zone!=block.content
 
-        +e.block
-          +e.P.blockheading Минусы:
-          +content-zone
-            p Не нашел
-
-        +e.block
-          +e.P.blockheading Отзыв:
-          +content-zone
-            p Отличный купальник для тренировок. Специально выбирала купальник без эластана/спандекса/лайкры, потому что те&nbsp;у&nbsp;меня живут не&nbsp;более полугода. Чистый полиэстер мне непривычен: ткань тянется заметно меньше, чем с&nbsp;эластаном. Купальник сел плотно, &laquo;как вторая кожа&raquo; (если&nbsp;бы мерила в&nbsp;магазине, то, наверное, попробовала&nbsp;бы на&nbsp;размер больше), но&nbsp;движениям с&nbsp;самого начала не&nbsp;мешал, нигде не&nbsp;тянул и&nbsp;не&nbsp;натирал, а&nbsp;после пары тренировок и&nbsp;вовсе принял форму моего тела. Довольна.
-
-      +b.review-item
-        +e.image._avatar
-          img(src="content-img/review-cards/swimming-classes.png" alt="")
-
-        +e.content
-          +e.head
-            +e.col
-              +e.P.date 17 декабря 2017
-              +e.P.userinfo
-                +e.SPAN.username Консультант Proswim
-
-          +e.body
-            +e.block
-              +content-zone
-                p Здравствуйте, Руслан!
-                p По&nbsp;хорошему резина после каждодневных тренировок не&nbsp;должна пожелтеть. Она становится чуть более жесткой. А&nbsp;вот тряпочкой протирать такую модель не&nbsp;желательно, так как можно таким образом стереть зеркальное покрытие. Просим по&nbsp;всем вопросам о&nbsp;качестве товара писать на&nbsp;наш электронный адрес <a href="mailto:"info@proswim.ru>info@proswim.ru</a>.
-
+      if data.child
+        +review-item(data.child)

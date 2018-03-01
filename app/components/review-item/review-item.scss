@@ -85,10 +85,10 @@
       margin-top: 11px;
     }
 
-    &__blockheading {
+    &heading {
       display: block;
       @include text-medium;
-      line-height: (24/14);
+      line-height: (22/14);
     }
   }
 
