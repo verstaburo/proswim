@@ -5,6 +5,7 @@
 
   &__slide {
     position: relative;
+    overflow: hidden;
 
     &.is-hovered img { transform: scale(1.5); }
 
