@@ -2393,7 +2393,7 @@
                     <div class="grid__col grid__col_xl_7">
                         <div class="product-item-section__mainslider">
                             <div class="badge badge_red badge_md product-item-section__badge">–40 %</div>
-                            <div class="product-main-slider swiper-container js-product-main-slider">
+                            <div class="product-main-slider swiper-container js-product-main-slider" data-touch-ratio="false">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
                                         <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
@@ -2645,37 +2645,41 @@
                             </div>
                             <div class="product-item-section__size-errors"></div>
                         </form>
-                        <div class="product-item-section__section">
-                            <div class="product-item-section__block">
-                                <p class="product-item-section__heading">Доставка:</p>
-                                <div class="product-item-section__text">
-                                    <p>по Москве – 190 рублей, самовывоз - 0 рублей</p>
-                                    <p>по Санкт-Петербургу – 350 рублей, самовывоз - 135 руб</p>
-                                    <p>По России доставка Почтой России, курьерской службой и пункты самовывоза</p>
-                                    <a class="link">
-                                        <span class="link__text">Узнайте сроки и стоимость доставки в ваш город</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-item-section__block">
-                                <p class="product-item-section__heading">Обмен:</p>
-                                <p class="product-item-section__text">90 дней на возврат и обмен</p>
-                            </div>
-                            <div class="product-item-section__block">
-                                <p class="product-item-section__blockheading">Оплата:</p>
-                                <div class="product-item-section__paymentmethods">
-                                    <div class="payment-logos">
-                                        <div class="payment-logo">
-                                            <img src="content-img/payment/mastercard.jpg" alt="Mastercard" />
+                        <div data-slot-id="product-info-slot" data-slot-res="xl">
+                            <div data-target-slot="product-info-slot">
+                                <div class="product-item-section__section">
+                                    <div class="product-item-section__block">
+                                        <p class="product-item-section__heading">Доставка:</p>
+                                        <div class="product-item-section__text">
+                                            <p>по Москве – 190 рублей, самовывоз - 0 рублей</p>
+                                            <p>по Санкт-Петербургу – 350 рублей, самовывоз - 135 руб</p>
+                                            <p>По России доставка Почтой России, курьерской службой и пункты самовывоза</p>
+                                            <a class="link">
+                                                <span class="link__text">Узнайте сроки и стоимость доставки в ваш город</span>
+                                            </a>
                                         </div>
-                                        <div class="payment-logo">
-                                            <img src="content-img/payment/visa-copy.jpg" alt="Visa" />
-                                        </div>
-                                        <div class="payment-logo">
-                                            <img src="content-img/payment/bank-tranfer.jpg" alt="Bank tranfer" />
-                                        </div>
-                                        <div class="payment-logo">
-                                            <img src="content-img/payment/cash.jpg" alt="Cash" />
+                                    </div>
+                                    <div class="product-item-section__block">
+                                        <p class="product-item-section__heading">Обмен:</p>
+                                        <p class="product-item-section__text">90 дней на возврат и обмен</p>
+                                    </div>
+                                    <div class="product-item-section__block">
+                                        <p class="product-item-section__blockheading">Оплата:</p>
+                                        <div class="product-item-section__paymentmethods">
+                                            <div class="payment-logos">
+                                                <div class="payment-logo">
+                                                    <img src="content-img/payment/mastercard.jpg" alt="Mastercard" />
+                                                </div>
+                                                <div class="payment-logo">
+                                                    <img src="content-img/payment/visa-copy.jpg" alt="Visa" />
+                                                </div>
+                                                <div class="payment-logo">
+                                                    <img src="content-img/payment/bank-tranfer.jpg" alt="Bank tranfer" />
+                                                </div>
+                                                <div class="payment-logo">
+                                                    <img src="content-img/payment/cash.jpg" alt="Cash" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2683,6 +2687,7 @@
                         </div>
                     </div>
                 </div>
+                <div data-slot-id="product-info-slot" data-slot-res="lg"></div>
                 <div class="product-description product-item-section__description">
                     <div class="grid product-description__grid">
                         <div class="grid__col grid__col_xl_3">
