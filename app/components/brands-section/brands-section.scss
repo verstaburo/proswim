@@ -28,7 +28,15 @@
     transition: max-height $ease-main;
 
     .brands-section.is-active & {
-      max-height: 1000px;
+      max-height: (54px * 5);
+
+      @include screen(lg) {
+        max-height: (54px * 7);
+      }
+
+      @include screen(xs) {
+        max-height: (54px * 8);
+      }
     }
 
     @include screen(sm) {
