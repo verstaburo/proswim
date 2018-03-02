@@ -50,6 +50,11 @@
     pointer-events: all;
     transition: background-color $ease-main;
 
+    @include screen(lg) {
+      width: 34px;
+      height: 34px;
+    }
+
     &.is-disabled,
     &.swiper-button-disabled {
       opacity: .5;
@@ -72,11 +77,21 @@
       height: 19px;
       fill: $anotherdarkgrey-color;
       transition: fill $ease-main;
+
+      @include screen(lg) {
+        width: 7px;
+        height: 14px;
+        margin-left: 1px;
+      }
     }
 
     &_prev svg {
       transform: translate(-50%, -50%) rotate(180deg);
       margin-left: -2px;
+
+      @include screen(lg) {
+        margin-left: -1px;
+      }
     }
   }
 

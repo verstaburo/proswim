@@ -27,6 +27,7 @@ import '../blocks/shopmenu/shopmenu';
 import '../blocks/vertical-menu/vertical-menu';
 import '../blocks/put-block-into-slot/put-block-into-slot';
 import '../blocks/product-main-slider/product-main-slider';
+import '../components/product-description/product-description';
 import '../components/header/header';
 import '../components/product-card/product-card';
 import '../components/hero-slider/hero-slider';

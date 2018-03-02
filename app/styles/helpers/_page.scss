@@ -84,6 +84,11 @@
     height: 54px;
     margin-bottom: -26px;
 
+    @include screen(lg) {
+      height: 38px;
+      margin-bottom: -10px;
+    }
+
     &:hover {
       img, svg {
         filter: gray;

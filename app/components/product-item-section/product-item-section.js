@@ -22,6 +22,11 @@ function productItemSection() {
 
   const settings = {
     slidesPerView: 7,
+    breakpoints: {
+      [window.globalOptions.sizes.lg - 1]: {
+        slidesPerView: 5,
+      },
+    },
   };
 
   slider(navSlider, mainSlider, settings);
@@ -32,7 +37,16 @@ function productItemSection() {
 
   const colorSlider = block.find('.js-product-item-color-slider');
 
-  slider(colorSlider, null, settings);
+  const colorSettings = {
+    slidesPerView: 7,
+    breakpoints: {
+      [window.globalOptions.sizes.lg - 1]: {
+        slidesPerView: 4,
+      },
+    },
+  };
+
+  slider(colorSlider, null, colorSettings);
 }
 
 productItemSection();

@@ -9,7 +9,7 @@
 @import 'helpers/list-styles'; // Стили списков
 @import '../blocks/**/*';
 @import '../components/**/*';
-@import 'page.scss';
+@import 'helpers/page';
 @import '../pages/**/*';
 
 .container {
@@ -28,4 +28,8 @@
 
 .js-sr {
   visibility: hidden;
+}
+
+@include screen('lg') {
+  .hide-lg { display: none; }
 }

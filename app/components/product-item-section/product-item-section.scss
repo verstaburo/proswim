@@ -2,15 +2,43 @@
   display: block;
   padding-bottom: 52px;
 
+  @include screen(lg) {
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+
+  &__mainslidercol {
+    @include screen(lg) {
+      min-width: 414px;
+    }
+  }
+
+  &__sidebarcol  {
+    @include screen(lg) {
+      flex: 1 1 auto;
+    }
+  }
+
+
   &__mainslider {
     position: relative;
     height: 528px;
+
+    @include screen(lg) {
+      height: 306px;
+    }
 
     .product-main-slider__slide_video { z-index: 6; }
   }
 
   &__navslider {
     margin-top: 19px;
+
+    @include screen(lg) {
+      width: 355px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__badge {
@@ -51,6 +79,10 @@
 
   &__rating {
     margin-top: 12px;
+
+    @include screen(lg) {
+      margin-top: 13px;
+    }
   }
 
   &__vendorcode {
@@ -92,6 +124,10 @@
     .product-item-section__blockgrid & {
       &:not(:first-child) {
         margin-left: 31px;
+
+        @include screen(lg) {
+          margin-left: 22px;
+        }
       }
     }
 
@@ -110,29 +146,70 @@
     display: block;
     padding-top: 1px;
     margin-bottom: 30px;
+
+    @include screen(lg) {
+      width: 290px;
+    }
   }
 
   &__buttons {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 0;
     margin: -20px 0 0 -20px;
+
+    @include screen(lg) {
+      width: 100%;
+      margin-left: 0;
+    }
 
     .button {
       display: inline-block;
       padding: 0 33px;
       margin: 20px 0 0 20px;
+
+      @include screen(lg) {
+        width: 100%;
+        margin-left: 0;
+      }
     }
   }
 
   &__paymentmethods {
     display: block;
     margin-top: 9px;
+
+    @include screen(lg) {
+      margin-top: 12px;
+    }
   }
 
   &__description {
     margin-top: 48px;
+
+    @include screen(lg) {
+      margin-top: 36px;
+    }
   }
 
-  &__size-errors .filled {
-    margin-top: 18px;
+  &__size-errors {
+    order: 3;
+    margin-left: 20px;
+    display: block;
+    width: 100%;
+
+    @include screen(lg) {
+      margin-left: 0;
+      order: unset;
+    }
+
+    .filled {
+      margin-top: 20px;
+      @include text-small;
+
+      @include screen(lg) {
+        margin-bottom: -4px;
+      }
+    }
   }
 }

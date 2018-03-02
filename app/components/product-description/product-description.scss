@@ -2,21 +2,98 @@
   display: block;
 
   &__heading {
+    position: relative;
     @include heading-5;
     margin-bottom: 10px;
+    transition: color $ease-main;
+
+    @include screen(lg) {
+      padding: 8px 40px 8px 20px;
+      margin-bottom: 0;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: $darkblue-color;
+
+        &::before,
+        &::after { background-color: $darkblue-color; }
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 19px;
+        right: 20px;
+        width: 12px;
+        height: 2px;
+        background-color: $color-basic;
+        transition: transform $ease-main, background-color $ease-main;
+        transform: translateZ(0);
+      }
+
+      &::after { transform: translateZ(0) rotate(90deg); }
+
+      .product-description__block.is-active & {
+        &::before,
+        &::after {
+          transform: translateZ(0);
+          background-color: $darkblue-color;
+        }
+      }
+    }
   }
 
   &__grid {
     justify-content: space-between;
+
+    @include screen(lg) {
+      &:first-of-type { margin-top: 0; }
+
+      margin: 0 -20px;
+    }
+  }
+
+  &__col {
+    @include screen(lg) {
+      padding: 0;
+    }
   }
 
   &__block {
+    @include screen(lg) {
+      border-bottom: 1px solid $color-border;
+    }
+
     .grid__col:nth-child(1) & {
       padding-right: 3px;
+
+      @include screen(lg) {
+        padding: 0;
+        border-top: 1px solid $color-border;
+      }
     }
 
     .grid__col:nth-child(2) & {
       padding-left: 100px;
+
+      @include screen(lg) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__body {
+    @include screen(lg, min) {
+      display: block !important;
+    }
+
+    @include screen(lg) {
+      display: none;
+      padding: 0 20px 26px;
+
+      ul.list { margin-left: -5px; }
     }
   }
 
@@ -25,7 +102,9 @@
   }
 
   &__readmore {
-    margin-top: -15px;
-    .link { font-size: 15px; }
+    .link {
+      font-size: 15px;
+      margin-top: -15px;
+    }
   }
 }
