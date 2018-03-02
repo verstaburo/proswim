@@ -45,7 +45,7 @@ $(document).on('mouseenter touchstart', '.js-product-main-slider-zoom', function
     .addClass('is-hovered')
     .find('img');
 
-  img.css('transform-origin', `${clientX - img.offset().left}px ${clientY - img.offset().top}px`);
+  img.css('transform-origin', `${clientX - self.offset().left}px ${clientY - self.offset().top}px`);
 });
 
 $(document).on('mousemove touchmove', '.js-product-main-slider-zoom', function (e) {
@@ -54,7 +54,7 @@ $(document).on('mousemove touchmove', '.js-product-main-slider-zoom', function (
 
   const img = self.find('img');
 
-  img.css('transform-origin', `${clientX - img.offset().left}px ${clientY - img.offset().top}px`);
+  img.css('transform-origin', `${clientX - self.offset().left}px ${clientY - self.offset().top}px`);
 });
 
 $(document).on('mouseleave touchend', '.js-product-main-slider-zoom', function () {
