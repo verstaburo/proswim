@@ -72,6 +72,12 @@
     @include screen(sm) {
       font-size: 26px;
       line-height: (30/26);
+
+      &_mob {
+        font-size: 24px;
+        line-height: (28/24);
+        margin-top: -4px;
+      }
     }
   }
 

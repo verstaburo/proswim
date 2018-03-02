@@ -6,6 +6,10 @@
   margin-top: -$tab-gap;
   border-bottom: 2px solid $color-border;
 
+  @include screen(sm) {
+    margin-top: -15px;
+  }
+
   &__tab {
     position: relative;
     display: inline-block;
@@ -15,6 +19,15 @@
     padding-bottom: 19px;
     cursor: pointer;
     color: $semigrey-color;
+
+    @include screen(sm) {
+      margin-right: 15px;
+      margin-top: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
 
     &::after {
       position: absolute;

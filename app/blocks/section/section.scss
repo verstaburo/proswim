@@ -21,6 +21,10 @@
   &__heading {
     @include heading-2;
     flex: 1 1 auto;
+
+    @include screen(sm) {
+      line-height: (28/24);
+    }
   }
 
   &__button {

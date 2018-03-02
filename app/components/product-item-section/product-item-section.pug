@@ -2,7 +2,7 @@ mixin product-item-section()
   +b.product-item-section&attributes(attributes).js-product-item-section
     .container
       +grid
-        +col({ xl: 7, lg: 6 }).product-item-section__mainslidercol
+        +col({ xl: 7, lg: 6, sm: 12 }).product-item-section__mainslidercol
           +e.mainslider
             +badge._red._md.__badge –40 %
 
@@ -10,7 +10,7 @@ mixin product-item-section()
           +e.navslider
             +product-nav-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror')._big.js-product-nav-slider
 
-        +col({ xl: 5 }).product-item-section__sidebarcol
+        +col({ xl: 5, sm: 12 }).product-item-section__sidebarcol
           +e.FORM(method="POST" data-parsley-validate)
             +e.price
               +e.SPAN.pricecurrent 13 792 руб.
@@ -28,8 +28,8 @@ mixin product-item-section()
               +e.P.heading Выберите размер:
               +e.blockgrid
                 +e.P.text (французский размер - FR)
-                +e.P.text
-                  +link._underline._dark Узнать свой размер
+                +e.P.text._right
+                  +link._underline._dark Узнать свой #[.hide-xs размер]
 
             +e.sizes
               +sizes

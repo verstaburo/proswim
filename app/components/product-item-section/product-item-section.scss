@@ -11,6 +11,10 @@
     @include screen(lg) {
       min-width: 414px;
     }
+
+    @include screen(sm) {
+      min-width: auto;
+    }
   }
 
   &__sidebarcol  {
@@ -28,6 +32,10 @@
       height: 306px;
     }
 
+    @include screen(sm) {
+      height: 248px;
+      margin: 0 -15px;
+    }
     .product-main-slider__slide_video { z-index: 6; }
   }
 
@@ -38,6 +46,10 @@
       width: 355px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @include screen(sm) {
+      width: 100%;
     }
   }
 
@@ -58,6 +70,10 @@
   &__price {
     margin-top: -7px;
     margin-left: -2px;
+
+    @include screen(sm) {
+      margin-top: 4px;
+    }
 
     &current {
       font-family: $font-main;
@@ -128,6 +144,17 @@
         @include screen(lg) {
           margin-left: 22px;
         }
+
+        @include screen(sm) {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    &_right {
+      @include screen(sm) {
+        flex: 1;
+        text-align: right;
       }
     }
 
@@ -149,6 +176,10 @@
 
     @include screen(lg) {
       width: 290px;
+    }
+
+    @include screen(sm) {
+      width: 100%;
     }
   }
 

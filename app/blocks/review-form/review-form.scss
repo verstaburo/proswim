@@ -44,6 +44,10 @@
       padding-top: 23px;
       padding-bottom: 7px;
     }
+
+    @include screen(sm) {
+      padding-top: 14px;
+    }
   }
 
   &__short {
@@ -64,6 +68,10 @@
 
     @include screen(lg) {
       width: 100%;
+    }
+
+    @include screen(lg) {
+      margin-top: 14px;
     }
   }
 

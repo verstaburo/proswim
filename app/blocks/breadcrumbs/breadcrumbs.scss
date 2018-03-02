@@ -23,6 +23,15 @@
         color: $color-basic;
       }
     }
+
+    @include screen(sm) {
+      display: none;
+
+      &:first-child,
+      &:last-child {
+        display: inline-block;
+      }
+    }
   }
 
   &__icon {

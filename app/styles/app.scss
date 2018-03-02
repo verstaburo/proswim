@@ -30,6 +30,14 @@
   visibility: hidden;
 }
 
-@include screen('lg') {
+@include screen(lg) {
   .hide-lg { display: none; }
+}
+
+@include screen(sm) {
+  .hide-sm { display: none; }
+}
+
+@include screen(xs) {
+  .hide-xs { display: none; }
 }

@@ -49,6 +49,11 @@
     &_catalog {
       padding: 15px;
     }
+
+    &_small {
+      padding: 19px;
+      padding-bottom: 13px;
+    }
   }
 
   &:hover {
@@ -162,6 +167,10 @@
       .product-card_catalog & {
         margin-top: 12px;
       }
+
+      .product-card_small & {
+        margin-top: 16px;
+      }
     }
   }
 
@@ -200,12 +209,18 @@
 
       .product-card_small & {
         @include text-small;
+        max-height: (18/13*2em);
       }
     }
 
     @include screen(sm) {
       .product-card_catalog & {
         @include text-tiny;
+      }
+
+      .product-card_small & {
+        @include text-tiny;
+        max-height: (18/12*2em);
       }
     }
   }
@@ -309,14 +324,18 @@
       }
 
       @include screen(sm) {
-          margin-left: 6px;
+        margin-left: 6px;
 
-          .product-card_catalog & {
-            @include text-tiny;
-            margin-left: 0;
-            width: 100%;
-            order: -1;
-          }
+        .product-card_catalog & {
+          @include text-tiny;
+          margin-left: 0;
+          width: 100%;
+          order: -1;
+        }
+
+        .product-card_small & {
+          margin-left: 8px;
+        }
       }
     }
 

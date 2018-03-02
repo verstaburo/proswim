@@ -26,6 +26,9 @@ function productItemSection() {
       [window.globalOptions.sizes.lg - 1]: {
         slidesPerView: 5,
       },
+      [window.globalOptions.sizes.sm - 1]: {
+        slidesPerView: 4,
+      },
     },
   };
 
