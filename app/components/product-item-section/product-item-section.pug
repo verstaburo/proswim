@@ -6,7 +6,7 @@ mixin product-item-section()
           +e.mainslider
             +badge._red._md.__badge –40 %
 
-            +product-main-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: 'content-img/TL1_h264420_720p_HQ.mp4', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror', true, true)
+            +product-main-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: 'content-img/TL1_h264420_720p_HQ.mp4', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror', true, true)(data-touch-ratio="false")
           +e.navslider
             +product-nav-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror')._big.js-product-nav-slider
 
@@ -51,27 +51,29 @@ mixin product-item-section()
 
             +e.size-errors
 
-          +e.section
-            +e.block
-              +e.P.heading Доставка:
-              +e.text
-                p по Москве – 190 рублей, самовывоз - 0 рублей
-                p по Санкт-Петербургу – 350 рублей, самовывоз - 135 руб
-                p По России доставка Почтой России, курьерской службой и пункты самовывоза
-                +link Узнайте сроки и стоимость доставки в ваш город
+          +put-block-into-slot('product-info-slot', 'xl')
+            +e.section
+              +e.block
+                +e.P.heading Доставка:
+                +e.text
+                  p по Москве – 190 рублей, самовывоз - 0 рублей
+                  p по Санкт-Петербургу – 350 рублей, самовывоз - 135 руб
+                  p По России доставка Почтой России, курьерской службой и пункты самовывоза
+                  +link Узнайте сроки и стоимость доставки в ваш город
 
-            +e.block
-              +e.P.heading Обмен:
-              +e.P.text 90 дней на возврат и обмен
+              +e.block
+                +e.P.heading Обмен:
+                +e.P.text 90 дней на возврат и обмен
 
-            +e.block
-              +e.P.blockheading Оплата:
+              +e.block
+                +e.P.blockheading Оплата:
 
-              +e.paymentmethods
-                +payment-logos
-                  +payment-logo("content-img/payment/mastercard.jpg", "Mastercard")
-                  +payment-logo("content-img/payment/visa-copy.jpg", "Visa")
-                  +payment-logo("content-img/payment/bank-tranfer.jpg", "Bank tranfer")
-                  +payment-logo("content-img/payment/cash.jpg", "Cash")
+                +e.paymentmethods
+                  +payment-logos
+                    +payment-logo("content-img/payment/mastercard.jpg", "Mastercard")
+                    +payment-logo("content-img/payment/visa-copy.jpg", "Visa")
+                    +payment-logo("content-img/payment/bank-tranfer.jpg", "Bank tranfer")
+                    +payment-logo("content-img/payment/cash.jpg", "Cash")
 
+      +put-block-into-slot('product-info-slot', 'lg')
       +product-description.__description

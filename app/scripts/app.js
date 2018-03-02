@@ -25,6 +25,7 @@ import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/shopmenu/shopmenu';
 import '../blocks/vertical-menu/vertical-menu';
+import '../blocks/put-block-into-slot/put-block-into-slot';
 import '../blocks/product-main-slider/product-main-slider';
 import '../components/header/header';
 import '../components/product-card/product-card';

@@ -1,0 +1,5 @@
+mixin put-block-into-slot(id, res)
+  div(data-slot-id=id data-slot-res=res)&attributes(attributes)
+    if block
+      div(data-target-slot=id)
+        block

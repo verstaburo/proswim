@@ -2,30 +2,35 @@ import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
 
-// eslint-disable-next-line no-unused-vars
-const slider = new Swiper('.js-product-main-slider', {
-  slidesPerView: 1,
-  navigation: {
-    nextEl: '.product-main-slider__button_next',
-    prevEl: '.product-main-slider__button_prev',
-  },
-  roundLengths: true,
-  on: {
-    slideNextTransitionEnd() {
-      const sliderElement = $(this.$el);
-      const activeSlide = sliderElement.find('.swiper-slide-active');
+$('.js-product-main-slider').each(function () {
+  const el = $(this);
 
-      sliderElement.find('video').each(function () {
-        $(this)[0].pause();
-      });
-
-      const activeVideo = activeSlide.find('video');
-
-      if (activeVideo.length) {
-        activeVideo[0].play();
-      }
+  // eslint-disable-next-line no-unused-vars
+  const slider = new Swiper(el, {
+    slidesPerView: 1,
+    touchRatio: el.data('touch-ratio'),
+    navigation: {
+      nextEl: '.product-main-slider__button_next',
+      prevEl: '.product-main-slider__button_prev',
     },
-  },
+    roundLengths: true,
+    on: {
+      slideNextTransitionEnd() {
+        const sliderElement = $(this.$el);
+        const activeSlide = sliderElement.find('.swiper-slide-active');
+
+        sliderElement.find('video').each(function () {
+          $(this)[0].pause();
+        });
+
+        const activeVideo = activeSlide.find('video');
+
+        if (activeVideo.length) {
+          activeVideo[0].play();
+        }
+      },
+    },
+  });
 });
 
 /**
