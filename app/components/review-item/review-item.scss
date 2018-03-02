@@ -5,6 +5,10 @@
   border: 1px solid $color-border;
   background-color: white;
 
+  @include screen(lg) {
+    padding-bottom: 21px;
+  }
+
   .review-item & {
     background-color: $ihavenoideahowtocallthat-color;
     margin-top: 21px;

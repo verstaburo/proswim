@@ -3,6 +3,10 @@
 
   &_full {
     padding: 0;
+
+    @include screen(lg) {
+      .button {  width: 100%; }
+    }
   }
 
   @include screen(lg) {

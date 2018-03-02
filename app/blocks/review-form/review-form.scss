@@ -17,6 +17,16 @@
 
   &__inner {
     width: 302px;
+
+    @include screen(lg) {
+      width: 100%;
+    }
+
+    &_checkbox {
+      @include screen(lg) {
+        margin-top: -4px;
+      }
+    }
   }
 
   &__button {
@@ -29,6 +39,11 @@
   &.section {
     padding-top: 25px;
     padding-bottom: 40px;
+
+    @include screen(lg) {
+      padding-top: 23px;
+      padding-bottom: 7px;
+    }
   }
 
   &__short {
@@ -37,11 +52,19 @@
 
   &__full {
     display: none;
+
+    @include screen(lg) {
+      padding-bottom: 17px;
+    }
   }
 
   &__button {
     margin-top: 24px;
     min-width: 182px;
+
+    @include screen(lg) {
+      width: 100%;
+    }
   }
 
   &__heading {
@@ -61,5 +84,9 @@
   &__form {
     margin-top: 10px;
     width: 580px;
+
+    @include screen(lg) {
+      width: 100%;
+    }
   }
 }
