@@ -49,6 +49,7 @@
     }
 
     @include screen(sm) {
+      max-width: 290px;
       width: 100%;
     }
   }
@@ -180,6 +181,7 @@
 
     @include screen(sm) {
       width: 100%;
+      max-width: 290px;
     }
   }
 
