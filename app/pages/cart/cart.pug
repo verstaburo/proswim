@@ -1,0 +1,25 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - cart'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'cart'])
+      +e.head._steps
+        +step-menu
+          +step-menu-item.is-active Содержимое <br>корзины
+          +step-menu-item Доставка <br>и оплата
+          +step-menu-item Подтверждение <br>заказа
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading cart
+
+block popups
+  +login-popup
+  +registration-popup
+  +password-recovery-popup
+  +registration-complete-popup
