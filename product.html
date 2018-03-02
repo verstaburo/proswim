@@ -2369,7 +2369,7 @@
                             </li>
                     </div>
                 </div>
-                <div class="page__headcol">
+                <div class="page__headcol hide-lg">
                     <a class="link link_icon link_dark link_print js-print">
                         <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
                         <span class="link__text">Распечатать</span>
@@ -2390,7 +2390,7 @@
         <div class="product-item-section js-product-item-section">
             <div class="container">
                 <div class="grid">
-                    <div class="grid__col grid__col_xl_7">
+                    <div class="grid__col grid__col_xl_7 grid__col_lg_6 product-item-section__mainslidercol">
                         <div class="product-item-section__mainslider">
                             <div class="badge badge_red badge_md product-item-section__badge">–40 %</div>
                             <div class="product-main-slider swiper-container js-product-main-slider" data-touch-ratio="false">
@@ -2503,7 +2503,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_5">
+                    <div class="grid__col grid__col_xl_5 product-item-section__sidebarcol">
                         <form method="POST" data-parsley-validate="data-parsley-validate">
                             <div class="product-item-section__price">
                                 <span class="product-item-section__pricecurrent">13 792 руб.</span>
@@ -2641,9 +2641,9 @@
                             </div>
                             <div class="product-item-section__buttons">
                                 <button class="button" type="submit">Добавить в корзину</button>
+                                <div class="product-item-section__size-errors"></div>
                                 <button class="button button_greyblue" type="button">Купить в 1 клик</button>
                             </div>
-                            <div class="product-item-section__size-errors"></div>
                         </form>
                         <div data-slot-id="product-info-slot" data-slot-res="xl">
                             <div data-target-slot="product-info-slot">
@@ -2690,9 +2690,9 @@
                 <div data-slot-id="product-info-slot" data-slot-res="lg"></div>
                 <div class="product-description product-item-section__description">
                     <div class="grid product-description__grid">
-                        <div class="grid__col grid__col_xl_3">
+                        <div class="grid__col grid__col_xl_3 grid__col_lg_12 product-description__col">
                             <div class="product-description__block">
-                                <h5 class="product-description__heading">Характеристики товара:</h5>
+                                <h5 class="product-description__heading js-product-description-button">Характеристики товара:</h5>
                                 <div class="product-description__body">
                                     <dl class="list">
                                         <dt>Бренд:</dt>
@@ -2725,9 +2725,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid__col grid__col_xl_4">
+                        <div class="grid__col grid__col_xl_4 grid__col_lg_12 product-description__col">
                             <div class="product-description__block">
-                                <h5 class="product-description__heading">Почему стоит брать?</h5>
+                                <h5 class="product-description__heading js-product-description-button">Почему стоит брать?</h5>
                                 <div class="product-description__body">
                                     <ul class="list">
                                         <li>
@@ -2754,9 +2754,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid__col grid__col_xl_5">
+                        <div class="grid__col grid__col_xl_5 grid__col_lg_12 product-description__col">
                             <div class="product-description__block">
-                                <h5 class="product-description__heading">Описание товара</h5>
+                                <h5 class="product-description__heading js-product-description-button">Описание товара</h5>
                                 <div class="product-description__body content-zone">
                                     <p>Новинка в&nbsp;линейке стартовых очков Cobra&nbsp;&mdash; Arena Cobra Core! Эта модель разработана специально для скоростного плавания и&nbsp;выступления на&nbsp;стартах. Чем&nbsp;же она отличается от&nbsp;других моделей
                                         Cobra?</p>
@@ -3111,11 +3111,11 @@
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
                                                             <ul class="evaluations">
-                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                <li class="evaluation evaluation evaluation_like">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">15</span>
                                                                 </li>
-                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                <li class="evaluation evaluation evaluation_dislike">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">0</span>
                                                                 </li>
@@ -3212,11 +3212,11 @@
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
                                                             <ul class="evaluations">
-                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                <li class="evaluation evaluation evaluation_like">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">20</span>
                                                                 </li>
-                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                <li class="evaluation evaluation evaluation_dislike">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">0</span>
                                                                 </li>
@@ -3288,11 +3288,11 @@
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
                                                             <ul class="evaluations">
-                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                <li class="evaluation evaluation evaluation_like">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">15</span>
                                                                 </li>
-                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                <li class="evaluation evaluation evaluation_dislike">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">0</span>
                                                                 </li>
@@ -3364,11 +3364,11 @@
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
                                                             <ul class="evaluations">
-                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                <li class="evaluation evaluation evaluation_like">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">13</span>
                                                                 </li>
-                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                <li class="evaluation evaluation evaluation_dislike">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">0</span>
                                                                 </li>
@@ -3439,11 +3439,11 @@
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
                                                             <ul class="evaluations">
-                                                                <li class="evaluation js-evaluation evaluation evaluation_like" data-evaluate-action="like">
+                                                                <li class="evaluation evaluation evaluation_like">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">20</span>
                                                                 </li>
-                                                                <li class="evaluation js-evaluation evaluation evaluation_dislike" data-evaluate-action="dislike">
+                                                                <li class="evaluation evaluation evaluation_dislike">
                                                                     <svg class="evaluation__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
                                                                     <span class="evaluation__text">0</span>
                                                                 </li>
