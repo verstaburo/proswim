@@ -8,7 +8,7 @@ mixin burger()
       +e.HEADER.section.__header
         .container
           +e.headerlinks
-            +link-icon('Login Register button')._dark.__headerlink_user.is-active.js-burger-login Войти
+            +link-icon('Login Register button')(href="login.html" data-popup='#login-popup')._dark.__headerlink_user.is-active.js-burger-login.js-fancybox Войти
             +link-icon('arrow_back_menu')._dark.__headerlink_back.js-burger-back Назад
 
           +e.BUTTON.close.js-burger-close

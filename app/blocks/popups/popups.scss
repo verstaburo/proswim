@@ -33,14 +33,9 @@
     border: 1px solid $color-border;
     background-color: $lightgrey-color;
 
-    @include screen(lg) {
-      margin-left: -20px;
-      margin-right: -20px;
-    }
-
-    @include screen(sm) {
-      margin-left: -15px;
-      margin-right: -15px;
+    .popup_page & {
+      border-left: 0;
+      border-right: 0;
     }
   }
 
