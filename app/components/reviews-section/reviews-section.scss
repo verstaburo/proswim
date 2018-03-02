@@ -7,6 +7,16 @@
     @include screen(lg) {
       .button {  width: 100%; }
     }
+
+    @include screen(sm) {
+      .container & {
+        margin: 0 -15px;
+      }
+
+      .section__button {
+        padding: 0 15px;
+      }
+    }
   }
 
   @include screen(lg) {

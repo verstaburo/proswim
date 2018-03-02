@@ -60,6 +60,10 @@
     @include screen(lg) {
       padding-bottom: 17px;
     }
+
+    @include screen(sm) {
+      padding-bottom: 0;
+    }
   }
 
   &__button {

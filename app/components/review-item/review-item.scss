@@ -9,16 +9,28 @@
     padding-bottom: 21px;
   }
 
+  @include screen(sm) {
+    padding: 20px 15px;
+  }
+
   .review-item & {
     background-color: $ihavenoideahowtocallthat-color;
     margin-top: 21px;
     box-shadow: none;
+
+    @include screen(sm) {
+      margin-top: 16px;
+    }
   }
 
   &__image {
     position: relative;
     margin-right: 19px;
     flex-shrink: 0;
+
+    @include screen(sm) {
+      display: none;
+    }
 
     img { @include center-image; }
 
@@ -39,17 +51,57 @@
   }
 
   &__head {
+    position: relative;
     display: flex;
-    margin-left: -40px;
+    flex-wrap: wrap;
+    margin: -20px 0 0 -40px;
+
+    @include screen(sm) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+
+    @include screen(sm) {
+      display: block;
+    }
+  }
+
+  &__badge {
+    margin-left: 40px;
+
+    @include screen(sm) {
+      margin-left: 0;
+      margin-top: 13px;
+      margin-bottom: 11px;
+    }
   }
 
   &__col {
-    padding-left: 40px;
+    padding: 20px 0 0 40px;
+
+    @include screen(sm) {
+      padding-left: 0;
+      width: 100%;
+    }
+
     &_flexible { flex: 1 1 auto; }
 
     &_evaluations {
       align-self: center;
       margin-bottom: 2px;
+      text-align: right;
+
+      @include screen(sm) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-bottom: 0;
+      }
     }
   }
 

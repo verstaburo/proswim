@@ -10,10 +10,10 @@ mixin review-form()
           +radio('recommend', true, true) Да
           +radio('recommend', false, false) Нет
 
-      +col(6)
+      +col({ xl: 6, sm: 12 })
         +inputbox('Имя *')
           +input(name="name" type="text" placeholder="Имя" required)._size_md
-      +col(6)
+      +col({ xl: 6, sm: 12 })
         +inputbox('Email *')
           +input(name="email" type="email" placeholder="Email" required)._size_md
 

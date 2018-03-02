@@ -9,20 +9,22 @@ mixin review-item(data)
 
     +e.content
       +e.head
-        +e.col
-          if data.date
-            +e.P.date=data.date
-          +e.P.userinfo
-            if data.username
-              +e.SPAN.username=data.username
-            if data.city
-              +e.SPAN.city=data.city
+        +e.col._flexible
+          +e.inner
+            +e.group
+              if data.date
+                +e.SPAN.date=data.date
+              +e.P.userinfo
+                if data.username
+                  +e.SPAN.username=data.username
+                if data.city
+                  +e.SPAN.city=data.city
+            if data.badge
+              +e.badge
+                +review-badge(data.badge)
           if data.rating
            +rating(data.rating).__rating
 
-        if data.badge
-          +e.col._flexible
-            +review-badge(data.badge)
 
         if data.evaluation
           +e.col._evaluations
