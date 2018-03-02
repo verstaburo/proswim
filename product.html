@@ -2364,7 +2364,7 @@
                             </li>
                             <li class="breadcrumbs__item">
                                 <a class="link" href="#">
-                                    <span class="link__text">Очки для плавания Arena Cobra Mirror</span>
+                                    <span class="link__text">Очки для плавания Cobra Mirror</span>
                                 </a>
                             </li>
                     </div>
@@ -2378,9 +2378,9 @@
             </div>
             <div class="page__head page__head_subhead">
                 <div class="page__headcol page__headcol_flexible">
-                    <h1 class="page__heading">Очки для плавания Cobra Mirror</h1>
+                    <h1 class="page__heading page__heading_mob">Очки для плавания Cobra Mirror</h1>
                 </div>
-                <div class="page__headcol">
+                <div class="page__headcol hide-sm">
                     <a class="page__logo" href="javascript:void(0)">
                         <img src="content-img/brands/arena-logo.png" alt="Arena">
                     </a>
@@ -2390,7 +2390,7 @@
         <div class="product-item-section js-product-item-section">
             <div class="container">
                 <div class="grid">
-                    <div class="grid__col grid__col_xl_7 grid__col_lg_6 product-item-section__mainslidercol">
+                    <div class="grid__col grid__col_xl_7 grid__col_lg_6 grid__col_sm_12 product-item-section__mainslidercol">
                         <div class="product-item-section__mainslider">
                             <div class="badge badge_red badge_md product-item-section__badge">–40 %</div>
                             <div class="product-main-slider swiper-container js-product-main-slider" data-touch-ratio="false">
@@ -2503,7 +2503,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid__col grid__col_xl_5 product-item-section__sidebarcol">
+                    <div class="grid__col grid__col_xl_5 grid__col_sm_12 product-item-section__sidebarcol">
                         <form method="POST" data-parsley-validate="data-parsley-validate">
                             <div class="product-item-section__price">
                                 <span class="product-item-section__pricecurrent">13 792 руб.</span>
@@ -2541,9 +2541,11 @@
                                 <p class="product-item-section__heading">Выберите размер:</p>
                                 <div class="product-item-section__blockgrid">
                                     <p class="product-item-section__text">(французский размер - FR)</p>
-                                    <p class="product-item-section__text">
+                                    <p class="product-item-section__text product-item-section__text_right">
                                         <a class="link link_underline link_dark">
-                                            <span class="link__text">Узнать свой размер</span>
+                                            <span class="link__text">Узнать свой
+                                                <span class="hide-xs">размер</span>
+                                            </span>
                                         </a>
                                     </p>
                                 </div>
@@ -3009,13 +3011,13 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_6">
+                                        <div class="grid__col grid__col_xl_6 grid__col_sm_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Имя *</P>
                                                 <input class="input input_size_md" name="name" type="text" placeholder="Имя" required="required" />
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_6">
+                                        <div class="grid__col grid__col_xl_6 grid__col_sm_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Email *</P>
                                                 <input class="input input_size_md" name="email" type="email" placeholder="Email" required="required" />
@@ -3050,7 +3052,7 @@
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12">
-                                            <div class="review-form__inner">
+                                            <div class="review-form__inner review-form__inner_checkbox">
                                                 <label class="checkradio">
                                                     <input class="checkradio__input" name="personal-data" value="value" check="check" type="checkbox" required="required" />
                                                     <span class="checkradio__box">
@@ -3077,12 +3079,22 @@
                                                 </div>
                                                 <div class="review-item__content">
                                                     <div class="review-item__head">
-                                                        <div class="review-item__col">
-                                                            <p class="review-item__date">17 декабря 2017</p>
-                                                            <p class="review-item__userinfo">
-                                                                <span class="review-item__username">Руслан</span>
-                                                                <span class="review-item__city">Москва</span>
-                                                            </p>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-item__inner">
+                                                                <div class="review-item__group">
+                                                                    <span class="review-item__date">17 декабря 2017</span>
+                                                                    <p class="review-item__userinfo">
+                                                                        <span class="review-item__username">Руслан</span>
+                                                                        <span class="review-item__city">Москва</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="review-item__badge">
+                                                                    <div class="review-badge review-badge review-badge_like">
+                                                                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="rating review-item__rating">
                                                                 <div class="rating__stars">
                                                                     <div class="rating__box">
@@ -3101,12 +3113,6 @@
                                                                         <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-item__col review-item__col_flexible">
-                                                            <div class="review-badge review-badge review-badge_like">
-                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
-                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
@@ -3150,16 +3156,21 @@
                                                         </div>
                                                         <div class="review-item__content">
                                                             <div class="review-item__head">
-                                                                <div class="review-item__col">
-                                                                    <p class="review-item__date">17 декабря 2017</p>
-                                                                    <p class="review-item__userinfo">
-                                                                        <span class="review-item__username">Консультант Proswim</span>
-                                                                    </p>
+                                                                <div class="review-item__col review-item__col_flexible">
+                                                                    <div class="review-item__inner">
+                                                                        <div class="review-item__group">
+                                                                            <span class="review-item__date">17 декабря 2017</span>
+                                                                            <p class="review-item__userinfo">
+                                                                                <span class="review-item__username">Консультант Proswim</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="review-item__body">
                                                                 <div class="review-item__block">
                                                                     <div class="content-zone">
+                                                                        <p>Здравствуйте, Руслан!</p>
                                                                         <p>По&nbsp;хорошему резина после каждодневных тренировок не&nbsp;должна пожелтеть. Она становится чуть более жесткой. А&nbsp;вот тряпочкой протирать такую модель не&nbsp;желательно,
                                                                             так как можно таким образом стереть зеркальное покрытие. Просим по&nbsp;всем вопросам о&nbsp;качестве товара писать на&nbsp;наш электронный адрес
                                                                             <a href='mailto:' info@proswim.ru>info@proswim.ru</a>.</p>
@@ -3178,12 +3189,22 @@
                                                 </div>
                                                 <div class="review-item__content">
                                                     <div class="review-item__head">
-                                                        <div class="review-item__col">
-                                                            <p class="review-item__date">21 декабря 2017</p>
-                                                            <p class="review-item__userinfo">
-                                                                <span class="review-item__username">Руслан</span>
-                                                                <span class="review-item__city">Новосибирск</span>
-                                                            </p>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-item__inner">
+                                                                <div class="review-item__group">
+                                                                    <span class="review-item__date">21 декабря 2017</span>
+                                                                    <p class="review-item__userinfo">
+                                                                        <span class="review-item__username">Руслан</span>
+                                                                        <span class="review-item__city">Новосибирск</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="review-item__badge">
+                                                                    <div class="review-badge review-badge review-badge_like">
+                                                                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="rating review-item__rating">
                                                                 <div class="rating__stars">
                                                                     <div class="rating__box">
@@ -3202,12 +3223,6 @@
                                                                         <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-item__col review-item__col_flexible">
-                                                            <div class="review-badge review-badge review-badge_like">
-                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
-                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
@@ -3254,12 +3269,22 @@
                                                 </div>
                                                 <div class="review-item__content">
                                                     <div class="review-item__head">
-                                                        <div class="review-item__col">
-                                                            <p class="review-item__date">30 декабря 2017</p>
-                                                            <p class="review-item__userinfo">
-                                                                <span class="review-item__username">Artkeynonone</span>
-                                                                <span class="review-item__city">Норильск</span>
-                                                            </p>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-item__inner">
+                                                                <div class="review-item__group">
+                                                                    <span class="review-item__date">30 декабря 2017</span>
+                                                                    <p class="review-item__userinfo">
+                                                                        <span class="review-item__username">Artkeynonone</span>
+                                                                        <span class="review-item__city">Норильск</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="review-item__badge">
+                                                                    <div class="review-badge review-badge review-badge_like">
+                                                                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="rating review-item__rating">
                                                                 <div class="rating__stars">
                                                                     <div class="rating__box">
@@ -3278,12 +3303,6 @@
                                                                         <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-item__col review-item__col_flexible">
-                                                            <div class="review-badge review-badge review-badge_like">
-                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
-                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
@@ -3330,12 +3349,22 @@
                                                 </div>
                                                 <div class="review-item__content">
                                                     <div class="review-item__head">
-                                                        <div class="review-item__col">
-                                                            <p class="review-item__date">30 декабря 2017</p>
-                                                            <p class="review-item__userinfo">
-                                                                <span class="review-item__username">Alex777</span>
-                                                                <span class="review-item__city">Самара</span>
-                                                            </p>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-item__inner">
+                                                                <div class="review-item__group">
+                                                                    <span class="review-item__date">30 декабря 2017</span>
+                                                                    <p class="review-item__userinfo">
+                                                                        <span class="review-item__username">Alex777</span>
+                                                                        <span class="review-item__city">Самара</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="review-item__badge">
+                                                                    <div class="review-badge review-badge review-badge_like">
+                                                                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="rating review-item__rating">
                                                                 <div class="rating__stars">
                                                                     <div class="rating__box">
@@ -3354,12 +3383,6 @@
                                                                         <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-item__col review-item__col_flexible">
-                                                            <div class="review-badge review-badge review-badge_like">
-                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
-                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
@@ -3405,12 +3428,22 @@
                                                 </div>
                                                 <div class="review-item__content">
                                                     <div class="review-item__head">
-                                                        <div class="review-item__col">
-                                                            <p class="review-item__date">21 декабря 2017</p>
-                                                            <p class="review-item__userinfo">
-                                                                <span class="review-item__username">Руслан</span>
-                                                                <span class="review-item__city">Новосибирск</span>
-                                                            </p>
+                                                        <div class="review-item__col review-item__col_flexible">
+                                                            <div class="review-item__inner">
+                                                                <div class="review-item__group">
+                                                                    <span class="review-item__date">21 декабря 2017</span>
+                                                                    <p class="review-item__userinfo">
+                                                                        <span class="review-item__username">Руслан</span>
+                                                                        <span class="review-item__city">Новосибирск</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="review-item__badge">
+                                                                    <div class="review-badge review-badge review-badge_dislike">
+                                                                        <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
+                                                                        <span class="review-badge__text">Я рекомендую этот товар</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <div class="rating review-item__rating">
                                                                 <div class="rating__stars">
                                                                     <div class="rating__box">
@@ -3429,12 +3462,6 @@
                                                                         <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-item__col review-item__col_flexible">
-                                                            <div class="review-badge review-badge review-badge_dislike">
-                                                                <svg class="review-badge__icon"><use xlink:href="assets/images/icon.svg#icon_good"></use></svg>
-                                                                <span class="review-badge__text">Я рекомендую этот товар</span>
                                                             </div>
                                                         </div>
                                                         <div class="review-item__col review-item__col_evaluations">
