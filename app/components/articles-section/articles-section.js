@@ -16,6 +16,7 @@ function articlesSection() {
     sliderElement.removeClass('swiper-container');
     sliderGrid.removeClass('swiper-wrapper');
     sliderSlide.removeClass('swiper-slide');
+    sliderElement.find('.swiper-slide-duplicate').remove();
 
     const swiper = sliderElement[0].swiper;
 
@@ -37,7 +38,7 @@ function articlesSection() {
 
   // eslint-disable-next-line no-unused-vars
   const slider = new Swiper('.js-articles-section-slider', {
-    loop: true,
+    loop: false,
     autoplay: false,
     slidesPerView: 'auto',
     spaceBetween: 10,

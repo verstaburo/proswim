@@ -17,7 +17,7 @@
   }
 
   @include screen(sm) {
-    min-height: 296px;
+    min-height: 200px;
   }
 
   &:hover {
@@ -37,7 +37,6 @@
     position: relative;
     display: block;
     width: 180px;
-    height: 100%;
     flex-shrink: 0;
     cursor: pointer;
 

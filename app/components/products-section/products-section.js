@@ -12,7 +12,7 @@ $('.js-products-section').each(function () {
 
   // eslint-disable-next-line no-unused-vars
   const slider = new Swiper(sliderEl, {
-    loop: true,
+    loop: false,
     autoplay: false,
     slidesPerView,
     spaceBetween: 20,
