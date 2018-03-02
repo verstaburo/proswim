@@ -14,7 +14,7 @@ mixin evaluation(kind)
     - mod = 'dislike'
     - action = 'dislike'
 
-  +b.LI.evaluation.js-evaluation(data-evaluate-action=mod class=`evaluation_${mod}`)
+  +b.LI.evaluation(class=`evaluation_${mod}`)
     +icon('Good').icon
     +e.SPAN.text
       block

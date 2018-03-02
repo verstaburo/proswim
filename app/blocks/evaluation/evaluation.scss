@@ -12,10 +12,11 @@
     height: 16px;
     font-size: 0;
     line-height: 1;
+    transition: fill $ease-main;
 
-    #{$b}_dislike & {
-      transform: rotate(180deg);
-    }
+    #{$b}_dislike & { transform: rotate(180deg); }
+    #{$b}_like:hover & { fill: $green-color; }
+    #{$b}_dislike:hover & { fill: $midred-color; }
   }
 
   &__text {

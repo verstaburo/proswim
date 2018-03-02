@@ -26,10 +26,16 @@
                 border-color $ease-main,
                 background-color $ease-main;
 
+    .size:hover .size__control:checked + &,
     .size__control:checked + & {
       background-color: $dirtyblue-color;
       border-color: $dirtyblue-color;
       color: white;
+    }
+
+    .size:hover & {
+      color: $darkblue-color;
+      border-color: $lightblue2-color;
     }
 
     .size.parsley-error &,

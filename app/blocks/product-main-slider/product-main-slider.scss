@@ -48,6 +48,19 @@
     cursor: pointer;
     border-radius: 50%;
     pointer-events: all;
+    transition: background-color $ease-main;
+
+    &.is-disabled,
+    &.swiper-button-disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      background-color: $midgreyhover-color;
+
+      svg { fill: $color-basic; }
+    }
 
     svg {
       position: absolute;
@@ -58,6 +71,7 @@
       width: 10px;
       height: 19px;
       fill: $anotherdarkgrey-color;
+      transition: fill $ease-main;
     }
 
     &_prev svg {
