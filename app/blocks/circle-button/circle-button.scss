@@ -3,6 +3,7 @@
   text-align: center;
   cursor: pointer;
   transition: opacity $ease-main;
+  @include performance;
 
   &.is-disabled,
   &.swiper-button-disabled {
