@@ -185,23 +185,51 @@
 .input-numberbox {
   display: table;
   width: 100%;
+  height: 36px;
 
   &__button {
+    position: relative;
     border: 1px solid $color-border;
-    width: 40px;
+    width: 36px;
     display: table-cell;
     font-size: 18px;
     font-family: monospace;
     cursor: pointer;
     text-align: center;
+    border: 1px solid $semigreyblue-color;
+    background-color: $ihavenoideahowtocallthat-color;
 
     &:hover::before, &:hover::after { opacity: .5; }
 
     &::before, &::after { transition: opacity $ease-main; }
 
-    &:first-child::before { content: '-'; }
+    &:first-child::before,
+    &:last-child::before,
+    &:last-child::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 10px;
+      height: 2px;
+      background-color: $color-basic;
+    }
 
-    &:last-child::before { content: '+'; }
+    &:last-child::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &:first-child {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
   }
 
   &__input {
@@ -210,6 +238,8 @@
     border-right: 0;
     text-align: center;
     display: table-cell;
+    height: 36px;
+    font-size: 15px;
   }
 }
 
