@@ -3,6 +3,11 @@
   width: 606px;
 
   &__buttons {
+    padding-top: 2px;
     margin-bottom: 24px;
+  }
+
+  .content-zone p:not(:last-child) {
+    margin-bottom: 0;
   }
 }
