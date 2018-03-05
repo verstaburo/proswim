@@ -1,0 +1,15 @@
+mixin total()
+  +b.total&attributes(attributes)
+    +e.UL.items
+      +e.LI.item
+        +e.SPAN.text Сумма:
+        +e.B.price 21 790 руб.
+      +e.LI.item
+        +e.SPAN.text Итого:
+        +e.B.price 21 790 руб.
+
+    +button.BUTTON(type="button")._size_big._block.__button Оформить заказ
+
+    +e.P.promo
+      +link.__link Есть промокод/карта клиента?
+      +tooltip-icon

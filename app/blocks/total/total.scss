@@ -1,0 +1,48 @@
+.total {
+  display: block;
+  padding: 20px;
+  background-color: $lightgrey-color;
+
+  &__items {
+
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $anothermidbluelightgrey4-color;
+      padding-bottom: 11px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 14px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: (24/15);
+    flex: 1;
+  }
+
+  &__price {
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: (24/18);
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+
+  &__promo {
+    margin-top: 21px;
+    padding-left: 2px;
+
+    .tooltip-icon {
+      margin-left: 6px;
+    }
+  }
+}
