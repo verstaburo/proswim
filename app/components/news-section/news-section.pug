@@ -3,7 +3,7 @@ mixin news-section(items)
     .container
       +grid
         each item in items
-          +col(3).news-section__col
+          +col({ xl: 3, sm: 12 }).news-section__col
             +article-card(item)._default_mob
 
       +section-footer

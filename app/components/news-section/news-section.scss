@@ -1,9 +1,7 @@
 .news-section {
   display: block;
 
-  &__col {
-    @include screen(sm) {
-      width: 100%;
-    }
+  @include screen(sm) {
+    padding-top: 7px;
   }
 }
