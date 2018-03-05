@@ -8,7 +8,7 @@ mixin review-badge(kind)
 
   if kind === 'dislike'
     - mod = 'dislike'
-    - text = 'Я рекомендую этот товар'
+    - text = 'Я не рекомендую товар'
 
   +b.review-badge(class=`review-badge_${mod}`)&attributes(attributes)
     +icon('Good').icon

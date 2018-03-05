@@ -35,7 +35,7 @@
     pointer-events: none;
 
     @include screen(sm) {
-      display: none;
+      padding: 0 15px;
     }
   }
 
@@ -106,5 +106,9 @@
     z-index: 5;
 
     .product-main-slider__slide.is-hovered & { opacity: 0; }
+
+    @include screen(sm) {
+      left: 15px;
+    }
   }
 }

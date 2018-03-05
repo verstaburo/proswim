@@ -23,6 +23,7 @@
   border-radius: 2px;
   background-color: white;
   @include text;
+  font-family: $font-main;
 
   &_page {
     width: 100%;

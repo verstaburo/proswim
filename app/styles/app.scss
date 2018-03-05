@@ -20,6 +20,10 @@
   max-width: 100%;
   box-sizing: border-box;
 
+  @include screen(lg) {
+    width: 100%;
+  }
+
   @include screen(sm) {
     padding-left: 15px;
     padding-right: 15px;

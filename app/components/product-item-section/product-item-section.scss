@@ -27,6 +27,7 @@
   &__mainslider {
     position: relative;
     height: 528px;
+    overflow: hidden;
 
     @include screen(lg) {
       height: 306px;

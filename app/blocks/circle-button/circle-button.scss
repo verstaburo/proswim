@@ -19,7 +19,8 @@
     border: 1px solid $lightblue-color;
     box-sizing: border-box;
     border-radius: 50%;
-    transition: border-color $ease-main;
+    transition: border-color $ease-main,
+                background-color $ease-main;
 
     .circle-button:hover & {
       border: 1px solid $dark-border-color;

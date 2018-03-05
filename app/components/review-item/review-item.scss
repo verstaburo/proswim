@@ -11,6 +11,8 @@
 
   @include screen(sm) {
     padding: 20px 15px;
+    border-left: 0;
+    border-right: 0;
   }
 
   .review-item & {
@@ -47,7 +49,7 @@
   }
 
   &__content {
-    flex: 1 1 auto;
+    flex: 1;
   }
 
   &__head {
