@@ -1,26 +1,63 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Proswim - cart'
+  - var pageTitle = 'Proswim - Товары в корзине'
 
 block content
   +b.page
     .container
       +e.head
         +e.headcol._flexible
-          +breadcrumbs(['Главная', 'cart'])
-      +e.head._steps
-        +step-menu
-          +step-menu-item.is-active Содержимое <br>корзины
-          +step-menu-item Доставка <br>и оплата
-          +step-menu-item Подтверждение <br>заказа
+          +breadcrumbs(['Главная', 'Корзина'])
+      .grid.page__steps
+        +col({ xl: 9, lg: 12 })
+          +step-menu
+            +step-menu-item.is-active Содержимое <br>корзины
+            +step-menu-sep
+            +step-menu-item Доставка <br>и оплата
+            +step-menu-sep
+            +step-menu-item Подтверждение <br>заказа
       +e.head._subhead
         +e.headcol._flexible
-          +e.H1.heading cart
+          +e.H1.heading Товары в корзине
 
-      +grid.page__grid
-        +col({ xl: 9, lg: 12 }).page__content
-        +col(3).page__sidebar
+      +grid
+        +col({ xl: 9, lg: 12 })
+          +product-cart-items
+            +product-cart-item
+              +product-cart-item-col
+                +product-cart-item-image('content-img/cart/2401-copy-2.jpg', 'Очки для плавания Cobra Mirror')
+              +product-cart-item-col._flexible
+                +product-cart-item-textblock._heading
+                  +product-cart-item-text Очки для плавания Cobra Mirror
+                +product-cart-item-textblock
+                  +product-cart-item-text._grey._sm Размер:
+                  +product-cart-item-text._sm XS
+                +product-cart-item-textblock
+                  +product-cart-item-text._grey._sm Цвет:
+                  +product-cart-item-text._sm хамелеон
+                +product-cart-item-textblock
+                  +product-cart-item-text._grey._sm Артикул:
+                  +product-cart-item-text._sm 92354
+
+              //- static price
+              +product-cart-item-col
+                +product-cart-item-textblock
+                  +product-cart-item-text._md._blue 13 792 руб.
+
+              +product-cart-item-col
+                +inputbox
+                  +input-number
+
+              //- dynamic price
+              +product-cart-item-col
+                +product-cart-item-textblock
+                  +product-cart-item-text._md._blue 13 792 руб.
+
+              +product-cart-item-col
+                +product-cart-item-remove
+
+        +col({ xl: 3, lg: 12 })
 
 block popups
   +login-popup

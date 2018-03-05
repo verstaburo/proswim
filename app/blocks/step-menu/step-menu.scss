@@ -1,5 +1,7 @@
 .step-menu {
+  $b: &;
   display: flex;
+  justify-content: space-between;
   counter-reset: stepmenu;
 
   &__item {
@@ -7,11 +9,23 @@
   }
 
   &__link {
+    display: flex;
+    align-items: center;
     color: $semigrey-color;
     line-height: (20/14);
     font-weight: 500;
+    transition: color $ease-main;
+
+    #{$b}__item.is-active & {
+      color: $color-basic;
+
+      &::before {
+        background-color: $color-basic;
+      }
+    }
 
     &::before {
+      display: block;
       content: counter(stepmenu);
       width: 32px;
       height: 32px;
@@ -19,7 +33,18 @@
       counter-increment: stepmenu;
       @include heading-5;
       line-height: 32px;
-      text-align: left;
+      border-radius: 50%;
+      margin-right: 13px;
+      color: white;
+      transition: background-color $ease-main;
+      text-align: center;
     }
+  }
+
+  &__icon {
+    margin-top: 7px;
+    width: 13px;
+    height: 25px;
+    fill: $anotherlightgrey3-color;
   }
 }

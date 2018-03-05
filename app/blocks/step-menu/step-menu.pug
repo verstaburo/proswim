@@ -4,5 +4,9 @@ mixin step-menu
 
 mixin step-menu-item(href)
   +e.LI.item&attributes(attributes)
-    +e.A.link(href=href||'javascript:void(0)')
+    +e.P.link
       block
+
+mixin step-menu-sep
+  +e.LI.item&attributes(attributes)
+    +icon('Arrow icon (Navigation)').icon

@@ -28,3 +28,7 @@ mixin product-cart-item-textblock
 mixin product-cart-item-image(src, alt)
   +e.image&attributes(attributes)
     img(src=src alt=alt||'@@')
+
+mixin product-cart-item-remove
+  +e.remove&attributes(attributes).js-product-cart-item-remove
+    +icon('Delete icon').removeicon
