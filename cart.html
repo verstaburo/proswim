@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Proswim - cart</title>
+    <title>Proswim - Товары в корзине</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -2352,36 +2352,97 @@
                             </li>
                             <li class="breadcrumbs__item">
                                 <a class="link" href="#">
-                                    <span class="link__text">cart</span>
+                                    <span class="link__text">Корзина</span>
                                 </a>
                             </li>
                     </div>
                 </div>
             </div>
-            <div class="page__head page__head_steps">
-                <ul class="step-menu">
-                    <li class="step-menu__item is-active">
-                        <a class="step-menu__link" href="javascript:void(0)">Содержимое
-                            <br>корзины</a>
-                    </li>
-                    <li class="step-menu__item">
-                        <a class="step-menu__link" href="javascript:void(0)">Доставка
-                            <br>и оплата</a>
-                    </li>
-                    <li class="step-menu__item">
-                        <a class="step-menu__link" href="javascript:void(0)">Подтверждение
-                            <br>заказа</a>
-                    </li>
-                </ul>
+            <div class="grid page__steps">
+                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
+                    <ul class="step-menu">
+                        <li class="step-menu__item is-active">
+                            <p class="step-menu__link">Содержимое
+                                <br>корзины</p>
+                        </li>
+                        <li class="step-menu__item">
+                            <svg class="step-menu__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-navigation"></use></svg>
+                        </li>
+                        <li class="step-menu__item">
+                            <p class="step-menu__link">Доставка
+                                <br>и оплата</p>
+                        </li>
+                        <li class="step-menu__item">
+                            <svg class="step-menu__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-navigation"></use></svg>
+                        </li>
+                        <li class="step-menu__item">
+                            <p class="step-menu__link">Подтверждение
+                                <br>заказа</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="page__head page__head_subhead">
                 <div class="page__headcol page__headcol_flexible">
-                    <h1 class="page__heading">cart</h1>
+                    <h1 class="page__heading">Товары в корзине</h1>
                 </div>
             </div>
-            <div class="grid page__grid">
-                <div class="grid__col grid__col_xl_9 grid__col_lg_12 page__content"></div>
-                <div class="grid__col grid__col_xl_3 page__sidebar"></div>
+            <div class="grid">
+                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
+                    <div class="product-cart-items">
+                        <div class="product-cart-item">
+                            <div class="product-cart-item__grid">
+                                <div class="product-cart-item__col">
+                                    <div class="product-cart-item__image">
+                                        <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
+                                    </div>
+                                </div>
+                                <div class="product-cart-item__col product-cart-item__col_flexible">
+                                    <div class="product-cart-item__textblock product-cart-item__textblock_heading">
+                                        <span class="product-cart-item__text">Очки для плавания Cobra Mirror</span>
+                                    </div>
+                                    <div class="product-cart-item__textblock">
+                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
+                                        <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
+                                    </div>
+                                    <div class="product-cart-item__textblock">
+                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
+                                        <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
+                                    </div>
+                                    <div class="product-cart-item__textblock">
+                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
+                                        <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
+                                    </div>
+                                </div>
+                                <div class="product-cart-item__col">
+                                    <div class="product-cart-item__textblock">
+                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">13 792 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="product-cart-item__col">
+                                    <div class="inputbox">
+                                        <div class="input-numberbox">
+                                            <span class="input-numberbox__button js-numberbox-minus"></span>
+                                            <input class="input input-numberbox__input js-numberbox-input" />
+                                            <span class="input-numberbox__button js-numberbox-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-cart-item__col">
+                                    <div class="product-cart-item__textblock">
+                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">13 792 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="product-cart-item__col">
+                                    <div class="product-cart-item__remove js-product-cart-item-remove">
+                                        <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col_xl_3 grid__col_lg_12"></div>
             </div>
         </div>
     </div>
