@@ -22,8 +22,8 @@
     }
 
     .category-card_center_image & img {
-      margin: auto;
-      object-fit: none;
+      object-fit: contain;
+      font-family: 'object-fit: contain;';
       width: auto;
       height: auto;
       min-width: auto;

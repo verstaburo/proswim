@@ -16,6 +16,15 @@
   }
 
   &__searchbar {
+    margin-top: -3px;
     margin-bottom: 30px;
+
+    @include screen(lg) {
+      margin-top: 0;
+    }
+
+    @include screen(sm) {
+      margin-top: 8px;
+    }
   }
 }
