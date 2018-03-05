@@ -1,11 +1,10 @@
 // http://fancyapps.com/fancybox/3/
 import '@fancyapps/fancybox';
-
 import { freeze, unfreeze } from '../js-functions/freeze';
 
 const $ = window.$;
 
-export default function popups() {
+export default function () {
   $(document).on('click', '.js-popup-close', (e) => {
     e.preventDefault();
 
@@ -26,3 +25,14 @@ export default function popups() {
     });
   });
 }
+
+window.popups = {
+  show(id, settings) {
+    const initialSettings = {
+      afterLoad: freeze,
+      afterClose: unfreeze,
+    };
+
+    $.fancybox.open($(id), { initialSettings, ...settings });
+  },
+};

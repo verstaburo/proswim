@@ -1,0 +1,62 @@
+mixin item-added-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'item-added-popup' : '').item-added-popup
+    +popup-header('Товар добавлен в корзину')
+    +popup-content
+      +product-cart-items
+        +product-cart-item
+          +product-cart-item-col
+            +product-cart-item-image('content-img/cart/2401-copy-2.jpg', 'Очки для плавания Cobra Mirror')
+          +product-cart-item-col._flexible
+            +product-cart-item-textblock._heading
+              +product-cart-item-text Очки для плавания Cobra Mirror
+            +product-cart-item-textblock
+              +product-cart-item-text._grey._sm Размер:
+              +product-cart-item-text._sm XS
+            +product-cart-item-textblock
+              +product-cart-item-text._grey._sm Цвет:
+              +product-cart-item-text._sm хамелеон
+            +product-cart-item-textblock
+              +product-cart-item-text._grey._sm Артикул:
+              +product-cart-item-text._sm 92354
+
+          +product-cart-item-col
+            +product-cart-item-textblock._price
+              +product-cart-item-text._md 13 792 руб.
+            +product-cart-item-textblock._right
+              +product-cart-item-text 1шт.
+
+        +product-cart-item
+          +product-cart-item-col
+            +product-cart-item-image('content-img/cart/2401-copy-2.jpg', 'Очки для плавания Cobra Mirror')
+          +product-cart-item-col._flexible
+            +product-cart-item-textblock._heading
+              +product-cart-item-text Очки для плавания Cobra Mirror
+            +product-cart-item-textblock
+              +product-cart-item-text._grey._sm Размер:
+              +product-cart-item-text._sm XS
+            +product-cart-item-textblock
+              +product-cart-item-text._grey._sm Цвет:
+              +product-cart-item-text._sm хамелеон
+            +product-cart-item-textblock
+              +product-cart-item-text._grey._sm Артикул:
+              +product-cart-item-text._sm 92354
+
+          +product-cart-item-col
+            +product-cart-item-textblock._price
+              +product-cart-item-text._md 13 792 руб.
+            +product-cart-item-textblock._right
+              +product-cart-item-text 1шт.
+
+        +product-cart-items-total 21 790 руб.
+
+      +grid.item-added-popup__buttons
+        +col(6)
+          +button.BUTTON(type='button')._greyblue._block.js-popup-close  Вернуться к покупкам
+        +col(6)
+          +button(href='cart.html')._block Оформить заказ
+
+      +content-zone
+        h5 Оформите заказ сегодня и получите шанс выиграть сертификат на сумму 3 000 рублей!
+        p Участником розыграша автоматически становится каждый покупатель, совершивший заказ в интернет-магазине Proswim с 11.09.17 по 11.10.17.
+        p
+          +link(href="javascript:void(0)") Подробнее

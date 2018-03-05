@@ -11,7 +11,7 @@ mixin product-item-section()
             +product-nav-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror')._big.js-product-nav-slider
 
         +col({ xl: 5, sm: 12 }).product-item-section__sidebarcol
-          +e.FORM(method="POST" data-parsley-validate)
+          form.js-product-item-form(method="POST" data-parsley-validate)
             +e.price
               +e.SPAN.pricecurrent 13 792 руб.
               +e.SPAN.priceold 14 792,40 руб.

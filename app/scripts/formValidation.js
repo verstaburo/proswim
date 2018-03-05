@@ -1,6 +1,5 @@
-import Parsley from 'parsleyjs/dist/parsley';
-
-const $ = window.$;
+// import Parsley from 'parsleyjs/dist/parsley';
+const { $, Parsley } = window;
 
 const lang = $('html').attr('lang');
 const locale = lang === 'ru-RU' ? 'ru' : 'en';

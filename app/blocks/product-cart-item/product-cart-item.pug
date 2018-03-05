@@ -1,0 +1,30 @@
+mixin product-cart-items
+  +b.product-cart-items&attributes(attributes)
+    block
+
+mixin product-cart-items-total
+  +e.P.total&attributes(attributes)
+    +e.SPAN.text  Итого:
+    +e.SPAN.price
+      block
+
+mixin product-cart-item()
+  +b.product-cart-item&attributes(attributes)
+    +e.grid
+      block
+
+mixin product-cart-item-col
+  +e.col&attributes(attributes)
+    block
+
+mixin product-cart-item-text
+  +e.SPAN.text&attributes(attributes)
+    block
+
+mixin product-cart-item-textblock
+  +e.textblock&attributes(attributes)
+    block
+
+mixin product-cart-item-image(src, alt)
+  +e.image&attributes(attributes)
+    img(src=src alt=alt||'@@')
