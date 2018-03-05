@@ -147,11 +147,11 @@ block content
                   +sort-dropdown-button Любая цена
                   +sort-dropdown-body
                     +inputbox.sort-dropdown__range
-                      +range()(data-start='[930, 4393]', data-connect='true', data-min='930', data-max='6000')
+                      +range()(data-start='[930, 4393]', data-connect='true', data-min='930', data-max='6000').js-catalog-price-slider
 
                     +inputbox.sort-dropdown__inputs
-                      +input(value="930")._size_sm
-                      +input(value="4 393")._size_sm
+                      +input(value="930" data-handler="0").js-catalog-price-slider-input
+                      +input(value="4 393" data-handler="1").js-catalog-price-slider-input
 
                     +sort-dropdown-submit
 

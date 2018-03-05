@@ -61,7 +61,13 @@ $(document).on('transitionend', '.js-dropdown', function () {
  */
 $(document).on(BEFORE_SHOW, '.js-dropdown', () => {
   $('.js-dropdown.is-active').each(function () {
-    toggle($(this), false);
+    const self = $(this);
+
+    if ($(window).width() < window.globalOptions.sizes.lg && self.data('slide-mobile')) {
+      return;
+    }
+
+    toggle(self, false);
   });
 });
 
@@ -76,6 +82,12 @@ $(document).on('click', (e) => {
   }
 
   $('.js-dropdown.is-active').each(function () {
-    toggle($(this), false);
+    const self = $(this);
+
+    if ($(window).width() < window.globalOptions.sizes.lg && self.data('slide-mobile')) {
+      return;
+    }
+
+    toggle(self, false);
   });
 });

@@ -27,8 +27,8 @@
     transform: translateY(-50%);
     left: 0;
     display: inline-block;
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background-color: $color-main;
     margin-top: -1px;
@@ -39,21 +39,19 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate3d(-50%, -50%, 0);
       width: 9px;
-      height: 1px;
+      height: 2px;
       background-color: white;
       transition: transform $ease-main;
     }
 
-    &::after,
-    .vertical-menu_accordion.is-closing &::after {
-      transform: translate(-50%, -50%) rotate(90deg);
+    &::after {
+      transform: translate3d(-50%, -50%, 0) rotate(90deg);
     }
 
-    .vertical-menu_accordion.is-active &::after,
-    .vertical-menu_accordion.is-opening &::after {
-      transform: translate(-50%, -50%);
+    &.is-active::after {
+      transform: translate3d(-50%, -50%, 0) rotate(0);
     }
   }
 

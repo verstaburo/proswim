@@ -45,11 +45,14 @@
     margin: -10px 0 0 -14px;
     font-size: 0;
 
-    &_flexible { flex: 1 1 auto; }
+    &_flexible { flex: 1; }
 
     &:not(:first-child) {
+      margin-left: 0;
+
       @include screen(lg) {
         margin-top: 0;
+        margin-left: -14px;
       }
     }
   }
