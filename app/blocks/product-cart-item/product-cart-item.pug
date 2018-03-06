@@ -8,10 +8,13 @@ mixin product-cart-items-total
     +e.SPAN.price
       block
 
-mixin product-cart-item()
+mixin product-cart-item
   +b.product-cart-item&attributes(attributes)
-    +e.grid
-      block
+    block
+
+mixin product-cart-item-grid
+  +e.grid&attributes(attributes)
+    block
 
 mixin product-cart-item-col
   +e.col&attributes(attributes)

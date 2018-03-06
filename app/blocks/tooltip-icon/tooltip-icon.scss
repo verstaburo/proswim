@@ -21,4 +21,9 @@
   }
 
   .list & { margin-left: 3px; }
+
+  &_blue {
+    border-color: $lightblue-color;
+    color: $darkblue-color;
+  }
 }

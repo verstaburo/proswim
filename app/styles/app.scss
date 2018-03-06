@@ -38,6 +38,10 @@
   .hide-lg { display: none; }
 }
 
+@include screen(lg, min) {
+  .hide-lg-min { display: none; }
+}
+
 @include screen(sm) {
   .hide-sm { display: none; }
 }
