@@ -57,6 +57,10 @@
       &:not(:first-child) {
         padding-left: 20px;
       }
+
+      .page__steps + .page__head_subhead & {
+        padding-bottom: 0;
+      }
     }
   }
 
@@ -119,5 +123,9 @@
   &__steps {
     margin-top: -3px;
     margin-bottom: 7px;
+
+    @include screen(sm) {
+      display: none;
+    }
   }
 }
