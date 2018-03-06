@@ -38,6 +38,19 @@
     }
   }
 
+  &_return {
+    .link__text {
+      color: $darkgrey-color;
+    }
+
+    .link__icon { fill: $middlegrey2-color;; }
+
+    &:hover {
+      .link__text { color: $darkblue-color; }
+      .link__icon { fill: $darkblue-color; }
+    }
+  }
+
   &_medium &__text {
     @include link-medium;
   }
@@ -67,6 +80,7 @@
     padding-left: 25px;
 
     &.link_print { padding-left: 20px; }
+    &.link_return { padding-left: 23px; }
 
     .link__icon {
       position: absolute;
@@ -88,6 +102,12 @@
       margin-top: 2px;
       width: 15px;
       height: 15px;
+    }
+
+    .link_return & {
+      margin-top: 1px;
+      width: 14px;
+      height: 14px;
     }
   }
 

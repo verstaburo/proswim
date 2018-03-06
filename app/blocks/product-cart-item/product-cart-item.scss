@@ -14,7 +14,7 @@
     @include screen(sm) {
       border-left: 0;
       border-right: 0;
-      padding: 16px 15px;
+      padding: 16px 15px 21px;
     }
   }
 
@@ -24,6 +24,7 @@
 
     + .product-cart-item__grid {
       margin-left: 0;
+      width: 100%;
 
       @include screen(sm) {
         flex-wrap: wrap;
@@ -86,6 +87,7 @@
 
       @include screen(lg) {
         order: 3;
+        min-width: 67px;
 
         .product-cart-item__text {
           font-size: 14px;
@@ -97,12 +99,33 @@
       @include screen(sm) {
         margin-right: 9px;
         margin-top: 1px;
+        min-width: auto;
       }
     }
 
     &_heading {
       margin-top: 32px;
       order: 2;
+
+      @include screen(lg) {
+        margin-left: 25px;
+
+        .product-cart-item__text {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: (24/18);
+        }
+      }
+
+      @include screen(sm) {
+        margin-top: 11px;
+        margin-left: 0;
+
+        .product-cart-item__text {
+          font-size: 16px;
+          line-height: (24/16);
+        }
+      }
     }
 
     &_count {
@@ -132,10 +155,12 @@
       order: 4;
       min-width: 97px;
       text-align: center;
+      padding-left: 15px;
 
       @include screen(lg) {
         flex: 1;
         text-align: right;
+        min-width: auto;
       }
 
       @include screen(sm) {
@@ -218,6 +243,11 @@
     border-radius: 50%;
     cursor: pointer;
     box-sizing: border-box;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
 
     @include screen(lg) {
       right: 19px;
@@ -232,6 +262,7 @@
       @include center-image;
       width: 10px;
       height: 10px;
+      fill: $midgreyblue34-color;
     }
   }
 
@@ -242,6 +273,10 @@
     width: 30px;
     height: 45px;
     background-color: $color-main;
+
+    @include screen(lg) {
+      right: 19px;
+    }
 
     &::after {
       position: absolute;
