@@ -38,6 +38,7 @@ import '../components/products-section/products-section';
 import '../components/articles-section/articles-section';
 import '../blocks/section/section';
 import '../blocks/review-form/review-form';
+import '../blocks/total/total';
 import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 

@@ -2,6 +2,31 @@
   display: block;
   padding: 20px;
   background-color: $lightgrey-color;
+  width: 280px;
+  box-sizing: border-box;
+
+  @include screen(lg) {
+    width: 100%;
+  }
+
+  &.is-fixed {
+    position: fixed;
+    top: 20px;
+    transform: translate3d(0, 0, 0);
+
+    @include screen(lg) {
+      position: static;
+    }
+  }
+
+  &.is-attached {
+    position: absolute;
+    bottom: 0;
+
+    @include screen(lg) {
+      position: static;
+    }
+  }
 
   @include screen(sm) {
     padding: 24px;

@@ -26,6 +26,7 @@ $(document).on('click', '.js-product-cart-item-remove', function (e) {
     .parents('.product-cart-item')
     .fadeOut(window.globalOptions.animationDuration, function () {
       $(this).remove();
+      updateTotal();
     });
 });
 
