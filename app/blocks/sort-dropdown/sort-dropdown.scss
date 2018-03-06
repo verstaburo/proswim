@@ -2,9 +2,13 @@
   $b: &;
   display: block;
   position: relative;
+  height: 47px;
+  margin-bottom: -15px;
 
   @include screen(lg) {
     border-bottom: 1px solid $color-border;
+    height: auto;
+    margin-bottom: 0;
   }
 
   &__button {
@@ -59,8 +63,7 @@
     }
 
     &.is-active {
-      height: 47px;
-      margin-bottom: -17px;
+      height: 100%;
       border-bottom: 0;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -146,7 +149,7 @@
     box-shadow: 0 16px 20px rgba(91, 95, 99, 0.46);
     border-radius: 0 0 2px 2px;
     border: 1px solid $color-border;
-    margin-top: 17px;
+    margin-top: 0;
 
     @include screen(lg) {
       display: none;

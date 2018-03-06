@@ -3,6 +3,10 @@
   padding: 20px;
   background-color: $lightgrey-color;
 
+  @include screen(sm) {
+    padding: 24px;
+  }
+
   &__items {
 
   }
