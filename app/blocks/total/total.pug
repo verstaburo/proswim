@@ -1,12 +1,12 @@
 mixin total()
-  +b.total&attributes(attributes)
+  +b.total&attributes(attributes).js-total
     +e.UL.items
       +e.LI.item
         +e.SPAN.text Сумма:
-        +e.B.price 21 790 руб.
+        +e.B.price #[SPAN.js-total-amount 21 790] руб.
       +e.LI.item
         +e.SPAN.text Итого:
-        +e.B.price 21 790 руб.
+        +e.B.price #[SPAN.js-total-amount 21 790] руб.
 
     +button.BUTTON(type="button")._size_big._block.__button Оформить заказ
 

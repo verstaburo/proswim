@@ -81,14 +81,16 @@ export function numberinput() {
     }
 
     if (minus) {
-      input.val(val > 0 ? (val -= 1) : 0);
+      input.val(val > 1 ? (val -= 1) : 1);
     } else {
       input.val(val += 1);
     }
+
+    input.trigger('change');
   });
 
   $(document).on('keyup change', '.js-numberbox-input', function () {
     this.value = this.value.replace(/[^\d]/, '');
-    if ($(this).val() < 0) $(this).val(0);
+    if ($(this).val() < 1) $(this).val(1);
   });
 }

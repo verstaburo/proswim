@@ -43,17 +43,17 @@ block content
                     +product-cart-item-text._grey._sm Артикул:
                     +product-cart-item-text._sm 92354
 
-                +product-cart-item-col._price
+                +product-cart-item-col._price.is-empty
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue 13 792 #[SPAN.hide-lg руб.]
+                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-price 13 792] #[SPAN.hide-lg руб.]#[SPAN.hide-lg-min x] #[SPAN.hide-lg-min.js-product-cart-item-count 1]
 
                 +product-cart-item-col._count
                   +inputbox
-                    +input-number(value="1")
+                    +input-number(value="1").js-product-cart-item-input
 
                 +product-cart-item-col._total
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue 13 792 руб.
+                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-amount 13 792] руб.
 
             +product-cart-item._card
               +product-cart-item-remove
@@ -76,15 +76,15 @@ block content
 
                 +product-cart-item-col._price
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue 3 999 #[SPAN.hide-lg руб.]#[SPAN.hide-lg-min x 2]
+                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-price 3 999] #[SPAN.hide-lg руб.]#[SPAN.hide-lg-min x] #[SPAN.hide-lg-min.js-product-cart-item-count 2]
 
                 +product-cart-item-col._count
                   +inputbox
-                    +input-number(value="2")
+                    +input-number(value="2").js-product-cart-item-input
 
                 +product-cart-item-col._total
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue 7 998 руб.
+                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-amount 7 998] руб.
 
             +product-cart-item._card
               +product-cart-item-gift

@@ -5,3 +5,5 @@ $(document).on('click', '.js-print', (e) => {
 
   window.print();
 });
+
+window.numberWithSpaces = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');

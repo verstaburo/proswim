@@ -47,6 +47,8 @@
 
     @include screen(lg) {
       padding-left: 20px;
+
+      &.is-empty { display: none; }
     }
 
     @include screen(sm) {
@@ -156,9 +158,9 @@
       min-width: 97px;
       text-align: center;
       padding-left: 15px;
+      flex: 1;
 
       @include screen(lg) {
-        flex: 1;
         text-align: right;
         min-width: auto;
       }
