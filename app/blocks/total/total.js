@@ -11,6 +11,10 @@ $(window).on('load scroll', () => {
   const blockHeight = block.outerHeight();
   const parentHeight = block.parent().height();
 
+  if (blockHeight + 10 >= parentHeight) {
+    return;
+  }
+
   const topBreakpoint = $(window).scrollTop() - parentOffset >= 0;
   const bottomBreakpoint = $(window).scrollTop() >= (parentOffset + parentHeight) - blockHeight;
 

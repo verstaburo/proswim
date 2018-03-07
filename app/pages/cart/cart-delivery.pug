@@ -19,10 +19,149 @@ block content
             +step-menu-item Подтверждение <br>заказа
       +e.head._subhead
         +e.headcol._flexible
-          +e.H1.heading Товары в корзине
+          +e.H1.heading Доставка и оплата
 
       +grid.cart
         +col({ xl: 9, lg: 12 })
+          form(action="/" method="POST" data-parsley-validate)
+            +fieldsets
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Контактная информация
+                +fieldset-body
+                  +grid
+                    +col(12)
+                      +inputbox('Фамилия, имя *')
+                        +input(name="name" placeholder="Фамилия, имя" required).input_size_md
+                    +col(6)
+                      +inputbox('Телефон *')
+                        +input(name="phone" placeholder="Телефон" required data-type="tel").input_size_md
+                    +col(6)
+                      +inputbox('Email *')
+                        +input(name="email" type="email" placeholder="Email" required).input_size_md
+
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Способ доставки
+                  +fieldset-head-col
+                    +link._grey Как работать с калькулятором
+                    +tooltip-icon
+                +fieldset-body
+                  +grid
+                    +col(12)
+                      +inputbox('Город доставки:')
+                        +select
+                          option(value="1") 1
+                          option(value="1") 1
+                          option(value="1") 1
+                          option(value="1") 1
+                          option(value="1") 1
+                          option(value="1") 1
+                      +inputbox
+                        +checkbox('no-city', 1) Моего города нет в списке
+                    +col(12)
+                      +inputbox('Служба доставки:')
+                        +grid
+                            +col(4)
+                              +checkbox('delivery-service', 'courier', true, null, 'radio')._size_xl Курьерская доставка
+                            +col(4)
+                              +checkbox('delivery-service', 'pickup', true, null, 'radio')._size_xl Пункты самовывоза #[+tooltip-icon]
+                            +col(4)
+                              +checkbox('delivery-service', 'pochta-rf', true, null, 'radio')._size_xl Почтой России до отделения
+
+                    +col(12)
+                      +table
+                        tr
+                          td
+                            +radio('delivery-company', 'grastin', true) Grastin copy
+                          td
+                            span Курьерская доставка
+                            +tooltip-icon
+                          td
+                            span 350 руб.
+                          td
+                            span 1-2 д.
+                        tr
+                          td
+                            +radio('delivery-company', 'boxberry') Grastin copy
+                          td
+                            span Курьерская доставка
+                            +tooltip-icon
+                          td
+                            span 110 руб.
+                          td
+                            span 1-2 д.
+                        tr
+                          td
+                            +radio('delivery-company', 'dpd') Grastin copy
+                          td
+                            span Прдоплаченный заказ
+                            +tooltip-icon
+                          td
+                            span 190 руб.
+                          td
+                            span 2-3 д.
+                        tr
+                          td
+                            +radio('delivery-company', 'dpd-cod') Grastin copy
+                          td
+                            span Наложенный платеж
+                            +tooltip-icon
+                          td
+                            span 190 руб.
+                          td
+                            span 2-3 д.
+
+                      +content-zone
+                        p Сроки доставки указаны в рабочих днях, не считая дня оформления заказа.
+
+                    +col(6)
+                      +inputbox('Улица:')
+                        +input(name="ulica" type="text" placeholder="Улица").input_size_md
+                    +col(6)
+                      +inputbox('Дом:')
+                        +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                    +col(6)
+                      +inputbox('Корпус:')
+                        +input(name="korpus" type="text" placeholder="Корпус").input_size_md
+                    +col(6)
+                      +inputbox('Квартира:')
+                        +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                    +col(6)
+                      +inputbox('Дата доставки:')
+                        +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
+                    +col(6)
+                      +inputbox('Время доставки:')
+                        +input(name="vremya-dostavki" type="text" placeholder="Выберите время доставки").input_size_md
+                    +col(12)
+                      +inputbox('Время доставки:')
+                        +textarea(placeholder="Комментарий")
+
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Способ оплаты
+                +fieldset-body
+                  +inputbox
+                    +radio('payment-method', 1, true) Оплата наличными
+                  +inputbox
+                    +radio('payment-method', 2, false) Онлайн оплата картой #[+tooltip-icon]
+                  +inputbox
+                    +radio('payment-method', 3, false) Оплата по счету через любое отделение банка
+
+                  +content-zone
+                    p Для оформления заказа нажмите кнопку "Оформить заказ".
+                    p Наш менеджер свяжется с Вами и Вы сможете оплатить заказ через Личный кабинет на сайте не входя из дома. В течение 10 минут мы получим от Вас оплату и займемся сборкой заказа.
+                    p Платежи производятся напрямую через защищенное соединение компанией Сбербанк. Компания Proswim.ru не имеет доступа к вашим данным.
+
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Товары в корзине
+                +fieldset-body
+
 
         +col({ xl: 3, lg: 12 })
           +total-delivery

@@ -1,0 +1,40 @@
+.fieldset {
+  display: block;
+  box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
+  border: 1px solid $color-border;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  .fieldsets & { margin-top: 20px; }
+
+  &__head {
+    display: flex;
+    padding: 11px 20px;
+    background-color: $ihavenoideahowtocallthat-color;
+
+    &col {
+      &_flexible { flex: 1; }
+
+      &:not(:first-child) {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: (32/18);
+    letter-spacing: 0.01em;
+  }
+
+  &__body {
+    padding: 20px;
+  }
+}
+
+.fieldsets {
+  display: block;
+  margin-top: -20px;
+}

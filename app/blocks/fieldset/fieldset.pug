@@ -1,0 +1,23 @@
+mixin fieldsets()
+  +b.fieldsets&attributes(attributes)
+    block
+
+mixin fieldset()
+  +b.FIELDSET.fieldset&attributes(attributes)
+    block
+
+mixin fieldset-head
+  +e.head&attributes(attributes)
+    block
+
+mixin fieldset-head-col
+  +e.headcol&attributes(attributes)
+    block
+
+mixin fieldset-heading
+  +e.LEGEND.heading&attributes(attributes)
+    block
+
+mixin fieldset-body
+  +e.body&attributes(attributes)
+    block
