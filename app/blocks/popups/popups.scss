@@ -25,6 +25,13 @@
   @include text;
   font-family: $font-main;
 
+  @include screen(sm) {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
   &_page {
     width: 100%;
   }
@@ -34,9 +41,15 @@
     border: 1px solid $color-border;
     background-color: $lightgrey-color;
 
+    @include screen(sm) {
+      padding: 23px 60px 23px 36px;
+    }
+
     .popup_page & {
       border-left: 0;
       border-right: 0;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
@@ -51,10 +64,22 @@
     right: 0;
     transform: translate(100%, -100%);
     font-size: 0;
+
+    @include screen(sm) {
+      position: absolute;
+      top: 24px;
+      right: 15px;
+      transform: none;
+    }
   }
 
   &__content {
     padding: 30px 40px 40px;
+
+    @include screen(sm) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
     .popup_page & {
       width: 290px;

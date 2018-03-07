@@ -10,4 +10,26 @@
   .content-zone p:not(:last-child) {
     margin-bottom: 0;
   }
+
+  @include screen(sm) {
+    .product-cart-item {
+      padding: 16px 0 11px;
+    }
+
+    .product-cart-item__grid + .product-cart-item__grid {
+      display: block;
+    }
+
+    .product-cart-item__textblock_price {
+      margin-top: 10px;
+    }
+
+    .product-cart-item__textblock_right {
+      text-align: left;
+    }
+
+    .product-cart-items__price {
+      margin-left: 20px;
+    }
+  }
 }
