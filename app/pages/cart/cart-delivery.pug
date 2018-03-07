@@ -31,13 +31,14 @@ block content
                     +fieldset-heading Контактная информация
                 +fieldset-body
                   +grid
-                    +col(12)
+                    +col(8)
                       +inputbox('Фамилия, имя *')
                         +input(name="name" placeholder="Фамилия, имя" required).input_size_md
-                    +col(6)
+                  +grid
+                    +col(4)
                       +inputbox('Телефон *')
                         +input(name="phone" placeholder="Телефон" required data-type="tel").input_size_md
-                    +col(6)
+                    +col(4)
                       +inputbox('Email *')
                         +input(name="email" type="email" placeholder="Email" required).input_size_md
 
@@ -50,7 +51,7 @@ block content
                     +tooltip-icon
                 +fieldset-body
                   +grid
-                    +col(12)
+                    +col(8)
                       +inputbox('Город доставки:')
                         +select
                           option(value="1") 1
@@ -70,8 +71,7 @@ block content
                               +checkbox('delivery-service', 'pickup', true, null, 'radio')._size_xl Пункты самовывоза #[+tooltip-icon]
                             +col(4)
                               +checkbox('delivery-service', 'pochta-rf', true, null, 'radio')._size_xl Почтой России до отделения
-
-                    +col(12)
+                    +col(8)
                       +table
                         tr
                           td
@@ -117,25 +117,29 @@ block content
                       +content-zone
                         p Сроки доставки указаны в рабочих днях, не считая дня оформления заказа.
 
-                    +col(6)
+                  +grid
+                    +col(4)
                       +inputbox('Улица:')
                         +input(name="ulica" type="text" placeholder="Улица").input_size_md
-                    +col(6)
+                    +col(4)
                       +inputbox('Дом:')
                         +input(name="dom" type="text" placeholder="Квартира").input_size_md
-                    +col(6)
+                  +grid
+                    +col(4)
                       +inputbox('Корпус:')
                         +input(name="korpus" type="text" placeholder="Корпус").input_size_md
-                    +col(6)
+                    +col(4)
                       +inputbox('Квартира:')
                         +input(name="dom" type="text" placeholder="Квартира").input_size_md
-                    +col(6)
+                  +grid
+                    +col(4)
                       +inputbox('Дата доставки:')
                         +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
-                    +col(6)
+                    +col(4)
                       +inputbox('Время доставки:')
                         +input(name="vremya-dostavki" type="text" placeholder="Выберите время доставки").input_size_md
-                    +col(12)
+                  +grid
+                    +col(8)
                       +inputbox('Время доставки:')
                         +textarea(placeholder="Комментарий")
 
