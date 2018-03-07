@@ -74,4 +74,21 @@
       margin-left: 6px;
     }
   }
+
+  &__subscribe {
+    margin-top: 19px;
+  }
+
+  &__accept {
+    display: block;
+    margin-top: 21px;
+    @include text-small;
+    color: $darkengrey-color;
+    line-height: (21/13);
+
+    .link__text {
+      @include text-small;
+      line-height: (21/13);
+    }
+  }
 }

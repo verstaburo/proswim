@@ -30,10 +30,14 @@
       border-color: $greyblue4-color;
     }
 
-    .link__icon { fill: $darkengrey-color; }
+    .link__icon {fill: $darkengrey-color; }
 
     &:hover {
-      .link__text { color: $darkblue-color; }
+      .link__text {
+        color: $darkblue-color;
+        border-color: $darkblue-color;
+      }
+
       .link__icon { fill: $darkblue-color; }
     }
   }
