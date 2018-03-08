@@ -57,6 +57,10 @@
   padding-bottom: 13px;
   min-height: 88px;
   resize: vertical;
+
+  &_big {
+    min-height: 142px;
+  }
 }
 
 .checkradio {
@@ -106,7 +110,7 @@
 
     .checkradio_size_xl &:checked {
       & + .checkradio__box {
-        background-color: transparent;
+        background-color: $ihavenoideahowtocallthat-color;
         border-color: $color-main;
         box-shadow: inset 0 0 0 1px $color-main;
 
@@ -131,12 +135,17 @@
                 background-color $ease-main,
                 box-shadow $ease-main;
 
+    .checkradio_size_xl:hover .checkradio__input:not(:checked) + & {
+      background-color: $color-border;
+    }
+
     .checkradio_size_xl & {
       width: 100%;
       height: 100%;
       box-sizing: border-box;
       top: 0;
       left: 0;
+      background-color: $ihavenoideahowtocallthat-color;
 
       &::after {
         content: '';
@@ -215,6 +224,11 @@
     display: inline-block;
     @include text-small;
     line-height: (21/13);
+
+    svg,img {
+      max-height: 20px;
+      fill: $color-basic;
+    }
 
     .checkradio_radio & {
       @include text;
@@ -338,6 +352,11 @@
   -webkit-appearance: none;
 
   @extend .input;
+  height: 48px;
+  height: 48px;
+  border-radius: 2px;
+  border: 1px solid $color-border;
+  background-color: #ffffff;
 }
 
 .choices {
@@ -357,35 +376,73 @@
 
   &[data-type*='select-one'] {
 
-    .choices__inner { padding-bottom: 0; }
-
-    &::after {
-      border-width: 5px 5px 0;
-      top: 0;
-      bottom: 0;
-      right: 10px;
-      margin: auto;
-      transform: rotate(0) translate3d(0, 0, 0);
-      transition: transform $ease-main;
-      border-color: #333 transparent transparent;
+    .choices__inner {
+      padding: 0 48px 0 0;
+      border: 0;
     }
 
-    &.is-open::after {
-      transform: rotate(180deg) translate3d(0, 0, 0);
-      border-color: #333 transparent transparent;
-      margin: auto;
+    &::after {
+      display: none;
+    }
+
+    .choices__input {
+      @extend .input;
+      box-sizing: border-box;
+      width: calc(100% - 30px);
+      margin: 20px 15px 10px;
+    }
+  }
+
+  &__toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 0 2px 2px 0;
+    border: 1px solid $color-border;
+    background-color: $ihavenoideahowtocallthat-color;
+    box-sizing: border-box;
+
+    &icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: $color-basic;
+      transition: fill $ease-main,
+                  transform $ease-main;
+
+      .is-open &,
+      .choices__inner:hover & { fill: $darkblue-color; }
+
+      &_arrow {
+        width: 6px;
+        height: 12px;
+        transform: translate(-50%, -50%) rotate(90deg);
+
+        .is-open & { transform: translate(-50%, -50%) rotate(-90deg); }
+      }
+
+      &_clock {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 
   &__list {
     border-color: $color-border;
+    z-index: 1000;
 
     &--single {
       display: table;
       box-sizing: border-box;
       height: 100%;
       padding: 0;
-      padding-right: 20px;
+      padding: 0 15px;
+      border: 1px solid $color-border;
+      border-right: 0;
 
       .choices__item {
         display: table-cell;
@@ -395,16 +452,50 @@
 
     &--dropdown {
       box-sizing: border-box;
+      box-shadow: 0 16px 20px rgba(145, 152, 158, 0.6);
+      border-radius: 2px;
+      border: 1px solid $color-border;
+      background-color: white;
+      margin-top: 13px;
+      overflow: visible;
+
+      .choices__list {
+        padding: 10px 0;
+      }
+
+      &::before {
+        position: absolute;
+        top: -9px;
+        right: 15px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent $color-border transparent;
+      }
+
+      &::after {
+        position: absolute;
+        top: -8px;
+        right: 16px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 9px 9px;
+        border-color: transparent transparent white transparent;
+      }
 
       .choices__item {
-        padding: 10px;
+        padding: 5px 15px;
 
         &--selectable {
-          transition: opacity $ease-main;
+          transition: opacity $ease-main,
+                      background-color $ease-main;
 
           &.is-highlighted {
-            opacity: .5;
-            background-color: white;
+            background-color: $greyblue2-color;
           }
         }
       }

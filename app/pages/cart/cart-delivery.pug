@@ -53,13 +53,28 @@ block content
                   +grid
                     +col(8)
                       +inputbox('Город доставки:')
-                        +select
-                          option(value="1") 1
-                          option(value="1") 1
-                          option(value="1") 1
-                          option(value="1") 1
-                          option(value="1") 1
-                          option(value="1") 1
+                        +select(data-search-enabled="true")
+                          option(value="1") Абакан (Хакасия республика)
+                          option(value="2") Абан (Красноярский край)
+                          option(value="3") Абатский (Тюменская область)
+                          option(value="4") Абрамовский маяк (Архангельская область)
+                          option(value="5") Агата (Эвенкийский автономный округ)
+                          option(value="6") Агаякан (Саха(Якутия) республика)
+                          option(value="7") Агзу (риморский край)
+                          option(value="8") Агинское (Красноярский край)
+                          option(value="9") Агинское (Агинский Бурятский автономный округ)
+                          option(value="10") БАйхал (Саха(Якутия) республика)
+                          option(value="11") БАбакан (Хакасия республика)
+                          option(value="12") БАбан (Красноярский край)
+                          option(value="13") БАбатский (Тюменская область)
+                          option(value="14") БАбрамовский маяк (Архангельская область)
+                          option(value="15") БАгата (Эвенкийский автономный округ)
+                          option(value="16") БАгаякан (Саха(Якутия) республика)
+                          option(value="17") БАгзу (риморский край)
+                          option(value="18") БАгинское (Красноярский край)
+                          option(value="19") БАгинское (Агинский Бурятский автономный округ)
+                          option(value="20") БАйхал (Саха(Якутия) республика)
+
                       +inputbox
                         +checkbox('no-city', 1) Моего города нет в списке
                     +col(12)
@@ -68,14 +83,15 @@ block content
                             +col(4)
                               +checkbox('delivery-service', 'courier', true, null, 'radio')._size_xl Курьерская доставка
                             +col(4)
-                              +checkbox('delivery-service', 'pickup', true, null, 'radio')._size_xl Пункты самовывоза #[+tooltip-icon]
+                              +checkbox('delivery-service', 'pickup', false, null, 'radio')._size_xl Пункты самовывоза #[+tooltip-icon]
                             +col(4)
-                              +checkbox('delivery-service', 'pochta-rf', true, null, 'radio')._size_xl Почтой России до отделения
+                              +checkbox('delivery-service', 'pochta-rf', false, null, 'radio')._size_xl Почтой России до отделения
                     +col(8)
                       +table
                         tr
                           td
-                            +radio('delivery-company', 'grastin', true) Grastin copy
+                            +radio('delivery-company', 'grastin', true)
+                              +icon('Grastin', true).icon.icon_grastin
                           td
                             span Курьерская доставка
                             +tooltip-icon
@@ -85,7 +101,8 @@ block content
                             span 1-2 д.
                         tr
                           td
-                            +radio('delivery-company', 'boxberry') Grastin copy
+                            +radio('delivery-company', 'boxberry')
+                              +icon('Boxberry', true).icon.icon_boxberry
                           td
                             span Курьерская доставка
                             +tooltip-icon
@@ -95,7 +112,8 @@ block content
                             span 1-2 д.
                         tr
                           td
-                            +radio('delivery-company', 'dpd') Grastin copy
+                            +radio('delivery-company', 'dpd')
+                              +icon('dpd', true).icon.icon_dpd
                           td
                             span Прдоплаченный заказ
                             +tooltip-icon
@@ -105,7 +123,8 @@ block content
                             span 2-3 д.
                         tr
                           td
-                            +radio('delivery-company', 'dpd-cod') Grastin copy
+                            +radio('delivery-company', 'dpd-cod')
+                              +icon('dpd', true).icon.icon_dpd
                           td
                             span Наложенный платеж
                             +tooltip-icon
@@ -137,11 +156,17 @@ block content
                         +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
                     +col(4)
                       +inputbox('Время доставки:')
-                        +input(name="vremya-dostavki" type="text" placeholder="Выберите время доставки").input_size_md
+                        +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
+                          option(value="1") С 16:00 до 18:00
+                          option(value="2") С 16:00 до 18:00
+                          option(value="3") С 16:00 до 18:00
+                          option(value="4") С 16:00 до 18:00
+                          option(value="5") С 16:00 до 18:00
+                          option(value="6") С 16:00 до 18:00
                   +grid
                     +col(8)
                       +inputbox('Время доставки:')
-                        +textarea(placeholder="Комментарий")
+                        +textarea(placeholder="Комментарий").textarea_big
 
               +fieldset
                 +fieldset-head
@@ -165,7 +190,6 @@ block content
                   +fieldset-head-col._flexible
                     +fieldset-heading Товары в корзине
                 +fieldset-body
-
 
         +col({ xl: 3, lg: 12 })
           +total-delivery

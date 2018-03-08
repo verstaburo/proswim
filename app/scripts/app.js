@@ -47,12 +47,12 @@ const $ = window.$;
 $(() => {
   svg4everybody();
   objectFitImages();
+  scrollbar();
   anchor();
   freezebuttons();
   selects();
   sliders();
   popups();
-  scrollbar();
   slider();
   tooltips();
   tabs();

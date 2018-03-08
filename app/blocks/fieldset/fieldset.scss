@@ -33,6 +33,32 @@
   &__body {
     padding: 20px;
   }
+
+  .inputbox + .inputbox {
+    margin-top: 18px;
+  }
+
+  .content-zone {
+    margin-top: 18px;
+    color: $darkengrey-color;
+
+    p, span, a, b {
+      @include text-small;
+      line-height: (21/13);
+    }
+  }
+
+  .checkradio_radio .checkradio__content {
+    padding-top: 0;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.57143;
+    letter-spacing: 0.01em;
+  }
 }
 
 .fieldsets {

@@ -10,6 +10,8 @@ import 'air-datepicker';
 // https://github.com/RobinHerbots/Inputmask
 import Inputmask from 'inputmask';
 
+import $$ from 'jquery';
+
 const $ = window.$;
 
 export function selects() {
@@ -28,6 +30,23 @@ export function selects() {
     const choices = new Choices(self[0], {
       searchEnabled,
       itemSelectText: '',
+      callbackOnInit() {
+        const icon = self.data('toggler-icon');
+        const iconModifier = self.data('toggler-icon-mod');
+
+        let modClass = '';
+
+        if (iconModifier) {
+          modClass = `choices__togglericon_${iconModifier}`;
+        }
+
+        self.parent().append(`<div class="choices__toggler">
+          <svg class="choices__togglericon ${modClass}"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icon.svg#icon_${icon}"></use></svg>
+        </div>`);
+
+        // custom scroll
+        $$(self.parents('.choices').find('.choices__list--dropdown .choices__list')[0]).scrollbar();
+      },
     });
   });
 
