@@ -1,0 +1,9 @@
+mixin checkitem(text)
+  +b.checkitem&attributes(attributes)
+    +icon('checked').icon
+    +e.SPAN.text=text
+    block
+
+mixin checkitems()
+  +b.checkitems&attributes(attributes)
+    block

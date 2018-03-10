@@ -18,7 +18,7 @@ export default function tabs() {
     $(document).find('[data-tab-group="' + tabGroup + '"]').hide().removeClass('is-active');
 
     tab.show(0, function () {
-      $(this).addClass('is-active');
+      $(this).addClass('is-active').trigger('TAB_SHOWN');
     });
   });
 }

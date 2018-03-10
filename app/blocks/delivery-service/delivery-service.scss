@@ -1,0 +1,50 @@
+.delivery-service {
+  display: flex;
+  width: 100%;
+  padding: 9px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+
+    & + & {
+      margin-left: 0;
+      flex: 1;
+    }
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+    &_company {
+      width: 165px;
+    }
+
+    &_title {
+      flex: 1;
+    }
+
+    &_price {
+      width: 95px;
+      justify-content: center;
+    }
+
+    &_time {
+      width: 95px;
+      justify-content: flex-end;
+      padding-right: 14px;
+    }
+  }
+
+  &__text {
+
+  }
+}

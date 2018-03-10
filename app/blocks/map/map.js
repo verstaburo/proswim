@@ -18,8 +18,21 @@ export default function maps() {
     accessToken: 'pk.eyJ1IjoidGhldmVydmVyeTEiLCJhIjoiY2lzZXdzaXZ4MDBjaTJudm93dDI4MGVrMCJ9.Z8KKk0M_lpDTPB6_JtJBxg',
   }).addTo(map);
 
-  const marker = L.marker([59.934, 30.335]).addTo(map);
+  const icon = L.icon({
+    iconUrl: 'assets/images/pin.svg',
+    shadowUrl: 'assets/images/marker-shadow.png',
+
+    iconSize: [32, 45],
+    shadowSize: [31, 17],
+    shadowAnchor: [16, -15],
+  });
+
+  const marker = L.marker([59.934, 30.335], { icon }).addTo(map);
 
   marker.bindPopup('Кастомный HTML-попап');
+
+  $(document).on('TAB_SHOWN', '[data-tab]', () => {
+    map.invalidateSize(false);
+  });
 }
 /* eslint-enable no-unused-vars */

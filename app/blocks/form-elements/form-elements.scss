@@ -71,7 +71,7 @@
   font-size: 0;
 
   &_size_xl {
-    padding: 14px;
+    padding: 12px 14px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -235,10 +235,19 @@
       padding-top: 2px;
     }
 
+    .checkradio_icon & {
+      line-height: 1;
+    }
+
     .checkradio_size_xl & {
       z-index: 1;
       position: relative;
       user-select: none;
+      font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+      text-overflow: ellipsis;
     }
 
     .link {
@@ -393,6 +402,13 @@
     }
   }
 
+  &__input {
+    + .choices__list,
+    + .choices__list > .choices__list {
+      padding-top: 0 !important;
+    }
+  }
+
   &__toggler {
     position: absolute;
     top: 0;
@@ -458,9 +474,10 @@
       background-color: white;
       margin-top: 13px;
       overflow: visible;
+      padding-bottom: 13px;
 
       .choices__list {
-        padding: 10px 0;
+        padding: 13px 0 0 !important;
       }
 
       &::before {

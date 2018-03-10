@@ -8,6 +8,11 @@
 
   .fieldsets & { margin-top: 20px; }
 
+  @include screen(sm) {
+    border-left: 0;
+    background-repeat: 0;
+  }
+
   &__head {
     display: flex;
     align-items: center;
@@ -19,6 +24,10 @@
 
       &:not(:first-child) {
         padding-left: 20px;
+
+        @include screen(sm) {
+          display: none;
+        }
       }
     }
   }
@@ -34,13 +43,21 @@
     padding: 20px;
   }
 
-  .inputbox + .inputbox {
-    margin-top: 18px;
+  .inputbox {
+    margin-top: -6px;
+
+    + .inputbox {
+      margin-top: 15px;
+    }
   }
 
   .content-zone {
-    margin-top: 18px;
+    margin-top: 15px;
     color: $darkengrey-color;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
 
     p, span, a, b {
       @include text-small;
@@ -52,16 +69,57 @@
     padding-top: 0;
   }
 
-  .table {
-    width: 100%;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.57143;
-    letter-spacing: 0.01em;
+  &__delivery {
+    &.grid__col {
+      margin-top: 19px;
+    }
+  }
+
+  &__deliverytable {
+    &.grid__col {
+      margin-bottom: 17px;
+    }
+
+    .table {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.57143;
+      letter-spacing: 0.01em;
+
+      td {
+        &:nth-child(1) {
+          width: 145px;
+        }
+
+        &:nth-child(2) {
+          width: 208px;
+        }
+
+        &:nth-child(3) {
+
+        }
+
+        &:nth-child(4) {
+          width: 70px;
+          text-align: right;
+          padding-right: 14px;
+        }
+      }
+    }
   }
 }
 
 .fieldsets {
   display: block;
   margin-top: -20px;
+
+  @include screen(lg) {
+    margin-top: -24px;
+  }
+
+  @include screen(sm) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }

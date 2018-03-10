@@ -31,14 +31,14 @@ block content
                     +fieldset-heading Контактная информация
                 +fieldset-body
                   +grid
-                    +col(8)
+                    +col({ xl: 8, lg: 12 })
                       +inputbox('Фамилия, имя *')
                         +input(name="name" placeholder="Фамилия, имя" required).input_size_md
                   +grid
-                    +col(4)
+                    +col({ xl: 4, lg: 6, sm: 12 })
                       +inputbox('Телефон *')
                         +input(name="phone" placeholder="Телефон" required data-type="tel").input_size_md
-                    +col(4)
+                    +col({ xl: 4, lg: 6, sm: 12 })
                       +inputbox('Email *')
                         +input(name="email" type="email" placeholder="Email" required).input_size_md
 
@@ -51,7 +51,7 @@ block content
                     +tooltip-icon
                 +fieldset-body
                   +grid
-                    +col(8)
+                    +col({ xl: 8, lg: 12 })
                       +inputbox('Город доставки:')
                         +select(data-search-enabled="true")
                           option(value="1") Абакан (Хакасия республика)
@@ -77,96 +77,164 @@ block content
 
                       +inputbox
                         +checkbox('no-city', 1) Моего города нет в списке
-                    +col(12)
+
+                    +col({ xl: 8, lg: 12 })
+                      +inputbox('Введите название вашего города:')
+                        +input(type="text" placeholder="название города").input_size_md
+
+                    +col(12).fieldset__delivery
                       +inputbox('Служба доставки:')
-                        +grid
-                            +col(4)
-                              +checkbox('delivery-service', 'courier', true, null, 'radio')._size_xl Курьерская доставка
-                            +col(4)
-                              +checkbox('delivery-service', 'pickup', false, null, 'radio')._size_xl Пункты самовывоза #[+tooltip-icon]
-                            +col(4)
-                              +checkbox('delivery-service', 'pochta-rf', false, null, 'radio')._size_xl Почтой России до отделения
-                    +col(8)
-                      +table
-                        tr
-                          td
-                            +radio('delivery-company', 'grastin', true)
-                              +icon('Grastin', true).icon.icon_grastin
-                          td
-                            span Курьерская доставка
+                        +checkitems
+                          +checkitem('Курьерская доставка')(data-tab-target="delivery-1").is-active
+                          +checkitem('Пункты самовывоза')(data-tab-target="delivery-2")
                             +tooltip-icon
-                          td
-                            span 350 руб.
-                          td
-                            span 1-2 д.
-                        tr
-                          td
-                            +radio('delivery-company', 'boxberry')
-                              +icon('Boxberry', true).icon.icon_boxberry
-                          td
-                            span Курьерская доставка
-                            +tooltip-icon
-                          td
-                            span 110 руб.
-                          td
-                            span 1-2 д.
-                        tr
-                          td
-                            +radio('delivery-company', 'dpd')
-                              +icon('dpd', true).icon.icon_dpd
-                          td
-                            span Прдоплаченный заказ
-                            +tooltip-icon
-                          td
-                            span 190 руб.
-                          td
-                            span 2-3 д.
-                        tr
-                          td
-                            +radio('delivery-company', 'dpd-cod')
-                              +icon('dpd', true).icon.icon_dpd
-                          td
-                            span Наложенный платеж
-                            +tooltip-icon
-                          td
-                            span 190 руб.
-                          td
-                            span 2-3 д.
+                          +checkitem('Почтой России до отделения')(data-tab-target="delivery-3")
 
-                      +content-zone
-                        p Сроки доставки указаны в рабочих днях, не считая дня оформления заказа.
 
-                  +grid
-                    +col(4)
-                      +inputbox('Улица:')
-                        +input(name="ulica" type="text" placeholder="Улица").input_size_md
-                    +col(4)
-                      +inputbox('Дом:')
-                        +input(name="dom" type="text" placeholder="Квартира").input_size_md
-                  +grid
-                    +col(4)
-                      +inputbox('Корпус:')
-                        +input(name="korpus" type="text" placeholder="Корпус").input_size_md
-                    +col(4)
-                      +inputbox('Квартира:')
-                        +input(name="dom" type="text" placeholder="Квартира").input_size_md
-                  +grid
-                    +col(4)
-                      +inputbox('Дата доставки:')
-                        +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
-                    +col(4)
-                      +inputbox('Время доставки:')
-                        +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
-                          option(value="1") С 16:00 до 18:00
-                          option(value="2") С 16:00 до 18:00
-                          option(value="3") С 16:00 до 18:00
-                          option(value="4") С 16:00 до 18:00
-                          option(value="5") С 16:00 до 18:00
-                          option(value="6") С 16:00 до 18:00
-                  +grid
-                    +col(8)
-                      +inputbox('Время доставки:')
-                        +textarea(placeholder="Комментарий").textarea_big
+                  +tabs-content
+                    +tab-wrapper()(data-tab="delivery-1" data-tab-group="deliverytabs").is-active
+                      +grid
+                        +col({ xl: 8, sm: 12 })
+                          +delivery-services
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'grastin')._icon
+                                    +icon('grastin', true).icon.icon_grastin
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Курьерская доставка
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 350 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 1-2 д.
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'boxberry')._icon
+                                    +icon('boxberry', true).icon.icon_boxberry
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Курьерская доставка
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 110 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 1-2 д.
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'dpd')._icon
+                                    +icon('dpd', true).icon.icon_dpd
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Предоплаченный заказ
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 190 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 2-3 д.
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'dpd')._icon
+                                    +icon('dpd', true).icon.icon_dpd
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Наложенный платеж
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 190 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 2-3 д.
+                          +content-zone
+                            p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
+                      +grid
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Улица:')
+                            +input(name="ulica" type="text" placeholder="Улица").input_size_md
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Дом:')
+                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                      +grid
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Корпус:')
+                            +input(name="korpus" type="text" placeholder="Корпус").input_size_md
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Квартира:')
+                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                      +grid
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Дата доставки:')
+                            +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Время доставки:')
+                            +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
+                              option(value="1") С 16:00 до 18:00
+                              option(value="2") С 16:00 до 18:00
+                              option(value="3") С 16:00 до 18:00
+                              option(value="4") С 16:00 до 18:00
+                              option(value="5") С 16:00 до 18:00
+                              option(value="6") С 16:00 до 18:00
+                      +grid
+                        +col(8)
+                          +inputbox('Комментарий:')
+                            +textarea(placeholder="Комментарий").textarea_big
+
+                    +tab-wrapper()(data-tab="delivery-2" data-tab-group="deliverytabs")
+                      +grid
+                        +col({ xl: 8, sm: 12 })
+                          +delivery-services
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'grastin')._icon
+                                    +icon('grastin', true).icon.icon_grastin
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Proswim
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 0 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 1 д.
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'grastin')._icon
+                                    +icon('grastin', true).icon.icon_grastin
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Grastin
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 110 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 1-2 д.
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'boxberry')._icon
+                                    +icon('boxberry', true).icon.icon_boxberry
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Boxberry
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 241 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 2-3 д.
+                          +content-zone
+                            p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
+                        +col(12)
+                          +map#map
+
+                          +content-zone
+                            p Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"
+
+                    +tab-wrapper()(data-tab="delivery-3" data-tab-group="deliverytabs")
+                      p Это таб 3
 
               +fieldset
                 +fieldset-head
@@ -190,6 +258,74 @@ block content
                   +fieldset-head-col._flexible
                     +fieldset-heading Товары в корзине
                 +fieldset-body
+                  +product-cart-items
+                    +product-cart-item._field
+                      +product-cart-item-remove
+
+                      +product-cart-item-grid
+                        +product-cart-item-col
+                          +product-cart-item-image('content-img/cart/2401-copy-2.jpg', 'Очки для плавания Cobra Mirror')
+                      +product-cart-item-grid
+                        +product-cart-item-col._fieldheading
+                          +product-cart-item-textblock
+                            +product-cart-item-text Очки для плавания Cobra Mirror
+                          +product-cart-item-textblock
+                            +product-cart-item-text._count 1 шт.
+
+                        +product-cart-item-col
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Размер:
+                            +product-cart-item-text._sm XS
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Цвет:
+                            +product-cart-item-text._sm хамелеон
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Артикул:
+                            +product-cart-item-text._sm 92354
+
+                    +product-cart-item._field
+                      +product-cart-item-remove
+
+                      +product-cart-item-grid
+                        +product-cart-item-col
+                          +product-cart-item-image('content-img/cart/2401-copy-2.jpg', 'Очки для плавания Cobra Mirror')
+                      +product-cart-item-grid
+                        +product-cart-item-col._fieldheading
+                          +product-cart-item-textblock
+                            +product-cart-item-text Очки для плавания Cobra Mirror
+                          +product-cart-item-textblock
+                            +product-cart-item-text._count 2 шт.
+
+                        +product-cart-item-col
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Размер:
+                            +product-cart-item-text._sm XS
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Цвет:
+                            +product-cart-item-text._sm хамелеон
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Артикул:
+                            +product-cart-item-text._sm 92354
+                    +product-cart-item._field
+                      +product-cart-item-gift._simple
+
+                      +product-cart-item-grid
+                        +product-cart-item-col
+                          +product-cart-item-image('content-img/cart/1.jpg', 'Шоколад “I LOVE SWIM”')
+                      +product-cart-item-grid
+                        +product-cart-item-col._fieldheading
+                          +product-cart-item-textblock
+                            +product-cart-item-text Шоколад “I LOVE SWIM”
+                          +product-cart-item-textblock
+                            +product-cart-item-text._count 1 шт.
+
+                        +product-cart-item-col
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Вес:
+                            +product-cart-item-text._sm 5г
+                          +product-cart-item-textblock
+                            +product-cart-item-text._grey._sm Тип:
+                            +product-cart-item-text._sm Молочный шоколад
 
         +col({ xl: 3, lg: 12 })
           +total-delivery
