@@ -1,0 +1,135 @@
+.address-popup {
+  display: block;
+  width: 288px;
+
+  &-wrapper {
+    margin: 0;
+
+    .leaflet-popup-content-wrapper {
+      border-radius: 0 0 2px 2px;
+      background-color: white;
+      box-shadow: 0 16px 20px rgba(91, 95, 99, 0.46);
+      color: $color-basic;
+      border: 1px solid $color-border;
+      box-sizing: border-box;
+    }
+
+    .leaflet-popup-content {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .leaflet-popup-tip-container {
+      left: 0;
+      top: 12px;
+      width: 12px;
+      height: 21px;
+      box-sizing: border-box;
+      box-shadow: none;
+      margin: 0px 0 0 -11px;
+    }
+
+    .leaflet-popup-tip {
+      box-shadow: none;
+      background: white;
+      width: 22px;
+      height: 22px;
+      padding: 0;
+      margin: 0 0 0 7px;
+      border: 1px solid $color-border;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 10px;
+  }
+
+  &__heading {
+    display: block;
+    @include text-small;
+    line-height: (21/13);
+    position: relative;
+    padding: 10px 20px 10px 35px;
+    border-bottom: 1px solid $color-border;
+
+    + .address-popup__heading & {
+      margin-top: 3px;
+    }
+
+    .address-popup_chosen & {
+      padding: 0 0 0 23px;
+      border-bottom: 0;
+      @include text;
+
+      &::before {
+        left: 0;
+      }
+
+      &_city::before {
+        left: 3px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 11px;
+      background-image: url('../images/m.svg');
+    }
+
+    &_city::before {
+      width: 9px;
+      height: 13px;
+      fill: $middlegrey2-color;
+      background-image: url('../images/pin-icon.svg');
+    }
+  }
+
+  &__body {
+    display: block;
+    padding: 10px 14px 20px;
+
+    .address-popup_chosen & {
+      padding: 0;
+      margin-top: 9px;
+    }
+  }
+
+  &__text {
+    @include text-small;
+    line-height: (21/13);
+
+    .address-popup_chosen & {
+      @include text;
+    }
+
+    &_grey { color: $darkengrey-color; }
+
+    &_bold { font-weight: 500; }
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 10px;
+
+    .address-popup_chosen & {
+      width: auto;
+      margin-top: 18px;
+    }
+  }
+}
+
+.address-popup-section {
+  display: block;
+  padding-bottom: 40px;
+
+  &__heading {
+    @include heading-4;
+    line-height: (32/18);
+    margin-bottom: 20px;
+  }
+}

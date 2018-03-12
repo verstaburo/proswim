@@ -227,14 +227,82 @@ block content
                                   +delivery-service-text 2-3 д.
                           +content-zone
                             p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
+                        //- Выбор пункта выдачи
                         +col(12)
-                          +map#map
+                          +map#delivery-map
 
                           +content-zone
                             p Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"
+                        //- Пункт выдачи выбран
+                        +col({ xl: 8, sm: 12 })
+                          +address-popup-section
+                            +address-popup._chosen
+                          +inputbox('Комментарий:')
+                            +textarea(placeholder="Комментарий").textarea_big
 
                     +tab-wrapper()(data-tab="delivery-3" data-tab-group="deliverytabs")
-                      p Это таб 3
+                      +grid
+                        +col({ xl: 8, sm: 12 })
+                          +delivery-services
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'pochtarf')._icon
+                                    +icon('PochtaRF', true).icon.icon_pochtarf
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Посылка онлайн
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 249 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 4-5 д.
+                            +delivery-service
+                              +delivery-service-grid
+                                +delivery-service-col._company
+                                  +radio('delivery-company', 'pochtarf')._icon
+                                    +icon('PochtaRF', true).icon.icon_pochtarf
+                              +delivery-service-grid._group
+                                +delivery-service-col._title
+                                  +delivery-service-text Стандарт
+                                  +tooltip-icon
+                                +delivery-service-col._price
+                                  +delivery-service-text 200 руб.
+                                +delivery-service-col._time
+                                  +delivery-service-text 10-14 д.
+                          +content-zone
+                            p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
+                      +grid
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Улица:')
+                            +input(name="ulica" type="text" placeholder="Улица").input_size_md
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Дом:')
+                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                      +grid
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Корпус:')
+                            +input(name="korpus" type="text" placeholder="Корпус").input_size_md
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Квартира:')
+                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                      +grid
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Дата доставки:')
+                            +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
+                        +col({ xl: 4, sm: 12 })
+                          +inputbox('Время доставки:')
+                            +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
+                              option(value="1") С 16:00 до 18:00
+                              option(value="2") С 16:00 до 18:00
+                              option(value="3") С 16:00 до 18:00
+                              option(value="4") С 16:00 до 18:00
+                              option(value="5") С 16:00 до 18:00
+                              option(value="6") С 16:00 до 18:00
+                      +grid
+                        +col(8)
+                          +inputbox('Комментарий:')
+                            +textarea(placeholder="Комментарий").textarea_big
 
               +fieldset
                 +fieldset-head

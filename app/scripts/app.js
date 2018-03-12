@@ -1,5 +1,6 @@
 import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
+import L from 'leaflet';
 import './globalOptions';
 import './formValidation';
 import './libs/helpers';
@@ -43,6 +44,7 @@ import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 
 const $ = window.$;
+window.L = L;
 
 $(() => {
   svg4everybody();

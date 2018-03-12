@@ -1,6 +1,7 @@
 /* eslint-disable */
  @@include('../components/product-item-section/product-item-section.main.js')
  @@include('../pages/cart/cart.main.js')
+ @@include('../pages/cart/cart-delivery.main.js')
 // new Vue({
 //   data: {
 //     el: '.page',

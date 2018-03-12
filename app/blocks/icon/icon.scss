@@ -1,5 +1,26 @@
 .icon {
-  &_grastin { width: 58px; }
-  &_boxberry { width: 70px; }
-  &_dpd { width: 46px; }
+  &_grastin {
+    width: 58px;
+    height: 20px;
+  }
+
+  &_boxberry {
+    width: 70px;
+    height: 20px;
+  }
+
+  &_dpd {
+    width: 46px;
+    height: 20px;
+  }
+
+  &_pochtarf {
+    width: 41px;
+    height: 20px;
+  }
+
+  &_proswim {
+    width: 70px;
+    height: 14px;
+  }
 }

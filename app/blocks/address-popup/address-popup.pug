@@ -1,0 +1,21 @@
+mixin address-popup
+  +b.address-popup&attributes(attributes)
+    +icon('grastin', true).icon.icon_grastin
+    +e.heading._city г. Москва
+    +e.heading Ленинский пр-т
+    +e.body
+      +e.P.text._bold Ул. Вавилова, д.3, ТЦ “Гагаринский”
+      +e.P.text 1 минута пешком от метро, 2-й этаж
+      p
+        +e.SPAN.text
+          | График работы:
+          != ' '
+        +e.SPAN.text._grey с 9:00 до 20:00
+      +button._transparent._size_md.__button Выбрать другой
+
+mixin address-popup-section()
+  +b.address-popup-section
+    +e.heading Адрес пункта выдачи заказов:
+
+    +e.content
+      block
