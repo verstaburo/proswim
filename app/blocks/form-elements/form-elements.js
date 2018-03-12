@@ -26,11 +26,21 @@ export function selects() {
     const self = $(this);
 
     const searchEnabled = !!self.data('search-enabled');
+    const searchPlaceholderValue = self.data('search-placeholder');
 
     const choices = new Choices(self[0], {
       searchEnabled,
+      searchPlaceholderValue,
       itemSelectText: '',
       callbackOnInit() {
+        if (searchEnabled) {
+          self
+            .parents('.choices')
+            .find('.choices__list--dropdown')
+            .append('<svg class="choices__searchicon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>');
+        }
+
+
         const icon = self.data('toggler-icon');
         const iconModifier = self.data('toggler-icon-mod');
 
