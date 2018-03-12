@@ -2399,7 +2399,7 @@
                                 </div>
                                 <div class="fieldset__body">
                                     <div class="grid">
-                                        <div class="grid__col grid__col_xl_8">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Фамилия, имя *</P>
                                                 <input class="input input input_size_md" name="name" placeholder="Фамилия, имя" required="required" type="text" />
@@ -2407,13 +2407,13 @@
                                         </div>
                                     </div>
                                     <div class="grid">
-                                        <div class="grid__col grid__col_xl_4">
+                                        <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Телефон *</P>
                                                 <input class="input input input_size_md" name="phone" placeholder="Телефон" required="required" data-type="tel" type="text" />
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_4">
+                                        <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Email *</P>
                                                 <input class="input input input_size_md" name="email" type="email" placeholder="Email" required="required" />
@@ -2436,7 +2436,7 @@
                                 </div>
                                 <div class="fieldset__body">
                                     <div class="grid">
-                                        <div class="grid__col grid__col_xl_8">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Город доставки:</P>
                                                 <select class="select js-select" data-toggler-icon="arrow" data-toggler-icon-mod="arrow" data-search-enabled="true">
@@ -2472,188 +2472,435 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_12">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <P class="inputbox__label">Введите название вашего города:</P>
+                                                <input class="input input input_size_md" type="text" placeholder="название города" />
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_12 fieldset__delivery">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Служба доставки:</P>
-                                                <div class="grid">
-                                                    <div class="grid__col grid__col_xl_4">
-                                                        <label class="checkradio checkradio_size_xl">
-                                                            <input class="checkradio__input" name="delivery-service" value="courier" checked="checked" type="radio" required="" />
-                                                            <span class="checkradio__box">
-                                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                            </span>
-                                                            <span class="checkradio__content">Курьерская доставка</span>
-                                                        </label>
+                                                <div class="checkitems">
+                                                    <div class="checkitem is-active" data-tab-target="delivery-1">
+                                                        <svg class="checkitem__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        <span class="checkitem__text">Курьерская доставка</span>
                                                     </div>
-                                                    <div class="grid__col grid__col_xl_4">
-                                                        <label class="checkradio checkradio_size_xl">
-                                                            <input class="checkradio__input" name="delivery-service" value="pickup" type="radio" required="" />
-                                                            <span class="checkradio__box">
-                                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                            </span>
-                                                            <span class="checkradio__content">Пункты самовывоза
-                                                                <span class="tooltip-icon js-tooltip">?</span>
-                                                            </span>
-                                                        </label>
+                                                    <div class="checkitem" data-tab-target="delivery-2">
+                                                        <svg class="checkitem__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        <span class="checkitem__text">Пункты самовывоза</span>
+                                                        <span class="tooltip-icon js-tooltip">?</span>
                                                     </div>
-                                                    <div class="grid__col grid__col_xl_4">
-                                                        <label class="checkradio checkradio_size_xl">
-                                                            <input class="checkradio__input" name="delivery-service" value="pochta-rf" type="radio" required="" />
-                                                            <span class="checkradio__box">
-                                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                            </span>
-                                                            <span class="checkradio__content">Почтой России до отделения</span>
-                                                        </label>
+                                                    <div class="checkitem" data-tab-target="delivery-3">
+                                                        <svg class="checkitem__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        <span class="checkitem__text">Почтой России до отделения</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_8">
-                                            <table class="table" cellspacing="0">
-                                                <tr>
-                                                    <td>
-                                                        <label class="checkradio checkradio_radio">
-                                                            <input class="checkradio__input" name="delivery-company" value="grastin" checked="checked" type="radio" />
-                                                            <span class="checkradio__box"></span>
-                                                            <span class="checkradio__content">
+                                    </div>
+                                    <div class="tabs-content">
+                                        <div class="tabs-content__wrapper is-active" data-tab="delivery-1" data-tab-group="deliverytabs">
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8 grid__col_sm_12">
+                                                    <div class="delivery-services">
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="grastin" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Курьерская доставка</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">350 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">1-2 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="boxberry" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_boxberry"><use xlink:href="assets/images/icon.svg#icon_boxberry"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Курьерская доставка</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">110 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">1-2 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="dpd" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_dpd"><use xlink:href="assets/images/icon.svg#icon_dpd"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Предоплаченный заказ</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">190 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">2-3 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="dpd" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_dpd"><use xlink:href="assets/images/icon.svg#icon_dpd"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Наложенный платеж</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">190 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">2-3 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-zone">
+                                                        <p>Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Улица:</P>
+                                                        <input class="input input input_size_md" name="ulica" type="text" placeholder="Улица" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Дом:</P>
+                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Корпус:</P>
+                                                        <input class="input input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Квартира:</P>
+                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Дата доставки:</P>
+                                                        <input class="input input input_size_md" name="data-dostavki" type="text" placeholder="Выберите дату доставки" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Время доставки:</P>
+                                                        <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock">
+                                                            <option value="1">С 16:00 до 18:00</option>
+                                                            <option value="2">С 16:00 до 18:00</option>
+                                                            <option value="3">С 16:00 до 18:00</option>
+                                                            <option value="4">С 16:00 до 18:00</option>
+                                                            <option value="5">С 16:00 до 18:00</option>
+                                                            <option value="6">С 16:00 до 18:00</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Комментарий:</P>
+                                                        <textarea class="textarea textarea_big" placeholder="Комментарий"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs-content__wrapper" data-tab="delivery-2" data-tab-group="deliverytabs">
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8 grid__col_sm_12">
+                                                    <div class="delivery-services">
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="grastin" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Proswim</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">0 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">1 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="grastin" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Grastin</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">110 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">1-2 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="boxberry" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_boxberry"><use xlink:href="assets/images/icon.svg#icon_boxberry"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Boxberry</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">241 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">2-3 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-zone">
+                                                        <p>Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_12">
+                                                    <div class="map" id="delivery-map"></div>
+                                                    <div class="content-zone">
+                                                        <p>Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_8 grid__col_sm_12">
+                                                    <div class="address-popup-section">
+                                                        <div class="address-popup-section__heading">Адрес пункта выдачи заказов:</div>
+                                                        <div class="address-popup-section__content">
+                                                            <div class="address-popup address-popup_chosen">
                                                                 <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
-                                                            </span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <span>Курьерская доставка</span>
-                                                        <span class="tooltip-icon js-tooltip">?</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>350 руб.</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>1-2 д.</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="checkradio checkradio_radio">
-                                                            <input class="checkradio__input" name="delivery-company" value="boxberry" type="radio" />
-                                                            <span class="checkradio__box"></span>
-                                                            <span class="checkradio__content">
-                                                                <svg class="icon icon_boxberry"><use xlink:href="assets/images/icon.svg#icon_boxberry"></use></svg>
-                                                            </span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <span>Курьерская доставка</span>
-                                                        <span class="tooltip-icon js-tooltip">?</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>110 руб.</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>1-2 д.</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="checkradio checkradio_radio">
-                                                            <input class="checkradio__input" name="delivery-company" value="dpd" type="radio" />
-                                                            <span class="checkradio__box"></span>
-                                                            <span class="checkradio__content">
-                                                                <svg class="icon icon_dpd"><use xlink:href="assets/images/icon.svg#icon_dpd"></use></svg>
-                                                            </span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <span>Прдоплаченный заказ</span>
-                                                        <span class="tooltip-icon js-tooltip">?</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>190 руб.</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>2-3 д.</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="checkradio checkradio_radio">
-                                                            <input class="checkradio__input" name="delivery-company" value="dpd-cod" type="radio" />
-                                                            <span class="checkradio__box"></span>
-                                                            <span class="checkradio__content">
-                                                                <svg class="icon icon_dpd"><use xlink:href="assets/images/icon.svg#icon_dpd"></use></svg>
-                                                            </span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <span>Наложенный платеж</span>
-                                                        <span class="tooltip-icon js-tooltip">?</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>190 руб.</span>
-                                                    </td>
-                                                    <td>
-                                                        <span>2-3 д.</span>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <div class="content-zone">
-                                                <p>Сроки доставки указаны в рабочих днях, не считая дня оформления заказа.</p>
+                                                                <div class="address-popup__heading address-popup__heading_city">г. Москва</div>
+                                                                <div class="address-popup__heading">Ленинский пр-т</div>
+                                                                <div class="address-popup__body">
+                                                                    <p class="address-popup__text address-popup__text_bold">Ул. Вавилова, д.3, ТЦ “Гагаринский”</p>
+                                                                    <p class="address-popup__text">1 минута пешком от метро, 2-й этаж</p>
+                                                                    <p>
+                                                                        <span class="address-popup__text">График работы: </span>
+                                                                        <span class="address-popup__text address-popup__text_grey">с 9:00 до 20:00</span>
+                                                                    </p>
+                                                                    <a class="button button_transparent button_size_md address-popup__button">Выбрать другой</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Комментарий:</P>
+                                                        <textarea class="textarea textarea_big" placeholder="Комментарий"></textarea>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="grid__col grid__col_xl_4">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Улица:</P>
-                                                <input class="input input input_size_md" name="ulica" type="text" placeholder="Улица" />
+                                        <div class="tabs-content__wrapper" data-tab="delivery-3" data-tab-group="deliverytabs">
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8 grid__col_sm_12">
+                                                    <div class="delivery-services">
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="pochtarf" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_pochtarf"><use xlink:href="assets/images/icon.svg#icon_pochtarf"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Посылка онлайн</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">249 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">4-5 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="delivery-service">
+                                                            <div class="delivery-service__grid">
+                                                                <div class="delivery-service__col delivery-service__col_company">
+                                                                    <label class="checkradio checkradio_radio checkradio_icon">
+                                                                        <input class="checkradio__input" name="delivery-company" value="pochtarf" type="radio" />
+                                                                        <span class="checkradio__box"></span>
+                                                                        <span class="checkradio__content">
+                                                                            <svg class="icon icon_pochtarf"><use xlink:href="assets/images/icon.svg#icon_pochtarf"></use></svg>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="delivery-service__grid delivery-service__grid_group">
+                                                                <div class="delivery-service__col delivery-service__col_title">
+                                                                    <span class="delivery-service__text">Стандарт</span>
+                                                                    <span class="tooltip-icon js-tooltip">?</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_price">
+                                                                    <span class="delivery-service__text">200 руб.</span>
+                                                                </div>
+                                                                <div class="delivery-service__col delivery-service__col_time">
+                                                                    <span class="delivery-service__text">10-14 д.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-zone">
+                                                        <p>Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="grid__col grid__col_xl_4">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Дом:</P>
-                                                <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Улица:</P>
+                                                        <input class="input input input_size_md" name="ulica" type="text" placeholder="Улица" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Дом:</P>
+                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="grid__col grid__col_xl_4">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Корпус:</P>
-                                                <input class="input input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Корпус:</P>
+                                                        <input class="input input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Квартира:</P>
+                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="grid__col grid__col_xl_4">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Квартира:</P>
-                                                <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Дата доставки:</P>
+                                                        <input class="input input input_size_md" name="data-dostavki" type="text" placeholder="Выберите дату доставки" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_sm_12">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Время доставки:</P>
+                                                        <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock">
+                                                            <option value="1">С 16:00 до 18:00</option>
+                                                            <option value="2">С 16:00 до 18:00</option>
+                                                            <option value="3">С 16:00 до 18:00</option>
+                                                            <option value="4">С 16:00 до 18:00</option>
+                                                            <option value="5">С 16:00 до 18:00</option>
+                                                            <option value="6">С 16:00 до 18:00</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="grid__col grid__col_xl_4">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Дата доставки:</P>
-                                                <input class="input input input_size_md" name="data-dostavki" type="text" placeholder="Выберите дату доставки" />
-                                            </div>
-                                        </div>
-                                        <div class="grid__col grid__col_xl_4">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Время доставки:</P>
-                                                <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock">
-                                                    <option value="1">С 16:00 до 18:00</option>
-                                                    <option value="2">С 16:00 до 18:00</option>
-                                                    <option value="3">С 16:00 до 18:00</option>
-                                                    <option value="4">С 16:00 до 18:00</option>
-                                                    <option value="5">С 16:00 до 18:00</option>
-                                                    <option value="6">С 16:00 до 18:00</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid">
-                                        <div class="grid__col grid__col_xl_8">
-                                            <div class="inputbox">
-                                                <P class="inputbox__label">Время доставки:</P>
-                                                <textarea class="textarea textarea_big" placeholder="Комментарий"></textarea>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8">
+                                                    <div class="inputbox">
+                                                        <P class="inputbox__label">Комментарий:</P>
+                                                        <textarea class="textarea textarea_big" placeholder="Комментарий"></textarea>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -2702,7 +2949,114 @@
                                         <legend class="fieldset__heading">Товары в корзине</legend>
                                     </div>
                                 </div>
-                                <div class="fieldset__body"></div>
+                                <div class="fieldset__body">
+                                    <div class="product-cart-items">
+                                        <div class="product-cart-item product-cart-item_field">
+                                            <div class="product-cart-item__remove js-product-cart-item-remove">
+                                                <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                            </div>
+                                            <div class="product-cart-item__grid">
+                                                <div class="product-cart-item__col">
+                                                    <div class="product-cart-item__image">
+                                                        <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__grid">
+                                                <div class="product-cart-item__col product-cart-item__col_fieldheading">
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text">Очки для плавания Cobra Mirror</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_count">1 шт.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-cart-item__col">
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-cart-item product-cart-item_field">
+                                            <div class="product-cart-item__remove js-product-cart-item-remove">
+                                                <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                            </div>
+                                            <div class="product-cart-item__grid">
+                                                <div class="product-cart-item__col">
+                                                    <div class="product-cart-item__image">
+                                                        <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__grid">
+                                                <div class="product-cart-item__col product-cart-item__col_fieldheading">
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text">Очки для плавания Cobra Mirror</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_count">2 шт.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-cart-item__col">
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-cart-item product-cart-item_field">
+                                            <div class="product-cart-item__gift product-cart-item__gift_simple">
+                                                <svg class="product-cart-item__gifticon"><use xlink:href="assets/images/icon.svg#icon_gift-icon"></use></svg>
+                                            </div>
+                                            <div class="product-cart-item__grid">
+                                                <div class="product-cart-item__col">
+                                                    <div class="product-cart-item__image">
+                                                        <img src="content-img/cart/1.jpg" alt="Шоколад “I LOVE SWIM”" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__grid">
+                                                <div class="product-cart-item__col product-cart-item__col_fieldheading">
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text">Шоколад “I LOVE SWIM”</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_count">1 шт.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-cart-item__col">
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Вес:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">5г</span>
+                                                    </div>
+                                                    <div class="product-cart-item__textblock">
+                                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Тип:</span>
+                                                        <span class="product-cart-item__text product-cart-item__text_sm">Молочный шоколад</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </fieldset>
                         </div>
                     </form>
@@ -2737,7 +3091,6 @@
                         </div>
                         <button class="button button_size_big button_block total__button" type="button">Оформить заказ</button>
                         <p class="total__accept">Нажимая на кнопку "Оформить заказ", вы принимаете условия
-                            <br/>
                             <a class="link link_grey link_underline">
                                 <span class="link__text">Публичной оферты</span>
                             </a>
