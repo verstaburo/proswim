@@ -82,8 +82,22 @@ export function sliders() {
 export function datepicker() {
   $('.js-datepicker').each(function () {
     const el = $(this);
+    const block = el.parent().hasClass('inputbtn') ? el.parent() : el;
 
-    el.datepicker();
+    el.datepicker({
+      navTitles: {
+        days: 'd MM, yyyy',
+        months: 'd MM, yyyy',
+        years: 'd MM, yyyy',
+      },
+
+      onShow() {
+        block.addClass('is-active');
+      },
+      onHide() {
+        block.removeClass('is-active');
+      },
+    });
   });
 }
 

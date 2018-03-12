@@ -33,14 +33,14 @@ block content
                   +grid
                     +col({ xl: 8, lg: 12 })
                       +inputbox('Фамилия, имя *')
-                        +input(name="name" placeholder="Фамилия, имя" required).input_size_md
+                        +input(name="name" placeholder="Фамилия, имя" required)._size_md
                   +grid
                     +col({ xl: 4, lg: 6, sm: 12 })
                       +inputbox('Телефон *')
-                        +input(name="phone" placeholder="Телефон" required data-type="tel").input_size_md
+                        +input(name="phone" placeholder="Телефон" required data-type="tel")._size_md
                     +col({ xl: 4, lg: 6, sm: 12 })
                       +inputbox('Email *')
-                        +input(name="email" type="email" placeholder="Email" required).input_size_md
+                        +input(name="email" type="email" placeholder="Email" required)._size_md
 
               +fieldset
                 +fieldset-head
@@ -80,7 +80,7 @@ block content
 
                     +col({ xl: 8, lg: 12 })
                       +inputbox('Введите название вашего города:')
-                        +input(type="text" placeholder="название города").input_size_md
+                        +input(type="text" placeholder="название города")._size_md
 
                     +col(12).fieldset__delivery
                       +inputbox('Служба доставки:')
@@ -153,30 +153,31 @@ block content
                       +grid
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Улица:')
-                            +input(name="ulica" type="text" placeholder="Улица").input_size_md
+                            +input(name="ulica" type="text" placeholder="Улица")._size_md
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Дом:')
-                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                            +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Корпус:')
-                            +input(name="korpus" type="text" placeholder="Корпус").input_size_md
+                            +input(name="korpus" type="text" placeholder="Корпус")._size_md
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Квартира:')
-                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                            +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Дата доставки:')
-                            +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
+                            +input-btn('calendar')
+                              +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format='d MM, yyyy')._size_md.js-datepicker
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Время доставки:')
                             +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
-                              option(value="1") С 16:00 до 18:00
-                              option(value="2") С 16:00 до 18:00
-                              option(value="3") С 16:00 до 18:00
-                              option(value="4") С 16:00 до 18:00
-                              option(value="5") С 16:00 до 18:00
-                              option(value="6") С 16:00 до 18:00
+                              option(value="1") с 16:00 до 18:00
+                              option(value="2") с 16:00 до 18:00
+                              option(value="3") с 16:00 до 18:00
+                              option(value="4") с 16:00 до 18:00
+                              option(value="5") с 16:00 до 18:00
+                              option(value="6") с 16:00 до 18:00
                       +grid
                         +col(8)
                           +inputbox('Комментарий:')
@@ -275,21 +276,22 @@ block content
                       +grid
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Улица:')
-                            +input(name="ulica" type="text" placeholder="Улица").input_size_md
+                            +input(name="ulica" type="text" placeholder="Улица")._size_md
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Дом:')
-                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                            +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Корпус:')
-                            +input(name="korpus" type="text" placeholder="Корпус").input_size_md
+                            +input(name="korpus" type="text" placeholder="Корпус")._size_md
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Квартира:')
-                            +input(name="dom" type="text" placeholder="Квартира").input_size_md
+                            +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Дата доставки:')
-                            +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки").input_size_md
+                            +input-btn('calendar')
+                              +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format='d MM, yyyy')._size_md.js-datepicker
                         +col({ xl: 4, sm: 12 })
                           +inputbox('Время доставки:')
                             +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')

@@ -8,6 +8,12 @@ mixin inputbox(label)
 mixin input()
   +b.INPUT.input&attributes(attributes)
 
+mixin input-btn(icon)
+  +b.inputbtn&attributes(attributes)
+    block
+    +e.btn
+      +icon(icon).icon
+
 mixin input-number()
   .input-numberbox
     span.input-numberbox__button.js-numberbox-minus
