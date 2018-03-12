@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  width: (100%/3);
+  width: 100%;
   box-sizing: border-box;
   border-radius: 2px;
   border: 1px solid $color-border;
@@ -11,9 +11,8 @@
   flex: 1;
   cursor: pointer;
   transition: box-shadow $ease-main, background-color $ease-main, border-color $ease-main;
-  cursor: pointer;
 
-  &:hover:not(.is-active) {
+  &:hover {
     background-color: $color-border;
   }
 
@@ -35,13 +34,11 @@
     transition: opacity $ease-main;
   }
 
-  .checkitems & {
-    margin-left: 20px;
-  }
-
-  &.is-active {
+  &.is-active,
+  .checkitems__col.is-active & {
     border-color: $color-main;
     box-shadow: inset 0 0 0 1px $color-main;
+    pointer-events: none;
 
     &::after { opacity: 1; }
   }
@@ -58,7 +55,8 @@
     opacity: 0;
     @include performance;
 
-    .checkitem.is-active & {
+    .checkitem.is-active &,
+    .checkitems__col.is-active & {
       opacity: 1;
     }
   }
@@ -85,4 +83,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-left: -20px;
+
+  &__col {
+    width: (100%/3);
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
 }

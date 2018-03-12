@@ -50,7 +50,7 @@ block content
                     +link._grey Как работать с калькулятором
                     +tooltip-icon
                 +fieldset-body
-                  +grid
+                  +grid.fieldset__offset
                     +col({ xl: 8, lg: 12 })
                       +inputbox('Город доставки:')
                         +select(data-search-enabled="true" data-search-placeholder="Введите название города...")
@@ -82,19 +82,21 @@ block content
                       +inputbox('Введите название вашего города:')
                         +input(type="text" placeholder="название города")._size_md
 
-                    +col(12).fieldset__delivery
+                    +col(12)
                       +inputbox('Служба доставки:')
                         +checkitems
-                          +checkitem('Курьерская доставка')(data-tab-target="delivery-1").is-active
-                          +checkitem('Пункты самовывоза')(data-tab-target="delivery-2")
-                            +tooltip-icon
-                          +checkitem('Почтой России до отделения')(data-tab-target="delivery-3")
-
+                          +checkitems-col(data-tab-target="delivery-1").is-active
+                            +checkitem('Курьерская доставка')
+                          +checkitems-col(data-tab-target="delivery-2")
+                            +checkitem('Пункты самовывоза')
+                              +tooltip-icon
+                          +checkitems-col(data-tab-target="delivery-3")
+                            +checkitem('Почтой России до отделения')
 
                   +tabs-content
                     +tab-wrapper()(data-tab="delivery-1" data-tab-group="deliverytabs").is-active
                       +grid
-                        +col({ xl: 8, sm: 12 })
+                        +col({ xl: 8, lg: 10, sm: 12 })
                           +delivery-services
                             +delivery-service
                               +delivery-service-grid
@@ -150,26 +152,26 @@ block content
                                   +delivery-service-text 2-3 д.
                           +content-zone
                             p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
-                      +grid
-                        +col({ xl: 4, sm: 12 })
+                      +grid.fieldset__offset
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Улица:')
                             +input(name="ulica" type="text" placeholder="Улица")._size_md
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Дом:')
                             +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Корпус:')
                             +input(name="korpus" type="text" placeholder="Корпус")._size_md
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Квартира:')
                             +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Дата доставки:')
                             +input-btn('calendar')
                               +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format='d MM, yyyy')._size_md.js-datepicker
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Время доставки:')
                             +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
                               option(value="1") с 16:00 до 18:00
@@ -179,13 +181,13 @@ block content
                               option(value="5") с 16:00 до 18:00
                               option(value="6") с 16:00 до 18:00
                       +grid
-                        +col(8)
+                        +col({ xl: 8, lg: 12 })
                           +inputbox('Комментарий:')
                             +textarea(placeholder="Комментарий").textarea_big
 
                     +tab-wrapper()(data-tab="delivery-2" data-tab-group="deliverytabs")
                       +grid
-                        +col({ xl: 8, sm: 12 })
+                        +col({ xl: 8, lg: 12 })
                           +delivery-services
                             +delivery-service
                               +delivery-service-grid
@@ -235,7 +237,7 @@ block content
                           +content-zone
                             p Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"
                         //- Пункт выдачи выбран
-                        +col({ xl: 8, sm: 12 })
+                        +col({ xl: 8, lg: 12 })
                           +address-popup-section
                             +address-popup._chosen
                           +inputbox('Комментарий:')
@@ -243,7 +245,7 @@ block content
 
                     +tab-wrapper()(data-tab="delivery-3" data-tab-group="deliverytabs")
                       +grid
-                        +col({ xl: 8, sm: 12 })
+                        +col({ xl: 8, lg: 10, sm: 12 })
                           +delivery-services
                             +delivery-service
                               +delivery-service-grid
@@ -273,26 +275,26 @@ block content
                                   +delivery-service-text 10-14 д.
                           +content-zone
                             p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
-                      +grid
-                        +col({ xl: 4, sm: 12 })
+                      +grid.fieldset__offset
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Улица:')
                             +input(name="ulica" type="text" placeholder="Улица")._size_md
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Дом:')
                             +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Корпус:')
                             +input(name="korpus" type="text" placeholder="Корпус")._size_md
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Квартира:')
                             +input(name="dom" type="text" placeholder="Квартира")._size_md
                       +grid
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Дата доставки:')
                             +input-btn('calendar')
                               +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format='d MM, yyyy')._size_md.js-datepicker
-                        +col({ xl: 4, sm: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Время доставки:')
                             +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
                               option(value="1") С 16:00 до 18:00
@@ -302,7 +304,7 @@ block content
                               option(value="5") С 16:00 до 18:00
                               option(value="6") С 16:00 до 18:00
                       +grid
-                        +col(8)
+                        +col({ xl: 8, lg: 12 })
                           +inputbox('Комментарий:')
                             +textarea(placeholder="Комментарий").textarea_big
 

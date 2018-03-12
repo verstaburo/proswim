@@ -73,6 +73,21 @@
     padding-top: 0;
   }
 
+  &__offset {
+    margin-top: 13px;
+
+    &.grid__col {
+      margin-top: 13px;
+    }
+
+    @include screen(lg) {
+      margin-top: 19px;
+
+      &.grid__col {
+        margin-top: 19px;
+      }
+    }
+  }
 }
 
 .fieldsets {

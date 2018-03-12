@@ -35,12 +35,20 @@
     &_price {
       width: 95px;
       justify-content: center;
+
+      @include screen(lg) {
+        width: 105px;
+      }
     }
 
     &_time {
       width: 95px;
       justify-content: flex-end;
       padding-right: 14px;
+
+      @include screen(lg) {
+        width: 105px;
+      }
     }
   }
 
