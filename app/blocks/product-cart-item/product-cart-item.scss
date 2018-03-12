@@ -87,6 +87,13 @@
     &_fieldheading {
       width: 200px;
       margin-right: 85px;
+
+      @include screen(sm) {
+        width: 100%;
+        margin-right: 0;
+        padding-right: 40px;
+        margin-bottom: 4px;
+      }
     }
 
     &_description {
@@ -206,6 +213,11 @@
       width: 80px;
       height: 56px;
       margin-top: 2px;
+
+      @include screen(sm) {
+        width: 66px;
+        height: 51px;
+      }
     }
 
     @include screen(sm) {
@@ -291,6 +303,10 @@
       @include screen(lg) {
         right: 0;
       }
+
+      @include screen(sm) {
+        top: 18px;
+      }
     }
 
     &:hover {
@@ -351,6 +367,11 @@
 
       @include screen(lg) {
         right: 5px;
+      }
+
+      @include screen(sm) {
+        right: 4px;
+        top: 18px;
       }
     }
 

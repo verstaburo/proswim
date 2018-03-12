@@ -23,6 +23,11 @@
     padding: 11px 20px;
     background-color: $ihavenoideahowtocallthat-color;
 
+    @include screen(sm) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
     &col {
       &_flexible { flex: 1; }
 
@@ -45,6 +50,11 @@
 
   &__body {
     padding: 20px;
+
+    @include screen(sm) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
   .inputbox {

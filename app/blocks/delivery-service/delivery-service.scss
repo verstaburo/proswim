@@ -12,6 +12,10 @@
     flex-wrap: wrap;
     margin-left: -20px;
 
+    @include screen(lg) {
+      margin-left: -10px;
+    }
+
     & + & {
       margin-left: 0;
       flex: 1;
@@ -24,12 +28,25 @@
     padding-left: 20px;
     box-sizing: border-box;
 
+    @include screen(lg) {
+      padding-left: 10px;
+    }
+
     &_company {
       width: 165px;
+
+      @include screen(sm) {
+        width: 112px;
+      }
     }
 
     &_title {
       flex: 1;
+
+      @include screen(sm) {
+        width: 100%;
+        flex: auto;
+      }
     }
 
     &_price {
@@ -38,6 +55,11 @@
 
       @include screen(lg) {
         width: 105px;
+      }
+
+      @include screen(sm) {
+        width: 50%;
+        justify-content: flex-start;
       }
     }
 
@@ -48,6 +70,11 @@
 
       @include screen(lg) {
         width: 105px;
+      }
+
+      @include screen(sm) {
+        width: 50%;
+        justify-content: flex-start;
       }
     }
   }
