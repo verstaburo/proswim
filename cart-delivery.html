@@ -2402,7 +2402,7 @@
                                         <div class="grid__col grid__col_xl_8 grid__col_lg_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Фамилия, имя *</P>
-                                                <input class="input input input_size_md" name="name" placeholder="Фамилия, имя" required="required" type="text" />
+                                                <input class="input input_size_md" name="name" placeholder="Фамилия, имя" required="required" type="text" />
                                             </div>
                                         </div>
                                     </div>
@@ -2410,13 +2410,13 @@
                                         <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Телефон *</P>
-                                                <input class="input input input_size_md" name="phone" placeholder="Телефон" required="required" data-type="tel" type="text" />
+                                                <input class="input input_size_md" name="phone" placeholder="Телефон" required="required" data-type="tel" type="text" />
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Email *</P>
-                                                <input class="input input input_size_md" name="email" type="email" placeholder="Email" required="required" />
+                                                <input class="input input_size_md" name="email" type="email" placeholder="Email" required="required" />
                                             </div>
                                         </div>
                                     </div>
@@ -2439,7 +2439,7 @@
                                         <div class="grid__col grid__col_xl_8 grid__col_lg_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Город доставки:</P>
-                                                <select class="select js-select" data-toggler-icon="arrow" data-toggler-icon-mod="arrow" data-search-enabled="true">
+                                                <select class="select js-select" data-toggler-icon="arrow" data-toggler-icon-mod="arrow" data-search-enabled="true" data-search-placeholder="Введите название города...">
                                                     <option value="1">Абакан (Хакасия республика)</option>
                                                     <option value="2">Абан (Красноярский край)</option>
                                                     <option value="3">Абатский (Тюменская область)</option>
@@ -2475,7 +2475,7 @@
                                         <div class="grid__col grid__col_xl_8 grid__col_lg_12">
                                             <div class="inputbox">
                                                 <P class="inputbox__label">Введите название вашего города:</P>
-                                                <input class="input input input_size_md" type="text" placeholder="название города" />
+                                                <input class="input input_size_md" type="text" placeholder="название города" />
                                             </div>
                                         </div>
                                         <div class="grid__col grid__col_xl_12 fieldset__delivery">
@@ -2614,13 +2614,13 @@
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Улица:</P>
-                                                        <input class="input input input_size_md" name="ulica" type="text" placeholder="Улица" />
+                                                        <input class="input input_size_md" name="ulica" type="text" placeholder="Улица" />
                                                     </div>
                                                 </div>
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Дом:</P>
-                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Квартира" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -2628,13 +2628,13 @@
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Корпус:</P>
-                                                        <input class="input input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                                        <input class="input input_size_md" name="korpus" type="text" placeholder="Корпус" />
                                                     </div>
                                                 </div>
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Квартира:</P>
-                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Квартира" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -2642,19 +2642,24 @@
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Дата доставки:</P>
-                                                        <input class="input input input_size_md" name="data-dostavki" type="text" placeholder="Выберите дату доставки" />
+                                                        <div class="inputbtn">
+                                                            <input class="input input_size_md js-datepicker" name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format="d MM, yyyy" />
+                                                            <div class="inputbtn__btn">
+                                                                <svg class="inputbtn__icon"><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Время доставки:</P>
                                                         <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock">
-                                                            <option value="1">С 16:00 до 18:00</option>
-                                                            <option value="2">С 16:00 до 18:00</option>
-                                                            <option value="3">С 16:00 до 18:00</option>
-                                                            <option value="4">С 16:00 до 18:00</option>
-                                                            <option value="5">С 16:00 до 18:00</option>
-                                                            <option value="6">С 16:00 до 18:00</option>
+                                                            <option value="1">с 16:00 до 18:00</option>
+                                                            <option value="2">с 16:00 до 18:00</option>
+                                                            <option value="3">с 16:00 до 18:00</option>
+                                                            <option value="4">с 16:00 до 18:00</option>
+                                                            <option value="5">с 16:00 до 18:00</option>
+                                                            <option value="6">с 16:00 до 18:00</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -2849,13 +2854,13 @@
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Улица:</P>
-                                                        <input class="input input input_size_md" name="ulica" type="text" placeholder="Улица" />
+                                                        <input class="input input_size_md" name="ulica" type="text" placeholder="Улица" />
                                                     </div>
                                                 </div>
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Дом:</P>
-                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Квартира" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -2863,13 +2868,13 @@
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Корпус:</P>
-                                                        <input class="input input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                                        <input class="input input_size_md" name="korpus" type="text" placeholder="Корпус" />
                                                     </div>
                                                 </div>
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Квартира:</P>
-                                                        <input class="input input input_size_md" name="dom" type="text" placeholder="Квартира" />
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Квартира" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -2877,7 +2882,12 @@
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
                                                     <div class="inputbox">
                                                         <P class="inputbox__label">Дата доставки:</P>
-                                                        <input class="input input input_size_md" name="data-dostavki" type="text" placeholder="Выберите дату доставки" />
+                                                        <div class="inputbtn">
+                                                            <input class="input input_size_md js-datepicker" name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format="d MM, yyyy" />
+                                                            <div class="inputbtn__btn">
+                                                                <svg class="inputbtn__icon"><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="grid__col grid__col_xl_4 grid__col_sm_12">
@@ -3096,11 +3106,21 @@
                             </a>
                         </p>
                         <p class="total__promo">
-                            <a class="link total__link">
+                            <a class="link total__link js-total-promolink">
                                 <span class="link__text">Есть промокод/карта клиента?</span>
                             </a>
                             <span class="tooltip-icon js-tooltip tooltip-icon_blue">?</span>
                         </p>
+                        <div class="total__promoblock js-total-promoblock">
+                            <div class="inputbox total__promobox">
+                                <input class="input total__promoinput" placeholder="Промокод" name="" type="text" />
+                                <button class="button button_size_sm total__promobutton" type="button">Применить</button>
+                            </div>
+                            <div class="inputbox total__promobox">
+                                <input class="input total__input" placeholder="Карта покупателя" name="" type="text" />
+                                <button class="button button_size_sm total__promobutton" type="button">Применить</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
