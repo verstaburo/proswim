@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Заказ успешно оформлен'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Корзина', 'Доставка и оплата', 'Подтверждение заказа', 'Заказ успешно оформлен'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Спасибо!
+
+    +section-confirm
+block popups

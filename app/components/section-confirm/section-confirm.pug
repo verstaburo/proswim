@@ -1,0 +1,6 @@
+mixin section-confirm()
+  +b.section-confirm&attributes(attributes)
+    .container
+      p Заказ #[+e.SPAN.highlight №340 667] успешно оформлен. Мы отправили информацию о заказе на #[+link(href='mailto:dmitriynuks@gmail.com')._dark dmitriynuks@gmail.com]
+      p Скоро наши сотрудники начнут собирать товары. Напоминаем, что вы всегда можете проверить статус заказа в личном кабинете.
+      +button(href='account.html').__button Перейти в личный кабинет

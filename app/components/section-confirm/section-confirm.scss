@@ -1,0 +1,38 @@
+.section-confirm {
+  display: block;
+  color: $darkengrey-color;
+  @include text;
+  min-height: 364.5px;
+  margin-top: -6px;
+
+  @include screen(lg) {
+    margin-top: -3px;
+    min-height: 226px;
+  }
+
+  @include screen(sm) {
+    min-height: 218px;
+  }
+
+  &__highlight {
+    color: $color-basic;
+    font-weight: 500;
+    border-radius: 2px;
+    background-color: $lightgrey-color;
+    padding-left: .3em;
+    padding-right: .3em;
+  }
+
+  &__button {
+    margin-top: 23px;
+
+    @include screen(lg) {
+      margin-top: 33px;
+      width: 100%;
+    }
+
+    @include screen(sm) {
+      margin-top: 22px;
+    }
+  }
+}
