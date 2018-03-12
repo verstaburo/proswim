@@ -35,5 +35,14 @@ mixin total-delivery()
     +e.P.accept Нажимая на кнопку "Оформить заказ", вы принимаете условия #[+link._grey._underline Публичной оферты]
 
     +e.P.promo
-      +link.__link Есть промокод/карта клиента?
+      +link.__link.js-total-promolink Есть промокод/карта клиента?
       +tooltip-icon.tooltip-icon_blue
+
+    +e.promoblock.js-total-promoblock
+      +inputbox.total__promobox
+        +input(placeholder="Промокод" name="").__promoinput
+        +button.BUTTON(type="button")._size_sm.__promobutton Применить
+
+      +inputbox.total__promobox
+        +input(placeholder="Карта покупателя" name="").__input
+        +button.BUTTON(type="button")._size_sm.__promobutton Применить

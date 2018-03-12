@@ -73,6 +73,35 @@
     .tooltip-icon {
       margin-left: 6px;
     }
+
+    &block {
+      margin-top: 26px;
+      display: none;
+    }
+
+    &box {
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+
+    &input {
+      padding-right: 104px;
+      border-color: transparent;
+    }
+
+    &button {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      height: 30px;
+      line-height: 28px;
+      font-size: 12px;
+      padding: 0 12px;
+      font-weight: 500;
+    }
   }
 
   &__subscribe {
