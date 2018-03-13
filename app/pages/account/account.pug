@@ -1,16 +1,191 @@
-extends ../../layouts/default
+extends ../../layouts/default-loggedin
 
 block head
-  - var pageTitle = 'Proswim - account'
+  - var pageTitle = 'Proswim - Мой кабинет - Мои данные'
 
 block content
   +b.page
-    .container
-      +e.head
+    +e.head
+      .container
         +e.headcol._flexible
-          +breadcrumbs(['Главная', 'account'])
-      +e.head._subhead
-        +e.headcol._flexible
-          +e.H1.heading account
+          +breadcrumbs(['Главная', 'Мой кабинет'])
+        +e.headcol
+          +link-icon('Logout icon')._dark._print Выйти
+    +userinfo
+    +tabs-container._usermenu
+      +tab.is-active
+        a(href="account.html") Мои данные
+      +tab
+        a(href="account-orders.html") Мои заказы
+      +tab
+        a(href="account-help.html") Помощь
 
-block popups
+    .container
+      +grid.account
+        +col({ xl: 9, lg: 12 })
+          form(action="/" method="POST" data-parsley-validate)
+            +fieldsets
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Персональные данные
+                +fieldset-body
+                  +grid
+                    +col({ xl: 8, lg: 12 })
+                      +inputbox('ФИО:')
+                        +input(name="name" type="text" placeholder="ФИО" value="Макаров Дмитрий Алексеевич")._size_md
+                    +col({ xl: 4, lg: 12 })
+                      +inputbox('Фото:')
+                        +upload-photo
+                  +grid
+                    +col({ xl: 4, lg: 12 })
+                      +inputbox('Email:')
+                        +input(name="eail" type="email" placeholder="E-mail" value="dmitriynuks@gmail.com")._size_md
+                    +col({ xl: 4, lg: 12 })
+                      +inputbox('Дата рождения:')
+                        +input-btn('calendar')
+                          +input(name="birthday" type="text" value="18 августа 1983 г." placeholder="Выберите дату рождения" data-date-format='dd MM yyyy')._size_md.js-datepicker
+                  +grid
+                    +col({ xl: 8, lg: 12 })
+                      +inputbox('Пол:')
+                        +radio('sex', 'male', true) Мужской
+                        +radio('sex', 'female', true) Женский
+                  +grid
+                    +col({ xl: 8, lg: 12 })
+                      +inputbox('Пол:')
+                        +input(name="phone" placeholder="Телефон" data-type="tel" value="+7 (915) 989-98-09")._size_md
+                      +content-zone
+                        p Изменять номер мобильного телефона можно не более 2х раз в сутки.
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Адреса доставки
+                +fieldset-body
+                  +grid
+                    +col({ xl: 8, lg: 12 })
+                      +checkitems
+                        +checkitems-col(data-tab-target="main-address")._width_50.is-active
+                          +checkitem('Основной адрес')
+                        +checkitems-col(data-tab-target="additional-address")._width_50
+                          +checkitem('Пункты самовывоза')
+
+                  +tabs-content
+                    +tab-wrapper()(data-tab="main-address" data-tab-group="addresstabs").is-active
+                      +grid
+                        +col({ xl: 8, lg: 12 })
+                          +inputbox('Город доставки:')
+                            +select(data-search-enabled="true" data-search-placeholder="Введите название города...")
+                              option(value="1") Абакан (Хакасия республика)
+                              option(value="2") Абан (Красноярский край)
+                              option(value="3") Абатский (Тюменская область)
+                              option(value="4") Абрамовский маяк (Архангельская область)
+                              option(value="5") Агата (Эвенкийский автономный округ)
+                              option(value="6") Агаякан (Саха(Якутия) республика)
+                              option(value="7") Агзу (риморский край)
+                              option(value="8") Агинское (Красноярский край)
+                              option(value="9") Агинское (Агинский Бурятский автономный округ)
+                              option(value="10") БАйхал (Саха(Якутия) республика)
+                              option(value="11") БАбакан (Хакасия республика)
+                              option(value="12") БАбан (Красноярский край)
+                              option(value="13") БАбатский (Тюменская область)
+                              option(value="14") БАбрамовский маяк (Архангельская область)
+                              option(value="15") БАгата (Эвенкийский автономный округ)
+                              option(value="16") БАгаякан (Саха(Якутия) республика)
+                              option(value="17") БАгзу (риморский край)
+                              option(value="18") БАгинское (Красноярский край)
+                              option(value="19") БАгинское (Агинский Бурятский автономный округ)
+                              option(value="20") БАйхал (Саха(Якутия) республика)
+
+                          +inputbox
+                            +checkbox('no-city', 1) Моего города нет в списке
+
+                      +grid
+                        +col({ xl: 8, lg: 12 })
+                          +inputbox('Введите название вашего города:')
+                            +input(type="text" placeholder="название города")._size_md
+
+                      +grid
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Улица:')
+                            +input(name="ulica" type="text" placeholder="Улица" value="Пушкинская")._size_md
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Дом:')
+                            +input(name="dom" type="text" placeholder="Дом" value="22")._size_md
+
+                      +grid
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Корпус:')
+                            +input(name="korpus" type="text" placeholder="Корпус")._size_md
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Квартира:')
+                            +input(name="dom" type="text" placeholder="Квартира" value="13")._size_md
+
+                    +tab-wrapper()(data-tab="additional-address" data-tab-group="addresstabs")
+                      +grid
+                        +col({ xl: 8, lg: 12 })
+                          +inputbox('Город доставки:')
+                            +select(data-search-enabled="true" data-search-placeholder="Введите название города...")
+                              option(value="1") Абакан (Хакасия республика)
+                              option(value="2") Абан (Красноярский край)
+                              option(value="3") Абатский (Тюменская область)
+                              option(value="4") Абрамовский маяк (Архангельская область)
+                              option(value="5") Агата (Эвенкийский автономный округ)
+                              option(value="6") Агаякан (Саха(Якутия) республика)
+                              option(value="7") Агзу (риморский край)
+                              option(value="8") Агинское (Красноярский край)
+                              option(value="9") Агинское (Агинский Бурятский автономный округ)
+                              option(value="10") БАйхал (Саха(Якутия) республика)
+                              option(value="11") БАбакан (Хакасия республика)
+                              option(value="12") БАбан (Красноярский край)
+                              option(value="13") БАбатский (Тюменская область)
+                              option(value="14") БАбрамовский маяк (Архангельская область)
+                              option(value="15") БАгата (Эвенкийский автономный округ)
+                              option(value="16") БАгаякан (Саха(Якутия) республика)
+                              option(value="17") БАгзу (риморский край)
+                              option(value="18") БАгинское (Красноярский край)
+                              option(value="19") БАгинское (Агинский Бурятский автономный округ)
+                              option(value="20") БАйхал (Саха(Якутия) республика)
+
+                          +inputbox
+                            +checkbox('no-city', 1) Моего города нет в списке
+
+                      +grid
+                        +col({ xl: 8, lg: 12 })
+                          +inputbox('Введите название вашего города:')
+                            +input(type="text" placeholder="название города")._size_md
+
+                      +grid
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Улица:')
+                            +input(name="ulica" type="text" placeholder="Улица" value="Пушкинская")._size_md
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Дом:')
+                            +input(name="dom" type="text" placeholder="Дом" value="22")._size_md
+
+                      +grid
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Корпус:')
+                            +input(name="korpus" type="text" placeholder="Корпус")._size_md
+                        +col({ xl: 4, lg: 12 })
+                          +inputbox('Квартира:')
+                            +input(name="dom" type="text" placeholder="Квартира" value="13")._size_md
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Карта постоянного покупателя
+                +fieldset-body
+                  +grid
+                    +col({ xl: 8, lg: 12 })
+                      +inputbox('Номер карты:')
+                        +input(name="card-number" type="text" placeholder="Номер карты" value="8787-1446-7654-9476")._size_md
+              +fieldset
+                +fieldset-head
+                  +fieldset-head-col._flexible
+                    +fieldset-heading Смена пароля
+                +fieldset-body
+                  +grid
+                    +col({ xl: 8, lg: 12 })
+                      +inputbox('Пароль:', 'Изменить')
+                        +input(name="card-number" type="password" placeholder="Введите пароль" value="123456789")._size_md
+
+                      +button.BUTTON(type="submit")._size_big Сохранить изменения

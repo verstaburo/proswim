@@ -1,0 +1,6 @@
+mixin upload-photo()
+  +b.LABEL.upload-photo&attributes(attributes).js-upload-photo
+    +e.INPUT(type="file" name="photo").control
+    +icon
+    +e.image
+      img(src="" alt="")

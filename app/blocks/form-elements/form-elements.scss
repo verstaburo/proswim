@@ -40,10 +40,19 @@
 .inputbox {
   display: block;
 
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
   &__label {
     display: block;
     @include heading-5;
-    margin-bottom: 8px;
+  }
+
+  &__link {
+    line-height: (24/14);
   }
 }
 

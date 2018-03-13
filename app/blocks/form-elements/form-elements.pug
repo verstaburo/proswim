@@ -1,8 +1,11 @@
-mixin inputbox(label)
+mixin inputbox(label, link)
   .inputbox&attributes(attributes)
     if label
-      P.inputbox__label=label
+      .inputbox__head
+        P.inputbox__label=label
 
+        if link
+          +link.inputbox__link=link
     block
 
 mixin input()

@@ -93,10 +93,18 @@
     padding-left: 20px;
     box-sizing: border-box;
 
+    &_width_50 {
+      width: 50%;
+    }
+
     @include screen(sm) {
       width: 100%;
       padding-left: 0;
       padding-top: 20px;
+
+      &_width_50 {
+        width: 100%;
+      }
     }
   }
 }
