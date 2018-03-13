@@ -733,6 +733,41 @@ block content
           +col(4)
             +article-card(articlesCardsData[2])
 
+    //- Загрузка фото
+    +ui-section
+      +ui-section-head
+        h2 Загрузка фото
+        p Блок: block/upload-photo/upload-photo
+      +ui-section-content
+        +content-zone
+          h3 События
+          blockquote
+            h5 upload-photo/upload-start
+            p
+              small Загрузка началась
+
+            h5 upload-photo/upload-complete
+
+            p
+              small Загрузка завершена, можно сохранять фото на сервере
+            p
+              small $('js-upload-photo').on('upload-photo/upload-complete', (event, data) => { data }) в data.file находится файл
+
+            h5 upload-photo/delete-start
+            p
+              small Удаление начато
+
+            h5 upload-photo/delete-complete
+            p
+              small Удаление завершено, можно удалить файл на сервере
+
+        +grid
+          +col(12)
+            +ui-description Фото не загружено
+            +upload-photo
+          +col(12)
+            +ui-description Фото загружено
+            +upload-photo('content-img/user/uploaded-ava.jpg').is-uploaded
   script
     |
     | $('.ui-kit__section').each(function (i) {

@@ -1,6 +1,8 @@
-mixin upload-photo()
+mixin upload-photo(img)
   +b.LABEL.upload-photo&attributes(attributes).js-upload-photo
-    +e.INPUT(type="file" name="photo").control
-    +icon
+    +e.INPUT(type="file" name="photo" accept="image/*").control.js-upload-photo-control
+    +icon('Camera icon').icon
     +e.image
-      img(src="" alt="")
+      img(src=img alt="Uploaded photo").js-upload-photo-image
+    +e.delete.js-upload-photo-delete
+      +icon('Delete icon').deleteicon

@@ -1,3 +1,91 @@
 .upload-photo {
+  $b: &;
   display: block;
+  position: relative;
+  width: 68px;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px dashed $greyblue4-color;
+  background-color: $ihavenoideahowtocallthat-color;
+  cursor: pointer;
+  transition: background-color $ease-main,
+              border $ease-main,
+              opacity $ease-main;
+
+  &:hover { background-color: $color-border; }
+
+  &.is-loading {
+    pointer-events: none;
+    opacity: .75;
+  }
+
+  &.is-uploaded {
+    border-style: solid;
+    pointer-events: none;
+  }
+
+  &__icon {
+    @include center-image;
+    width: 19px;
+    height: 16px;
+    fill: $color-basic;
+    transition: fill $ease-main;
+
+    #{$b}:hover & { fill: $darkblue-color; }
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ease-main;
+    @include performance;
+
+    #{$b}.is-uploaded & { opacity: 1; }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__delete {
+    display: block;
+    position: absolute;
+    top: -6px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background-color: $color-main;
+    opacity: 0;
+    transition: opacity $ease-main;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+
+    &:hover { opacity: .75; }
+
+    #{$b}.is-uploaded & {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &icon {
+      @include center-image;
+      @include performance;
+      width: 7px;
+      height: 7px;
+      fill: white;
+    }
+  }
+
+  &__control { display: none; }
 }

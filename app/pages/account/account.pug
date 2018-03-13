@@ -23,7 +23,7 @@ block content
     .container
       +grid.account
         +col({ xl: 9, lg: 12 })
-          form(action="/" method="POST" data-parsley-validate)
+          form(action="/" method="POST" enctype='multipart/form-data' data-parsley-validate)
             +fieldsets
               +fieldset
                 +fieldset-head
@@ -49,10 +49,10 @@ block content
                     +col({ xl: 8, lg: 12 })
                       +inputbox('Пол:')
                         +radio('sex', 'male', true) Мужской
-                        +radio('sex', 'female', true) Женский
+                        +radio('sex', 'female', false) Женский
                   +grid
                     +col({ xl: 8, lg: 12 })
-                      +inputbox('Пол:')
+                      +inputbox('Телефон:')
                         +input(name="phone" placeholder="Телефон" data-type="tel" value="+7 (915) 989-98-09")._size_md
                       +content-zone
                         p Изменять номер мобильного телефона можно не более 2х раз в сутки.
@@ -188,4 +188,4 @@ block content
                       +inputbox('Пароль:', 'Изменить')
                         +input(name="card-number" type="password" placeholder="Введите пароль" value="123456789")._size_md
 
-                      +button.BUTTON(type="submit")._size_big Сохранить изменения
+                      +button.BUTTON(type="submit")._size_big.__save Сохранить изменения

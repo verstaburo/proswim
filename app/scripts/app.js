@@ -40,6 +40,7 @@ import '../components/articles-section/articles-section';
 import '../blocks/section/section';
 import '../blocks/review-form/review-form';
 import '../blocks/total/total';
+import '../blocks/upload-photo/upload-photo';
 import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 
