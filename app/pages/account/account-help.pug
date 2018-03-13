@@ -1,0 +1,14 @@
+extends ../../layouts/default-loggedin
+
+block head
+  - var pageTitle = 'Proswim - Мой кабинет - Помощь'
+
+block content
+  +b.page
+    +e.head
+      .container
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Мой кабинет'])
+        +e.headcol.hide-lg
+          +link-icon('Logout icon')._dark._print Выйти
+    +userinfo

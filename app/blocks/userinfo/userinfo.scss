@@ -1,0 +1,188 @@
+.userinfo {
+  display: block;
+  background-color: $ihavenoideahowtocallthat-color;
+  border-bottom: 1px solid $color-border;
+
+  &__container {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include screen(sm) {
+      padding-top: 18px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+
+    &_flexible { flex: 1; }
+
+    @include screen(sm) {
+      flex-wrap: wrap;
+    }
+
+    &_info {
+      @include screen(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include screen(sm) {
+      align-items: flex-start;
+    }
+
+    &_user {
+      flex-wrap: nowrap;
+
+      @include screen(sm) {
+        width: 100%;
+        padding-bottom: 14px;
+        margin-bottom: 13px;
+        border-bottom: 1px solid $color-border;
+      }
+    }
+
+    &_flexible {
+      flex: 1;
+
+      @include screen(sm) {
+        flex: auto;
+        width: 50%;
+      }
+    }
+
+    &_text {
+      display: none;
+      width: 50%;
+
+      @include screen(sm) {
+        display: block;
+      }
+    }
+
+    &:not(:first-child) {
+      padding-left: 28px;
+      margin-left: 27px;
+      border-left: 1px solid $anothermidbluelightgrey4-color;
+
+      @include screen(sm) {
+        padding-left: 0;
+        margin-left: 0;
+        border-left: 0;
+      }
+    }
+  }
+
+  &__avatar {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    display: block;
+    flex-shrink: 0;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__user {
+    margin-left: 14px;
+    flex: 1;
+
+    @include screen(sm) {
+      margin-left: 12px;
+    }
+  }
+
+  &__name {
+    display: block;
+    @include heading-5;
+
+    @include screen(sm) {
+      line-height: (20/16);
+    }
+  }
+
+  &__city {
+    display: block;
+    @include text-small;
+    line-height: (21/13);
+    color: $darkgrey-color;
+    margin-top: 4px;
+
+    @include screen(sm) {
+      margin-top: 6px;
+    }
+  }
+
+  &__linkwrap {
+    display: block;
+    width: 100%;
+
+    @include screen(sm) {
+      & + & {
+        margin-top: 12px;
+      }
+    }
+
+    .link {
+      @include screen(sm) {
+        padding-left: 22px;
+      }
+
+      &__text {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: (20/12);
+      }
+
+      &__icon {
+        left: 2px;
+        top: 1px;
+
+        @include screen(sm) {
+          left: 0px;
+          top: 2px;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include text;
+    color: $darkgrey-color;
+
+    &block {
+      display: block;
+      text-align: center;
+      padding-left: 15px;
+
+      @include screen(sm) {
+        text-align: left;
+
+        & + & {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    &_big {
+      font-size: 32px;
+      line-height: (34/32);
+      color: $color-basic;
+
+      @include screen(sm) {
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+  }
+}

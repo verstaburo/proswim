@@ -1,14 +1,18 @@
 include filter-burger
 include sort-burger
 
-mixin burger()
+mixin burger(loggedIn)
   +b.burger.js-burger&attributes(attributes)
     +e.overlay.js-burger-overlay
     +e.content.js-burger-content
       +e.HEADER.section.__header
         .container
           +e.headerlinks
-            +link-icon('Login Register button')(href="login.html" data-popup='#login-popup')._dark.__headerlink_user.is-active.js-burger-login.js-fancybox Войти
+            if loggedIn
+              +link-icon('Login Register button')(href="account.html")._dark.__headerlink_user.is-active.js-burger-login Мой кабинет
+            else
+              +link-icon('Login Register button')(href="login.html" data-popup='#login-popup')._dark.__headerlink_user.is-active.js-burger-login.js-fancybox Войти
+
             +link-icon('arrow_back_menu')._dark.__headerlink_back.js-burger-back Назад
 
           +e.BUTTON.close.js-burger-close

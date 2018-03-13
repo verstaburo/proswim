@@ -1,0 +1,39 @@
+mixin userinfo()
+  +b.userinfo&attributes(attributes)
+    .container.userinfo__container
+      +e.grid._flexible
+        +e.col._user
+          +e.avatar
+            img(src="content-img/user/avatar.png", alt="Макаров Дмитрий Алексеевич")
+
+          +e.user
+            +e.P.name Макаров Дмитрий Алексеевич
+            +e.P.city г. Москва, Московская обл.
+
+        +e.col._flexible
+          +e.P.linkwrap
+            +link-icon('Phone2 icon')(href="javascript:void(0)")._midgrey Перезвоните мне
+
+          +e.P.linkwrap
+            +link-icon(false)(href="javascript:void(0)")._help._midgrey Помощь
+
+        +e.col._text
+          +e.P.textblock
+            +e.SPAN.text._big 21
+            +e.SPAN.text Заказы
+
+          +e.P.textblock
+            +e.SPAN.text._big 7
+            +e.SPAN.text Отзывы
+
+
+      +e.grid._info
+        +e.col
+          +e.textblock
+            +e.P.text._big 21
+            +e.P.text Заказы
+
+        +e.col
+          +e.textblock
+            +e.P.text._big 7
+            +e.P.text Отзывы

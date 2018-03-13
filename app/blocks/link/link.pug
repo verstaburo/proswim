@@ -5,6 +5,9 @@ mixin link()
 
 mixin link-icon(iconname)
   +b.A.link&attributes(attributes)._icon
-    +icon(iconname).__icon
+    if iconname
+      +icon(iconname).__icon
+    else
+      +e.icon
     +e.SPAN.text
       block

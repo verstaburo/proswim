@@ -6,13 +6,16 @@ html(lang='ru')
   include head
 
   body
-    +header
-    +navbar
-    +burger
+    block header
+      +header(true)
+      +navbar
+      +burger(true)
+
     +popups
       block popups
 
     block content
+
     +subscribe
     +footer
     +page-overlay

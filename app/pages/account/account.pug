@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - account'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'account'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading account
+
+block popups

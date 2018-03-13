@@ -37,6 +37,12 @@
     box-sizing: border-box;
     border-bottom: 1px solid $color-border;
 
+    .container {
+      display: flex;
+      align-items: center;
+      height: inherit;
+    }
+
     &_subhead {
       height: auto;
       border: 0;
