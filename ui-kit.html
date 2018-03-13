@@ -2105,6 +2105,70 @@
                 </div>
             </div>
         </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2>Загрузка фото</h2>
+                    <p>Блок: block/upload-photo/upload-photo</p>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="content-zone">
+                        <h3>События</h3>
+                        <blockquote>
+                            <h5>upload-photo/upload-start</h5>
+                            <p>
+                                <small>Загрузка началась</small>
+                            </p>
+                            <h5>upload-photo/upload-complete</h5>
+                            <p>
+                                <small>Загрузка завершена, можно сохранять фото на сервере</small>
+                            </p>
+                            <p>
+                                <small>$('js-upload-photo').on('upload-photo/upload-complete', (event, data) => { data }) в data.file находится файл</small>
+                            </p>
+                            <h5>upload-photo/delete-start</h5>
+                            <p>
+                                <small>Удаление начато</small>
+                            </p>
+                            <h5>upload-photo/delete-complete</h5>
+                            <p>
+                                <small>Удаление завершено, можно удалить файл на сервере</small>
+                            </p>
+                        </blockquote>
+                    </div>
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_12">
+                            <p class="ui-kit__description">Фото не загружено</p>
+                            <label class="upload-photo js-upload-photo">
+                                <input class="upload-photo__control js-upload-photo-control" type="file" name="photo" accept="image/*" />
+                                <svg class="upload-photo__icon"><use xlink:href="assets/images/icon.svg#icon_camera-icon"></use></svg>
+                                <span class="upload-photo__image">
+                                    <img class="js-upload-photo-image" alt="Uploaded photo" />
+                                </span>
+                                <span class="upload-photo__delete js-upload-photo-delete">
+                                    <svg class="upload-photo__deleteicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="grid__col grid__col_xl_12">
+                            <p class="ui-kit__description">Фото загружено</p>
+                            <label class="upload-photo js-upload-photo is-uploaded">
+                                <input class="upload-photo__control js-upload-photo-control" type="file" name="photo" accept="image/*" />
+                                <svg class="upload-photo__icon"><use xlink:href="assets/images/icon.svg#icon_camera-icon"></use></svg>
+                                <span class="upload-photo__image">
+                                    <img class="js-upload-photo-image" src="content-img/user/uploaded-ava.jpg" alt="Uploaded photo" />
+                                </span>
+                                <span class="upload-photo__delete js-upload-photo-delete">
+                                    <svg class="upload-photo__deleteicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <script>
         $('.ui-kit__section').each(function(i) {

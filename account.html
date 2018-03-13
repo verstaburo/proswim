@@ -2272,7 +2272,354 @@
         </div>
         <div class="container">
             <div class="grid account">
-                <div class="grid__col grid__col_xl_9 grid__col_lg_12"></div>
+                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
+                    <form action="/" method="POST" enctype="multipart/form-data" data-parsley-validate>
+                        <div class="fieldsets">
+                            <fieldset class="fieldset">
+                                <div class="fieldset__head">
+                                    <div class="fieldset__headcol fieldset__headcol_flexible">
+                                        <legend class="fieldset__heading">Персональные данные</legend>
+                                    </div>
+                                </div>
+                                <div class="fieldset__body">
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_10">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">ФИО:</P>
+                                                </div>
+                                                <input class="input input_size_md" name="name" type="text" placeholder="ФИО" value="Макаров Дмитрий Алексеевич" />
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_4 grid__col_lg_2">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Фото:</P>
+                                                </div>
+                                                <label class="upload-photo js-upload-photo">
+                                                    <input class="upload-photo__control js-upload-photo-control" type="file" name="photo" accept="image/*" />
+                                                    <svg class="upload-photo__icon"><use xlink:href="assets/images/icon.svg#icon_camera-icon"></use></svg>
+                                                    <span class="upload-photo__image">
+                                                        <img class="js-upload-photo-image" alt="Uploaded photo" />
+                                                    </span>
+                                                    <span class="upload-photo__delete js-upload-photo-delete">
+                                                        <svg class="upload-photo__deleteicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Email:</P>
+                                                </div>
+                                                <input class="input input_size_md" name="eail" type="email" placeholder="E-mail" value="dmitriynuks@gmail.com" />
+                                            </div>
+                                        </div>
+                                        <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Дата рождения:</P>
+                                                </div>
+                                                <div class="inputbtn">
+                                                    <input class="input input_size_md js-datepicker" name="birthday" type="text" value="18 августа 1983 г." placeholder="Выберите дату рождения" data-date-format="dd MM yyyy" />
+                                                    <div class="inputbtn__btn">
+                                                        <svg class="inputbtn__icon"><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Пол:</P>
+                                                </div>
+                                                <label class="checkradio checkradio_radio">
+                                                    <input class="checkradio__input" name="sex" value="male" checked="checked" type="radio" />
+                                                    <span class="checkradio__box"></span>
+                                                    <span class="checkradio__content">Мужской</span>
+                                                </label>
+                                                <label class="checkradio checkradio_radio">
+                                                    <input class="checkradio__input" name="sex" value="female" type="radio" />
+                                                    <span class="checkradio__box"></span>
+                                                    <span class="checkradio__content">Женский</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Телефон:</P>
+                                                </div>
+                                                <input class="input input_size_md" name="phone" placeholder="Телефон" data-type="tel" value="+7 (915) 989-98-09" type="text" />
+                                            </div>
+                                            <div class="content-zone">
+                                                <p>Изменять номер мобильного телефона можно не более 2х раз в сутки.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <div class="fieldset__head">
+                                    <div class="fieldset__headcol fieldset__headcol_flexible">
+                                        <legend class="fieldset__heading">Адреса доставки</legend>
+                                    </div>
+                                </div>
+                                <div class="fieldset__body">
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                            <div class="checkitems">
+                                                <div class="checkitems__col checkitems__col_width_50 is-active" data-tab-target="main-address">
+                                                    <div class="checkitem">
+                                                        <svg class="checkitem__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        <span class="checkitem__text">Основной адрес</span>
+                                                    </div>
+                                                </div>
+                                                <div class="checkitems__col checkitems__col_width_50" data-tab-target="additional-address">
+                                                    <div class="checkitem">
+                                                        <svg class="checkitem__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        <span class="checkitem__text">Пункты самовывоза</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-content">
+                                        <div class="tabs-content__wrapper is-active" data-tab="main-address" data-tab-group="addresstabs">
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Город доставки:</P>
+                                                        </div>
+                                                        <select class="select js-select" data-toggler-icon="arrow" data-toggler-icon-mod="arrow" data-search-enabled="true" data-search-placeholder="Введите название города...">
+                                                            <option value="1">Абакан (Хакасия республика)</option>
+                                                            <option value="2">Абан (Красноярский край)</option>
+                                                            <option value="3">Абатский (Тюменская область)</option>
+                                                            <option value="4">Абрамовский маяк (Архангельская область)</option>
+                                                            <option value="5">Агата (Эвенкийский автономный округ)</option>
+                                                            <option value="6">Агаякан (Саха(Якутия) республика)</option>
+                                                            <option value="7">Агзу (риморский край)</option>
+                                                            <option value="8">Агинское (Красноярский край)</option>
+                                                            <option value="9">Агинское (Агинский Бурятский автономный округ)</option>
+                                                            <option value="10">БАйхал (Саха(Якутия) республика)</option>
+                                                            <option value="11">БАбакан (Хакасия республика)</option>
+                                                            <option value="12">БАбан (Красноярский край)</option>
+                                                            <option value="13">БАбатский (Тюменская область)</option>
+                                                            <option value="14">БАбрамовский маяк (Архангельская область)</option>
+                                                            <option value="15">БАгата (Эвенкийский автономный округ)</option>
+                                                            <option value="16">БАгаякан (Саха(Якутия) республика)</option>
+                                                            <option value="17">БАгзу (риморский край)</option>
+                                                            <option value="18">БАгинское (Красноярский край)</option>
+                                                            <option value="19">БАгинское (Агинский Бурятский автономный округ)</option>
+                                                            <option value="20">БАйхал (Саха(Якутия) республика)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="inputbox">
+                                                        <label class="checkradio" data-target="#main-city">
+                                                            <input class="checkradio__input js-no-city-in-list" name="no-city" value="1" type="checkbox" />
+                                                            <span class="checkradio__box">
+                                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                            </span>
+                                                            <span class="checkradio__content">Моего города нет в списке</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="is-hidden" id="main-city">
+                                                <div class="grid">
+                                                    <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                                        <div class="inputbox">
+                                                            <div class="inputbox__head">
+                                                                <P class="inputbox__label">Введите название вашего города:</P>
+                                                            </div>
+                                                            <input class="input input_size_md" type="text" placeholder="название города" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Улица:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="ulica" type="text" placeholder="Улица" value="Пушкинская" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Дом:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Дом" value="22" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Корпус:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Квартира:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Квартира" value="13" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs-content__wrapper" data-tab="additional-address" data-tab-group="addresstabs">
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Город доставки:</P>
+                                                        </div>
+                                                        <select class="select js-select" data-toggler-icon="arrow" data-toggler-icon-mod="arrow" data-search-enabled="true" data-search-placeholder="Введите название города...">
+                                                            <option value="1">Абакан (Хакасия республика)</option>
+                                                            <option value="2">Абан (Красноярский край)</option>
+                                                            <option value="3">Абатский (Тюменская область)</option>
+                                                            <option value="4">Абрамовский маяк (Архангельская область)</option>
+                                                            <option value="5">Агата (Эвенкийский автономный округ)</option>
+                                                            <option value="6">Агаякан (Саха(Якутия) республика)</option>
+                                                            <option value="7">Агзу (риморский край)</option>
+                                                            <option value="8">Агинское (Красноярский край)</option>
+                                                            <option value="9">Агинское (Агинский Бурятский автономный округ)</option>
+                                                            <option value="10">БАйхал (Саха(Якутия) республика)</option>
+                                                            <option value="11">БАбакан (Хакасия республика)</option>
+                                                            <option value="12">БАбан (Красноярский край)</option>
+                                                            <option value="13">БАбатский (Тюменская область)</option>
+                                                            <option value="14">БАбрамовский маяк (Архангельская область)</option>
+                                                            <option value="15">БАгата (Эвенкийский автономный округ)</option>
+                                                            <option value="16">БАгаякан (Саха(Якутия) республика)</option>
+                                                            <option value="17">БАгзу (риморский край)</option>
+                                                            <option value="18">БАгинское (Красноярский край)</option>
+                                                            <option value="19">БАгинское (Агинский Бурятский автономный округ)</option>
+                                                            <option value="20">БАйхал (Саха(Якутия) республика)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="inputbox">
+                                                        <label class="checkradio" data-target="#additional-city">
+                                                            <input class="checkradio__input js-no-city-in-list" name="no-city" value="1" type="checkbox" />
+                                                            <span class="checkradio__box">
+                                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                            </span>
+                                                            <span class="checkradio__content">Моего города нет в списке</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="is-hidden" id="additional-city">
+                                                <div class="grid">
+                                                    <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                                        <div class="inputbox">
+                                                            <div class="inputbox__head">
+                                                                <P class="inputbox__label">Введите название вашего города:</P>
+                                                            </div>
+                                                            <input class="input input_size_md" type="text" placeholder="название города" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Улица:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="ulica" type="text" placeholder="Улица" value="Пушкинская" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Дом:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Дом" value="22" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid">
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Корпус:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="korpus" type="text" placeholder="Корпус" />
+                                                    </div>
+                                                </div>
+                                                <div class="grid__col grid__col_xl_4 grid__col_lg_12">
+                                                    <div class="inputbox">
+                                                        <div class="inputbox__head">
+                                                            <P class="inputbox__label">Квартира:</P>
+                                                        </div>
+                                                        <input class="input input_size_md" name="dom" type="text" placeholder="Квартира" value="13" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <div class="fieldset__head">
+                                    <div class="fieldset__headcol fieldset__headcol_flexible">
+                                        <legend class="fieldset__heading">Карта постоянного покупателя</legend>
+                                    </div>
+                                </div>
+                                <div class="fieldset__body">
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Номер карты:</P>
+                                                </div>
+                                                <input class="input input_size_md" name="card-number" type="text" placeholder="Номер карты" value="8787-1446-7654-9476" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <div class="fieldset__head">
+                                    <div class="fieldset__headcol fieldset__headcol_flexible">
+                                        <legend class="fieldset__heading">Смена пароля</legend>
+                                    </div>
+                                </div>
+                                <div class="fieldset__body">
+                                    <div class="grid">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                            <div class="inputbox">
+                                                <div class="inputbox__head">
+                                                    <P class="inputbox__label">Пароль:</P>
+                                                    <a class="link inputbox__link js-edit-pass-link">
+                                                        <span class="link__text">Изменить</span>
+                                                    </a>
+                                                </div>
+                                                <input class="input input_size_md" name="card-number" type="password" placeholder="Введите пароль" value="123456789" disabled="disabled" />
+                                            </div>
+                                            <button class="button button_size_big fieldset__save" type="submit">Сохранить изменения</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
