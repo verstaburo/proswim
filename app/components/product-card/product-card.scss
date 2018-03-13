@@ -9,7 +9,7 @@
   border: 1px solid $color-border;
   background-color: white;
   text-align: center;
-  transition: box-shadow $ease-main;
+  transition: box-shadow $ease-main, border-color $ease-main;
   color: $color-basic;
   text-decoration: none;
 
