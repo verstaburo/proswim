@@ -1,0 +1,24 @@
+.help-section {
+  display: block;
+  margin-top: -21px;
+
+  .accordion {
+    &__button {
+      padding: 15px 0 14px;
+      @include heading-5;
+
+      @include screen(sm) {
+        padding: 16px 0 13px;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-border;
+    }
+
+    &__body {
+      color: $darkengrey-color;
+      padding: 0 0 12px;
+    }
+  }
+}

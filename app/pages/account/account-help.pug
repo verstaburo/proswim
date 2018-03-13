@@ -9,7 +9,7 @@ block content
       .container
         +e.headcol._flexible
           +breadcrumbs(['Главная', 'Мой кабинет'])
-        +e.headcol.hide-lg
+        +e.headcol
           +link-icon('Logout icon')._dark._print Выйти
     +userinfo
     +tabs-container._usermenu
@@ -19,3 +19,8 @@ block content
         a(href="account-orders.html") Мои заказы
       +tab.is-active
         a(href="account-help.html") Помощь
+
+    .container
+      +grid.account
+        +col({ xl: 9, lg: 12 })
+          +help-section
