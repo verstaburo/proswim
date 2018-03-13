@@ -97,12 +97,12 @@ block content
                               option(value="20") БАйхал (Саха(Якутия) республика)
 
                           +inputbox
-                            +checkbox('no-city', 1) Моего города нет в списке
-
-                      +grid
-                        +col({ xl: 8, lg: 12 })
-                          +inputbox('Введите название вашего города:')
-                            +input(type="text" placeholder="название города")._size_md
+                            +checkbox('no-city', 1, false, false, 'checkbox', 'js-no-city-in-list')(data-target="#main-city") Моего города нет в списке
+                      .is-hidden#main-city
+                        +grid
+                          +col({ xl: 8, lg: 12 })
+                            +inputbox('Введите название вашего города:')
+                              +input(type="text" placeholder="название города")._size_md
 
                       +grid
                         +col({ xl: 4, lg: 12 })
@@ -147,12 +147,13 @@ block content
                               option(value="20") БАйхал (Саха(Якутия) республика)
 
                           +inputbox
-                            +checkbox('no-city', 1) Моего города нет в списке
+                            +checkbox('no-city', 1, false, false, 'checkbox', 'js-no-city-in-list')(data-target="#additional-city") Моего города нет в списке
 
-                      +grid
-                        +col({ xl: 8, lg: 12 })
-                          +inputbox('Введите название вашего города:')
-                            +input(type="text" placeholder="название города")._size_md
+                      .is-hidden#additional-city
+                        +grid
+                          +col({ xl: 8, lg: 12 })
+                            +inputbox('Введите название вашего города:')
+                              +input(type="text" placeholder="название города")._size_md
 
                       +grid
                         +col({ xl: 4, lg: 12 })
@@ -185,7 +186,7 @@ block content
                 +fieldset-body
                   +grid
                     +col({ xl: 8, lg: 12 })
-                      +inputbox('Пароль:', 'Изменить')
-                        +input(name="card-number" type="password" placeholder="Введите пароль" value="123456789")._size_md
+                      +inputbox('Пароль:', 'Изменить', 'js-edit-pass-link')
+                        +input(name="card-number" type="password" placeholder="Введите пароль" value="123456789" disabled)._size_md
 
                       +button.BUTTON(type="submit")._size_big.__save Сохранить изменения

@@ -137,3 +137,17 @@ export function numberinput() {
     if ($(this).val() < 1) $(this).val(1);
   });
 }
+
+export function enableInput() {
+  $(document).on('click', '.js-edit-pass-link', function (e) {
+    e.preventDefault();
+
+    $(this)
+      .fadeOut(window.globalOptions.animationDuration)
+      .parents('.inputbox')
+      .find('.input')
+      .val('')
+      .attr('disabled', false)
+      .focus();
+  });
+}

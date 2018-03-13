@@ -2,6 +2,23 @@
  @@include('../components/product-item-section/product-item-section.main.js')
  @@include('../pages/cart/cart.main.js')
  @@include('../pages/cart/cart-delivery.main.js')
+
+ /**
+  * Показать город
+  */
+
+$(document).on('change', '.js-no-city-in-list', function(e) {
+  var isChecked = $(this).is(':checked'),
+      additionalCity = $($(this).parents('.checkradio').data('target'));
+
+  if (!additionalCity.length) {
+    return;
+  }
+
+  var action = isChecked ? 'fadeIn' : 'fadeOut';
+  additionalCity[action](window.globalOptions.animationDuration);
+});
+
 // new Vue({
 //   data: {
 //     el: '.page',

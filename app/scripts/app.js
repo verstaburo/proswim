@@ -8,13 +8,7 @@ import '../blocks/js-functions/truncate';
 import anchor from '../blocks/js-functions/anchor';
 import { freezebuttons } from '../blocks/js-functions/freeze';
 import scrollanimation from '../blocks/js-functions/scrollanimation';
-import {
-  selects,
-  sliders,
-  datepicker,
-  inputmask,
-  numberinput,
-} from '../blocks/form-elements/form-elements';
+import { enableInput, selects, sliders, datepicker, inputmask, numberinput } from '../blocks/form-elements/form-elements';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
 import slider from '../blocks/slider/slider';
@@ -53,6 +47,7 @@ $(() => {
   scrollbar();
   anchor();
   freezebuttons();
+  enableInput();
   selects();
   sliders();
   popups();
