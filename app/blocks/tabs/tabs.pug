@@ -2,6 +2,11 @@ mixin tabs()
   +b.UL.tabs&attributes(attributes)
     block
 
+mixin tabs-container
+  +b.tabs&attributes(attributes)
+    +e.UL.container.container
+      block
+
 mixin tab()
   +e.LI.tab&attributes(attributes)
     block
