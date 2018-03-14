@@ -1,0 +1,8 @@
+mixin orders-section(data)
+  +b.orders-section&attributes(attributes)
+    +searchbar('Введите номер заказа для поиска...')._big.__searchbar
+
+    +grid
+      each item in data
+        +col(12)
+          +order-card(item)

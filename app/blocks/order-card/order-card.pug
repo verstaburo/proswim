@@ -1,0 +1,22 @@
+mixin order-card(data)
+  -
+    var stateText = {
+        'payment': 'Ожидается оплата',
+        'completed': 'Выполнен',
+        'sent': 'Отправлен',
+        'processing': 'В обработке',
+        'canceled': 'Отменен',
+      }
+
+  +b.order-card&attributes(attributes)
+    +e.col
+      +link(href="account-order.html" data-order-id=data.id)=data.id
+    +e.col
+      +e.P.text=data.date
+    +e.col
+      +e.P.text=data.price
+    +e.col._flexible
+      +e.P.text.__state(class=`_${data.state}`)=stateText[data.state]
+    if data.state === 'payment'
+      +e.col
+        +button(href='javascript:void(0)').__button Оплатить

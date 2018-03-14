@@ -768,6 +768,19 @@ block content
           +col(12)
             +ui-description Фото загружено
             +upload-photo('content-img/user/uploaded-ava.jpg').is-uploaded
+
+    //- Order card
+    +ui-section
+      +ui-section-head
+        h2 Order card
+        p Блок: block/order-card/order-card
+      +ui-section-content
+         - var orderCards = getData('order-cards')
+        +grid
+          each item in orderCards
+            +col({ xl: 9, lg: 12 })
+              +order-card(item)
+
   script
     |
     | $('.ui-kit__section').each(function (i) {

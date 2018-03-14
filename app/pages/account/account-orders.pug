@@ -1,0 +1,26 @@
+extends ../../layouts/default-loggedin
+
+block head
+  - var pageTitle = 'Proswim - Мой кабинет - Помощь'
+
+block content
+  +b.page
+    +e.head
+      .container
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Мой кабинет'])
+        +e.headcol
+          +link-icon('Logout icon')._dark._print Выйти
+    +userinfo
+    +tabs-container._usermenu
+      +tab
+        a(href="account.html") Мои данные
+      +tab.is-active
+        a(href="account-orders.html") Мои заказы
+      +tab
+        a(href="account-help.html") Помощь
+
+    .container
+      +grid.account
+        +col({ xl: 9, lg: 12 })
+          +orders-section(getData('order-cards'))
