@@ -1,0 +1,49 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Контакты'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Контакты'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Контакты
+
+      +section._simple
+        +section-head('Интернет-магазин')
+        +section-content
+          +grid
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Phone icon22', 'Москва:')
+                p 8 (495) 580-82-95
+
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Phone icon22', 'Санкт-Петербург:')
+                p 8 (812) 449-24-71
+
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Phone icon22', 'Бесплатно по РФ:')
+                p 8 (800) 100-24-59
+
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Time icon22', 'График работы менеджеров:')
+                p c&nbsp;9.00 до&nbsp;21.00 без выходных, заказы через сайт принимаются круглосуточно
+
+            +col({ xl: 3, lg: 5, sm: 12 })
+              +shop-description('Email icon22', 'Email:')
+                p По&nbsp;всем вопросам: #[a(href="mailto:info@proswim.ru") info@proswim.ru]
+
+            +col({ xl: 9, lg: 12 })
+              +shop-description('Reviews icon22', 'Поддержка:')
+                p Для отзывов, похвалы или жалоб: #[a(href="mailto:info@proswim.ru") info@proswim.ru]
+                p Если у&nbsp;вас возникли проблемы или сложные ситуации с&nbsp;заказами или нашими сотрудниками, пожалуйста, сообщите нам об&nbsp;этом и&nbsp;мы&nbsp;обязательно все уладим! Ведь клиенты для нас&nbsp;&mdash; самое ценное!
+
+block popups
+  +login-popup
+  +registration-popup
+  +password-recovery-popup
+  +registration-complete-popup

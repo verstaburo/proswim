@@ -1,0 +1,68 @@
+.shop-description {
+  display: block;
+  padding-bottom: 3px;
+
+  &__header {
+    display: flex;
+    font-size: 0;
+    margin-bottom: 10px;
+  }
+
+  &__heading {
+    display: inline-block;
+    @include heading-5;
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    svg {
+      @include center-image;
+      margin-left: 0;
+      width: 100%;
+      height: 100%;
+      fill: $color-main;
+    }
+
+    &_phone svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &_time svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &_email svg {
+      width: 24px;
+      height: 18px;
+    }
+
+    &_reviews svg {
+      width: 24px;
+      height: 21px;
+    }
+  }
+
+  &__body {
+    color: $darkgrey-color;
+
+    a[href^="tel:"] {
+      color: $darkgrey-color;
+
+      &:hover {
+        color: $darkblue-color;
+      }
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

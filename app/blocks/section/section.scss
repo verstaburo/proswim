@@ -8,6 +8,26 @@
 
   &_grey { background-color: $lightgrey-color; }
 
+  &_simple {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .page__head_subhead + & {
+      padding-top: 0;
+      margin-top: -8px;
+
+      @include screen(sm) {
+        margin-top: -1px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 31px;
+      padding-bottom: 29px;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+
   &__head {
     display: flex;
     align-items: center;
@@ -20,10 +40,17 @@
 
   &__heading {
     @include heading-2;
-    flex: 1 1 auto;
+    flex: 1;
 
     @include screen(sm) {
       line-height: (28/24);
+    }
+
+    .section_simple & {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: (32/18);
+      letter-spacing: .01em;
     }
   }
 

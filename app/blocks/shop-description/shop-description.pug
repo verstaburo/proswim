@@ -1,0 +1,16 @@
+mixin shop-description(icon, heading)
+  -
+    var iconMods = {
+        'Phone icon22': '_phone',
+        'Time icon22': '_time',
+        'Email icon22': '_email',
+        'Reviews icon22': '_reviews',
+      }
+
+  +b.ARTICLE.shop-description&attributes(attributes)
+    +e.HEADER.header
+      +e.SPAN.icon(class=iconMods[icon])
+        +icon(icon)
+      +e.H5.heading=heading
+    +content-zone.shop-description__body
+      block
