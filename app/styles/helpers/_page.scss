@@ -51,6 +51,10 @@
     &_account {
       margin-top: 10px;
       margin-bottom: -29px;
+
+      @include screen(lg) {
+        margin-bottom: -25px;
+      }
     }
 
     &col {

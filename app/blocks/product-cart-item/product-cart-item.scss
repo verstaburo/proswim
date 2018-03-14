@@ -88,6 +88,12 @@
       width: 200px;
       margin-right: 85px;
 
+      .account & {
+        @include screen(lg) {
+          margin-right: 54px;
+        }
+      }
+
       @include screen(sm) {
         width: 100%;
         margin-right: 0;
