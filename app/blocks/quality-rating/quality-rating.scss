@@ -1,0 +1,20 @@
+.quality-rating {
+  display: block;
+  padding: 20px 15px 17px 20px;
+  background-color: $lightgrey-color;
+
+  &__heading {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: (24/15);
+  }
+
+  &__rating {
+    margin-top: 13px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

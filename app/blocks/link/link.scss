@@ -6,6 +6,18 @@
     .link__icon { fill: $color-basic; }
   }
 
+  &_return {
+    margin-top: 42px;
+
+    @include screen(lg) {
+      margin-top: 30px;
+    }
+
+    @include screen(sm) {
+      margin-top: 25px;
+    }
+  }
+
   &_dark {
     .link__text {
       color: $color-basic;

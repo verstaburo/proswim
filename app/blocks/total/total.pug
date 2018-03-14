@@ -1,5 +1,5 @@
 mixin total()
-  +b.total&attributes(attributes).js-total
+  +b.total&attributes(attributes).sticky-block.js-total.js-sticky-block
     +e.UL.items
       +e.LI.item
         +e.SPAN.text Сумма:
@@ -15,7 +15,7 @@ mixin total()
       +tooltip-icon.tooltip-icon_blue
 
 mixin total-delivery()
-  +b.total&attributes(attributes).js-total
+  +b.total&attributes(attributes).sticky-block.js-total.js-sticky-block
     +e.UL.items
       +e.LI.item
         +e.SPAN.text Сумма:
@@ -46,3 +46,21 @@ mixin total-delivery()
       +inputbox.total__promobox
         +input(placeholder="Карта покупателя" name="").__input
         +button.BUTTON(type="button")._size_sm.__promobutton Применить
+
+mixin total-account
+  +b.total&attributes(attributes).js-total
+    +e.UL.items
+      +e.LI.item
+        +e.SPAN.text Сумма:
+        +e.B.price #[SPAN.js-total-amount 21 790] руб.
+      +e.LI.item
+        +e.SPAN.text Доставка:
+        +e.B.price #[SPAN.js-total-delivery 190] руб.
+      +e.LI.item
+        +e.SPAN.text Скидка:
+        +e.B.price #[SPAN.js-total-discount -300] руб
+      +e.LI.item
+        +e.SPAN.text Итого:
+        +e.B.price #[SPAN.js-total-amount 21 980] руб.
+
+    +button.BUTTON(type="button")._size_big._block.__button Оплатить

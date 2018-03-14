@@ -110,6 +110,15 @@
       }
     }
 
+    &_accountprice {
+      margin-top: 22px;
+
+      .product-cart-item__text {
+        font-size: 15px;
+        line-height: (18/15);
+      }
+    }
+
     &_price {
       margin-top: 32px;
       order: 2;
@@ -259,6 +268,7 @@
       font-size: 15px;
       line-height: 1;
     }
+
 
     &block {
       display: block;

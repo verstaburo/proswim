@@ -1,17 +1,5 @@
 .cart {
 
-  &__returnlink {
-    margin-top: 42px;
-
-    @include screen(lg) {
-      margin-top: 30px;
-    }
-
-    @include screen(sm) {
-      margin-top: 25px;
-    }
-  }
-
   .grid__col {
     position: relative;
   }
