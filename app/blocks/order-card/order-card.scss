@@ -14,8 +14,16 @@
     box-sizing: border-box;
     &_flexible { flex: 1; }
 
+    @include screen(lg) {
+      width: 127px;
+    }
+
     &:first-child {
       width: 149px;
+
+      @include screen(lg) {
+        width: 105px;
+      }
     }
 
     &:last-child {
