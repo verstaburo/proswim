@@ -31,17 +31,17 @@ block content
                     +fieldset-heading Персональные данные
                 +fieldset-body
                   +grid
-                    +col({ xl: 8, lg: 10 })
+                    +col({ xl: 8, lg: 10, sm: 12 })
                       +inputbox('ФИО:')
                         +input(name="name" type="text" placeholder="ФИО" value="Макаров Дмитрий Алексеевич")._size_md
-                    +col({ xl: 4, lg: 2 })
-                      +inputbox('Фото:')
+                    +col({ xl: 4, lg: 2, sm: 12 })
+                      +inputbox('Фото:').fieldset__photo
                         +upload-photo
                   +grid
-                    +col({ xl: 4, lg: 12 })
+                    +col({ xl: 4, lg: 6, sm: 12 })
                       +inputbox('Email:')
                         +input(name="eail" type="email" placeholder="E-mail" value="dmitriynuks@gmail.com")._size_md
-                    +col({ xl: 4, lg: 12 })
+                    +col({ xl: 4, lg: 6, sm: 12 })
                       +inputbox('Дата рождения:')
                         +input-btn('calendar')
                           +input(name="birthday" type="text" value="18 августа 1983 г." placeholder="Выберите дату рождения" data-date-format='dd MM yyyy')._size_md.js-datepicker
@@ -105,18 +105,18 @@ block content
                               +input(type="text" placeholder="название города")._size_md
 
                       +grid
-                        +col({ xl: 4, lg: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Улица:')
                             +input(name="ulica" type="text" placeholder="Улица" value="Пушкинская")._size_md
-                        +col({ xl: 4, lg: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Дом:')
                             +input(name="dom" type="text" placeholder="Дом" value="22")._size_md
 
                       +grid
-                        +col({ xl: 4, lg: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Корпус:')
                             +input(name="korpus" type="text" placeholder="Корпус")._size_md
-                        +col({ xl: 4, lg: 12 })
+                        +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Квартира:')
                             +input(name="dom" type="text" placeholder="Квартира" value="13")._size_md
 

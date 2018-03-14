@@ -83,6 +83,17 @@
     padding-top: 0;
   }
 
+  &__photo {
+    @include screen(lg) {
+      width: 68px;
+      margin-left: auto;
+    }
+
+    @include screen(sm) {
+      margin-left: 0;
+    }
+  }
+
   &__offset {
     margin-top: 13px;
 
@@ -102,6 +113,10 @@
   &__save {
     min-width: 265px;
     margin-top: 31px;
+
+    @include screen(lg) {
+      width: 100%;
+    }
   }
 }
 
