@@ -93,6 +93,8 @@
     &_blue {
       color: $darkblue-color;
     }
+
+    b, strong { font-weight: 900; }
   }
 
   &__state {

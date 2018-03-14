@@ -1,8 +1,8 @@
 mixin orders-section(data)
   +b.orders-section&attributes(attributes)
-    +searchbar('Введите номер заказа для поиска...', 'Введите номер заказа...')._big.__searchbar
+    +searchbar('Введите номер заказа для поиска...', 'Введите номер заказа...')._big.__searchbar.js-orders-section-form
 
-    +grid.orders-section__grid
+    +grid.orders-section__grid.js-orders-section-items
       each item in data
-        +col(12)
+        +col(12).js-orders-section-item
           +order-card(item)
