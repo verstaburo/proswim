@@ -55,6 +55,11 @@
       @include screen(lg) {
         margin-bottom: -25px;
       }
+
+      @include screen(sm) {
+        margin-top: 13px;
+        margin-bottom: -21px;
+      }
     }
 
     &col {

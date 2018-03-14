@@ -92,6 +92,10 @@
         @include screen(lg) {
           margin-right: 54px;
         }
+
+        @include screen(sm) {
+          margin-right: 0;
+        }
       }
 
       @include screen(sm) {
@@ -122,6 +126,11 @@
       .product-cart-item__text {
         font-size: 15px;
         line-height: (18/15);
+      }
+
+      @include screen(sm) {
+        width: 100%;
+        margin-top: 7px;
       }
     }
 

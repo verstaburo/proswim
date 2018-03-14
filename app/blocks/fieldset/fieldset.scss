@@ -10,7 +10,7 @@
 
   @include screen(sm) {
     border-left: 0;
-    background-repeat: 0;
+    border-right: 0;
   }
 
   .tabs-content .grid:first-of-type {
