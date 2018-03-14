@@ -163,9 +163,9 @@
     &block {
       display: block;
       text-align: center;
-      padding-left: 15px;
 
       @include screen(sm) {
+        padding-left: 15px;
         text-align: left;
 
         & + & {
