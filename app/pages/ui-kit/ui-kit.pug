@@ -775,7 +775,8 @@ block content
         h2 Order card
         p Блок: block/order-card/order-card
       +ui-section-content
-         - var orderCards = getData('order-cards')
+        - var orderCards = getData('order-cards')
+
         +grid
           each item in orderCards
             +col({ xl: 9, lg: 12 })

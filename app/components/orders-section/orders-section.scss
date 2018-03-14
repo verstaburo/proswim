@@ -4,4 +4,11 @@
   &__searchbar {
     margin-bottom: 30px;
   }
+
+  &__grid {
+    @include screen(sm) {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+  }
 }

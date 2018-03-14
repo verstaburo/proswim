@@ -9,6 +9,17 @@
   padding: 23px 20px;
   box-sizing: border-box;
 
+  @include screen(sm) {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 14px 5px 19px;
+
+    .orders-section & {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
   &__col {
     width: 159px;
     box-sizing: border-box;
@@ -18,20 +29,50 @@
       width: 127px;
     }
 
+    @include screen(sm) {
+      width: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+
+      &:nth-child(3n+1),
+      &:nth-child(3n) {
+        flex: 1;
+      }
+
+      &:nth-child(3n) {
+        text-align: right;
+      }
+    }
+
+
     &:first-child {
       width: 149px;
 
       @include screen(lg) {
         width: 105px;
       }
+
+      @include screen(sm) {
+        width: auto;
+      }
     }
 
     &:last-child {
       width: auto;
+
+      @include screen(sm) {
+        width: 100%;
+      }
     }
 
     &:not(:last-child) {
       padding-right: 20px;
+
+      @include screen(sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     }
   }
 
@@ -89,5 +130,11 @@
 
   &__button {
     padding: 0 32px;
+
+    @include screen(sm) {
+      width: 100%;
+      margin-top: 7px;
+      margin-bottom: 4px;
+    }
   }
 }
