@@ -8,9 +8,9 @@ mixin order-card(data)
         'canceled': 'Отменен',
       }
 
-  +b.order-card&attributes(attributes)
+  +b.A(href="account-order.html").order-card&attributes(attributes)
     +e.col
-      +link(href="account-order.html" data-order-id=data.id)=data.id
+      +e.P.text._blue(data-order-id=data.id)=data.id
     +e.col
       +e.P.text=data.date
     +e.col
@@ -19,4 +19,4 @@ mixin order-card(data)
       +e.P.text.__state(class=`_${data.state}`)=stateText[data.state]
     if data.state === 'payment'
       +e.col
-        +button(href='javascript:void(0)').__button Оплатить
+        +button.DIV.__button Оплатить
