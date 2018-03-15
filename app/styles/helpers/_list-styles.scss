@@ -10,6 +10,10 @@
     padding-left: 20px;
     position: relative;
 
+    @include screen(sm) {
+      padding-left: 15px;
+    }
+
     &:not(:last-child) {
       margin-bottom: 9px;
     }
@@ -28,6 +32,10 @@
     height: 6px;
     background-color: $color-main;
     border-radius: 50%;
+
+    @include screen(sm) {
+      left: 0;
+    }
   }
 }
 
@@ -38,10 +46,16 @@
 
     &::before {
       position: absolute;
-      left: 0;
+      left: 5px;
       top: 0;
       counter-increment: list1;
-      content: counter(list1) '.';
+      content: counter(list1);
+      font-weight: 700;
+      color: $darkblue-color;
+
+      @include screen(sm) {
+        left: 0;
+      }
     }
   }
 }

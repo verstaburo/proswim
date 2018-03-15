@@ -92,6 +92,10 @@
 
     #{$b}_contentzone & {
       padding: 12px 0 21px 0;
+
+      @include screen(lg) {
+        padding-bottom: 12px;
+      }
     }
   }
 }

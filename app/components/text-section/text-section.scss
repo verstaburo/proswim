@@ -6,6 +6,10 @@
     position: relative;
     padding-left: 66px;
 
+    @include screen(sm) {
+      padding-left: 30px;
+    }
+
     &::before {
       counter-increment: textblock;
       content: counter(textblock);
@@ -17,10 +21,19 @@
       line-height: 1;
       letter-spacing: .01em;
       color: $greylist-color;
+
+      @include screen(sm) {
+        font-size: 40px;
+        top: -.025em;
+      }
     }
 
     &:not(:first-child) {
       margin-top: 48px;
+
+      @include screen(lg) {
+        margin-top: 17px;
+      }
     }
   }
 

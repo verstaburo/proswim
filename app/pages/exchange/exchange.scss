@@ -1,3 +1,7 @@
 .exchange {
   margin-top: -25px;
+
+  @include screen(lg) {
+    margin-top: -20px;
+  }
 }
