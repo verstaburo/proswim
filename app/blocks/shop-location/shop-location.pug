@@ -12,11 +12,17 @@ mixin shop-location-addr
   +e.addr&attributes(attributes)
     block
 
-mixin shop-location-item(icon)
-  +e.item&attributes(attributes)
-    +icon(icon).itemicon
-    +e.SPAN.itemtext
-      block
+mixin shop-location-item(icon, isLink)
+  if isLink
+    +e.A.item&attributes(attributes)
+      +icon(icon).itemicon
+      +e.SPAN.itemtext
+        block
+  else
+    +e.item&attributes(attributes)
+      +icon(icon).itemicon
+      +e.SPAN.itemtext
+        block
 
 mixin shop-location-text
   +e.text&attributes(attributes)

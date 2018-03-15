@@ -48,6 +48,10 @@
       width: 18px;
       height: 18px;
       fill: $color-main;
+
+      .shop-location__item_email & {
+        top: 1px;
+      }
     }
 
     &text {
