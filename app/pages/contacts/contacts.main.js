@@ -15,6 +15,8 @@ function initContactsMap(id, markerLocations) {
     accessToken: 'pk.eyJ1IjoidGhldmVydmVyeTEiLCJhIjoiY2lzZXdzaXZ4MDBjaTJudm93dDI4MGVrMCJ9.Z8KKk0M_lpDTPB6_JtJBxg',
   }).addTo(map);
 
+  map.removeControl(map.zoomControl);
+
   var icon = L.icon({
     iconUrl: 'assets/images/pin.svg',
     shadowUrl: 'assets/images/marker-shadow.png',
