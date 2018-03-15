@@ -2,7 +2,19 @@ mixin social-buttons()
   +b.social-buttons&attributes(attributes)
     block
 
-mixin social-button(kind)
-  - var icons = { fb: 'Facebook icon', vk: 'Vk icon', instagram: 'Instagram icon', ok: 'Odnoklassniki icon', tw: 'Twitter icon' }
+mixin social-button(kind, isGradient)
+  -
+    var icons = {
+      fb: 'Facebook icon',
+      vk: 'Vk icon',
+      instagram: 'Instagram icon',
+      ok: 'Odnoklassniki icon',
+      tw: 'Twitter icon',
+      youtube: 'Youtube icon',
+    }
+
   +b.A.social-button&attributes(attributes)(href='javascript:void(0);' class=`_${kind}`)
-    +icon(icons[kind]).icon
+    if isGradient
+      include ../../static/icons/social-instagram.svg
+    else
+      +icon(icons[kind]).icon

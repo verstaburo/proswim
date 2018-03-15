@@ -61,6 +61,10 @@
       font-weight: 700;
       line-height: (32/18);
       letter-spacing: .01em;
+
+      @include screen(sm) {
+        line-height: (26/18);
+      }
     }
   }
 

@@ -612,6 +612,8 @@ block content
           +social-button('fb')._big._colorized
           +social-button('ok')._big._colorized
           +social-button('tw')._big._colorized
+          +social-button('instagram', true)._big._colorized
+          +social-button('youtube')._big._colorized
 
     //- Category cards
     +ui-section._blue
@@ -781,6 +783,49 @@ block content
           each item in orderCards
             +col({ xl: 9, lg: 12 })
               +order-card(item)
+
+    //- Shop description
+    +ui-section
+      +ui-section-head
+        h2 Shop description
+        p Блок: block/shop-description/shop-description
+      +ui-section-content
+          +grid
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Phone icon22', 'Москва:')
+                p 8 (495) 580-82-95
+
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Time icon22', 'График работы менеджеров:')
+                p c&nbsp;9.00 до&nbsp;21.00 без выходных, заказы через сайт принимаются круглосуточно
+
+            +col({ xl: 3, lg: 4, sm: 12 })
+              +shop-description('Email icon22', 'Email:')
+                p По&nbsp;всем вопросам: #[a(href="mailto:info@proswim.ru") info@proswim.ru]
+
+            +col({ xl: 8, lg: 12 })
+              +shop-description('Reviews icon22', 'Поддержка:')
+                p Для отзывов, похвалы или жалоб: #[a(href="mailto:info@proswim.ru") info@proswim.ru]
+                p Если у&nbsp;вас возникли проблемы или сложные ситуации с&nbsp;заказами или нашими сотрудниками, пожалуйста, сообщите нам об&nbsp;этом и&nbsp;мы&nbsp;обязательно все уладим! Ведь клиенты для нас&nbsp;&mdash; самое ценное!
+
+    //- Shop location
+    +ui-section
+      +ui-section-head
+        h2 Shop location
+        p Блок: block/shop-location/shop-location
+      +ui-section-content
+        +shop-location
+          +shop-location-station м. Алексеевская
+          +shop-location-addr
+            p м. Алекссевская,
+            p ул. 3-я Мытищинская, д. 16 стр. 47, офисное здание "Квант-М", 3 этаж,
+            p офис 329
+
+          +shop-location-item('Phone icon22') 8 (495) 580-82-95
+          +shop-location-item('Time icon22') Пн-Вс: 9.00-21.00
+          +shop-location-print
+          +shop-location-text
+            p Обращаем Ваше внимание, что здании осуществляется пропускная система, поэтому просим Вас взять с собой паспорт.
 
   script
     |
