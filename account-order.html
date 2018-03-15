@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Proswim - Товары в корзине</title>
+    <title>Proswim - Мой кабинет - Заказ #224455</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -137,12 +137,12 @@
             </div>
             <div class="header__col header__col_usermenu">
                 <div class="usermenu">
-                    <a class="userlink userlink_user js-fancybox" href="login.html" data-popup="#login-popup">
+                    <a class="userlink userlink_user" href="cabinet.html">
                         <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
-                        <span class="userlink__text">Войти</span>
+                        <span class="userlink__text">Мой кабинет</span>
                     </a>
                     <a class="userlink userlink_cart" href="javascript:void(0);">
-                        <span class="userlink__badge">3</span>
+                        <span class="userlink__badge">12</span>
                         <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_cart-button"></use></svg>
                         <span class="userlink__text">Корзина</span>
                     </a>
@@ -1228,9 +1228,9 @@
             <header class="burger__section burger__header">
                 <div class="container">
                     <div class="burger__headerlinks">
-                        <a class="link link_icon link_dark burger__headerlink burger__headerlink_user is-active js-burger-login js-fancybox" href="login.html" data-popup="#login-popup">
+                        <a class="link link_icon link_dark burger__headerlink burger__headerlink_user is-active js-burger-login" href="account.html">
                             <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
-                            <span class="link__text">Войти</span>
+                            <span class="link__text">Мой кабинет</span>
                         </a>
                         <a class="link link_icon link_dark burger__headerlink burger__headerlink_back js-burger-back">
                             <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_arrow_back_menu"></use></svg>
@@ -2176,171 +2176,10 @@
             </div>
         </div>
     </div>
-    <div class="popups">
-        <div class="popup login-popup" id="login-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Войти в аккаунт</div>
-            </div>
-            <div class="popup__content">
-                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate">
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="email" placeholder="Email адрес" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="password" placeholder="Пароль" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <a class="link link_dark js-fancybox" href="#password-recovery-popup">
-                            <span class="link__text">Забыли пароль?</span>
-                        </a>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Войти</button>
-                    </div>
-                </form>
-            </div>
-            <div class="popup__footer">
-                <div class="popup__footerheading">Войти через соцсети</div>
-                <div class="social-buttons social-buttons_big">
-                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
-                    </a>
-                </div>
-                <div class="popup__text">Нет аккаунта?
-                    <a class="link js-fancybox" href="registration.html" data-popup="#registration-popup">
-                        <span class="link__text">Зарегистрируйтесь!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="popup registration-popup" id="registration-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Регистрация</div>
-            </div>
-            <div class="popup__content">
-                <form class="popup__form popup__grid js-registration-popup-form" method="post" action="/" data-parsley-validate="data-parsley-validate">
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="text" placeholder="Имя" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="email" placeholder="Email адрес" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="password" placeholder="Пароль" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Зарегистрироваться</button>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="checkradio">
-                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
-                            <span class="checkradio__box">
-                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                            </span>
-                            <span class="checkradio__content">Я ознакомлен с
-                                <a class="link" href="#">
-                                    <span class="link__text">публичной офертой</span>
-                                </a> и соглашаюсь с
-                                <a class="link" href="#">
-                                    <span class="link__text">условиями обработки персональных данных</span>
-                                </a>
-                            </span>
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <div class="popup__footer registration-popup__footer">
-                <div class="popup__footerheading">Войти через соцсети</div>
-                <div class="social-buttons social-buttons_big">
-                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
-                    </a>
-                </div>
-                <div class="popup__text">Есть аккаунт?
-                    <a class="link js-fancybox" href="login.html" data-popup="#login-popup">
-                        <span class="link__text">Выполнить вход!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="popup password-recovery-popup" id="password-recovery-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Восстановить пароль</div>
-            </div>
-            <div class="popup__content password-recovery-popup__content">
-                <div class="popup__subheading">Введите E-mail на который
-                    <br/>был зарегистрирован аккаунт ProSwim.ru</div>
-                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate">
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="email" placeholder="Email адрес" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Выслать инструкцию</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="popup registration-complete-popup" id="registration-complete-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Поздравляем!</div>
-            </div>
-            <div class="popup__content registration-complete-popup__content">
-                <svg class="registration-complete-popup__icon"><use xlink:href="assets/images/icon.svg#icon_note"></use></svg>
-                <div class="registration-complete-popup__body">
-                    <H5 class="registration-complete-popup__bodyheading">Регистрация прошла успешно</H5>
-                    <div class="content-zone registration-complete-popup__bodytext">
-                        <p>Благодарим за&nbsp;регистрацию в&nbsp;proswimru!</p>
-                        <p>Ваши логин и&nbsp;пароль отправлены на&nbsp;указанный при регистрации e-mail.</p>
-                        <p>Добро пожаловать, Alex!</p>
-                        <p>В "
-                            <a href="#">Моем кабинете</a>" Вы&nbsp;можете получить информацию о&nbsp;сделанных вами заказах или
-                            <a href="#">изменить свои персональные данные</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="popups"></div>
     <div class="page">
-        <div class="container">
-            <div class="page__head">
+        <div class="page__head">
+            <div class="container">
                 <div class="page__headcol page__headcol_flexible">
                     <div class="breadcrumbs js-test">
                         <ul>
@@ -2352,217 +2191,283 @@
                             </li>
                             <li class="breadcrumbs__item">
                                 <a class="link" href="#">
-                                    <span class="link__text">Корзина</span>
+                                    <span class="link__text">Мой кабинет</span>
                                 </a>
                             </li>
                     </div>
                 </div>
-            </div>
-            <div class="grid page__steps">
-                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
-                    <ul class="step-menu">
-                        <li class="step-menu__item is-active">
-                            <p class="step-menu__link">Содержимое
-                                <br>корзины</p>
-                        </li>
-                        <li class="step-menu__item">
-                            <svg class="step-menu__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-navigation"></use></svg>
-                        </li>
-                        <li class="step-menu__item">
-                            <p class="step-menu__link">Доставка
-                                <br>и оплата</p>
-                        </li>
-                        <li class="step-menu__item">
-                            <svg class="step-menu__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-navigation"></use></svg>
-                        </li>
-                        <li class="step-menu__item">
-                            <p class="step-menu__link">Подтверждение
-                                <br>заказа</p>
-                        </li>
-                    </ul>
+                <div class="page__headcol">
+                    <a class="link link_icon link_dark link_print">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_logout-icon"></use></svg>
+                        <span class="link__text">Выйти</span>
+                    </a>
                 </div>
             </div>
-            <div class="page__head page__head_subhead">
-                <div class="page__headcol page__headcol_flexible">
-                    <h1 class="page__heading">Товары в корзине</h1>
-                </div>
-            </div>
-            <div class="grid cart">
-                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
-                    <div class="product-cart-items product-cart-items_card">
-                        <div class="product-cart-item product-cart-item_card">
-                            <div class="product-cart-item__remove js-product-cart-item-remove">
-                                <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </div>
-                            <div class="product-cart-item__grid">
-                                <div class="product-cart-item__col product-cart-item__col_image">
-                                    <div class="product-cart-item__image">
-                                        <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-cart-item__grid">
-                                <div class="product-cart-item__col product-cart-item__col_description">
-                                    <div class="product-cart-item__textblock product-cart-item__textblock_heading">
-                                        <span class="product-cart-item__text">Очки для плавания Cobra Mirror</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_price is-empty">
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">
-                                            <SPAN class="js-product-cart-item-price">13 792</SPAN>
-                                            <SPAN class="hide-lg">руб.</SPAN>
-                                            <SPAN class="hide-lg-min">x</SPAN>
-                                            <SPAN class="hide-lg-min js-product-cart-item-count">1</SPAN>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_count">
-                                    <div class="inputbox">
-                                        <div class="input-numberbox">
-                                            <span class="input-numberbox__button js-numberbox-minus"></span>
-                                            <input class="input input-numberbox__input js-numberbox-input js-product-cart-item-input" value="1" />
-                                            <span class="input-numberbox__button js-numberbox-plus"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_total">
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">
-                                            <SPAN class="js-product-cart-item-amount">13 792</SPAN> руб.</span>
-                                    </div>
-                                </div>
-                            </div>
+        </div>
+        <div class="userinfo">
+            <div class="container userinfo__container">
+                <div class="userinfo__grid userinfo__grid_flexible">
+                    <div class="userinfo__col userinfo__col_user">
+                        <div class="userinfo__avatar">
+                            <img src="content-img/user/avatar.png" alt="Макаров Дмитрий Алексеевич" />
                         </div>
-                        <div class="product-cart-item product-cart-item_card">
-                            <div class="product-cart-item__remove js-product-cart-item-remove">
-                                <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </div>
-                            <div class="product-cart-item__grid">
-                                <div class="product-cart-item__col product-cart-item__col_image">
-                                    <div class="product-cart-item__image">
-                                        <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-cart-item__grid">
-                                <div class="product-cart-item__col product-cart-item__col_description">
-                                    <div class="product-cart-item__textblock product-cart-item__textblock_heading">
-                                        <span class="product-cart-item__text">Speedo Очки для плавания Fastskin 3 Elite Mirror</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_price">
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">
-                                            <SPAN class="js-product-cart-item-price">3 999</SPAN>
-                                            <SPAN class="hide-lg">руб.</SPAN>
-                                            <SPAN class="hide-lg-min">x</SPAN>
-                                            <SPAN class="hide-lg-min js-product-cart-item-count">2</SPAN>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_count">
-                                    <div class="inputbox">
-                                        <div class="input-numberbox">
-                                            <span class="input-numberbox__button js-numberbox-minus"></span>
-                                            <input class="input input-numberbox__input js-numberbox-input js-product-cart-item-input" value="2" />
-                                            <span class="input-numberbox__button js-numberbox-plus"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_total">
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">
-                                            <SPAN class="js-product-cart-item-amount">7 998</SPAN> руб.</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-cart-item product-cart-item_card">
-                            <div class="product-cart-item__gift">
-                                <svg class="product-cart-item__gifticon"><use xlink:href="assets/images/icon.svg#icon_gift-icon"></use></svg>
-                            </div>
-                            <div class="product-cart-item__grid">
-                                <div class="product-cart-item__col product-cart-item__col_image">
-                                    <div class="product-cart-item__image">
-                                        <img src="content-img/cart/1.jpg" alt="Шоколад &quot;I LOVE SWIM&quot;" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-cart-item__grid">
-                                <div class="product-cart-item__col product-cart-item__col_description">
-                                    <div class="product-cart-item__textblock product-cart-item__textblock_heading">
-                                        <span class="product-cart-item__text">Шоколад "I LOVE SWIM"</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Вес:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">5г</span>
-                                    </div>
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Тип:</span>
-                                        <span class="product-cart-item__text product-cart-item__text_sm">молочный шоколад</span>
-                                    </div>
-                                </div>
-                                <div class="product-cart-item__col product-cart-item__col_heading">
-                                    <div class="product-cart-item__textblock">
-                                        <span class="product-cart-item__text product-cart-item__text_md product-cart-item__text_blue">Подарок от Proswim.ru</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="userinfo__user">
+                            <p class="userinfo__name">Макаров Дмитрий Алексеевич</p>
+                            <p class="userinfo__city">г. Москва, Московская обл.</p>
                         </div>
                     </div>
-                </div>
-                <div class="grid__col grid__col_xl_3 grid__col_lg_12">
-                    <div class="total sticky-block js-total js-sticky-block">
-                        <ul class="total__items">
-                            <li class="total__item">
-                                <span class="total__text">Сумма:</span>
-                                <b class="total__price">
-                                    <SPAN class="js-total-amount">21 790</SPAN> руб.</b>
-                            </li>
-                            <li class="total__item">
-                                <span class="total__text">Итого:</span>
-                                <b class="total__price">
-                                    <SPAN class="js-total-amount">21 790</SPAN> руб.</b>
-                            </li>
-                        </ul>
-                        <button class="button button_size_big button_block total__button" type="button">Оформить заказ</button>
-                        <p class="total__promo">
-                            <a class="link total__link">
-                                <span class="link__text">Есть промокод/карта клиента?</span>
+                    <div class="userinfo__col userinfo__col_flexible">
+                        <p class="userinfo__linkwrap">
+                            <a class="link link_icon link_midgrey" href="javascript:void(0)">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_phone2-icon"></use></svg>
+                                <span class="link__text">Перезвоните мне</span>
                             </a>
-                            <span class="tooltip-icon js-tooltip tooltip-icon_blue">?</span>
+                        </p>
+                        <p class="userinfo__linkwrap">
+                            <a class="link link_icon link_help link_midgrey" href="javascript:void(0)">
+                                <span class="link__icon"></span>
+                                <span class="link__text">Помощь</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="userinfo__col userinfo__col_text">
+                        <p class="userinfo__textblock">
+                            <span class="userinfo__text userinfo__text_big">21</span>
+                            <span class="userinfo__text">Заказы</span>
+                        </p>
+                        <p class="userinfo__textblock">
+                            <span class="userinfo__text userinfo__text_big">7</span>
+                            <span class="userinfo__text">Отзывы</span>
                         </p>
                     </div>
                 </div>
+                <div class="userinfo__grid userinfo__grid_info">
+                    <div class="userinfo__col">
+                        <div class="userinfo__textblock">
+                            <p class="userinfo__text userinfo__text_big">21</p>
+                            <p class="userinfo__text">Заказы</p>
+                        </div>
+                    </div>
+                    <div class="userinfo__col">
+                        <div class="userinfo__textblock">
+                            <p class="userinfo__text userinfo__text_big">7</p>
+                            <p class="userinfo__text">Отзывы</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="link link_icon link_return" href="catalog.html">
+        </div>
+        <div class="tabs tabs_usermenu">
+            <ul class="tabs__container container">
+                <li class="tabs__tab">
+                    <a href="account.html">Мои данные</a>
+                </li>
+                <li class="tabs__tab is-active">
+                    <a href="account-orders.html">Мои заказы</a>
+                </li>
+                <li class="tabs__tab">
+                    <a href="account-help.html">Помощь</a>
+                </li>
+            </ul>
+        </div>
+        <div class="page__head page__head_subhead page__head_account">
+            <div class="container">
+                <div class="page__headcol page__headcol_flexible">
+                    <h1 class="page__heading">#224455</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="grid account">
+                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
+                    <div class="fieldsets">
+                        <fieldset class="fieldset">
+                            <div class="fieldset__head">
+                                <div class="fieldset__headcol fieldset__headcol_flexible">
+                                    <legend class="fieldset__heading">Содержимое заказа</legend>
+                                </div>
+                            </div>
+                            <div class="fieldset__body">
+                                <div class="product-cart-items">
+                                    <div class="product-cart-item product-cart-item_field">
+                                        <div class="product-cart-item__grid">
+                                            <div class="product-cart-item__col">
+                                                <div class="product-cart-item__image">
+                                                    <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-cart-item__grid">
+                                            <div class="product-cart-item__col product-cart-item__col_fieldheading">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text">Очки для плавания Cobra Mirror</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_count">1 шт.</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__col product-cart-item__col_flexible">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__col product-cart-item__col_accountprice">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text">22 450 руб.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-cart-item product-cart-item_field">
+                                        <div class="product-cart-item__grid">
+                                            <div class="product-cart-item__col">
+                                                <div class="product-cart-item__image">
+                                                    <img src="content-img/cart/2401-copy-2.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-cart-item__grid">
+                                            <div class="product-cart-item__col product-cart-item__col_fieldheading">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text">Очки для плавания Cobra Mirror</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_count">2 шт.</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__col product-cart-item__col_flexible">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Размер:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">XS</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Цвет:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">хамелеон</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Артикул:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">92354</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__col product-cart-item__col_accountprice">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text">22 450 руб.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-cart-item product-cart-item_field">
+                                        <div class="product-cart-item__gift product-cart-item__gift_simple">
+                                            <svg class="product-cart-item__gifticon"><use xlink:href="assets/images/icon.svg#icon_gift-icon"></use></svg>
+                                        </div>
+                                        <div class="product-cart-item__grid">
+                                            <div class="product-cart-item__col">
+                                                <div class="product-cart-item__image">
+                                                    <img src="content-img/cart/1.jpg" alt="Шоколад “I LOVE SWIM”" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-cart-item__grid">
+                                            <div class="product-cart-item__col product-cart-item__col_fieldheading">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text">Шоколад “I LOVE SWIM”</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_count">1 шт.</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-cart-item__col">
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Вес:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">5г</span>
+                                                </div>
+                                                <div class="product-cart-item__textblock">
+                                                    <span class="product-cart-item__text product-cart-item__text_grey product-cart-item__text_sm">Тип:</span>
+                                                    <span class="product-cart-item__text product-cart-item__text_sm">Молочный шоколад</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <a class="link link_icon link_return hide-lg" href="account-orders.html">
+                        <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_return-icon"></use></svg>
+                        <span class="link__text">Вернуться ко всем заказам</span>
+                    </a>
+                </div>
+                <div class="grid__col grid__col_xl_3 grid__col_lg_12">
+                    <div class="sticky-block js-sticky-block">
+                        <div class="quality-rating">
+                            <p class="quality-rating__heading">Оцените качество обслуживания:</p>
+                            <div class="quality-rating__rating">
+                                <div class="rating rating_interactive rating_big">
+                                    <div class="rating__stars">
+                                        <label class="rating__box">
+                                            <input class="rating__control js-rating-control" type="radio" name="name" value="4" />
+                                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                        </label>
+                                        <label class="rating__box">
+                                            <input class="rating__control js-rating-control" type="radio" name="name" value="3" />
+                                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                        </label>
+                                        <label class="rating__box">
+                                            <input class="rating__control js-rating-control" type="radio" name="name" value="2" />
+                                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                        </label>
+                                        <label class="rating__box">
+                                            <input class="rating__control js-rating-control" type="radio" name="name" value="1" />
+                                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                        </label>
+                                        <label class="rating__box">
+                                            <input class="rating__control js-rating-control" type="radio" name="name" value="0" />
+                                            <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total js-total">
+                            <ul class="total__items">
+                                <li class="total__item">
+                                    <span class="total__text">Сумма:</span>
+                                    <b class="total__price">
+                                        <SPAN class="js-total-amount">21 790</SPAN> руб.</b>
+                                </li>
+                                <li class="total__item">
+                                    <span class="total__text">Доставка:</span>
+                                    <b class="total__price">
+                                        <SPAN class="js-total-delivery">190</SPAN> руб.</b>
+                                </li>
+                                <li class="total__item">
+                                    <span class="total__text">Скидка:</span>
+                                    <b class="total__price">
+                                        <SPAN class="js-total-discount">-300</SPAN> руб</b>
+                                </li>
+                                <li class="total__item">
+                                    <span class="total__text">Итого:</span>
+                                    <b class="total__price">
+                                        <SPAN class="js-total-amount">21 980</SPAN> руб.</b>
+                                </li>
+                            </ul>
+                            <button class="button button_size_big button_block total__button" type="button">Оплатить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="link link_icon link_return hide-lg-min" href="account-orders.html">
                 <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_return-icon"></use></svg>
-                <span class="link__text">Вернуться к покупкам</span>
+                <span class="link__text">Вернуться ко всем заказам</span>
             </a>
         </div>
     </div>
