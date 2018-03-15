@@ -25,6 +25,16 @@
       margin-bottom: 31px;
       padding-bottom: 29px;
       border-bottom: 1px solid $color-border;
+
+      @include screen(lg) {
+        margin-bottom: 21px;
+        padding-bottom: 24px;
+      }
+
+      @include screen(sm) {
+        margin-bottom: 22px;
+        padding-bottom: 20px;
+      }
     }
   }
 

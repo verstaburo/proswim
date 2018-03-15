@@ -46,9 +46,9 @@ block content
         +section-head('Пункт самовывоза:')
         +section-content
           +grid
-            +col({ xl: 9 })
+            +col({ xl: 9, lg: 8, sm: 12 })
               +map._md#pickup-contacts-map
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Алексеевская
                 +shop-location-addr
@@ -58,7 +58,7 @@ block content
 
                 +shop-location-item('Phone icon22') 8 (495) 580-82-95
                 +shop-location-item('Time icon22') Пн-Вс: 9.00-21.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
                 +shop-location-text
                   p Обращаем Ваше внимание, что здании осуществляется пропускная система, поэтому просим Вас взять с собой паспорт.
 
@@ -66,9 +66,9 @@ block content
         +section-head('Адреса наших магазинов в Москве:')
         +section-content
           +grid
-            +col({ xl: 9 })
+            +col({ xl: 9, lg: 8, sm: 12 })
               +map._md#msk-shop-contacts-map
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Ленинский проспект
                 +shop-location-addr
@@ -78,9 +78,9 @@ block content
 
                 +shop-location-item('Phone icon22') 8 (495) 730-30-62
                 +shop-location-item('Time icon22')  с 9.00 до 22.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
 
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Проспект Мира
                 +shop-location-addr
@@ -90,9 +90,9 @@ block content
 
                 +shop-location-item('Phone icon22') 8 (495) 698-63-75
                 +shop-location-item('Time icon22') Пн.-Сб.: 10.00-21.00, Вс.:10.00-20.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
 
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Каширская
                 +shop-location-addr
@@ -102,21 +102,21 @@ block content
 
                 +shop-location-item('Phone icon22') 8 (495) 730-30-62
                 +shop-location-item('Time icon22') с 9.00 до 22.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
 
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Парк Культуры
                 +shop-location-addr
-                  p м. Каширская,
-                  p Каширское ш, д. 26,
-                  p ТЦ «Москворечье», 3-й этаж
+                  p м. Парк Культуры,
+                  p Турчанинов пер., д.3 стр 1,
+                  p Бассейн "Чайка"
 
                 +shop-location-item('Phone icon22') 8 (495) 730-30-62
                 +shop-location-item('Time icon22') с 9.00 до 22.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
 
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Водный стадион
                 +shop-location-addr
@@ -126,15 +126,15 @@ block content
 
                 +shop-location-item('Phone icon22') 8 (495) 109-02-29
                 +shop-location-item('Time icon22') с 10.00 до 22.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
 
       +section._simple
         +section-head('Адреса наших магазинов в Санкт-Петербурге:')
         +section-content
           +grid
-            +col({ xl: 9 })
+            +col({ xl: 9, lg: 8, sm: 12 })
               +map._md#spb-shop-contacts-map
-            +col({ xl: 3 })
+            +col({ xl: 3, lg: 4, sm: 12 })
               +shop-location
                 +shop-location-station м. Сенная площадь
                 +shop-location-addr
@@ -144,7 +144,7 @@ block content
 
                 +shop-location-item('Phone icon22') 8 (812) 449-24-71
                 +shop-location-item('Time icon22') с 10.00 до 22.00
-                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-print
 
 block popups
   +login-popup

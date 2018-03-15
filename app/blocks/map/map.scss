@@ -8,6 +8,14 @@
 
   &_md {
     height: 358px;
+
+    @include screen(lg) {
+      height: 326px;
+    }
+
+    @include screen(sm) {
+      height: 240px;
+    }
   }
 
   .section_simple & {

@@ -25,6 +25,7 @@
     display: block;
     @include text;
     margin-bottom: 13px;
+    max-width: 234px;
   }
 
   &__item {
