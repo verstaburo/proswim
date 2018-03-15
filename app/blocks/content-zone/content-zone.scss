@@ -34,6 +34,7 @@
     }
 
     @include heading-4;
+    font-weight: 700;
   }
 
   h5 {
@@ -52,6 +53,10 @@
     }
 
     @include heading-6;
+  }
+
+  b, strong {
+    font-weight: 500;
   }
 
   p {
@@ -108,13 +113,27 @@
     }
   }
 
+  li {
+    p {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &_small {
     > ul, > ol {
       margin: 8px 0;
     }
   }
 
-  ul, ol { @include list; }
+  ul, ol {
+    @include list;
+
+    + p {
+      margin-top: 20px;
+    }
+  }
 
   ul { @include ullist; }
 

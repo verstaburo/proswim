@@ -14,11 +14,22 @@
     }
   }
 
+  &_contentzone + &_contentzone {
+    margin-top: 12px;
+    border-top: 1px solid $color-border;
+    padding-top: 11px;
+  }
+
   &__header {
     position: relative;
     display: block;
     width: 100%;
     box-sizing: border-box;
+
+    #{$b}_contentzone & {
+      display: inline-block;
+      width: auto;
+    }
   }
 
   &__caret {
@@ -45,6 +56,11 @@
     #{$b}.is-active & {
       transform: translateY(-50%) rotate(-90deg);
     }
+
+    #{$b}_contentzone & {
+      width: 7px;
+      height: 10px;
+    }
   }
 
   &__button {
@@ -56,6 +72,10 @@
     #{$b}.is-active &,
     &:hover {
       color: $darkblue-color;
+    }
+
+    #{$b}_contentzone & {
+      padding: 0 36px 0 0;
     }
   }
 
@@ -69,6 +89,10 @@
     display: none;
 
     #{$b}.is-active & { display: block; }
+
+    #{$b}_contentzone & {
+      padding: 12px 0 21px 0;
+    }
   }
 }
 

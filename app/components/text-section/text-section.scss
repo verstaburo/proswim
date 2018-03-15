@@ -1,0 +1,32 @@
+.text-section {
+  display: block;
+  counter-reset: textblock;
+
+  &__block {
+    position: relative;
+    padding-left: 66px;
+
+    &::before {
+      counter-increment: textblock;
+      content: counter(textblock);
+      position: absolute;
+      top: -.0875em;
+      left: -2px;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: .01em;
+      color: $greylist-color;
+    }
+
+    &:not(:first-child) {
+      margin-top: 48px;
+    }
+  }
+
+  .content-zone {
+    p + ul, ol {
+      margin-top: -4px;
+    }
+  }
+}
