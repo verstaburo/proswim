@@ -1,0 +1,23 @@
+mixin shop-location()
+  +b.shop-location&attributes(attributes)
+    block
+
+mixin shop-location-station
+  +e.station&attributes(attributes)
+    +icon('Metro icon').stationicon
+    +e.SPAN.stationtext
+      block
+
+mixin shop-location-addr
+  +e.addr&attributes(attributes)
+    block
+
+mixin shop-location-item(icon)
+  +e.item&attributes(attributes)
+    +icon(icon).itemicon
+    +e.SPAN.itemtext
+      block
+
+mixin shop-location-text
+  +e.text&attributes(attributes)
+    block

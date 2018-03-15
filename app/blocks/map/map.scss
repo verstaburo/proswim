@@ -5,6 +5,10 @@
   height: 444px;
   position: relative;
   z-index: 1;
+
+  &_md {
+    height: 358px;
+  }
 }
 
 .leaflet-control-layers-toggle {

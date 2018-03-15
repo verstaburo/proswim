@@ -1,0 +1,59 @@
+.shop-location {
+  display: block;
+  color: $darkengrey-color;
+  margin-top: -4px;
+
+  &__station {
+    position: relative;
+    display: block;
+    @include heading-5;
+    color: $color-basic;
+    padding-left: 34px;
+    margin-bottom: 9px;
+
+    &icon {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 22px;
+      height: 15px;
+      fill: #f24841;
+    }
+  }
+
+  &__addr {
+    display: block;
+    @include text;
+    margin-bottom: 13px;
+  }
+
+  &__item {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+
+    &icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      fill: $color-main;
+    }
+
+    &text {
+      @include text;
+    }
+  }
+
+  .link_print {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    display: block;
+    @include text-tiny;
+    line-height: (20/12);
+  }
+}

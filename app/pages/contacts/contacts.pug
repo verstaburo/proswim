@@ -42,6 +42,27 @@ block content
                 p Для отзывов, похвалы или жалоб: #[a(href="mailto:info@proswim.ru") info@proswim.ru]
                 p Если у&nbsp;вас возникли проблемы или сложные ситуации с&nbsp;заказами или нашими сотрудниками, пожалуйста, сообщите нам об&nbsp;этом и&nbsp;мы&nbsp;обязательно все уладим! Ведь клиенты для нас&nbsp;&mdash; самое ценное!
 
+      +section._simple
+        +section-head('Пункт самовывоза:')
+        +section-content
+          +grid
+            +col({ xl: 9 })
+              +map._md
+            +col({ xl: 3 })
+              +shop-location
+                +shop-location-station м. Алексеевская
+                +shop-location-addr
+                  p м. Алекссевская,
+                  p ул. 3-я Мытищинская, д. 16 стр. 47, офисное здание "Квант-М", 3 этаж,
+                  p офис 329
+
+                +shop-location-item('Phone icon22') 8 (495) 580-82-95
+                +shop-location-item('Time icon22') Пн-Вс: 9.00-21.00
+                +link-icon('Print icon')._print Распечатать схему проезда
+                +shop-location-text
+                  p Обращаем Ваше внимание, что здании осуществляется пропускная система, поэтому просим Вас взять с собой паспорт.
+
+
 block popups
   +login-popup
   +registration-popup
