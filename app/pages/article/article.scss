@@ -1,0 +1,56 @@
+.article {
+  display: block;
+  padding-bottom: 34px;
+
+  &__head {
+    display: block;
+    padding-top: 14px;
+    padding-bottom: 26px;
+  }
+
+  &__heading {
+    @include heading-1;
+  }
+
+  &__info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    &col {
+      position: relative;
+
+      &:not(:first-child) {
+        margin-left: 15px;
+      }
+
+      &_flexible { flex: 1; }
+    }
+
+    &text {
+      @include text;
+      color: $semigrey-color;
+      line-height: (18/14);
+
+      .article__infoicon + & {
+        padding-left: 17px;
+      }
+    }
+
+    &icon {
+      @include center-image;
+      margin-left: 0;
+      fill: $middlegrey2-color;
+
+      &_views {
+        width: 13px;
+        height: 9;
+      }
+
+      &_comments {
+        width: 13px;
+        height: 12px;
+      }
+    }
+  }
+}

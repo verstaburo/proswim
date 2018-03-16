@@ -1,0 +1,13 @@
+mixin content-slider(images, title, description)
+  +b.content-slider&attributes(attributes).js-content-slider
+    - var normalizedImage = images.map(i => ({ src: i }))
+
+    +e.main
+      +product-main-slider(normalizedImage, null, images.length > 1)
+    +e.P.caption
+      span=`${title}: `
+      a(href='product.html')=description
+
+    if images.length > 1
+      +e.nav
+        +product-nav-slider(normalizedImage)._big

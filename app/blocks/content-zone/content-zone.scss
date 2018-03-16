@@ -72,8 +72,16 @@
   }
 
   p {
+    @include clearfix;
+
     &:not(:last-child) {
       margin-bottom: 22px;
+    }
+
+    > img {
+      float: left;
+      margin-right: 20px;
+      margin-top: 4px;
     }
 
     small {
@@ -92,10 +100,22 @@
   }
 
   blockquote {
+    position: relative;
     margin: 0;
-    padding-left: 40px;
-    border-left: 2px solid black;
+    padding-left: 27px;
     display: block;
+    font-family: $font-second;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      bottom: 4px;
+      left: 0;
+      display: block;
+      width: 4px;
+      background-color: $color-main;
+    }
 
     &:not(:first-child) {
       margin-top: 30px;
@@ -106,15 +126,19 @@
     }
   }
 
+  p + blockquote:not(:first-child) {
+    margin-top: -2px;
+  }
+
   img {
     max-width: 100%;
 
     &:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 14px;
     }
 
     &:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 14px;
     }
   }
 
@@ -152,4 +176,63 @@
   ol { @include ollist; }
 
   a { @include link; }
+
+  .article & {
+    font-size: 18px;
+    line-height: (30/18);
+
+    h2 {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    h4 {
+      font-weight: 500;
+      line-height: (30/18);
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+
+    blockquote p:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    a {
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: (30/18);
+
+      > img {
+        margin-top: 7px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    p, li {
+      color: $darkengrey-color;
+    }
+
+    b, h1, h2 ,h3, h4, h5, h6, strong {
+      color: $color-basic;
+    }
+
+    b, strong {
+      font-weight: 700;
+    }
+
+    small {
+      @include text;
+      color: $semigrey-color;
+    }
+  }
 }

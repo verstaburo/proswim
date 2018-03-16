@@ -39,6 +39,7 @@ import '../blocks/upload-photo/upload-photo';
 import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 import '../components/orders-section/orders-section';
+import '../components/content-slider/content-slider';
 
 const $ = window.$;
 window.L = L;
