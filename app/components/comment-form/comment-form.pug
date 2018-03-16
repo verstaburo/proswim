@@ -1,0 +1,19 @@
+mixin comment-form()
+  +section.comment-form
+    +section-head('Оставить комментарий').
+    +section-content
+      +e.FORM(method="post" action="/" data-parsley-validate).form
+        +grid
+          +col({ xl: 6, sm: 12 })
+            +inputbox("Имя *")
+              +input(type="text" name="name" required placeholder="Имя")._size_md
+          +col({ xl: 6, sm: 12 })
+            +inputbox("Email *")
+              +input(type="email" name="email" required placeholder="Email")._size_md
+          +col({ xl: 12 })
+            +inputbox("Комментарий")
+              +textarea(name="message" placeholder="Напишите ваш комментарий")
+          +col({ xl: 12 })
+            +captcha
+          +col({ xl: 12 })
+            +button.BUTTON(type="submit")._size_big Оставить комментарий

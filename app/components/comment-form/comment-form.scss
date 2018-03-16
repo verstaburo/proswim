@@ -1,0 +1,39 @@
+.comment-form {
+  display: block;
+  padding-top: 36px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 32px;
+  }
+
+  .section__head {
+    margin-bottom: 23px;
+  }
+
+  &__button {
+    margin-top: 10px;
+    min-width: 182px;
+
+    @include screen(lg) {
+      width: 100%;
+    }
+
+    @include screen(lg) {
+      margin-top: 14px;
+    }
+  }
+
+  .inputbox {
+    margin-top: -6px;
+  }
+
+  .g-recaptcha {
+    margin-top: -8px;
+  }
+
+  .button {
+    margin-top: 8px;
+    min-width: 302px;
+  }
+}
