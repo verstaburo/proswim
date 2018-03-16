@@ -1,5 +1,17 @@
 .content-zone {
 
+  .text-section__block + & {
+    margin-top: 46px;
+
+    @include screen(lg) {
+      margin-top: 28px;
+    }
+
+    @include screen(sm) {
+      margin-top: 18px;
+    }
+  }
+
   h1 {
 
     &:not(:last-child) {

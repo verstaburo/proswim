@@ -35,6 +35,26 @@
         margin-top: 17px;
       }
     }
+
+    &_sm {
+      padding-left: 30px;
+
+      &:not(:first-child) {
+        margin-top: 34px;
+
+        @include screen(lg) {
+          margin-top: 24px;
+        }
+
+        @include screen(sm) {
+          margin-top: 14px;
+        }
+      }
+
+      &::before {
+        font-size: 30px;
+      }
+    }
   }
 
   .content-zone {

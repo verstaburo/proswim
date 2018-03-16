@@ -11,6 +11,18 @@
     }
   }
 
+  .payment .content-zone & {
+    margin-top: 33px;
+
+    @include screen(sm) {
+      margin-top: 22px;
+
+      .shop-location__text:not(:last-child) {
+        margin-bottom: 19px;
+      }
+    }
+  }
+
   &__station {
     position: relative;
     display: block;
@@ -75,6 +87,15 @@
       &:not(:last-child) {
         margin-bottom: 9px;
       }
+    }
+
+    &_small, .content-zone &_small {
+      font-size: 12px;
+      margin-top: 0;
+    }
+
+    .shop-location__item + &_small {
+      margin-top: -6px;
     }
   }
 }
