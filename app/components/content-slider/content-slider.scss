@@ -12,6 +12,29 @@
 
   &__main {
     height: 438px;
+
+    .product-main-slider__buttons {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .product-main-slider__button {
+      border: 1px solid rgba(white, .4);
+      background-color: rgba($color-basic, .6);
+      box-sizing: border-box;
+
+      &.swiper-button-disabled {
+        opacity: 1;
+      }
+
+      &:hover {
+        opacity: .9;
+      }
+
+      svg {
+        fill: white;
+      }
+    }
   }
 
   &__nav {

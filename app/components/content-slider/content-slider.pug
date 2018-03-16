@@ -10,4 +10,4 @@ mixin content-slider(images, title, description)
 
     if images.length > 1
       +e.nav
-        +product-nav-slider(normalizedImage)._big
+        +product-nav-slider(normalizedImage)(data-touch-ratio="false")._big

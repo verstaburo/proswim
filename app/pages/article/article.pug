@@ -47,16 +47,16 @@ block content
 
           p Пожалуй, визитная карточка #[a(href="javascript:void(0)") Zoggs]&nbsp;&mdash; это плавательные очки, большинство из&nbsp;которых идеально подходят для триатлона и&nbsp;занятий на&nbsp;открытой воде. Одной из&nbsp;самых известных и&nbsp;популярных серий в&nbsp;этом ряду по&nbsp;праву можно назвать Predator Flex, пришедшую на&nbsp;смену классическим &ldquo;предаторам&bdquo;. И&nbsp;приставка &bdquo;flex&ldquo; (от&nbsp;английского слова &ldquo;гибкий&quot;) здесь отнюдь не&nbsp;случайна.
 
-          +content-slider(new Array(4).fill('images-duckduckgo-com'), 'шапочка', 'Finis Zoomers Gold')
+          +content-slider(['images-duckduckgo-com', '2401', '2401', '2401'], 'шапочка', 'Finis Zoomers Gold')
 
           p Для того, чтобы упаковать все свои купальники, шапочки и&nbsp;прочие аксессуары, #[a(href="javascript:void(0)") Zoggs] предлагает рюкзаки и&nbsp;сумки своего производства&nbsp;&mdash; вместительный портфель #[a(href="javascript:void(0)") Pool Side], наплечную сумку #[a(href="javascript:void(0)") Aqua Duffle] и&nbsp;специально для триатлонистов&nbsp;&mdash; #[a(href="javascript:void(0)") Triathlon Bag] (с&nbsp;отдельными отсеками для сухой и&nbsp;мокрой экипировки и&nbsp;карманом для велошлема). Так что, как видите, у&nbsp;Zoggs есть все для эффективной тренировки. Осталось только выбрать свой набор пловца, собраться, и&nbsp;вперед&nbsp;&mdash; на&nbsp;покорение новых дистанций! И&nbsp;под крышей бассейна, и&nbsp;под открытым небом.
 
           p
             small Копирование, распространение и перепечатка информации, доступной на нашем сайте, запрещено. Игнорирование данного пункта является нарушением законодательства об авторском праве. При появлении наших материалов на других сайтах мы будем вынуждены обратиться в суд. Авторские права защищены.
 
-        //- repost widget
-        //- comments
-        //- comments form
+      +share
+      //- comments
+      //- comments form
 
     +products-section(getData('small-product-cards'), 'Сопутствующие товары:', true)._small
 
