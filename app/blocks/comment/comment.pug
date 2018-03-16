@@ -1,0 +1,12 @@
+mixin comment(avatar, username, date)
+  +b.comment&attributes(attributes)
+    +e.avatar
+      img(src=avatar, alt=username)
+
+    +e.content
+      +e.head
+        +e.SPAN.username=username
+        +e.SPAN.date=date
+
+      +content-zone
+        block

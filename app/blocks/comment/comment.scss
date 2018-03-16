@@ -1,0 +1,53 @@
+.comment {
+  display: flex;
+
+  & + & {
+    margin-top: 33px;
+  }
+
+  &__avatar {
+    position: relative;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border: 1px solid $verylightgrey44-color;
+    background-color: $verylightgrey45-color;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__content {
+    margin-left: 15px;
+    flex: 1;
+    margin-top: -0.3em;
+  }
+
+  &__head {
+    display: block;
+    font-size: 0;
+    margin-bottom: 3px;
+  }
+
+  &__username {
+    display: inline-block;
+    @include heading-6;
+    line-height: (24/15);
+  }
+
+  &__date {
+    display: inline-block;
+    color: $semigrey-color;
+    @include text-small;
+    margin-left: 15px;
+  }
+
+  .content-zone {
+    color: $darkengrey-color;
+  }
+}

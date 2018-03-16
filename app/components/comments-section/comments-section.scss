@@ -1,0 +1,13 @@
+.comments-section {
+  display: block;
+  padding-top: 36px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 32px;
+  }
+
+  .section__head {
+    margin-bottom: 23px;
+  }
+}
