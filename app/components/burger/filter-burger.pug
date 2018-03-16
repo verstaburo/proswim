@@ -1,4 +1,4 @@
-mixin filter-burger()
+mixin filter-burger(isReviews)
   +b.burger._filter.js-filter-burger#filter-burger&attributes(attributes)
     +e.overlay.js-filter-burger-close
     +e.content
@@ -12,22 +12,27 @@ mixin filter-burger()
 
       +e.subheader
         +filter-section._mobile
-          +filter-section-grid
-            +filter-section-col._full
-              +filter-section-heading Ваш выбор: #[span (4)]
-            +filter-section-col
-              +choice Очки-маски
-            +filter-section-col
-              +choice Мужские
-            +filter-section-col
-              +choice Arena
-            +filter-section-col
-              +choice 1699 - 2000 руб.
-          +filter-section-grid
-            +filter-section-col._not_shrinkable
-              +button.BUTTON._size_sm._transparent
-                +icon('cancel copy').icon._cancel
-                | Сбросить все
+          if isReviews
+            +filter-section-grid
+              +filter-section-col._full
+                +filter-section-heading Ваш выбор: #[span (0)]
+          else
+            +filter-section-grid
+              +filter-section-col._full
+                +filter-section-heading Ваш выбор: #[span (4)]
+              +filter-section-col
+                +choice Очки-маски
+              +filter-section-col
+                +choice Мужские
+              +filter-section-col
+                +choice Arena
+              +filter-section-col
+                +choice 1699 - 2000 руб.
+            +filter-section-grid
+              +filter-section-col._not_shrinkable
+                +button.BUTTON._size_sm._transparent
+                  +icon('cancel copy').icon._cancel
+                  | Сбросить все
 
         +e.innercontent
           +accordion._big_divider
@@ -53,7 +58,7 @@ mixin filter-burger()
                 +sort-dropdown-item
                   +checkbox('product', 'product-5') Наборы “Очки+Шапочка”
               +sort-dropdown-submit
-
+        unless isReviews
           +sort-dropdown
             +sort-dropdown-button Любой пол
             +sort-dropdown-body
@@ -105,6 +110,7 @@ mixin filter-burger()
               +link.__readmore Показать еще
               +sort-dropdown-submit
 
+        unless isReviews
           +sort-dropdown._price
             +sort-dropdown-button Любая цена
             +sort-dropdown-body

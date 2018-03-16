@@ -13,6 +13,7 @@
     padding: 20px 15px;
     border-left: 0;
     border-right: 0;
+    display: block;
   }
 
   .review-item & {
@@ -29,22 +30,38 @@
     position: relative;
     margin-right: 19px;
     flex-shrink: 0;
+    width: 102px;
+    height: 102px;
+    border: 1px solid $verylightgrey44-color;
+    box-sizing: border-box;
 
     @include screen(sm) {
-      display: none;
+      margin-top: -4px;
+      margin-bottom: 17px;
+      margin-right: 0;
     }
 
-    img { @include center-image; }
+    img {
+      @include center-image;
+      max-width: 100%;
+      max-height: 100%;
+    }
 
     &_avatar {
       width: 60px;
       height: 60px;
-      border: 1px solid $verylightgrey44-color;
-      box-sizing: border-box;
       overflow: hidden;
       border-radius: 50%;
 
-      img { @include fill-img; }
+      @include screen(sm) {
+        display: none;
+      }
+
+      img {
+        @include fill-img;
+        max-width: none;
+        max-height: none;
+      }
     }
   }
 
@@ -119,7 +136,8 @@
     margin-top: 4px;
   }
 
-  &__username {
+  &__username,
+  &__heading {
     @include heading-5;
   }
 

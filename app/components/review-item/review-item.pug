@@ -5,7 +5,7 @@ mixin review-item(data)
         img(src=`content-img/review-cards/${data.avatar}.png` alt=data.username)
     if data.image
       +e.image
-        img(src=`content-img/review-cards/${data.avatar}.png` alt=data.username)
+        img(src=`content-img/review-cards/${data.image}.png` alt=data.heading)
 
     +e.content
       +e.head
@@ -19,6 +19,8 @@ mixin review-item(data)
                   +e.SPAN.username=data.username
                 if data.city
                   +e.SPAN.city=data.city
+              if data.heading
+                +e.P.heading=data.heading
             if data.badge
               +e.badge
                 +review-badge(data.badge)

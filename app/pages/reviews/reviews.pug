@@ -1,0 +1,89 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Все отзывы о товарах'
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Все отзывы о товарах'])
+
+      +grid.page__grid
+        +col(3).page__sidebar
+          +sidebar
+            - var categoriesAcccordionData = getData('catalog-categories-menu')
+
+            +sidebar-item
+              each categoriesAccordion, index in categoriesAcccordionData
+                +vertical-menu(categoriesAccordion.title, categoriesAccordion.links, true)._accordion(class=index === 0 ? 'is-active' : '')
+
+        +col({ xl: 9, lg: 12 }).page__content
+          +sort-ui('Все отзывы о товарах', '174', 'отзыва', true)
+            +sort-ui-col
+              +sort-dropdown._products
+                +sort-dropdown-button Любой товар
+                +sort-dropdown-body
+                  +sort-dropdown-list
+                    +sort-dropdown-item
+                      +checkbox('product', 'product-1') Очки для тренировок
+                    +sort-dropdown-item
+                      +checkbox('product', 'product-2') Профессиональные очки для плавания
+                    +sort-dropdown-item
+                      +checkbox('product', 'product-3') Очки-маски
+                    +sort-dropdown-item
+                      +checkbox('product', 'product-4') Очки с диоприями
+                    +sort-dropdown-item
+                      +checkbox('product', 'product-5') Наборы “Очки+Шапочка”
+                  +sort-dropdown-submit
+            +sort-ui-col
+              +sort-dropdown._brands
+                +sort-dropdown-button Любой бренд
+                +sort-dropdown-body
+                  +searchbar('Поиск бренда...')._small
+                  +sort-dropdown-list
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-1') Adidas
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-2') Adl
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-3') Banana Republic
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-4') Baon
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-5') Befree
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-6') Betsy
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-7') Caprice
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-8') United Colors Of Benneton
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-1') Adidas
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-2') Adl
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-3') Banana Republic
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-4') Baon
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-5') Befree
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-6') Betsy
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-7') Caprice
+                    +sort-dropdown-item
+                      +checkbox('brand', 'product-8') United Colors Of Benneton
+                  +sort-dropdown-submit
+          +filter-buttons(true)
+          +reviews-section-full(getData('reviews-page'))
+          +section-footer
+
+  +filter-burger(true)
+
+block popups
+  +login-popup
+  +registration-popup
+  +password-recovery-popup
+  +registration-complete-popup

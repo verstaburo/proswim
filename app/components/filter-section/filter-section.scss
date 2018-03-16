@@ -16,7 +16,7 @@
     box-shadow: none;
     display: block;
     border-top: 0;
-    padding-bottom: 29px;
+    padding-bottom: 9px;
   }
 
   &_simple {
@@ -53,6 +53,12 @@
       @include screen(lg) {
         margin-top: 0;
         margin-left: -14px;
+      }
+    }
+
+    @include screen(lg) {
+      &:nth-child(2) {
+        margin-bottom: 20px;
       }
     }
   }

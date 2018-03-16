@@ -1,13 +1,15 @@
 mixin filter-buttons(filters, sort)
   +b.filter-buttons&attributes(attributes)
+    - var colSize = filter && sort ? 6 : 12
+
     +grid.filter-buttons__grid
       if filters
-        +col(6).filter-buttons__col
+        +col(colSize).filter-buttons__col
           +button._size_md._transparent._block.js-filter-burger-button(data-burger="#filter-burger")
             | Фильтры
             +icon('checked').icon._check
       if sort
-        +col(6).filter-buttons__col
+        +col(colSize).filter-buttons__col
           +button._size_md._transparent._block.js-filter-burger-button(data-burger="#sort-burger")
             | Сортировать
             +icon('checked').icon._check

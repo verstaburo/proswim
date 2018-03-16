@@ -25,17 +25,15 @@
     display: inline-block;
     @include heading-2;
     margin-top: -4px;
+    margin-right: 12px;
   }
 
   &__count {
     color: $darkgrey-color;
     @include heading-5;
-    margin-left: 12px;
 
     &description {
-      @include screen(sm) {
-        display: none;
-      }
+
     }
   }
 }
