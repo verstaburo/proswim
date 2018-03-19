@@ -1,5 +1,35 @@
 /* eslint-disable */
- /* eslint-disable */
+
+/**
+ * Маркер на карте
+ * @param loc {Array} [lat {Number}, lng {Number}]
+ * @param params {Object} icon params
+ */
+
+function makeMapPin(loc, iconName, params) {
+  var nextParams = typeof params === "object" ? params : {},
+      nextIconName = typeof iconName === 'undefined' ? 'swim' : iconName;
+
+  if (nextIconName) {
+    icon = '<img class="leaflet-div-icon__icon" src="assets/images/'+nextIconName+'.png">';
+  } else {
+    icon = '';
+  }
+
+  return L.marker(loc, {
+    icon: L.divIcon($.extend({
+      shadowUrl: 'assets/images/marker-shadow.png',
+      iconSize: [32, 45],
+      html: icon + '<div class="leaflet-div-icon__shadow"></div>'
+    }, nextParams)),
+  }).on('popupopen', function(e) {
+    $(e.target._icon).addClass('is-active');
+  }).on('popupclose', function(e) {
+    $(e.target._icon).removeClass('is-active');
+  });
+}
+
+/* eslint-disable */
 /**
  * #################################
  * Отправка формы на странице товара
@@ -20,7 +50,7 @@ $('.js-product-item-form').on('submit', function (e) {
 });
 /* eslint-enable */
 
- /**
+/**
  * Обновление итоговой стоимости
  */
 function updateTotal() {
@@ -73,7 +103,7 @@ $(document).on('change', '.js-product-cart-item-input', function () {
   updateTotal();
 });
 
- /**
+/**
  * Настройка карты доставки
  */
 function initMap() {
@@ -83,24 +113,41 @@ function initMap() {
 
   var map = L.map('delivery-map').setView([59.934, 30.335], 13);
 
+  map.removeControl(map.zoomControl);
+
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoidGhldmVydmVyeTEiLCJhIjoiY2lzZXdzaXZ4MDBjaTJudm93dDI4MGVrMCJ9.Z8KKk0M_lpDTPB6_JtJBxg',
   }).addTo(map);
 
-  var icon = L.icon({
-    iconUrl: 'assets/images/pin.svg',
-    shadowUrl: 'assets/images/marker-shadow.png',
-    popupAnchor: [174, 189],
-    iconSize: [32, 45],
-    shadowSize: [31, 17],
-    shadowAnchor: [16, -15],
-  });
-
-  var marker = L.marker([59.934, 30.335], { icon: icon }).addTo(map);
+  var marker = window.makeMapPin([59.934, 30.335]).addTo(map),
+      marker2 = window.makeMapPin([59.931494, 30.330091]).addTo(map),
+      marker3 = window.makeMapPin([59.929947, 30.337687]).addTo(map);
 
   marker.bindPopup(getDeliveryPopup({
+    station: 'Ленинский пр-т',
+    addr: 'Ул. Вавилова, д.3, ТЦ “Гагаринский”',
+    description: '1 минута пешком от метро, 2-й этаж',
+    textList: [
+      { key: 'График работы:', value: 'с 9.00 до 20.00' },
+      { key: 'Телефон магазина:', value: '8 (495) 730-30-62' },
+      { key: 'Примерка:', value: 'Есть примерка' },
+    ],
+  }));
+
+  marker2.bindPopup(getDeliveryPopup({
+    station: 'Ленинский пр-т',
+    addr: 'Ул. Вавилова, д.3, ТЦ “Гагаринский”',
+    description: '1 минута пешком от метро, 2-й этаж',
+    textList: [
+      { key: 'График работы:', value: 'с 9.00 до 20.00' },
+      { key: 'Телефон магазина:', value: '8 (495) 730-30-62' },
+      { key: 'Примерка:', value: 'Есть примерка' },
+    ],
+  }));
+
+  marker3.bindPopup(getDeliveryPopup({
     station: 'Ленинский пр-т',
     addr: 'Ул. Вавилова, д.3, ТЦ “Гагаринский”',
     description: '1 минута пешком от метро, 2-й этаж',
@@ -148,13 +195,17 @@ function getDeliveryPopup(data) {
       closeButton: false,
       className: 'address-popup-wrapper',
       width: 288,
+      offset: {
+        x: 150,
+        y: 0,
+      },
     })
     .setContent(popup[0].outerHTML);
 }
 
 initMap();
 
- /**
+/**
  * Карты на странице контактов
  */
 
@@ -183,7 +234,7 @@ function initContactsMap(id, markerLocations) {
   });
 
   $.each(markerLocations, function () {
-    L.marker(this, { icon: icon }).addTo(map);
+    window.makeMapPin(this).addTo(map);
   });
 }
 

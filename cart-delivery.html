@@ -2338,6 +2338,13 @@
             </div>
         </div>
     </div>
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="mapPin">
+                <path fill="#123" d="M38.69,9.49a16.17,16.17,0,0,0-22.63,0C10.47,15,9.78,25.37,14.56,31.64L27.38,49.88l12.8-18.21C45,25.37,44.29,15,38.69,9.49Z" transform="translate(-11, -4)" />
+            </clipPath>
+        </defs>
+    </svg>
     <div class="page">
         <div class="container">
             <div class="page__head">
@@ -2470,8 +2477,8 @@
                                                 </select>
                                             </div>
                                             <div class="inputbox">
-                                                <label class="checkradio">
-                                                    <input class="checkradio__input" name="no-city" value="1" type="checkbox" />
+                                                <label class="checkradio" data-target="#no-city">
+                                                    <input class="checkradio__input js-no-city-in-list" name="no-city" value="1" type="checkbox" />
                                                     <span class="checkradio__box">
                                                         <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                                     </span>
@@ -2479,7 +2486,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                        <div class="grid__col grid__col_xl_8 grid__col_lg_12 is-hidden" id="no-city">
                                             <div class="inputbox">
                                                 <div class="inputbox__head">
                                                     <P class="inputbox__label">Введите название вашего города:</P>
@@ -2487,7 +2494,7 @@
                                                 <input class="input input_size_md" type="text" placeholder="название города" />
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_12">
+                                        <div class="grid__col grid__col_xl_12 fieldset__offset">
                                             <div class="inputbox">
                                                 <div class="inputbox__head">
                                                     <P class="inputbox__label">Служба доставки:</P>
@@ -2712,10 +2719,10 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="grastin" type="radio" />
+                                                                        <input class="checkradio__input" name="delivery-company" value="proswim" type="radio" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
-                                                                            <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
+                                                                            <svg class="icon icon_logo"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg>
                                                                         </span>
                                                                     </label>
                                                                 </div>
