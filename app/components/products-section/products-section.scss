@@ -33,6 +33,12 @@
     display: flex;
     align-self: flex-start;
     margin-left: -10px;
+
+    .products-section_hidecontrols & {
+      @include screen(sm) {
+        display: none;
+      }
+    }
   }
 
   &__button {

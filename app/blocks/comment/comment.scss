@@ -3,6 +3,10 @@
 
   & + & {
     margin-top: 33px;
+
+    @include screen(sm) {
+      margin-top: 23px;
+    }
   }
 
   &__avatar {

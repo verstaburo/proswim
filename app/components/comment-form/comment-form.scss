@@ -2,13 +2,25 @@
   display: block;
   padding-top: 36px;
 
+  @include screen(sm) {
+    padding-top: 26px;
+  }
+
   &:not(:last-child) {
     border-bottom: 1px solid $color-border;
     padding-bottom: 32px;
+
+    @include screen(sm) {
+      padding-bottom: 23px;
+    }
   }
 
   .section__head {
     margin-bottom: 23px;
+
+    @include screen(sm) {
+      margin-bottom: 25px;
+    }
   }
 
   &__button {
@@ -35,5 +47,18 @@
   .button {
     margin-top: 8px;
     min-width: 302px;
+
+    @include screen(sm) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+  @include screen(sm) {
+    #rc-imageselect,
+    .g-recaptcha {
+      transform: scale(0.96);
+      transform-origin: 0 0;
+    }
   }
 }

@@ -1,5 +1,13 @@
 .content-zone {
 
+  > img {
+    @include screen(sm) {
+      margin-left: -15px;
+      margin-right: -15px;
+      min-width: calc(100% + 30px);
+    }
+  }
+
   .text-section__block + & {
     margin-top: 46px;
 
@@ -82,6 +90,24 @@
       float: left;
       margin-right: 20px;
       margin-top: 4px;
+      width: 180px;
+      height: 187px;
+      float: left;
+      margin-right: 20px;
+      margin-top: 4px;
+      border-radius: 50%;
+
+      @include screen(lg) {
+        width: 140px;
+        height: 140px;
+      }
+
+      @include screen(sm) {
+        width: 80px;
+        height: 83px;
+        margin-right: 10px;
+      }
+
     }
 
     small {
@@ -123,6 +149,10 @@
 
     &:not(:last-child) {
       margin-bottom: 30px;
+
+      @include screen(sm) {
+        margin-bottom: 19px;
+      }
     }
   }
 
@@ -184,6 +214,10 @@
     h2 {
       &:not(:last-child) {
         margin-bottom: 16px;
+
+        @include screen(sm) {
+          margin-bottom: 6px;
+        }
       }
     }
 
@@ -193,6 +227,15 @@
 
       &:not(:last-child) {
         margin-bottom: 14px;
+
+        @include screen(sm) {
+          margin-bottom: 24px;
+        }
+      }
+
+      @include screen(sm) {
+        @include heading-5;
+        line-height: (27/16);
       }
     }
 
@@ -209,12 +252,21 @@
       font-size: 18px;
       line-height: (30/18);
 
+      @include screen(sm) {
+        font-size: 16px;
+        line-height: (27/16);
+      }
+
       > img {
         margin-top: 7px;
       }
 
       &:not(:last-child) {
         margin-bottom: 25px;
+
+        @include screen(sm) {
+          margin-bottom: 17px;
+        }
       }
     }
 

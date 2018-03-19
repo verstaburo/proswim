@@ -1,6 +1,10 @@
 .breadcrumbs {
   display: block;
 
+  @include screen(sm) {
+    display: flex;
+  }
+
   &__item {
     display: inline-block;
     position: relative;
@@ -9,6 +13,10 @@
       &__text {
         @include text-tiny;
         color: $darkgrey-color;
+      }
+
+      @include screen(sm) {
+        display: block;
       }
     }
 
@@ -21,6 +29,13 @@
 
       &__text {
         color: $color-basic;
+      }
+
+      @include screen(sm) {
+        max-width: 222px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 

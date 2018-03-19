@@ -101,4 +101,12 @@
       width: 100%;
     }
   }
+
+  @include screen(sm) {
+    #rc-imageselect,
+    .g-recaptcha {
+      transform: scale(0.96);
+      transform-origin: 0 0;
+    }
+  }
 }

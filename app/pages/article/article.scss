@@ -2,20 +2,37 @@
   display: block;
   padding-bottom: 34px;
 
+  @include screen(lg) {
+    padding-bottom: 23px;
+  }
+
   &__head {
     display: block;
     padding-top: 14px;
     padding-bottom: 26px;
+
+    @include screen(sm) {
+      padding-bottom: 16px;
+    }
   }
 
   &__heading {
     @include heading-1;
+
+    @include screen(sm) {
+      font-size: 26px;
+      line-height: (30/26);
+    }
   }
 
   &__info {
     margin-top: 20px;
     display: flex;
     align-items: center;
+
+    @include screen(sm) {
+      margin-top: 13px;
+    }
 
     &col {
       position: relative;
