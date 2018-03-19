@@ -75,3 +75,54 @@
 }
 
 .leaflet-container .leaflet-control-attribution { display: none; }
+
+
+.leaflet-div-icon {
+  background-color: transparent;
+  border: 0;
+
+  &.is-active,
+  &:hover {
+    &::after { opacity: 1; }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include grey-gradient;
+    clip-path: url(#mapPin);
+    transition: opacity $ease-main;
+    @include performance;
+  }
+
+  &::after {
+    opacity: 0;
+    @include blue-gradient;
+  }
+
+  &__shadow {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 31px;
+    height: 17px;
+    margin-top: -8px;
+    margin-left: 1px;
+    display: block;
+    background-image: url('../images/marker-shadow.png');
+  }
+
+  &__icon {
+    @include center-image;
+    width: 16px;
+    height: 16px;
+    margin-top: 8px;
+    z-index: 3;
+  }
+}

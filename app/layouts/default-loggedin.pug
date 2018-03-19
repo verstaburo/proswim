@@ -6,13 +6,13 @@ html(lang='ru')
   include head
 
   body
-    block header
-      +header(true)
-      +navbar
-      +burger(true)
-
+    +header(true)
+    +navbar
+    +burger(true)
     +popups
       block popups
+
+    include ../static/images/pin.svg
 
     block content
 

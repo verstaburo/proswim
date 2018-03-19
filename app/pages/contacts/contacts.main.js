@@ -27,7 +27,7 @@ function initContactsMap(id, markerLocations) {
   });
 
   $.each(markerLocations, function () {
-    L.marker(this, { icon: icon }).addTo(map);
+    window.makeMapPin(this).addTo(map);
   });
 }
 
