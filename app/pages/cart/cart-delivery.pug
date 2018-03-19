@@ -76,13 +76,13 @@ block content
                           option(value="20") БАйхал (Саха(Якутия) республика)
 
                       +inputbox
-                        +checkbox('no-city', 1) Моего города нет в списке
+                        +checkbox('no-city', 1, false, false, 'checkbox', 'js-no-city-in-list')(data-target="#no-city") Моего города нет в списке
 
-                    +col({ xl: 8, lg: 12 })
+                    +col({ xl: 8, lg: 12 }).is-hidden#no-city
                       +inputbox('Введите название вашего города:')
                         +input(type="text" placeholder="название города")._size_md
 
-                    +col(12)
+                    +col(12).fieldset__offset
                       +inputbox('Служба доставки:')
                         +checkitems
                           +checkitems-col(data-tab-target="delivery-1").is-active
