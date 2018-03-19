@@ -676,6 +676,10 @@
     transform: translate(0);
     transition: opacity $ease-main, transform $ease-main, left 0 0;
   }
+
+  &--content {
+    padding: 9px 12px;
+  }
 }
 
 // Стрелочка сверху над блоком
@@ -699,6 +703,13 @@
   font-weight: 500;
   line-height: (20/12);
   text-transform: uppercase;
+
+  // max-width: 32px;
+  // margin-left: 3px;
+
+  // &s {
+  //   margin-left: -3px;
+  // }
 }
 
 // Ячейка со стрелкой
