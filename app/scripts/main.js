@@ -22,6 +22,10 @@ function makeMapPin(loc, iconName, params) {
       iconSize: [32, 45],
       html: icon + '<div class="leaflet-div-icon__shadow"></div>'
     }, nextParams)),
+  }).on('popupopen', function(e) {
+    $(e.target._icon).addClass('is-active');
+  }).on('popupclose', function(e) {
+    $(e.target._icon).removeClass('is-active');
   });
 }
 
