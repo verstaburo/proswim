@@ -47,6 +47,19 @@ mixin radio(name, value, checked)
     +e.SPAN.content
       block
 
-mixin range()
-  +b.range&attributes(attributes).js-range
+mixin checkboxsep
+  +b.LABEL.checkradio&attributes(attributes)
+    block
+
+mixin checkboxsepinput
+  +e.INPUT.input(type="checkbox")&attributes(attributes)
+
+mixin checkboxsepcontent
+  +e.SPAN.box
+    +icon('checked').icon
+  +e.SPAN.content
+    block
+
+mixin range(noJs)
+  +b.range&attributes(attributes)(class=noJs ? '' : '.js-range')
     block

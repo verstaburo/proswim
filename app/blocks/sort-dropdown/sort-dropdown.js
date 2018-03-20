@@ -1,6 +1,8 @@
 const $ = window.$;
-
+/* eslint-disable */
 export default () => {
+  return;
+
   $('.js-catalog-price-slider').each(function () {
     const self = this;
     const slider = $(this);

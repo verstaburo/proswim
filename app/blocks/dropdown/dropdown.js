@@ -2,6 +2,7 @@ export const HIDDEN = 'dropdown/shown';
 export const SHOWN = 'dropdown/hidden';
 export const BEFORE_SHOW = 'dropdown/beforeshow';
 export const BEFORE_HIDE = 'dropdown/beforehide';
+export const HIDE = 'dropdown/hide';
 
 const $ = window.$;
 
@@ -81,6 +82,18 @@ $(document).on('click', (e) => {
     return;
   }
 
+  $('.js-dropdown.is-active').each(function () {
+    const self = $(this);
+
+    if ($(window).width() < window.globalOptions.sizes.lg && self.data('slide-mobile')) {
+      return;
+    }
+
+    toggle(self, false);
+  });
+});
+
+$(document).on(HIDE, () => {
   $('.js-dropdown.is-active').each(function () {
     const self = $(this);
 

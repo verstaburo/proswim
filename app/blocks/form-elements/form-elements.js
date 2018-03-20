@@ -13,6 +13,7 @@ import Inputmask from 'inputmask';
 import $$ from 'jquery';
 
 const $ = window.$;
+window.noUiSlider = noUiSlider;
 
 export function selects() {
   /* eslint-disable no-unused-vars */

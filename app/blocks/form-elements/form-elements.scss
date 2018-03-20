@@ -21,6 +21,15 @@
   border-radius: 2px;
   transition: all $ease-main;
 
+  &[type=number] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    -moz-appearance: textfield;
+  }
+
   &.parsley-error {
     border: 2px solid $lightred-color;
   }

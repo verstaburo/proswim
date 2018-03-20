@@ -28,4 +28,7 @@ mixin sort-dropdown-link
     block
 
 mixin sort-dropdown-submit
-  +button.BUTTON._size_sm._block.__submit.js-sort-dropdown-submit Применить
+  +button(
+    type='button',
+    @click="submitFilter"
+  ).BUTTON._size_sm._block.__submit Применить

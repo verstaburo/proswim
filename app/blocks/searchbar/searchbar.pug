@@ -3,3 +3,12 @@ mixin searchbar(placeholder, mobilePlaceholder)
     +input(placeholder=placeholder data-mobile-placeholder=mobilePlaceholder).searchbar__input
     +e.BUTTON.button(type="submit")
       +icon('Search icon').icon
+
+mixin searchbarsplit
+  +b.DIV.searchbar&attributes(attributes)
+    block
+    +e.BUTTON.button(type="button")
+      +icon('Search icon').icon
+
+mixin searchbarsplit-input
+  +b.INPUT.input.searchbar__input&attributes(attributes)

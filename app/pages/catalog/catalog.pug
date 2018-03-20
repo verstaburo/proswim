@@ -4,7 +4,7 @@ block head
   - var pageTitle = 'Proswim - Очки для плавания'
 
 block content
-  +b.page
+  +b.page#catalog
     .container
       +e.head
         +e.headcol._flexible
@@ -32,23 +32,17 @@ block content
           +sort-ui('Очки для плавания', '174', 'товара')
             +sort-ui-col
               +sort-dropdown._sort
-                +sort-dropdown-button По популярности
+                +sort-dropdown-button {{selectedSortItem.title}}
                 +sort-dropdown-body
                   +sort-dropdown-list
-                    +sort-dropdown-item
-                      +sort-dropdown-link
-                        span По цене
-                        +icon('sort-price-ask').icon
-                    +sort-dropdown-item
-                      +sort-dropdown-link
-                        span По цене
-                        +icon('sort-price-desk').icon
-                    +sort-dropdown-item
-                      +sort-dropdown-link
-                        span По скидкам
-                    +sort-dropdown-item
-                      +sort-dropdown-link
-                        span По новизне
+                    +sort-dropdown-item(v-for="sortItem in sortList")
+                      +sort-dropdown-link(
+                          href="#",
+                          @click.prevent="selectSortItem(sortItem)"
+                        )
+                        span {{sortItem.title}}
+                        svg(v-if="sortItem.icon" class="sort-dropdown__icon")
+                          use(v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+sortItem.icon}")
 
           +filter-section._simple
             +filter-section-grid._flexible
@@ -79,16 +73,15 @@ block content
                   +sort-dropdown-button Любой товар
                   +sort-dropdown-body
                     +sort-dropdown-list
-                      +sort-dropdown-item
-                        +checkbox('product', 'product-1') Очки для тренировок
-                      +sort-dropdown-item
-                        +checkbox('product', 'product-2') Профессиональные очки для плавания
-                      +sort-dropdown-item
-                        +checkbox('product', 'product-3') Очки-маски
-                      +sort-dropdown-item
-                        +checkbox('product', 'product-4') Очки с диоприями
-                      +sort-dropdown-item
-                        +checkbox('product', 'product-5') Наборы “Очки+Шапочка”
+                      +sort-dropdown-item(v-for="product in productList")
+                        +checkboxsep
+                          +checkboxsepinput(
+                            type='checkbox',
+                            :name='product.name',
+                            :value='product.value',
+                            v-model='product.checked',
+                          )
+                          +checkboxsepcontent {{product.title}}
                     +sort-dropdown-submit
 
               +filter-section-col
@@ -96,50 +89,37 @@ block content
                   +sort-dropdown-button Любой пол
                   +sort-dropdown-body
                     +sort-dropdown-list
-                      +sort-dropdown-item
-                        +checkbox('sex', 'male') Мужские
-                      +sort-dropdown-item
-                        +checkbox('sex', 'female') Женские
+                      +sort-dropdown-item(v-for="sexItem in sex")
+                        +checkboxsep
+                          +checkboxsepinput(
+                            type='checkbox',
+                            :name='sexItem.name',
+                            :value='sexItem.value',
+                            v-model='sexItem.checked',
+                          )
+                          +checkboxsepcontent {{sexItem.title}}
                     +sort-dropdown-submit
 
               +filter-section-col
                 +sort-dropdown._brands
                   +sort-dropdown-button Любой бренд
                   +sort-dropdown-body
-                    +searchbar('Поиск бренда...')._small
+                    +searchbarsplit._small
+                      +searchbarsplit-input(
+                        placeholder='Поиск бренда...',
+                        name='filter-brands-search',
+                        v-model="brandSearch"
+                      )
                     +sort-dropdown-list
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-1') Adidas
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-2') Adl
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-3') Banana Republic
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-4') Baon
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-5') Befree
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-6') Betsy
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-7') Caprice
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-8') United Colors Of Benneton
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-1') Adidas
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-2') Adl
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-3') Banana Republic
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-4') Baon
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-5') Befree
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-6') Betsy
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-7') Caprice
-                      +sort-dropdown-item
-                        +checkbox('brand', 'product-8') United Colors Of Benneton
+                      +sort-dropdown-item(v-for="brand in brandsFilter")
+                        +checkboxsep
+                          +checkboxsepinput(
+                            type='checkbox',
+                            :name='brand.name',
+                            :value='brand.value',
+                            v-model='brand.checked',
+                          )
+                          +checkboxsepcontent {{brand.title}}
                     +sort-dropdown-submit
 
               +filter-section-col
@@ -147,11 +127,25 @@ block content
                   +sort-dropdown-button Любая цена
                   +sort-dropdown-body
                     +inputbox.sort-dropdown__range
-                      +range()(data-start='[930, 4393]', data-connect='true', data-min='930', data-max='6000').js-catalog-price-slider
+                      +range(true).js-catalog-price-slider
 
                     +inputbox.sort-dropdown__inputs
-                      +input(value="930" data-handler="0").js-catalog-price-slider-input
-                      +input(value="4 393" data-handler="1").js-catalog-price-slider-input
+                      +input(
+                        data-handler="0",
+                        type="number",
+                        v-model.number="price.minValue",
+                        :min="price.min",
+                        :max="price.max",
+                        @input="handlePriceChange",
+                      )
+                      +input(
+                        data-handler="1",
+                        type="number",
+                        v-model.number="price.maxValue",
+                        :min="price.min",
+                        :max="price.max",
+                        @input="handlePriceChange",
+                      )
 
                     +sort-dropdown-submit
 
