@@ -32,7 +32,10 @@ block content
           +sort-ui('Очки для плавания', '174', 'товара')
             +sort-ui-col
               +sort-dropdown._sort
-                +sort-dropdown-button {{selectedSortItem.title}}
+                +sort-dropdown-button
+                  span {{selectedSortItem.title}}
+                  svg(v-if="selectedSortItem.icon" class="sort-dropdown__icon")
+                    use(v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+selectedSortItem.icon}")
                 +sort-dropdown-body
                   +sort-dropdown-list
                     +sort-dropdown-item(v-for="sortItem in sortList")
@@ -44,21 +47,24 @@ block content
                         svg(v-if="sortItem.icon" class="sort-dropdown__icon")
                           use(v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+sortItem.icon}")
 
-          +filter-section._simple
+          +filter-section._simple(v-if="priceApplied || brandsApplied || productsApplied || genderApplied")
             +filter-section-grid._flexible
               +filter-section-col
                 +filter-section-heading Ваш выбор:
-              +filter-section-col
-                +choice Очки-маски
-              +filter-section-col
-                +choice Мужские
-              +filter-section-col
-                +choice Arena
-              +filter-section-col
-                +choice 1699 - 2000 руб.
+              +filter-section-col(v-for="product in selectedProducts" v-if="productsApplied")
+                +choice.BUTTON(type="button", @click="resetItem('productList', product)") {{product.title}}
+              +filter-section-col(v-for="genderItem in selectedGender" v-if="genderApplied")
+                +choice.BUTTON(type="button", @click="resetItem('gender', genderItem)") {{genderItem.title}}
+              +filter-section-col(v-for="brand in selectedBrands" v-if="brandsApplied")
+                +choice.BUTTON(type="button", @click="resetItem('brandList', brand)") {{brand.title}}
+              +filter-section-col(v-if="priceApplied")
+                +choice.BUTTON(type="button", @click="resetPrice") {{priceValue}}
             +filter-section-grid
               +filter-section-col._not_shrinkable
-                +button.BUTTON._size_sm._transparent
+                +button(
+                  type="button",
+                  @click="resetFilters",
+                ).BUTTON._size_sm._transparent
                   +icon('cancel copy').icon._cancel
                   | Сбросить все
 
@@ -82,23 +88,23 @@ block content
                             v-model='product.checked',
                           )
                           +checkboxsepcontent {{product.title}}
-                    +sort-dropdown-submit
+                    +sort-dropdown-submit("submitFilter('products')")
 
               +filter-section-col
                 +sort-dropdown
                   +sort-dropdown-button Любой пол
                   +sort-dropdown-body
                     +sort-dropdown-list
-                      +sort-dropdown-item(v-for="sexItem in sex")
+                      +sort-dropdown-item(v-for="genderItem in gender")
                         +checkboxsep
                           +checkboxsepinput(
                             type='checkbox',
-                            :name='sexItem.name',
-                            :value='sexItem.value',
-                            v-model='sexItem.checked',
+                            :name='genderItem.name',
+                            :value='genderItem.value',
+                            v-model='genderItem.checked',
                           )
-                          +checkboxsepcontent {{sexItem.title}}
-                    +sort-dropdown-submit
+                          +checkboxsepcontent {{genderItem.title}}
+                    +sort-dropdown-submit("submitFilter('gender')")
 
               +filter-section-col
                 +sort-dropdown._brands
@@ -120,7 +126,7 @@ block content
                             v-model='brand.checked',
                           )
                           +checkboxsepcontent {{brand.title}}
-                    +sort-dropdown-submit
+                    +sort-dropdown-submit("submitFilter('brands')")
 
               +filter-section-col
                 +sort-dropdown._price
@@ -147,7 +153,7 @@ block content
                         @input="handlePriceChange",
                       )
 
-                    +sort-dropdown-submit
+                    +sort-dropdown-submit("submitFilter('price')")
 
           +catalog-section(getData('catalog-cards'))
 

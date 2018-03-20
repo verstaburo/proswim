@@ -27,8 +27,8 @@ mixin sort-dropdown-link
   +e.A.link&attributes(attributes)
     block
 
-mixin sort-dropdown-submit
+mixin sort-dropdown-submit(click)
   +button(
     type='button',
-    @click="submitFilter"
+    @click=click
   ).BUTTON._size_sm._block.__submit Применить

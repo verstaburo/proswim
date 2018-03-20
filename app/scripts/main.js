@@ -54,7 +54,7 @@ new Vue({
   el: '#catalog',
   data: {
     brandSearch: '',
-    brandsList: [
+    brandList: [
       { title: 'Adidas', value: 'Adidas', name: 'filter-brand', checked: false },
       { title: 'Adl', value: 'Adl', name: 'filter-brand', checked: false },
       { title: 'Banana Republic', value: 'Banana Republic', name: 'filter-brand', checked: false },
@@ -78,7 +78,7 @@ new Vue({
       min: 900,
       max: 6000,
       minValue: 900,
-      maxValue: 4393,
+      maxValue: 6000,
     },
     sort: [
       { title: 'По популярности', selected: true, value: 'sort-popularity' },
@@ -87,20 +87,24 @@ new Vue({
       { title: 'По скидкам', selected: false, value: 'sort-discount' },
       { title: 'По новизне', selected: false, value: 'sort-newest' },
     ],
-    sex: [
-      { title: 'Мужские', value: 'male', name: 'sex', checked: false },
-      { title: 'Женские', value: 'female', name: 'sex', checked: false },
+    gender: [
+      { title: 'Мужские', value: 'male', name: 'gender', checked: false },
+      { title: 'Женские', value: 'female', name: 'gender', checked: false },
     ],
+    priceApplied: false,
+    brandsApplied: false,
+    productsApplied: false,
+    genderApplied: false,
   },
   computed: {
     brandsFilter: function() {
       var self = this;
 
       if (!self.brandSearch) {
-        return self.brandsList;
+        return self.brandList;
       }
 
-      return self.brandsList.filter(function(item) {
+      return self.brandList.filter(function(item) {
         return item.title.toLowerCase().indexOf(self.brandSearch.toLowerCase()) !== -1;
       });
     },
@@ -119,12 +123,36 @@ new Vue({
       return self.sort.filter(function(item) {
         return item.selected;
       })[0];
-    }
+    },
+
+    priceValue: function() {
+      return this.price.minValue + ' - ' + this.price.maxValue + ' руб.';
+    },
+
+    selectedProducts: function() {
+      return this.productList.filter(function(item) {
+        return item.checked;
+      });
+    },
+
+    selectedBrands: function() {
+      return this.brandList.filter(function(item) {
+        return item.checked;
+      });
+    },
+
+    selectedGender: function() {
+      return this.gender.filter(function(item) {
+        return item.checked;
+      });
+    },
+
   },
   methods: {
     handlePriceChange: function() {
       $('.js-catalog-price-slider').get(0).noUiSlider.set([this.price.minValue, this.price.maxValue]);
     },
+
     selectSortItem: function(nextItem) {
       this.sort.forEach(function(item) {
         item.selected = false;
@@ -134,22 +162,78 @@ new Vue({
 
       this.submitFilter();
     },
-    submitFilter: function() {
-      // получить выбранные товары
 
-      // получить выбранные бренды
+    submitFilter: function(applied) {
+      if (applied === 'products') {
+        this.productsApplied = !!this.selectedProducts.length;
+      }
 
-      // получить диапазон цен
+      if (applied === 'brands') {
+        this.brandsApplied = !!this.selectedBrands.length;
+      }
 
-      // получить выбранный пол
+      if (applied === 'price') {
+        this.priceApplied = true;
+      }
 
-
-      // отрендерить выбранные фильтры
-
-      // заменить данные в выпадающих списках
+      if (applied === 'gender') {
+        this.genderApplied = !!this.selectedGender.length;
+      }
 
       // Спрятать все выпадающие списки
       $(document).trigger('dropdown/hide');
+    },
+
+    resetItem: function(listName, item) {
+      item.checked = false;
+
+      var list = this[listName].filter(function(listItem) {
+        return listItem.checked;
+      });
+
+      if (!list.length) {
+        if (listName === 'productList') {
+          this.productsApplied = false;
+        }
+
+        if (listName === 'brandList') {
+          this.brandsApplied = false;
+        }
+
+        if (listName === 'gender') {
+          this.genderApplied = false;
+        }
+      }
+    },
+
+    resetPrice: function() {
+      // сброс цены
+      this.price.minValue = this.price.min;
+      this.price.maxValue = this.price.max;
+      this.priceApplied = false;
+    },
+
+    resetFilters: function() {
+      // сброс цены
+      this.resetPrice();
+
+      // сброс пола
+      this.gender.forEach(function(item) {
+        item.checked = false;
+      });
+      this.genderApplied = false;
+
+      // сброс брендов
+      this.brandList.forEach(function(item) {
+        item.checked = false;
+      });
+      this.brandsApplied = false;
+
+      // сброс товаров
+      this.productList.forEach(function(item) {
+        item.checked = false;
+      });
+      this.productsApplied = false;
     },
   },
   mounted: function() {
