@@ -26,7 +26,8 @@
 
     .link__icon { fill: $color-basic; }
 
-    &:hover {
+    &:hover,
+    &.is-active {
       .link__text {
         color: $darkblue-color;
         border-color: $color-main;
@@ -44,7 +45,8 @@
 
     .link__icon {fill: $darkengrey-color; }
 
-    &:hover {
+    &:hover,
+    &.is-active {
       .link__text {
         color: $darkblue-color;
         border-color: $darkblue-color;
@@ -62,7 +64,8 @@
 
     .link__icon { fill: $middlegrey2-color; }
 
-    &:hover {
+    &:hover,
+    &.is-active {
       .link__text { color: $color-basic; }
       .link__icon { fill: $color-basic; }
     }

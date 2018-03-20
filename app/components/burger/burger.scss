@@ -81,6 +81,11 @@
       margin-top: 4px;
       padding-left: 22px;
 
+      &.is-active {
+        .link__text { color: $color-basic; }
+        .link__icon { fill: $color-basic; }
+      }
+
       .link__text { @include link-medium; }
       .link__icon {
         top: 50%;

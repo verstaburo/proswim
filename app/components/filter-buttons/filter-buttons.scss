@@ -10,11 +10,12 @@
     margin-top: -20px;
   }
 
-  &__col {
-    .button__icon { display: none; }
+  .button__icon {
+    opacity: 0;
+    @include performance;
+  }
 
-    &.is-applied .button__icon {
-      display: inline-block;
-    }
+  .button.is-applied .button__icon {
+    opacity: 1;
   }
 }

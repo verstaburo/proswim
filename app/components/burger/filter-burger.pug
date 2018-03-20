@@ -12,27 +12,25 @@ mixin filter-burger(isReviews)
 
       +e.subheader
         +filter-section._mobile
-          if isReviews
-            +filter-section-grid
-              +filter-section-col._full
-                +filter-section-heading Ваш выбор: #[span (0)]
-          else
-            +filter-section-grid
-              +filter-section-col._full
-                +filter-section-heading Ваш выбор: #[span (4)]
-              +filter-section-col
-                +choice Очки-маски
-              +filter-section-col
-                +choice Мужские
-              +filter-section-col
-                +choice Arena
-              +filter-section-col
-                +choice 1699 - 2000 руб.
-            +filter-section-grid
-              +filter-section-col._not_shrinkable
-                +button.BUTTON._size_sm._transparent
-                  +icon('cancel copy').icon._cancel
-                  | Сбросить все
+          +filter-section-grid._flexible
+            +filter-section-col._full
+              +filter-section-heading Ваш выбор: ({{appliedCount}})
+            +filter-section-col(v-for="product in selectedProducts" v-if="productsApplied")
+              +choice.BUTTON(type="button", @click="resetItem('productList', product)") {{product.title}}
+            +filter-section-col(v-for="genderItem in selectedGender" v-if="genderApplied")
+              +choice.BUTTON(type="button", @click="resetItem('gender', genderItem)") {{genderItem.title}}
+            +filter-section-col(v-for="brand in selectedBrands" v-if="brandsApplied")
+              +choice.BUTTON(type="button", @click="resetItem('brandList', brand)") {{brand.title}}
+            +filter-section-col(v-if="priceApplied")
+              +choice.BUTTON(type="button", @click="resetPrice") {{priceValue}}
+          +filter-section-grid(v-if="filtersApplied")
+            +filter-section-col._not_shrinkable
+              +button(
+                type="button",
+                @click="resetFilters",
+              ).BUTTON._size_sm._transparent
+                +icon('cancel copy').icon._cancel
+                | Сбросить все
 
         +e.innercontent
           +accordion._big_divider
@@ -47,78 +45,81 @@ mixin filter-burger(isReviews)
             +sort-dropdown-button Любой товар
             +sort-dropdown-body
               +sort-dropdown-list(true)
-                +sort-dropdown-item
-                  +checkbox('product', 'product-1') Очки для тренировок
-                +sort-dropdown-item
-                  +checkbox('product', 'product-2') Профессиональные очки для плавания
-                +sort-dropdown-item
-                  +checkbox('product', 'product-3') Очки-маски
-                +sort-dropdown-item
-                  +checkbox('product', 'product-4') Очки с диоприями
-                +sort-dropdown-item
-                  +checkbox('product', 'product-5') Наборы “Очки+Шапочка”
-              +sort-dropdown-submit
+                +sort-dropdown-item(v-for="product in productList")
+                  +checkboxsep
+                    +checkboxsepinput(
+                      type='checkbox',
+                      :name='product.name',
+                      :value='product.value',
+                      v-model='product.checked',
+                    )
+                    +checkboxsepcontent {{product.title}}
+              +sort-dropdown-submit("submitFilter('products')")
         unless isReviews
           +sort-dropdown
             +sort-dropdown-button Любой пол
             +sort-dropdown-body
               +sort-dropdown-list(true)
-                +sort-dropdown-item
-                  +checkbox('sex', 'male') Мужские
-                +sort-dropdown-item
-                  +checkbox('sex', 'female') Женские
-              +sort-dropdown-submit
+                +sort-dropdown-item(v-for="genderItem in gender")
+                  +checkboxsep
+                    +checkboxsepinput(
+                      type='checkbox',
+                      :name='genderItem.name',
+                      :value='genderItem.value',
+                      v-model='genderItem.checked',
+                    )
+                    +checkboxsepcontent {{genderItem.title}}
+              +sort-dropdown-submit("submitFilter('gender')")
 
           +sort-dropdown._brands
             +sort-dropdown-button Любой бренд
             +sort-dropdown-body
-              +searchbar('Поиск бренда...')._small
+              +searchbarsplit._small
+                +searchbarsplit-input(
+                  placeholder='Поиск бренда...',
+                  name='filter-brands-search',
+                  v-model="brandSearch"
+                )
               +sort-dropdown-list(true)
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-1') Adidas
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-2') Adl
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-3') Banana Republic
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-4') Baon
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-5') Befree
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-6') Betsy
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-7') Caprice
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-8') United Colors Of Benneton
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-1') Adidas
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-2') Adl
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-3') Banana Republic
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-4') Baon
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-5') Befree
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-6') Betsy
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-7') Caprice
-                +sort-dropdown-item
-                  +checkbox('brand', 'product-8') United Colors Of Benneton
+                +sort-dropdown-item(v-for="brand in cutBrands")
+                  +checkboxsep
+                    +checkboxsepinput(
+                      type='checkbox',
+                      :name='brand.name',
+                      :value='brand.value',
+                      v-model='brand.checked',
+                    )
+                    +checkboxsepcontent {{brand.title}}
 
-              +link.__readmore Показать еще
-              +sort-dropdown-submit
+              +link(
+                v-if="cutBrands.length > 8 && cutoffBrands",
+                @click="cutoffBrands = false"
+              ).__readmore Показать еще
+              +sort-dropdown-submit("submitFilter('brands')")
 
         unless isReviews
           +sort-dropdown._price
             +sort-dropdown-button Любая цена
             +sort-dropdown-body
               +inputbox.sort-dropdown__range
-                +range()(data-start='[930, 4393]', data-connect='true', data-min='930', data-max='6000')
+                +range(true).js-catalog-price-slider
 
               +inputbox.sort-dropdown__inputs
-                +input(value="930")._size_sm
-                +input(value="4 393")._size_sm
+                +input(
+                  data-handler="0",
+                  type="number",
+                  v-model.number="price.minValue",
+                  :min="price.min",
+                  :max="price.max",
+                  @input="handlePriceChange",
+                )
+                +input(
+                  data-handler="1",
+                  type="number",
+                  v-model.number="price.maxValue",
+                  :min="price.min",
+                  :max="price.max",
+                  @input="handlePriceChange",
+                )
 
-              +sort-dropdown-submit
+              +sort-dropdown-submit("submitFilter('price')")

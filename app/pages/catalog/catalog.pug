@@ -47,7 +47,7 @@ block content
                         svg(v-if="sortItem.icon" class="sort-dropdown__icon")
                           use(v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+sortItem.icon}")
 
-          +filter-section._simple(v-if="priceApplied || brandsApplied || productsApplied || genderApplied")
+          +filter-section._simple(v-if="filtersApplied")
             +filter-section-grid._flexible
               +filter-section-col
                 +filter-section-heading Ваш выбор:
@@ -161,8 +161,8 @@ block content
 
           +catalog-seo-section
 
-  +filter-burger
-  +sort-burger
+    +filter-burger
+    +sort-burger
 
 block popups
   +login-popup

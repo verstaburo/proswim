@@ -95,8 +95,38 @@ new Vue({
     brandsApplied: false,
     productsApplied: false,
     genderApplied: false,
+    cutoffBrands: true,
+    sortApplied: false,
   },
   computed: {
+    appliedCount: function() {
+      var total = 0;
+
+      if (this.priceApplied) {
+        total += 1;
+      }
+
+      if (this.brandsApplied) {
+        this.brandList.forEach(function(item) {
+          total += item.checked;
+        });
+      }
+
+      if (this.productsApplied) {
+        this.productList.forEach(function(item) {
+          total += item.checked;
+        });
+      }
+
+      if (this.genderApplied) {
+        this.gender.forEach(function(item) {
+          total += item.checked;
+        });
+      }
+
+      return total;
+    },
+
     brandsFilter: function() {
       var self = this;
 
@@ -147,10 +177,22 @@ new Vue({
       });
     },
 
+    filtersApplied: function() {
+      return this.priceApplied || this.brandsApplied || this.productsApplied || this.genderApplied;
+    },
+
+    cutBrands: function() {
+      return this.cutoffBrands === true ? this.brandsFilter.slice(0, 8) : this.brandsFilter;
+    },
   },
+
   methods: {
     handlePriceChange: function() {
-      $('.js-catalog-price-slider').get(0).noUiSlider.set([this.price.minValue, this.price.maxValue]);
+      var self = this;
+
+      $('.js-catalog-price-slider').each(function() {
+        $(this).get(0).noUiSlider.set([self.price.minValue, self.price.maxValue]);
+      });
     },
 
     selectSortItem: function(nextItem) {
@@ -160,7 +202,10 @@ new Vue({
 
       nextItem.selected = true;
 
-      this.submitFilter();
+      this.sortApplied = true;
+
+      // Спрятать все выпадающие списки
+      $(document).trigger('dropdown/hide');
     },
 
     submitFilter: function(applied) {
@@ -241,22 +286,29 @@ new Vue({
      * Инициализация range слайдера
      */
     var self = this,
-        slider = $('.js-catalog-price-slider');
+        sliders = $('.js-catalog-price-slider');
 
-    noUiSlider.create(slider.get(0), {
-      start: [self.price.minValue, self.price.maxValue],
-      connect: true,
-      range: {
-        min: self.price.min,
-        max: self.price.max,
-      },
+    $('.js-catalog-price-slider').each(function() {
+      var slider =  $(this);
+
+      noUiSlider.create(slider.get(0), {
+        start: [self.price.minValue, self.price.maxValue],
+        connect: true,
+        range: {
+          min: self.price.min,
+          max: self.price.max,
+        },
+      });
+
+      slider[0].noUiSlider.on('update', function(values, handler) {
+        var keys = ['minValue', 'maxValue'];
+        var val = values[handler];
+        self.price[keys[handler]] = Math.round(val);
+      });
     });
 
-    slider[0].noUiSlider.on('update', function(values, handler) {
-      var keys = ['minValue', 'maxValue'];
-      var val = values[handler];
-      self.price[keys[handler]] = Math.round(val);
-    });
+    // Обновление слайдера при ресайзе
+    $(window).on('resize', this.handlePriceChange.bind(this));
   },
 });
 /* eslint-enable */

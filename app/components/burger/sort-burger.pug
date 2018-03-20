@@ -12,13 +12,12 @@ mixin sort-burger()
 
       +e.innercontent
         +e.UL.list
-          +e.LI.item
-            +link._dark.__link._big По популярности
-          +e.LI.item
-            +link-icon('sort-price-ask')._dark.__link._big По цене
-          +e.LI.item
-            +link-icon('sort-price-desk')._dark.__link._big По цене
-          +e.LI.item
-            +link._dark.__link._big По скидкам
-          +e.LI.item
-            +link._dark.__link._big По новизне
+          +e.LI.item(v-for="sortItem in sort")
+            +b.A.link._dark.__link._big(
+              href="#",
+              @click.prevent="selectSortItem(sortItem)",
+              v-bind:class="{ 'is-active': sortItem.selected }",
+            )
+              svg(v-if="sortItem.icon" class="link__icon")
+                use(v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+sortItem.icon}")
+              +e.SPAN.text {{sortItem.title}}
