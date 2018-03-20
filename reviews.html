@@ -18,6 +18,7 @@
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
 </head>
 
 <body>
@@ -2643,7 +2644,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -2808,7 +2809,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -2817,7 +2818,7 @@
                     <div class="filter-buttons">
                         <div class="grid filter-buttons__grid">
                             <div class="grid__col grid__col_xl_12 filter-buttons__col">
-                                <a class="button button_size_md button_transparent button_block js-filter-burger-button" data-burger="#filter-burger">Фильтры
+                                <a class="button button_size_md button_transparent button_block js-filter-burger-button" data-burger="#filter-burger" v-bind:class="{'is-applied': filtersApplied}">Фильтры
                                     <svg class="button__icon button__icon_check"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                 </a>
                             </div>
@@ -3163,11 +3164,39 @@
             </header>
             <div class="burger__subheader">
                 <div class="filter-section filter-section_mobile">
-                    <div class="filter-section__grid">
+                    <div class="filter-section__grid filter-section__grid_flexible">
                         <div class="filter-section__col filter-section__col_full">
-                            <div class="filter-section__heading">Ваш выбор:
-                                <span>(0)</span>
-                            </div>
+                            <div class="filter-section__heading">Ваш выбор: ({{appliedCount}})</div>
+                        </div>
+                        <div class="filter-section__col" v-for="product in selectedProducts" v-if="productsApplied">
+                            <button class="choice" type="button" @click="resetItem('productList', product)">
+                                <div class="choice__text">{{product.title}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
+                        </div>
+                        <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
+                            <button class="choice" type="button" @click="resetItem('gender', genderItem)">
+                                <div class="choice__text">{{genderItem.title}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
+                        </div>
+                        <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
+                            <button class="choice" type="button" @click="resetItem('brandList', brand)">
+                                <div class="choice__text">{{brand.title}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
+                        </div>
+                        <div class="filter-section__col" v-if="priceApplied">
+                            <button class="choice" type="button" @click="resetPrice">
+                                <div class="choice__text">{{priceValue}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="filter-section__grid" v-if="filtersApplied">
+                        <div class="filter-section__col filter-section__col_not_shrinkable">
+                            <button class="button button_size_sm button_transparent" type="button" @click="resetFilters">
+                                <svg class="button__icon button__icon_cancel"><use xlink:href="assets/images/icon.svg#icon_cancel-copy"></use></svg>Сбросить все</button>
                         </div>
                     </div>
                 </div>
@@ -3396,54 +3425,18 @@
                         <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
                             <div class="sort-dropdown__listwrap">
                                 <ul class="sort-dropdown__list">
-                                    <li class="sort-dropdown__item">
+                                    <li class="sort-dropdown__item" v-for="product in productList">
                                         <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-1" type="checkbox" />
+                                            <input class="checkradio__input" type="checkbox" :name="product.name" :value="product.value" v-model="product.checked" />
                                             <span class="checkradio__box">
                                                 <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                             </span>
-                                            <span class="checkradio__content">Очки для тренировок</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-2" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Профессиональные очки для плавания</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-3" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Очки-маски</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-4" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Очки с диоприями</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-5" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Наборы “Очки+Шапочка”</span>
+                                            <span class="checkradio__content">{{product.title}}</span>
                                         </label>
                                     </li>
                                 </ul>
                             </div>
-                            <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                            <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('products')">Применить</button>
                         </div>
                     </div>
                 </div>

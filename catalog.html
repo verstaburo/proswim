@@ -18,6 +18,7 @@
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
 </head>
 
 <body>
@@ -2345,7 +2346,7 @@
             </clipPath>
         </defs>
     </svg>
-    <div class="page">
+    <div class="page" id="catalog">
         <div class="container">
             <div class="page__head">
                 <div class="page__headcol page__headcol_flexible">
@@ -2670,32 +2671,19 @@
                             <div class="sort-ui__col">
                                 <div class="sort-dropdown sort-dropdown_sort">
                                     <div class="sort-dropdown__button js-dropdown-toggle">
-                                        <span class="sort-dropdown__value">По популярности</span>
+                                        <span class="sort-dropdown__value">
+                                            <span>{{selectedSortItem.title}}</span>
+                                            <svg class="sort-dropdown__icon" v-if="selectedSortItem.icon"><use v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+selectedSortItem.icon}"></use></svg>
+                                        </span>
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list">
-                                                <li class="sort-dropdown__item">
-                                                    <a class="sort-dropdown__link">
-                                                        <span>По цене</span>
-                                                        <svg class="sort-dropdown__icon"><use xlink:href="assets/images/icon.svg#icon_sort-price-ask"></use></svg>
-                                                    </a>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <a class="sort-dropdown__link">
-                                                        <span>По цене</span>
-                                                        <svg class="sort-dropdown__icon"><use xlink:href="assets/images/icon.svg#icon_sort-price-desk"></use></svg>
-                                                    </a>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <a class="sort-dropdown__link">
-                                                        <span>По скидкам</span>
-                                                    </a>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <a class="sort-dropdown__link">
-                                                        <span>По новизне</span>
+                                                <li class="sort-dropdown__item" v-for="sortItem in sortList">
+                                                    <a class="sort-dropdown__link" href="#" @click.prevent="selectSortItem(sortItem)">
+                                                        <span>{{sortItem.title}}</span>
+                                                        <svg class="sort-dropdown__icon" v-if="sortItem.icon"><use v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+sortItem.icon}"></use></svg>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -2705,52 +2693,52 @@
                             </div>
                         </div>
                     </div>
-                    <div class="filter-section filter-section_simple">
+                    <div class="filter-section filter-section_simple" v-if="filtersApplied">
                         <div class="filter-section__grid filter-section__grid_flexible">
                             <div class="filter-section__col">
                                 <div class="filter-section__heading">Ваш выбор:</div>
                             </div>
-                            <div class="filter-section__col">
-                                <div class="choice">
-                                    <div class="choice__text">Очки-маски</div>
+                            <div class="filter-section__col" v-for="product in selectedProducts" v-if="productsApplied">
+                                <button class="choice" type="button" @click="resetItem('productList', product)">
+                                    <div class="choice__text">{{product.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </div>
+                                </button>
                             </div>
-                            <div class="filter-section__col">
-                                <div class="choice">
-                                    <div class="choice__text">Мужские</div>
+                            <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
+                                <button class="choice" type="button" @click="resetItem('gender', genderItem)">
+                                    <div class="choice__text">{{genderItem.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </div>
+                                </button>
                             </div>
-                            <div class="filter-section__col">
-                                <div class="choice">
-                                    <div class="choice__text">Arena</div>
+                            <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
+                                <button class="choice" type="button" @click="resetItem('brandList', brand)">
+                                    <div class="choice__text">{{brand.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </div>
+                                </button>
                             </div>
-                            <div class="filter-section__col">
-                                <div class="choice">
-                                    <div class="choice__text">1699 - 2000 руб.</div>
+                            <div class="filter-section__col" v-if="priceApplied">
+                                <button class="choice" type="button" @click="resetPrice">
+                                    <div class="choice__text">{{priceValue}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </div>
+                                </button>
                             </div>
                         </div>
                         <div class="filter-section__grid">
                             <div class="filter-section__col filter-section__col_not_shrinkable">
-                                <button class="button button_size_sm button_transparent">
+                                <button class="button button_size_sm button_transparent" type="button" @click="resetFilters">
                                     <svg class="button__icon button__icon_cancel"><use xlink:href="assets/images/icon.svg#icon_cancel-copy"></use></svg>Сбросить все</button>
                             </div>
                         </div>
                     </div>
                     <div class="filter-buttons">
                         <div class="grid filter-buttons__grid">
-                            <div class="grid__col grid__col_xl_12 filter-buttons__col">
-                                <a class="button button_size_md button_transparent button_block js-filter-burger-button" data-burger="#filter-burger">Фильтры
+                            <div class="grid__col grid__col_xl_6 filter-buttons__col">
+                                <a class="button button_size_md button_transparent button_block js-filter-burger-button" data-burger="#filter-burger" v-bind:class="{'is-applied': filtersApplied}">Фильтры
                                     <svg class="button__icon button__icon_check"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                 </a>
                             </div>
-                            <div class="grid__col grid__col_xl_12 filter-buttons__col">
-                                <a class="button button_size_md button_transparent button_block js-filter-burger-button" data-burger="#sort-burger">Сортировать
+                            <div class="grid__col grid__col_xl_6 filter-buttons__col">
+                                <a class="button button_size_md button_transparent button_block js-filter-burger-button" data-burger="#sort-burger" v-bind:class="{'is-applied': sortApplied}">Сортировать
                                     <svg class="button__icon button__icon_check"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                 </a>
                             </div>
@@ -2770,54 +2758,18 @@
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list">
-                                                <li class="sort-dropdown__item">
+                                                <li class="sort-dropdown__item" v-for="product in productList">
                                                     <label class="checkradio">
-                                                        <input class="checkradio__input" name="product" value="product-1" type="checkbox" />
+                                                        <input class="checkradio__input" type="checkbox" :name="product.name" :value="product.value" v-model="product.checked" />
                                                         <span class="checkradio__box">
                                                             <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                                         </span>
-                                                        <span class="checkradio__content">Очки для тренировок</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="product" value="product-2" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Профессиональные очки для плавания</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="product" value="product-3" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Очки-маски</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="product" value="product-4" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Очки с диоприями</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="product" value="product-5" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Наборы “Очки+Шапочка”</span>
+                                                        <span class="checkradio__content">{{product.title}}</span>
                                                     </label>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('products')">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -2830,27 +2782,18 @@
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list">
-                                                <li class="sort-dropdown__item">
+                                                <li class="sort-dropdown__item" v-for="genderItem in gender">
                                                     <label class="checkradio">
-                                                        <input class="checkradio__input" name="sex" value="male" type="checkbox" />
+                                                        <input class="checkradio__input" type="checkbox" :name="genderItem.name" :value="genderItem.value" v-model="genderItem.checked" />
                                                         <span class="checkradio__box">
                                                             <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                                         </span>
-                                                        <span class="checkradio__content">Мужские</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="sex" value="female" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Женские</span>
+                                                        <span class="checkradio__content">{{genderItem.title}}</span>
                                                     </label>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('gender')">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -2861,161 +2804,26 @@
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
-                                        <form class="searchbar searchbar_small">
-                                            <input class="input searchbar__input" placeholder="Поиск бренда..." type="text" />
-                                            <button class="searchbar__button" type="submit">
+                                        <div class="searchbar searchbar_small">
+                                            <input class="input searchbar__input" placeholder="Поиск бренда..." name="filter-brands-search" v-model="brandSearch" type="text" />
+                                            <button class="searchbar__button" type="button">
                                                 <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
                                             </button>
-                                        </form>
+                                        </div>
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list">
-                                                <li class="sort-dropdown__item">
+                                                <li class="sort-dropdown__item" v-for="brand in brandsFilter">
                                                     <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-1" type="checkbox" />
+                                                        <input class="checkradio__input" type="checkbox" :name="brand.name" :value="brand.value" v-model="brand.checked" />
                                                         <span class="checkradio__box">
                                                             <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                                         </span>
-                                                        <span class="checkradio__content">Adidas</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-2" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Adl</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-3" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Banana Republic</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-4" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Baon</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-5" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Befree</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-6" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Betsy</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-7" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Caprice</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-8" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">United Colors Of Benneton</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-1" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Adidas</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-2" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Adl</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-3" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Banana Republic</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-4" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Baon</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-5" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Befree</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-6" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Betsy</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-7" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">Caprice</span>
-                                                    </label>
-                                                </li>
-                                                <li class="sort-dropdown__item">
-                                                    <label class="checkradio">
-                                                        <input class="checkradio__input" name="brand" value="product-8" type="checkbox" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
-                                                        <span class="checkradio__content">United Colors Of Benneton</span>
+                                                        <span class="checkradio__content">{{brand.title}}</span>
                                                     </label>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('brands')">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -3027,13 +2835,13 @@
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
                                         <div class="inputbox sort-dropdown__range">
-                                            <div class="range js-range js-catalog-price-slider" data-start="[930, 4393]" data-connect="true" data-min="930" data-max="6000"></div>
+                                            <div class="range js-catalog-price-slider"></div>
                                         </div>
                                         <div class="inputbox sort-dropdown__inputs">
-                                            <input class="input js-catalog-price-slider-input" value="930" data-handler="0" type="text" />
-                                            <input class="input js-catalog-price-slider-input" value="4 393" data-handler="1" type="text" />
+                                            <input class="input" data-handler="0" type="number" v-model.number="price.minValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
+                                            <input class="input" data-handler="1" type="number" v-model.number="price.maxValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
                                         </div>
-                                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('price')">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -4275,601 +4083,398 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="burger burger_filter js-filter-burger" id="filter-burger">
-        <div class="burger__overlay js-filter-burger-close"></div>
-        <div class="burger__content">
-            <header class="burger__section burger__header">
-                <div class="container">
-                    <div class="burger__headerlinks">
-                        <a class="link link_icon link_dark burger__headerlink is-active">
-                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_filter_icon_mobile"></use></svg>
-                            <span class="link__text">Фильтры</span>
-                        </a>
+        <div class="burger burger_filter js-filter-burger" id="filter-burger">
+            <div class="burger__overlay js-filter-burger-close"></div>
+            <div class="burger__content">
+                <header class="burger__section burger__header">
+                    <div class="container">
+                        <div class="burger__headerlinks">
+                            <a class="link link_icon link_dark burger__headerlink is-active">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_filter_icon_mobile"></use></svg>
+                                <span class="link__text">Фильтры</span>
+                            </a>
+                        </div>
+                        <button class="burger__close js-filter-burger-close">
+                            <svg><use xlink:href="assets/images/icon.svg#icon_close-menu"></use></svg>
+                        </button>
                     </div>
-                    <button class="burger__close js-filter-burger-close">
-                        <svg><use xlink:href="assets/images/icon.svg#icon_close-menu"></use></svg>
-                    </button>
-                </div>
-            </header>
-            <div class="burger__subheader">
-                <div class="filter-section filter-section_mobile">
-                    <div class="filter-section__grid">
-                        <div class="filter-section__col filter-section__col_full">
-                            <div class="filter-section__heading">Ваш выбор:
-                                <span>(4)</span>
+                </header>
+                <div class="burger__subheader">
+                    <div class="filter-section filter-section_mobile">
+                        <div class="filter-section__grid filter-section__grid_flexible">
+                            <div class="filter-section__col filter-section__col_full">
+                                <div class="filter-section__heading">Ваш выбор: ({{appliedCount}})</div>
+                            </div>
+                            <div class="filter-section__col" v-for="product in selectedProducts" v-if="productsApplied">
+                                <button class="choice" type="button" @click="resetItem('productList', product)">
+                                    <div class="choice__text">{{product.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
+                                <button class="choice" type="button" @click="resetItem('gender', genderItem)">
+                                    <div class="choice__text">{{genderItem.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
+                                <button class="choice" type="button" @click="resetItem('brandList', brand)">
+                                    <div class="choice__text">{{brand.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-if="priceApplied">
+                                <button class="choice" type="button" @click="resetPrice">
+                                    <div class="choice__text">{{priceValue}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
                             </div>
                         </div>
-                        <div class="filter-section__col">
-                            <div class="choice">
-                                <div class="choice__text">Очки-маски</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </div>
-                        </div>
-                        <div class="filter-section__col">
-                            <div class="choice">
-                                <div class="choice__text">Мужские</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </div>
-                        </div>
-                        <div class="filter-section__col">
-                            <div class="choice">
-                                <div class="choice__text">Arena</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </div>
-                        </div>
-                        <div class="filter-section__col">
-                            <div class="choice">
-                                <div class="choice__text">1699 - 2000 руб.</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter-section__grid">
-                        <div class="filter-section__col filter-section__col_not_shrinkable">
-                            <button class="button button_size_sm button_transparent">
-                                <svg class="button__icon button__icon_cancel"><use xlink:href="assets/images/icon.svg#icon_cancel-copy"></use></svg>Сбросить все</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="burger__innercontent">
-                    <div class="accordion accordion_big_divider">
-                        <div class="accordion__header">
-                            <div class="accordion__button js-accordion-button">Категории
-                                <svg class="accordion__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
-                            </div>
-                        </div>
-                        <div class="accordion__body">
-                            <div class="vertical-menu vertical-menu_accordion is-active">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Очки для плавания</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Гидрошорты и гдирокостюмы</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Купальники</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Шапочки</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Аксессуары</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Плавки и шорты</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Тренажёры</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Электроника</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="vertical-menu vertical-menu_accordion">
-                                <h6 class="vertical-menu__heading js-vertical-menu-button">
-                                    <span>Прочеее</span>
-                                    <span class="vertical-menu__button"></span>
-                                </h6>
-                                <ul class="vertical-menu__items">
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
-                                    </li>
-                                    <li class="vertical-menu__item">
-                                        <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
-                                    </li>
-                                </ul>
+                        <div class="filter-section__grid" v-if="filtersApplied">
+                            <div class="filter-section__col filter-section__col_not_shrinkable">
+                                <button class="button button_size_sm button_transparent" type="button" @click="resetFilters">
+                                    <svg class="button__icon button__icon_cancel"><use xlink:href="assets/images/icon.svg#icon_cancel-copy"></use></svg>Сбросить все</button>
                             </div>
                         </div>
                     </div>
-                    <div class="sort-dropdown sort-dropdown_products">
+                    <div class="burger__innercontent">
+                        <div class="accordion accordion_big_divider">
+                            <div class="accordion__header">
+                                <div class="accordion__button js-accordion-button">Категории
+                                    <svg class="accordion__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-menu-button"></use></svg>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="vertical-menu vertical-menu_accordion is-active">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Очки для плавания</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Гидрошорты и гдирокостюмы</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Купальники</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Шапочки</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Аксессуары</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Плавки и шорты</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Тренажёры</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Электроника</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vertical-menu vertical-menu_accordion">
+                                    <h6 class="vertical-menu__heading js-vertical-menu-button">
+                                        <span>Прочеее</span>
+                                        <span class="vertical-menu__button"></span>
+                                    </h6>
+                                    <ul class="vertical-menu__items">
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки для тренеровок</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Профессиональные очки для плавания</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки-маски</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Очки с диоприями</a>
+                                        </li>
+                                        <li class="vertical-menu__item">
+                                            <a class="vertical-menu__link" href="javascript:void(0);">Наборы «Очки+Шапочка»</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sort-dropdown sort-dropdown_products">
+                            <div class="sort-dropdown__button js-dropdown-toggle">
+                                <span class="sort-dropdown__value">Любой товар</span>
+                                <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                            </div>
+                            <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                                <div class="sort-dropdown__listwrap">
+                                    <ul class="sort-dropdown__list">
+                                        <li class="sort-dropdown__item" v-for="product in productList">
+                                            <label class="checkradio">
+                                                <input class="checkradio__input" type="checkbox" :name="product.name" :value="product.value" v-model="product.checked" />
+                                                <span class="checkradio__box">
+                                                    <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                </span>
+                                                <span class="checkradio__content">{{product.title}}</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('products')">Применить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sort-dropdown">
                         <div class="sort-dropdown__button js-dropdown-toggle">
-                            <span class="sort-dropdown__value">Любой товар</span>
+                            <span class="sort-dropdown__value">Любой пол</span>
                             <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                         </div>
                         <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
                             <div class="sort-dropdown__listwrap">
                                 <ul class="sort-dropdown__list">
-                                    <li class="sort-dropdown__item">
+                                    <li class="sort-dropdown__item" v-for="genderItem in gender">
                                         <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-1" type="checkbox" />
+                                            <input class="checkradio__input" type="checkbox" :name="genderItem.name" :value="genderItem.value" v-model="genderItem.checked" />
                                             <span class="checkradio__box">
                                                 <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                             </span>
-                                            <span class="checkradio__content">Очки для тренировок</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-2" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Профессиональные очки для плавания</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-3" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Очки-маски</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-4" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Очки с диоприями</span>
-                                        </label>
-                                    </li>
-                                    <li class="sort-dropdown__item">
-                                        <label class="checkradio">
-                                            <input class="checkradio__input" name="product" value="product-5" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Наборы “Очки+Шапочка”</span>
+                                            <span class="checkradio__content">{{genderItem.title}}</span>
                                         </label>
                                     </li>
                                 </ul>
                             </div>
-                            <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
+                            <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('gender')">Применить</button>
                         </div>
                     </div>
-                </div>
-                <div class="sort-dropdown">
-                    <div class="sort-dropdown__button js-dropdown-toggle">
-                        <span class="sort-dropdown__value">Любой пол</span>
-                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
-                    </div>
-                    <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
-                        <div class="sort-dropdown__listwrap">
-                            <ul class="sort-dropdown__list">
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="sex" value="male" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Мужские</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="sex" value="female" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Женские</span>
-                                    </label>
-                                </li>
-                            </ul>
+                    <div class="sort-dropdown sort-dropdown_brands">
+                        <div class="sort-dropdown__button js-dropdown-toggle">
+                            <span class="sort-dropdown__value">Любой бренд</span>
+                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                         </div>
-                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
-                    </div>
-                </div>
-                <div class="sort-dropdown sort-dropdown_brands">
-                    <div class="sort-dropdown__button js-dropdown-toggle">
-                        <span class="sort-dropdown__value">Любой бренд</span>
-                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
-                    </div>
-                    <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
-                        <form class="searchbar searchbar_small">
-                            <input class="input searchbar__input" placeholder="Поиск бренда..." type="text" />
-                            <button class="searchbar__button" type="submit">
-                                <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
-                            </button>
-                        </form>
-                        <div class="sort-dropdown__listwrap">
-                            <ul class="sort-dropdown__list">
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-1" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Adidas</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-2" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Adl</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-3" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Banana Republic</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-4" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Baon</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-5" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Befree</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-6" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Betsy</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-7" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Caprice</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-8" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">United Colors Of Benneton</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-1" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Adidas</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-2" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Adl</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-3" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Banana Republic</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-4" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Baon</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-5" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Befree</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-6" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Betsy</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-7" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">Caprice</span>
-                                    </label>
-                                </li>
-                                <li class="sort-dropdown__item">
-                                    <label class="checkradio">
-                                        <input class="checkradio__input" name="brand" value="product-8" type="checkbox" />
-                                        <span class="checkradio__box">
-                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                        </span>
-                                        <span class="checkradio__content">United Colors Of Benneton</span>
-                                    </label>
-                                </li>
-                            </ul>
+                        <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                            <div class="searchbar searchbar_small">
+                                <input class="input searchbar__input" placeholder="Поиск бренда..." name="filter-brands-search" v-model="brandSearch" type="text" />
+                                <button class="searchbar__button" type="button">
+                                    <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="sort-dropdown__listwrap">
+                                <ul class="sort-dropdown__list">
+                                    <li class="sort-dropdown__item" v-for="brand in cutBrands">
+                                        <label class="checkradio">
+                                            <input class="checkradio__input" type="checkbox" :name="brand.name" :value="brand.value" v-model="brand.checked" />
+                                            <span class="checkradio__box">
+                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                            </span>
+                                            <span class="checkradio__content">{{brand.title}}</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="link sort-dropdown__readmore" v-if="cutBrands.length &gt; 8 &amp;&amp; cutoffBrands" @click="cutoffBrands = false">
+                                <span class="link__text">Показать еще</span>
+                            </a>
+                            <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('brands')">Применить</button>
                         </div>
-                        <a class="link sort-dropdown__readmore">
-                            <span class="link__text">Показать еще</span>
-                        </a>
-                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
                     </div>
-                </div>
-                <div class="sort-dropdown sort-dropdown_price">
-                    <div class="sort-dropdown__button js-dropdown-toggle">
-                        <span class="sort-dropdown__value">Любая цена</span>
-                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
-                    </div>
-                    <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
-                        <div class="inputbox sort-dropdown__range">
-                            <div class="range js-range" data-start="[930, 4393]" data-connect="true" data-min="930" data-max="6000"></div>
+                    <div class="sort-dropdown sort-dropdown_price">
+                        <div class="sort-dropdown__button js-dropdown-toggle">
+                            <span class="sort-dropdown__value">Любая цена</span>
+                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                         </div>
-                        <div class="inputbox sort-dropdown__inputs">
-                            <input class="input input_size_sm" value="930" type="text" />
-                            <input class="input input_size_sm" value="4 393" type="text" />
+                        <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                            <div class="inputbox sort-dropdown__range">
+                                <div class="range js-catalog-price-slider"></div>
+                            </div>
+                            <div class="inputbox sort-dropdown__inputs">
+                                <input class="input" data-handler="0" type="number" v-model.number="price.minValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
+                                <input class="input" data-handler="1" type="number" v-model.number="price.maxValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
+                            </div>
+                            <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('price')">Применить</button>
                         </div>
-                        <button class="button button_size_sm button_block sort-dropdown__submit js-sort-dropdown-submit">Применить</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="burger burger_filter js-filter-burger" id="sort-burger">
-        <div class="burger__overlay js-filter-burger-close"></div>
-        <div class="burger__content">
-            <header class="burger__section burger__header">
-                <div class="container">
-                    <div class="burger__headerlinks">
-                        <a class="link link_icon link_dark burger__headerlink is-active">
-                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_sorting_icon_mobile"></use></svg>
-                            <span class="link__text">Сортировать</span>
-                        </a>
+        <div class="burger burger_filter js-filter-burger" id="sort-burger">
+            <div class="burger__overlay js-filter-burger-close"></div>
+            <div class="burger__content">
+                <header class="burger__section burger__header">
+                    <div class="container">
+                        <div class="burger__headerlinks">
+                            <a class="link link_icon link_dark burger__headerlink is-active">
+                                <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_sorting_icon_mobile"></use></svg>
+                                <span class="link__text">Сортировать</span>
+                            </a>
+                        </div>
+                        <button class="burger__close js-filter-burger-close">
+                            <svg><use xlink:href="assets/images/icon.svg#icon_close-menu"></use></svg>
+                        </button>
                     </div>
-                    <button class="burger__close js-filter-burger-close">
-                        <svg><use xlink:href="assets/images/icon.svg#icon_close-menu"></use></svg>
-                    </button>
+                </header>
+                <div class="burger__innercontent">
+                    <ul class="burger__list">
+                        <li class="burger__item" v-for="sortItem in sort">
+                            <a class="link link_dark burger__link burger__link_big" href="#" @click.prevent="selectSortItem(sortItem)" v-bind:class="{ 'is-active': sortItem.selected }">
+                                <svg class="link__icon" v-if="sortItem.icon"><use v-bind="{'xlink:href': 'assets/images/icon.svg#icon_'+sortItem.icon}"></use></svg>
+                                <span class="link__text">{{sortItem.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </header>
-            <div class="burger__innercontent">
-                <ul class="burger__list">
-                    <li class="burger__item">
-                        <a class="link link_dark burger__link burger__link_big">
-                            <span class="link__text">По популярности</span>
-                        </a>
-                    </li>
-                    <li class="burger__item">
-                        <a class="link link_icon link_dark burger__link burger__link_big">
-                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_sort-price-ask"></use></svg>
-                            <span class="link__text">По цене</span>
-                        </a>
-                    </li>
-                    <li class="burger__item">
-                        <a class="link link_icon link_dark burger__link burger__link_big">
-                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_sort-price-desk"></use></svg>
-                            <span class="link__text">По цене</span>
-                        </a>
-                    </li>
-                    <li class="burger__item">
-                        <a class="link link_dark burger__link burger__link_big">
-                            <span class="link__text">По скидкам</span>
-                        </a>
-                    </li>
-                    <li class="burger__item">
-                        <a class="link link_dark burger__link burger__link_big">
-                            <span class="link__text">По новизне</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
