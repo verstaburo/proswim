@@ -2,8 +2,10 @@ import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
 
-$('.js-product-main-slider').each(function () {
-  const el = $(this);
+window.initMainSlider = function (el) {
+  if (!el.length) {
+    return;
+  }
 
   // eslint-disable-next-line no-unused-vars
   const slider = new Swiper(el, {
@@ -30,6 +32,12 @@ $('.js-product-main-slider').each(function () {
         }
       },
     },
+  });
+};
+
+$(window).on('load', () => {
+  $('.js-product-main-slider').each(function () {
+    window.initMainSlider($(this));
   });
 });
 

@@ -64,7 +64,6 @@ export default (el, mainSlider, settings = {}) => {
 
           el.on('click', '.product-nav-slider__slide', function () {
             const slide = $(this);
-
             mainSlider[0].swiper.slideTo(slide.index());
           });
         }
