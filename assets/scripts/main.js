@@ -264,24 +264,24 @@ new Vue({
   data: {
     brandSearch: '',
     brandList: [
-      { title: 'Adidas', value: 'Adidas', name: 'filter-brand', checked: false },
-      { title: 'Adl', value: 'Adl', name: 'filter-brand', checked: false },
-      { title: 'Banana Republic', value: 'Banana Republic', name: 'filter-brand', checked: false },
-      { title: 'Baon', value: 'Baon', name: 'filter-brand', checked: false },
-      { title: 'Befree', value: 'Befree', name: 'filter-brand', checked: false },
-      { title: 'Betsy', value: 'Betsy', name: 'filter-brand', checked: false },
-      { title: 'Caprice', value: 'Caprice', name: 'filter-brand', checked: false },
-      { title: 'Zoggs', value: 'Zoggs', name: 'filter-brand', checked: false },
-      { title: 'Tyr', value: 'Tyr', name: 'filter-brand', checked: false },
-      { title: 'Speedo', value: 'Speedo', name: 'filter-brand', checked: false },
-      { title: 'Maru', value: 'Maru', name: 'filter-brand', checked: false },
+      { title: 'Adidas', value: 'Adidas', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Adl', value: 'Adl', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Banana Republic', value: 'Banana Republic', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Baon', value: 'Baon', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Befree', value: 'Befree', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Betsy', value: 'Betsy', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Caprice', value: 'Caprice', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Zoggs', value: 'Zoggs', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Tyr', value: 'Tyr', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Speedo', value: 'Speedo', name: 'filter-brand', checked: false, selected: false },
+      { title: 'Maru', value: 'Maru', name: 'filter-brand', checked: false, selected: false },
     ],
     productList: [
-      { title: 'Очки для тренировок', value: '1', name: 'filter-product', checked: false },
-      { title: 'Профессиональные очки для плавания', value: '2', name:'filter-product', checked: false },
-      { title: 'Очки-маски', value: '3', name:'filter-product', checked: false },
-      { title: 'Очки с диоприями', value: '4', name:'filter-product', checked: false },
-      { title: 'Наборы “Очки+Шапочка”к', value: '5', name:'filter-product', checked: false },
+      { title: 'Очки для тренировок', value: '1', name: 'filter-product', checked: false, selected: false },
+      { title: 'Профессиональные очки для плавания', value: '2', name:'filter-product', checked: false, selected: false },
+      { title: 'Очки-маски', value: '3', name:'filter-product', checked: false, selected: false },
+      { title: 'Очки с диоприями', value: '4', name:'filter-product', checked: false, selected: false },
+      { title: 'Наборы “Очки+Шапочка”к', value: '5', name:'filter-product', checked: false, selected: false },
     ],
     price: {
       min: 900,
@@ -291,14 +291,14 @@ new Vue({
     },
     sort: [
       { title: 'По популярности', selected: true, value: 'sort-popularity' },
-      { title: 'По цене', icon: 'sort-price-ask', selected: false, value: 'sort-price-ask' },
+      { title: 'По цене', icon: 'sort-price-ask', value: 'sort-price-ask' },
       { title: 'По цене', icon: 'sort-price-desk', selected: false, value: 'sort-price-desk' },
       { title: 'По скидкам', selected: false, value: 'sort-discount' },
       { title: 'По новизне', selected: false, value: 'sort-newest' },
     ],
     gender: [
-      { title: 'Мужские', value: 'male', name: 'gender', checked: false },
-      { title: 'Женские', value: 'female', name: 'gender', checked: false },
+      { title: 'Мужские', value: 'male', name: 'gender', checked: false, selected: false },
+      { title: 'Женские', value: 'female', name: 'gender', checked: false, selected: false },
     ],
     priceApplied: false,
     brandsApplied: false,
@@ -307,35 +307,34 @@ new Vue({
     cutoffBrands: true,
     sortApplied: false,
   },
+
   computed: {
+    // Расчет кол-ва выбранных фильтров (нужно на мобильном)
     appliedCount: function() {
       var total = 0;
 
-      if (this.priceApplied) {
-        total += 1;
-      }
+      // Цена
+      total += this.priceApplied;
 
-      if (this.brandsApplied) {
-        this.brandList.forEach(function(item) {
-          total += item.checked;
-        });
-      }
+      // Товары
+      this.productList.forEach(function(item) {
+        total += item.selected;
+      });
 
-      if (this.productsApplied) {
-        this.productList.forEach(function(item) {
-          total += item.checked;
-        });
-      }
+      // Бренды
+      this.brandList.forEach(function(item) {
+        total += item.selected;
+      });
 
-      if (this.genderApplied) {
-        this.gender.forEach(function(item) {
-          total += item.checked;
-        });
-      }
+      // Пол
+      this.gender.forEach(function(item) {
+        total += item.selected;
+      });
 
       return total;
     },
 
+    // Фильтр (поиск) бренда
     brandsFilter: function() {
       var self = this;
 
@@ -348,6 +347,7 @@ new Vue({
       });
     },
 
+    // Рендер сортировки
     sortList: function() {
       var self = this;
 
@@ -356,6 +356,7 @@ new Vue({
       });
     },
 
+    // Рендер выбранного пункта сортировки
     selectedSortItem: function() {
       var self = this;
 
@@ -364,38 +365,62 @@ new Vue({
       })[0];
     },
 
+    // Выбранный диапазаон
     priceValue: function() {
       return this.price.minValue + ' - ' + this.price.maxValue + ' руб.';
     },
 
+    // Выбранные товары
     selectedProducts: function() {
-      return this.productList.filter(function(item) {
-        return item.checked;
-      });
+      return this.getSelectedItems(this.productList);
     },
 
+    // Выбранные бренды
     selectedBrands: function() {
-      return this.brandList.filter(function(item) {
-        return item.checked;
-      });
+      return this.getSelectedItems(this.brandList);
     },
 
+    // Выбранный пол
     selectedGender: function() {
-      return this.gender.filter(function(item) {
-        return item.checked;
-      });
+      return this.getSelectedItems(this.gender);
     },
 
+    // Выбранные примененные фильтры
     filtersApplied: function() {
       return this.priceApplied || this.brandsApplied || this.productsApplied || this.genderApplied;
     },
 
+    // Если брендов > 8, то на мобильном будет выведена кнопка "показать еще"
     cutBrands: function() {
       return this.cutoffBrands === true ? this.brandsFilter.slice(0, 8) : this.brandsFilter;
     },
   },
 
   methods: {
+    // Хелпер: вернет массив отфильтрованный по selected: true
+    getSelectedItems(itemList) {
+      return itemList.filter(function(item) {
+        return item.selected;
+      });
+    },
+
+    // Хелпер: устанавливает значение selected аналогичное checked
+    setSelectedItems(itemList) {
+      itemList.forEach(function(item) {
+        item.selected = item.checked;
+      });
+    },
+
+    // Хелпер: сбрасывает все значения в false
+
+    resetSelectedItems(itemList) {
+      itemList.forEach(function(item) {
+        item.selected = false;
+        item.checked = false;
+      });
+    },
+
+    // При смене цены в полях - апдейтим слайдер
     handlePriceChange: function() {
       var self = this;
 
@@ -404,6 +429,7 @@ new Vue({
       });
     },
 
+    // выбор пункта соритовки
     selectSortItem: function(nextItem) {
       this.sort.forEach(function(item) {
         item.selected = false;
@@ -417,32 +443,45 @@ new Vue({
       $(document).trigger('dropdown/hide');
     },
 
+    // Применение фильтра
     submitFilter: function(applied) {
+      // Применение фильтра товара
       if (applied === 'products') {
+        this.setSelectedItems(this.productList);
         this.productsApplied = !!this.selectedProducts.length;
       }
 
+      // Применение фильтра брендов
       if (applied === 'brands') {
+        this.setSelectedItems(this.brandList);
         this.brandsApplied = !!this.selectedBrands.length;
       }
 
+      // Применение фильтра цены
       if (applied === 'price') {
         this.priceApplied = true;
       }
 
+      // Применение фильтра пола
       if (applied === 'gender') {
+        this.setSelectedItems(this.gender);
         this.genderApplied = !!this.selectedGender.length;
       }
 
       // Спрятать все выпадающие списки
       $(document).trigger('dropdown/hide');
+
+      // отправляем запрос
+      this.send();
     },
 
+    // Сброс пункта фильтра
     resetItem: function(listName, item) {
       item.checked = false;
+      item.selected = false;
 
       var list = this[listName].filter(function(listItem) {
-        return listItem.checked;
+        return listItem.selected;
       });
 
       if (!list.length) {
@@ -458,6 +497,9 @@ new Vue({
           this.genderApplied = false;
         }
       }
+
+      // отправляем запрос
+      this.send();
     },
 
     resetPrice: function() {
@@ -472,28 +514,29 @@ new Vue({
       this.resetPrice();
 
       // сброс пола
-      this.gender.forEach(function(item) {
-        item.checked = false;
-      });
+      this.resetSelectedItems(this.gender);
       this.genderApplied = false;
 
       // сброс брендов
-      this.brandList.forEach(function(item) {
-        item.checked = false;
-      });
+      this.resetSelectedItems(this.brandList);
       this.brandsApplied = false;
 
       // сброс товаров
-      this.productList.forEach(function(item) {
-        item.checked = false;
-      });
+      this.resetSelectedItems(this.productList);
       this.productsApplied = false;
+
+      // отправляем запрос
+      this.send();
+    },
+
+    // Отправка данных на сервер
+    send: function() {
+      // TODO
     },
   },
+
   mounted: function() {
-    /**
-     * Инициализация range слайдера
-     */
+    // Инициализация range слайдера
     var self = this,
         sliders = $('.js-catalog-price-slider');
 

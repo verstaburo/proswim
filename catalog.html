@@ -2698,19 +2698,19 @@
                             <div class="filter-section__col">
                                 <div class="filter-section__heading">Ваш выбор:</div>
                             </div>
-                            <div class="filter-section__col" v-for="product in selectedProducts" v-if="productsApplied">
+                            <div class="filter-section__col" v-for="product in selectedProducts">
                                 <button class="choice" type="button" @click="resetItem('productList', product)">
                                     <div class="choice__text">{{product.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
-                            <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
+                            <div class="filter-section__col" v-for="genderItem in selectedGender">
                                 <button class="choice" type="button" @click="resetItem('gender', genderItem)">
                                     <div class="choice__text">{{genderItem.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
-                            <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
+                            <div class="filter-section__col" v-for="brand in selectedBrands">
                                 <button class="choice" type="button" @click="resetItem('brandList', brand)">
                                     <div class="choice__text">{{brand.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
@@ -4424,7 +4424,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a class="link sort-dropdown__readmore" v-if="cutBrands.length &gt; 8 &amp;&amp; cutoffBrands" @click="cutoffBrands = false">
+                            <a class="link sort-dropdown__readmore" v-if="brandsFilter.length &gt; 8 &amp;&amp; cutoffBrands" @click="cutoffBrands = false">
                                 <span class="link__text">Показать еще</span>
                             </a>
                             <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('brands')">Применить</button>
