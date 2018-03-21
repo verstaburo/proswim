@@ -5,6 +5,11 @@
   height: 47px;
   margin-bottom: -15px;
 
+  &_sort {
+    height: 32px;
+    margin-bottom: 0;
+  }
+
   @include screen(lg) {
     border-bottom: 1px solid $color-border;
     height: auto;
