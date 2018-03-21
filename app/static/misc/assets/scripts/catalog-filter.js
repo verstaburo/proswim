@@ -162,21 +162,21 @@ var catalogFilter = new Vue({
 
   methods: {
     // Хелпер: вернет массив отфильтрованный по selected: true
-    getSelectedItems(itemList) {
+    getSelectedItems: function(itemList) {
       return itemList.filter(function(item) {
         return item.selected;
       });
     },
 
     // Хелпер: устанавливает значение selected аналогичное checked
-    setSelectedItems(itemList) {
+    setSelectedItems: function (itemList) {
       itemList.forEach(function(item) {
         item.selected = item.checked;
       });
     },
 
     // Хелпер: сбрасывает все значения в false
-    resetSelectedItems(itemList) {
+    resetSelectedItems: function (itemList) {
       itemList.forEach(function(item) {
         item.selected = false;
         item.checked = false;
@@ -184,7 +184,7 @@ var catalogFilter = new Vue({
     },
 
     // Хелпер: вернет выбранные значения, либо строку по умолчанию
-    getItemValue(initialValue, itemList) {
+    getItemValue: function(initialValue, itemList) {
       var items = this.getSelectedItems(itemList).map(function(item) {
         return item.title;
       });
