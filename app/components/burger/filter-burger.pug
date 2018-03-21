@@ -42,7 +42,7 @@ mixin filter-burger(isReviews)
                 +vertical-menu(categoriesAccordion.title, categoriesAccordion.links, true)._accordion(class=index === 0 ? 'is-active' : '')
 
           +sort-dropdown._products
-            +sort-dropdown-button Любой товар
+            +sort-dropdown-button {{productsValue}}
             +sort-dropdown-body
               +sort-dropdown-list(true)
                 +sort-dropdown-item(v-for="product in productList")
@@ -57,7 +57,7 @@ mixin filter-burger(isReviews)
               +sort-dropdown-submit("submitFilter('products')")
         unless isReviews
           +sort-dropdown
-            +sort-dropdown-button Любой пол
+            +sort-dropdown-button {{genderValue}}
             +sort-dropdown-body
               +sort-dropdown-list(true)
                 +sort-dropdown-item(v-for="genderItem in gender")
@@ -72,7 +72,7 @@ mixin filter-burger(isReviews)
               +sort-dropdown-submit("submitFilter('gender')")
 
           +sort-dropdown._brands
-            +sort-dropdown-button Любой бренд
+            +sort-dropdown-button {{brandsValue}}
             +sort-dropdown-body
               +searchbarsplit._small
                 +searchbarsplit-input(
@@ -99,7 +99,7 @@ mixin filter-burger(isReviews)
 
         unless isReviews
           +sort-dropdown._price
-            +sort-dropdown-button Любая цена
+            +sort-dropdown-button {{priceItemFullValue}}
             +sort-dropdown-body
               +inputbox.sort-dropdown__range
                 +range(true).js-catalog-price-slider

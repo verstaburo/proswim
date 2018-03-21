@@ -72,7 +72,7 @@ new Vue({
       { title: 'Профессиональные очки для плавания', value: '2', name:'filter-product', checked: false, selected: false },
       { title: 'Очки-маски', value: '3', name:'filter-product', checked: false, selected: false },
       { title: 'Очки с диоприями', value: '4', name:'filter-product', checked: false, selected: false },
-      { title: 'Наборы “Очки+Шапочка”к', value: '5', name:'filter-product', checked: false, selected: false },
+      { title: 'Наборы “Очки+Шапочка”', value: '5', name:'filter-product', checked: false, selected: false },
     ],
     price: {
       min: 900,
@@ -185,6 +185,31 @@ new Vue({
     cutBrands: function() {
       return this.cutoffBrands === true ? this.brandsFilter.slice(0, 8) : this.brandsFilter;
     },
+
+    // Значение "списка товаров"
+    productsValue: function() {
+      return this.getItemValue('Любой товар', this.productList);
+    },
+
+    // Значение "списка брендов"
+    brandsValue: function() {
+      return this.getItemValue('Любой бренд', this.brandList);
+    },
+
+    // Значение "пола"
+    genderValue: function() {
+      return this.getItemValue('Любой пол', this.gender);
+    },
+
+    // Значение "цены" от 900 руб.
+    priceItemValue: function() {
+      return this.priceApplied ? 'от ' + this.price.minValue + ' руб.' : 'Любая цена';
+    },
+
+    // Значение "цены" от 900 - 6000 руб.
+    priceItemFullValue: function() {
+      return this.priceApplied ? this.price.minValue + ' - ' + this.price.maxValue + ' руб.' : 'Любая цена';
+    },
   },
 
   methods: {
@@ -203,12 +228,24 @@ new Vue({
     },
 
     // Хелпер: сбрасывает все значения в false
-
     resetSelectedItems(itemList) {
       itemList.forEach(function(item) {
         item.selected = false;
         item.checked = false;
       });
+    },
+
+    // Хелпер: вернет выбранные значения, либо строку по умолчанию
+    getItemValue(initialValue, itemList) {
+      var items = this.getSelectedItems(itemList).map(function(item) {
+        return item.title;
+      });
+
+      if (!items.length) {
+        return initialValue;
+      }
+
+      return items.join(', ');
     },
 
     // При смене цены в полях - апдейтим слайдер

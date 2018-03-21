@@ -76,7 +76,7 @@ block content
                 +filter-section-heading Фильтры:
               +filter-section-col
                 +sort-dropdown._products
-                  +sort-dropdown-button Любой товар
+                  +sort-dropdown-button {{productsValue}}
                   +sort-dropdown-body
                     +sort-dropdown-list
                       +sort-dropdown-item(v-for="product in productList")
@@ -92,7 +92,7 @@ block content
 
               +filter-section-col
                 +sort-dropdown
-                  +sort-dropdown-button Любой пол
+                  +sort-dropdown-button {{genderValue}}
                   +sort-dropdown-body
                     +sort-dropdown-list
                       +sort-dropdown-item(v-for="genderItem in gender")
@@ -108,7 +108,7 @@ block content
 
               +filter-section-col
                 +sort-dropdown._brands
-                  +sort-dropdown-button Любой бренд
+                  +sort-dropdown-button {{brandsValue}}
                   +sort-dropdown-body
                     +searchbarsplit._small
                       +searchbarsplit-input(
@@ -130,7 +130,7 @@ block content
 
               +filter-section-col
                 +sort-dropdown._price
-                  +sort-dropdown-button Любая цена
+                  +sort-dropdown-button {{priceItemValue}}
                   +sort-dropdown-body
                     +inputbox.sort-dropdown__range
                       +range(true).js-catalog-price-slider

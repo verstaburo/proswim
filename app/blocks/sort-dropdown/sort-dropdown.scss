@@ -30,8 +30,13 @@
     cursor: pointer;
     box-sizing: border-box;
     user-select: none;
+    max-width: 135px;
     transition: color $ease-main,
                 border-color $ease-main;
+
+    #{$b}_sort & {
+      max-width: 100%;
+    }
 
     @include screen(lg) {
       padding: 14px 40px 14px 20px;
@@ -84,7 +89,7 @@
     }
 
     #{$b}_sort & {
-      width: 165px;
+      width: 153px;
 
       &.is-active {
         height: 100%;
@@ -98,28 +103,31 @@
     display: inline-block;
     @include text-small;
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
+    @include ellipsis(150px);
 
     @include screen(lg) {
       @include link-medium;
       overflow: visible;
       white-space: normal;
-
-      &::after { display: none; }
+      max-width: 100%;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      display: block;
-      width: 22px;
-      @include gradient-white;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   display: block;
+    //   width: 22px;
+    //   @include gradient-white;
+    //   opacity: 0;
+    //   transition: opacity $ease-main;
+
+    //   @include screen(lg) {
+    //     display: none;
+    //   }
+    // }
   }
 
   &__caret {
