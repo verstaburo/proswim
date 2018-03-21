@@ -4,7 +4,7 @@ block head
   - var pageTitle = 'Proswim - Все отзывы о товарах'
 
 block content
-  +b.page
+  +b.page#reviewsPage
     .container
       +e.head
         +e.headcol._flexible
@@ -23,67 +23,51 @@ block content
           +sort-ui('Все отзывы о товарах', '174', 'отзыва', true)
             +sort-ui-col
               +sort-dropdown._products
-                +sort-dropdown-button Любой товар
+                +sort-dropdown-button {{productsValue}}
                 +sort-dropdown-body
                   +sort-dropdown-list
-                    +sort-dropdown-item
-                      +checkbox('product', 'product-1') Очки для тренировок
-                    +sort-dropdown-item
-                      +checkbox('product', 'product-2') Профессиональные очки для плавания
-                    +sort-dropdown-item
-                      +checkbox('product', 'product-3') Очки-маски
-                    +sort-dropdown-item
-                      +checkbox('product', 'product-4') Очки с диоприями
-                    +sort-dropdown-item
-                      +checkbox('product', 'product-5') Наборы “Очки+Шапочка”
-                  +sort-dropdown-submit
+                    +sort-dropdown-item(v-for="product in productList")
+                      +checkboxsep
+                        +checkboxsepinput(
+                          type='checkbox',
+                          :name='product.name',
+                          :value='product.value',
+                          v-model='product.checked',
+                        )
+                        +checkboxsepcontent {{product.title}}
+                  +sort-dropdown-submit("submitFilter('products')")
             +sort-ui-col
               +sort-dropdown._brands
-                +sort-dropdown-button Любой бренд
+                +sort-dropdown-button {{brandsValue}}
                 +sort-dropdown-body
-                  +searchbar('Поиск бренда...')._small
+                  +searchbarsplit._small
+                    +searchbarsplit-input(
+                      placeholder='Поиск бренда...',
+                      name='filter-brands-search',
+                      v-model="brandSearch"
+                    )
                   +sort-dropdown-list
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-1') Adidas
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-2') Adl
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-3') Banana Republic
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-4') Baon
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-5') Befree
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-6') Betsy
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-7') Caprice
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-8') United Colors Of Benneton
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-1') Adidas
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-2') Adl
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-3') Banana Republic
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-4') Baon
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-5') Befree
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-6') Betsy
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-7') Caprice
-                    +sort-dropdown-item
-                      +checkbox('brand', 'product-8') United Colors Of Benneton
-                  +sort-dropdown-submit
+                    +sort-dropdown-item(v-for="brand in brandsFilter")
+                      +checkboxsep
+                        +checkboxsepinput(
+                          type='checkbox',
+                          :name='brand.name',
+                          :value='brand.value',
+                          v-model='brand.checked',
+                        )
+                        +checkboxsepcontent {{brand.title}}
+                  +sort-dropdown-submit("submitFilter('brands')")
           +filter-buttons(true)
           +reviews-section-full(getData('reviews-page'))
           +section-footer
 
-  +filter-burger(true)
+    +filter-burger(true)
 
 block popups
   +login-popup
   +registration-popup
   +password-recovery-popup
   +registration-complete-popup
+
+block scripts
+  script(src='assets/scripts/reviews-filter.js')

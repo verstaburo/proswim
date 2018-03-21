@@ -17,10 +17,12 @@ mixin filter-burger(isReviews)
               +filter-section-heading Ваш выбор: ({{appliedCount}})
             +filter-section-col(v-for="product in selectedProducts" v-if="productsApplied")
               +choice.BUTTON(type="button", @click="resetItem('productList', product)") {{product.title}}
+          unless isReviews
             +filter-section-col(v-for="genderItem in selectedGender" v-if="genderApplied")
               +choice.BUTTON(type="button", @click="resetItem('gender', genderItem)") {{genderItem.title}}
             +filter-section-col(v-for="brand in selectedBrands" v-if="brandsApplied")
               +choice.BUTTON(type="button", @click="resetItem('brandList', brand)") {{brand.title}}
+          unless isReviews
             +filter-section-col(v-if="priceApplied")
               +choice.BUTTON(type="button", @click="resetPrice") {{priceValue}}
           +filter-section-grid(v-if="filtersApplied")
