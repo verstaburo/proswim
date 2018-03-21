@@ -18,7 +18,7 @@
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.min.js"></script>
 </head>
 
 <body>
@@ -2533,7 +2533,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="grastin" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" checked="checked" data-price="350" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
@@ -2558,7 +2558,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="boxberry" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="110" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_boxberry"><use xlink:href="assets/images/icon.svg#icon_boxberry"></use></svg>
@@ -2583,7 +2583,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="dpd" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="190" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_dpd"><use xlink:href="assets/images/icon.svg#icon_dpd"></use></svg>
@@ -2608,7 +2608,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="dpd" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="190" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_dpd"><use xlink:href="assets/images/icon.svg#icon_dpd"></use></svg>
@@ -2720,7 +2720,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="proswim" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="0" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_logo"><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg>
@@ -2745,7 +2745,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="grastin" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="110" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_grastin"><use xlink:href="assets/images/icon.svg#icon_grastin"></use></svg>
@@ -2770,7 +2770,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="boxberry" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="241" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_boxberry"><use xlink:href="assets/images/icon.svg#icon_boxberry"></use></svg>
@@ -2796,13 +2796,13 @@
                                                         <p>Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.</p>
                                                     </div>
                                                 </div>
-                                                <div class="grid__col grid__col_xl_12">
+                                                <div class="grid__col grid__col_xl_12 js-delivery-map-col">
                                                     <div class="map" id="delivery-map"></div>
                                                     <div class="content-zone">
                                                         <p>Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"</p>
                                                     </div>
                                                 </div>
-                                                <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                                <div class="grid__col grid__col_xl_8 grid__col_lg_12 js-selected-self-discharge-point is-hidden">
                                                     <div class="address-popup-section">
                                                         <div class="address-popup-section__heading">Адрес пункта выдачи заказов:</div>
                                                         <div class="address-popup-section__content">
@@ -2839,7 +2839,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="pochtarf" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="249" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_pochtarf"><use xlink:href="assets/images/icon.svg#icon_pochtarf"></use></svg>
@@ -2864,7 +2864,7 @@
                                                             <div class="delivery-service__grid">
                                                                 <div class="delivery-service__col delivery-service__col_company">
                                                                     <label class="checkradio checkradio_radio checkradio_icon">
-                                                                        <input class="checkradio__input" name="delivery-company" value="pochtarf" type="radio" />
+                                                                        <input class="checkradio__input js-delivery-item" type="radio" name="delivery-company" value="1" data-price="200" />
                                                                         <span class="checkradio__box"></span>
                                                                         <span class="checkradio__content">
                                                                             <svg class="icon icon_pochtarf"><use xlink:href="assets/images/icon.svg#icon_pochtarf"></use></svg>
@@ -3016,7 +3016,7 @@
                                 </div>
                                 <div class="fieldset__body">
                                     <div class="product-cart-items">
-                                        <div class="product-cart-item product-cart-item_field">
+                                        <div class="product-cart-item product-cart-item_field js-product-cart-item" data-item-price="13792" data-item-count="1">
                                             <div class="product-cart-item__remove js-product-cart-item-remove">
                                                 <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                             </div>
@@ -3052,7 +3052,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="product-cart-item product-cart-item_field">
+                                        <div class="product-cart-item product-cart-item_field js-product-cart-item" data-item-price="3999" data-item-count="2">
                                             <div class="product-cart-item__remove js-product-cart-item-remove">
                                                 <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                             </div>
@@ -3132,7 +3132,7 @@
                             <li class="total__item">
                                 <span class="total__text">Сумма:</span>
                                 <b class="total__price">
-                                    <SPAN class="js-total-amount">21 790</SPAN> руб.</b>
+                                    <SPAN class="js-total-sum">21 790</SPAN> руб.</b>
                             </li>
                             <li class="total__item">
                                 <span class="total__text">Доставка:</span>
