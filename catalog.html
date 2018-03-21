@@ -2339,10 +2339,10 @@
             </div>
         </div>
     </div>
-    <svg width="0" height="0">
+    <svg width="0" height="0" class="visuality-hidden">
         <defs>
             <clipPath id="mapPin">
-                <path fill="#123" d="M38.69,9.49a16.17,16.17,0,0,0-22.63,0C10.47,15,9.78,25.37,14.56,31.64L27.38,49.88l12.8-18.21C45,25.37,44.29,15,38.69,9.49Z" transform="translate(-11, -4)" />
+                <path d="M38.69,9.49a16.17,16.17,0,0,0-22.63,0C10.47,15,9.78,25.37,14.56,31.64L27.38,49.88l12.8-18.21C45,25.37,44.29,15,38.69,9.49Z" transform="translate(-11, -4)" />
             </clipPath>
         </defs>
     </svg>
@@ -2752,7 +2752,7 @@
                             <div class="filter-section__col">
                                 <div class="sort-dropdown sort-dropdown_products">
                                     <div class="sort-dropdown__button js-dropdown-toggle">
-                                        <span class="sort-dropdown__value">Любой товар</span>
+                                        <span class="sort-dropdown__value">{{productsValue}}</span>
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -2776,7 +2776,7 @@
                             <div class="filter-section__col">
                                 <div class="sort-dropdown">
                                     <div class="sort-dropdown__button js-dropdown-toggle">
-                                        <span class="sort-dropdown__value">Любой пол</span>
+                                        <span class="sort-dropdown__value">{{genderValue}}</span>
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -2800,7 +2800,7 @@
                             <div class="filter-section__col">
                                 <div class="sort-dropdown sort-dropdown_brands">
                                     <div class="sort-dropdown__button js-dropdown-toggle">
-                                        <span class="sort-dropdown__value">Любой бренд</span>
+                                        <span class="sort-dropdown__value">{{brandsValue}}</span>
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -2830,7 +2830,7 @@
                             <div class="filter-section__col">
                                 <div class="sort-dropdown sort-dropdown_price">
                                     <div class="sort-dropdown__button js-dropdown-toggle">
-                                        <span class="sort-dropdown__value">Любая цена</span>
+                                        <span class="sort-dropdown__value">{{priceItemValue}}</span>
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -4111,24 +4111,24 @@
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
-                            <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
-                                <button class="choice" type="button" @click="resetItem('gender', genderItem)">
-                                    <div class="choice__text">{{genderItem.title}}</div>
-                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </button>
-                            </div>
-                            <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
-                                <button class="choice" type="button" @click="resetItem('brandList', brand)">
-                                    <div class="choice__text">{{brand.title}}</div>
-                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </button>
-                            </div>
-                            <div class="filter-section__col" v-if="priceApplied">
-                                <button class="choice" type="button" @click="resetPrice">
-                                    <div class="choice__text">{{priceValue}}</div>
-                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                                </button>
-                            </div>
+                        </div>
+                        <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
+                            <button class="choice" type="button" @click="resetItem('gender', genderItem)">
+                                <div class="choice__text">{{genderItem.title}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
+                        </div>
+                        <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
+                            <button class="choice" type="button" @click="resetItem('brandList', brand)">
+                                <div class="choice__text">{{brand.title}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
+                        </div>
+                        <div class="filter-section__col" v-if="priceApplied">
+                            <button class="choice" type="button" @click="resetPrice">
+                                <div class="choice__text">{{priceValue}}</div>
+                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            </button>
                         </div>
                         <div class="filter-section__grid" v-if="filtersApplied">
                             <div class="filter-section__col filter-section__col_not_shrinkable">
@@ -4356,7 +4356,7 @@
                         </div>
                         <div class="sort-dropdown sort-dropdown_products">
                             <div class="sort-dropdown__button js-dropdown-toggle">
-                                <span class="sort-dropdown__value">Любой товар</span>
+                                <span class="sort-dropdown__value">{{productsValue}}</span>
                                 <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                             </div>
                             <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -4379,7 +4379,7 @@
                     </div>
                     <div class="sort-dropdown">
                         <div class="sort-dropdown__button js-dropdown-toggle">
-                            <span class="sort-dropdown__value">Любой пол</span>
+                            <span class="sort-dropdown__value">{{genderValue}}</span>
                             <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                         </div>
                         <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -4401,7 +4401,7 @@
                     </div>
                     <div class="sort-dropdown sort-dropdown_brands">
                         <div class="sort-dropdown__button js-dropdown-toggle">
-                            <span class="sort-dropdown__value">Любой бренд</span>
+                            <span class="sort-dropdown__value">{{brandsValue}}</span>
                             <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                         </div>
                         <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -4432,7 +4432,7 @@
                     </div>
                     <div class="sort-dropdown sort-dropdown_price">
                         <div class="sort-dropdown__button js-dropdown-toggle">
-                            <span class="sort-dropdown__value">Любая цена</span>
+                            <span class="sort-dropdown__value">{{priceItemFullValue}}</span>
                             <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                         </div>
                         <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
@@ -4667,6 +4667,7 @@
     <script src="assets/scripts/libs/jquery.dotdotdot.js"></script>
     <script src="assets/scripts/libs/parsley.min.js"></script>
     <script src="assets/scripts/app.min.js"></script>
+    <script src="assets/scripts/catalog-filter.js"></script>
     <script src="assets/scripts/main.js"></script>
 </body>
 
