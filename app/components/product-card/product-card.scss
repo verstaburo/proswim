@@ -88,6 +88,11 @@
       @include screen(lg) {
         top: 19px;
       }
+
+      @include screen(sm) {
+        top: 15px;
+        right: 15px;
+      }
     }
   }
 
@@ -165,7 +170,7 @@
 
     @include screen(sm) {
       .product-card_catalog & {
-        margin-top: 12px;
+        margin-top: 15px;
       }
 
       .product-card_small & {
@@ -236,6 +241,10 @@
     .product-card:hover & {
       display: block;
     }
+
+    @include screen(sm) {
+      display: none;
+    }
   }
 
   &__price {
@@ -264,7 +273,7 @@
       margin-top: 4px;
 
       .product-card_catalog & {
-        margin-top: 4px;
+        margin-top: 7px;
         display: flex;
         flex-flow: row-reverse wrap;
         margin-left: 0;
@@ -297,7 +306,7 @@
           font-size: 15px;
           font-weight: 700;
           line-height: (22/15);
-          margin-top: 6px;
+          margin-top: 0;
           width: 100%;
         }
       }
@@ -380,6 +389,10 @@
 
     @include screen(sm) {
       .rating__text span { display: none; }
+
+      .product-card_catalog & {
+        margin-top: 4px;
+      }
     }
   }
 
