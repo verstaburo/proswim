@@ -92,7 +92,7 @@ mixin filter-burger(isReviews)
                     +checkboxsepcontent {{brand.title}}
 
               +link(
-                v-if="cutBrands.length > 8 && cutoffBrands",
+                v-if="brandsFilter.length > 8 && cutoffBrands",
                 @click="cutoffBrands = false"
               ).__readmore Показать еще
               +sort-dropdown-submit("submitFilter('brands')")

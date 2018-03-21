@@ -51,11 +51,11 @@ block content
             +filter-section-grid._flexible
               +filter-section-col
                 +filter-section-heading Ваш выбор:
-              +filter-section-col(v-for="product in selectedProducts" v-if="productsApplied")
+              +filter-section-col(v-for="product in selectedProducts")
                 +choice.BUTTON(type="button", @click="resetItem('productList', product)") {{product.title}}
-              +filter-section-col(v-for="genderItem in selectedGender" v-if="genderApplied")
+              +filter-section-col(v-for="genderItem in selectedGender")
                 +choice.BUTTON(type="button", @click="resetItem('gender', genderItem)") {{genderItem.title}}
-              +filter-section-col(v-for="brand in selectedBrands" v-if="brandsApplied")
+              +filter-section-col(v-for="brand in selectedBrands")
                 +choice.BUTTON(type="button", @click="resetItem('brandList', brand)") {{brand.title}}
               +filter-section-col(v-if="priceApplied")
                 +choice.BUTTON(type="button", @click="resetPrice") {{priceValue}}

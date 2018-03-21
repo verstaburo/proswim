@@ -21,9 +21,7 @@
   &__text {
     display: inline-block;
     @include text-small;
-    max-width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
+    @include ellipsis(247px);
   }
 
   &__icon {
