@@ -34,9 +34,9 @@ function makeMapPin(loc, iconName, params) {
 @@include('../pages/cart/cart-delivery.main.js')
 @@include('../pages/contacts/contacts.main.js')
 
- /**
-  * Показать город
-  */
+/**
+* Показать город
+*/
 
 $(document).on('change', '.js-no-city-in-list', function(e) {
   var isChecked = $(this).is(':checked'),

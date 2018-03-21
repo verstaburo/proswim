@@ -101,8 +101,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'grastin')._icon
-                                    +icon('grastin', true).icon.icon_grastin
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=true, data-price="350").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('grastin', true).icon.icon_grastin
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Курьерская доставка
@@ -114,8 +116,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'boxberry')._icon
-                                    +icon('boxberry', true).icon.icon_boxberry
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="110").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('boxberry', true).icon.icon_boxberry
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Курьерская доставка
@@ -127,8 +131,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'dpd')._icon
-                                    +icon('dpd', true).icon.icon_dpd
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="190").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('dpd', true).icon.icon_dpd
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Предоплаченный заказ
@@ -140,8 +146,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'dpd')._icon
-                                    +icon('dpd', true).icon.icon_dpd
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="190").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('dpd', true).icon.icon_dpd
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Наложенный платеж
@@ -192,8 +200,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'proswim')._icon
-                                    +icon('logo', true).icon.icon_logo
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="0").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('logo', true).icon.icon_logo
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Proswim
@@ -205,8 +215,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'grastin')._icon
-                                    +icon('grastin', true).icon.icon_grastin
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="110").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('grastin', true).icon.icon_grastin
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Grastin
@@ -218,8 +230,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'boxberry')._icon
-                                    +icon('boxberry', true).icon.icon_boxberry
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="241").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('boxberry', true).icon.icon_boxberry
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Boxberry
@@ -231,13 +245,13 @@ block content
                           +content-zone
                             p Сроки доставуки указаны в рабочих днях, не считая дня оформления заказа.
                         //- Выбор пункта выдачи
-                        +col(12)
+                        +col(12).js-delivery-map-col
                           +map#delivery-map
 
                           +content-zone
                             p Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"
                         //- Пункт выдачи выбран
-                        +col({ xl: 8, lg: 12 })
+                        +col({ xl: 8, lg: 12 }).js-selected-self-discharge-point.is-hidden
                           +address-popup-section
                             +address-popup._chosen
                           +inputbox('Комментарий:')
@@ -250,8 +264,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'pochtarf')._icon
-                                    +icon('PochtaRF', true).icon.icon_pochtarf
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="249").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('PochtaRF', true).icon.icon_pochtarf
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Посылка онлайн
@@ -263,8 +279,10 @@ block content
                             +delivery-service
                               +delivery-service-grid
                                 +delivery-service-col._company
-                                  +radio('delivery-company', 'pochtarf')._icon
-                                    +icon('PochtaRF', true).icon.icon_pochtarf
+                                  +radiosep._icon
+                                    +radiosepinput(name='delivery-company', value='1', checked=false, data-price="200").js-delivery-item
+                                    +radiosepcontent
+                                      +icon('PochtaRF', true).icon.icon_pochtarf
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Стандарт
@@ -331,7 +349,7 @@ block content
                     +fieldset-heading Товары в корзине
                 +fieldset-body
                   +product-cart-items
-                    +product-cart-item._field
+                    +product-cart-item._field.js-product-cart-item(data-item-price="13792" data-item-count="1")
                       +product-cart-item-remove
 
                       +product-cart-item-grid
@@ -355,7 +373,7 @@ block content
                             +product-cart-item-text._grey._sm Артикул:
                             +product-cart-item-text._sm 92354
 
-                    +product-cart-item._field
+                    +product-cart-item._field.js-product-cart-item(data-item-price="3999" data-item-count="2")
                       +product-cart-item-remove
 
                       +product-cart-item-grid

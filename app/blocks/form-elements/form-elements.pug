@@ -47,6 +47,18 @@ mixin radio(name, value, checked)
     +e.SPAN.content
       block
 
+mixin radiosep
+  +b.LABEL.checkradio._radio&attributes(attributes)
+    block
+
+mixin radiosepinput
+  +e.INPUT.input(type="radio")&attributes(attributes)
+
+mixin radiosepcontent
+  +e.SPAN.box
+  +e.SPAN.content
+    block
+
 mixin checkboxsep
   +b.LABEL.checkradio&attributes(attributes)
     block
