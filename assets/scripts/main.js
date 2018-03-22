@@ -209,7 +209,7 @@ function getDeliveryPopup(data) {
       className: 'address-popup-wrapper',
       width: 288,
       offset: {
-        x: 150,
+        x: 0,
         y: 0,
       },
     })
