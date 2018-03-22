@@ -30,7 +30,10 @@
   &__col {
     width: 159px;
     box-sizing: border-box;
-    &_flexible { flex: 1; }
+
+    &_flexible {
+      flex: 1;
+    }
 
     @include screen(lg) {
       width: 127px;
@@ -49,6 +52,11 @@
 
       &:nth-child(3n) {
         text-align: right;
+      }
+
+      &.order-card__col_flexible {
+        flex: auto;
+        width: 100%;
       }
     }
 
