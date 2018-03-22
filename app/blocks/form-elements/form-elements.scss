@@ -712,29 +712,31 @@
   font-weight: 500;
   line-height: (20/12);
   text-transform: uppercase;
-
-  // max-width: 32px;
-  // margin-left: 3px;
-
-  // &s {
-  //   margin-left: -3px;
-  // }
 }
 
 // Ячейка со стрелкой
 
 .datepicker--nav-action {
-  border-radius: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   transition: color $ease-main, background-color $ease-main;
 
-  // Цвет стрелок
-  path { stroke: $color-basic; }
+  &.-disabled- {
+    visibility: visible;
+    pointer-events: none;
+
+    path { stroke: $anotherlightgrey3-color; }
+  }
+
+  path { stroke: $darkblue-color; }
 }
 
 // Шапка календаря
 
 .datepicker--nav {
   border-color: $color-border;
+  padding: 5px 9px;
 
   // Ячейка с заголовком месяца/года
 
@@ -767,13 +769,14 @@
   // Цвет сегодняшнего даты/месяца
 
   &.-current- {
-    color: $color-main;
-    background: rgba($color-main, .1);
+    color: white;
+    background: $color-main;
   }
 
   // Ховер по активной дате
 
   &.-selected-.-focus- {
+    color: white;
     background: rgba($color-main, .8);
   }
 
@@ -787,15 +790,31 @@
 
   &.-selected-, &.-selected-.-current- {
     background: $color-main;
+    color: white;
   }
 }
 
 // Цвет даты другого месяца/года
 
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
-  color: rgba($color-basic, .2);
+  color: $color-placeholder;
 
   &:hover { color: rgba($color-basic, .5); }
+}
+
+.datepicker--cell-day {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-bottom: -2px;
+}
+
+.datepicker--cells-days {
+  justify-content: space-between;
+}
+
+.datepicker--days-names {
+  margin-top: 6px;
 }
 
 // Стили при выборе диапазона дат

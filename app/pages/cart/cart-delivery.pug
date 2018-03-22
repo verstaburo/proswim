@@ -178,7 +178,7 @@ block content
                         +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Дата доставки:')
                             +input-btn('calendar')
-                              +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format='d MM, yyyy')._size_md.js-datepicker
+                              +input(name="data-dostavki" type="text" placeholder="Выберите дату доставки" data-date-format='d MM, yyyy', data-date-min="today")._size_md.js-datepicker
                         +col({ xl: 4, lg: 6, sm: 12 })
                           +inputbox('Время доставки:')
                             +select(data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')

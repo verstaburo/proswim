@@ -84,6 +84,15 @@ export function datepicker() {
   $('.js-datepicker').each(function () {
     const el = $(this);
     const block = el.parent().hasClass('inputbtn') ? el.parent() : el;
+    let minDate = el.data('date-min');
+
+    if (minDate && minDate === 'today') {
+      minDate = new Date();
+    } else if (minDate) {
+      minDate = new Date(minDate);
+    } else {
+      minDate = undefined;
+    }
 
     el.datepicker({
       navTitles: {
@@ -92,9 +101,12 @@ export function datepicker() {
         years: 'd MM, yyyy',
       },
 
+      minDate,
+
       onShow() {
         block.addClass('is-active');
       },
+
       onHide() {
         block.removeClass('is-active');
       },
