@@ -1,6 +1,6 @@
+@import 'helpers/variables'; // Переменные
 @import 'helpers/mixins'; // Миксины
 @import 'helpers/fonts'; // Шрифты
-@import 'helpers/variables'; // Переменные
 @import 'helpers/gradients'; // Градиенты
 @import 'helpers/basics'; // Основные общие стили
 @import 'helpers/text-styles'; // Стили текстов
@@ -9,6 +9,7 @@
 
 .page {
   padding-bottom: 77px;
+  flex-grow: 1;
 
   &_pb0 {
     padding-bottom: 0;
