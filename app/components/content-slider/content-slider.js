@@ -31,4 +31,4 @@ function contentSlider() {
   });
 }
 
-contentSlider();
+$(window).on('load', contentSlider);

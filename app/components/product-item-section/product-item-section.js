@@ -52,4 +52,4 @@ function productItemSection() {
   slider(colorSlider, null, colorSettings);
 }
 
-productItemSection();
+$(window).on('load', productItemSection);
