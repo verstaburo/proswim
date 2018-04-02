@@ -53,3 +53,19 @@ function productItemSection() {
 }
 
 $(window).on('load', productItemSection);
+
+// Замена картинки в главном слайдере
+$(document).on('click', '.js-product-item-color-slider .product-nav-slider__slide', function () {
+  const self = $(this);
+  const img = self.find('.product-nav-slider__image img').attr('src');
+
+  const targetImageElement = $('.js-product-main-slider .product-main-slider__slide:eq(0) img');
+
+  const mainSlider = targetImageElement.parents('.swiper-container').get(0).swiper;
+
+  if (mainSlider) {
+    mainSlider.slideTo(0);
+  }
+
+  targetImageElement.attr('src', img);
+});
