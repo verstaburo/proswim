@@ -4104,24 +4104,24 @@
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
-                        </div>
-                        <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
-                            <button class="choice" type="button" @click="resetItem('gender', genderItem)">
-                                <div class="choice__text">{{genderItem.title}}</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </button>
-                        </div>
-                        <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
-                            <button class="choice" type="button" @click="resetItem('brandList', brand)">
-                                <div class="choice__text">{{brand.title}}</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </button>
-                        </div>
-                        <div class="filter-section__col" v-if="priceApplied">
-                            <button class="choice" type="button" @click="resetPrice">
-                                <div class="choice__text">{{priceValue}}</div>
-                                <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
-                            </button>
+                            <div class="filter-section__col" v-for="genderItem in selectedGender" v-if="genderApplied">
+                                <button class="choice" type="button" @click="resetItem('gender', genderItem)">
+                                    <div class="choice__text">{{genderItem.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-for="brand in selectedBrands" v-if="brandsApplied">
+                                <button class="choice" type="button" @click="resetItem('brandList', brand)">
+                                    <div class="choice__text">{{brand.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-if="priceApplied">
+                                <button class="choice" type="button" @click="resetPrice">
+                                    <div class="choice__text">{{priceValue}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
                         </div>
                         <div class="filter-section__grid" v-if="filtersApplied">
                             <div class="filter-section__col filter-section__col_not_shrinkable">
