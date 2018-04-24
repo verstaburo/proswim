@@ -9,7 +9,7 @@
 
 .page {
   padding-bottom: 77px;
-  flex-grow: 1;
+  min-height: 450px;
 
   &_pb0 {
     padding-bottom: 0;
