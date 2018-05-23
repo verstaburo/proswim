@@ -27,6 +27,14 @@
     }
   }
 
+  &__textblock {
+    &_heading {
+      @include screen(xs) {
+        padding-right: 38px;
+      }
+    }
+  }
+
   &__grid {
     display: flex;
     margin: -20px 0 0 -27px;
