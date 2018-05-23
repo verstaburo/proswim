@@ -14,6 +14,10 @@
       padding-left: 17px;
       padding-right: 17px;
     }
+
+    @media (min-width: map_get($breakpoints, xs)) and (max-width: map_get($breakpoints, lg)) {
+      padding-right: 0;
+    }
   }
 
   &__heading {
@@ -37,7 +41,7 @@
     width: 8px;
     height: 6px;
     fill: $color-basic;
-    margin-top: -1px;
+    margin-top: -2px;
     transition: fill $ease-main, transform $ease-main;
 
     .shoplink:hover & {
@@ -178,7 +182,7 @@
   }
 
   &__linkcaret {
-    display: none;
+    display: inline-block;
     position: static;
     width: 11px;
     height: 6px;
@@ -195,7 +199,8 @@
     }
 
     @include screen(lg) {
-      display: inline-block;
+      width: 10px;
+      height: 5px;
     }
   }
 
@@ -210,6 +215,12 @@
   text-align: left;
   padding-left: 19px;
   padding-top: 3px;
+
+  @media (min-width: map_get($breakpoints, xs)) and (max-width: map_get($breakpoints, lg)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &__heading {
     position: relative;
@@ -235,6 +246,10 @@
     @include screen(lg) {
       margin-left: -17px;
       margin-right: -17px;
+    }
+
+    @media (min-width: map_get($breakpoints, xs)) and (max-width: map_get($breakpoints, lg)) {
+      margin: 0;
     }
   }
 }
