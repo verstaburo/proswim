@@ -3,6 +3,9 @@ extends ../../layouts/default
 block head
   - var pageTitle = 'Proswim - Поздравляем!'
 
+block navbar
+  +navbar
+
 block content
   +b.page
     +registration-complete-popup(true)

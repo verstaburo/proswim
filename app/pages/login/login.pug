@@ -3,6 +3,9 @@ extends ../../layouts/default
 block head
   - var pageTitle = 'Proswim - Войти в аккаунт'
 
+block navbar
+  +navbar
+
 block content
   +b.page
     +login-popup(true)

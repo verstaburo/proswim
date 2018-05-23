@@ -3,6 +3,9 @@ extends ../../layouts/default
 block head
   - var pageTitle = 'Proswim - Очки для плавания'
 
+block navbar
+  +navbar('Очки')
+
 block content
   +b.page#catalog
     .container

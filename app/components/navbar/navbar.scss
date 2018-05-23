@@ -55,7 +55,8 @@
     transition: background-color $ease-main;
     cursor: pointer;
 
-    .navbar__item:hover & {
+    .navbar__item:hover &,
+    &.is-active {
       background-color: $color-basic-hover;
     }
   }

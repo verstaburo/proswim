@@ -60,6 +60,20 @@
     box-shadow: 0 16px 22px rgba(157, 164, 171, 0.46);
   }
 
+  &__mobile-link {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+
+    @include screen(sm) {
+      display: block;
+    }
+  }
+
   &__nav {
     margin-top: 11px;
 

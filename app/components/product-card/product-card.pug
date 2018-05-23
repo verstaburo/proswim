@@ -1,27 +1,29 @@
 mixin product-card(data, isSmall)
   +b.product-card&attributes(attributes)
+    +e.A(href="product.html").mobile-link
+
     if data.badge
       +badge(class=data.badge.mod).__badge=data.badge.title
 
     if data.image
-      +e.A(href="javascript:void(0)").image
+      +e.A(href="product.html").image
         img(src=`content-img/product-cards/${data.image}.jpg` alt=data.heading)
 
         if data.button
-          +button.__button Быстрый просмотр
+          +button.__button.DIV Быстрый просмотр
 
     if data.images
       +e.image
         +product-main-slider(data.images, data.heading, false)
 
         if data.button
-          +button._size_md.__button Быстрый просмотр
+          +button.DIV._size_md.__button Быстрый просмотр
 
       +e.nav
         +product-nav-slider(data.images, data.heading)._filter.js-product-nav-slider
 
     +e.DIV.body
-      +e.A.heading(href="javascript:void(0)" class=isSmall ? 'js-truncate' : '')=data.heading
+      +e.A.heading(href="product.html" class=isSmall ? 'js-truncate' : '')=data.heading
       if data.sizes
         +e.P.sizes=data.sizes
       +e.price

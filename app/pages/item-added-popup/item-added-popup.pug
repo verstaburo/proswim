@@ -3,6 +3,9 @@ extends ../../layouts/default
 block head
   - var pageTitle = 'Proswim - Товар добавлен в корзину'
 
+block navbar
+  +navbar
+
 block content
   +b.page
     +item-added-popup(true)
