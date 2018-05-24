@@ -917,3 +917,34 @@
     .inputbtn:hover & { fill: $darkblue-color; }
   }
 }
+
+.input-label {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+
+  &__placeholder {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all $ease-main;
+    pointer-events: none;
+    @include performance;
+    opacity: 0.5;
+
+    .input-label.is-active & {
+      transform: translate3d(-15px, -38px, 0);
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    line-height: 1;
+    @include ellipsis(100%);
+  }
+}

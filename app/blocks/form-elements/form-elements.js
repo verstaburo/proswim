@@ -164,3 +164,17 @@ export function enableInput() {
       .focus();
   });
 }
+
+export function labelInput() {
+  $('.js-input-dynamic').each(function () {
+    const block = $(this);
+    block.toggleClass('is-active', block.find('input').val().length > 0);
+  });
+
+  $(document).on('input', '.js-input-dynamic input', function () {
+    const input = $(this);
+    const block = input.parents('.js-input-dynamic');
+
+    block.toggleClass('is-active', input.val().length > 0);
+  });
+}

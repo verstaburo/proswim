@@ -4,11 +4,11 @@ mixin registration-popup(isPage)
     +popup-content
       +e.FORM.form.__grid(method='post' action='/' data-parsley-validate).js-registration-popup-form
         +col(12)
-          +input(type='text' placeholder='Имя' required)._size_md
+          +input-label('Имя')(type='text' required)._size_md
         +col(12)
-          +input(type='email' placeholder='Email адрес' required)._size_md
+          +input-label('Email адрес')(type='email' required)._size_md
         +col(12)
-          +input(type='password' placeholder='Пароль' required)._size_md
+          +input-label('Пароль')(type='password' required)._size_md
         +col(12)
           +button.BUTTON(type='submit')._size_big._block Зарегистрироваться
         +col(12)

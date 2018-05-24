@@ -4,9 +4,9 @@ mixin login-popup(isPage)
     +popup-content
       +e.FORM.form.__grid(method='post' action='/' data-parsley-validate)
         +col(12)
-          +input(type='email' placeholder='Email адрес' required)._size_md
+          +input-label('Email адрес')(type='email' required)._size_md
         +col(12)
-          +input(type='password' placeholder='Пароль' required)._size_md
+          +input-label('Пароль')(type='password' required)._size_md
         +col(12)
           +link(href='#password-recovery-popup')._dark.js-fancybox Забыли пароль?
         +col(12)

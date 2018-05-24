@@ -11,6 +11,12 @@ mixin inputbox(label, link, linkMod)
 mixin input()
   +b.INPUT.input&attributes(attributes)
 
+mixin input-label(placeholder)
+  +b.LABEL.input-label(class="js-input-dynamic")
+    +e.placeholder
+      +e.SPAN.label=placeholder
+    +b.INPUT.input&attributes(attributes)
+
 mixin input-btn(icon)
   +b.inputbtn&attributes(attributes)
     block
