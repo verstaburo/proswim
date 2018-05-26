@@ -1,5 +1,5 @@
 mixin review-form()
-  +b.FORM(method='post' action='/' data-parsley-validate).review-form&attributes(attributes)
+  +b.FORM(method='post' action='/' data-parsley-validate data-parsley-trigger="focusout").review-form&attributes(attributes)
     +grid
       +col(12)
         +inputbox('Оцените товар *')

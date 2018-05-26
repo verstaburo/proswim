@@ -2,7 +2,7 @@ mixin comment-form()
   +section.comment-form
     +section-head('Оставить комментарий').
     +section-content
-      +e.FORM(method="post" action="/" data-parsley-validate).form
+      +e.FORM(method="post" action="/" data-parsley-validate data-parsley-trigger="focusout").form
         +grid
           +col({ xl: 6, sm: 12 })
             +inputbox("Имя *")

@@ -26,7 +26,7 @@ block content
     .container
       +grid.account
         +col({ xl: 9, lg: 12 })
-          form(action="/" method="POST" enctype='multipart/form-data' data-parsley-validate)
+          form(action="/" method="POST" enctype='multipart/form-data' data-parsley-validate data-parsley-trigger="focusout")
             +fieldsets
               +fieldset
                 +fieldset-head
