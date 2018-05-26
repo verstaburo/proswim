@@ -11,6 +11,9 @@ export default (el, mainSlider, settings = {}) => {
   const nextEl = el.find('.product-nav-slider__button_next');
   const prevEl = el.find('.product-nav-slider__button_prev');
   const slides = el.find('.product-nav-slider__slide');
+  const { callbackOnSlideChange } = settings;
+
+  delete settings.callbackOnSlideChange; // eslint-disable-line
 
   const initialSettings = {
     slideToClickedSlide: true,
@@ -43,12 +46,20 @@ export default (el, mainSlider, settings = {}) => {
           .eq(self.activeIndex)
           .addClass('is-active');
 
+        if (typeof callbackOnSlideChange === 'function') {
+          callbackOnSlideChange(slides.eq(self.activeIndex));
+        }
+
         if (!mainSlider || !mainSlider.length || !mainSlider[0].swiper) {
           el.on('click', '.product-nav-slider__slide', function () {
             $(this)
               .addClass('is-active')
               .siblings('.product-nav-slider__slide')
               .removeClass('is-active');
+
+            if (typeof callbackOnSlideChange === 'function') {
+              callbackOnSlideChange($(this));
+            }
           });
         } else {
           const mainSwiper = mainSlider[0].swiper;
@@ -60,6 +71,10 @@ export default (el, mainSlider, settings = {}) => {
               .addClass('is-active');
 
             self.slideTo(this.activeIndex);
+
+            if (typeof callbackOnSlideChange === 'function') {
+              callbackOnSlideChange(slides.eq(this.activeIndex));
+            }
           });
 
           el.on('click', '.product-nav-slider__slide', function () {

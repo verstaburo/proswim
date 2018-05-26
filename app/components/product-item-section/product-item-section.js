@@ -47,6 +47,16 @@ function productItemSection() {
         slidesPerView: 4,
       },
     },
+    callbackOnSlideChange(currentSlide) {
+      const color = currentSlide.data('color');
+      const colorInput = $('.js-product-color-input');
+
+      if (!color || !colorInput) {
+        return;
+      }
+
+      colorInput.val(color);
+    },
   };
 
   slider(colorSlider, null, colorSettings);

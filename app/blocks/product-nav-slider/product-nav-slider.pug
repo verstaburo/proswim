@@ -8,9 +8,12 @@ mixin product-nav-slider(images, alt)
     +e.slider.swiper-container
       .swiper-wrapper.product-nav-slider__slides
         each image in images
-          .swiper-slide.product-nav-slider__slide
-            +e.image(class=image.isVideo ? '_video' : '')
-              img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
-
-            if image.text
+          if image.text
+            .swiper-slide.product-nav-slider__slide(data-color=image.text)
+              +e.image(class=image.isVideo ? '_video' : '')
+                img(src=src=`content-img/product-cards/${image.src}.jpg` alt=image.text title=image.text)
               +e.P.text=image.text
+          else
+            .swiper-slide.product-nav-slider__slide
+              +e.image(class=image.isVideo ? '_video' : '')
+                img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
