@@ -44,6 +44,10 @@
     @include text-tiny;
     padding: 0 11px;
   }
+
+  &:focus {
+    border-width: 2px;
+  }
 }
 
 .inputbox {
@@ -896,7 +900,7 @@
     transition: background-color $ease-main;
     pointer-events: none;
 
-    .is-active &,
+    .inputbtn.is-active &,
     .inputbtn:hover & {
       background-color: $color-border;
     }

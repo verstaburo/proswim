@@ -66,6 +66,11 @@ body {
   flex-direction: column;
   font-family: $font-main; // Задаем основной шрифт
   font-size: 16px; // Убираем проблему с отступами между inline-элементами
+  color: #595d61;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2f3133;
 }
 
 img {
