@@ -63,6 +63,13 @@
   letter-spacing: .01em;
 }
 
+@mixin text-big {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: (24/16);
+  letter-spacing: .01em;
+}
+
 @mixin text-medium {
   font-size: 14px;
   font-weight: 500;

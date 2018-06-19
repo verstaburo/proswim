@@ -1,8 +1,9 @@
 mixin searchbar(placeholder, mobilePlaceholder)
-  +b.FORM.searchbar&attributes(attributes)
+  +b.FORM.js-search-online.searchbar__&attributes(attributes)
     +input(placeholder=placeholder data-mobile-placeholder=mobilePlaceholder).searchbar__input
     +e.BUTTON.button(type="submit")
       +icon('Search icon').icon
+    +searchresult.__result
 
 mixin searchbarsplit
   +b.DIV.searchbar&attributes(attributes)

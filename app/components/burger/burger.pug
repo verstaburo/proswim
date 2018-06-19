@@ -22,6 +22,10 @@ mixin burger(loggedIn)
         +e.search.js-burger-searchbar
           .container
             +searchbar('Введите название товара...')._grey
+        +e.compare
+          .container
+            +link-icon('compare')._dark.__headerlink_compare(href="compare.html") Сравнение
+              +e.SPAN.__badge 2
 
         +e.title
           .container

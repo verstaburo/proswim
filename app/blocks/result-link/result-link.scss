@@ -1,0 +1,51 @@
+.result-link {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 11px 16px 12px 94px;
+  background-color: white;
+  transition: background $ease-main;
+  text-align: left;
+
+  &:hover {
+    background-color: $ihavenoideahowtocallthat-color;
+
+    .result-link__text {
+      color: $color-bluee;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: block;
+    width: 66px;
+    height: 51px;
+    top: 16px;
+    left: 16px;
+  }
+
+  &__info {
+    display: block;
+    max-width: 170px;
+    width: 100%;
+  }
+
+  &__text {
+    @include text-tiny;
+
+    line-height: 1.125;
+    color: $color-basic;
+    transition: color $ease-main;
+  }
+
+  &__price {
+    display: block;
+
+    @include heading-6;
+
+    font-weight: 700;
+    line-height: (18/15);
+    color: $color-bluee;
+    margin-top: 6px;
+  }
+}

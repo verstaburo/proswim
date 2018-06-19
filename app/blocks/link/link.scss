@@ -153,6 +153,22 @@
     }
   }
 
+  &__badge {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $color-red2;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 4px;
+
+    @include text-xs;
+
+    line-height: 18px;
+    text-align: center;
+    color: white;
+  }
+
   &.is-disabled {
     pointer-events: none;
 

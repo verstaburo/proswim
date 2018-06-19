@@ -1,4 +1,5 @@
 .burger-button {
+  position: relative;
   display: inline-block;
   cursor: pointer;
   padding: 12px 10px;
@@ -13,5 +14,21 @@
     width: 24px;
     height: 18px;
     fill: $color-basic;
+  }
+
+  &.is-compare {
+
+    &::before {
+      @include pseudo;
+
+      top: 6px;
+      right: 7px;
+      width: 12px;
+      height: 12px;
+      box-sizing: border-box;
+      background-color: $color-red2;
+      border: 2px solid white;
+      border-radius: 50%;
+    }
   }
 }

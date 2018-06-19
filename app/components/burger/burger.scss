@@ -117,6 +117,15 @@
         }
       }
 
+      &_compare {
+        padding-left: 28px;
+
+        .link__icon {
+          width: 22px;
+          height: 18px;
+        }
+      }
+
       &_back {
         position: absolute;
         top: 0;
@@ -168,6 +177,13 @@
       opacity: 0;
       pointer-events: none;
     }
+  }
+
+  &__compare {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-border;
   }
 
   &__title {

@@ -287,4 +287,46 @@
       color: $semigrey-color;
     }
   }
+
+  .no-page & {
+    text-align: center;
+
+    h1 {
+      @include screen('sm') {
+        @include heading-3-bold;
+
+        line-height: (24/20);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+
+        @include screen('xs') {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    p {
+      @include text-big;
+
+      @include screen('sm') {
+        font-size: 15px;
+      }
+    }
+
+    a {
+      @include text-big;
+
+      color: $darkblue-color;
+
+      @include screen('sm') {
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: $color-basic;
+      }
+    }
+  }
 }

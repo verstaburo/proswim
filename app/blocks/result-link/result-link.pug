@@ -1,0 +1,7 @@
+mixin result-link(img, price)
+  +b.A.result-link&attributes(attributes)
+    +e.IMG.image(src=img)
+    +e.info
+      +e.text
+        block
+      +e.price!= price
