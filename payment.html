@@ -25,7 +25,7 @@
     <header class="header">
         <div class="container header__container">
             <div class="header__col header__col_burger">
-                <button class="burger-button js-burger-button">
+                <button class="burger-button js-burger-button is-compare">
                     <svg class="burger-button__icon"><use xlink:href="assets/images/icon.svg#icon_burger-menu"></use></svg>
                 </button>
             </div>
@@ -141,6 +141,11 @@
                     <a class="userlink userlink_user js-fancybox" href="login.html" data-popup="#login-popup">
                         <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_login-register-button"></use></svg>
                         <span class="userlink__text">Войти</span>
+                    </a>
+                    <a class="userlink userlink_compare" href="compare.html">
+                        <span class="userlink__badge">2</span>
+                        <svg class="userlink__icon"><use xlink:href="assets/images/icon.svg#icon_compare"></use></svg>
+                        <span class="userlink__text">Сравнение</span>
                     </a>
                     <a class="userlink userlink_cart" href="javascript:void(0);">
                         <span class="userlink__badge">3</span>
@@ -1214,11 +1219,54 @@
                 </li>
             </ul>
             <div class="navbar__col navbar__col_searchbar">
-                <form class="searchbar navbar__searchbar">
+                <form class="js-search-online searchbar navbar__searchbar">
                     <input class="input searchbar__input" placeholder="Введите название товара..." type="text" />
                     <button class="searchbar__button" type="submit">
                         <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
                     </button>
+                    <div class="searchresult searchbar__result">
+                        <ul class="searchresult__list">
+                            <li class="searchresult__item">
+                                <a class="result-link" href="product.html">
+                                    <img class="result-link__image" src="assets/images/search-1.jpg" alt="" role="presentation" />
+                                    <span class="result-link__info">
+                                        <span class="result-link__text">Сумка спортивная Arena Spilky 2 Small</span>
+                                        <span class="result-link__price">13&nbsp;792 руб.</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="searchresult__item">
+                                <a class="result-link" href="product.html">
+                                    <img class="result-link__image" src="assets/images/search-2.jpg" alt="" role="presentation" />
+                                    <span class="result-link__info">
+                                        <span class="result-link__text">Сумка спортивная Speedo Duffel Bag SS18</span>
+                                        <span class="result-link__price">13&nbsp;792 руб.</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="searchresult__item">
+                                <a class="result-link" href="product.html">
+                                    <img class="result-link__image" src="assets/images/search-1.jpg" alt="" role="presentation" />
+                                    <span class="result-link__info">
+                                        <span class="result-link__text">Сумка спортивная Arena Spilky 2 Small</span>
+                                        <span class="result-link__price">13&nbsp;792 руб.</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="searchresult__item">
+                                <a class="result-link" href="product.html">
+                                    <img class="result-link__image" src="assets/images/search-2.jpg" alt="" role="presentation" />
+                                    <span class="result-link__info">
+                                        <span class="result-link__text">Сумка спортивная Speedo Duffel Bag SS18</span>
+                                        <span class="result-link__price">13&nbsp;792 руб.</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="searchresult__buttons">
+                            <a class="button button_size_sm button_block">Все результаты</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -1246,12 +1294,65 @@
             <div class="burger__subheader">
                 <div class="burger__search js-burger-searchbar">
                     <div class="container">
-                        <form class="searchbar searchbar_grey">
+                        <form class="js-search-online searchbar searchbar_grey">
                             <input class="input searchbar__input" placeholder="Введите название товара..." type="text" />
                             <button class="searchbar__button" type="submit">
                                 <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
                             </button>
+                            <div class="searchresult searchbar__result">
+                                <ul class="searchresult__list">
+                                    <li class="searchresult__item">
+                                        <a class="result-link" href="product.html">
+                                            <img class="result-link__image" src="assets/images/search-1.jpg" alt="" role="presentation" />
+                                            <span class="result-link__info">
+                                                <span class="result-link__text">Сумка спортивная Arena Spilky 2 Small</span>
+                                                <span class="result-link__price">13&nbsp;792 руб.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="searchresult__item">
+                                        <a class="result-link" href="product.html">
+                                            <img class="result-link__image" src="assets/images/search-2.jpg" alt="" role="presentation" />
+                                            <span class="result-link__info">
+                                                <span class="result-link__text">Сумка спортивная Speedo Duffel Bag SS18</span>
+                                                <span class="result-link__price">13&nbsp;792 руб.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="searchresult__item">
+                                        <a class="result-link" href="product.html">
+                                            <img class="result-link__image" src="assets/images/search-1.jpg" alt="" role="presentation" />
+                                            <span class="result-link__info">
+                                                <span class="result-link__text">Сумка спортивная Arena Spilky 2 Small</span>
+                                                <span class="result-link__price">13&nbsp;792 руб.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="searchresult__item">
+                                        <a class="result-link" href="product.html">
+                                            <img class="result-link__image" src="assets/images/search-2.jpg" alt="" role="presentation" />
+                                            <span class="result-link__info">
+                                                <span class="result-link__text">Сумка спортивная Speedo Duffel Bag SS18</span>
+                                                <span class="result-link__price">13&nbsp;792 руб.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="searchresult__buttons">
+                                    <a class="button button_size_sm button_block">Все результаты</a>
+                                </div>
+                            </div>
                         </form>
+                    </div>
+                </div>
+                <div class="burger__compare">
+                    <div class="container">
+                        <a class="link link_icon link_dark burger__headerlink burger__headerlink_compare" href="compare.html">
+                            <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_compare"></use></svg>
+                            <span class="link__text">Сравнение
+                                <span class="link__badge">2</span>
+                            </span>
+                        </a>
                     </div>
                 </div>
                 <div class="burger__title">
