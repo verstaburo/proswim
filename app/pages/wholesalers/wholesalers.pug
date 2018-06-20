@@ -1,0 +1,19 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Оптовым покупателям'
+
+block navbar
+  +navbar
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Оптовым покупателям'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Оптовым покупателям
+
+block popups

@@ -1,0 +1,41 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Как сделать заказ'
+  
+block navbar
+  +navbar
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Как сделать заказ'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Как сделать заказ
+      +b.manual
+        .content-zone
+          h4 Оформить заказ на нашем сайте просто.
+          p Вы можете действовать самостоятельно по инструкции или же связаться с нашими менеджерами, чтобы они Вам помогли.
+        +ol-list-multilevel
+          li 
+            span Найдите необходимый товар через каталог или строку поиска, затем перейдите в карточку товара.
+            img(src="assets/images/manual-1.jpg")
+          li 
+            span Выберите подходящий цвет и размер товара.
+            img(src="assets/images/manual-2.jpg")
+          li 
+            span Оформите заказ в 1 клик или отложите товар в корзину, чтобы продолжить покупки.
+            img(src="assets/images/manual-3.jpg")
+          li 
+            span Когда все понравившиеся товары окажутся в корзине – нажмите кнопку «Оформить заказ».
+            img(src="assets/images/manual-4.jpg")
+          li 
+            span Выберите удобный способ доставки, оплаты заказа и завершите его оформление.
+            img(src="assets/images/manual-5.jpg")
+          li 
+            span Вся необходимая информация для дальнейшего отслеживания заказа будет продублирована вам на почту.
+            p Если у Вас остались вопросы по доставке, оплате или оформлению заказа, позвоните нам по бесплатной линии <a href="tel:88001002459">8 (800) 100-24-59</a> или напишите на e-mail <a href="mailto:info@proswim.ru">info@proswim.ru</a> – мы будем рады помочь.
+block popups

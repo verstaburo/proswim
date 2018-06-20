@@ -56,6 +56,13 @@
   letter-spacing: .01em;
 }
 
+@mixin heading-6-bold {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: (27/15);
+  letter-spacing: .01em;
+}
+
 @mixin text {
   font-size: 14px;
   font-weight: 400;

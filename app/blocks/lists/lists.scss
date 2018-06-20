@@ -13,3 +13,72 @@ ol.list {
 dl.list {
   @include dllist;
 }
+
+ol.list-multilevel {
+  @include multilevellist;
+
+  &:not(:first-child) {
+    margin-top: 28px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 980px;
+    display: block;
+    margin: 0 auto 62px;
+    border: 1px solid $color-border;
+    box-shadow: 0 16px 22px rgba(157, 164, 171, .46);
+    background-color: $verylightgrey45-color;
+
+    @include screen('md') {
+      margin-bottom: 42px;
+      box-shadow: 0 10px 16px rgba(157, 164, 171, .46);
+    }
+
+    @include screen('xs') {
+      box-shadow: 0 8px 16px rgba(157, 164, 170, .46);
+      margin-bottom: 33px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 16px;
+
+      @include screen('md') {
+        margin-top: 15px;
+      }
+
+      @include screen('xs') {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  p {
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+
+    small {
+      display: block;
+
+      @include text-small;
+    }
+
+    @include text;
+  }
+
+  a {
+    @include link;
+
+    color: $darkblue-color;
+
+    &:hover {
+      color: $color-basic;
+    }
+  }
+}
