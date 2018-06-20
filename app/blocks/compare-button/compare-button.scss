@@ -1,0 +1,98 @@
+.compare-button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  box-sizing: border-box;
+  padding-left: 2px;
+
+  &:hover {
+
+    .compare-button {
+
+      &__add {
+
+        .compare-button__text {
+          color: $darkblue-color;
+          border-color: $anotherlightblue-color;
+        }
+
+        .compare-button__icon {
+          fill: $darkblue-color;
+        }
+      }
+    }
+  }
+
+  &__add, &__added {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: opacity $ease-main;
+  }
+
+  &__add {
+    color: $color-basic;
+    pointer-events: auto;
+
+    .compare-button__text {
+      border-bottom: 1px solid $greyblue4-color;
+    }
+  }
+
+  &__added {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $green-color;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    padding-left: 2px;
+    margin-top: -2px;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    transition: fill $ease-main;
+
+    &_compare {
+      width: 16px;
+      fill: $color-basic;
+    }
+
+    &_checked {
+      fill: $green-color;
+    }
+  }
+
+  &__text {
+    @include text-small;
+
+    font-weight: 500;
+    transition: color $ease-main, border $ease-main;
+  }
+
+  &.is-added {
+
+    .compare-button {
+
+      &__add {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &__added {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

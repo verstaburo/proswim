@@ -1,0 +1,4 @@
+mixin preview-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'preview-popup' : '').preview-popup&attributes(attributes)
+    +popup-content
+      +product-item-section2

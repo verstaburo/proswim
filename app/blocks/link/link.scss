@@ -18,6 +18,19 @@
     }
   }
 
+  &_dark-blue {
+    color: $darkblue-color;
+    border-color: $darkblue-color;
+
+    .link__icon {
+      fill: $darkblue-color;
+    }
+
+    &:hover {
+      color: $color-basic;
+    }
+  }
+
   &_dark {
     .link__text {
       color: $color-basic;

@@ -41,7 +41,7 @@ function productItemSection() {
   const colorSlider = block.find('.js-product-item-color-slider');
 
   const colorSettings = {
-    slidesPerView: 6,
+    slidesPerView: 7,
     breakpoints: {
       [window.globalOptions.sizes.lg - 1]: {
         slidesPerView: 4,
