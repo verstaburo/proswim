@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Versta Project Template</title>
+    <title>Proswim - Как сделать заказ</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -2278,274 +2278,64 @@
             </div>
         </div>
     </div>
-    <div class="popups">
-        <div class="popup login-popup" id="login-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Войти в аккаунт</div>
-            </div>
-            <div class="popup__content">
-                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Email адрес</span>
-                            </span>
-                            <input class="input input_size_md" type="email" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Пароль</span>
-                            </span>
-                            <input class="input input_size_md" type="password" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <a class="link link_dark js-fancybox" href="#password-recovery-popup">
-                            <span class="link__text">Забыли пароль?</span>
-                        </a>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Войти</button>
-                    </div>
-                </form>
-            </div>
-            <div class="popup__footer">
-                <div class="popup__footerheading">Войти через соцсети</div>
-                <div class="social-buttons social-buttons_big">
-                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
-                    </a>
-                </div>
-                <div class="popup__text">Нет аккаунта?
-                    <a class="link js-fancybox" href="registration.html" data-popup="#registration-popup">
-                        <span class="link__text">Зарегистрируйтесь!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="popup registration-popup" id="registration-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Регистрация</div>
-            </div>
-            <div class="popup__content">
-                <form class="popup__form popup__grid js-registration-popup-form" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Имя</span>
-                            </span>
-                            <input class="input input_size_md" type="text" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Email адрес</span>
-                            </span>
-                            <input class="input input_size_md" type="email" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Пароль</span>
-                            </span>
-                            <input class="input input_size_md" type="password" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Зарегистрироваться</button>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="checkradio">
-                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
-                            <span class="checkradio__box">
-                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                            </span>
-                            <span class="checkradio__content">Я ознакомлен с
-                                <a class="link" href="#">
-                                    <span class="link__text">публичной офертой</span>
-                                </a> и соглашаюсь с
-                                <a class="link" href="#">
-                                    <span class="link__text">условиями обработки персональных данных</span>
-                                </a>
-                            </span>
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <div class="popup__footer registration-popup__footer">
-                <div class="popup__footerheading">Войти через соцсети</div>
-                <div class="social-buttons social-buttons_big">
-                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
-                    </a>
-                </div>
-                <div class="popup__text">Есть аккаунт?
-                    <a class="link js-fancybox" href="login.html" data-popup="#login-popup">
-                        <span class="link__text">Выполнить вход!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="popup password-recovery-popup" id="password-recovery-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Восстановить пароль</div>
-            </div>
-            <div class="popup__content password-recovery-popup__content">
-                <div class="popup__subheading">Введите E-mail на который
-                    <br/>был зарегистрирован аккаунт ProSwim.ru</div>
-                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="email" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Выслать инструкцию</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="popup registration-complete-popup" id="registration-complete-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Поздравляем!</div>
-            </div>
-            <div class="popup__content registration-complete-popup__content">
-                <svg class="registration-complete-popup__icon"><use xlink:href="assets/images/icon.svg#icon_note"></use></svg>
-                <div class="registration-complete-popup__body">
-                    <H5 class="registration-complete-popup__bodyheading">Регистрация прошла успешно</H5>
-                    <div class="content-zone registration-complete-popup__bodytext">
-                        <p>Благодарим за&nbsp;регистрацию в&nbsp;proswimru!</p>
-                        <p>Ваши логин и&nbsp;пароль отправлены на&nbsp;указанный при регистрации e-mail.</p>
-                        <p>Добро пожаловать, Alex!</p>
-                        <p>В "
-                            <a href="#">Моем кабинете</a>" Вы&nbsp;можете получить информацию о&nbsp;сделанных вами заказах или
-                            <a href="#">изменить свои персональные данные</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="sitemap">
+    <div class="popups"></div>
+    <div class="page">
         <div class="container">
-            <div class="sitemap__list">
-                <a class="link" href="ui-kit.html">
-                    <span class="link__text">UI-kit (ui-kit.html)</span>
-                </a>
-                <a class="link" href="index.html">
-                    <span class="link__text">Главная (index.html)</span>
-                </a>
-                <a class="link js-fancybox" href="login.html" data-popup="#login-popup">
-                    <span class="link__text">Войти в аккаунт (login.html)</span>
-                </a>
-                <a class="link js-fancybox" href="registration.html" data-popup="#registration-popup">
-                    <span class="link__text">Регистрация (registration.html)</span>
-                </a>
-                <a class="link js-fancybox" href="password-recovery.html" data-popup="#password-recovery-popup">
-                    <span class="link__text">Восстановить пароль (password-recovery.html)</span>
-                </a>
-                <a class="link js-fancybox" href="registration-complete.html" data-popup="#registration-complete-popup">
-                    <span class="link__text">Поздравляем! (registration-complete.html)</span>
-                </a>
-                <a class="link" href="catalog.html">
-                    <span class="link__text">Каталог (catalog.html)</span>
-                </a>
-                <a class="link" href="product.html">
-                    <span class="link__text">Очки для плавания Cobra Mirror (product.html)</span>
-                </a>
-                <a class="link" href="cart.html">
-                    <span class="link__text">Товары в корзине (cart.html)</span>
-                </a>
-                <a class="link" href="cart-delivery.html">
-                    <span class="link__text">Доставка и оплата (cart-delivery.html)</span>
-                </a>
-                <a class="link" href="order-confirmed.html">
-                    <span class="link__text">Заказ успешно оформлен (order-confirmed.html)</span>
-                </a>
-                <a class="link" href="account.html">
-                    <span class="link__text">Мой кабинет - Мои данные (account.html)</span>
-                </a>
-                <a class="link" href="account-orders.html">
-                    <span class="link__text">Мой кабинет - Мои заказы (account-orders.html)</span>
-                </a>
-                <a class="link" href="account-order.html">
-                    <span class="link__text">Мой кабинет - Заказ #224455 (account-order.html)</span>
-                </a>
-                <a class="link" href="account-help.html">
-                    <span class="link__text">Мой кабинет - Помощь (account-help.html)</span>
-                </a>
-                <a class="link" href="news.html">
-                    <span class="link__text">Новости (news.html)</span>
-                </a>
-                <a class="link" href="categories.html">
-                    <span class="link__text">Категории - Для тренировок (categories.html)</span>
-                </a>
-                <a class="link" href="categories2.html">
-                    <span class="link__text">Категории - Для соревнований (categories2.html)</span>
-                </a>
-                <a class="link" href="categories3.html">
-                    <span class="link__text">Категории - Для открытой воды (categories3.html)</span>
-                </a>
-                <a class="link" href="exchange.html">
-                    <span class="link__text">Обмен-возврат (exchange.html)</span>
-                </a>
-                <a class="link" href="payment.html">
-                    <span class="link__text">Оплата (payment.html)</span>
-                </a>
-                <a class="link" href="reviews.html">
-                    <span class="link__text">Все отзывы о товарах (reviews.html)</span>
-                </a>
-                <a class="link" href="article.html">
-                    <span class="link__text">Статья (Экслюзивно для Proswim.ru: 4 способа сделать свои тренировки интересными) (article.html)</span>
-                </a>
-                <a class="link" href="404.html">
-                    <span class="link__text">404 (404.html)</span>
-                </a>
-                <a class="link" href="manual.html">
-                    <span class="link__text">Как сделать заказ (manual.html)</span>
-                </a>
-                <a class="link" href="wholesalers.html">
-                    <span class="link__text">Оптовым покупателям (wholesalers.html)</span>
-                </a>
+            <div class="page__head">
+                <div class="page__headcol page__headcol_flexible">
+                    <ul class="breadcrumbs">
+                        <li class="breadcrumbs__item">
+                            <a class="link" href="#">
+                                <span class="link__text">Главная</span>
+                            </a>
+                            <svg class="breadcrumbs__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-bread-crumbs"></use></svg>
+                        </li>
+                        <li class="breadcrumbs__item">
+                            <a class="link" href="#">
+                                <span class="link__text">Как сделать заказ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page__head page__head_subhead">
+                <div class="page__headcol page__headcol_flexible">
+                    <h1 class="page__heading">Как сделать заказ</h1>
+                </div>
+            </div>
+            <div class="manual">
+                <div class="content-zone">
+                    <h4>Оформить заказ на нашем сайте просто.</h4>
+                    <p>Вы можете действовать самостоятельно по инструкции или же связаться с нашими менеджерами, чтобы они Вам помогли.</p>
+                </div>
+                <ol class="list-multilevel">
+                    <li>
+                        <span>Найдите необходимый товар через каталог или строку поиска, затем перейдите в карточку товара.</span>
+                        <img src="assets/images/manual-1.jpg">
+                    </li>
+                    <li>
+                        <span>Выберите подходящий цвет и размер товара.</span>
+                        <img src="assets/images/manual-2.jpg">
+                    </li>
+                    <li>
+                        <span>Оформите заказ в 1 клик или отложите товар в корзину, чтобы продолжить покупки.</span>
+                        <img src="assets/images/manual-3.jpg">
+                    </li>
+                    <li>
+                        <span>Когда все понравившиеся товары окажутся в корзине – нажмите кнопку «Оформить заказ».</span>
+                        <img src="assets/images/manual-4.jpg">
+                    </li>
+                    <li>
+                        <span>Выберите удобный способ доставки, оплаты заказа и завершите его оформление.</span>
+                        <img src="assets/images/manual-5.jpg">
+                    </li>
+                    <li>
+                        <span>Вся необходимая информация для дальнейшего отслеживания заказа будет продублирована вам на почту.</span>
+                        <p>Если у Вас остались вопросы по доставке, оплате или оформлению заказа, позвоните нам по бесплатной линии
+                            <a href="tel:88001002459">8 (800) 100-24-59</a> или напишите на e-mail
+                            <a href="mailto:info@proswim.ru">info@proswim.ru</a> – мы будем рады помочь.</p>
+                    </li>
+                </ol>
             </div>
         </div>
     </div>
