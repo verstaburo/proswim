@@ -1,0 +1,64 @@
+.feature {
+  display: block;
+
+  &__image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+
+    @include screen('sm') {
+      align-items: flex-start;
+    }
+  }
+
+  &__icon {
+    width: 52px;
+    height: 52px;
+    fill: $color-main;
+
+    &_f1 {
+      width: 48px;
+      height: 52px;
+    }
+
+    &_f2 {
+      width: 45px;
+      height: 52px;
+    }
+
+    &_f3 {
+      width: 40px;
+      height: 52px;
+    }
+
+    &_f4 {
+      width: 52px;
+      height: 49px;
+    }
+
+    &_f5 {
+      width: 52px;
+      height: 51px;
+    }
+
+    &_f6 {
+      width: 52px;
+      height: 29px;
+    }
+
+    &_f7 {
+      width: 52px;
+      height: 49px;
+    }
+  }
+
+  &__text {
+    @include heading-5;
+
+    color: $color-basic;
+    line-height: (22/16);
+  }
+}

@@ -1,0 +1,56 @@
+.features {
+  display: block;
+  border-top: 1px solid $color-border;
+  padding-top: 52px;
+
+  @include screen('md') {
+    padding-top: 36px;
+  }
+
+  @include screen('sm') {
+    padding-top: 24px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 56px;
+
+    @include screen('md') {
+      margin-top: 36px;
+    }
+
+    @include screen('sm') {
+      margin-top: 26px;
+    }
+  }
+
+  &__title {
+    @include heading-2;
+
+    color: $color-basic;
+    margin-bottom: 22px;
+  }
+
+  .grid {
+    margin-top: -28px;
+
+    @include screen('md') {
+      margin-top: -22px;
+    }
+
+    @include screen('sm') {
+      margin-top: -17px;
+    }
+
+    &__col {
+      padding-top: 28px;
+
+      @include screen('md') {
+        padding-top: 22px;
+      }
+
+      @include screen('sm') {
+        padding-top: 17px;
+      }
+    }
+  }
+}

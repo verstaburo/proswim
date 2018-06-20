@@ -1,0 +1,31 @@
+mixin feature(icon)
+  - var addClass = ''
+  case icon 
+    when 'features-1'
+      - addClass = '_f1';
+      - break;
+    when 'features-2'
+      - addClass = '_f2';
+      - break;
+    when 'features-3'
+      - addClass = '_f3';
+      - break;
+    when 'features-4'
+      - addClass = '_f4';
+      - break;
+    when 'features-5'
+      - addClass = '_f5';
+      - break;
+    when 'features-6'
+      - addClass = '_f6';
+      - break;
+    when 'features-7'
+      - addClass = '_f7';
+      - break;
+    default
+      - break;
+  +b.feature&attributes(attributes)
+    +e.image 
+      +icon(icon)(class="icon" + addClass)
+    +e.text
+      block

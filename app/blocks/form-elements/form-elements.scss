@@ -67,6 +67,16 @@
   &__link {
     line-height: (24/14);
   }
+
+  &_dark {
+
+    .inputbox {
+
+      &__label {
+        color: $color-basic;
+      }
+    }
+  }
 }
 
 .textarea {

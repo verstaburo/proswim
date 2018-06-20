@@ -107,7 +107,6 @@
         height: 83px;
         margin-right: 10px;
       }
-
     }
 
     small {
@@ -117,6 +116,23 @@
     }
 
     @include text;
+  }
+
+  &_big {
+
+    p {
+
+      small {
+        @include text;
+      }
+
+      @include text-big;
+
+      @include screen('xs') {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+    }
   }
 
   &_small {
