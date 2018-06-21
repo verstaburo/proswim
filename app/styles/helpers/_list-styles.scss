@@ -85,3 +85,92 @@
     order: 3;
   }
 }
+
+@mixin multilevellist {
+  counter-reset: level1;
+
+  @include text;
+
+  color: $darkengrey-color;
+
+  ol {
+    counter-reset: level2;
+    padding: 22px 0 27px;
+  }
+
+  ol ol {
+    counter-reset: level3;
+    padding: 15px 0 8px;
+  }
+
+  li {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  & > li {
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+  }
+
+  & > li > *:first-child {
+    display: inline-block;
+    padding-left: 40px;
+    box-sizing: border-box;
+    min-height: 30px;
+
+    @include heading-5;
+
+    color: $color-basic;
+
+    @include screen('xs') {
+      line-height: 1.45;
+    }
+  }
+
+  & > li > *:first-child::before {
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    content: counter(level1);
+    counter-increment: level1;
+    text-align: center;
+    border-radius: 50%;
+    background-color: $lightgrey-color;
+  }
+
+  li li > *:first-child:not(:last-child) {
+    @include heading-6-bold;
+    @include clearfix;
+  }
+
+  li li li > *:first-child {
+    @include clearfix;
+  }
+
+  li li > *:first-child::before {
+    display: inline-block;
+    float: left;
+    content: counter(level1) '.' counter(level2) '.';
+    counter-increment: level2;
+    margin-right: 4px;
+  }
+
+  li li li > *:first-child::before {
+    display: inline-block;
+    float: left;
+    content: counter(level1) '.' counter(level2) '.' counter(level3) '.';
+    counter-increment: level3;
+    margin-right: 4px;
+  }
+}

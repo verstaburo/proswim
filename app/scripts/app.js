@@ -40,6 +40,7 @@ import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 import '../components/orders-section/orders-section';
 import '../components/content-slider/content-slider';
+import '../blocks/compare-button/compare-button';
 
 const $ = window.$;
 window.L = L;

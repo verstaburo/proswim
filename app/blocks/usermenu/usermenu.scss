@@ -3,7 +3,7 @@
   display: inline-block;
   text-align: center;
 
-  &_user {
+  &_user, &_compare {
     @include screen(lg) {
       .header & { display: none; }
     }
@@ -25,6 +25,10 @@
 
     .userlink_cart & {
       width: 26px;
+    }
+
+    .userlink_compare & {
+      width: 30px;
     }
 
     .userlink:hover & {
@@ -64,6 +68,12 @@
     color: white;
     @include text-xs;
     line-height: 1;
+
+    .userlink_compare & {
+      @include screen(lg, min) {
+        right: 8px;
+      }
+    }
   }
 }
 

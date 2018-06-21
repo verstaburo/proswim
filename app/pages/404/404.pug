@@ -1,0 +1,15 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - 404'
+
+block navbar
+  +navbar
+
+block content
+  +b.page._opb0
+    .container
+      +no-page
+    +products-section(getData('small-product-cards'), 'Популярные товары', true)._small.hide-md
+
+block popups

@@ -1,0 +1,10 @@
+mixin no-page()
+  +b.no-page&attributes(attributes)
+    +e.mark 
+      +e.IMG.image(src="assets/images/404.svg")
+    +e.information
+      .content-zone
+        h1 К сожалению, запрошенная вами страница не&nbsp;найдена.
+        p Пожалуйста, перейдите на <a href="index.html">главную страницу</a> сайта или воспользуйтесь формой поиска
+      +e.search 
+        +searchbar('Введите название товара...', 'Введите название товара...')._big._shadow

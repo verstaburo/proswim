@@ -1,0 +1,19 @@
+mixin form()
+  +b.form&attributes(attributes)
+    +e.col_form
+      +e.H4.title Оставьте заявку и получите оптовый прайс-лист и условия сотрудничества с&nbsp;компанией PROSWIM.
+      +e.FORM(action="/" method="POST" data-parsley-validate data-parsley-trigger="focusout")
+        +inputbox('Ваше имя: *').inputbox_dark
+          +input(name="name" placeholder="Ваше имя" required)._size_md
+        +inputbox('Мобильный телефон: *').inputbox_dark
+          +input(name="phone" placeholder="Мобильный телефон" required data-type="tel")._size_md
+        +inputbox('Email: *').inputbox_dark
+          +input(name="email" type="email" placeholder="Email" required)._size_md
+        +inputbox('Организация:').inputbox_dark
+          +input(name="company" placeholder="Организация")._size_md
+        +inputbox('Сайт:').inputbox_dark
+          +input(name="url" placeholder="Сайт")._size_md
+        +button.BUTTON(type="submit")._size_big._block.__button Оставить заявку
+    +e.col_img
+      +e.IMG.image(src="assets/images/form-img.jpg")
+    

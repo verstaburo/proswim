@@ -18,6 +18,19 @@
     }
   }
 
+  &_dark-blue {
+    color: $darkblue-color;
+    border-color: $darkblue-color;
+
+    .link__icon {
+      fill: $darkblue-color;
+    }
+
+    &:hover {
+      color: $color-basic;
+    }
+  }
+
   &_dark {
     .link__text {
       color: $color-basic;
@@ -151,6 +164,22 @@
       width: 14px;
       height: 14px;
     }
+  }
+
+  &__badge {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $color-red2;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 4px;
+
+    @include text-xs;
+
+    line-height: 18px;
+    text-align: center;
+    color: white;
   }
 
   &.is-disabled {

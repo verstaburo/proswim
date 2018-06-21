@@ -74,6 +74,8 @@ block content
           +ui-color('#ccd7de', '$greyblue-color')
           +ui-color('#b9c0c4', '$dark-border-color')
           +ui-color('#fac917', '$yellow-color')
+          +ui-color('#ff2a29', '$color-red2', true)
+          +ui-color('#0898d6', '$color-bluee', true)
 
     //- Цвета
     +ui-section
@@ -216,6 +218,26 @@ block content
           +dl-list
             dt Элемент списка
             dd Элемент списка
+        +ui-description ol.list-multilevel 
+          +ol-list-multilevel
+            li 
+              span level 1
+              ol
+                li 
+                  span level 2
+                li 
+                  span level 2
+                  ol
+                    li 
+                      span level 3
+                    li 
+                      span level 3
+                li 
+                  span level 2
+            li 
+              span level 1
+            li 
+              span level 1
 
     //- Табы
     +ui-section

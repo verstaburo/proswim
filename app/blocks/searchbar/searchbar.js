@@ -26,3 +26,15 @@ $(window).on('resize', () => {
   clearTimeout(placeholderTimer);
   placeholderTimer = setTimeout(setPlaceholder, 100);
 });
+
+$(document).on('input focus mouseenter', '.js-search-online .searchbar__input', (evt) => {
+  if ($(evt.target).val() !== '') {
+    $(evt.target).closest('.searchbar').addClass('is-searched');
+  } else {
+    $(evt.target).closest('.searchbar').removeClass('is-searched');
+  }
+});
+
+$(document).on('mouseleave', '.searchbar', (evt) => {
+  $(evt.currentTarget).removeClass('is-searched');
+});

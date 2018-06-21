@@ -35,4 +35,8 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
       }
     }
   }
+
+  &_centered {
+    justify-content: center;
+  }
 }

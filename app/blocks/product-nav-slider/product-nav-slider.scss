@@ -100,11 +100,17 @@
   }
 
   &__text {
-    font-size: 12px;
+    font-size: 11px;
     padding-left: 5px;
     padding-right: 5px;
     word-break: break-all;
     text-align: center;
+    transition: color $ease-main;
+    line-height: 1;
+
+    #{$b}__slide.is-active & {
+      color: $darkblue-color;
+    }
   }
 
   &__buttons {

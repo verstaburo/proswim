@@ -2,7 +2,7 @@ mixin header(loggedIn)
   +b.HEADER.header&attributes(attributes)
     .container.header__container
       +e.col._burger
-        +burger-button
+        +burger-button.is-compare
       +e.col._logo
         +logo.__logo
       +e.col._shopmenu
@@ -19,4 +19,5 @@ mixin header(loggedIn)
             +userlink('Login Register button')(href="cabinet.html")._user Мой кабинет
           else
             +userlink('Login Register button')(href="login.html" data-popup='#login-popup')._user.js-fancybox Войти
+          +userlink('compare', 2)._compare(href="compare.html") Сравнение
           +userlink('Cart button', loggedIn ? 12 : 3)._cart Корзина
