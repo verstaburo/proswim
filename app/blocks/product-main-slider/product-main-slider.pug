@@ -18,3 +18,27 @@ mixin product-main-slider(images, alt, hasButtons, zoom)
           +icon('Arrow 1')
         +e.button._next
           +icon('Arrow 1')
+          
+          
+          
+
+mixin product-main-slider-preview(images, alt, hasButtons, zoom)
+  +b.product-main-slider_preview&attributes(attributes).swiper-container.js-product-main-slider
+    .swiper-wrapper
+      each image in images
+        - var imageClasses = [zoom ? 'js-product-main-slider-zoom' : '']
+        - var videoClasses = [image.isVideo ? 'product-main-slider__slide_video' : '']
+        .swiper-slide.product-main-slider__slide(class=image.isVideo ? videoClasses.join(' ') : imageClasses.join(' '))
+          if image.isVideo
+            video(src=image.src)
+          else
+            img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
+            if zoom
+              +icon('Zoom icon').__zoom
+
+    if hasButtons
+      +e.buttons
+        +e.button._prev
+          +icon('Arrow 1')
+        +e.button._next
+          +icon('Arrow 1')

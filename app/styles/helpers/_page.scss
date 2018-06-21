@@ -168,4 +168,58 @@
       display: none;
     }
   }
+
+  &__text {
+    @include text-big;
+
+    color: $darkengrey-color;
+    margin-top: 10px;
+
+    a {
+      @include link;
+    }
+  }
+
+  &__defenitions {
+    border-bottom: 1px solid $color-border;
+    padding-top: 6px;
+    padding-bottom: 36px;
+    margin-bottom: 34px;
+
+    @include screen('md') {
+      padding-top: 10px;
+    }
+
+    @include screen('sm') {
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__agreement {
+
+    &:not(:first-child) {
+      margin-top: 30px;
+
+      @include screen('sm') {
+        margin-top: 24px;
+      }
+    }
+
+    ol.list-multilevel:not(:first-child) {
+      margin-top: 18px;
+    }
+  }
+
+  &__sect {
+    margin-bottom: 18px;
+
+    &:not(:first-child) {
+      margin-top: 76px;
+
+      @include screen('md') {
+        margin-top: 54px;
+      }
+    }
+  }
 }

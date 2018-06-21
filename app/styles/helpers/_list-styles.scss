@@ -39,6 +39,25 @@
   }
 }
 
+@mixin ullistdash {
+  li {
+    padding-left: 19px;
+  }
+
+  li::before {
+    float: left;
+    position: static;
+    top: auto;
+    left: auto;
+    content: "-";
+    display: inline;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
 @mixin ollist {
   counter-reset: list1;
 
@@ -86,6 +105,26 @@
   }
 }
 
+@mixin defenitionslist {
+  display: inline-flex;
+  @include text;
+  @include clearfix;
+
+  dt {
+    display: inline;
+    font-weight: 700;
+  }
+
+  dd {
+    display: inline;
+    margin: 0;
+
+    a {
+      font-weight: 500;
+    }
+  }
+}
+
 @mixin multilevellist {
   counter-reset: level1;
 
@@ -95,12 +134,12 @@
 
   ol {
     counter-reset: level2;
-    padding: 22px 0 27px;
+    padding: 13px 0 14px;
   }
 
   ol ol {
     counter-reset: level3;
-    padding: 15px 0 8px;
+    padding: 6px 0;
   }
 
   li {
@@ -109,7 +148,7 @@
     box-sizing: border-box;
 
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
   }
 
@@ -149,16 +188,30 @@
     background-color: $lightgrey-color;
   }
 
-  li li > *:first-child:not(:last-child) {
+  li ol > li {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  li ol > li > b:first-child {
     @include heading-6-bold;
     @include clearfix;
+
+    display: inline-block;
   }
 
-  li li li > *:first-child {
+  li li ol > li > *:first-child {
     @include clearfix;
   }
 
-  li li > *:first-child::before {
+  li li ol > li {
+    &:not(:last-child) {
+      margin-bottom: 11px;
+    }
+  }
+
+  li ol > li > *:first-child::before {
     display: inline-block;
     float: left;
     content: counter(level1) '.' counter(level2) '.';
@@ -166,7 +219,7 @@
     margin-right: 4px;
   }
 
-  li li li > *:first-child::before {
+  li li ol > li > *:first-child::before {
     display: inline-block;
     float: left;
     content: counter(level1) '.' counter(level2) '.' counter(level3) '.';

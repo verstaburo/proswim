@@ -1,0 +1,39 @@
+.totop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  opacity: .4;
+  transition: opacity $ease-main;
+  background-color: $color-main;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 12px 20px rgba(9, 166, 231, .2);
+
+  @include screen('sm') {
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &__icon {
+    transform: rotate(90deg);
+    width: 22px;
+    height: 16px;
+    fill: white;
+
+    @include screen('sm') {
+      width: 14px;
+      height: 10px;
+    }
+  }
+}

@@ -60,7 +60,7 @@ ol.list-multilevel {
 
   p {
     &:not(:first-child) {
-      margin-top: 12px;
+      margin-top: 13px;
     }
 
     small {
@@ -79,6 +79,101 @@ ol.list-multilevel {
 
     &:hover {
       color: $color-basic;
+    }
+  }
+
+  ul {
+    @include list;
+    @include ullist;
+
+    padding: 10px 0 9px;
+
+    li {
+      @include screen('sm') {
+        padding-left: 20px;
+
+        &::before {
+          left: 6px;
+        }
+      }
+    }
+
+    &.dashed {
+      @include ullistdash;
+
+      padding: 7px 0 8px;
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: 11px;
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+
+    @extend .table;
+
+    margin-top: 19px;
+    margin-bottom: 20px;
+
+    @include screen('lg') {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    @include screen('sm') {
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    @include screen('xs') {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 16px;
+    }
+
+    tr {
+      @include screen('xs') {
+        display: block;
+      }
+    }
+
+    td {
+      width: 50%;
+
+      @include screen('xs') {
+        width: 100%;
+        display: inline-block;
+        padding-left: 13px;
+        padding-right: 13px;
+        box-sizing: border-box;
+      }
+
+      &:last-child {
+        @include screen('xs') {
+          padding-top: 0;
+          padding-left: 13px;
+        }
+      }
+
+      &:first-child {
+        @include screen('xs') {
+          padding-bottom: 4px;
+          padding-right: 13px;
+        }
+      }
+    }
+  }
+
+  &_bold {
+    a {
+      font-weight: 500;
     }
   }
 }

@@ -112,4 +112,20 @@
       left: 15px;
     }
   }
+
+  &_preview {
+
+    .product-main-slider {
+
+      &__button {
+        width: 34px;
+        height: 34px;
+
+        svg {
+          width: 7px;
+          height: 13px;
+        }
+      }
+    }
+  }
 }

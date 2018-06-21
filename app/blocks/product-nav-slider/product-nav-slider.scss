@@ -78,6 +78,10 @@
       }
     }
 
+    #{$b}__slide:hover & {
+      border-color: $lightblue2-color;
+    }
+
     #{$b}_big & {
       width: 74px;
 
@@ -108,7 +112,7 @@
     transition: color $ease-main;
     line-height: 1;
 
-    #{$b}__slide.is-active & {
+    #{$b}__slide.is-active &, #{$b}__slide:hover & {
       color: $darkblue-color;
     }
   }

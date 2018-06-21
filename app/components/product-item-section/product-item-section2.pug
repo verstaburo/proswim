@@ -1,58 +1,57 @@
 mixin product-item-section2()
-  +b.product-item-section&attributes(attributes).js-product-item-section
-    .container
-      +grid
-        +col({ xl: 7, sm: 12 }).product-item-section__mainslidercol
-          +e.mainslider
-            +badge._red._md.__badge –40 %
+  +b.product-item-section_preview&attributes(attributes).js-product-item-section
+    +e.grid
+      +e.grid-col_left.product-item-section__mainslidercol
+        +e.mainslider
+          +badge._red._md.__badge –40 %
 
-            +product-main-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: 'content-img/TL1_h264420_720p_HQ.mp4', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror', true, true)(data-touch-ratio="false")
-          +e.navslider
-            +product-nav-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror')._big.js-product-nav-slider
+          +product-main-slider-preview([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: 'content-img/TL1_h264420_720p_HQ.mp4', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror', true, true)(data-touch-ratio="false")
+        +e.navslider
+          +product-nav-slider([{ src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401' }, { src: '2401', isVideo: true }, { src: '2401' }, { src: '2401' }], 'Очки для плавания Cobra Mirror')._big.js-product-nav-slider
 
-        +col({ xl: 5, sm: 12 }).product-item-section__sidebarcol
-          +e.H2.heading Очки для плавания Cobra Mirror
-          form.js-product-item-form(method="POST" data-parsley-validate)
-            +e.price
-              +e.SPAN.pricecurrent 13 792 руб.
-              +e.SPAN.priceold 14 792,40 руб.
+      +e.grid-col_right.product-item-section__sidebarcol
+        +e.H2.title Очки для плавания Cobra Mirror
+        form.js-product-item-form(method="POST" data-parsley-validate)
+          +e.price
+            +e.SPAN.pricecurrent 13 792 руб.
+            +e.SPAN.priceold 14 792,40 руб.
 
-            input(type="hidden" name="color").js-product-color-input
+          input(type="hidden" name="color").js-product-color-input
 
-            +e.rating
-              +rating(4)._md
-                +rating-text.A(href="#reviews")._grey.js-anchor Отзывы (2)
+          +e.rating
+            +rating(4)._md
+              +rating-text.A(href="#reviews")._grey.js-anchor Отзывы (2)
 
-            +e.P.vendorcode
-              +e.SPAN.vendorcodeheading Артикул:
-              span 92354
+          +e.P.vendorcode
+            +e.SPAN.vendorcodeheading Артикул:
+            span 92354
 
-            +e.block
-              +e.P.heading Выберите размер:
-              +e.blockgrid
-                +e.P.text (французский размер - FR)
-                +e.P.text._right
-                  +link._underline._dark Узнать свой #[span.hide-xs размер]
+          +e.block
+            +e.P.heading Выберите размер:
+            +e.blockgrid
+              +e.P.text (французский размер - FR)
+              +e.P.text._right
+                +link._underline._dark Узнать свой #[span.hide-xs размер]
 
-            +e.sizes
-              +sizes
-                +size(name="size" value="08-09Y" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") 08-09Y
-                +size(name="size" value="35/37" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") 35/37
-                +size(name="size" value="32/34" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") 32/34
-                +size(name="size" value="S" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") S
-                +size(name="size" value="M" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") M
+          +e.sizes
+            +sizes
+              +size(name="size" value="08-09Y" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") 08-09Y
+              +size(name="size" value="35/37" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") 35/37
+              +size(name="size" value="32/34" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") 32/34
+              +size(name="size" value="S" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") S
+              +size(name="size" value="M" type="radio" required data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер") M
 
-            +e.block
-              +e.P.heading Выберите цвет:
+          +e.block
+            +e.P.heading Выберите цвет:
 
-            +e.colors
-              +product-nav-slider([{ src: '2401', text: 'Голубой' }, { src: '2401_2', text: 'Желтый' }, { src: '2401_3', text: 'Белый' }, { src: '2401_4', text: 'Голубой' }, { src: '2401_5', text: 'Желтый' }, { src: '2401_6', text: 'Белый' }, { src: '2401_7', text: 'Голубой' }, { src: '2401_8', text: 'Белый' }, { src: '2401_9', text: 'Голобой' }], 'Очки для плавания Cobra Mirror')._md._filter._colors.js-product-item-color-slider
+          +e.colors
+            +product-nav-slider([{ src: '2401', text: 'Голубой' }, { src: '2401_2', text: 'Желтый' }, { src: '2401_3', text: 'Белый' }, { src: '2401_4', text: 'Голубой' }, { src: '2401_5', text: 'Желтый' }, { src: '2401_6', text: 'Белый' }, { src: '2401_7', text: 'Голубой' }, { src: '2401_8', text: 'Белый' }, { src: '2401_9', text: 'Голобой' }], 'Очки для плавания Cobra Mirror')._md._filter._colors.js-product-item-color-slider
 
-            +e.buttons
-              +button.BUTTON(type="submit") Добавить в корзину
-              +e.size-errors
-              +button.BUTTON(type="button")._greyblue Купить в 1 клик
-              
-            +e.compare
-              +compare-button
-              +link(href="product.html")._medium._dark-blue Подробнее о товаре
+          +e.buttons
+            +button.BUTTON(type="submit") Добавить в корзину
+            +e.size-errors
+            +button.BUTTON(type="button")._greyblue Купить в 1 клик
+            
+          +e.compare
+            +compare-button
+            +link(href="product.html")._medium._dark-blue Подробнее о товаре

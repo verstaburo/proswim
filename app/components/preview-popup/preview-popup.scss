@@ -1,4 +1,11 @@
 .preview-popup {
   display: block;
   width: 960px;
+
+  .popup {
+
+    &__content {
+      padding: 47px 40px 40px;
+    }
+  }
 }

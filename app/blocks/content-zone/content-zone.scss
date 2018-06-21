@@ -118,6 +118,10 @@
     @include text;
   }
 
+  dl {
+    @include defenitionslist;
+  }
+
   &_big {
 
     p {
@@ -300,6 +304,7 @@
 
     small {
       @include text;
+
       color: $semigrey-color;
     }
   }
@@ -342,6 +347,39 @@
 
       &:hover {
         color: $color-basic;
+      }
+    }
+  }
+
+  &_bold {
+
+    p {
+
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+    }
+
+    b, strong {
+      font-weight: 700;
+    }
+
+    a {
+      font-weight: 500;
+    }
+  }
+
+  &_middle {
+    h1, h2, h3, h4, h5, h6 {
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+
+    p {
+
+      &:not(:last-child) {
+        margin-bottom: 11px;
       }
     }
   }
