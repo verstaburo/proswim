@@ -48,6 +48,10 @@
   &:focus {
     border-width: 2px;
   }
+
+  .inputbtn.is-active &:focus {
+    border-width: 1px;
+  }
 }
 
 .inputbox {
