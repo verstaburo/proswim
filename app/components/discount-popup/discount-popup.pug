@@ -1,0 +1,17 @@
+mixin discount-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'discount-popup' : '').discount-popup&attributes(attributes)
+    +popup-color-header('Скидка на онлайн-покупку', '-10%')
+      +e.text за&nbsp;подписку на&nbsp;наши новости!
+    +popup-content._pb0._ptb
+      +e.FORM.form.__grid(method='post' action='/' data-parsley-validate data-parsley-trigger="blur")
+        +col(12)
+          +input(type='text' name="name" placeholder="Имя" required)._size_md
+        +col(12)
+          +input(type='email' name="email" placeholder="Email" required)._size_md
+        +col(12)
+          +button-loading('button')(type='submit')._size_big._block Получить скидку
+        +col(12)
+          +checkbox('terms', true, true, true)
+            | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]
+    +e.panel
+      +button._grey._size_big._block.__panel-button.js-popup-back Спасибо, я не хочу скидку

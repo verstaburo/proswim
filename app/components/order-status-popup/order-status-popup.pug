@@ -1,0 +1,14 @@
+mixin order-status-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'order-status-popup' : '').order-status-popup&attributes(attributes)
+    +popup-header('Статус заказа')
+    +popup-content
+      +e.H6.subheading Для получения информации введите номер заказа и&nbsp;телефон
+      +e.FORM.form.__grid(method='post' action='/' data-parsley-validate data-parsley-trigger="blur")
+        +col(12)
+          +input(type='text' name="name" pattern=".{5,6}" placeholder="Номер заказа" required data-parsley-type="digits")._size_md
+          +e.note Номер заказа Proswim содержит 5-6&nbsp;цифр, например 100123
+        +col(12)
+          +input(type='tel' name="phone" placeholder="Телефон" required data-type="tel")._size_md
+          +e.note Номер телефона указывается в&nbsp;формате без&nbsp;8, например 9056543210
+        +col(12)
+          +button-loading('button')(type='submit')._size_big._block Получить информацию

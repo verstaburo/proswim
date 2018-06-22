@@ -84,6 +84,21 @@
       format("svg"); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/robotocondensed-bold.eot"); /* IE9 Compat Modes */
+  src:
+    url("../fonts/robotocondensed-bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/robotocondensed-bold.woff2") format("woff2"),
+    url("../fonts/robotocondensed-bold.woff") format("woff"),
+    url("../fonts/robotocondensed-bold.ttf") format("truetype"),
+    url("../fonts/robotocondensed-bold.svg#robotocondensed-bold")
+      format("svg"); /* Legacy iOS */
+}
+
 /* Соответствие письменного названия жирности числовому значению
 100 — Thin
 200 — Extra Light, Ultra Light

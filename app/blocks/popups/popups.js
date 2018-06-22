@@ -54,3 +54,12 @@ window.popups = {
     $.fancybox.open($(id), { initialSettings, ...settings });
   },
 };
+
+$(document).on('click', '.js-popup-back', (evt) => {
+  evt.preventDefault();
+  if ($(window).width() < window.globalOptions.sizes.lg) {
+    window.history.back();
+  } else {
+    $.fancybox.close();
+  }
+});

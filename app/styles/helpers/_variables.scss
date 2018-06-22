@@ -80,6 +80,11 @@ $color-red2: #ff2a29;
 $color-bluee: #0898d6;
 $color-lightenbluegrey: #e8f4fc;
 $color-lightengrey: #fafbfc;
+$color-lightbluegrey: #cce8f3;
+$color-darkdirtyblue: #008ec2;
+$color-lightpurple: #ede4fd;
+$color-dirtywhite: #fefefe;
+$color-darkgrey: #767b80;
 
 // ##########
 // Transitions
@@ -90,4 +95,5 @@ $ease-main: .3s ease;
 // Шрифты
 // ##########
 $font-main: Roboto, sans-serif; // Основной шрифт сайта
-$font-second: "Roboto Slab", Roboto, sans-serif; // Дополнительный шрифт
+$font-second: "Roboto Slab", Roboto, sans-serif;
+$font-third: "Roboto Condensed", Roboto, sans-serif; // Дополнительный шрифт

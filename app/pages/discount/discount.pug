@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Скидка на онлайн-покупку'
+
+block navbar
+  +navbar
+
+block content
+  +b.page_mh0._pb0
+    +discount-popup(true)
+
+block popups
+  +discount-popup

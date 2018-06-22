@@ -1,3 +1,11 @@
 mixin button(newtag)
   +b.A.button&attributes(attributes)
     block
+
+mixin button-loading(newtag)
+  +b(newtag || 'a').button_spinner&attributes(attributes)
+    +e.text 
+      block
+    +e.loading 
+      +spinner.__spinner
+      +e.text Отправка...

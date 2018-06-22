@@ -1,0 +1,64 @@
+.spinner {
+  display: block;
+
+  &__spin-0 {
+    fill: white;
+    enable-background: new;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: 1.05s;
+  }
+
+  &__spin-1 {
+    fill: white;
+    enable-background: new;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: .9s;
+  }
+
+  &__spin-2 {
+    fill: white;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: .75s;
+  }
+
+  &__spin-3 {
+    fill: white;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: .6s;
+  }
+
+  &__spin-4 {
+    fill: white;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: .45s;
+  }
+
+  &__spin-5 {
+    fill: white;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: .3s;
+  }
+
+  &__spin-6 {
+    fill: white;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: .15s;
+  }
+
+  &__spin-7 {
+    fill: white;
+    animation: spinnerFade 1.2s normal infinite;
+    animation-delay: 1.2s;
+  }
+}
+
+@keyframes spinnerFade {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,25 @@
+mixin callback-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'callback-popup' : '').callback-popup&attributes(attributes)
+    +popup-header('Обратный звонок')
+    +popup-content
+      +e.FORM.form.__grid(method='post' action='/' data-parsley-validate data-parsley-trigger="blur")
+        +col(12)
+          +input(type='text' name="name" placeholder="Имя *" required)._size_md
+        +col(12)
+          +input(type='tel' name="phone" placeholder="Телефон *" required data-type="tel")._size_md
+        +col(12)
+          +select(name="time" data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
+            option(value="" placeholder) Выберите время звонка
+            option(value="1") с 16:00 до 18:00
+            option(value="2") с 16:00 до 18:00
+            option(value="3") с 16:00 до 18:00
+            option(value="4") с 16:00 до 18:00
+            option(value="5") с 16:00 до 18:00
+            option(value="6") с 16:00 до 18:00
+        +col(12)
+          +textarea(placeholder="Укажите номер заказа или суть вопроса")
+        +col(12)
+          +button-loading('button')(type='submit')._size_big._block Отправить
+        +col(12)
+          +checkbox('terms', true, true, true)
+            | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]

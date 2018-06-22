@@ -10,6 +10,12 @@ mixin popup()
 mixin popup-header(heading)
   +e.header&attributes(attributes)
     +e.heading=heading
+      
+mixin popup-color-header(heading, disct)
+  +e.header_color&attributes(attributes)
+    if disct
+      +discount.__discount!= disct
+    +e.heading=heading
     block
 
 mixin popup-content

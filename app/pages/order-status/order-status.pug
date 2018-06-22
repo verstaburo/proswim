@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Статус заказа'
+
+block navbar
+  +navbar
+
+block content
+  +b.page_mh0
+    +order-status-popup(true)
+
+block popups
+  +order-status-popup

@@ -1,0 +1,92 @@
+<svg version="1.1" id="loading-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0 {
+		fill: white;
+		enable-background:new;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 1.05s;
+				animation-delay: 1.05s;
+		}
+	.st1 {
+		fill: white;
+		enable-background:new;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 0.9s;
+				animation-delay: 0.9s;
+	}
+	.st2 {
+		fill: white;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 0.75s;
+				animation-delay: 0.75s;
+	}
+	.st3 {
+		fill: white;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 0.6s;
+				animation-delay: 0.6s;
+	}
+	.st4 {
+		fill: white;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 0.45s;
+				animation-delay: 0.45s;
+	}
+	.st5 {
+		fill: white;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 0.3s;
+				animation-delay: 0.3s;
+	}
+	.st6 {
+		fill: white;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 0.15s;
+				animation-delay: 0.15s;
+	}
+	.st7 {
+		fill: white;
+		-webkit-animation: fadeG 1.2s normal infinite;
+				animation: fadeG 1.2s normal infinite;
+		-webkit-animation-delay: 1.2s;
+				animation-delay: 1.2s;
+	}
+	@keyframes fadeG{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	@-webkit-keyframes fadeG{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+</style>
+<title>loading-button-icon</title>
+<path id="spin-0" class="st0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0
+	c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"/>
+<path id="spin-1" class="st1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"/>
+<path id="spin-2" class="st2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0
+	c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"/>
+<path id="spin-3" class="st3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"/>
+<path id="spin-4" class="st4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0
+	c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"/>
+<path id="spin-5" class="st5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"/>
+<path id="spin-6" class="st6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0
+	c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"/>
+<path id="spin-7" class="st7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"/>
+</svg>

@@ -34,6 +34,13 @@
 
   &_page {
     width: 100%;
+
+    .popup {
+
+      &__discount {
+        margin-top: 0;
+      }
+    }
   }
 
   &__header {
@@ -52,6 +59,33 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+
+    &_color {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 2px 2px 0 0;
+      border-width: 0;
+
+      @include purple-gradient;
+      color: white;
+
+      .popup {
+
+        &__heading {
+          @include heading-middle;
+        }
+
+        &__text {
+          text-align: center;
+          color: $color-lightpurple;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  &__discount {
+    margin: -70px auto 16px;
   }
 
   &__heading {
@@ -98,6 +132,14 @@
       .popup_page & {
         padding-bottom: 0;
       }
+    }
+
+    &_ptb {
+      padding-top: 40px;
+    }
+
+    &_pb0 {
+      padding-bottom: 0;
     }
   }
 
@@ -146,6 +188,29 @@
     .link {
       margin-top: -2px;
     }
+
+    .input-label {
+      padding-top: 0;
+      transition: padding $ease-main;
+
+      &__placeholder {
+        top: 0;
+      }
+
+      &.is-active {
+        padding-top: 20px;
+
+        .input-label {
+          &__placeholder {
+            top: 20px;
+          }
+        }
+      }
+    }
+
+    .textarea {
+      min-height: 114px;
+    }
   }
 
   &__subheading {
@@ -154,6 +219,14 @@
     margin-top: -5px;
     @include heading-6;
     line-height: (21/15);
+    color: $color-basic;
+  }
+
+  &__note {
+    @include text-smaller;
+
+    color: $darkengrey-color;
+    margin-top: 10px;
   }
 
   &__text {
@@ -215,6 +288,16 @@
           margin-bottom: 10px;
         }
       }
+    }
+  }
+
+  &__panel {
+    display: block;
+    width: 100%;
+    padding-top: 29px;
+
+    &-button {
+      border-radius: 0 0 2px 2px;
     }
   }
 }

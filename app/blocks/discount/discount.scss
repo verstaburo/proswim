@@ -1,0 +1,35 @@
+.discount {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  @include orange-gradient;
+  @include heading-extra;
+
+  font-family: $font-third;
+  color: $color-dirtywhite;
+  text-align: center;
+  vertical-align: middle;
+
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &::before {
+    @include pseudo;
+
+    width: 114px;
+    height: 114px;
+    top: -8px;
+    left: -8px;
+    background-color: black;
+    opacity: .06;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+}

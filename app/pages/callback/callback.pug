@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Обратный звонок'
+
+block navbar
+  +navbar
+
+block content
+  +b.page_mh0
+    +callback-popup(true)
+
+block popups
+  +callback-popup
