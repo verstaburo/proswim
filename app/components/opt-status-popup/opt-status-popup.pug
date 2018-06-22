@@ -1,0 +1,9 @@
+mixin opt-status-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'opt-status-popup' : '').opt-status-popup&attributes(attributes)
+    +popup-header('Спасибо!')
+    +popup-content._success
+      +icon('phonecall').__icon_phonecall
+      +e.body
+      +e.H5.bodyheading Ваша заявка принята.
+      +e.bodytext.content-zone
+        p Мы&nbsp;свяжемся с&nbsp;Вами для уточнения деталей.

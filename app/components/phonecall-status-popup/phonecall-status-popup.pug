@@ -1,0 +1,9 @@
+mixin phonecall-status-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'phonecall-status-popup' : '').phonecall-status-popup&attributes(attributes)
+    +popup-header('Обратный звонок')
+    +popup-content._success
+      +icon('phonecall').__icon_phonecall
+      +e.body
+      +e.H5.bodyheading Спасибо за оставленную заявку!
+      +e.bodytext.content-zone
+        p Мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;течение 30&nbsp;минут, либо в&nbsp;указанное Вами время.

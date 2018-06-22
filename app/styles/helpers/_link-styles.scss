@@ -10,6 +10,15 @@
   }
 }
 
+@mixin link-darkblue {
+  color: $darkblue-color;
+  border-color: $darkblue-color;
+
+  &:hover {
+    color: $color-basic;
+  }
+}
+
 @mixin link-underline {
   border-width: 0 0 1px 0;
   border-style: solid;

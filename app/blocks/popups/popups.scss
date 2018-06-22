@@ -40,6 +40,7 @@
     padding: 23px 40px 23px 36px;
     border: 1px solid $color-border;
     background-color: $lightgrey-color;
+    color: $color-basic;
 
     @include screen(sm) {
       padding: 23px 60px 23px 36px;
@@ -88,6 +89,16 @@
       padding-right: 0;
       padding-bottom: 0;
     }
+
+    &_success {
+      padding-top: 30px;
+      padding-bottom: 44px;
+      text-align: center;
+
+      .popup_page & {
+        padding-bottom: 0;
+      }
+    }
   }
 
   &__footer {
@@ -107,6 +118,7 @@
       display: flex;
       align-items: center;
       @include heading-6;
+
       margin-bottom: 11px;
 
       &::before,
@@ -147,5 +159,62 @@
   &__text {
     margin-top: 16px;
     text-align: left;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 74px;
+    height: 62px;
+    fill: $color-main;
+
+    &_phonecall {
+      width: 72px;
+      height: 62px;
+    }
+
+    &_info {
+      width: 62px;
+      height: 62px;
+    }
+
+    &_note {
+      width: 74px;
+      height: 62px;
+    }
+  }
+
+  &__body {
+    text-align: left;
+    margin-top: 8px;
+
+    &heading {
+      display: block;
+
+      @include heading-5;
+
+      line-height: (21/16);
+      margin-bottom: 11px;
+      text-align: left;
+    }
+
+    &text {
+      color: $darkengrey-color;
+      text-align: left;
+
+      p:not(:last-child) {
+        margin: 0;
+      }
+
+      a {
+        @include link-darkblue;
+      }
+
+      &_paddings {
+
+        p:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }

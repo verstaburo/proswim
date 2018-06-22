@@ -1,0 +1,10 @@
+mixin phonecall-status2-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'phonecall-status2-popup' : '').phonecall-status2-popup&attributes(attributes)
+    +popup-header('Обратный звонок')
+    +popup-content._success
+      +icon('phonecall').__icon_phonecall
+      +e.body
+      +e.H5.bodyheading Спасибо за оставленную заявку!
+      +e.bodytext_paddings.content-zone
+        p Интернет-магазин работает каждый день с&nbsp;9:00 до&nbsp;21:00 по&nbsp;московскому времени.
+        p Мы&nbsp;сможем перезвонить Вам в&nbsp;рабочее время.

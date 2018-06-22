@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Спасибо за оставленную заявку!'
+
+block navbar
+  +navbar
+
+block content
+  +b.page_mh0
+    +phonecall-status2-popup(true)
+
+block popups
+  +phonecall-status2-popup

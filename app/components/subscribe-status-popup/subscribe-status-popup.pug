@@ -1,0 +1,9 @@
+mixin subscribe-status-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'subscribe-status-popup' : '').subscribe-status-popup&attributes(attributes)
+    +popup-header('Спасибо!')
+    +popup-content._success
+      +icon('note').__icon_note
+      +e.body
+      +e.H5.bodyheading Теперь Вы&nbsp;подписаны на&nbsp;нашу новостную рассылку!
+      +e.bodytext.content-zone
+        p Мы&nbsp;отправили Вам на&nbsp;указанную почту секретный промокод&nbsp;&mdash; используйте его, чтобы получить скидку&nbsp;10% на&nbsp;Ваш заказ уже сейчас!

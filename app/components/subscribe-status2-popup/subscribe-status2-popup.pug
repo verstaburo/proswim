@@ -1,0 +1,10 @@
+mixin subscribe-status2-popup(isPage)
+  +popup(class=isPage ? '_page' : '' id=!isPage ? 'subscribe-status2-popup' : '').subscribe-status2-popup&attributes(attributes)
+    +popup-header('Внимание!')
+    +popup-content._success
+      +icon('info').__icon_info
+      +e.body
+      +e.H5.bodyheading Ранее Вы&nbsp;уже получали промокод по&nbsp;указанному email адресу.
+      +e.bodytext_paddings.content-zone
+        p Пожалуйста, проверьте Вашу почту <a href="mailto:content3@proswim.ru">content3@proswim.ru</a>.
+        p Если Вам не&nbsp;пришло письмо с&nbsp;промокодом, свяжитесь с&nbsp;нами по&nbsp;бесплатной линии: <a href="tel:88001002459">8 (800) 100-24-59</a>

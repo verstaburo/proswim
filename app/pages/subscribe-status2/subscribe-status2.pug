@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Внимание!'
+
+block navbar
+  +navbar
+
+block content
+  +b.page_mh0
+    +subscribe-status2-popup(true)
+
+block popups
+  +subscribe-status2-popup
