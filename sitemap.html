@@ -2858,6 +2858,176 @@
                 </div>
             </div>
         </div>
+        <div class="popup order-status-popup" id="order-status-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Статус заказа</div>
+            </div>
+            <div class="popup__content">
+                <h6 class="popup__subheading">Для получения информации введите номер заказа и&nbsp;телефон</h6>
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="text" name="name" pattern=".{5,6}" placeholder="Номер заказа" required="required" data-parsley-type="digits" />
+                        <div class="popup__note">Номер заказа Proswim содержит 5-6&nbsp;цифр, например 100123</div>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон" required="required" data-type="tel" />
+                        <div class="popup__note">Номер телефона указывается в&nbsp;формате без&nbsp;8, например 9056543210</div>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Получить информацию</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup callback-popup" id="callback-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Обратный звонок</div>
+            </div>
+            <div class="popup__content">
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="text" name="name" placeholder="Имя *" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон *" required="required" data-type="tel" />
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock" name="time">
+                            <option value="" placeholder="placeholder">Выберите время звонка</option>
+                            <option value="1">с 16:00 до 18:00</option>
+                            <option value="2">с 16:00 до 18:00</option>
+                            <option value="3">с 16:00 до 18:00</option>
+                            <option value="4">с 16:00 до 18:00</option>
+                            <option value="5">с 16:00 до 18:00</option>
+                            <option value="6">с 16:00 до 18:00</option>
+                        </select>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <textarea class="textarea" placeholder="Укажите номер заказа или суть вопроса"></textarea>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Отправить</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="checkradio">
+                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
+                            <span class="checkradio__box">
+                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            </span>
+                            <span class="checkradio__content">Я ознакомлен с
+                                <a class="link" href="#">
+                                    <span class="link__text">публичной офертой</span>
+                                </a> и соглашаюсь с
+                                <a class="link" href="#">
+                                    <span class="link__text">условиями обработки персональных данных</span>
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup discount-popup" id="discount-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header popup__header_color">
+                <div class="discount popup__discount">
+                    <div class="discount__text">-10%</div>
+                </div>
+                <div class="popup__heading">Скидка на онлайн-покупку</div>
+                <div class="popup__text">за&nbsp;подписку на&nbsp;наши новости!</div>
+            </div>
+            <div class="popup__content popup__content_pb0 popup__content_ptb">
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="text" name="name" placeholder="Имя" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="email" name="email" placeholder="Email" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Получить скидку</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="checkradio">
+                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
+                            <span class="checkradio__box">
+                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            </span>
+                            <span class="checkradio__content">Я ознакомлен с
+                                <a class="link" href="#">
+                                    <span class="link__text">публичной офертой</span>
+                                </a> и соглашаюсь с
+                                <a class="link" href="#">
+                                    <span class="link__text">условиями обработки персональных данных</span>
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__panel">
+                <a class="button button_grey button_size_big button_block popup__panel-button js-popup-back">Спасибо, я не хочу скидку</a>
+            </div>
+        </div>
     </div>
     <div class="sitemap">
         <div class="container">
@@ -2962,6 +3132,15 @@
                 </a>
                 <a class="link js-fancybox" href="subscribe-status2.html" data-popup="#subscribe-status2-popup">
                     <span class="link__text">Внимание! Ранее Вы уже получали промокод по указанному email адресу. (subscribe-status2.html)</span>
+                </a>
+                <a class="link js-fancybox" href="callback.html" data-popup="#callback-popup">
+                    <span class="link__text">Обратный звонок (callback.html) </span>
+                </a>
+                <a class="link js-fancybox" href="order-status.html" data-popup="#order-status-popup">
+                    <span class="link__text">Статус заказа (order-status.html)</span>
+                </a>
+                <a class="link js-fancybox" href="discount.html" data-popup="#discount-popup">
+                    <span class="link__text">Скидка на онлайн-покупку (discount.html)</span>
                 </a>
             </div>
         </div>
@@ -3156,6 +3335,7 @@
     <script src="assets/scripts/libs/parsley.min.js"></script>
     <script src="assets/scripts/app.min.js"></script>
     <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/formSending.js"></script>
 </body>
 
 </html>

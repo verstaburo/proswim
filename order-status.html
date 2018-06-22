@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Proswim - Контакты</title>
+    <title>Proswim - Статус заказа</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -2279,584 +2279,89 @@
         </div>
     </div>
     <div class="popups">
-        <div class="popup login-popup" id="login-popup">
+        <div class="popup order-status-popup" id="order-status-popup">
             <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
                 <span class="circle-button__button">
                     <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
                 </span>
             </a>
             <div class="popup__header">
-                <div class="popup__heading">Войти в аккаунт</div>
+                <div class="popup__heading">Статус заказа</div>
             </div>
             <div class="popup__content">
-                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
+                <h6 class="popup__subheading">Для получения информации введите номер заказа и&nbsp;телефон</h6>
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
                     <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Email адрес</span>
-                            </span>
-                            <input class="input input_size_md" type="email" required="required" />
-                        </label>
+                        <input class="input input_size_md" type="text" name="name" pattern=".{5,6}" placeholder="Номер заказа" required="required" data-parsley-type="digits" />
+                        <div class="popup__note">Номер заказа Proswim содержит 5-6&nbsp;цифр, например 100123</div>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Пароль</span>
-                            </span>
-                            <input class="input input_size_md" type="password" required="required" />
-                        </label>
+                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон" required="required" data-type="tel" />
+                        <div class="popup__note">Номер телефона указывается в&nbsp;формате без&nbsp;8, например 9056543210</div>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <a class="link link_dark js-fancybox" href="#password-recovery-popup">
-                            <span class="link__text">Забыли пароль?</span>
-                        </a>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Войти</button>
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Получить информацию</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
                     </div>
                 </form>
-            </div>
-            <div class="popup__footer">
-                <div class="popup__footerheading">Войти через соцсети</div>
-                <div class="social-buttons social-buttons_big">
-                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
-                    </a>
-                </div>
-                <div class="popup__text">Нет аккаунта?
-                    <a class="link js-fancybox" href="registration.html" data-popup="#registration-popup">
-                        <span class="link__text">Зарегистрируйтесь!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="popup registration-popup" id="registration-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Регистрация</div>
-            </div>
-            <div class="popup__content">
-                <form class="popup__form popup__grid js-registration-popup-form" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Имя</span>
-                            </span>
-                            <input class="input input_size_md" type="text" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Email адрес</span>
-                            </span>
-                            <input class="input input_size_md" type="email" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="input-label js-input-dynamic">
-                            <span class="input-label__placeholder">
-                                <span class="input-label__label">Пароль</span>
-                            </span>
-                            <input class="input input_size_md" type="password" required="required" />
-                        </label>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Зарегистрироваться</button>
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <label class="checkradio">
-                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
-                            <span class="checkradio__box">
-                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                            </span>
-                            <span class="checkradio__content">Я ознакомлен с
-                                <a class="link" href="#">
-                                    <span class="link__text">публичной офертой</span>
-                                </a> и соглашаюсь с
-                                <a class="link" href="#">
-                                    <span class="link__text">условиями обработки персональных данных</span>
-                                </a>
-                            </span>
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <div class="popup__footer registration-popup__footer">
-                <div class="popup__footerheading">Войти через соцсети</div>
-                <div class="social-buttons social-buttons_big">
-                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
-                    </a>
-                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
-                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
-                    </a>
-                </div>
-                <div class="popup__text">Есть аккаунт?
-                    <a class="link js-fancybox" href="login.html" data-popup="#login-popup">
-                        <span class="link__text">Выполнить вход!</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="popup password-recovery-popup" id="password-recovery-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Восстановить пароль</div>
-            </div>
-            <div class="popup__content password-recovery-popup__content">
-                <div class="popup__subheading">Введите E-mail на который
-                    <br/>был зарегистрирован аккаунт ProSwim.ru</div>
-                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
-                    <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="email" required="required" />
-                    </div>
-                    <div class="grid__col grid__col_xl_12">
-                        <button class="button button_size_big button_block" type="submit">Выслать инструкцию</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="popup registration-complete-popup" id="registration-complete-popup">
-            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
-                <span class="circle-button__button">
-                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                </span>
-            </a>
-            <div class="popup__header">
-                <div class="popup__heading">Поздравляем!</div>
-            </div>
-            <div class="popup__content registration-complete-popup__content">
-                <svg class="registration-complete-popup__icon"><use xlink:href="assets/images/icon.svg#icon_note"></use></svg>
-                <div class="registration-complete-popup__body">
-                    <H5 class="registration-complete-popup__bodyheading">Регистрация прошла успешно</H5>
-                    <div class="content-zone registration-complete-popup__bodytext">
-                        <p>Благодарим за&nbsp;регистрацию в&nbsp;proswimru!</p>
-                        <p>Ваши логин и&nbsp;пароль отправлены на&nbsp;указанный при регистрации e-mail.</p>
-                        <p>Добро пожаловать, Alex!</p>
-                        <p>В "
-                            <a href="#">Моем кабинете</a>" Вы&nbsp;можете получить информацию о&nbsp;сделанных вами заказах или
-                            <a href="#">изменить свои персональные данные</a>.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="page">
-        <div class="container">
-            <div class="page__head">
-                <div class="page__headcol page__headcol_flexible">
-                    <ul class="breadcrumbs">
-                        <li class="breadcrumbs__item">
-                            <a class="link" href="#">
-                                <span class="link__text">Главная</span>
-                            </a>
-                            <svg class="breadcrumbs__icon"><use xlink:href="assets/images/icon.svg#icon_arrow-icon-bread-crumbs"></use></svg>
-                        </li>
-                        <li class="breadcrumbs__item">
-                            <a class="link" href="#">
-                                <span class="link__text">Контакты</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="page page_mh0">
+        <div class="popup popup_page order-status-popup" id="">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Статус заказа</div>
             </div>
-            <div class="page__head page__head_subhead">
-                <div class="page__headcol page__headcol_flexible">
-                    <h1 class="page__heading">Контакты</h1>
-                </div>
+            <div class="popup__content">
+                <h6 class="popup__subheading">Для получения информации введите номер заказа и&nbsp;телефон</h6>
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="text" name="name" pattern=".{5,6}" placeholder="Номер заказа" required="required" data-parsley-type="digits" />
+                        <div class="popup__note">Номер заказа Proswim содержит 5-6&nbsp;цифр, например 100123</div>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон" required="required" data-type="tel" />
+                        <div class="popup__note">Номер телефона указывается в&nbsp;формате без&nbsp;8, например 9056543210</div>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Получить информацию</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <section class="section section_simple">
-                <header class="section__head">
-                    <h2 class="section__heading">Интернет-магазин</h2>
-                </header>
-                <div class="section__content">
-                    <div class="grid">
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <article class="shop-description">
-                                <header class="shop-description__header">
-                                    <span class="shop-description__icon shop-description__icon_phone">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    </span>
-                                    <h5 class="shop-description__heading">Москва:</h5>
-                                </header>
-                                <div class="content-zone shop-description__body">
-                                    <p>8 (495) 580-82-95</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <article class="shop-description">
-                                <header class="shop-description__header">
-                                    <span class="shop-description__icon shop-description__icon_phone">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    </span>
-                                    <h5 class="shop-description__heading">Санкт-Петербург:</h5>
-                                </header>
-                                <div class="content-zone shop-description__body">
-                                    <p>8 (812) 449-24-71</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <article class="shop-description">
-                                <header class="shop-description__header">
-                                    <span class="shop-description__icon shop-description__icon_phone">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    </span>
-                                    <h5 class="shop-description__heading">Бесплатно по РФ:</h5>
-                                </header>
-                                <div class="content-zone shop-description__body">
-                                    <p>8 (800) 100-24-59</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <article class="shop-description">
-                                <header class="shop-description__header">
-                                    <span class="shop-description__icon shop-description__icon_time">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    </span>
-                                    <h5 class="shop-description__heading">График работы менеджеров:</h5>
-                                </header>
-                                <div class="content-zone shop-description__body">
-                                    <p>c&nbsp;9.00 до&nbsp;21.00 без выходных, заказы через сайт принимаются круглосуточно</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_5 grid__col_sm_12">
-                            <article class="shop-description">
-                                <header class="shop-description__header">
-                                    <span class="shop-description__icon shop-description__icon_email">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_email-icon22"></use></svg>
-                                    </span>
-                                    <h5 class="shop-description__heading">Email:</h5>
-                                </header>
-                                <div class="content-zone shop-description__body">
-                                    <p>По&nbsp;всем вопросам:
-                                        <a href="mailto:info@proswim.ru">info@proswim.ru</a>
-                                    </p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid__col grid__col_xl_9 grid__col_lg_12">
-                            <article class="shop-description">
-                                <header class="shop-description__header">
-                                    <span class="shop-description__icon shop-description__icon_reviews">
-                                        <svg><use xlink:href="assets/images/icon.svg#icon_reviews-icon22"></use></svg>
-                                    </span>
-                                    <h5 class="shop-description__heading">Поддержка:</h5>
-                                </header>
-                                <div class="content-zone shop-description__body">
-                                    <p>Для отзывов, похвалы или жалоб:
-                                        <a href="mailto:info@proswim.ru">info@proswim.ru</a>
-                                    </p>
-                                    <p>Если у&nbsp;вас возникли проблемы или сложные ситуации с&nbsp;заказами или нашими сотрудниками, пожалуйста, сообщите нам об&nbsp;этом и&nbsp;мы&nbsp;обязательно все уладим! Ведь клиенты для нас&nbsp;&mdash; самое ценное!</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section section_simple">
-                <header class="section__head">
-                    <h2 class="section__heading">Пункт самовывоза:</h2>
-                </header>
-                <div class="section__content">
-                    <div class="grid">
-                        <div class="grid__col grid__col_xl_9 grid__col_lg_8 grid__col_sm_12">
-                            <div class="map map_md" id="pickup-contacts-map"></div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Алексеевская</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Алекссевская,</p>
-                                    <p>ул. 3-я Мытищинская, д. 16 стр. 47, офисное здание "Квант-М", 3 этаж,</p>
-                                    <p>офис 329</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (495) 580-82-95</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">Пн-Вс: 9.00-21.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                                <div class="shop-location__text">
-                                    <p>Обращаем Ваше внимание, что здании осуществляется пропускная система, поэтому просим Вас взять с собой паспорт.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section section_simple">
-                <header class="section__head">
-                    <h2 class="section__heading">Адреса наших магазинов в Москве:</h2>
-                </header>
-                <div class="section__content">
-                    <div class="grid">
-                        <div class="grid__col grid__col_xl_9 grid__col_lg_8 grid__col_sm_12">
-                            <div class="map map_md" id="msk-shop-contacts-map"></div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Ленинский проспект</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Ленинский проспект,</p>
-                                    <p>ул. Вавилова, д. 3,</p>
-                                    <p>ТЦ «Гагаринский», 2-й этаж</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (495) 730-30-62</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext"> с 9.00 до 22.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Проспект Мира</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Проспект Мира,</p>
-                                    <p>пр-т Мира, д. 33,</p>
-                                    <p>ТЦ «Олимпик Плаза», 2-й этаж</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (495) 698-63-75</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">Пн.-Сб.: 10.00-21.00, Вс.:10.00-20.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Каширская</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Каширская,</p>
-                                    <p>Каширское ш, д. 26,</p>
-                                    <p>ТЦ «Москворечье», 3-й этаж</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (495) 730-30-62</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">с 9.00 до 22.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Парк Культуры</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Парк Культуры,</p>
-                                    <p>Турчанинов пер., д.3 стр 1,</p>
-                                    <p>Бассейн "Чайка"</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (495) 730-30-62</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">с 9.00 до 22.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Водный стадион</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Водный стадион,</p>
-                                    <p>Головинское шоссе д 5, к 1,</p>
-                                    <p>ТЦ «Водный», 2-й этаж</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (495) 109-02-29</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">с 10.00 до 22.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section section_simple">
-                <header class="section__head">
-                    <h2 class="section__heading">Адреса наших магазинов в Санкт-Петербурге:</h2>
-                </header>
-                <div class="section__content">
-                    <div class="grid">
-                        <div class="grid__col grid__col_xl_9 grid__col_lg_8 grid__col_sm_12">
-                            <div class="map map_md" id="spb-shop-contacts-map"></div>
-                        </div>
-                        <div class="grid__col grid__col_xl_3 grid__col_lg_4 grid__col_sm_12">
-                            <div class="shop-location">
-                                <div class="shop-location__station">
-                                    <svg class="shop-location__stationicon"><use xlink:href="assets/images/icon.svg#icon_metro-icon"></use></svg>
-                                    <span class="shop-location__stationtext">м. Сенная площадь</span>
-                                </div>
-                                <div class="shop-location__addr">
-                                    <p>м. Сенная площадь/ Садовая,</p>
-                                    <p>ул. Ефимова, д. 2, лит. А,</p>
-                                    <p>ТРК «ПИК», 3-й этаж</p>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_phone-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">8 (812) 449-24-71</span>
-                                </div>
-                                <div class="shop-location__item">
-                                    <svg class="shop-location__itemicon"><use xlink:href="assets/images/icon.svg#icon_time-icon22"></use></svg>
-                                    <span class="shop-location__itemtext">с 10.00 до 22.00</span>
-                                </div>
-                                <a class="link link_icon link_print" target="_blank" href="https://yandex.ru/maps/print/?from=1org_search&amp;text=%D0%BC.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20%D1%83%D0%BB.%20%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%203%2C%20%D0%A2%D0%A6%20%C2%AB%D0%93%D0%B0%D0%B3%D0%B0%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%C2%BB%2C%202-%D0%B9%20%D1%8D%D1%82%D0%B0%D0%B6&amp;sll=37.592096%2C55.706883&amp;ol=biz&amp;oid=1013729832">
-                                    <svg class="link__icon"><use xlink:href="assets/images/icon.svg#icon_print-icon"></use></svg>
-                                    <span class="link__text">Распечатать схему проезда</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section section_simple">
-                <header class="section__head">
-                    <h2 class="section__heading">Почему стоит покупать у нас?</h2>
-                </header>
-                <div class="section__content">
-                    <a class="button button_features" href="javascript:void(0)">Наши преимущества</a>
-                </div>
-            </section>
-            <section class="section section_simple">
-                <header class="section__head">
-                    <h2 class="section__heading">Посетите наши страницы в соцсетях:</h2>
-                </header>
-                <div class="section__content">
-                    <div class="social-buttons social-buttons_big">
-                        <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
-                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
-                        </a>
-                        <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
-                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
-                        </a>
-                        <a class="social-button social-button_instagram social-button_big social-button_colorized" href="javascript:void(0);">
-                            <svg class="social-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <defs>
-                                    <linearGradient id="instagramGradient" x1="78.801%" x2="0%" y1="0%" y2="61.566%">
-                                        <stop offset="0%" stop-color="rgb(84,41,164)" stop-opacity="1" />
-                                        <stop offset="50%" stop-color="rgb(248,121,176)" stop-opacity="1" />
-                                        <stop offset="74%" stop-color="rgb(252,115,88)" stop-opacity="1" />
-                                        <stop offset="100%" stop-color="rgb(255,109,0)" stop-opacity="1" />
-                                    </linearGradient>
-                                </defs>
-
-                                <g fill="url(#instagramGradient)" class="instagram-icon-1">
-                                    <path d="M14.48,0h-9A5.53,5.53,0,0,0,0,5.52v9A5.53,5.53,0,0,0,5.52,20h9A5.53,5.53,0,0,0,20,14.48v-9A5.53,5.53,0,0,0,14.48,0Zm3.75,14.48a3.75,3.75,0,0,1-3.74,3.74h-9a3.75,3.75,0,0,1-3.74-3.74v-9A3.75,3.75,0,0,1,5.52,1.77h9a3.75,3.75,0,0,1,3.74,3.74v9h0Z"
-                                    />
-                                    <path d="M10,4.85A5.15,5.15,0,1,0,15.15,10,5.16,5.16,0,0,0,10,4.85Zm0,8.53A3.38,3.38,0,1,1,13.38,10,3.38,3.38,0,0,1,10,13.38Z" />
-                                    <path d="M15.37,3.34a1.3,1.3,0,1,0,.92.38A1.31,1.31,0,0,0,15.37,3.34Z" />
-                                </g>
-
-                                <g fill="white" class="instagram-icon-2">
-                                    <path d="M14.48,0h-9A5.53,5.53,0,0,0,0,5.52v9A5.53,5.53,0,0,0,5.52,20h9A5.53,5.53,0,0,0,20,14.48v-9A5.53,5.53,0,0,0,14.48,0Zm3.75,14.48a3.75,3.75,0,0,1-3.74,3.74h-9a3.75,3.75,0,0,1-3.74-3.74v-9A3.75,3.75,0,0,1,5.52,1.77h9a3.75,3.75,0,0,1,3.74,3.74v9h0Z"
-                                    />
-                                    <path d="M10,4.85A5.15,5.15,0,1,0,15.15,10,5.16,5.16,0,0,0,10,4.85Zm0,8.53A3.38,3.38,0,1,1,13.38,10,3.38,3.38,0,0,1,10,13.38Z" />
-                                    <path d="M15.37,3.34a1.3,1.3,0,1,0,.92.38A1.31,1.31,0,0,0,15.37,3.34Z" />
-                                </g>
-                            </svg>
-                        </a>
-                        <a class="social-button social-button_youtube social-button_big social-button_colorized" href="javascript:void(0);">
-                            <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_youtube-icon"></use></svg>
-                        </a>
-                    </div>
-                    <div class="grid">
-                        <div class="grid__col grid__col_xl_6 grid__col_sm_12">
-                            <!-- Вместо этой заглушки нужно вставить виджет фейсбука-->
-                            <div style="height: 242px; border: 1px solid #c7d2d9; color: #c7d2d9; display: flex; align-items:center; justify-content: center; font-size: 20px;">FACEBOOK WIDGET</div>
-                        </div>
-                        <div class="grid__col grid__col_xl_6 grid__col_sm_12">
-                            <!-- Вместо этой заглушки нужно вставить виджет вк-->
-                            <div style="height: 242px; border: 1px solid #c7d2d9; color: #c7d2d9; display: flex; align-items:center; justify-content: center; font-size: 20px;">VK WIDGET</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
     <div class="subscribe">
