@@ -34,11 +34,19 @@ $sb-youtube-color: red;
     margin: 20px 0 0 20px;
   }
 
+  .social-buttons_share & {
+    margin: 0 10px 10px 0;
+  }
+
   &s {
     font-size: 0;
     margin: -9px 0 0 -9px;
 
     &_big { margin: -20px 0 0 -20px; }
+
+    &_share {
+      margin: 0;
+    }
 
     .section_simple & {
       padding-bottom: 10px;
@@ -134,7 +142,7 @@ $sb-youtube-color: red;
     }
 
     .social-button_vk.social-button_colorized & {
-      fill: $sb-vk-color
+      fill: $sb-vk-color;
     }
 
     /* facebook */
@@ -149,7 +157,7 @@ $sb-youtube-color: red;
     }
 
     .social-button_fb.social-button_colorized & {
-      fill: $sb-fb-color
+      fill: $sb-fb-color;
     }
 
     /* instagram */
@@ -177,7 +185,7 @@ $sb-youtube-color: red;
     }
 
     .social-button_tw.social-button_colorized  & {
-      fill: $sb-tw-color
+      fill: $sb-tw-color;
     }
 
     /* odnoklassniki */
@@ -187,7 +195,7 @@ $sb-youtube-color: red;
     }
 
     .social-button_ok.social-button_colorized & {
-      fill: $sb-ok-color
+      fill: $sb-ok-color;
     }
 
     .social-button_colorized:hover & {
@@ -201,12 +209,170 @@ $sb-youtube-color: red;
     }
 
     .social-button_youtube.social-button_colorized & {
-      fill: $sb-youtube-color
+      fill: $sb-youtube-color;
     }
 
     .social-button_colorized:hover & {
       fill: white;
     }
   }
-}
 
+  &_square {
+    width: 34px;
+    height: 34px;
+    border-radius: 2px;
+    border-color: transparent;
+    background-color: $middlegrey2-color;
+    transition: all $ease-main;
+
+    &:hover {
+      border-color: $middlegrey2-color;
+      background-color: transparent;
+    }
+
+    .social-button {
+
+      &__icon {
+        fill: white;
+        transition: all $ease-main;
+      }
+    }
+  }
+
+  &_fb.social-button_square {
+    background-color: $color-fb;
+
+    .social-button {
+
+      &__icon {
+        width: 11px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      border-color: $color-fb;
+      background-color: transparent;
+
+      .social-button__icon {
+        fill: $color-fb;
+      }
+    }
+  }
+
+  &_tw.social-button_square {
+    background-color: $color-tw;
+
+    .social-button {
+
+      &__icon {
+        width: 19px;
+        height: 17px;
+      }
+    }
+
+    &:hover {
+      border-color: $color-tw;
+      background-color: transparent;
+
+      .social-button__icon {
+        fill: $color-tw;
+      }
+    }
+  }
+
+  &_vk.social-button_square {
+    background-color: $color-vk;
+
+    .social-button {
+
+      &__icon {
+        width: 21px;
+        height: 12px;
+      }
+    }
+
+    &:hover {
+      border-color: $color-vk;
+      background-color: transparent;
+
+      .social-button__icon {
+        fill: $color-vk;
+      }
+    }
+  }
+
+  &_ggp.social-button_square {
+    background-color: $color-gp;
+
+    .social-button {
+
+      &__icon {
+        width: 21px;
+        height: 16px;
+      }
+    }
+
+    &:hover {
+      border-color: $color-gp;
+      background-color: transparent;
+
+      .social-button__icon {
+        fill: $color-gp;
+      }
+    }
+  }
+
+  &_ok.social-button_square {
+    background-color: $color-ok;
+
+    .social-button {
+
+      &__icon {
+        width: 12px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      border-color: $color-ok;
+      background-color: transparent;
+
+      .social-button__icon {
+        fill: $color-ok;
+      }
+    }
+  }
+
+  &_plus {
+    position: relative;
+
+    &::before, &::after {
+      @include pseudo;
+
+      width: 15px;
+      height: 2px;
+      background-color: white;
+      transition: all $ease-main;
+    }
+
+    &::before {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0) rotate(90deg);
+    }
+
+    &:hover {
+
+      &::after, &::before {
+        background-color: $middlegrey2-color;
+      }
+    }
+  }
+}

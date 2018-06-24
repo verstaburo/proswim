@@ -11,10 +11,12 @@ mixin social-button(kind, isGradient)
       ok: 'Odnoklassniki icon',
       tw: 'Twitter icon',
       youtube: 'Youtube icon',
+      ggp: 'google-plus',
     }
 
   +b.A.social-button&attributes(attributes)(href='javascript:void(0);' class=`_${kind}`)
     if isGradient
       include ../../static/icons/social-instagram.svg
-    else
-      +icon(icons[kind]).icon
+    else 
+      if icons[kind]
+        +icon(icons[kind]).icon

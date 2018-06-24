@@ -1,3 +1,14 @@
 mixin share()
   +b.share&attributes(attributes)
-    block
+    +grid 
+      +col({ sm: 12, xl: 6}).share__col.share__col_socials
+        +social-buttons._share 
+          +social-button('fb')._fb._square
+          +social-button('tw')._tw._square
+          +social-button('vk')._vk._square
+          +social-button('ggp')._ggp._square
+          +social-button('ok')._ok._square
+          +social-button()._plus._square
+      +col({ sm: 12, xl: 6}).share__col.share__col_counter
+        +e.bubble
+          +e.counter 12

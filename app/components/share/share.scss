@@ -1,7 +1,56 @@
 .share {
   display: block;
-  height: 76px;
   border-top: 1px px solid $color-border;
   border-bottom: 1px px solid $color-border;
   box-sizing: border-box;
+  padding: 20px 0 10px;
+
+  &__bubble {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 0 12px;
+    height: 34px;
+    margin-bottom: 10px;
+    border: 1px solid $color-border-middle;
+    border-radius: 2px;
+
+    @include text;
+
+    color: $color-middlegrey;
+    line-height: 34px;
+    background-color: white;
+
+    &::before {
+      @include pseudo;
+
+      border: 1px solid $color-border-middle;
+      background-color: white;
+      border-top-width: 0;
+      border-right-width: 0;
+      width: 11px;
+      height: 11px;
+      top: 17px;
+      left: -7px;
+      transform: translate3d(0, -50%, 0) rotate(45deg);
+      z-index: 1;
+    }
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+
+    &_socials {
+      justify-content: flex-start;
+    }
+
+    &_counter {
+      justify-content: flex-end;
+
+      @include screen('sm') {
+        display: none;
+      }
+    }
+  }
 }
