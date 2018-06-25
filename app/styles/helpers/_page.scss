@@ -226,4 +226,16 @@
       }
     }
   }
+
+  &__delivery {
+
+    &:not(:last-child) {
+      margin-bottom: 38px;
+    }
+
+    @include screen('sm') {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
 }

@@ -1,0 +1,192 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Доставка'
+  
+block navbar
+  +navbar
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Доставка'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Доставка
+      +e.FORM.delivery(action="/" method="POST" data-parsley-validate data-parsley-trigger="focusout")
+        +fieldset
+          +fieldset-head
+            +fieldset-head-col._flexible
+              +fieldset-heading Выберите город и способ доставки
+            +fieldset-head-col
+              +link._grey Как работать с калькулятором
+              +tooltip-icon
+          +fieldset-body
+            +grid.fieldset__offset
+              +col({ xl: 6, lg: 12 })
+                +inputbox('Город доставки:')
+                  +select(data-search-enabled="true" data-search-placeholder="Введите название города...")
+                    option(value="1") Абакан (Хакасия республика)
+                    option(value="2") Абан (Красноярский край)
+                    option(value="3") Абатский (Тюменская область)
+                    option(value="4") Абрамовский маяк (Архангельская область)
+                    option(value="5") Агата (Эвенкийский автономный округ)
+                    option(value="6") Агаякан (Саха(Якутия) республика)
+                    option(value="7") Агзу (риморский край)
+                    option(value="8") Агинское (Красноярский край)
+                    option(value="9") Агинское (Агинский Бурятский автономный округ)
+                    option(value="10") БАйхал (Саха(Якутия) республика)
+                    option(value="11") БАбакан (Хакасия республика)
+                    option(value="12") БАбан (Красноярский край)
+                    option(value="13") БАбатский (Тюменская область)
+                    option(value="14") БАбрамовский маяк (Архангельская область)
+                    option(value="15") БАгата (Эвенкийский автономный округ)
+                    option(value="16") БАгаякан (Саха(Якутия) республика)
+                    option(value="17") БАгзу (риморский край)
+                    option(value="18") БАгинское (Красноярский край)
+                    option(value="19") БАгинское (Агинский Бурятский автономный округ)
+                    option(value="20" selected) Москва
+
+                +inputbox
+                  +checkbox('no-city', 1, false, false, 'checkbox', 'js-no-city-in-list')(data-target="#no-city") Моего города нет в списке
+
+              +col({ xl: 6, lg: 12 }).is-hidden#no-city
+                +inputbox('Введите название вашего города:')
+                  +input(type="text" placeholder="название города")._size_md
+            
+            +grid.fieldset__offset
+              +col({ xl: 6, lg: 10, sm: 12 })
+                +inputbox('Служба доставки:')
+                  +checkitems
+                    +checkitems-col(data-tab-target="delivery-1")._width_50.is-active
+                      +checkitem('Курьерская доставка')
+                    +checkitems-col(data-tab-target="delivery-2")._width_50
+                      +checkitem('Пункты самовывоза')
+                        +tooltip-icon
+
+            +tabs-content
+              +tab-wrapper()(data-tab="delivery-1" data-tab-group="deliverytabs").is-active
+                +grid
+                  +col({ xl: 6, lg: 10, sm: 12 })
+                    +delivery-services
+                      +delivery-service
+                        +delivery-service-grid
+                          +delivery-service-col._company
+                            +radiosep._icon._nobox
+                              +radiosepinput(name='delivery-company', value='1', checked=true, data-price="350").js-delivery-item
+                              +radiosepcontent
+                                +icon('grastin', true).icon.icon_grastin
+                        +delivery-service-grid._group
+                          +delivery-service-col._title
+                            +delivery-service-text Курьерская доставка
+                            +tooltip-icon
+                          +delivery-service-col._price
+                            +delivery-service-text 350 руб.
+                          +delivery-service-col._time
+                            +delivery-service-text 1-2 д.
+                      +delivery-service
+                        +delivery-service-grid
+                          +delivery-service-col._company
+                            +radiosep._icon._nobox
+                              +radiosepinput(name='delivery-company', value='1', checked=false, data-price="110").js-delivery-item
+                              +radiosepcontent
+                                +icon('boxberry', true).icon.icon_boxberry
+                        +delivery-service-grid._group
+                          +delivery-service-col._title
+                            +delivery-service-text Курьерская доставка
+                            +tooltip-icon
+                          +delivery-service-col._price
+                            +delivery-service-text 110 руб.
+                          +delivery-service-col._time
+                            +delivery-service-text 1-2 д.
+                      +delivery-service
+                        +delivery-service-grid
+                          +delivery-service-col._company
+                            +radiosep._icon._nobox
+                              +radiosepinput(name='delivery-company', value='1', checked=false, data-price="190").js-delivery-item
+                              +radiosepcontent
+                                +icon('pony-express', true).icon.icon_pexpress
+                        +delivery-service-grid._group
+                          +delivery-service-col._title
+                            +delivery-service-text Курьерская доставка
+                            +tooltip-icon
+                          +delivery-service-col._price
+                            +delivery-service-text 190 руб.
+                          +delivery-service-col._time
+                            +delivery-service-text 2-3 д.
+                    +content-zone
+                      p Сроки доставки указаны в&nbsp;рабочих днях, не&nbsp;считая дня оформления заказа.
+                        br
+                        | При оформлении заказа&nbsp;Вы сможете выбрать любой из&nbsp;удобных способов доставки.
+
+              +tab-wrapper()(data-tab="delivery-2" data-tab-group="deliverytabs")
+                +grid
+                  +col({ xl: 6, lg: 10, sm: 12 })
+                    +delivery-services
+                      +delivery-service
+                        +delivery-service-grid
+                          +delivery-service-col._company
+                            +radiosep._icon
+                              +radiosepinput(name='delivery-company', value='1', checked=false, data-price="0").js-delivery-item
+                              +radiosepcontent
+                                +icon('logo', true).icon.icon_logo
+                        +delivery-service-grid._group
+                          +delivery-service-col._title
+                            +delivery-service-text Proswim
+                            +tooltip-icon
+                          +delivery-service-col._price
+                            +delivery-service-text 0 руб.
+                          +delivery-service-col._time
+                            +delivery-service-text 1 д.
+                      +delivery-service
+                        +delivery-service-grid
+                          +delivery-service-col._company
+                            +radiosep._icon
+                              +radiosepinput(name='delivery-company', value='1', checked=false, data-price="110").js-delivery-item
+                              +radiosepcontent
+                                +icon('grastin', true).icon.icon_grastin
+                        +delivery-service-grid._group
+                          +delivery-service-col._title
+                            +delivery-service-text Grastin
+                            +tooltip-icon
+                          +delivery-service-col._price
+                            +delivery-service-text 110 руб.
+                          +delivery-service-col._time
+                            +delivery-service-text 1-2 д.
+                      +delivery-service
+                        +delivery-service-grid
+                          +delivery-service-col._company
+                            +radiosep._icon
+                              +radiosepinput(name='delivery-company', value='1', checked=false, data-price="241").js-delivery-item
+                              +radiosepcontent
+                                +icon('boxberry', true).icon.icon_boxberry
+                        +delivery-service-grid._group
+                          +delivery-service-col._title
+                            +delivery-service-text Boxberry
+                            +tooltip-icon
+                          +delivery-service-col._price
+                            +delivery-service-text 241 руб.
+                          +delivery-service-col._time
+                            +delivery-service-text 2-3 д.
+                    +content-zone
+                      p Сроки доставки указаны в&nbsp;рабочих днях, не&nbsp;считая дня оформления заказа.
+                        br
+                        | При оформлении заказа&nbsp;Вы сможете выбрать любой из&nbsp;удобных способов доставки.
+                  //- Выбор пункта выдачи
+                  +col(12).js-delivery-map-col
+                    +map#delivery-map
+
+                    +content-zone
+                      p Выберите на карте удобный для Вас пункт выдачи заказов и нажмите кнопку "Добавить сюда"
+                  //- Пункт выдачи выбран
+                  +col({ xl: 6, lg: 12 }).js-selected-self-discharge-point.is-hidden
+                    +address-popup-section
+                      +address-popup._chosen
+                    +inputbox('Комментарий:')
+                      +textarea(placeholder="Комментарий").textarea_big
+      .content-zone
+        p Интернет-магазин PROSWIM осуществляет доставку по&nbsp;всей России, а&nbsp;также в&nbsp;страны СНГ. Не&nbsp;нашли нужный Вам город или способ доставки? Это не&nbsp;проблема! Вы&nbsp;сможете указать их&nbsp;в&nbsp;комментариях к&nbsp;заказу при оформлении, и&nbsp;мы&nbsp;подберем наилучший способ доставки по&nbsp;нужному адресу.
+        p Если у&nbsp;Вас остались вопросы по&nbsp;доставке, оплате или оформлению заказа, позвоните нам по&nbsp;бесплатной линии: <a href="tel:88001002459">8(800) 100-24-59</a> или напишите на&nbsp;e-mail: <a href="info@proswim.ru">info@proswim.ru</a>&nbsp;&mdash; мы&nbsp;будем рады помочь.
+block popups

@@ -108,6 +108,13 @@
         margin-top: 19px;
       }
     }
+
+    .page__delivery & {
+
+      &:not(:first-child) {
+        margin-top: 18px;
+      }
+    }
   }
 
   &__save {

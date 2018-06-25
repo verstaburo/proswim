@@ -231,6 +231,10 @@
     .checkradio.parsley-error & {
       border-color: $lightred-color;
     }
+
+    .checkradio_nobox & {
+      display: none;
+    }
   }
 
   &__icon {

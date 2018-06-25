@@ -1,0 +1,19 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Сравнение (8)'
+  
+block navbar
+  +navbar
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Сравнение'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Сравнение (8)
+
+block popups
