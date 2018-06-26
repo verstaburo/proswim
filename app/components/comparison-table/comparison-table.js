@@ -21,11 +21,14 @@ export default function compare() {
     });
   }
 
-  function declOfNum(number) {
+  function declOfNum(n) {
     const titles = ['отзыв', 'отзыва', 'отзывов'];
-    const cases = [2, 0, 1, 1, 1, 2];
-    const resC = (number % 10 < 5) ? number % 10 : 5;
-    const res = (number % 100 > 4 && number % 100 < 20) ? 2 : cases[resC];
+    let res;
+    if (n % 10 === 1 && n % 100 !== 11) {
+      res = 0;
+    } else {
+      res = n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2;
+    }
     return titles[res];
   }
 
@@ -73,7 +76,7 @@ export default function compare() {
         </div>
       </div>
       <div class="rating__textwrap">
-        <span class="rating__text rating__text_grey js-anchor">${reviews} <span class="hide-sm ">${declOfNum(stars)}</span></span>
+        <span class="rating__text rating__text_grey js-anchor">${reviews} <span class="hide-sm ">${declOfNum(reviews)}</span></span>
       </div>
     </div>`;
     return elem;
