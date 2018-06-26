@@ -1,0 +1,36 @@
+mixin comparison-table()
+  - var data = { item1: { badge: { title: 'Хит', mod: '_green', }, image: 'pr-item-1', heading: 'Шапочка для плавания (для длинных волос) TYR Long Hair...', price: '1 100', buyButton: true, }, item2: { badge: { title: '–40 %', mod: '_red', }, image: 'pr-item-2', heading: 'Шапочка для плавания Aqua Sphere Classic Silicone', price: '680', oldPrice: '792', buyButton: true, }, item3: { badge: { title: 'Хит', mod: '_green', }, image: 'pr-item-3', heading: 'Шапочка для плавания Arena Sirene', price: '1 290', buyButton: true, }, item4: { badge: { title: '–20 %', mod: '_red', }, image: 'pr-item-4', heading: 'Шапочка для плавания Head Silicone Sketch', price: '1 302', oldPrice: '1 399', buyButton: true, }, };
+  +b.comparison-table&attributes(attributes)
+    +e.slider-outbox
+      +e.buttons
+        +e.BUTTON.button._prev
+          +icon('Arrow 1').button-icon
+        +e.BUTTON.button._next
+          +icon('Arrow 1').button-icon
+      +e.slider.swiper-container.js-compare-slider(data-diff="false" data-compare-data="assets/data/compare-data.json" data-compare-data-diff="assets/data/compare-data-diff.json")
+        .swiper-wrapper
+          +e.slide.swiper-slide(data-prodid="id1")
+            +e.BUTTON.remove.js-remove-slide
+              +icon('close').remove-close
+            +product-card(data.item1)._compare
+          +e.slide.swiper-slide(data-prodid="id2")
+            +e.BUTTON.remove.js-remove-slide
+              +icon('close').remove-close
+            +product-card(data.item2)._compare
+          +e.slide.swiper-slide(data-prodid="id3")
+            +e.BUTTON.remove.js-remove-slide
+              +icon('close').remove-close
+            +product-card(data.item3)._compare
+          +e.slide.swiper-slide(data-prodid="id4")
+            +e.BUTTON.remove.js-remove-slide
+              +icon('close').remove-close
+            +product-card(data.item4)._compare
+          +e.slide.swiper-slide(data-prodid="id5")
+            +e.BUTTON.remove.js-remove-slide
+              +icon('close').remove-close
+            +product-card(data.item3)._compare
+          +e.slide.swiper-slide(data-prodid="id6")
+            +e.BUTTON.remove.js-remove-slide
+              +icon('close').remove-close
+            +product-card(data.item2)._compare
+    +e.TABLE.table.table_compare

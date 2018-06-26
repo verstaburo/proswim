@@ -42,6 +42,7 @@ import '../components/orders-section/orders-section';
 import '../components/content-slider/content-slider';
 import '../blocks/compare-button/compare-button';
 import '../blocks/totop/totop';
+import compare from '../components/comparison-table/comparison-table';
 
 const $ = window.$;
 window.L = L;
@@ -65,6 +66,7 @@ $(() => {
   maps();
   scrollanimation();
   sortDropdowns();
+  compare();
 
   setTimeout(() => {
     labelInput();

@@ -71,4 +71,17 @@
 
     &_grey { color: $semigrey-color; }
   }
+
+  &_sm {
+
+    .rating__text {
+
+      @include screen('sm') {
+        @include text-smaller;
+
+        line-height: (21/11);
+        margin-left: 5px;
+      }
+    }
+  }
 }

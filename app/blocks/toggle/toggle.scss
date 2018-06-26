@@ -1,0 +1,58 @@
+.toggle {
+  position: relative;
+  display: block;
+  padding-left: 42px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+
+    .toggle__text {
+      color: $darkblue-color;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &__box {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: inline-block;
+    width: 31px;
+    height: 16px;
+    border-radius: 8px;
+    background-color: $color-main;
+    transform: translateY(-50%);
+    transition: all $ease-main;
+    box-sizing: border-box;
+
+    &::before {
+      @include pseudo;
+
+      top: 2px;
+      left: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      transition: all $ease-main;
+    }
+  }
+
+  &__text {
+    @include text-small;
+
+    transition: color $ease-main;
+  }
+
+  input:checked ~ &__box {
+    background-color: $greyblue-color;
+
+    &::before {
+      transform: translateX(15px);
+    }
+  }
+}

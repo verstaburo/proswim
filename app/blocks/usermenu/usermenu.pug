@@ -9,3 +9,10 @@ mixin userlink(icon, badge)
     +icon(icon).__icon
     +e.SPAN.text
       block
+        
+mixin userlink-compare(icon, badge)
+  +b.A(href="javascript:void(0);").userlink&attributes(attributes)
+    +e.SPAN.badge=badge
+    +icon(icon).__icon
+    +e.SPAN.text
+      block

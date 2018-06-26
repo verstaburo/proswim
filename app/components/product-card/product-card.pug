@@ -37,3 +37,6 @@ mixin product-card(data, isSmall)
       if data.buyInOneClick
         +e.P.buywrap
           +link-icon('Cart button').__buy Купить в 1 клик
+      if data.buyButton
+        +e.DIV.buyblock
+          +button._block.__buybutton.js-add-basket(data-in-basket="Товар в корзине" data-in-basket-short="В корзине" data-name="Добавить в корзину" data-name-short="В корзину" href="#") Добавить в корзину

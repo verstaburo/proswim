@@ -63,4 +63,37 @@
       }
     }
   }
+
+  &_compare {
+    font-weight: 400;
+    color: $darkengrey-color;
+
+    td {
+      padding: 18px 10px 17px 32px;
+      width: 25%;
+
+      @include screen('lg') {
+        padding: 18px 19px 17px 16px;
+        width: 33.33%;
+
+        &:last-child {
+          padding-right: 20px;
+        }
+      }
+
+      @include screen('sm') {
+        padding: 18px 15px 17px;
+        width: 50%;
+        overflow: hidden;
+
+        &:last-child {
+          padding-right: 15px;
+        }
+
+        &:first-child {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
 }

@@ -164,6 +164,12 @@
       width: 14px;
       height: 14px;
     }
+
+    .link_trash & {
+      margin-top: 1px;
+      width: 12px;
+      height: 16px;
+    }
   }
 
   &__badge {
@@ -188,5 +194,19 @@
     .link__icon { fill: $color-border; }
 
     .link__text { @include link-disabled; }
+  }
+
+  &_noborder {
+
+    .link__text {
+      border-bottom-width: 0;
+    }
+  }
+
+  &_small {
+
+    .link__text {
+      @include text-small;
+    }
   }
 }

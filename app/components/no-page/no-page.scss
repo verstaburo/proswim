@@ -59,4 +59,17 @@
       margin-top: 22px;
     }
   }
+
+  &_compare {
+    @include screen('md', min) {
+      padding: 246px 0 274px;
+    }
+
+    .content-zone {
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 14px;
+      }
+    }
+  }
 }

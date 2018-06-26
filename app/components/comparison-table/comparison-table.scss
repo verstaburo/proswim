@@ -1,0 +1,224 @@
+.comparison-table {
+  display: block;
+
+  &__slider {
+    position: relative;
+
+    .swiper-wrapper {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    @include screen('lg') {
+      &::before {
+        @include pseudo;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+        box-shadow:
+          inset 2px 0 3px white,
+          inset -2px 0 3px white;
+      }
+    }
+
+    &-outbox {
+      display: block;
+      position: relative;
+      width: 100%;
+
+      @include screen('lg') {
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        margin-right: -16px;
+      }
+
+      @include screen('sm') {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // top: 50%;
+    top: 130px;
+    left: 0;
+    width: calc(100% + 50px);
+    margin-left: -25px;
+    margin-right: -25px;
+    pointer-events: none;
+    // transform: translate3d(0, -50%, 0);
+    z-index: 3;
+
+    @include screen('lg') {
+      top: 118px;
+      width: calc(100% - 10px);
+      margin: 0 5px;
+    }
+
+    @include screen('sm') {
+      top: 79px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: block;
+    pointer-events: auto;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    box-shadow: 0 16px 22px rgba(157, 164, 171, .6);
+    border: 1px solid $color-border;
+    transition: all $ease-main;
+    background-color: white;
+
+    @include screen('sm') {
+      width: 36px;
+      height: 36px;
+    }
+
+    &.is-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      width: 10px;
+      height: 19px;
+      fill: $anotherdarkgrey-color;
+      transition: all $ease-main;
+      transform: translate3d(0, -50%, 0);
+
+      @include screen('sm') {
+        width: 7px;
+        height: 13px;
+        right: 12px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 16px 22px rgba(157, 164, 171, .7);
+
+      .comparison-table__button-icon {
+        fill: $darkblue-color;
+      }
+    }
+
+    &_prev {
+      box-shadow: 0 -16px 22px rgba(157, 164, 171, .6);
+      transform: rotate(180deg);
+
+      &:hover {
+        box-shadow: 0 -16px 22px rgba(157, 164, 171, .7);
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+
+    &:not(:last-child) {
+
+      &::after {
+        @include pseudo;
+
+        right: -10px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: $color-border;
+
+        @include screen('lg') {
+          right: 0;
+        }
+      }
+    }
+
+    .product-card {
+      flex: 1;
+    }
+  }
+
+  &__remove {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid $verylightgrey45-color;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 3;
+    transition: border $ease-main;
+
+    @include screen('sm') {
+      left: 16px;
+    }
+
+    @include screen('sm') {
+      left: 15px;
+      top: 15px;
+    }
+
+    &-close {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      fill: $midgreyblue34-color;
+      transition: all $ease-main;
+    }
+
+    &:hover {
+      border-color: $lightblue-color;
+
+      .comparison-table__remove-close {
+        fill: $darkblue-color;
+      }
+    }
+  }
+
+  &__table {
+    margin-top: 38px;
+    width: 100%;
+
+    @include screen('lg') {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    @include screen('sm') {
+      margin-top: 16px;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
+}

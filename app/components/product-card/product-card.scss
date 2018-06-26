@@ -435,4 +435,132 @@
       }
     }
   }
+
+  &__buyblock {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 5px;
+
+    @include screen('sm') {
+      margin-top: 10px;
+    }
+  }
+
+  &__buybutton {
+    @include screen('sm') {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &_compare {
+    box-shadow: none;
+    border: none;
+
+    &:hover {
+      box-shadow: none;
+      border: none;
+    }
+
+    @include screen('lg') {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
+    @include screen('sm') {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .product-card {
+
+      &__heading {
+        @include text-middle;
+
+        @include screen('sm') {
+          @include text-tiny;
+        }
+      }
+
+      &__badge {
+
+        @include screen('lg') {
+          top: 20px;
+        }
+
+        @include screen('sm') {
+          top: 15px;
+        }
+      }
+
+      &__price {
+        @include screen('lg') {
+          margin-top: 14px;
+        }
+
+        @include screen('sm') {
+          display: inline-flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          text-align: center;
+          margin-top: 5px;
+        }
+
+        &current {
+          @include heading-4;
+
+          line-height: (24/18);
+          font-weight: 700;
+
+          @include screen('sm') {
+            @include heading-6-bold;
+
+            line-height: (22/15);
+            order: 1;
+            margin-right: 8px;
+          }
+        }
+
+        &old {
+          @include text;
+
+          @include screen('sm') {
+            @include text-tiny;
+
+            line-height: (22/12);
+            width: 100%;
+            margin-right: 8px;
+          }
+        }
+
+        &currency {
+          @include screen('lg') {
+            display: inline;
+          }
+        }
+      }
+
+      &__body {
+        margin-top: 17px;
+      }
+
+      &__image {
+        @include screen('lg') {
+          height: 220px;
+        }
+
+        @include screen('sm') {
+          height: 130px;
+        }
+      }
+    }
+  }
 }

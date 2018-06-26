@@ -12,8 +12,12 @@ block content
       +e.head
         +e.headcol._flexible
           +breadcrumbs(['Главная', 'Сравнение'])
-      +e.head._subhead
-        +e.headcol._flexible
-          +e.H1.heading Сравнение (8)
-
+      +e.head._subhead._subhead_grid
+        +col({ xl: 6, lg: 4, sm: 12 })
+          +e.headcol._flexible
+            +e.H1.heading Сравнение (8)
+        +col({ xl: 6, lg: 8, sm: 12 }).page__controls
+          +toggle.page__controls-item Показывать только различия
+          +link-icon('trash')._grey._noborder._small._trash.page__controls-item.js-del-all-compare-prod(href="comparison-empty.html") Удалить все товары
+      +comparison-table
 block popups

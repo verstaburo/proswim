@@ -42,6 +42,14 @@
     }
   }
 
+  &.in-basket {
+    background-color: white;
+    border-color: $verylightgrey45-color;
+    color: $darkgrey-color;
+    box-shadow: none;
+    cursor: default;
+  }
+
   &_grey {
     background-color: $lightgrey-color;
     box-shadow: none;
