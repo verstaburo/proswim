@@ -1,0 +1,62 @@
+{
+  "structure":["rating","feature1","feature2","feature3","feature4"],
+  "id1":{"rating": {
+      "stars": "4",
+      "reviews": "121"
+    },
+    "feature1": "100% силикон",
+    "feature2": "Фиолетовый",
+    "feature3": "Детская",
+    "feature4": "Резиновая подкладка"
+  },
+  "id2": {
+    "rating": {
+      "stars": "4",
+      "reviews": "121"
+    },
+    "feature1": "90% силикон, 10% поликарбонат",
+    "feature2": "Черный",
+    "feature3": "Мужская",
+    "feature4": "Без подкладки"
+  },
+  "id3": {
+    "rating": {
+      "stars": "3",
+      "reviews": "121"
+    },
+    "feature1": "80% силикон, 20% полиэстер",
+    "feature2": "Серый",
+    "feature3": "Женская",
+    "feature4": "Комбинированная подкладка"
+  },
+  "id4": {
+    "rating": {
+      "stars": "2",
+      "reviews": "1"
+    },
+    "feature1": "100% силикон",
+    "feature2": "Комбинированный принт",
+    "feature3": "Унисекс",
+    "feature4": "Сплошная подкладка"
+  },
+  "id5": {
+    "rating": {
+      "stars": "3",
+      "reviews": "121"
+    },
+    "feature1": "80% силикон, 20% полиэстер",
+    "feature2": "Серый",
+    "feature3": "Женская",
+    "feature4": "Комбинированная подкладка"
+  },
+  "id6": {
+    "rating": {
+      "stars": "4",
+      "reviews": "121"
+    },
+    "feature1": "90% силикон, 10% поликарбонат",
+    "feature2": "Черный",
+    "feature3": "Мужская",
+    "feature4": "Без подкладки"
+  }
+}

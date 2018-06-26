@@ -7,7 +7,8 @@
   right: 20px;
   width: 52px;
   height: 52px;
-  opacity: .4;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity $ease-main;
   background-color: $color-main;
   cursor: pointer;
@@ -19,6 +20,11 @@
     right: 10px;
     width: 30px;
     height: 30px;
+  }
+
+  &.is-visible {
+    opacity: .4;
+    pointer-events: auto;
   }
 
   &:hover {

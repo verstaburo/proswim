@@ -111,7 +111,7 @@ export default function compare() {
     const sourceFull = $('.js-compare-slider').attr('data-compare-data');
     const sourceDiff = $('.js-compare-slider').attr('data-compare-data-diff');
     let source;
-    if (tableDiff === true) {
+    if (tableDiff === 'diff') {
       source = sourceDiff;
     } else {
       source = sourceFull;
@@ -125,14 +125,11 @@ export default function compare() {
       const structure = dataObj.structure;
       let cells;
       if ($(window).width() < window.globalOptions.sizes.sm) {
-        console.log('small');
         cells = 2;
       } else if ($(window).width() < window.globalOptions.sizes.lg) {
         cells = 3;
-        console.log('middle');
       } else {
         cells = 4;
-        console.log('big');
       }
       let row;
       $(structure).each((i, el) => {
@@ -211,6 +208,19 @@ export default function compare() {
     compareSlider.removeAllSlides();
     compareSlider.update();
     document.location.href = href;
+  });
+
+  $(document).on('change', '.js-toggle-diff input', (evt) => {
+    const self = evt.target;
+    const compareTarget = $('.js-compare-slider');
+    if (compareTarget.length > 0) {
+      if ($(self).prop('checked')) {
+        $(compareTarget).attr('data-diff', 'diff');
+      } else {
+        $(compareTarget).attr('data-diff', 'all');
+      }
+      generateTable();
+    }
   });
 }
 /* eslint-enable no-unused-vars */
