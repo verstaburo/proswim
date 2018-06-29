@@ -12,7 +12,7 @@ export default function () {
   });
 
   $(document).on('click', '[data-popup]', function (e) {
-    if ($(window).width() < window.globalOptions.sizes.lg) {
+    if ($(window).width() < window.globalOptions.sizes.md) {
       return;
     }
 
@@ -57,7 +57,7 @@ window.popups = {
 
 $(document).on('click', '.js-popup-back', (evt) => {
   evt.preventDefault();
-  if ($(window).width() < window.globalOptions.sizes.lg) {
+  if ($(window).width() < window.globalOptions.sizes.md) {
     window.history.back();
   } else {
     $.fancybox.close();

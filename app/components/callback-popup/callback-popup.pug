@@ -4,9 +4,9 @@ mixin callback-popup(isPage)
     +popup-content
       +e.FORM.form.__grid(method='post' action='/' data-parsley-validate data-parsley-trigger="blur")
         +col(12)
-          +input(type='text' name="name" placeholder="Имя *" required)._size_md
+          +input-label('Имя *')(type='text' name="name" required)._size_md
         +col(12)
-          +input(type='tel' name="phone" placeholder="Телефон *" required data-type="tel")._size_md
+          +input-label('Телефон *')(type='tel' name="phone" pattern=".{10,}" required data-parsley-type="digits")._size_md
         +col(12)
           +select(name="time" data-toggler-icon='clock-copy' data-toggler-icon-mod='clock')
             option(value="" placeholder) Выберите время звонка

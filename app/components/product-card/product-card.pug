@@ -17,7 +17,7 @@ mixin product-card(data, isSmall)
         +product-main-slider(data.images, data.heading, false)
 
         if data.button
-          +button.DIV._size_md.__button Быстрый просмотр
+          +button.DIV._size_md.__button.js-fancybox(href="product.html" data-popup="#preview-popup") Быстрый просмотр
 
       +e.nav
         +product-nav-slider(data.images, data.heading)._filter.js-product-nav-slider

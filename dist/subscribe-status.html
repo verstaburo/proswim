@@ -2279,6 +2279,545 @@
         </div>
     </div>
     <div class="popups">
+        <div class="popup login-popup" id="login-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Войти в аккаунт</div>
+            </div>
+            <div class="popup__content">
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Email адрес</span>
+                            </span>
+                            <input class="input input_size_md" type="email" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Пароль</span>
+                            </span>
+                            <input class="input input_size_md" type="password" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <a class="link link_dark js-fancybox" href="#password-recovery-popup">
+                            <span class="link__text">Забыли пароль?</span>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_size_big button_block" type="submit">Войти</button>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__footer">
+                <div class="popup__footerheading">Войти через соцсети</div>
+                <div class="social-buttons social-buttons_big">
+                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
+                    </a>
+                </div>
+                <div class="popup__text">Нет аккаунта?
+                    <a class="link js-fancybox" href="registration.html" data-popup="#registration-popup">
+                        <span class="link__text">Зарегистрируйтесь!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="popup registration-popup" id="registration-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Регистрация</div>
+            </div>
+            <div class="popup__content">
+                <form class="popup__form popup__grid js-registration-popup-form" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя</span>
+                            </span>
+                            <input class="input input_size_md" type="text" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Email адрес</span>
+                            </span>
+                            <input class="input input_size_md" type="email" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Пароль</span>
+                            </span>
+                            <input class="input input_size_md" type="password" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_size_big button_block" type="submit">Зарегистрироваться</button>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="checkradio">
+                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
+                            <span class="checkradio__box">
+                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            </span>
+                            <span class="checkradio__content">Я ознакомлен с
+                                <a class="link" href="#">
+                                    <span class="link__text">публичной офертой</span>
+                                </a> и соглашаюсь с
+                                <a class="link" href="#">
+                                    <span class="link__text">условиями обработки персональных данных</span>
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__footer registration-popup__footer">
+                <div class="popup__footerheading">Войти через соцсети</div>
+                <div class="social-buttons social-buttons_big">
+                    <a class="social-button social-button_vk social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_vk-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_fb social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_facebook-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_ok social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_odnoklassniki-icon"></use></svg>
+                    </a>
+                    <a class="social-button social-button_tw social-button_big social-button_colorized" href="javascript:void(0);">
+                        <svg class="social-button__icon"><use xlink:href="assets/images/icon.svg#icon_twitter-icon"></use></svg>
+                    </a>
+                </div>
+                <div class="popup__text">Есть аккаунт?
+                    <a class="link js-fancybox" href="login.html" data-popup="#login-popup">
+                        <span class="link__text">Выполнить вход!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="popup password-recovery-popup" id="password-recovery-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Восстановить пароль</div>
+            </div>
+            <div class="popup__content password-recovery-popup__content">
+                <div class="popup__subheading">Введите E-mail на который
+                    <br/>был зарегистрирован аккаунт ProSwim.ru</div>
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="focusout">
+                    <div class="grid__col grid__col_xl_12">
+                        <input class="input input_size_md" type="email" required="required" />
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_size_big button_block" type="submit">Выслать инструкцию</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup registration-complete-popup" id="registration-complete-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Поздравляем!</div>
+            </div>
+            <div class="popup__content registration-complete-popup__content">
+                <svg class="registration-complete-popup__icon"><use xlink:href="assets/images/icon.svg#icon_note"></use></svg>
+                <div class="registration-complete-popup__body">
+                    <H5 class="registration-complete-popup__bodyheading">Регистрация прошла успешно</H5>
+                    <div class="content-zone registration-complete-popup__bodytext">
+                        <p>Благодарим за&nbsp;регистрацию в&nbsp;proswimru!</p>
+                        <p>Ваши логин и&nbsp;пароль отправлены на&nbsp;указанный при регистрации e-mail.</p>
+                        <p>Добро пожаловать, Alex!</p>
+                        <p>В "
+                            <a href="#">Моем кабинете</a>" Вы&nbsp;можете получить информацию о&nbsp;сделанных вами заказах или
+                            <a href="#">изменить свои персональные данные</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup preview-popup" id="preview-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__content">
+                <div class="product-item-section product-item-section_preview js-product-item-section">
+                    <div class="product-item-section__grid">
+                        <div class="product-item-section__grid-col product-item-section__grid-col_left product-item-section__mainslidercol">
+                            <div class="product-item-section__mainslider">
+                                <div class="badge badge_red badge_md product-item-section__badge">–40 %</div>
+                                <div class="product-main-slider product-main-slider_preview swiper-container js-product-main-slider" data-touch-ratio="false">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide product-main-slider__slide_video">
+                                            <video src="content-img/TL1_h264420_720p_HQ.mp4"></video>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                        <div class="swiper-slide product-main-slider__slide js-product-main-slider-zoom">
+                                            <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                            <svg class="product-main-slider__zoom"><use xlink:href="assets/images/icon.svg#icon_zoom-icon"></use></svg>
+                                        </div>
+                                    </div>
+                                    <div class="product-main-slider__buttons">
+                                        <div class="product-main-slider__button product-main-slider__button_prev">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_arrow-1"></use></svg>
+                                        </div>
+                                        <div class="product-main-slider__button product-main-slider__button_next">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_arrow-1"></use></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item-section__navslider">
+                                <div class="product-nav-slider product-nav-slider_big js-product-nav-slider">
+                                    <div class="product-nav-slider__buttons">
+                                        <div class="product-nav-slider__button product-nav-slider__button_prev">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                        </div>
+                                        <div class="product-nav-slider__button product-nav-slider__button_next">
+                                            <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                        </div>
+                                    </div>
+                                    <div class="product-nav-slider__slider swiper-container">
+                                        <div class="swiper-wrapper product-nav-slider__slides">
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image product-nav-slider__image_video">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide product-nav-slider__slide">
+                                                <div class="product-nav-slider__image">
+                                                    <img src="content-img/product-cards/2401.jpg" alt="Очки для плавания Cobra Mirror" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item-section__grid-col product-item-section__grid-col_right product-item-section__sidebarcol">
+                            <h2 class="product-item-section__title">Очки для плавания Cobra Mirror</h2>
+                            <form class="js-product-item-form" method="POST" data-parsley-validate="data-parsley-validate">
+                                <div class="product-item-section__price">
+                                    <span class="product-item-section__pricecurrent">13 792 руб.</span>
+                                    <span class="product-item-section__priceold">14 792,40 руб.</span>
+                                </div>
+                                <input class="js-product-color-input" type="hidden" name="color" />
+                                <div class="product-item-section__rating">
+                                    <div class="rating rating_md">
+                                        <div class="rating__stars">
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box is-active">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                            <div class="rating__box">
+                                                <svg class="rating__icon"><use xlink:href="assets/images/icon.svg#icon_star"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="rating__textwrap">
+                                            <a class="rating__text rating__text_grey js-anchor" href="#reviews">Отзывы (2)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="product-item-section__vendorcode">
+                                    <span class="product-item-section__vendorcodeheading">Артикул:</span>
+                                    <span>92354</span>
+                                </p>
+                                <div class="product-item-section__block">
+                                    <p class="product-item-section__heading">Выберите размер:</p>
+                                    <div class="product-item-section__blockgrid">
+                                        <p class="product-item-section__text">(французский размер - FR)</p>
+                                        <p class="product-item-section__text product-item-section__text_right">
+                                            <a class="link link_underline link_dark">
+                                                <span class="link__text">Узнать свой
+                                                    <span class="hide-xs">размер</span>
+                                                </span>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="product-item-section__sizes">
+                                    <div class="sizes">
+                                        <label class="size">
+                                            <input class="size__control" name="size" value="08-09Y" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                            />
+                                            <span class="size__box">08-09Y</span>
+                                        </label>
+                                        <label class="size">
+                                            <input class="size__control" name="size" value="35/37" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                            />
+                                            <span class="size__box">35/37</span>
+                                        </label>
+                                        <label class="size">
+                                            <input class="size__control" name="size" value="32/34" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                            />
+                                            <span class="size__box">32/34</span>
+                                        </label>
+                                        <label class="size">
+                                            <input class="size__control" name="size" value="S" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                            />
+                                            <span class="size__box">S</span>
+                                        </label>
+                                        <label class="size">
+                                            <input class="size__control" name="size" value="M" type="radio" required="required" data-parsley-errors-container=".product-item-section__size-errors" data-parsley-required-message="Пожалуйста, выберите размер"
+                                            />
+                                            <span class="size__box">M</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="product-item-section__block">
+                                    <p class="product-item-section__heading">Выберите цвет:</p>
+                                </div>
+                                <div class="product-item-section__colors">
+                                    <div class="product-nav-slider product-nav-slider_md product-nav-slider_filter product-nav-slider_colors js-product-item-color-slider">
+                                        <div class="product-nav-slider__buttons">
+                                            <div class="product-nav-slider__button product-nav-slider__button_prev">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                            <div class="product-nav-slider__button product-nav-slider__button_next">
+                                                <svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="product-nav-slider__slider swiper-container">
+                                            <div class="swiper-wrapper product-nav-slider__slides">
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Голубой">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401.jpg" alt="Голубой" title="Голубой" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Голубой</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Желтый">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_2.jpg" alt="Желтый" title="Желтый" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Желтый</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Белый">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_3.jpg" alt="Белый" title="Белый" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Белый</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Голубой">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_4.jpg" alt="Голубой" title="Голубой" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Голубой</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Желтый">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_5.jpg" alt="Желтый" title="Желтый" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Желтый</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Белый">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_6.jpg" alt="Белый" title="Белый" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Белый</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Голубой">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_7.jpg" alt="Голубой" title="Голубой" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Голубой</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Белый">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_8.jpg" alt="Белый" title="Белый" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Белый</p>
+                                                </div>
+                                                <div class="swiper-slide product-nav-slider__slide" data-color="Голобой">
+                                                    <div class="product-nav-slider__image">
+                                                        <img src="content-img/product-cards/2401_9.jpg" alt="Голобой" title="Голобой" />
+                                                    </div>
+                                                    <p class="product-nav-slider__text">Голобой</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-item-section__buttons">
+                                    <button class="button" type="submit">Добавить в корзину</button>
+                                    <div class="product-item-section__size-errors"></div>
+                                    <button class="button button_greyblue" type="button">Купить в 1 клик</button>
+                                </div>
+                                <div class="product-item-section__compare">
+                                    <a class="compare-button js-add-comparison">
+                                        <span class="compare-button__add">
+                                            <svg class="compare-button__icon compare-button__icon_compare"><use xlink:href="assets/images/icon.svg#icon_compare"></use></svg>
+                                            <span class="compare-button__text">Добавить к сравнению</span>
+                                        </span>
+                                        <span class="compare-button__added">
+                                            <svg class="compare-button__icon compare-button__icon_checked"><use xlink:href="assets/images/icon.svg#icon_round-check"></use></svg>
+                                            <span class="compare-button__text">Товар добавлен к сравнению</span>
+                                        </span>
+                                    </a>
+                                    <a class="link link_medium link_dark-blue" href="product.html">
+                                        <span class="link__text">Подробнее о товаре</span>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup opt-status-popup" id="opt-status-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Спасибо!</div>
+            </div>
+            <div class="popup__content popup__content_success">
+                <svg class="popup__icon popup__icon_phonecall"><use xlink:href="assets/images/icon.svg#icon_phonecall"></use></svg>
+                <div class="popup__body"></div>
+                <h5 class="popup__bodyheading">Ваша заявка принята.</h5>
+                <div class="popup__bodytext content-zone">
+                    <p>Мы&nbsp;свяжемся с&nbsp;Вами для уточнения деталей.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup phonecall-status-popup" id="phonecall-status-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Обратный звонок</div>
+            </div>
+            <div class="popup__content popup__content_success">
+                <svg class="popup__icon popup__icon_phonecall"><use xlink:href="assets/images/icon.svg#icon_phonecall"></use></svg>
+                <div class="popup__body"></div>
+                <h5 class="popup__bodyheading">Спасибо за оставленную заявку!</h5>
+                <div class="popup__bodytext content-zone">
+                    <p>Мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;течение 30&nbsp;минут, либо в&nbsp;указанное Вами время.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup phonecall-status2-popup" id="phonecall-status2-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Обратный звонок</div>
+            </div>
+            <div class="popup__content popup__content_success">
+                <svg class="popup__icon popup__icon_phonecall"><use xlink:href="assets/images/icon.svg#icon_phonecall"></use></svg>
+                <div class="popup__body"></div>
+                <h5 class="popup__bodyheading">Спасибо за оставленную заявку!</h5>
+                <div class="popup__bodytext popup__bodytext_paddings content-zone">
+                    <p>Интернет-магазин работает каждый день с&nbsp;9:00 до&nbsp;21:00 по&nbsp;московскому времени.</p>
+                    <p>Мы&nbsp;сможем перезвонить Вам в&nbsp;рабочее время.</p>
+                </div>
+            </div>
+        </div>
         <div class="popup subscribe-status-popup" id="subscribe-status-popup">
             <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
                 <span class="circle-button__button">
@@ -2295,6 +2834,228 @@
                 <div class="popup__bodytext content-zone">
                     <p>Мы&nbsp;отправили Вам на&nbsp;указанную почту секретный промокод&nbsp;&mdash; используйте его, чтобы получить скидку&nbsp;10% на&nbsp;Ваш заказ уже сейчас!</p>
                 </div>
+            </div>
+        </div>
+        <div class="popup subscribe-status2-popup" id="subscribe-status2-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Внимание!</div>
+            </div>
+            <div class="popup__content popup__content_success">
+                <svg class="popup__icon popup__icon_info"><use xlink:href="assets/images/icon.svg#icon_info"></use></svg>
+                <div class="popup__body"></div>
+                <h5 class="popup__bodyheading">Ранее Вы&nbsp;уже получали промокод по&nbsp;указанному email адресу.</h5>
+                <div class="popup__bodytext popup__bodytext_paddings content-zone">
+                    <p>Пожалуйста, проверьте Вашу почту
+                        <a href="mailto:content3@proswim.ru">content3@proswim.ru</a>.</p>
+                    <p>Если Вам не&nbsp;пришло письмо с&nbsp;промокодом, свяжитесь с&nbsp;нами по&nbsp;бесплатной линии:
+                        <a href="tel:88001002459">8 (800) 100-24-59</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup order-status-popup" id="order-status-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Статус заказа</div>
+            </div>
+            <div class="popup__content">
+                <h6 class="popup__subheading">Для получения информации введите номер заказа и&nbsp;телефон</h6>
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Номер заказа</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="order-number" pattern=".{5,6}" required="required" data-parsley-type="digits" />
+                        </label>
+                        <div class="popup__note">Номер заказа Proswim содержит 5-6&nbsp;цифр, например 100123</div>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Телефон</span>
+                            </span>
+                            <input class="input input_size_md" type="tel" name="phone" pattern=".{10,}" required="required" data-parsley-type="digits" />
+                        </label>
+                        <div class="popup__note">Номер телефона указывается в&nbsp;формате без&nbsp;8, например 9056543210</div>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Получить информацию</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup callback-popup" id="callback-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header">
+                <div class="popup__heading">Обратный звонок</div>
+            </div>
+            <div class="popup__content">
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя *</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="name" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Телефон *</span>
+                            </span>
+                            <input class="input input_size_md" type="tel" name="phone" pattern=".{10,}" required="required" data-parsley-type="digits" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock" name="time">
+                            <option value="" placeholder="placeholder">Выберите время звонка</option>
+                            <option value="1">с 16:00 до 18:00</option>
+                            <option value="2">с 16:00 до 18:00</option>
+                            <option value="3">с 16:00 до 18:00</option>
+                            <option value="4">с 16:00 до 18:00</option>
+                            <option value="5">с 16:00 до 18:00</option>
+                            <option value="6">с 16:00 до 18:00</option>
+                        </select>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <textarea class="textarea" placeholder="Укажите номер заказа или суть вопроса"></textarea>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Отправить</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="checkradio">
+                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
+                            <span class="checkradio__box">
+                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            </span>
+                            <span class="checkradio__content">Я ознакомлен с
+                                <a class="link" href="#">
+                                    <span class="link__text">публичной офертой</span>
+                                </a> и соглашаюсь с
+                                <a class="link" href="#">
+                                    <span class="link__text">условиями обработки персональных данных</span>
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup discount-popup" id="discount-popup">
+            <a class="circle-button circle-button_white circle-button_close popup__close popup__close_circle js-popup-close">
+                <span class="circle-button__button">
+                    <svg class="circle-button__icon"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+                </span>
+            </a>
+            <div class="popup__header popup__header_color">
+                <div class="discount popup__discount">
+                    <div class="discount__text">-10%</div>
+                </div>
+                <div class="popup__heading">Скидка на онлайн-покупку</div>
+                <div class="popup__text">за&nbsp;подписку на&nbsp;наши новости!</div>
+            </div>
+            <div class="popup__content popup__content_pb0 popup__content_ptb">
+                <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="name" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Email</span>
+                            </span>
+                            <input class="input input_size_md" type="email" name="email" required="required" />
+                        </label>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <button class="button button_spinner button_size_big button_block" type="submit">
+                            <div class="button__text"> Получить скидку</div>
+                            <div class="button__loading">
+                                <svg class="spinner button__spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <path class="spinner__spin-0" d="M7.2,7.2L7.2,7.2c-0.4,0.4-1,0.4-1.4,0L2.9,4.3c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C7.6,6.1,7.6,6.8,7.2,7.2z"></path>
+                                    <path class="spinner__spin-1" d="M6,10L6,10c0,0.6-0.4,1-1,1H1c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C5.6,9,6,9.4,6,10z"></path>
+                                    <path class="spinner__spin-2" d="M2.9,17.1L2.9,17.1c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C4,17.5,3.3,17.5,2.9,17.1z"></path>
+                                    <path class="spinner__spin-3" d="M10,14L10,14c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0c-0.6,0-1-0.4-1-1v-4C9,14.4,9.4,14,10,14z"></path>
+                                    <path class="spinner__spin-4" d="M17.1,17.1L17.1,17.1c-0.4,0.4-1,0.4-1.4,0l-2.8-2.8c-0.4-0.4-0.4-1,0-1.4l0,0 c0.4-0.4,1-0.4,1.4,0l2.8,2.8C17.5,16,17.5,16.7,17.1,17.1z"></path>
+                                    <path class="spinner__spin-5" d="M20,10L20,10c0,0.6-0.4,1-1,1h-4c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h4C19.6,9,20,9.4,20,10z"></path>
+                                    <path class="spinner__spin-6" d="M12.8,7.2L12.8,7.2c-0.4-0.4-0.4-1,0-1.4l2.8-2.8c0.4-0.4,1-0.4,1.4,0l0,0 c0.4,0.4,0.4,1,0,1.4l-2.8,2.8C13.9,7.6,13.2,7.6,12.8,7.2z"></path>
+                                    <path class="spinner__spin-7" d="M10,0L10,0c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1l0,0C9.4,6,9,5.6,9,5V1C9,0.4,9.4,0,10,0z"></path>
+                                </svg>
+                                <div class="button__text">Отправка...</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="grid__col grid__col_xl_12">
+                        <label class="checkradio">
+                            <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
+                            <span class="checkradio__box">
+                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            </span>
+                            <span class="checkradio__content">Я ознакомлен с
+                                <a class="link" href="#">
+                                    <span class="link__text">публичной офертой</span>
+                                </a> и соглашаюсь с
+                                <a class="link" href="#">
+                                    <span class="link__text">условиями обработки персональных данных</span>
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__panel">
+                <a class="button button_grey button_size_big button_block popup__panel-button js-popup-back">Спасибо, я не хочу скидку</a>
             </div>
         </div>
     </div>

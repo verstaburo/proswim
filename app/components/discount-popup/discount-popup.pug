@@ -5,9 +5,9 @@ mixin discount-popup(isPage)
     +popup-content._pb0._ptb
       +e.FORM.form.__grid(method='post' action='/' data-parsley-validate data-parsley-trigger="blur")
         +col(12)
-          +input(type='text' name="name" placeholder="Имя" required)._size_md
+          +input-label('Имя')(type='text' name="name" required)._size_md
         +col(12)
-          +input(type='email' name="email" placeholder="Email" required)._size_md
+          +input-label('Email')(type='email' name="email" required)._size_md
         +col(12)
           +button-loading('button')(type='submit')._size_big._block Получить скидку
         +col(12)
