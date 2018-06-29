@@ -2291,10 +2291,20 @@
             <div class="popup__content">
                 <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="text" name="name" placeholder="Имя *" required="required" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя *</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="name" required="required" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон *" required="required" data-type="tel" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Телефон *</span>
+                            </span>
+                            <input class="input input_size_md" type="tel" name="phone" pattern=".{10,}" required="required" data-parsley-type="digits" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
                         <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock" name="time">
@@ -2361,10 +2371,20 @@
             <div class="popup__content">
                 <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="text" name="name" placeholder="Имя *" required="required" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя *</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="name" required="required" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон *" required="required" data-type="tel" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Телефон *</span>
+                            </span>
+                            <input class="input input_size_md" type="tel" name="phone" pattern=".{10,}" required="required" data-parsley-type="digits" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
                         <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock" name="time">

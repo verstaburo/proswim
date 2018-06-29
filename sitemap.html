@@ -2871,11 +2871,21 @@
                 <h6 class="popup__subheading">Для получения информации введите номер заказа и&nbsp;телефон</h6>
                 <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="text" name="name" pattern=".{5,6}" placeholder="Номер заказа" required="required" data-parsley-type="digits" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Номер заказа</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="order-number" pattern=".{5,6}" required="required" data-parsley-type="digits" />
+                        </label>
                         <div class="popup__note">Номер заказа Proswim содержит 5-6&nbsp;цифр, например 100123</div>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон" required="required" data-type="tel" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Телефон</span>
+                            </span>
+                            <input class="input input_size_md" type="tel" name="phone" pattern=".{10,}" required="required" data-parsley-type="digits" />
+                        </label>
                         <div class="popup__note">Номер телефона указывается в&nbsp;формате без&nbsp;8, например 9056543210</div>
                     </div>
                     <div class="grid__col grid__col_xl_12">
@@ -2911,10 +2921,20 @@
             <div class="popup__content">
                 <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="text" name="name" placeholder="Имя *" required="required" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя *</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="name" required="required" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="tel" name="phone" placeholder="Телефон *" required="required" data-type="tel" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Телефон *</span>
+                            </span>
+                            <input class="input input_size_md" type="tel" name="phone" pattern=".{10,}" required="required" data-parsley-type="digits" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
                         <select class="select js-select" data-toggler-icon="clock-copy" data-toggler-icon-mod="clock" name="time">
@@ -2983,10 +3003,20 @@
             <div class="popup__content popup__content_pb0 popup__content_ptb">
                 <form class="popup__form popup__grid" method="post" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="blur">
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="text" name="name" placeholder="Имя" required="required" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Имя</span>
+                            </span>
+                            <input class="input input_size_md" type="text" name="name" required="required" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
-                        <input class="input input_size_md" type="email" name="email" placeholder="Email" required="required" />
+                        <label class="input-label js-input-dynamic">
+                            <span class="input-label__placeholder">
+                                <span class="input-label__label">Email</span>
+                            </span>
+                            <input class="input input_size_md" type="email" name="email" required="required" />
+                        </label>
                     </div>
                     <div class="grid__col grid__col_xl_12">
                         <button class="button button_spinner button_size_big button_block" type="submit">
