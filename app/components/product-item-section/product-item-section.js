@@ -12,54 +12,55 @@ function productItemSection() {
   /**
    * Инициализация главного слайдера
    */
+  $(block).each((i, el) => {
+    const mainSlider = $(el).find('.js-product-main-slider');
+    const navSlider = $(el).find('.js-product-nav-slider');
 
-  const mainSlider = block.find('.js-product-main-slider');
-  const navSlider = block.find('.js-product-nav-slider');
+    if (!navSlider.length || !mainSlider.length) {
+      return;
+    }
 
-  if (!navSlider.length || !mainSlider.length) {
-    return;
-  }
-
-  const settings = {
-    slidesPerView: 7,
-    breakpoints: {
-      [window.globalOptions.sizes.lg - 1]: {
-        slidesPerView: 5,
+    const settings = {
+      slidesPerView: 7,
+      breakpoints: {
+        [window.globalOptions.sizes.lg - 1]: {
+          slidesPerView: 5,
+        },
+        [window.globalOptions.sizes.sm - 1]: {
+          slidesPerView: 4,
+        },
       },
-      [window.globalOptions.sizes.sm - 1]: {
-        slidesPerView: 4,
+    };
+
+    slider(navSlider, mainSlider, settings);
+
+    /**
+     * инициализация слайдера выбора цвета
+     */
+
+    const colorSlider = $(el).find('.js-product-item-color-slider');
+
+    const colorSettings = {
+      slidesPerView: 7,
+      breakpoints: {
+        [window.globalOptions.sizes.lg - 1]: {
+          slidesPerView: 4,
+        },
       },
-    },
-  };
+      callbackOnSlideChange(currentSlide) {
+        const color = currentSlide.data('color');
+        const colorInput = $('.js-product-color-input');
 
-  slider(navSlider, mainSlider, settings);
+        if (!color || !colorInput) {
+          return;
+        }
 
-  /**
-   * инициализация слайдера выбора цвета
-   */
-
-  const colorSlider = block.find('.js-product-item-color-slider');
-
-  const colorSettings = {
-    slidesPerView: 7,
-    breakpoints: {
-      [window.globalOptions.sizes.lg - 1]: {
-        slidesPerView: 4,
+        colorInput.val(color);
       },
-    },
-    callbackOnSlideChange(currentSlide) {
-      const color = currentSlide.data('color');
-      const colorInput = $('.js-product-color-input');
+    };
 
-      if (!color || !colorInput) {
-        return;
-      }
-
-      colorInput.val(color);
-    },
-  };
-
-  slider(colorSlider, null, colorSettings);
+    slider(colorSlider, null, colorSettings);
+  });
 }
 
 $(window).on('load', productItemSection);
@@ -69,7 +70,8 @@ $(document).on('click', '.js-product-item-color-slider .product-nav-slider__slid
   const self = $(this);
   const img = self.find('.product-nav-slider__image img').attr('src');
 
-  const targetImageElement = $('.js-product-main-slider .product-main-slider__slide:eq(0) img');
+  const parentHigh = $(self).closest('.js-product-item-section') || $(self).closest('.js-product-card');
+  const targetImageElement = $(parentHigh).find('.js-product-main-slider .product-main-slider__slide:eq(0) img');
 
   const mainSlider = targetImageElement.parents('.swiper-container').get(0).swiper;
 

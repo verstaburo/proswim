@@ -17,7 +17,7 @@ window.initMainSlider = function (el) {
     },
     roundLengths: true,
     on: {
-      slideNextTransitionEnd() {
+      slideChangeTransitionEnd() {
         const sliderElement = $(this.$el);
         const activeSlide = sliderElement.find('.swiper-slide-active');
 

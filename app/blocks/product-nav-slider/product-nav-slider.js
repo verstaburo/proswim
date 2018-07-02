@@ -15,20 +15,42 @@ export default (el, mainSlider, settings = {}) => {
 
   delete settings.callbackOnSlideChange; // eslint-disable-line
 
-  const initialSettings = {
-    slideToClickedSlide: true,
-    slidesPerView: 5,
-    navigation: {
-      nextEl,
-      prevEl,
-    },
-    breakpoints: {
-      [window.globalOptions.sizes.lg - 1]: {
-        slidesPerView: 4,
+  let initialSettings;
+
+  if (!mainSlider || !mainSlider.length || !mainSlider[0].swiper) {
+    initialSettings = {
+      slideToClickedSlide: true,
+      slidesPerView: 5,
+      navigation: {
+        nextEl,
+        prevEl,
       },
-    },
-    ...settings,
-  };
+      breakpoints: {
+        [window.globalOptions.sizes.lg - 1]: {
+          slidesPerView: 4,
+        },
+      },
+      ...settings,
+    };
+  } else {
+    initialSettings = {
+      slideToClickedSlide: true,
+      slidesPerView: 5,
+      navigation: {
+        nextEl,
+        prevEl,
+      },
+      breakpoints: {
+        [window.globalOptions.sizes.lg - 1]: {
+          slidesPerView: 4,
+        },
+      },
+      controller: {
+        control: mainSlider[0].swiper,
+      },
+      ...settings,
+    };
+  }
 
   // eslint-disable-next-line no-unused-vars
   const slider = new Swiper(sliderElement, {
@@ -85,6 +107,7 @@ export default (el, mainSlider, settings = {}) => {
       },
     },
   });
-
-  slider.update();
+  $(sliderElement).each((ix, elem) => {
+    $(elem)[0].swiper.update();
+  });
 };
