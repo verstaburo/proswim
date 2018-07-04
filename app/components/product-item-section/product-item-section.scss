@@ -21,7 +21,7 @@
     }
 
     @include screen(sm) {
-      min-width: auto;
+      min-width: 0;
     }
   }
 
