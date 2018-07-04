@@ -17,13 +17,13 @@ function toggleVerticalMenu(e) {
   e.preventDefault();
 
   const self = $(this);
-  const parent = self.parents('.vertical-menu');
+  const parent = self.closest('.vertical-menu');
   const btn = self.find('.vertical-menu__button');
 
   btn.toggleClass('is-active');
 
   parent
-    .find('.vertical-menu__items')
+    .children('.vertical-menu__items')
     .slideToggle(window.globalOptions.animationDuration, () => {
       parent.toggleClass('is-active');
     });

@@ -48,7 +48,7 @@ mixin product-item-section()
               +product-nav-slider([{ src: '2401', text: 'Голубой' }, { src: '2401_2', text: 'Желтый' }, { src: '2401_3', text: 'Белый' }, { src: '2401_4', text: 'Голубой' }, { src: '2401_5', text: 'Желтый' }, { src: '2401_6', text: 'Белый' }, { src: '2401_7', text: 'Голубой' }, { src: '2401_8', text: 'Белый' }, { src: '2401_9', text: 'Голобой' }], 'Очки для плавания Cobra Mirror')._md._filter._colors.js-product-item-color-slider
 
             +e.buttons
-              +button.BUTTON(type="submit") Добавить в корзину
+              +button(href="item-added-popup.html" data-popup="#item-added-popup").js-fancybox Добавить в корзину
               +e.size-errors
               +button.BUTTON(type="button")._greyblue Купить в 1 клик
             

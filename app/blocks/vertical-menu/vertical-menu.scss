@@ -58,11 +58,11 @@
   &__items {
     margin-top: 1px;
 
-    .vertical-menu_accordion & {
+    .vertical-menu_accordion > & {
       display: none;
     }
 
-    .vertical-menu_accordion.is-active & {
+    .vertical-menu_accordion.is-active > & {
       display: block;
     }
   }

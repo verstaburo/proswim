@@ -54,3 +54,15 @@ mixin review-form-section
         p.review-form-section__text Ваш отзыв поможет кому-то сделать выбор
 
         +review-form.review-form-section__form
+        
+mixin review-form-section2
+  +section.review-form-section
+    +section-content
+
+      .review-form-section__short
+        p.review-form-section__text Поделитесь своим отзывом об этом товаре, и многие будут вам благодарны.
+        +button(type="button").review-form-section__button.js-review-form-section-button Оставить вопрос
+
+      .review-form-section__full
+        h3.review-form-section__heading Оставить вопрос
+        p.review-form-section__text Ваш отзыв поможет кому-то сделать выбор

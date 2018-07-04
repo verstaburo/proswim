@@ -6,10 +6,10 @@ mixin big-review-section
           +tab()(data-tab-target="reviews").is-active Отзывы (5)
           +tab()(data-tab-target="questions") Вопросы (0)
 
-        +review-form-section
-
         +tabs-content
           +tab-wrapper()(data-tab="reviews" data-tab-group="product-review-tabs").is-active
+            +review-form-section
             +reviews-section-full(getData('review-item-card'), true)
           +tab-wrapper()(data-tab="questions" data-tab-group="product-review-tabs")
-            p Это таб 2
+            +review-form-section2
+            p Здесь должен быть список вопросов

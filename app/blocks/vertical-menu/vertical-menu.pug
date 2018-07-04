@@ -9,7 +9,18 @@ mixin vertical-menu(heading, links, isAccordion)
     +e.UL.items
       if links
         each link in links
-          +vertical-menu-link(href=link.href)= link.title
+          - if (link.href) {
+            +vertical-menu-link(href=link.href)= link.title
+          - } else {
+            +e.LI.item
+              +b.DIV.vertical-menu_accordion
+                +e.H6.heading(class="js-vertical-menu-button")
+                  +e.SPAN!= link.title 
+                  +e.SPAN.button
+                +e.UL.items
+                  each innerlink in link.links 
+                    +vertical-menu-link(href=innerlink.href)= innerlink.title
+          - }
       block
 
 mixin vertical-menu-link

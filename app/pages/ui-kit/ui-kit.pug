@@ -460,6 +460,17 @@ block content
           +vertical-menu-link(href='javascript:void(0);') Премиум-очки
           +vertical-menu-link(href='javascript:void(0);') Повседневные очки
           +vertical-menu-link(href='javascript:void(0);') Маски и трубки
+        div(style="padding: 8px 0")
+        +vertical-menu('Очки', null, true)._accordion.is-active
+          +vertical-menu-link(href='javascript:void(0);') Очки для старта
+          +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+          +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+          +e.LI.item 
+            +vertical-menu('Очки2', null, true)._accordion
+              +vertical-menu-link(href='javascript:void(0);') Очки для старта
+              +vertical-menu-link(href='javascript:void(0);') Премиум-очки
+              +vertical-menu-link(href='javascript:void(0);') Повседневные очки
+              +vertical-menu-link(href='javascript:void(0);') Маски и трубки
 
     //- Рейтинг
     +ui-section
@@ -878,3 +889,4 @@ block popups
   +order-status-popup
   +callback-popup 
   +discount-popup
+  +item-added-popup
