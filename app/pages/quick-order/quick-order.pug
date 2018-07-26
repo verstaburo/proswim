@@ -1,0 +1,14 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Быстрый заказ'
+
+block navbar
+  +navbar
+
+block content
+  +b.page_mh0
+    +quick-order-popup(true)
+
+block popups
+  +callback-popup

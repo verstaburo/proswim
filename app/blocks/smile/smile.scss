@@ -1,0 +1,36 @@
+.smile {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 32px;
+
+  @include screen('sm') {
+    height: 12px;
+  }
+
+  &.is-active {
+
+    .smile__image {
+      transform: translate3d(-50%, 0, 0) scale(1.375) translateY(-12px);
+
+      @include screen('sm') {
+        transform: translate3d(-50%, 0, 0) scale(2.66) translateY(-7px);
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate3d(-50%, 0, 0) scale(1);
+    transition: all $ease-main;
+
+    @include screen('sm') {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

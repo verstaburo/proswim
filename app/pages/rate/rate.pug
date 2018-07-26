@@ -1,0 +1,35 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Оцените работу нашего магазина'
+  
+block navbar
+  +navbar
+
+block content
+  +b.page
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', ' Оцените работу нашего магазина'])
+      +e.head._subhead
+        +e.headcol._flexible
+          +e.H1.heading Оцените работу нашего магазина
+      +rate-form
+
+block popups
+  +login-popup
+  +registration-popup
+  +password-recovery-popup
+  +registration-complete-popup
+  +preview-popup
+  +opt-status-popup
+  +phonecall-status-popup
+  +phonecall-status2-popup
+  +subscribe-status-popup
+  +subscribe-status2-popup
+  +order-status-popup
+  +callback-popup 
+  +discount-popup
+  +item-added-popup
+  +quick-order-popup 

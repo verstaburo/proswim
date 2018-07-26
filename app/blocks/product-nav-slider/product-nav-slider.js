@@ -45,9 +45,9 @@ export default (el, mainSlider, settings = {}) => {
           slidesPerView: 4,
         },
       },
-      controller: {
-        control: mainSlider[0].swiper,
-      },
+      // controller: {
+      //   control: mainSlider[0].swiper,
+      // },
       ...settings,
     };
   }
@@ -103,6 +103,17 @@ export default (el, mainSlider, settings = {}) => {
             const slide = $(this);
             mainSlider[0].swiper.slideTo(slide.index());
           });
+        }
+      },
+      slideChange() {
+        const self = this;
+        slides
+          .removeClass('is-active')
+          .eq(self.activeIndex)
+          .addClass('is-active');
+        if (mainSlider || mainSlider.length || mainSlider[0].swiper) {
+          const mainSwiper = mainSlider[0].swiper;
+          mainSwiper.slideTo(self.activeIndex);
         }
       },
     },

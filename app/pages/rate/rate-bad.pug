@@ -1,0 +1,32 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - Благодарим за оценку! Плохо'
+
+block navbar
+  +navbar
+
+block content
+  +b.page._mh0
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'Оцените работу нашего магазина', 'Благодарим за оценку!'])
+      +no-page-rate(true)
+
+block popups
+  +login-popup
+  +registration-popup
+  +password-recovery-popup
+  +registration-complete-popup
+  +preview-popup
+  +opt-status-popup
+  +phonecall-status-popup
+  +phonecall-status2-popup
+  +subscribe-status-popup
+  +subscribe-status2-popup
+  +order-status-popup
+  +callback-popup 
+  +discount-popup
+  +item-added-popup
+  +quick-order-popup 

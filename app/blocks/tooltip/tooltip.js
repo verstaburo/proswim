@@ -14,7 +14,7 @@ export default function tooltips() {
       animation: 'fade',
       delay: 0,
       debug: true,
-      side: 'top',
+      side: ['top', 'bottom', 'left', 'right'],
       theme: 'tooltipster-borderless',
       functionInit(instance, helper) {
         const $origin = $(helper.origin);

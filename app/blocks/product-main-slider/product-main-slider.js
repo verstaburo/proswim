@@ -12,8 +12,8 @@ window.initMainSlider = function (el) {
     slidesPerView: 1,
     touchRatio: el.data('touch-ratio'),
     navigation: {
-      nextEl: '.product-main-slider__button_next',
-      prevEl: '.product-main-slider__button_prev',
+      nextEl: $(el).find('.product-main-slider__button_next')[0],
+      prevEl: $(el).find('.product-main-slider__button_prev')[0],
     },
     roundLengths: true,
     on: {

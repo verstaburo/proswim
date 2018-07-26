@@ -222,6 +222,15 @@
     color: $color-basic;
   }
 
+  &__price {
+    @include heading-4;
+
+    line-height: (24/18);
+    letter-spacing: .01em;
+    font-weight: 700;
+    color: $darkblue-color;
+  }
+
   &__note {
     @include text-smaller;
 

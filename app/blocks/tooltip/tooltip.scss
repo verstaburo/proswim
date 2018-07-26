@@ -94,3 +94,35 @@
   opacity: 1;
   transform: scale(1) translate3d(0, 0, 0);
 }
+
+
+.tooltipster-light-customize {
+
+  .tooltipster-box {
+    background: #eff4f7;
+    border-width: 1px;
+    border-color: $color-border;
+  }
+
+  .tooltipster-content {
+    padding: 7px 11px;
+  }
+
+  .tooltipster-content p {
+    @include text-small;
+
+    color: #73787d;
+  }
+
+  .tooltipster-arrow {
+
+    &-border {
+      border-top-color: $color-border !important;
+      top: -1px;
+    }
+
+    &-background {
+      border-top-color: #eff4f7 !important;
+    }
+  }
+}

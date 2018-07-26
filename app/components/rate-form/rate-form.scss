@@ -1,0 +1,46 @@
+.rate-form {
+  display: block;
+  width: 100%;
+
+  @include screen(md) {
+    margin-top: -4px;
+  }
+
+  @include screen(sm) {
+    margin-top: 2px;
+  }
+
+  &__heading {
+    @include heading-4;
+
+    font-weight: 700;
+    color: $color-basic;
+    line-height: (24/18);
+    margin-bottom: 40px;
+
+    @include screen(sm) {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__field {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 74px;
+
+      @include screen(md) {
+        margin-bottom: 54px;
+      }
+    }
+  }
+
+  .button {
+    margin-top: -14px;
+    min-width: 220px;
+
+    @include screen(sm) {
+      width: 100%;
+    }
+  }
+}

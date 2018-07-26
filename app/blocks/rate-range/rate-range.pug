@@ -1,0 +1,15 @@
+mixin rate-range(name)
+  +b.rate-range&attributes(attributes)
+    +e.smiles
+      +smile('assets/images/emoji1.svg')(data-tooltip="Не понравилось")
+      +smile('assets/images/emoji2.svg')(data-tooltip="Кошмар")
+      +smile('assets/images/emoji3.svg')(data-tooltip="Отвратительно")
+      +smile('assets/images/emoji4.svg')(data-tooltip="Плохо")
+      +smile('assets/images/emoji5.svg')(data-tooltip="Не плохо")
+      +smile('assets/images/emoji6.svg')(data-tooltip="Хорошо")
+      +smile('assets/images/emoji7.svg')(data-tooltip="Очень хорошо")
+      +smile('assets/images/emoji8.svg')(data-tooltip="Отлично")
+      +smile('assets/images/emoji9.svg')(data-tooltip="Понравилось")
+      +smile('assets/images/emoji10.svg')(data-tooltip="Очень понравилось")
+    +e.slider.js-rate-range
+    +input(type="hidden" name= name value="8")

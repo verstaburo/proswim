@@ -1,0 +1,9 @@
+mixin rate-form()
+  +b.FORM.rate-form&attributes(attributes)
+    +e.field
+      +e.heading Понравилось ли Вам качество нашего обслуживания?
+      +rate-range('like')
+    +e.field
+      +e.heading Порекомендуете ли Вы интернет-магазин Proswim.ru друзьям, коллегам?
+      +rate-range('recommend')
+    +button(href="rate-good.html") Отправить результат

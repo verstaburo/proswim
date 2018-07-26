@@ -51,7 +51,7 @@ block content
                     +fieldset-heading Способ доставки
                   +fieldset-head-col
                     +link._grey Как работать с калькулятором
-                    +tooltip-icon
+                    +tooltip-icon(title="<p>Текст подсказки</p>")
                 +fieldset-body
                   +grid.fieldset__offset
                     +col({ xl: 8, lg: 12 })
@@ -92,7 +92,7 @@ block content
                             +checkitem('Курьерская доставка')
                           +checkitems-col(data-tab-target="delivery-2")
                             +checkitem('Пункты самовывоза')
-                              +tooltip-icon
+                              +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                           +checkitems-col(data-tab-target="delivery-3")
                             +checkitem('Почтой России до отделения')
 
@@ -111,7 +111,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Курьерская доставка
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 350 руб.
                                 +delivery-service-col._time
@@ -126,7 +126,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Курьерская доставка
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 110 руб.
                                 +delivery-service-col._time
@@ -141,7 +141,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Предоплаченный заказ
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 190 руб.
                                 +delivery-service-col._time
@@ -156,7 +156,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Наложенный платеж
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 190 руб.
                                 +delivery-service-col._time
@@ -210,7 +210,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Proswim
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 0 руб.
                                 +delivery-service-col._time
@@ -225,7 +225,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Grastin
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 110 руб.
                                 +delivery-service-col._time
@@ -240,7 +240,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Boxberry
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 241 руб.
                                 +delivery-service-col._time
@@ -274,7 +274,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Посылка онлайн
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 249 руб.
                                 +delivery-service-col._time
@@ -289,7 +289,7 @@ block content
                               +delivery-service-grid._group
                                 +delivery-service-col._title
                                   +delivery-service-text Стандарт
-                                  +tooltip-icon
+                                  +tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")
                                 +delivery-service-col._price
                                   +delivery-service-text 200 руб.
                                 +delivery-service-col._time
@@ -337,7 +337,7 @@ block content
                   +inputbox
                     +radio('payment-method', 1, true) Оплата наличными
                   +inputbox
-                    +radio('payment-method', 2, false) Онлайн оплата картой #[+tooltip-icon]
+                    +radio('payment-method', 2, false) Онлайн оплата картой #[+tooltip-icon(data-tooltipster='{ "side": ["right", "left"] }' title="<p>Текст подсказки</p>")]
                   +inputbox
                     +radio('payment-method', 3, false) Оплата по счету через любое отделение банка
 

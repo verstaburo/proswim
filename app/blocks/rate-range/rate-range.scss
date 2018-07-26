@@ -1,0 +1,143 @@
+.rate-range {
+  display: block;
+
+  &__slider {
+    display: block;
+    width: 100%;
+  }
+
+  &__smiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 15px;
+    margin-bottom: 14px;
+
+    @include screen(sm) {
+      margin: 0 7px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .noUi {
+
+    &-pips {
+      position: relative;
+      display: block;
+      height: 58px;
+      margin: 0 15px;
+      box-sizing: border-box;
+
+      @include screen(sm) {
+        margin: 0 7px;
+        height: 60px;
+      }
+    }
+
+    &-base {
+      position: relative;
+      display: block;
+      height: 10px;
+      border-radius: 5px;
+      background: transparent;
+      margin: 0 15px;
+
+      @include screen(sm) {
+        margin: 0 7px;
+      }
+
+      &::before {
+        @include pseudo;
+
+        top: 0;
+        right: -15px;
+        left: -15px;
+        background: linear-gradient(to left, #49d97e 0%, $color-main 100%);
+        border-radius: 5px;
+        height: 10px;
+
+        @include screen(sm) {
+          left: -7px;
+          right: -7px;
+        }
+      }
+    }
+
+    &-origin {
+      position: relative;
+      width: auto;
+      height: 10px;
+      background-color: transparent;
+      transform: all $ease-main;
+    }
+
+    &-connect {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: -15px !important;
+      height: 10px;
+      width: auto;
+      background: $color-border;
+      border-radius: 5px;
+      transform: all $ease-main;
+
+      @include screen(sm) {
+        right: -7px !important;
+      }
+    }
+
+    &-handle {
+      position: absolute;
+      display: block;
+      top: -5px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(7, 7, 8, .1);
+      transform: translate3d(-50%, 0, 0) scale(1);
+      transition: all $ease-main;
+      cursor: pointer;
+
+      &:hover {
+        transform: translate3d(-50%, 0, 0) scale(1.4);
+      }
+    }
+
+    &-marker {
+      position: absolute;
+      top: 15px;
+      display: block;
+      width: 1px;
+      height: 14px;
+      background-color: $color-border;
+    }
+
+    &-value {
+      position: absolute;
+      top: 40px;
+      display: inline-block;
+      text-align: center;
+
+      @include heading-4;
+
+      font-weight: 400;
+      line-height: 1;
+      color: $greylist-color;
+      opacity: .5;
+      transform: translate3d(-50%, 0, 0);
+      transition: all $ease-main;
+
+      @include screen('sm') {
+        top: 42px;
+      }
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+  }
+}

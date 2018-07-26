@@ -11,7 +11,12 @@
     margin-bottom: 0;
   }
 
+  @include screen(md) {
+    width: auto;
+  }
+
   @include screen(sm) {
+
     .product-cart-item {
       padding: 16px 0 11px;
     }

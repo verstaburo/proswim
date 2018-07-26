@@ -8,11 +8,20 @@ mixin total()
         +e.SPAN.text Итого:
         +e.B.price #[SPAN.js-total-amount 21 790] руб.
 
-    +button.BUTTON(type="button")._size_big._block.__button Оформить заказ
+    +button(href="order-confirmed.html")._size_big._block.__button Оформить заказ
 
     +e.P.promo
-      +link.__link Есть промокод/карта клиента?
-      +tooltip-icon.tooltip-icon_blue
+      +link.__link.js-total-promolink Есть промокод/карта клиента?
+      +tooltip-icon.tooltip-icon_blue(data-tooltipster='{ "side": "bottom" }' title="<p>Текст подсказки</p>")
+      
+    +e.promoblock.js-total-promoblock
+      +inputbox.total__promobox
+        +input(placeholder="Промокод" name="").__promoinput
+        +button.BUTTON(type="button")._size_sm.__promobutton Применить
+
+      +inputbox.total__promobox
+        +input(placeholder="Карта покупателя" name="").__promoinput
+        +button.BUTTON(type="button")._size_sm.__promobutton Применить
 
 mixin total-delivery()
   +b.total&attributes(attributes).sticky-block.js-total.js-sticky-block
@@ -30,13 +39,13 @@ mixin total-delivery()
     +inputbox.total__subscribe
       +checkbox('subscribe', 1, true) Подписаться на новости и акции
 
-    +button.BUTTON(type="button")._size_big._block.__button Оформить заказ
+    +button(href="order-confirmed.html")._size_big._block.__button Оформить заказ
 
     +e.P.accept Нажимая на кнопку "Оформить заказ", вы принимаете условия #[+link._grey._underline Публичной оферты]
 
     +e.P.promo
       +link.__link.js-total-promolink Есть промокод/карта клиента?
-      +tooltip-icon.tooltip-icon_blue
+      +tooltip-icon.tooltip-icon_blue(data-tooltipster='{ "side": "bottom" }' title="<p>Текст подсказки</p>")
 
     +e.promoblock.js-total-promoblock
       +inputbox.total__promobox
