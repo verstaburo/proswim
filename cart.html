@@ -3376,13 +3376,23 @@
                                     <SPAN class="js-total-amount">21 790</SPAN> руб.</b>
                             </li>
                         </ul>
-                        <button class="button button_size_big button_block total__button" type="button">Оформить заказ</button>
+                        <a class="button button_size_big button_block total__button" href="order-confirmed.html">Оформить заказ</a>
                         <p class="total__promo">
-                            <a class="link total__link">
+                            <a class="link total__link js-total-promolink">
                                 <span class="link__text">Есть промокод/карта клиента?</span>
                             </a>
-                            <span class="tooltip-icon js-tooltip tooltip-icon_blue">?</span>
+                            <span class="tooltip-icon js-tooltip tooltip-icon_blue" data-tooltipster="{ &quot;side&quot;: &quot;bottom&quot; }" title="&lt;p&gt;Текст подсказки&lt;/p&gt;">?</span>
                         </p>
+                        <div class="total__promoblock js-total-promoblock">
+                            <div class="inputbox total__promobox">
+                                <input class="input total__promoinput" placeholder="Промокод" name="" type="text" />
+                                <button class="button button_size_sm total__promobutton" type="button">Применить</button>
+                            </div>
+                            <div class="inputbox total__promobox">
+                                <input class="input total__promoinput" placeholder="Карта покупателя" name="" type="text" />
+                                <button class="button button_size_sm total__promobutton" type="button">Применить</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
