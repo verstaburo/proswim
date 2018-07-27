@@ -86,7 +86,7 @@ if ($('.js-product-cart-item').length > 0) {
       $(el).attr('data-item-newprice', price);
       discountEl.attr('data-discount', 'Скидка: ' + discount + '%');
       countEl.text(count);
-      $(el)..attr('data-item-count', count);
+      $(el).attr('data-item-count', count);
       $(el).attr('data-item-discountsum', discountSum);
     });
     updateTotal();
