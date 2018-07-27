@@ -27,7 +27,7 @@ block content
       +grid.cart
         +col({ xl: 9, lg: 12 })
           +product-cart-items._card
-            +product-cart-item._card.js-product-cart-item(data-item-price="13792" data-item-count="1")
+            +product-cart-item._card.js-product-cart-item(data-item-price="13792" data-item-count="1" data-item-discount="10")
               +product-cart-item-remove
               +product-cart-item-grid
                 +product-cart-item-col._image
@@ -48,7 +48,7 @@ block content
 
                 +product-cart-item-col._price.is-empty
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-price 13 792] #[SPAN.hide-lg руб.]#[SPAN.hide-lg-min x] #[SPAN.hide-lg-min.js-product-cart-item-count 1]
+                    +product-cart-item-text._md._blue.js-product-cart-item-discounts #[SPAN.js-product-cart-item-price 13 792] #[SPAN.hide-lg руб.]#[SPAN.hide-lg-min x] #[SPAN.hide-lg-min.js-product-cart-item-count 1]
 
                 +product-cart-item-col._count
                   +inputbox
@@ -56,7 +56,7 @@ block content
 
                 +product-cart-item-col._total
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-amount 13 792] руб.
+                    +product-cart-item-text._md._blue #[+e.SPAN.js-product-cart-item-amount 13 792] руб.
 
             +product-cart-item._card.js-product-cart-item(data-item-price="3999" data-item-count="2")
               +product-cart-item-remove
@@ -87,7 +87,7 @@ block content
 
                 +product-cart-item-col._total
                   +product-cart-item-textblock
-                    +product-cart-item-text._md._blue #[SPAN.js-product-cart-item-amount 7 998] руб.
+                    +product-cart-item-text._md._blue #[+e.SPAN.js-product-cart-item-amount 7 998] руб.
 
             +product-cart-item._card
               +product-cart-item-gift

@@ -315,6 +315,31 @@
         margin-bottom: .2em;
       }
     }
+
+    &.js-product-cart-item-discounts {
+      position: relative;
+
+      &::before {
+        display: block;
+        content: attr(data-price);
+
+        @include text-middle;
+
+        color: $color-darkgrey;
+        text-decoration: line-through;
+        text-align: right;
+      }
+
+      &::after {
+        display: block;
+        content: attr(data-discount);
+
+        @include text-middle;
+
+        color: $color-red;
+        text-align: right;
+      }
+    }
   }
 
   &__remove {

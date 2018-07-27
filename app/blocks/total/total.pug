@@ -5,6 +5,9 @@ mixin total()
         +e.SPAN.text Сумма:
         +e.B.price #[SPAN.js-total-sum 21 790] руб.
       +e.LI.item
+        +e.SPAN.text Скидка:
+        +e.B.price #[SPAN.js-total-discount -300] руб.
+      +e.LI.item
         +e.SPAN.text Итого:
         +e.B.price #[SPAN.js-total-amount 21 790] руб.
 
@@ -29,6 +32,9 @@ mixin total-delivery()
       +e.LI.item
         +e.SPAN.text Сумма:
         +e.B.price #[SPAN.js-total-sum 21 790] руб.
+      +e.LI.item
+        +e.SPAN.text Скидка:
+        +e.B.price #[SPAN.js-total-discount -300] руб.
       +e.LI.item
         +e.SPAN.text Доставка:
         +e.B.price #[SPAN.js-total-delivery 190] руб.
