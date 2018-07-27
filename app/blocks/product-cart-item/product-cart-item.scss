@@ -320,14 +320,29 @@
       position: relative;
 
       &::before {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
         display: block;
-        content: attr(data-price);
+        content: attr(data-price) '\20руб.';
 
         @include text-middle;
 
-        color: $color-darkgrey;
+        color: rgba($color-darkgrey, .8);
         text-decoration: line-through;
         text-align: right;
+
+        @include screen('lg') {
+          @include text-smaller;
+        }
+
+        @include screen('sm') {
+          content: attr(data-price);
+          position: static;
+          display: inline-block;
+          bottom: auto;
+          right: auto;
+        }
       }
 
       &::after {
@@ -338,6 +353,10 @@
 
         color: $color-red;
         text-align: right;
+
+        @include screen('lg') {
+          @include text-smaller;
+        }
       }
     }
   }

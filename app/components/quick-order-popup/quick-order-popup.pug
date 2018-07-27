@@ -16,7 +16,7 @@ mixin quick-order-popup(isPage)
             +e.SPAN.price 13&nbsp;792 руб.
           +e.text В ближайшее время мы свяжемся с Вами, чтобы подтвердить заказ, его стоимость и сроки доставки.
         +col(12)
-          +button-loading('button')(type='submit')._size_big._block Оформить заказ
+          +button-loading('a')._size_big._block(href="order-confirmed.html") Оформить заказ
         +col(12)
           +checkbox('terms', true, true, true)
             | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]

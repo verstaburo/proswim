@@ -50,7 +50,7 @@ mixin product-item-section2()
           +e.buttons
             +button.BUTTON(type="submit") Добавить в корзину
             +e.size-errors
-            //- +button.BUTTON(type="button")._greyblue Купить в 1 клик
+            +button._greyblue.js-fancybox(href="quick-order.html" data-popup="#quick-order-popup") Купить в 1 клик
             
           +e.compare
             +compare-button
