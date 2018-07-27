@@ -85,6 +85,16 @@ function getDeliveryPopup(data) {
 var deliveryCartMap = initMap(),
     delvieryCartMapMarkers = [];
 
+var currValue = $('.js-map-change').val().split(';');
+var currCoordinates = currValue[1].split(',');
+deliveryCartMap.setView([currCoordinates[0], currCoordinates[1]], 13);
+
+$(document).on('change', '.js-map-change', (evt) => {
+  var newValue = $(evt.target).val().split(';');
+  var newCoordinates = newValue[1].split(',');
+  deliveryCartMap.setView([newCoordinates[0], newCoordinates[1]], 13);
+});
+
 /**
  * При переключении радиокнопки рисуем маркеры на карте доставки
  */

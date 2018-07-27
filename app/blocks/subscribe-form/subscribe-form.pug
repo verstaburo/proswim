@@ -1,6 +1,6 @@
 mixin subscribe-form()
   +b.FORM.subscribe-form(method="POST" action="/")&attributes(attributes)
     +input(type="email" placeholder="Введите ваш  Email").subscribe-form__input
-    +button.BUTTON(type="submit")._size_md.__button
+    +button(href="subscribe-status.html" data-popup="#subscribe-status-popup")._size_md.__button.js-fancybox
       span.subscribe-form__text Подписаться
       +icon('Arrow-subscribe-button')
