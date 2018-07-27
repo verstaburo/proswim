@@ -75,8 +75,8 @@ function updateTotal() {
     return;
   }
 
-  $('.js-product-cart-item').each(function (i, el) {
-    var self = $(el);
+  $('.js-product-cart-item').each(function() {
+    var self = $(this);
     console.log($(self).attr('data-item-price'));
     console.log($(self).attr('data-item-count'));
     console.log($(self).attr('data-item-discountsum'));
@@ -95,7 +95,7 @@ function updateTotal() {
 
   if (discountEl.length) {
     amount -= discount;
-    discountEl.text("-" + window.numberWithSpaces(discount));
+    discountEl.text('-' + window.numberWithSpaces(discount));
   }
 
   sumEl.text(window.numberWithSpaces(sum));
@@ -121,9 +121,9 @@ $(document).on('click', '.js-product-cart-item-remove', function (e) {
  */
 if ($('.js-product-cart-item').length > 0) {
   function discountSet() {
-    $('.js-product-cart-item').each(function(i, el) {
+    $('.js-product-cart-item').each(function () {
+      var el = $(this);
       var priceEl = $(el).find('.js-product-cart-item-price'),
-          countEl = $(el).find('.js-product-cart-item-count'),
           amountEl = $(el).find('.js-product-cart-item-amount'),
           inputEl = $(el).find('.js-product-cart-item-input'),
           discountEl = $(el).find('.js-product-cart-item-discounts');
@@ -132,16 +132,14 @@ if ($('.js-product-cart-item').length > 0) {
           oldPrice = Number($(el).attr('data-item-price')),
           price = parseInt(oldPrice * ((100 - discount) / 100), 10),
           discountSum = parseInt(oldPrice * (discount * 0.01), 10),
-          count = Number($(inputEl).val()),
+          count = Number($(el).attr('data-item-count')),
           amount = price * count;
 
       amountEl.text(window.numberWithSpaces(amount));
-      discountEl.attr('data-price', oldPrice + ' руб.');
+      discountEl.attr('data-price', window.numberWithSpaces(oldPrice));
       priceEl.text(window.numberWithSpaces(price));
       $(el).attr('data-item-newprice', price);
       discountEl.attr('data-discount', 'Скидка: ' + discount + '%');
-      countEl.text(count);
-      $(el).attr('data-item-count', count);
       $(el).attr('data-item-discountsum', discountSum);
     });
     updateTotal();
@@ -167,7 +165,7 @@ $(document).on('change', '.js-product-cart-item-input', function () {
       amount = price * count;
 
   amountEl.text(window.numberWithSpaces(amount));
-  discountEl.attr('data-price', oldPrice + ' руб.');
+  discountEl.attr('data-price', window.numberWithSpaces(oldPrice));
   priceEl.text(window.numberWithSpaces(price));
   parent.attr('data-item-newprice', price);
   discountEl.attr('data-discount', 'Скидка: ' + discount + '%');
