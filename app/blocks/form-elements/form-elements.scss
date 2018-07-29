@@ -97,6 +97,12 @@
   &_big {
     min-height: 142px;
   }
+
+  .popup &::placeholder {
+    @include text;
+
+    color: rgba($darkengrey-color, .5);
+  }
 }
 
 .checkradio {
@@ -465,6 +471,8 @@
 
     .choices__input {
       @extend .input;
+
+      border-color: $color-border;
       box-sizing: border-box;
       width: calc(100% - 30px);
       margin: 20px 15px 9px;
@@ -613,6 +621,10 @@
     &__inner {
       border-color: $color-border;
       box-shadow: inset 0 0 0 2px $color-border;
+    }
+
+    &__input {
+      border-color: $color-border;
     }
 
     &__list {
