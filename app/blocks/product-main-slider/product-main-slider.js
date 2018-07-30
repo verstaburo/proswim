@@ -16,6 +16,8 @@ window.initMainSlider = function (el) {
       prevEl: $(el).find('.product-main-slider__button_prev')[0],
     },
     roundLengths: true,
+    observer: true,
+    observeParents: true,
     on: {
       slideChangeTransitionEnd() {
         const sliderElement = $(this.$el);

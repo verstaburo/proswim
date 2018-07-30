@@ -21,6 +21,8 @@ export default (el, mainSlider, settings = {}) => {
     initialSettings = {
       slideToClickedSlide: true,
       slidesPerView: 5,
+      observer: true,
+      observeParents: true,
       navigation: {
         nextEl,
         prevEl,
@@ -36,6 +38,8 @@ export default (el, mainSlider, settings = {}) => {
     initialSettings = {
       slideToClickedSlide: true,
       slidesPerView: 5,
+      observer: true,
+      observeParents: true,
       navigation: {
         nextEl,
         prevEl,

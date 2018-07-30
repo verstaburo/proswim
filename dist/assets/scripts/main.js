@@ -269,7 +269,6 @@ function getDeliveryPopup(data) {
 var deliveryCartMap = initMap(),
     delvieryCartMapMarkers = [];
 
-
 if ($('.js-map-change').length > 0) {
   var currValue = $('.js-map-change').val().split(';');
   var currCoordinates = currValue[1].split(',');
