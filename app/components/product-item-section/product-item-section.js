@@ -63,6 +63,72 @@ function productItemSection() {
   });
 }
 
+function reInitSliders() {
+  const popupBlock = $('.preview-popup .js-product-item-section');
+
+  if (!popupBlock.length) {
+    return;
+  }
+
+  $(popupBlock).each((i, el) => {
+    const mainSlider = $(el).find('.js-product-main-slider');
+    const navSlider = $(el).find('.js-product-nav-slider');
+
+    window.initMainSlider(mainSlider);
+
+    if (!navSlider.length || !mainSlider.length) {
+      return;
+    }
+
+    const settings = {
+      slidesPerView: 5,
+      breakpoints: {
+        [window.globalOptions.sizes.lg - 1]: {
+          slidesPerView: 5,
+        },
+        [window.globalOptions.sizes.sm - 1]: {
+          slidesPerView: 4,
+        },
+      },
+    };
+
+    slider(navSlider, mainSlider, settings);
+
+    /**
+     * инициализация слайдера выбора цвета
+     */
+
+    const colorSlider = $(el).find('.js-product-item-color-slider');
+
+    if (!colorSlider.length) {
+      return;
+    }
+
+    const colorSettings = {
+      slidesPerView: 5,
+      breakpoints: {
+        [window.globalOptions.sizes.lg - 1]: {
+          slidesPerView: 4,
+        },
+      },
+      callbackOnSlideChange(currentSlide) {
+        const color = currentSlide.data('color');
+        const colorInput = $('.js-product-color-input');
+
+        if (!color || !colorInput) {
+          return;
+        }
+
+        colorInput.val(color);
+      },
+    };
+
+    slider(colorSlider, null, colorSettings);
+  });
+}
+
+window.reInitPopupSliders = reInitSliders;
+
 $(window).on('load', productItemSection);
 
 // Замена картинки в главном слайдере
