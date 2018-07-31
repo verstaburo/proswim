@@ -11,13 +11,14 @@ export default (el, mainSlider, settings = {}) => {
   const nextEl = el.find('.product-nav-slider__button_next');
   const prevEl = el.find('.product-nav-slider__button_prev');
   const slides = el.find('.product-nav-slider__slide');
+  const mainSldr = mainSlider;
   const { callbackOnSlideChange } = settings;
 
   delete settings.callbackOnSlideChange; // eslint-disable-line
 
   let initialSettings;
 
-  if (!mainSlider && !$(mainSlider).length) {
+  if (!mainSldr && !$(mainSldr).length) {
     initialSettings = {
       slideToClickedSlide: true,
       slidesPerView: 5,
@@ -76,7 +77,7 @@ export default (el, mainSlider, settings = {}) => {
           callbackOnSlideChange(slides.eq(self.activeIndex));
         }
 
-        if (!mainSlider && !$(mainSlider).length) {
+        if (!mainSldr && !$(mainSldr).length) {
           el.on('click', '.product-nav-slider__slide', function () {
             $(this)
               .addClass('is-active')
@@ -88,7 +89,7 @@ export default (el, mainSlider, settings = {}) => {
             }
           });
         } else {
-          const mainSwiper = mainSlider[0].swiper;
+          const mainSwiper = mainSldr[0].swiper;
 
           mainSwiper.on('slideChange', function () {
             slides
@@ -105,7 +106,7 @@ export default (el, mainSlider, settings = {}) => {
 
           el.on('click', '.product-nav-slider__slide', function () {
             const slide = $(this);
-            mainSlider[0].swiper.slideTo(slide.index());
+            mainSldr[0].swiper.slideTo(slide.index());
           });
         }
       },
@@ -115,14 +116,14 @@ export default (el, mainSlider, settings = {}) => {
           .removeClass('is-active')
           .eq(self.activeIndex)
           .addClass('is-active');
-        if (mainSlider && $(mainSlider).length) {
-          const mainSwiper = mainSlider[0].swiper;
+        if (mainSldr && $(mainSldr).length) {
+          const mainSwiper = mainSldr[0].swiper;
           mainSwiper.slideTo(self.activeIndex);
         }
       },
     },
   });
-  $(sliderElement).each((ix, elem) => {
-    $(elem)[0].swiper.update();
-  });
+  // $(sliderElement).each((ix, elem) => {
+  //   $(elem)[0].swiper.update();
+  // });
 };

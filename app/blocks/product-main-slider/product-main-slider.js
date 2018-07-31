@@ -2,6 +2,12 @@ import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
 
+function sliderUpdate(selector) {
+  $(selector)[0].swiper.update();
+}
+
+window.sliderUpdate = sliderUpdate;
+
 window.initMainSlider = function (el) {
   if (!el.length) {
     return;
