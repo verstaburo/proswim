@@ -17,7 +17,7 @@ export default (el, mainSlider, settings = {}) => {
 
   let initialSettings;
 
-  if (!mainSlider || !mainSlider.length || !mainSlider[0].swiper) {
+  if (!mainSlider && !$(mainSlider).length) {
     initialSettings = {
       slideToClickedSlide: true,
       slidesPerView: 5,
@@ -76,7 +76,7 @@ export default (el, mainSlider, settings = {}) => {
           callbackOnSlideChange(slides.eq(self.activeIndex));
         }
 
-        if (!mainSlider || !mainSlider.length || !mainSlider[0].swiper) {
+        if (!mainSlider && !$(mainSlider).length) {
           el.on('click', '.product-nav-slider__slide', function () {
             $(this)
               .addClass('is-active')
@@ -115,7 +115,7 @@ export default (el, mainSlider, settings = {}) => {
           .removeClass('is-active')
           .eq(self.activeIndex)
           .addClass('is-active');
-        if (mainSlider || mainSlider.length || mainSlider[0].swiper) {
+        if (mainSlider && $(mainSlider).length) {
           const mainSwiper = mainSlider[0].swiper;
           mainSwiper.slideTo(self.activeIndex);
         }
