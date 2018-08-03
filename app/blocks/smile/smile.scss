@@ -1,11 +1,15 @@
 .smile {
   position: relative;
   display: block;
-  width: 1px;
-  height: 32px;
+  // width: 1px;
+  // height: 32px;
+  width: 32px;
+  height: 114px;
 
   @include screen('sm') {
-    height: 12px;
+    width: 12px;
+    height: 98px;
+    // height: 12px;
   }
 
   &.is-active {

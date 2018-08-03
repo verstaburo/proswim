@@ -12,6 +12,7 @@ export default function rateRangeSlider() {
     noUiSlider.create($(el)[0], {
       start: initValue,
       connect: [false, true],
+      behaviour: 'hover-snap',
       step: 1,
       margin: 15,
       range: {
@@ -52,6 +53,14 @@ export default function rateRangeSlider() {
       $(self).find('input[type="hidden"]').val(value);
     });
 
+    $(el)[0].noUiSlider.on('set', (values) => {
+      const self = $(el).closest('.rate-range');
+      const value = parseInt(values[0], 10);
+      $(self).find('[data-value]').removeClass('is-active');
+      $(self).find(`[data-value="${value}"]`).addClass('is-active');
+      $(self).find('input[type="hidden"]').val(value);
+    });
+
     $(el).find('.noUi-handle').tooltipster({
       contentAsHTML: true,
       animationDuration: window.globalOptions.animationDuration,
@@ -79,6 +88,43 @@ export default function rateRangeSlider() {
         }
         return newPosition;
       },
+    });
+
+    window.isClick = false;
+
+    $(document).on('mouseenter', '.js-range-toggle', (evt) => {
+      const self = $(evt.target).hasClass('js-range-toggle') ? $(evt.target) : $(evt.target).closest('.js-range-toggle');
+      const slider = $(self).closest('.rate-range').find('.js-rate-range');
+      const container = $(self).closest('.rate-range');
+      const currValue = parseInt($(slider)[0].noUiSlider.get(), 10);
+      $(self).attr('data-old-value', currValue);
+      const newValue = parseInt($(self).attr('data-value'), 10);
+      setTimeout(() => {
+        $(slider)[0].noUiSlider.set(newValue);
+      }, 10);
+    });
+
+    $(document).on('mouseleave', '.js-range-toggle', (evt) => {
+      const self = $(evt.target).hasClass('js-range-toggle') ? $(evt.target) : $(evt.target).closest('.js-range-toggle');
+      const slider = $(self).closest('.rate-range').find('.js-rate-range');
+      const container = $(self).closest('.rate-range');
+      if (!window.isClick) {
+        const newValue = parseInt($(self).attr('data-old-value'), 10);
+        $(slider)[0].noUiSlider.set(newValue);
+      } else {
+        $(self).removeAttr('data-old-value');
+        const currValue = parseInt($(self).attr('data-value'), 10);
+        window.isClick = false;
+      }
+    });
+
+    $(document).on('click', '.js-range-toggle', (evt) => {
+      const self = $(evt.target).hasClass('js-range-toggle') ? $(evt.target) : $(evt.target).closest('.js-range-toggle');
+      const slider = $(self).closest('.rate-range').find('.js-rate-range');
+      const container = $(self).closest('.rate-range');
+      const newValue = parseInt($(self).attr('data-value'), 10);
+      $(slider)[0].noUiSlider.set(newValue);
+      window.isClick = true;
     });
   });
 }
