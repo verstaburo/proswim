@@ -27,6 +27,7 @@
       transform: translate3d(-50%, 0, 0);
       top: 0;
       cursor: pointer;
+      z-index: 100;
 
       &:nth-child(1) {
         left: 0;
@@ -153,7 +154,7 @@
       transition: all $ease-main;
       cursor: pointer;
 
-      &:hover {
+      &:hover, &.is-hover {
         transform: translate3d(-50%, 0, 0) scale(1.4);
       }
     }

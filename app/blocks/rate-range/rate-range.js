@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import $ from 'jquery';
 
 // http://iamceege.github.io/tooltipster/
@@ -61,33 +62,35 @@ export default function rateRangeSlider() {
       $(self).find('input[type="hidden"]').val(value);
     });
 
-    $(el).find('.noUi-handle').tooltipster({
-      contentAsHTML: true,
-      animationDuration: window.globalOptions.animationDuration,
-      animation: 'fade',
-      delay: 0,
-      distance: 68,
-      debug: true,
-      side: 'top',
-      theme: ['tooltipster-light', 'tooltipster-light-customize'],
-      functionBefore(instance, helper) {
-        const self = helper.origin;
-        const value = parseInt($(self).attr('aria-valuetext'), 10);
-        const text = $(self).closest('.rate-range').find(`.smile[data-value="${value}"]`).attr('data-tooltip');
-        instance.content(`<p>${text}</p>`);
-      },
-      functionPosition(instance, helper, position) {
-        const parent = $(helper.origin).closest('.rate-range');
-        const parentMesures = parent[0].getBoundingClientRect();
-        const newPosition = position;
-        if (parentMesures.right - helper.geo.origin.windowOffset.right < position.size.width / 2) {
-          newPosition.coord.left = parentMesures.right - position.size.width;
-        }
-        if (helper.geo.origin.windowOffset.left - parentMesures.left < position.size.width / 2) {
-          newPosition.coord.left = parentMesures.left;
-        }
-        return newPosition;
-      },
+    $('.js-range-toggle').each(function () {
+      const base = $(this);
+      base.tooltipster({
+        contentAsHTML: true,
+        animationDuration: window.globalOptions.animationDuration,
+        animation: 'fade',
+        delay: 0,
+        distance: 26,
+        debug: true,
+        side: 'top',
+        theme: ['tooltipster-light', 'tooltipster-light-customize'],
+        functionBefore(instance, helper) {
+          const self = helper.origin;
+          const text = $(self).attr('data-tooltip');
+          instance.content(`<p>${text}</p>`);
+        },
+        functionPosition(instance, helper, position) {
+          const parent = $(helper.origin).closest('.rate-range');
+          const parentMesures = parent[0].getBoundingClientRect();
+          const newPosition = position;
+          if (parentMesures.right - helper.geo.origin.windowOffset.right < position.size.width / 2) {
+            newPosition.coord.left = parentMesures.right - position.size.width;
+          }
+          if (helper.geo.origin.windowOffset.left - parentMesures.left < position.size.width / 2) {
+            newPosition.coord.left = parentMesures.left;
+          }
+          return newPosition;
+        },
+      });
     });
 
     window.isClick = false;
@@ -101,6 +104,7 @@ export default function rateRangeSlider() {
       const newValue = parseInt($(self).attr('data-value'), 10);
       setTimeout(() => {
         $(slider)[0].noUiSlider.set(newValue);
+        $(slider).find('.noUi-handle').addClass('is-hover');
       }, 10);
     });
 
@@ -116,6 +120,7 @@ export default function rateRangeSlider() {
         const currValue = parseInt($(self).attr('data-value'), 10);
         window.isClick = false;
       }
+      $(slider).find('.noUi-handle').removeClass('is-hover');
     });
 
     $(document).on('click', '.js-range-toggle', (evt) => {
@@ -128,3 +133,5 @@ export default function rateRangeSlider() {
     });
   });
 }
+
+/* eslint-enable max-len */
