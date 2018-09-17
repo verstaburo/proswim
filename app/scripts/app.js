@@ -44,6 +44,7 @@ import '../blocks/compare-button/compare-button';
 import '../blocks/totop/totop';
 import compare from '../components/comparison-table/comparison-table';
 import rateRangeSlider from '../blocks/rate-range/rate-range';
+import '../blocks/notification/notification';
 
 const $ = window.$;
 window.L = L;

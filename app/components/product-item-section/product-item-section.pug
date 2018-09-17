@@ -51,9 +51,10 @@ mixin product-item-section()
               +button(href="item-added-popup.html" data-popup="#item-added-popup").js-fancybox Добавить в корзину
               +e.size-errors
               +button._greyblue.js-fancybox(href="quick-order.html" data-popup="#quick-order-popup") Купить в 1 клик
-            
+
             +e.compare
               +compare-button
+          +notification
 
           +put-block-into-slot('product-info-slot', 'xl')
             +e.section

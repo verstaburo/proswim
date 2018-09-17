@@ -19,6 +19,15 @@
         color: $darkblue-color;
       }
     }
+
+    a {
+      @include heading-6;
+      color: inherit;
+
+      &:hover {
+        color: $darkblue-color;
+      }
+    }
   }
 
   &__button {

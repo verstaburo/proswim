@@ -1,0 +1,64 @@
+.notification {
+  margin-top: 20px;
+
+  &__text {
+
+    //padding-top: 15px;
+
+    &_bold {
+      font-weight: 700;
+    }
+
+    &_red {
+      color: $red-color;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    margin-top: 20px;
+
+    .text {
+      position: relative;
+      margin-left: 5px;
+      color: $color-bluee;
+      border-bottom: 1px dotted;
+
+      &::after {
+        content: '»';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -10px;
+      }
+    }
+  }
+
+  &__linkicon {
+    display: block;
+    width: 19px;
+    height: 13px;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      fill: $color-bluee;
+    }
+  }
+
+  &__form {
+    display: none;
+    margin-top: 20px;
+  }
+
+  &__input{
+    width: 280px;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+}

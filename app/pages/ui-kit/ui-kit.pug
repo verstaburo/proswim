@@ -10,8 +10,9 @@ block content
       +e.UL.navigation__list
 
     +ui-kit-head
-      +e.logo Логотип
-      +e.name Название проекта
+      +e.logo
+        +e.IMG(src='assets/images/logo.png' alt="proswim")
+      +e.name ProSwim
 
     //- Сетка
     +ui-section._grid
@@ -218,25 +219,25 @@ block content
           +dl-list
             dt Элемент списка
             dd Элемент списка
-        +ui-description ol.list-multilevel 
+        +ui-description ol.list-multilevel
           +ol-list-multilevel
-            li 
+            li
               span level 1
               ol
-                li 
+                li
                   span level 2
-                li 
+                li
                   b level 2
                   ol
-                    li 
+                    li
                       span level 3
-                    li 
+                    li
                       span level 3
-                li 
+                li
                   span level 2
-            li 
+            li
               span level 1
-            li 
+            li
               span level 1
 
     //- Табы
@@ -465,7 +466,7 @@ block content
           +vertical-menu-link(href='javascript:void(0);') Очки для старта
           +vertical-menu-link(href='javascript:void(0);') Премиум-очки
           +vertical-menu-link(href='javascript:void(0);') Повседневные очки
-          +e.LI.item 
+          +e.LI.item
             +vertical-menu('Очки2', null, true)._accordion
               +vertical-menu-link(href='javascript:void(0);') Очки для старта
               +vertical-menu-link(href='javascript:void(0);') Премиум-очки
@@ -887,6 +888,6 @@ block popups
   +subscribe-status-popup
   +subscribe-status2-popup
   +order-status-popup
-  +callback-popup 
+  +callback-popup
   +discount-popup
   +item-added-popup
