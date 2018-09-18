@@ -40,16 +40,33 @@ var catalogFilter = new Vue({
       { title: 'Женские', value: 'female', name: 'gender', checked: false, selected: false },
     ],
     sizeList: [
-      { title: '32', value: '32', name: 'size', checked: false, selected: false },
-      { title: '34', value: '34', name: 'size', checked: false, selected: false },
-      { title: '1', value: '1', name: 'size', checked: false, selected: false },
-      { title: '2', value: '2', name: 'size', checked: false, selected: false },
+      { title: '32', value: '32', name: 'filter-size', checked: false, selected: false },
+      { title: '34', value: '34', name: 'filter-size', checked: false, selected: false },
+      { title: '36', value: '36', name: 'filter-size', checked: false, selected: false },
+      { title: '38', value: '38', name: 'filter-size', checked: false, selected: false },
+      { title: '52', value: '52', name: 'filter-size', checked: false, selected: false },
+      { title: '54', value: '54', name: 'filter-size', checked: false, selected: false },
+      { title: '31', value: '31', name: 'filter-size', checked: false, selected: false },
+      { title: '23', value: '23', name: 'filter-size', checked: false, selected: false },
+      { title: '32', value: '32', name: 'filter-size', checked: false, selected: false },
+      { title: '43', value: '43', name: 'filter-size', checked: false, selected: false },
+      { title: '39', value: '39', name: 'filter-size', checked: false, selected: false },
+      { title: '42', value: '42', name: 'filter-size', checked: false, selected: false },
+    ],
+    colorList: [
+      { title: 'blue', value: 'blue', name: 'filter-color', checked: false, selected: false },
+      { title: 'orange', value: 'orange', name: 'filter-color', checked: false, selected: false },
+      { title: 'white', value: 'white', name: 'filter-color', checked: false, selected: false },
+      { title: 'green', value: 'green', name: 'filter-color', checked: false, selected: false },
+      { title: 'grey', value: 'grey', name: 'filter-color', checked: false, selected: false },
+      { title: 'black', value: 'black', name: 'filter-color', checked: false, selected: false },
     ],
     priceApplied: false,
     brandsApplied: false,
     productsApplied: false,
     genderApplied: false,
     sizeApplied: false,
+    colorApplied: false,
     cutoffBrands: true,
     sortApplied: false,
   },
@@ -149,6 +166,11 @@ var catalogFilter = new Vue({
     // Значение "списка размеров"
     sizeValue: function() {
       return this.getItemValue('Любой размер', this.sizeList);
+    },
+
+    // Значение "списка цветов"
+    colorValue: function() {
+      return this.getItemValue('Любой цвет', this.colorList);
     },
 
     // Значение "списка брендов"

@@ -138,16 +138,18 @@ block content
                 +sort-dropdown._size
                   +sort-dropdown-button {{sizeValue}}
                   +sort-dropdown-body
-                    +sort-dropdown-list
+                    +checkbox.__text_xl Выбрать все
+                    +e.heading Размеры купальника (FR)
+                    +sort-dropdown-list._inline
                       +sort-dropdown-item(v-for="size in sizeList")
-                        +checkboxsep
+                        +checkboxsep._size_xl.checkradio_nobox
                           +checkboxsepinput(
                             type='checkbox',
                             :name='size.name',
                             :value='size.value',
                             v-model='size.checked',
                           )
-                          +checkboxsepcontent {{size.title}}
+                          +checkboxsepcontent._size_xl {{size.title}}
                     +sort-dropdown-submit("submitFilter('size')")
 
               +filter-section-col

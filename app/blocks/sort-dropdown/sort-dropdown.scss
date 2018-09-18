@@ -10,6 +10,11 @@
     margin-bottom: 0;
   }
 
+  &__heading {
+    padding-top: 10px;
+    @include text-tiny;
+  }
+
   @include screen(lg) {
     border-bottom: 1px solid $color-border;
     height: auto;
@@ -226,6 +231,11 @@
         max-height: none;
       }
     }
+
+    &_inline {
+      display: flex;
+      flex-flow: row wrap;
+    }
   }
 
   &__item {
@@ -322,6 +332,16 @@
     &__content {
       padding-top: 4px;
       padding-bottom: 4px;
+    }
+  }
+// TODO: 
+  &_size {
+    .checkradio {
+      // padding-left: 0;
+
+      &:checked {
+        color: #fff;
+      }
     }
   }
 

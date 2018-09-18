@@ -1,8 +1,14 @@
 .cart-delete-popup {
   width: 600px;
+  max-width: 100%;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  border-radius: 2px;
+  background-color: #fff;
+
+  &__content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 
   &__buttons {
     display: flex;
@@ -16,6 +22,7 @@
     margin-right: 10px;
 
     &_grey {
+      color: $color-basic;
       background-color: $greyblue2-color;
     }
   }
