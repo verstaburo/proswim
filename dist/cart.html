@@ -3239,6 +3239,15 @@
                 </div>
             </div>
         </div>
+        <div class="cart-delete-popup popup" id="cart-delete-popup">
+            <div class="cart-delete-popup__content">
+                <e class="__text">Вы действительно хотите удалить этот товар из корзины?</e>
+                <div class="cart-delete-popup__buttons">
+                    <a class="button cart-delete-popup__button" href="#">Удалить</a>
+                    <a class="button cart-delete-popup__button cart-delete-popup__button_grey js-popup-close" href="#">Отмена</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="page">
         <div class="container">
@@ -3292,8 +3301,10 @@
                 <div class="grid__col grid__col_xl_9 grid__col_lg_12">
                     <div class="product-cart-items product-cart-items_card">
                         <div class="product-cart-item product-cart-item_card js-product-cart-item" data-item-price="13792" data-item-count="1" data-item-discount="10">
-                            <div class="product-cart-item__remove js-product-cart-item-remove">
-                                <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            <div class="product-cart-item__remove">
+                                <a class="product-cart-item__fancybox" href="#cart-delete-popup" data-popup="#cart-delete-popup">
+                                    <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </a>
                             </div>
                             <div class="product-cart-item__grid">
                                 <div class="product-cart-item__col product-cart-item__col_image">
@@ -3348,8 +3359,10 @@
                             </div>
                         </div>
                         <div class="product-cart-item product-cart-item_card js-product-cart-item" data-item-price="3999" data-item-count="2">
-                            <div class="product-cart-item__remove js-product-cart-item-remove">
-                                <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                            <div class="product-cart-item__remove">
+                                <a class="product-cart-item__fancybox" href="#cart-delete-popup" data-popup="#cart-delete-popup">
+                                    <svg class="product-cart-item__removeicon"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </a>
                             </div>
                             <div class="product-cart-item__grid">
                                 <div class="product-cart-item__col product-cart-item__col_image">

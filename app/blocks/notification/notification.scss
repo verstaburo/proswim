@@ -1,9 +1,17 @@
 .notification {
   margin-top: 20px;
 
-  &__text {
+  &__send {
+    margin-top: 20px;
+    background-color: $lightblue2-color;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    //padding-top: 15px;
+    @include heading-6;
+  }
+
+  &__text {
 
     &_bold {
       font-weight: 700;

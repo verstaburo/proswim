@@ -18,8 +18,6 @@ function toggleVerticalMenu(e) {
 
   const btn = $(this);
   const parent = btn.closest('.vertical-menu');
-  console.log(parent);
-  //  const btn = self;
 
   btn.toggleClass('is-active');
 

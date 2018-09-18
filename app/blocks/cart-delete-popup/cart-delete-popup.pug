@@ -1,0 +1,7 @@
+mixin cart-delete-popup()
+  +b.cart-delete-popup&attributes(attributes).popup
+    +popup-content
+      e.__text Вы действительно хотите удалить этот товар из корзины?
+      +e.__buttons
+        +button('button')(href='#').__button Удалить
+        +button('button')(href='#').__button._grey.js-popup-close Отмена

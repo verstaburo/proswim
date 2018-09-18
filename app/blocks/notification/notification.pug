@@ -1,12 +1,14 @@
 mixin notification()
   +b.notification&attributes(attributes)
     +e.text_red._bold Нет на складе
-    +e.A.link(href='#').js-toggleBlock
-      +e.linkicon._email
-        +icon('Email icon')
-      span.text Сообщить о поступлении
-    form(method="POST" data-parsley-validate).notification__form
-      +input(type="email" placeholder="Введите ваш  Email").notification__input
-      +checkbox('terms', true, true, true)
-        | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]
-      +button('button').__button.js-submit(type="submit" ) Отправить
+    +e.__content
+      +e.A.link(href='#').js-toggleBlock
+        +e.linkicon._email
+          +icon('Email icon')
+        span.text Сообщить о поступлении
+      form(method="POST" action="/").notification__form
+        +input(type="email" placeholder="Введите ваш  Email" data-type="email" required).notification__input
+        +checkbox('terms', true, true, true)
+          | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]
+        +button.BUTTON(type="submit").__button.js-notification-submit Отправить
+    +e.__send.is-hidden Запрос отправлен.

@@ -44,7 +44,8 @@ import '../blocks/compare-button/compare-button';
 import '../blocks/totop/totop';
 import compare from '../components/comparison-table/comparison-table';
 import rateRangeSlider from '../blocks/rate-range/rate-range';
-import '../blocks/notification/notification';
+import notification from '../blocks/notification/notification';
+import '../blocks/badge/badge';
 
 const $ = window.$;
 window.L = L;
@@ -70,6 +71,7 @@ $(() => {
   sortDropdowns();
   compare();
   rateRangeSlider();
+  notification();
 
   setTimeout(() => {
     labelInput();

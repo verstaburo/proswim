@@ -3736,6 +3736,12 @@
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
+                            <div class="filter-section__col" v-for="size in selectedBrands">
+                                <button class="choice" type="button" @click="resetItem('size', size)">
+                                    <div class="choice__text">{{size.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
                             <div class="filter-section__col" v-if="priceApplied">
                                 <button class="choice" type="button" @click="resetPrice">
                                     <div class="choice__text">{{priceValue}}</div>
@@ -3844,6 +3850,30 @@
                                             </ul>
                                         </div>
                                         <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('brands')">Применить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="sort-dropdown sort-dropdown_size">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">{{sizeValue}}</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    </div>
+                                    <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list">
+                                                <li class="sort-dropdown__item" v-for="size in sizeList">
+                                                    <label class="checkradio">
+                                                        <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__content">{{size.title}}</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('size')">Применить</button>
                                     </div>
                                 </div>
                             </div>

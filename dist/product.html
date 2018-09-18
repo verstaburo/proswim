@@ -3653,30 +3653,33 @@
                         </form>
                         <div class="notification">
                             <div class="notification__text notification__text_red notification__text_bold">Нет на складе</div>
-                            <a class="notification__link js-toggleBlock" href="#">
-                                <span class="notification__linkicon notification__linkicon_email">
-                                    <svg><use xlink:href="assets/images/icon.svg#icon_email-icon"></use></svg>
-                                </span>
-                                <span class="text">Сообщить о поступлении</span>
-                            </a>
-                            <form class="notification__form" method="POST" data-parsley-validate="data-parsley-validate">
-                                <input class="input notification__input" type="email" placeholder="Введите ваш  Email" />
-                                <label class="checkradio">
-                                    <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
-                                    <span class="checkradio__box">
-                                        <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                            <div class="notification__content">
+                                <a class="notification__link js-toggleBlock" href="#">
+                                    <span class="notification__linkicon notification__linkicon_email">
+                                        <svg><use xlink:href="assets/images/icon.svg#icon_email-icon"></use></svg>
                                     </span>
-                                    <span class="checkradio__content">Я ознакомлен с
-                                        <a class="link" href="#">
-                                            <span class="link__text">публичной офертой</span>
-                                        </a> и соглашаюсь с
-                                        <a class="link" href="#">
-                                            <span class="link__text">условиями обработки персональных данных</span>
-                                        </a>
-                                    </span>
-                                </label>
-                                <a class="button notification__button js-submit" type="submit">Отправить</a>
-                            </form>
+                                    <span class="text">Сообщить о поступлении</span>
+                                </a>
+                                <form class="notification__form" method="POST" action="/">
+                                    <input class="input notification__input" type="email" placeholder="Введите ваш  Email" data-type="email" required="required" />
+                                    <label class="checkradio">
+                                        <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
+                                        <span class="checkradio__box">
+                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                        </span>
+                                        <span class="checkradio__content">Я ознакомлен с
+                                            <a class="link" href="#">
+                                                <span class="link__text">публичной офертой</span>
+                                            </a> и соглашаюсь с
+                                            <a class="link" href="#">
+                                                <span class="link__text">условиями обработки персональных данных</span>
+                                            </a>
+                                        </span>
+                                    </label>
+                                    <button class="button notification__button js-notification-submit" type="submit">Отправить</button>
+                                </form>
+                            </div>
+                            <div class="notification__send is-hidden">Запрос отправлен.</div>
                         </div>
                         <div data-slot-id="product-info-slot" data-slot-res="xl">
                             <div data-target-slot="product-info-slot">

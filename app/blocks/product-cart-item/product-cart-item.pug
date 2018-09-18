@@ -33,8 +33,11 @@ mixin product-cart-item-image(src, alt)
     img(src=src alt=alt||'@@')
 
 mixin product-cart-item-remove
-  +e.remove&attributes(attributes).js-product-cart-item-remove
-    +icon('Delete icon').removeicon
+  +e.remove&attributes(attributes)
+    +e.A(href='#cart-delete-popup' data-popup='#cart-delete-popup').js-fancybox
+       +icon('Delete icon').removeicon
+
+
 
 mixin product-cart-item-gift
   +e.gift&attributes(attributes)

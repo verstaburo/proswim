@@ -39,10 +39,17 @@ var catalogFilter = new Vue({
       { title: 'Мужские', value: 'male', name: 'gender', checked: false, selected: false },
       { title: 'Женские', value: 'female', name: 'gender', checked: false, selected: false },
     ],
+    sizeList: [
+      { title: '32', value: '32', name: 'size', checked: false, selected: false },
+      { title: '34', value: '34', name: 'size', checked: false, selected: false },
+      { title: '1', value: '1', name: 'size', checked: false, selected: false },
+      { title: '2', value: '2', name: 'size', checked: false, selected: false },
+    ],
     priceApplied: false,
     brandsApplied: false,
     productsApplied: false,
     genderApplied: false,
+    sizeApplied: false,
     cutoffBrands: true,
     sortApplied: false,
   },
@@ -137,6 +144,11 @@ var catalogFilter = new Vue({
     // Значение "списка товаров"
     productsValue: function() {
       return this.getItemValue('Любой товар', this.productList);
+    },
+
+    // Значение "списка размеров"
+    sizeValue: function() {
+      return this.getItemValue('Любой размер', this.sizeList);
     },
 
     // Значение "списка брендов"
