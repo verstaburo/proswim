@@ -78,6 +78,17 @@ mixin checkboxsepcontent
   +e.SPAN.content
     block
 
+mixin checkboxsepnumbers
+  +e.SPAN.content
+    block
+
+mixin checkboxsepcolors
+  +e.SPAN.box
+    +icon('checked').icon
+  +e.SPAN.boxcolor
+  +e.SPAN.content
+    block
+
 mixin range(noJs)
   +b.range&attributes(attributes)(class=noJs ? '' : 'js-range')
     block

@@ -3660,8 +3660,8 @@
                                     </span>
                                     <span class="text">Сообщить о поступлении</span>
                                 </a>
-                                <form class="notification__form" method="POST" action="/">
-                                    <input class="input notification__input" type="email" placeholder="Введите ваш  Email" data-type="email" required="required" />
+                                <form class="notification__form" method="POST" action="/" data-parsley-validate="data-parsley-validate" data-parsley-trigger="change">
+                                    <input class="input notification__input" type="email" placeholder="Введите ваш  Email" />
                                     <label class="checkradio">
                                         <input class="checkradio__input" name="terms" value="value" checked="checked" type="checkbox" required="required" />
                                         <span class="checkradio__box">

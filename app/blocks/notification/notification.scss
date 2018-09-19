@@ -40,9 +40,13 @@
         bottom: 0;
         right: -10px;
       }
+
+      &:hover {
+        color: #2f3133;
+      }
     }
   }
-
+  
   &__linkicon {
     display: block;
     width: 19px;

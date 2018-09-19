@@ -118,6 +118,16 @@
     box-sizing: border-box;
   }
 
+  &_size_md {
+    line-height: 1;
+    padding: 2px;
+
+    .checkradio__content {
+        padding:7px;
+        border: 1px solid $color-basic;
+      }
+  }
+
   &_radio {
     padding-left: 31px;
 
@@ -160,6 +170,15 @@
         .checkradio__icon {
           opacity: 1;
         }
+      }
+    }
+
+    .checkradio_size_md &:checked {
+      & + .checkradio__content {
+        background-color:  $color-main;
+        border-color: $color-main;
+        box-shadow: inset 0 0 0 1px $color-main;
+        color: #fff;
       }
     }
   }
@@ -304,12 +323,18 @@
         line-height: (21/13);
       }
     }
+  }
 
-    &_xxl {
-      padding: 7px;
-      border: 1px solid;
-      line-height: 1;
-    }
+  &__boxcolor {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $color-main;
+
+     &_blue {
+       background-color: $color-main
+     }
   }
 }
 

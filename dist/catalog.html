@@ -3736,9 +3736,15 @@
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
-                            <div class="filter-section__col" v-for="size in selectedBrands">
-                                <button class="choice" type="button" @click="resetItem('size', size)">
+                            <div class="filter-section__col" v-for="size in selectedSize">
+                                <button class="choice" type="button" @click="resetItem('sizeList', size)">
                                     <div class="choice__text">{{size.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-for="color in selectedColor">
+                                <button class="choice" type="button" @click="resetItem('colorList', color)">
+                                    <div class="choice__text">{{color.title}}</div>
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
@@ -3860,28 +3866,61 @@
                                         <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
                                     </div>
                                     <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
-                                        <label class="checkradio sort-dropdown__text sort-dropdown__text_xl">
-                                            <input class="checkradio__input" type="checkbox" />
-                                            <span class="checkradio__box">
-                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                            </span>
-                                            <span class="checkradio__content">Выбрать все</span>
-                                        </label>
                                         <div class="sort-dropdown__heading">Размеры купальника (FR)</div>
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list sort-dropdown__list_inline">
                                                 <li class="sort-dropdown__item" v-for="size in sizeList">
-                                                    <label class="checkradio checkradio_size_xl checkradio checkradio_nobox">
+                                                    <label class="checkradio checkradio_size_md">
                                                         <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
-                                                        <span class="checkradio__box">
-                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
-                                                        </span>
+                                                        <span class="checkradio__content">{{size.title}}</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="sort-dropdown__heading sort-dropdown__heading_bottom">Размеры купальника (FR)</div>
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list sort-dropdown__list_inline">
+                                                <li class="sort-dropdown__item" v-for="size in sizeList">
+                                                    <label class="checkradio checkradio_size_md">
+                                                        <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
                                                         <span class="checkradio__content">{{size.title}}</span>
                                                     </label>
                                                 </li>
                                             </ul>
                                         </div>
                                         <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('size')">Применить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-section__col">
+                                <div class="sort-dropdown sort-dropdown_color">
+                                    <div class="sort-dropdown__button js-dropdown-toggle">
+                                        <span class="sort-dropdown__value">{{colorValue}}</span>
+                                        <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                                    </div>
+                                    <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                                        <div class="searchbar searchbar_small">
+                                            <input class="input searchbar__input" placeholder="Поиск цвета..." name="filter-colors-search" v-model="colorSearch" type="text" />
+                                            <button class="searchbar__button" type="button">
+                                                <svg class="searchbar__icon"><use xlink:href="assets/images/icon.svg#icon_search-icon"></use></svg>
+                                            </button>
+                                        </div>
+                                        <div class="sort-dropdown__listwrap js-scrollbar">
+                                            <ul class="sort-dropdown__list sort-dropdown__list_color">
+                                                <li class="sort-dropdown__item sort-dropdown__item_color" v-for="color in colorList">
+                                                    <label class="checkradio checkradio_blue">
+                                                        <input class="checkradio__input" type="checkbox" :name="color.name" :value="color.value" v-model="color.checked" />
+                                                        <span class="checkradio__box">
+                                                            <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                                        </span>
+                                                        <span class="checkradio__boxcolor"></span>
+                                                        <span class="checkradio__content">{{color.title}}</span>
+                                                    </label>
+                                                    <span class="sort-dropdown__amount"> {{color.amount}}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('color')">Применить</button>
                                     </div>
                                 </div>
                             </div>
@@ -3953,7 +3992,7 @@
                                     <a class="product-card__heading" href="product.html">Arena Гидрокостюм Carbon Pro Mark 2 Limited Edition</a>
                                     <p class="product-card__sizes">Размеры: 34 (38) , 36 (40) , 38 (42) , 40 (44) , 42 (46) , 44 (48) , 46 (50)</p>
                                     <div class="product-card__price">
-                                        <span class="product-card__pricecurrent">13 792
+                                        <span class="product-card__pricecurrent">1 792
                                             <span class="product-card__pricecurrency">руб.</span>
                                         </span>
                                         <s class="product-card__priceold">14 792

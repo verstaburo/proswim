@@ -60,8 +60,10 @@ block content
                 +choice.BUTTON(type="button", @click="resetItem('gender', genderItem)") {{genderItem.title}}
               +filter-section-col(v-for="brand in selectedBrands")
                 +choice.BUTTON(type="button", @click="resetItem('brandList', brand)") {{brand.title}}
-              +filter-section-col(v-for="size in selectedBrands")
-                +choice.BUTTON(type="button", @click="resetItem('size', size)") {{size.title}}
+              +filter-section-col(v-for="size in selectedSize")
+                +choice.BUTTON(type="button", @click="resetItem('sizeList', size)") {{size.title}}
+              +filter-section-col(v-for="color in selectedColor")
+                +choice.BUTTON(type="button", @click="resetItem('colorList', color)") {{color.title}}
 
               +filter-section-col(v-if="priceApplied")
                 +choice.BUTTON(type="button", @click="resetPrice") {{priceValue}}
@@ -138,19 +140,52 @@ block content
                 +sort-dropdown._size
                   +sort-dropdown-button {{sizeValue}}
                   +sort-dropdown-body
-                    +checkbox.__text_xl Выбрать все
                     +e.heading Размеры купальника (FR)
                     +sort-dropdown-list._inline
                       +sort-dropdown-item(v-for="size in sizeList")
-                        +checkboxsep._size_xl.checkradio_nobox
+                        +checkboxsep._size_md
                           +checkboxsepinput(
                             type='checkbox',
                             :name='size.name',
                             :value='size.value',
                             v-model='size.checked',
                           )
-                          +checkboxsepcontent._size_xl {{size.title}}
+                          +checkboxsepnumbers {{size.title}}
+                    +e.heading._bottom Размеры купальника (FR)
+                    +sort-dropdown-list._inline
+                      +sort-dropdown-item(v-for="size in sizeList")
+                        +checkboxsep._size_md
+                          +checkboxsepinput(
+                            type='checkbox',
+                            :name='size.name',
+                            :value='size.value',
+                            v-model='size.checked',
+                          )
+                          +checkboxsepnumbers {{size.title}}
                     +sort-dropdown-submit("submitFilter('size')")
+
+              +filter-section-col
+                +sort-dropdown._color
+                  +sort-dropdown-button {{colorValue}}
+                  +sort-dropdown-body
+                    +searchbarsplit._small
+                      +searchbarsplit-input(
+                        placeholder='Поиск цвета...',
+                        name='filter-colors-search',
+                        v-model="colorSearch"
+                      )
+                    +sort-dropdown-list._color
+                      +sort-dropdown-item(v-for="color in colorList")._color
+                        +checkboxsep._blue
+                          +checkboxsepinput(
+                            type='checkbox',
+                            :name='color.name',
+                            :value='color.value',
+                            v-model='color.checked',
+                          )
+                          +checkboxsepcolors {{color.title}}
+                        +e.SPAN.amount  {{color.amount}}
+                    +sort-dropdown-submit("submitFilter('color')")
 
               +filter-section-col
                 +sort-dropdown._price

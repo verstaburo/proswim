@@ -6,8 +6,8 @@ mixin notification()
         +e.linkicon._email
           +icon('Email icon')
         span.text Сообщить о поступлении
-      form(method="POST" action="/").notification__form
-        +input(type="email" placeholder="Введите ваш  Email" data-type="email" required).notification__input
+      form(method="POST" action="/" data-parsley-validate data-parsley-trigger="change").notification__form
+        +input(type="email" placeholder="Введите ваш  Email").notification__input
         +checkbox('terms', true, true, true)
           | Я ознакомлен с #[+link(href='#') публичной офертой] и соглашаюсь с #[+link(href='#') условиями обработки персональных данных]
         +button.BUTTON(type="submit").__button.js-notification-submit Отправить

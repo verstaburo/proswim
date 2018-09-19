@@ -42,6 +42,20 @@ export default function () {
       afterClose: unfreeze,
     });
   });
+
+  // fancybox for cart
+  const fancyOpts = {
+    afterLoad() {
+      freeze();
+    },
+    afterClose() {
+      unfreeze();
+    },
+    smallBtn: false,
+    buttons: [],
+  };
+
+  $('.js-fancybox-cart').fancybox(fancyOpts);
 }
 
 window.popups = {

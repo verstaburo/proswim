@@ -11,8 +11,16 @@
   }
 
   &__heading {
-    padding-top: 10px;
     @include text-tiny;
+    padding-bottom: 5px;
+
+    &_bottom {
+      padding-top: 10px;
+    }
+  }
+
+  &__amount {
+    color: $indark-grey-color;
   }
 
   @include screen(lg) {
@@ -236,10 +244,19 @@
       display: flex;
       flex-flow: row wrap;
     }
+
+    &_color {
+      padding-top: 10px;
+    }
   }
 
   &__item {
 
+    &_color {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
   }
 
   &__link {
@@ -320,7 +337,7 @@
     }
   }
 
-  .checkradio {
+  .checkradio:not(.checkradio_size_md) {
     padding-left: 24px;
 
     &__box {
@@ -332,16 +349,6 @@
     &__content {
       padding-top: 4px;
       padding-bottom: 4px;
-    }
-  }
-// TODO: 
-  &_size {
-    .checkradio {
-      // padding-left: 0;
-
-      &:checked {
-        color: #fff;
-      }
     }
   }
 

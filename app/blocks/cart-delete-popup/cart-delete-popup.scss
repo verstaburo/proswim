@@ -12,18 +12,12 @@
 
   &__buttons {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   &__button {
-    margin-left: 10px;
-    margin-right: 10px;
-
-    &_grey {
-      color: $color-basic;
-      background-color: $greyblue2-color;
-    }
+    margin: 10px;
   }
 }

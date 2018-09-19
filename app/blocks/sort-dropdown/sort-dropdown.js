@@ -1,6 +1,17 @@
 const $ = window.$;
 /* eslint-disable */
 export default () => {
+  // выбрать все
+  $('.js-chooseAll').on('click', function () {
+    const check = $(this).find('input:checked').length;
+    const checkbox = $(this).siblings().find('input');
+
+    if (check === 1) {
+      checkbox.prop('checked', true);
+    } else {
+      checkbox.prop('checked', false);
+    }
+  });
   return;
 
   $('.js-catalog-price-slider').each(function () {
