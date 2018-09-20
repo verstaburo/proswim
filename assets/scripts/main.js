@@ -107,13 +107,16 @@ updateTotal();
  * Удаление карточки
  */
 $(document).on('click', '.js-product-cart-item-remove', function (e) {
+  const el = $(this);
   e.preventDefault();
-  $(this)
-    .parents('.js-product-cart-item')
-    .fadeOut(window.globalOptions.animationDuration, function () {
-      $(this).remove();
-      updateTotal();
-    });
+  $(document).on('click', '.js-remove-item', function (e) {
+    el.parents('.js-product-cart-item')
+      .fadeOut(window.globalOptions.animationDuration, function () {
+        el.remove();
+        updateTotal();
+      });
+    $('.js-popup-close').trigger('click');
+  });
 });
 
 /**

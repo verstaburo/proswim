@@ -2,6 +2,7 @@ var catalogFilter = new Vue({
   el: '#catalog',
   data: {
     brandSearch: '',
+    colorSearch: '',
     brandList: [
       { title: 'Adidas', value: 'Adidas', name: 'filter-brand', checked: false, selected: false },
       { title: 'Adl', value: 'Adl', name: 'filter-brand', checked: false, selected: false },
@@ -39,10 +40,34 @@ var catalogFilter = new Vue({
       { title: 'Мужские', value: 'male', name: 'gender', checked: false, selected: false },
       { title: 'Женские', value: 'female', name: 'gender', checked: false, selected: false },
     ],
+    sizeList: [
+      { title: '32', value: '32', name: 'filter-size', checked: false, selected: false },
+      { title: '34', value: '34', name: 'filter-size', checked: false, selected: false },
+      { title: '36', value: '36', name: 'filter-size', checked: false, selected: false },
+      { title: '38', value: '38', name: 'filter-size', checked: false, selected: false },
+      { title: '52', value: '52', name: 'filter-size', checked: false, selected: false },
+      { title: '54', value: '54', name: 'filter-size', checked: false, selected: false },
+      { title: '31', value: '31', name: 'filter-size', checked: false, selected: false },
+      { title: '23', value: '23', name: 'filter-size', checked: false, selected: false },
+      { title: '32', value: '32', name: 'filter-size', checked: false, selected: false },
+      { title: '43', value: '43', name: 'filter-size', checked: false, selected: false },
+      { title: '39', value: '39', name: 'filter-size', checked: false, selected: false },
+      { title: '42', value: '42', name: 'filter-size', checked: false, selected: false },
+    ],
+    colorList: [
+      { title: 'blue', value: 'blue', name: 'filter-color', amount: '1', checked: false, selected: false },
+      { title: 'orange', value: 'orange', name: 'filter-color', amount: '2', checked: false, selected: false },
+      { title: 'white', value: 'white', name: 'filter-color', amount: '3', checked: false, selected: false },
+      { title: 'green', value: 'green', name: 'filter-color', amount: '4', checked: false, selected: false },
+      { title: 'grey', value: 'grey', name: 'filter-color', amount: '5', checked: false, selected: false },
+      { title: 'black', value: 'black', name: 'filter-color', amount: '6', checked: false, selected: false },
+    ],
     priceApplied: false,
     brandsApplied: false,
     productsApplied: false,
     genderApplied: false,
+    sizeApplied: false,
+    colorApplied: false,
     cutoffBrands: true,
     sortApplied: false,
   },
@@ -70,6 +95,16 @@ var catalogFilter = new Vue({
         total += item.selected;
       });
 
+      // Размеры
+      this.sizeList.forEach(function(item) {
+        total += item.selected;
+      });
+
+      // Цвета
+      this.colorList.forEach(function(item) {
+        total += item.selected;
+      });
+
       return total;
     },
 
@@ -83,6 +118,19 @@ var catalogFilter = new Vue({
 
       return self.brandList.filter(function(item) {
         return item.title.toLowerCase().indexOf(self.brandSearch.toLowerCase()) !== -1;
+      });
+    },
+
+    // Фильтр (поиск) цветов
+  colorFilter: function() {
+      var self = this;
+
+      if (!self.colorSearch) {
+        return self.colorList;
+      }
+
+      return self.colorList.filter(function(item) {
+        return item.title.toLowerCase().indexOf(self.colorSearch.toLowerCase()) !== -1;
       });
     },
 
@@ -124,9 +172,20 @@ var catalogFilter = new Vue({
       return this.getSelectedItems(this.gender);
     },
 
+    // Выбранные размеры
+    selectedSize: function() {
+      return this.getSelectedItems(this.sizeList);
+    },
+
+    // Выбранные цвета
+    selectedColor: function() {
+      return this.getSelectedItems(this.colorList);
+    },
+
     // Выбранные примененные фильтры
     filtersApplied: function() {
-      return this.priceApplied || this.brandsApplied || this.productsApplied || this.genderApplied;
+      return this.priceApplied || this.brandsApplied || this.productsApplied || this.genderApplied
+        || this.sizeApplied || this.colorApplied;
     },
 
     // Если брендов > 8, то на мобильном будет выведена кнопка "показать еще"
@@ -147,6 +206,16 @@ var catalogFilter = new Vue({
     // Значение "пола"
     genderValue: function() {
       return this.getItemValue('Любой пол', this.gender);
+    },
+
+    // Значение "списка размеров"
+    sizeValue: function() {
+      return this.getItemValue('Любой размер', this.sizeList);
+    },
+
+    // Значение "списка цветов"
+    colorValue: function() {
+      return this.getItemValue('Любой цвет', this.colorList);
     },
 
     // Значение "цены" от 900 руб.
@@ -244,6 +313,18 @@ var catalogFilter = new Vue({
         this.genderApplied = !!this.selectedGender.length;
       }
 
+      // Применение фильтра размеров
+      if (applied === 'size') {
+        this.setSelectedItems(this.sizeList);
+        this.sizeApplied = !!this.selectedSize.length;
+      }
+
+      // Применение фильтра цветов
+      if (applied === 'color') {
+        this.setSelectedItems(this.colorList);
+        this.colorApplied = !!this.selectedColor.length;
+      }
+
       // Спрятать все выпадающие списки
       $(document).trigger('dropdown/hide');
 
@@ -271,6 +352,14 @@ var catalogFilter = new Vue({
 
         if (listName === 'gender') {
           this.genderApplied = false;
+        }
+
+        if (listName === 'sizeList') {
+          this.sizeApplied = false;
+        }
+
+        if (listName === 'colorList') {
+          this.colorApplied = false;
         }
       }
 
@@ -301,6 +390,14 @@ var catalogFilter = new Vue({
       this.resetSelectedItems(this.productList);
       this.productsApplied = false;
 
+      // сброс размеров
+      this.resetSelectedItems(this.sizeList);
+      this.sizeApplied = false;
+
+      // сброс цветов
+      this.resetSelectedItems(this.colorList);
+      this.colorApplied = false;
+
       // отправляем запрос
       this.send();
     },
@@ -327,7 +424,7 @@ var catalogFilter = new Vue({
           max: self.price.max,
         },
       });
-
+// TODO: change
       slider[0].noUiSlider.on('update', function(values, handler) {
         var keys = ['minValue', 'maxValue'];
         var val = values[handler];
