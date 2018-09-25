@@ -175,8 +175,8 @@ block content
                         v-model="colorSearch"
                       )
                     +sort-dropdown-list._color
-                      +sort-dropdown-item(v-for="color in colorList")._color
-                        +checkboxsep._blue
+                      +sort-dropdown-item(v-for="color in colorFilter")._color
+                        +checkboxsep
                           +checkboxsepinput(
                             type='checkbox',
                             :name='color.name',
