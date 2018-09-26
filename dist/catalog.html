@@ -3907,8 +3907,8 @@
                                         </div>
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list sort-dropdown__list_color">
-                                                <li class="sort-dropdown__item sort-dropdown__item_color" v-for="color in colorList">
-                                                    <label class="checkradio checkradio_blue">
+                                                <li class="sort-dropdown__item sort-dropdown__item_color" v-for="color in colorFilter">
+                                                    <label class="checkradio">
                                                         <input class="checkradio__input" type="checkbox" :name="color.name" :value="color.value" v-model="color.checked" />
                                                         <span class="checkradio__box">
                                                             <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>

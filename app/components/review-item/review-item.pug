@@ -3,6 +3,9 @@ mixin review-item(data)
     if data.avatar
       +e.image._avatar
         img(src=`content-img/review-cards/${data.avatar}.png` alt=data.username)
+    if data['avatar-lg']
+      +e.image._lg
+        img(src=`content-img/review-cards/${data['avatar-lg']}.png` alt=data.username)
     if data.image
       +e.image
         img(src=`content-img/review-cards/${data.image}.png` alt=data.heading)
