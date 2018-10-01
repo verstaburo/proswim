@@ -1,0 +1,10 @@
+mixin reviews-slider(items)
+  +b.reviews-slider&attributes(attributes)
+    .swiper-container.js-slider-review
+      .swiper-wrapper
+        each item in items
+          .swiper-slide
+            +review-item-small(item)._sm
+    +slider-buttons
+      +slider-buttons__item('Arrow 1')._prev.js-slider-review-prev
+      +slider-buttons__item('Arrow 1')._next.js-slider-review-next

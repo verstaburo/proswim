@@ -40,12 +40,16 @@ import '../components/product-item-section/product-item-section';
 import '../components/footer/footer';
 import '../components/orders-section/orders-section';
 import '../components/content-slider/content-slider';
+import toggleAboutSection from '../components/about-section-dropdown/about-section-dropdown';
+import slidersAbout from '../blocks/sliders-about-section/sliders-about-section';
 import '../blocks/compare-button/compare-button';
 import '../blocks/totop/totop';
 import compare from '../components/comparison-table/comparison-table';
 import rateRangeSlider from '../blocks/rate-range/rate-range';
 import notification from '../blocks/notification/notification';
 import '../blocks/badge/badge';
+import '../components/reviews-star/reviews-star';
+import '../components/reviews-slider/reviews-slider';
 
 const $ = window.$;
 window.L = L;
@@ -72,6 +76,8 @@ $(() => {
   compare();
   rateRangeSlider();
   notification();
+  toggleAboutSection();
+  slidersAbout();
 
   setTimeout(() => {
     labelInput();

@@ -1,0 +1,8 @@
+mixin review-star(data)
+  +b.review-star&attributes(attributes)
+    +e.__image
+      +e.img(src=`content-img/review-cards/${data.avatar}.png` alt=data.starname)
+      +e.__icon
+        +icon('star')
+    +e.__name=data.starname
+    +e.__descr=data.content

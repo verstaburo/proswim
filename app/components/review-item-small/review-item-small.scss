@@ -1,0 +1,86 @@
+.review-item-small {
+  min-height: 628px;
+  padding-top: 31px;
+  padding-right: 33px;
+  padding-bottom: 34px;
+  padding-left: 30px;
+  box-shadow: 0 6px 12px rgba(157, 164, 171, 0.26);
+  border: 1px solid $color-border;
+  background-color: white;
+  box-sizing: border-box;
+
+  @include screen(lg) {
+    padding-top: 14px;
+    padding-right: 27px;
+    padding-bottom: 20px;
+    padding-left: 14px;
+  }
+
+  @include screen(sm) {
+    padding-top: 17px;
+    padding-right: 24px;
+    padding-bottom: 26px;
+    padding-left: 15px;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  &__avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__head {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  &__date  {
+    color: $semigrey-color;
+    @include text-small;
+  }
+
+  &__userinfo {
+    margin-top: 5px;
+  }
+
+  &__username {
+    @include heading-5;
+  }
+
+  &__city {
+    @include text-small;
+    margin-left: 5px;
+  }
+
+  &__body {
+    margin-top: 10px;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 20px;
+    color: $darkblue-color;
+    transition: color $ease-main;
+
+    @include text-medium;
+
+    cursor: pointer;
+
+    .ddd-truncated + & {
+      display: inline-block;
+    }
+
+    &:hover {
+      color: $color-basic;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+mixin about-section-dropdown()
+  +b.about-section-dropdown&attributes(attributes)
+    +e.wrapper
+      +section-title()
+        +e.P.__subhead._button Интернет-магазин
+        +circle-button(null)._plus.js-toggle.is-open
+
+      +e.item.js-toggleAboutSection
+
+        +sliders-about-section('shop-1')
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+        +e.__description
+          +e.P.__heading Call-центр
+          +e.P.__text  комфортабельный офис в шаговой доступности от метро
+
+        +sliders-about-section('shop-2')
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+        +e.__description
+          +e.P.__heading Шоурум
+          +e.P.__text  с новинками, хитами и удобной примерочной
+
+        +sliders-about-section('shop-3')
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+        +e.__description
+          +e.P.__heading Отдел логистики
+          +e.P.__text  здесь каждый заказ бережно упаковывается и отправляется на доставку
+
+      +e.line
+
+    +e.wrapper
+      +section-title()
+        +e.P.__subhead Розничные магазины
+        +circle-button(null)._plus.js-toggle.is-open
+
+      +e.item.js-toggleAboutSection
+
+        +sliders-about-section('market-1')
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+        +e.__description
+          +e.P.__heading 6 магазинов в МСК
+
+        +sliders-about-section('market-2')
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+        +e.__description
+          +e.P.__heading 3 магазина в СПБ
+
+      +e.line
+
+
+    +e.wrapper
+      +section-title()
+        +e.P.__subhead Отдел оптовых продаж
+        +circle-button(null)._plus.js-toggle.is-open
+
+      +e.item.js-toggleAboutSection
+
+        +sliders-about-section('store')
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+          +e.IMG(src='assets/images/about-slider.jpg').item.swiper-slide
+        +e.__description
+          +e.P.__heading Свой склад
+          +e.P.__text  бесплатная доставка

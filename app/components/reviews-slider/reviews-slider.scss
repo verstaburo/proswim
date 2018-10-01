@@ -1,0 +1,23 @@
+.reviews-slider {
+  position: relative;
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+  box-sizing: border-box;
+
+  @include screen(xs) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .slider-buttons {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include screen(xs) {
+      top: 70px;
+      padding-left: 15px;
+      padding-right: 15;
+    }
+  }
+}

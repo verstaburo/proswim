@@ -3869,7 +3869,7 @@
                                         <div class="sort-dropdown__heading">Размеры купальника (FR)</div>
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list sort-dropdown__list_inline">
-                                                <li class="sort-dropdown__item" v-for="size in sizeList">
+                                                <li class="sort-dropdown__item" v-for="size in sizeList" v-if="size.name == 'filter-size'">
                                                     <label class="checkradio checkradio_size_md">
                                                         <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
                                                         <span class="checkradio__content">{{size.title}}</span>
@@ -3877,10 +3877,10 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="sort-dropdown__heading sort-dropdown__heading_bottom">Размеры купальника (FR)</div>
+                                        <div class="sort-dropdown__heading sort-dropdown__heading_bottom">Размеры детские (возраст):</div>
                                         <div class="sort-dropdown__listwrap js-scrollbar">
                                             <ul class="sort-dropdown__list sort-dropdown__list_inline">
-                                                <li class="sort-dropdown__item" v-for="size in sizeList">
+                                                <li class="sort-dropdown__item" v-for="size in sizeList" v-if="size.name == 'filter-size-children'">
                                                     <label class="checkradio checkradio_size_md">
                                                         <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
                                                         <span class="checkradio__content">{{size.title}}</span>
@@ -3913,7 +3913,7 @@
                                                         <span class="checkradio__box">
                                                             <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
                                                         </span>
-                                                        <span class="checkradio__boxcolor"></span>
+                                                        <span class="checkradio__boxcolor" :class="color.value"></span>
                                                         <span class="checkradio__content">{{color.title}}</span>
                                                     </label>
                                                     <span class="sort-dropdown__amount"> {{color.amount}}</span>

@@ -1,0 +1,9 @@
+mixin sliders-about-section(att)
+  -var attr = att
+  +b.sliders-about-section&attributes(attributes)
+    .swiper-container(data-slider='slider-'+attr)
+      .swiper-wrapper
+        block
+    +slider-buttons
+      +slider-buttons__item('Arrow 1')._prev(class='js-button-prev_'+attr)
+      +slider-buttons__item('Arrow 1')(class='js-button-next_'+attr)

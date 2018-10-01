@@ -38,6 +38,18 @@
     }
   }
 
+  &_sm {
+    padding: 0 0 70px;
+
+    // &:last-child {
+    //   padding-bottom: 33px;
+    // }
+
+    @include screen(xs) {
+      padding: 0 0 40px;
+    }
+  }
+
   &__head {
     display: flex;
     align-items: center;
@@ -65,6 +77,10 @@
       @include screen(sm) {
         line-height: (26/18);
       }
+    }
+
+    &_centered {
+      text-align: center;
     }
   }
 

@@ -32,6 +32,20 @@
   &_article {
     width: 820px;
   }
+// TODO: width
+  &_wide {
+    width: 1380px;
+
+    @include screen(lg) {
+      width: 100%;
+    }
+
+    @include screen(xs) {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .js-sr {

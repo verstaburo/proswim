@@ -1,0 +1,25 @@
+mixin review-item-small(data)
+  +b.review-item-small&attributes(attributes)
+    if data.avatar
+      +e.avatar
+        img(src=`content-img/review-cards/${data.avatar}.png` alt=data.username)
+
+    +e.content
+      +e.head
+        if data.date
+          +e.P.date=data.date
+          +e.P.userinfo
+            if data.username
+              +e.SPAN.username=data.username
+            if data.city
+              +e.SPAN.city=data.city
+
+      +e.body
+        each block in data.blocks
+          +e.block
+            if block.heading
+              +e.P.blockheading=block.heading
+            +content-zone!=block.content
+
+      if data.link
+        +e.A(href='javascript:void(0)').link Читать полностью

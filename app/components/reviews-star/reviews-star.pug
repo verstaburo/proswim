@@ -1,0 +1,9 @@
+mixin reviews-star(items)
+  +b.reviews-star&attributes(attributes)
+    .swiper-container.js-slider-star
+      .swiper-wrapper
+        each item in items
+          +review-star(item).swiper-slide
+    +slider-buttons
+      +slider-buttons__item('Arrow 1')._prev.js-slider-star-prev
+      +slider-buttons__item('Arrow 1')._next.js-slider-star-next

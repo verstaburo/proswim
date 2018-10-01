@@ -1,0 +1,39 @@
+.features-about {
+  font-size: 0;
+  display: block; // fallback для старых браузеров
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -30px;
+
+  @include screen(md) {
+    justify-content: center;
+  }
+
+  @include screen(xs) {
+    justify-content: flex-start;
+  }
+
+  &__col {
+    display: inline-block;
+    width: 20%;
+    padding-left: 15px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    margin-top: 30px;
+
+    &:last-child {
+      padding-right: 15px;
+    }
+
+    @include screen(md) {
+      width: 33.33%;
+    }
+
+    @include screen(sm) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.img-about {
+  position: relative;
+  min-height: 290px;
+  margin-top: 5px;
+  max-height: 650px;
+
+  &__front {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 16px 40px rgba($color-basic, 0.26);
+  }
+
+  &__back {
+    transform: translate(70%, -39%);
+    z-index: 1;
+    box-shadow: 0 16px 40px rgba($color-basic, 0.26);
+  }
+
+  img {
+    width: 58.97%;
+  }
+}

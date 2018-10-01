@@ -1,0 +1,12 @@
+.sliders-about-section {
+  position: relative;
+
+  &:not(:first-child) {
+    margin-top: 60px;
+  }
+
+  .swiper-container {
+    max-width: 780px;
+  }
+
+}

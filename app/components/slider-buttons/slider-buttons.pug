@@ -1,0 +1,10 @@
+mixin slider-buttons()
+  +b.slider-buttons&attributes(attributes)
+    block
+
+
+
+mixin slider-buttons__item(icon)
+  +b.A.slider-buttons__item&attributes(attributes)
+    +e.button
+        +icon(icon).icon

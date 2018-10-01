@@ -85,9 +85,7 @@ mixin checkboxsepnumbers
 mixin checkboxsepcolors
   +e.SPAN.box
     +icon('checked').icon
-  +e.SPAN.boxcolor
-  +e.SPAN.content
-    block
+  block  
 
 mixin range(noJs)
   +b.range&attributes(attributes)(class=noJs ? '' : 'js-range')

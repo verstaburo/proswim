@@ -326,14 +326,37 @@
   }
 
   &__boxcolor {
-    width: 14px;
-    height: 14px;
+    position: absolute;
+    top: 3px;
+    left: 24px;
+    width: 15px;
+    height: 15px;
     display: inline-block;
     border-radius: 50%;
     background-color: $color-main;
 
-     &_blue {
-       background-color: $color-main
+     &.blue {
+       background-color: $color-main;
+     }
+     &.red {
+       background-color: $color-red2;
+     }
+     &.yellow {
+       background-color: $yellow-color;
+     }
+     &.green{
+       background-color: $lightgreen-color;
+     }
+     &.black{
+       background-color: #000;
+     }
+     &.grey{
+       background-color: $darkgrey-color;
+     }
+
+     &+.checkradio__content {
+       padding-left: 20px;
+       padding-top: 2px;
      }
   }
 }

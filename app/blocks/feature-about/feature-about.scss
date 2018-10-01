@@ -1,0 +1,31 @@
+.feature-about {
+
+  &__icon {
+    width: 34px;
+    height: 34px;
+    border: 2px solid $color-main;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+
+    svg {
+      width: 18px;
+      height: 13px;
+      fill: $color-main;
+
+      @include center-image;
+    }
+  }
+  &__heading {
+    margin-top: 16px;
+    @include heading-5;
+  }
+
+  &__text {
+    margin-top: 5px;
+    color: $darkengrey-color;
+
+    @include text;
+  }
+
+}

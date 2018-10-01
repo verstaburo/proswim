@@ -142,7 +142,7 @@ block content
                   +sort-dropdown-body
                     +e.heading Размеры купальника (FR)
                     +sort-dropdown-list._inline
-                      +sort-dropdown-item(v-for="size in sizeList")
+                      +sort-dropdown-item(v-for="size in sizeList" v-if="size.name == 'filter-size'")
                         +checkboxsep._size_md
                           +checkboxsepinput(
                             type='checkbox',
@@ -151,9 +151,9 @@ block content
                             v-model='size.checked',
                           )
                           +checkboxsepnumbers {{size.title}}
-                    +e.heading._bottom Размеры купальника (FR)
+                    +e.heading._bottom Размеры детские (возраст):
                     +sort-dropdown-list._inline
-                      +sort-dropdown-item(v-for="size in sizeList")
+                      +sort-dropdown-item(v-for="size in sizeList"  v-if="size.name == 'filter-size-children'")
                         +checkboxsep._size_md
                           +checkboxsepinput(
                             type='checkbox',
@@ -183,7 +183,9 @@ block content
                             :value='color.value',
                             v-model='color.checked',
                           )
-                          +checkboxsepcolors {{color.title}}
+                          +checkboxsepcolors
+                            +e.SPAN.boxcolor(:class='color.value')
+                            +e.SPAN.content {{color.title}}
                         +e.SPAN.amount  {{color.amount}}
                     +sort-dropdown-submit("submitFilter('color')")
 

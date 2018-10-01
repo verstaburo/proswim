@@ -1,0 +1,65 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Proswim - О нас'
+
+block navbar
+  +navbar
+
+block content
+  +b.page
+    +e.IMG(src='assets/images/about.jpg').__image
+    .container
+      +e.head
+        +e.headcol._flexible
+          +breadcrumbs(['Главная', 'О нас'])
+      +e.head._subhead
+        +e.head-about.page__headcol._flexible
+          +e.H1.heading._center О нас
+
+      +about-section()
+
+    .container.container_wide
+      +section
+        +e.H2.heading._centered Структура компании
+        +about-section-dropdown()
+
+    .container
+      +section._sm
+        +e.H2.heading._centered Более 65 000 человек по всей России уже присоединились к нам
+        +section-title()
+          +e.P.__subhead и стали нашими постоянными покупателями. Почему именно мы?
+        +features-about()
+
+    .container.container_wide
+      +section._sm
+        +e.H2.heading._centered Отзывы любимых клиентов
+        +section-title()
+          +e.P.__subhead лучшая похвала для нас!
+        +reviews-slider(getData('reviews-slider'))
+
+      +section._sm
+        +e.H2.heading._centered Звездные покупатели
+        +section-title()
+          +e.P.__subhead доверяют нам, и мы гордимся этим! среди них:
+        +reviews-star(getData('reviews-about-stars'))
+
+    .container
+      +section._sm
+        +e.H2.heading._centered Proswim в социальных сетях
+        +section-title()
+          +e.P.__subhead Будьте в курсе акций, спецпредложений и новинок от Proswim
+        +social-buttons._centered
+          +social-button('fb')._huge._colorized
+          +social-button('vk')._huge._colorized
+          +social-button('instagram', true)._huge._colorized
+
+      +section.section_sm
+        +e.H2.heading._centered Желаем приятных покупок!
+        +logo._centered
+
+
+
+
+
+block popups
