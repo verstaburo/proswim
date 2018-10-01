@@ -14,11 +14,6 @@
     padding: 0 15px;
   }
 
-  &.swiper-button-disabled {
-    opacity: .5;
-    pointer-events: none;
-  }
-
   &__item {
     display: block;
     width: 48px;
@@ -50,6 +45,11 @@
     &_prev {
       transform: rotate(180deg);
       margin-left: -1px;
+    }
+
+    &.swiper-button-disabled {
+      opacity: .5;
+      pointer-events: none;
     }
   }
 

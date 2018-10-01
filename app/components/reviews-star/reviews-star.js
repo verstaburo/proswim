@@ -22,7 +22,7 @@ const sliderStars = new Swiper('.js-slider-star', {
       slidesPerView: 3,
     },
     [sm - 1]: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 25,
     },
     [xs - 1]: {

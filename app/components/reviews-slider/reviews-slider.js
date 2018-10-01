@@ -4,7 +4,7 @@ import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
 
-const { lg, md, xs } = window.globalOptions.sizes;
+const { lg, md, sm, xs } = window.globalOptions.sizes;
 
 const sliderReview = new Swiper('.js-slider-review', {
   loop: false,
@@ -25,7 +25,7 @@ const sliderReview = new Swiper('.js-slider-review', {
       slidesPerView: 2,
       spaceBetween: 25,
     },
-    [xs - 1]: {
+    [sm - 1]: {
       slidesPerView: 1,
     },
   },
