@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 import * as Swiper from 'swiper/dist/js/swiper';
 
 const $ = window.$;
@@ -81,7 +81,7 @@ export default function compare() {
     </div>`;
     return elem;
   }
-  function generateRow(cells, arrValues) {
+  function generateRow(cells, arrValues, title) {
     let res;
     switch (cells) {
       case 2:
@@ -99,6 +99,7 @@ export default function compare() {
         break;
       default:
         res = `<tr>
+            <td>${title ? title : ''}</td>
             <td>${arrValues[0] ? arrValues[0] : ''}</td>
             <td>${arrValues[1] ? arrValues[1] : ''}</td>
             <td>${arrValues[2] ? arrValues[2] : ''}</td>
@@ -113,15 +114,30 @@ export default function compare() {
     const tableDiff = $('.js-compare-slider').attr('data-diff');
     const sourceFull = $('.js-compare-slider').attr('data-compare-data');
     const sourceDiff = $('.js-compare-slider').attr('data-compare-data-diff');
+
+    // const sourceSpec = $('.js-compare-slider').attr('data-compare-data-spec');
+
     let source;
     if (tableDiff === 'diff') {
       source = sourceDiff;
     } else {
       source = sourceFull;
     }
+
+    //
+    // console.log(specData[0]);
+    // $.getJSON(sourceSpec, function(data) {
+    //   $.each(data, function(i, el) {
+    //     specData.push(el.name);
+    //   });
+    // });
+    // console.log('specData', specData);
+    const specData = ['Рейтинг', 'Характеристика', 'Цвет', 'Характеристика-1'];
+
     $.getJSON(source, (dataObj) => {
       const visibleElements = $('.js-compare-slider').find('.is-visible');
       const elData = [];
+
       $(visibleElements).each((i, el) => {
         elData.push(dataObj[$(el).attr('data-prodid')]);
       });
@@ -145,10 +161,10 @@ export default function compare() {
           $(rowData).each((it, elt) => {
             starsData.push(generateRating(elt.stars, elt.reviews));
           });
-          row = generateRow(cells, starsData);
+          row = generateRow(cells, starsData, specData[i]);
           $('.comparison-table__table').append(row);
         } else {
-          row = generateRow(cells, rowData);
+          row = generateRow(cells, rowData, specData[i]);
           $('.comparison-table__table').append(row);
         }
       });
@@ -226,4 +242,4 @@ export default function compare() {
     }
   });
 }
-/* eslint-enable no-unused-vars */
+/* eslint-disable */

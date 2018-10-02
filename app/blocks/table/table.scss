@@ -72,6 +72,14 @@
       padding: 18px 10px 17px 32px;
       width: 25%;
 
+      &:first-child {
+        width: 70px;
+        max-width: 70px;
+        padding-right: 5px;
+        padding-left: 10px;
+        word-wrap: break-word;
+      }
+
       @include screen('lg') {
         padding: 18px 19px 17px 16px;
         width: 33.33%;
