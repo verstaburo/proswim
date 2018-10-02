@@ -24,7 +24,7 @@ var catalogFilter = new Vue({
       { title: 'Наборы “Очки+Шапочка”', value: '5', name:'filter-product', checked: false, selected: false },
     ],
     price: {
-      min: 900,
+      min: 10,
       max: 6000,
       minValue: 900,
       maxValue: 6000,
