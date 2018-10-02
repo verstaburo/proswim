@@ -74,12 +74,12 @@ var catalogFilter = new Vue({
 
     ],
     colorList: [
-      { title: 'blue', value: 'blue', name: 'filter-color', amount: '1', checked: false, selected: false },
-      { title: 'red', value: 'red', name: 'filter-color', amount: '2', checked: false, selected: false },
-      { title: 'green', value: 'green', name: 'filter-color', amount: '3', checked: false, selected: false },
-      { title: 'yellow', value: 'yellow', name: 'filter-color', amount: '4', checked: false, selected: false },
-      { title: 'grey', value: 'grey', name: 'filter-color', amount: '5', checked: false, selected: false },
-      { title: 'black', value: 'black', name: 'filter-color', amount: '6', checked: false, selected: false },
+      { title: 'синий', value: 'blue', name: 'filter-color', amount: '1', checked: false, selected: false },
+      { title: 'красный', value: 'red', name: 'filter-color', amount: '2', checked: false, selected: false },
+      { title: 'зеленый', value: 'green', name: 'filter-color', amount: '3', checked: false, selected: false },
+      { title: 'желтый', value: 'yellow', name: 'filter-color', amount: '4', checked: false, selected: false },
+      { title: 'серый', value: 'grey', name: 'filter-color', amount: '5', checked: false, selected: false },
+      { title: 'черный', value: 'black', name: 'filter-color', amount: '6', checked: false, selected: false },
     ],
     priceApplied: false,
     brandsApplied: false,
