@@ -103,6 +103,23 @@
     }
   }
 
+  &__rotate {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 10px;
+    width: 22px;
+    height: 15px;
+    text-align: center;
+    background-color: $darkestgrey-color;
+    color: #fff;
+    border-radius: 3px;
+
+    @include text-xs;
+
+    line-height: 1.5;
+  }
+
   &__text {
     font-size: 11px;
     padding-left: 5px;

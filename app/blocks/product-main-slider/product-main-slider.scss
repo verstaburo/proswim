@@ -113,6 +113,20 @@
     }
   }
 
+  &__rotate {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    background-color: $darkestgrey-color;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 1.8;
+  }
+
   &_preview {
 
     .product-main-slider {

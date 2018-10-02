@@ -50,6 +50,7 @@ import notification from '../blocks/notification/notification';
 import '../blocks/badge/badge';
 import '../components/reviews-star/reviews-star';
 import '../components/reviews-slider/reviews-slider';
+import rotate from '../blocks/img-rotate-popup/img-rotate-popup';
 
 const $ = window.$;
 window.L = L;
@@ -78,6 +79,7 @@ $(() => {
   notification();
   toggleAboutSection();
   slidersAbout();
+  rotate();
 
   setTimeout(() => {
     labelInput();

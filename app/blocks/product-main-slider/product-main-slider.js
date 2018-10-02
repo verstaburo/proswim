@@ -1,4 +1,5 @@
 import * as Swiper from 'swiper/dist/js/swiper';
+import { freeze, unfreeze } from '../js-functions/freeze';
 
 const $ = window.$;
 
@@ -75,4 +76,25 @@ $(document).on('mousemove touchmove', '.js-product-main-slider-zoom', function (
 
 $(document).on('mouseleave touchend', '.js-product-main-slider-zoom', function () {
   $(this).removeClass('is-hovered');
+});
+
+// image 3D popup
+const fancyOpts = {
+  afterLoad() {
+    freeze();
+  },
+  beforeClose() {
+    unfreeze();
+  },
+  smallBtn: false,
+  buttons: [],
+  touch: false,
+};
+$(document).on('click', '.js-slider3D', function (e) {
+  e.preventDefault();
+  const href = $(this).attr('href');
+  $.fancybox.open({
+    src: href,
+    opts: fancyOpts,
+  });
 });

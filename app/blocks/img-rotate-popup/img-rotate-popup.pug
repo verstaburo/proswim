@@ -1,0 +1,14 @@
+mixin img-rotate-popup()
+  +b.img-rotate-popup&attributes(attributes)#img-rotate-popup
+    +e.content
+      .js-rotate
+        - var name = 1
+        while name < 10
+          +e.IMG(src='assets/images/rotate/00' + name++ + '.jpg')
+        - var n = 10
+        while name < 60
+          +e.IMG(src='assets/images/rotate/0' + name++ + '.jpg')
+          
+      +slider-buttons
+        +slider-buttons__item('Arrow 1')._prev(class='js-btn-prev')
+        +slider-buttons__item('Arrow 1')(class='js-btn-next')

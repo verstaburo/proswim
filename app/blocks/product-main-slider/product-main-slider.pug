@@ -4,9 +4,14 @@ mixin product-main-slider(images, alt, hasButtons, zoom)
       each image in images
         - var imageClasses = [zoom ? 'js-product-main-slider-zoom' : '']
         - var videoClasses = [image.isVideo ? 'product-main-slider__slide_video' : '']
-        .swiper-slide.product-main-slider__slide(class=image.isVideo ? videoClasses.join(' ') : imageClasses.join(' '))
+        - var rotateClasses = [image.isRotate ? 'product-main-slider__slide_rotate' : '']
+        .swiper-slide.product-main-slider__slide(class=image.isVideo ? videoClasses.join(' ') : image.isRotate ? rotateClasses.join(' ') : imageClasses.join(' '))
           if image.isVideo
             video(src=image.src)
+          if image.isRotate
+            +e.A(href='#img-rotate-popup').smth.js-slider3D
+              img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
+            +e.SPAN.__rotate 360
           else
             img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
             if zoom
@@ -28,9 +33,14 @@ mixin product-main-slider-preview(images, alt, hasButtons, zoom)
       each image in images
         - var imageClasses = [zoom ? 'js-product-main-slider-zoom' : '']
         - var videoClasses = [image.isVideo ? 'product-main-slider__slide_video' : '']
-        .swiper-slide.product-main-slider__slide(class=image.isVideo ? videoClasses.join(' ') : imageClasses.join(' '))
+        - var rotateClasses = [image.isRotate ? 'product-main-slider__slide_rotate' : '']
+        .swiper-slide.product-main-slider__slide(class=image.isVideo ? videoClasses.join(' ') : image.isRotate ? rotateClasses.join(' ') : imageClasses.join(' '))
           if image.isVideo
             video(src=image.src)
+          if image.isRotate
+            +e.A(href='#img-rotate-popup').smth.js-slider3D
+              img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
+            +e.SPAN.__rotate 360
           else
             img(src=src=`content-img/product-cards/${image.src}.jpg` alt=alt || '@@')
             if zoom
