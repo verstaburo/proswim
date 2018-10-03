@@ -1,5 +1,6 @@
 {
   "structure": ["rating", "feature1", "feature2", "feature3", "feature4", "feature5", "feature6", "feature7"],
+  "names": ["Рейтинг", "Пункт", "Цвет", "Характеристика", "Пункт", "Пункт", "Пункт", "Характеристика"],
   "id1": {
     "rating": {
       "stars": "4",
