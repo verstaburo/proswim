@@ -92,6 +92,7 @@ export default function compare() {
         break;
       case 3:
         res = `<tr>
+            <td>${title ? title : ''}</td>
             <td>${arrValues[0] ? arrValues[0] : ''}</td>
             <td>${arrValues[1] ? arrValues[1] : ''}</td>
             <td>${arrValues[2] ? arrValues[2] : ''}</td>
@@ -115,24 +116,12 @@ export default function compare() {
     const sourceFull = $('.js-compare-slider').attr('data-compare-data');
     const sourceDiff = $('.js-compare-slider').attr('data-compare-data-diff');
 
-    // const sourceSpec = $('.js-compare-slider').attr('data-compare-data-spec');
-
     let source;
     if (tableDiff === 'diff') {
       source = sourceDiff;
     } else {
       source = sourceFull;
     }
-
-    //
-    // console.log(specData[0]);
-    // $.getJSON(sourceSpec, function(data) {
-    //   $.each(data, function(i, el) {
-    //     specData.push(el.name);
-    //   });
-    // });
-    // console.log('specData', specData);
-    const specData = ['Рейтинг', 'Характеристика', 'Цвет', 'Характеристика-1'];
 
     $.getJSON(source, (dataObj) => {
       const visibleElements = $('.js-compare-slider').find('.is-visible');
@@ -142,6 +131,7 @@ export default function compare() {
         elData.push(dataObj[$(el).attr('data-prodid')]);
       });
       const structure = dataObj.structure;
+      const specData = dataObj.names;
       let cells;
       if ($(window).width() < window.globalOptions.sizes.sm) {
         cells = 2;

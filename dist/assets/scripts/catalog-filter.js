@@ -26,7 +26,7 @@ var catalogFilter = new Vue({
     price: {
       min: 10,
       max: 6000,
-      minValue: 900,
+      minValue: 10,
       maxValue: 6000,
     },
     sort: [
