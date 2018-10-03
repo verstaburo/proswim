@@ -24,9 +24,9 @@ var catalogFilter = new Vue({
       { title: 'Наборы “Очки+Шапочка”', value: '5', name:'filter-product', checked: false, selected: false },
     ],
     price: {
-      min: 10,
+      min: 900,
       max: 6000,
-      minValue: 10,
+      minValue: 900,
       maxValue: 6000,
     },
     sort: [
@@ -443,8 +443,7 @@ var catalogFilter = new Vue({
           max: self.price.max,
         },
       });
-// TODO: change
-      slider[0].noUiSlider.on('update', function(values, handler) {
+      slider[0].noUiSlider.on('change', function(values, handler) {
         var keys = ['minValue', 'maxValue'];
         var val = values[handler];
         self.price[keys[handler]] = Math.round(val);
