@@ -3937,8 +3937,8 @@
                                             <div class="range js-catalog-price-slider"></div>
                                         </div>
                                         <div class="inputbox sort-dropdown__inputs">
-                                            <input class="input" data-handler="0" type="number" id="id1" v-model.number="price.minValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
-                                            <input class="input" data-handler="1" type="number" id="id2" v-model.number="price.maxValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
+                                            <input class="input" data-handler="0" type="number" v-model.number="price.minValue" :min="price.min" :max="price.max" @change="handlePriceChange" />
+                                            <input class="input" data-handler="1" type="number" v-model.number="price.maxValue" :min="price.min" :max="price.max" @change="handlePriceChange" />
                                         </div>
                                         <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('price')">Применить</button>
                                     </div>
@@ -5596,8 +5596,8 @@
                                 <div class="range js-catalog-price-slider"></div>
                             </div>
                             <div class="inputbox sort-dropdown__inputs">
-                                <input class="input" data-handler="0" type="number" v-model.number="price.minValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
-                                <input class="input" data-handler="1" type="number" v-model.number="price.maxValue" :min="price.min" :max="price.max" @input="handlePriceChange" />
+                                <input class="input" data-handler="0" type="number" v-model.number="price.minValue" :min="price.min" :max="price.max" @change="handlePriceChange" />
+                                <input class="input" data-handler="1" type="number" v-model.number="price.maxValue" :min="price.min" :max="price.max" @change="handlePriceChange" />
                             </div>
                             <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('price')">Применить</button>
                         </div>

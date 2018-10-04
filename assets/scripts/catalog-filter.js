@@ -285,11 +285,34 @@ var catalogFilter = new Vue({
     },
 
     // При смене цены в полях - апдейтим слайдер
-    handlePriceChange: function() {
-      var self = this;
+    handlePriceChange: function(e) {
+      const self = this;
+
+      const el = e.target.getAttribute('data-handler');
+      const elValue = e.target.value;
+
+      let elMin
+        , elMax;
+      let range = [elMin, elMax];
+
+      const compare = (n) => {
+        if (n <  self.price.min) return self.price.min;
+        if (n > self.price.max) return self.price.max;
+        return n;
+      }
+
+      if (el === '0') {
+        elMin = compare(elValue);
+        range = [elMin, null];
+      }
+
+      if (el === '1') {
+        elMax = compare(elValue);
+        range = [null, elMax];
+      }
 
       $('.js-catalog-price-slider').each(function() {
-        $(this).get(0).noUiSlider.set([self.price.minValue, self.price.maxValue]);
+        $(this).get(0).noUiSlider.set(range);
       });
     },
 
@@ -391,6 +414,10 @@ var catalogFilter = new Vue({
       this.price.minValue = this.price.min;
       this.price.maxValue = this.price.max;
       this.priceApplied = false;
+      $('.js-catalog-price-slider').each(function() {
+        var slider =  $(this);
+        slider[0].noUiSlider.reset();
+      })
     },
 
     resetFilters: function() {
@@ -443,7 +470,8 @@ var catalogFilter = new Vue({
           max: self.price.max,
         },
       });
-      slider[0].noUiSlider.on('change', function(values, handler) {
+// TODO: change
+      slider[0].noUiSlider.on('update', function(values, handler) {
         var keys = ['minValue', 'maxValue'];
         var val = values[handler];
         self.price[keys[handler]] = Math.round(val);
