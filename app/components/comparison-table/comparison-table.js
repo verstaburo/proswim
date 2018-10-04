@@ -81,7 +81,6 @@ export default function compare() {
     </div>`;
     return elem;
   }
-  // TODO: td 
   function generateRow(cells, arrValues, title) {
     let res;
     switch (cells) {
