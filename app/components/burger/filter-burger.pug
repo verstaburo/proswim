@@ -113,7 +113,7 @@ mixin filter-burger(isReviews)
                   v-model.number="price.minValue",
                   :min="price.min",
                   :max="price.max",
-                  @input="handlePriceChange",
+                  @change="handlePriceChange",
                 )
                 +input(
                   data-handler="1",
@@ -121,7 +121,7 @@ mixin filter-burger(isReviews)
                   v-model.number="price.maxValue",
                   :min="price.min",
                   :max="price.max",
-                  @input="handlePriceChange",
+                  @change="handlePriceChange",
                 )
 
               +sort-dropdown-submit("submitFilter('price')")
