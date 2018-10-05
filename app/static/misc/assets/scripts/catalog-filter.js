@@ -88,6 +88,7 @@ var catalogFilter = new Vue({
     sizeApplied: false,
     colorApplied: false,
     cutoffBrands: true,
+    cutoffColor: true,
     sortApplied: false,
   },
 
@@ -212,6 +213,10 @@ var catalogFilter = new Vue({
       return this.cutoffBrands === true ? this.brandsFilter.slice(0, 8) : this.brandsFilter;
     },
 
+    // Если цветов > 5, то на мобильном будет выведена кнопка "показать еще"
+    cutColor: function() {
+      return this.cutoffColor === true ? this.colorFilter.slice(0, 5) : this.colorFilter;
+    },
     // Значение "списка товаров"
     productsValue: function() {
       return this.getItemValue('Любой товар', this.productList);
