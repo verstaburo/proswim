@@ -5234,6 +5234,18 @@
                                     <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
                                 </button>
                             </div>
+                            <div class="filter-section__col" v-for="size in selectedSize" v-if="sizeApplied">
+                                <button class="choice" type="button" @click="resetItem('sizeList', size)">
+                                    <div class="choice__text">{{size.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
+                            <div class="filter-section__col" v-for="color in selectedColor" v-if="colorApplied">
+                                <button class="choice" type="button" @click="resetItem('colorList', color)">
+                                    <div class="choice__text">{{color.title}}</div>
+                                    <svg class="choice__icon choice__icon_close"><use xlink:href="assets/images/icon.svg#icon_delete-icon"></use></svg>
+                                </button>
+                            </div>
                             <div class="filter-section__col" v-if="priceApplied">
                                 <button class="choice" type="button" @click="resetPrice">
                                     <div class="choice__text">{{priceValue}}</div>
@@ -5584,6 +5596,64 @@
                                 <span class="link__text">Показать еще</span>
                             </a>
                             <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('brands')">Применить</button>
+                        </div>
+                    </div>
+                    <div class="sort-dropdown">
+                        <div class="sort-dropdown__button js-dropdown-toggle">
+                            <span class="sort-dropdown__value">{{sizeValue}}</span>
+                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                        </div>
+                        <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                            <div class="sort-dropdown__heading">Размеры купальника (FR)</div>
+                            <div class="sort-dropdown__listwrap">
+                                <ul class="sort-dropdown__list sort-dropdown__list_inline">
+                                    <li class="sort-dropdown__item" v-for="size in sizeList" v-if="size.name == 'filter-size'">
+                                        <label class="checkradio checkradio_size_md">
+                                            <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
+                                            <span class="checkradio__content">{{size.title}}</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="sort-dropdown__heading sort-dropdown__heading_bottom">Размеры детские (возраст):</div>
+                            <div class="sort-dropdown__listwrap js-scrollbar">
+                                <ul class="sort-dropdown__list sort-dropdown__list_inline">
+                                    <li class="sort-dropdown__item" v-for="size in sizeList" v-if="size.name == 'filter-size-children'">
+                                        <label class="checkradio checkradio_size_md">
+                                            <input class="checkradio__input" type="checkbox" :name="size.name" :value="size.value" v-model="size.checked" />
+                                            <span class="checkradio__content">{{size.title}}</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('size')">Применить</button>
+                        </div>
+                    </div>
+                    <div class="sort-dropdown">
+                        <div class="sort-dropdown__button js-dropdown-toggle">
+                            <span class="sort-dropdown__value">{{colorValue}}</span>
+                            <svg class="sort-dropdown__caret"><use xlink:href="assets/images/icon.svg#icon_arrow-location"></use></svg>
+                        </div>
+                        <div class="dropdown js-dropdown sort-dropdown__body" data-slide-mobile="true">
+                            <div class="sort-dropdown__listwrap">
+                                <ul class="sort-dropdown__list">
+                                    <li class="sort-dropdown__item" v-for="color in cutColor">
+                                        <label class="checkradio">
+                                            <input class="checkradio__input" type="checkbox" :name="color.name" :value="color.value" v-model="color.checked" />
+                                            <span class="checkradio__box">
+                                                <svg class="checkradio__icon"><use xlink:href="assets/images/icon.svg#icon_checked"></use></svg>
+                                            </span>
+                                            <span class="checkradio__boxcolor" :class="color.value"></span>
+                                            <span class="checkradio__content">{{color.title}}</span>
+                                        </label>
+                                        <span class="sort-dropdown__amount"> {{color.amount}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="link sort-dropdown__readmore" v-if="colorFilter.length &gt; 5 &amp;&amp; cutoffColor" @click="cutoffColor = false">
+                                <span class="link__text">Показать еще</span>
+                            </a>
+                            <button class="button button_size_sm button_block sort-dropdown__submit" type="button" @click="submitFilter('color')">Применить</button>
                         </div>
                     </div>
                     <div class="sort-dropdown sort-dropdown_price">
