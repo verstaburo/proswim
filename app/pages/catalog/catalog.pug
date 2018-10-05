@@ -203,7 +203,7 @@ block content
                         v-model.number="price.minValue",
                         :min="price.min",
                         :max="price.max",
-                        @input="handlePriceChange",
+                        @change="handlePriceChange",
                       )
                       +input(
                         data-handler="1",
@@ -211,7 +211,7 @@ block content
                         v-model.number="price.maxValue",
                         :min="price.min",
                         :max="price.max",
-                        @input="handlePriceChange",
+                        @change="handlePriceChange",
                       )
 
                     +sort-dropdown-submit("submitFilter('price')")

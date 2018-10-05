@@ -81,6 +81,7 @@ export default function compare() {
     </div>`;
     return elem;
   }
+  // TODO: td
   function generateRow(cells, arrValues, title) {
     let res;
     switch (cells) {
@@ -204,8 +205,9 @@ export default function compare() {
   $(document).on('click', '.js-remove-slide', (evt) => {
     evt.preventDefault();
     const self = $(evt.target).hasClass('js-remove-slide') ? $(evt.target) : $(evt.target).closest('.js-remove-slide');
+    const currentSlide = $(self).closest('.comparison-table__slide');
     const index = $(self).closest('.comparison-table__slide').attr('data-slide-index');
-    compareSlider.removeSlide(index);
+    currentSlide.remove();
     compareSlider.update();
     generateTable();
   });
