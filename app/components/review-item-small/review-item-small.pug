@@ -16,10 +16,7 @@ mixin review-item-small(data)
 
       +e.body
         each block in data.blocks
-          +e.block
-            if block.heading
-              +e.P.blockheading=block.heading
-            +content-zone!=block.content
+          +e.block.js-truncate!=block.content
 
       if data.link
         +e.A(href='javascript:void(0)').link Читать полностью

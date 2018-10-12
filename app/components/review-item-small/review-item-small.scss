@@ -69,6 +69,13 @@
     margin-top: 10px;
   }
 
+  &__block {
+    @include text;
+
+    max-height: (22/14*17em);
+    overflow: hidden;
+  }
+
   &__link {
     display: block;
     margin-top: 20px;
